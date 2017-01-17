@@ -1,0 +1,3506 @@
+/* =====================================================================
+ * \====\====\====\====\====\====\===|===/====/====/====/====/====/====/
+ *  \:-------===========>>>>>>>>>>>>>:<<<<<<<<<<<<<===========-------:/
+ *   |:---        > > > >    Flat Earth Theorem   < < < <        ---:|
+ *  /:-------===========>>>>>>>>>>>>>:<<<<<<<<<<<<<===========-------:\
+ * /====/====/====/====/====/====/===|===\====\====\====\====\====\====\
+ * =====================================================================
+ *                                 Index
+ * =======                  ====================                 =======
+ * Index #                      Description                          A-0      
+ * =====================================================================
+ *				 - - - Section common with Gnome Shell - - -
+ * A-0.......Index
+ * A-1.......Stage - Cinnamon link - Scrollbar - Tooltips					
+ * A-2.......Shared button properties                                                            
+ * A-3.......PopupMenu 										
+ * A-4.......Panel 											
+ * A-5.......Overview										
+ * A-6.......Desklets 										                           
+ * A-7.......Clock Desklet 									     
+ * A-8.......Looking Glass   								
+ * A-9.......Date applet									
+ * A-10......Notifications									
+ * A-11......Alt Tab										
+ * A-12......Modal dialogs									
+ * A-13......Run dialog										
+ * A-14......End session dialog								
+ * A-15......Policykit authentication dialog				
+ * A-16......Magnifier										
+ * A-17......On screen keyboard								
+ *                - - - Cinnamon Specific Section - - - 
+ * B-1.......Menu											
+ * B-2.......Window list									
+ * B-3.......Sound Applet									
+ * B-4.......Workspace Switcher applet 						
+ * B-5.......Panel Launchers Applet							
+ * B-6.......Overview corner								
+ * B-7.......Applets										
+ * B-8.......Workspace OSD									
+ * B-9.......Notification Applet							
+ * B-10......About Dialog									
+ * B-11......Snap/Tile OSD Popup							
+ *               		    - - - Apps - - - 
+ * C-1.......Windows Quick List applet 						
+ * C-2.......User Applet 									
+ * C-3.......Slingshot 										
+ * C-4.......Xcenter										
+ * C-5.......Stopwatch										
+ * C-6.......Desktop Capture applet							
+ * C-7.......Color Picker applet							
+ * C-8.......Sticky Notes desklet							
+ * C-9.......Reddit reader									
+ * C-10......Calculator										
+ * C-11......G-tile											
+ * C-12......Weather applet									
+ * C-13......Snap/Tile OSD Popup							
+ * C-14......TimeAndDate desklet							
+ * C-15......soundBox desklet (Mint theme)					
+ * C-16......Network Data Usage Monitor applet	
+ * =====================================================================
+ * <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+ * 					Section common with Gnome Shell
+ * <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+ *====================================================================== 
+ * A-1          Stage - Cinnamon link - Scrollbar - Tooltips         
+ *====================================================================*/
+stage {
+/* 	font-family: Xirod, Ubuntu, Droid Sans, Trebuchet MS, 
+ * Liberation Sans; */
+	font-family: Xirod;
+	font-size: 8pt;
+	color: #E6E6E6;
+}
+.cinnamon-link {
+	color: #E6E6E6;
+	text-decoration: underline;
+}
+.cinnamon-link:hover {
+    color: #E6E6E6;
+}
+.label-shadow {
+    color: rgba(0,0,0,0.5);
+}
+StScrollBar
+{
+	padding: 14px;
+}
+StScrollView.vfade
+{
+	-st-vfade-offset: 68px;
+}
+/* controls scroll trough and button width simultaneously*/
+StScrollView StScrollBar
+{
+	min-width: 14px;
+	min-height: 16px;
+}
+StScrollBar StBin#trough {
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(41,41,41,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+StScrollBar StButton#vhandle
+{
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(81,81,81,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+StScrollBar StButton#hhandle
+{
+    background-color: rgba(61,61,61,1);
+    border: 1px solid rgba(71,71,71,1);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+StScrollBar StButton#hhandle:hover,
+StScrollBar StButton#vhandle:hover
+{   border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(31,31,31,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+/*  The box that tells you what something is when you hover over it.  */
+#Tooltip {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(31,31,31,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    padding: 2px 12px;
+    color: #E6E6E6;
+    font-size: 8pt;
+    font-weight: normal;    
+    text-align: center;
+}
+/* =====================================================================
+ * A-2                 Shared button properties 
+ * ===================================================================*/
+.notification-button, .notification-icon-button,
+.hotplug-notification-item, .hotplug-resident-eject-button,
+.modal-dialog-button {
+    color: #E6E6E6;
+    border: 1px solid #8b8b8b;
+    border-radius: 4px 4px 4px 4px;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255, 255, 255, 0.2);
+    background-gradient-end: rgba(255, 255, 255, 0);
+    font-size: 8pt;
+    font-weight: normal;    
+    text-align: center;
+}
+.notification-button:hover,
+.notification-icon-button:hover, .hotplug-notification-item:hover,
+.hotplug-resident-eject-button:hover, .modal-dialog-button:hover {
+    border: 0px;
+    border-radius: 4px 4px 4px 4px;
+    background-gradient-start: rgba(255, 255, 255, 0.3);
+    background-gradient-end: rgba(255, 255, 255, 0.1);
+}
+.notification-button:focus,
+.notification-icon-button:focus, .hotplug-notification-item:focus,
+.modal-dialog-button:focus {
+    border: 1px solid rgba(35,35,35,1);
+    border-radius: 4px 4px 4px 4px;
+}
+notification-button:active, .notification-icon-button:active,
+.hotplug-notification-item:active, .hotplug-resident-eject-button:active,
+.modal-dialog-button:active, .modal-dialog-button:pressed {
+	border: 1px solid #E6E6E6;
+	border-radius: 4px 4px 4px 4px;
+    background-gradient-start: rgba(255, 255, 255, 0);
+    background-gradient-end: rgba(255, 255, 255, 0.2);
+}
+/* =====================================================================
+ * A-3                     PopupMenu (popupMenu.js) 
+ * ================================================================== */
+.popup-menu-boxpointer {
+    -arrow-border-radius: 4px 4px 4px 4px;
+    -arrow-background-color: rgba(51,51,51,1);
+    -arrow-border-width: 1px;
+    -arrow-border-color: rgba(71,71,71,1);
+    -arrow-base: 36px;
+    -arrow-rise: 42px;
+    -boxpointer-gap: 14px;
+    box-shadow: inset 3px 2px 0px 0px rgba(0,0,0,0.6);
+/*	background-bumpmap: url("/usr/share/cinnamon/bumpmaps/fish.png"); */
+}
+.popup-submenu-menu-item:open {
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);   
+}
+.popup-sub-menu {
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+}
+.popup-sub-menu .popup-menu-item:ltr {
+    padding-right: 0em;
+}
+.popup-sub-menu .popup-menu-item:rtl {
+    padding-left: 0em;
+}
+.popup-sub-menu StScrollBar {
+    padding: 4px;
+}
+.popup-sub-menu StScrollBar StBin#trough {
+    border-width: 0px;
+}
+.popup-sub-menu StScrollBar StBin#vhandle {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+}
+.popup-combo-menu {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+    padding: 1em 0em;
+    color: #E6E6E6;
+    font-size: 8pt;
+}
+/* The remaining popup-menu sizing is all done in ems, so that if you
+ * override .popup-menu.font-size, everything else will scale with it.
+ */
+.popup-menu-content {
+    padding: 0.5em 1em;
+}
+/*	Identical, invisible border must be added to "popup-menu-item" to 
+ * 	keep "popup-menu-item:active" from jumping around when adding a 
+ * 	border.*/
+.popup-menu-item {
+    padding: 1em 1em;
+    spacing: 1em;
+    border: 1px solid rgba(71,71,71,0);
+	background-color: rgba(51,51,51,0);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0);
+}
+/* this changes the highlight when hovering over a list*/
+.popup-menu-item:active {
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(61,61,61,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);   
+}
+.popup-menu-item:insensitive {
+    color: #9f9f9f;
+}
+.popup-image-menu-item {
+}
+.popup-combobox-item {
+    spacing: 1em;
+}
+.popup-separator-menu-item {
+    -gradient-height: 1px;
+    -gradient-start: rgba(0,0,0,1);
+    -gradient-end: rgba(160,160,160,0.9);
+    -gradient-direction: radial;
+    -margin-horizontal: 1.5em;
+    height: 1em;
+}
+.popup-alternating-menu-item:alternate {
+    font-weight: normal;
+}
+.popup-slider-menu-item {
+    height: 1em;
+    min-width: 15em;
+    color: #E6E6E6;
+    -slider-height: 0.3em;
+    -slider-background-color: rgba(35,35,35,1);
+    -slider-border-color: rgba(35,35,35,1);
+    -slider-active-background-color: rgba(100,100,100,1);
+    -slider-active-border-color: rgba(100,100,100,1);
+    -slider-border-width: 1px;
+    -slider-handle-radius: 0.5em;
+}
+.popup-device-menu-item {
+    spacing: .5em;
+}
+.popup-inactive-menu-item {
+    font-weight: normal;
+    color: #999;
+}
+.popup-subtitle-menu-item {
+    font-weight: normal;
+}
+.popup-menu-icon {
+    icon-size: 1em;
+}
+/* Switches (to be used in menus) */
+.toggle-switch {
+    width: 64px;
+    height: 22px;
+}
+.toggle-switch-us {
+    background-image: url("toggle-off-us.svg");
+}
+.toggle-switch-us:checked {
+    background-image: url("toggle-on-us.svg");
+}
+.toggle-switch-intl {
+    background-image: url("toggle-off-intl.svg");
+}
+.toggle-switch-intl:checked {
+    background-image: url("toggle-on-intl.svg");
+}
+.nm-menu-item-icons {
+    spacing: .5em;
+}
+/* =====================================================================
+ * A-4                      Panel (panel.js)
+ * ===================================================================*/
+#panel {
+	color: #E6E6E6;
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+	font-size: 8pt;
+	font-weight: normal;
+	height: 28px;
+}
+#panelLeft {
+	spacing: 9px;
+}
+#panelCenter {
+	spacing: 9px;
+}
+#panelLeft:dnd {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,0,0,0.9);
+	background-gradient-end: rgba(0,10,0,0.2);
+}
+#panelCenter:dnd {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,0,0,0.05);
+	background-gradient-end: rgba(0,10,0,0.2);
+}
+#panelRight:dnd {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,0,0,0.9);
+	background-gradient-end: rgba(0,10,0,0.2);
+}
+#panelLeft:ltr {
+	padding-right: 9px;
+	spacing: 9px;
+}
+#panelLeft:rtl {
+	padding-left: 9px;
+	spacing: 9px;
+}
+#panelRight:ltr { 
+	padding-left: 9px;
+	spacing: 9px;
+}
+#panelRight:rtl {
+	padding-right: 9px;
+	spacing: 4px;
+}
+.panel-top {
+}
+.panel-bottom {
+}
+.panel-status-button {
+	border: 1px solid rgba(71,71,71,1);
+	-natural-hpadding: 9px;
+	-minimum-hpadding: 3px;
+	font-weight: normal;
+	color: #E6E6E6;
+	height: 22px;
+}
+.panel-status-button:hover {
+	color: #E6E6E6;
+}
+.system-status-icon {
+	padding-left: 4px;
+	padding-right: 4px;
+	spacing: 9px;
+	margin: 2px;
+}
+.panel-corner {
+	-panel-corner-radius: 0px;
+	-panel-corner-background-color: black;
+	-panel-corner-inner-border-width: 2px;
+	-panel-corner-inner-border-color: transparent;
+	-panel-corner-outer-border-width: 1px;
+	-panel-corner-outer-border-color: #727272;
+}
+.panel-corner:active,
+.panel-corner:overview,
+.panel-corner:focus {
+	-panel-corner-inner-border-color: rgba(255,255,255,0.8);
+}
+#appMenu {
+	spacing: 4px;
+}
+.panel-button #appMenuIcon {
+	app-icon-bottom-clip: 1px;
+}
+.panel-button:active #appMenuIcon,
+.panel-button:checked #appMenuIcon,
+.panel-button:focus #appMenuIcon {
+	app-icon-bottom-clip: 2px;
+}
+.panel-button {
+	-natural-hpadding: 12px;
+	-minimum-hpadding: 2px;
+	font-weight: normal;
+	color: #E6E6E6;
+	transition-duration: 333;
+}
+.panel-button:hover {
+	color: #E6E6E6;
+	text-shadow: black 0px 2px 2px;
+}
+.panel-button:active,
+.panel-button:overview,
+.panel-button:focus {
+	
+}
+.panel-button:active > .system-status-icon,
+.panel-button:checked > .system-status-icon,
+.panel-button:focus > .system-status-icon {
+	icon-shadow: black 0px 2px 2px;
+}
+.panel-menu {
+	-boxpointer-gap: 4px
+}
+.popup-menu-item-dot {
+}
+.system-status-icon {
+	icon-size: 1.14em;
+}
+/* =====================================================================
+ * A-5                         Overview 
+ * ===================================================================*/
+#overview {
+    spacing: 12px;
+}
+.window-caption {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+    color: #E6E6E6;
+    spacing: 25px;
+}
+.window-caption#selected {
+	background-color: rgba(51,51,51,1);
+	color: black;
+	spacing: 25px;
+}
+.workspace-controls {
+    visible-height: 32px; /* Amount visible before hovering */
+}
+.workspace-thumbnails-background {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+    padding: 8px;
+}
+.workspace-thumbnails-background:rtl {
+    border-right: 1px;
+    border-left: 1px;
+    border-radius: 4px 4px 4px 4px;
+}
+.workspace-thumbnails {
+    spacing: 14px;
+}
+.workspace-add-button {
+    background-image: url("add-workspace.svg");
+    height: 200px;
+    width: 35px;
+    transition-duration: 999;
+}
+.workspace-add-button:hover {  
+    background-image: url("add-workspace-hover.svg");
+    transition-duration: 999;
+}
+.workspace-close-button {
+    background-image: url("close-window.svg");
+    height: 34px;
+    width: 34px;
+    -cinnamon-close-overlap: 20px;
+}
+.workspace-thumbnail-indicator {
+    outline: 2px solid #E6E6E6;
+    border: 1px solid #888;
+}
+.window-caption {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+    font-size: 9pt;
+    padding: 2px 8px;
+    -cinnamon-caption-spacing: 4px;
+}
+.window-close {
+    background-image: url("close-window.svg");
+    height: 34px;
+    width: 34px;
+    -cinnamon-close-overlap: 20px;
+}
+.window-close:rtl {
+    -st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+.window-close-area {
+	background-image: url("trash-icon.svg");
+	border: 0px transparent #E6E6E6;
+	border-bottom-width: 0px;
+	border-radius: 4px 4px 4px 4px;
+	height: 120px;
+	width: 400px;
+}
+.icon-grid {
+    spacing: 36px;
+    -cinnamon-grid-item-size: 118px;
+}
+.icon-grid .overview-icon {
+    icon-size: 96px;
+}
+.overview-icon {
+    border-radius: 4px 4px 4px 4px;
+    padding: 3px;
+    border: 1px rgba(0,0,0,0);
+    font-size: 7.5pt;
+    color: #E6E6E6;
+    transition-duration: 333;
+    text-align: center;
+}
+.expo-background {
+	background-gradient-start: #000;
+	background-gradient-end: #AAA;
+	background-gradient-direction: vertical
+}
+.workspace-overview-background-shade {
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+}
+.expo-workspace-thumbnail-frame {
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+}
+.expo-workspace-thumbnail-frame#active {
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(61,61,61,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+} 
+/* =====================================================================
+* A-6                    Desklets (desklet.js)
+* ===================================================================*/
+.desklet {
+    color: #E6E6E6;
+}
+.desklet-with-borders {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+    color: #E6E6E6;
+    border-radius: 4px 4px 4px 4px;
+}
+.desklet-with-borders-and-header {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+    color: #E6E6E6;
+    border-top: 1px;
+    border-radius: 4px 4px 4px 4px;
+}
+.desklet-header {
+    border-radius: 4px 4px 4px 4px;
+    font-size: 8pt;
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+    color: #E6E6E6;
+    padding: 6px;
+}
+.desklet-drag-placeholder { 
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+} 
+/* =====================================================================
+ * A-7                Clock Desklet (desklet.js) 
+ * ===================================================================*/
+.clock-desklet-label {
+} 
+/* =====================================================================
+ * A-8                     Looking Glass 
+ * ===================================================================*/
+/* 
+ * Controls the styling of the dialog shown when using the inspector
+ * from looking glass
+ */
+#LookingGlassDialog
+{
+	spacing: 4px;
+	padding: 4px;
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+	color: #E6E6E6;
+}
+#LookingGlassDialog > #Toolbar
+{
+	border: 1px solid rgba(100,100,100,0.8);
+	border-radius: 4px 4px 4px 4px;
+}
+#LookingGlassDialog .labels {
+	spacing: 4px;
+}
+#LookingGlassDialog .notebook-tab {
+	border: 1px solid rgba(0,0,0,0);
+	padding: 2px;
+}
+#LookingGlassDialog .notebook-tab:hover {
+	color: #E6E6E6;
+}
+#LookingGlassDialog .notebook-tab:selected {
+	color: #E6E6E6;
+	border: 1px solid rgba(120,120,120,1);
+	border-radius: 4px 4px 4px 4px;
+	padding: 2px;
+}
+#LookingGlassDialog .lg-inspector-title {
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+.lg-dialog StLabel
+{
+	color: #E6E6E6;
+}
+.lg-dialog StEntry
+{
+	color: #E6E6E6;
+	selection-background-color: #E6E6E6;
+	selected-color: black;
+}
+.lg-obj-inspector-title
+{
+	spacing: 4px;
+}
+.lg-obj-inspector-button
+{
+	border: 1px solid #E6E6E6;
+	padding: 4px;
+	border-radius: 4px 4px 4px 4px;
+}
+.lg-obj-inspector-button:hover
+{
+	border: 1px solid #E6E6E6;
+}
+.lg-dialog .cinnamon-link
+{
+	color: #E6E6E6;
+}
+.lg-dialog .cinnamon-link:hover
+{
+	color: #E6E6E6;
+}
+#LookingGlassDialog StBoxLayout#EvalBox
+{
+	padding: 4px;
+	spacing: 4px;
+}
+#LookingGlassDialog StBoxLayout#ResultsArea
+{
+	spacing: 4px;
+}
+#lookingGlassExtensions {
+    padding: 4px;
+}
+.lg-extension-list {
+    padding: 4px;
+    spacing: 6px;
+}
+.lg-extension {
+    border: 1px solid #6f6f6f;
+    border-radius: 4px 4px 4px 4px;
+    padding: 4px;
+}
+.lg-extension-name {
+    font-weight: normal;
+}
+.lg-extension-meta {
+    spacing: 6px;
+}
+#LookingGlassPropertyInspector {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid grey;
+    border-radius: 4px 4px 4px 4px;
+    padding: 6px;
+    color: #E6E6E6;
+}
+/* =====================================================================
+ * A-9                      Date applet 
+ * ===================================================================*/
+.calendar {
+	padding: .4em 1.75em;
+	spacing-rows: 0px;
+	spacing-columns: 0px;
+}
+.calendar-month-label {
+	font-size: 8pt;
+	font-weight: normal;
+	padding-bottom: 3px;
+	padding-top: 2px;
+	text-align: center;
+}
+.calendar-change-month-back {
+    width: 18px;
+    height: 12px;
+    background-image: url("calendar-arrow-left.svg");
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid rgba(0,0,0,0);
+}
+.calendar-change-month-back,
+.calendar-change-month-forward:rtl {
+    width: 20px;
+    height: 20px;
+    background-image: url("calendar-arrow-left.svg");
+    border-radius: 4px 4px 4px 4px;
+     border: 1px solid rgba(255,0,0,0);
+    transition-duration: 333;
+}
+.calendar-change-month-back:hover {
+    background-color: rgba(172,172,172,0.6);
+    box-shadow: inset 0px 1px 1px rgba(255,255,255,0.7);
+    border-radius: 4px 4px 4px 4px;
+}
+.calendar-change-month-back:active {
+    background-color: rgba(50,50,50,1);
+}
+.calendar-change-month-forward,
+.calendar-change-month-back:rtl {
+    width: 20px;
+    height: 20px;
+    background-image: url("calendar-arrow-right.svg");
+    border-radius: 4px 4px 4px 4px;
+    transition-duration: 333;
+}
+.calendar-change-month-forward {
+    width: 18px;
+    height: 12px;
+    background-image: url("calendar-arrow-right.svg");
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid rgba(0,0,0,0);
+}
+.calendar-change-month-forward:rtl {
+    background-image: url("calendar-arrow-left.svg");
+}
+.calendar-change-month-forward:hover {
+    background-color: rgba(172,172,172,0.6);
+    box-shadow: inset 0px 1px 1px rgba(255,255,255,0.7);
+    border-radius: 4px 4px 4px 4px;
+}
+.calendar-change-month-forward:active {
+    background-color: rgba(50,50,50,1);
+}
+.datemenu-date-label {
+    padding: .4em 1.75em;
+    font-size: 8.5pt;
+    color: #E6E6E6;
+    font-weight: normal;
+    text-align: center;
+}
+.calendar-day-base {
+    font-size: 7.5pt;
+    text-align: center;
+    width: 2.4em;
+    max-height: 2.4em;
+    padding: 5px 0px 5px 0px; 
+}
+.calendar-day-base:hover {
+    background-color: #b0b0b0;
+    color: #525252;
+}
+.calendar-day-base:active {
+}
+.calendar-day-heading {
+	padding-top: 1em;
+	font-weight: normal;
+}
+.calendar-week-number {
+	padding-left: 0px;
+	font-weight: normal;
+	border: 1px solid transparent;
+}
+/* Hack used in lieu of border-collapse - see calendar.js */
+.calendar-day {
+	border-top-width: 0;
+	border-left-width: 0;
+	background: #000000;
+}
+.calendar-day-top {
+	border-top-width: 1px;
+}
+.calendar-day-left {
+	border-left-width: 1px;
+}
+.calendar-work-day {
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(81,81,81,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+}
+.calendar-nonwork-day {
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(31,31,31,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+}
+.calendar-today {
+	color: #ff0000;
+	font-weight: normal;
+    border: 1px solid rgba(71,71,71,1);
+	background-gradient-start: rgba(231,231,231,1);
+	background-gradient-end: rgba(31,31,31,1);
+	background-gradient-direction: radial;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+}
+.calendar-other-month-day {
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(161,161,161,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+}
+.calendar-day-with-events {
+    font-weight: normal;
+    color: #323232;
+}
+/* =====================================================================
+ * A-10                   Notifications
+ * ===================================================================*/
+#notification {
+    font-size: 8pt;
+    border-radius: 4px 4px 4px 4px;
+    border: 2px solid rgba(214,214,214,0.5);
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,0,0,0.7);
+    background-gradient-end: rgba(0,0,0,0.4);
+    padding: 8px 8px 8px 8px;
+    spacing-rows: 10px;
+    spacing-columns: 10px;
+    margin-from-right-edge-of-screen: 20px;    
+    width: 34em;
+    color: #E6E6E6;    
+    /* The px are a temporary fix until get_theme_node() can return raw 
+     * numbers. */
+    opacity:255px;
+    mouseover-opacity:96px
+}
+#notification.multi-line-notification {
+    padding-bottom: 8px;
+    color: #E6E6E6;
+}
+/* 	We use row-span = 2 for the image cell, which prevents its height 
+ * 	preferences to be taken into account during allocation, so its height 
+ * 	ends up being limited by the height of the content in the other rows. 
+ *  To avoid showing a stretched image, we set the minimum height of the 
+ *  table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 
+ *  159 */
+.notification-with-image {
+    min-height: 159px;
+    color: #E6E6E6;
+}
+#notification-scrollview {
+    max-height: 10em;
+}
+#notification-scrollview > .top-shadow, #notification-scrollview > .bottom-shadow {
+    height: 1em;
+}
+#notification-scrollview:ltr > StScrollBar {
+    padding-left: 6px;
+}
+#notification-scrollview:rtl > StScrollBar {
+    padding-right: 6px;
+}
+#notification-body {
+    spacing: 5px;
+}
+#notification-actions {
+    spacing: 10px;
+}
+.notification-button {
+    border-radius: 4px 4px 4px 4px;
+    padding: 4px 8px 5px;
+}
+.notification-button:focus {
+    padding: 3px 8px 4px;
+}
+.notification-icon-button {
+    border-radius: 4px 4px 4px 4px;
+    padding: 5px;
+}
+.notification-icon-button:focus {
+    padding: 4px;
+}
+.notification-icon-button > StIcon {
+    icon-size: 36px;
+}
+.hotplug-transient-box {
+    spacing: 6px;
+    padding: 2px 72px 2px 12px;
+}
+.hotplug-notification-item {
+    padding: 2px 10px;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 10.5pt;
+}
+.hotplug-notification-item:focus {
+    padding: 1px 71px 1px 11px;
+}
+.hotplug-notification-item-icon {
+    icon-size: 24px;
+    padding: 2px 5px;
+}
+.hotplug-resident-box {
+    spacing: 8px;
+}
+.hotplug-resident-mount {
+    spacing: 8px;
+    border-radius: 4px 4px 4px 4px;
+    color: #E6E6E6;
+}
+.hotplug-resident-mount:hover {
+	border-radius: 4px 4px 4px 4px;
+    background-gradient-direction: horizontal;
+    background-gradient-start: rgba(255, 255, 255, 0.1);
+    background-gradient-end: rgba(255, 255, 255, 0);
+    color: #E6E6E6;
+}
+.hotplug-resident-mount-label {
+    color: inherit;
+    padding-left: 6px;
+}
+.hotplug-resident-mount-icon {
+    icon-size: 24px;
+    padding-left: 6px;
+}
+.hotplug-resident-eject-icon {
+    icon-size: 16px;
+}
+.hotplug-resident-eject-button {
+    padding: 7px;
+    border-radius: 4px 4px 4px 4px;
+    color: #E6E6E6;
+}
+#notification StEntry {
+    padding: 4px;
+    border-radius: 4px 4px 4px 4px;
+    color: #a8a8a8;
+    selected-color: black;
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(31,31,31,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    transition-duration: 333;
+    box-shadow: inset 0px 2px 4px rgba(0,0,0,0.6);
+    caret-color: #a8a8a8;
+    caret-size: 1px;
+}
+#notification StEntry:focus {
+    color: #333333;
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(31,31,31,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    caret-color: #545454;
+    selection-background-color: #808080;
+}
+/* =====================================================================
+ * A-11                     Alt Tab
+ * ===================================================================*/
+#altTabPopup {
+    padding: 8px;
+    spacing: 16px;
+}
+.switcher-list {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(31,31,31,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    padding: 20px;
+    font-size: 9pt;
+    color: #E6E6E6;
+}
+.switcher-list-item-container {
+    spacing: 8px;
+}
+.thumbnail-scroll-gradient-left {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(31,31,31,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    width: 60px;
+}
+.thumbnail-scroll-gradient-right {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(31,31,31,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    width: 60px;
+}
+.switcher-list .item-box {
+    padding: 8px;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 4px 4px 4px 4px;
+}
+.switcher-list .item-box:outlined {
+    padding: 6px;
+    border: 2px solid rgba(85,85,85,1.0);
+    border-radius: 4px 4px 4px 4px;
+}
+.switcher-list .item-box:selected {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(21,21,21,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.switcher-list .thumbnail-box {
+    padding: 2px;
+    spacing: 4px;
+}
+.switcher-list .thumbnail {
+    width:  256px;
+}
+.switcher-list .separator {
+    width: 1px;
+    background: rgba(255,255,255,0.33);
+}
+.ripple-box {
+    width: 400px;
+    height: 400px;
+    background-image: url("corner-ripple.svg");
+}
+.ripple-box:rtl {
+    background-image: url("corner-ripple.svg");
+}
+.switcher-arrow {
+    border-color: rgba(0,0,0,0);
+    color: #808080;
+}
+.switcher-arrow:highlighted {
+    border-color: rgba(0,0,0,0);
+    color: #E6E6E6;
+}
+.switcher-preview-backdrop {
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+/* =====================================================================
+ * A-12                    Modal dialogs
+ * ===================================================================*/
+.modal-dialog {
+    font-size: 8pt;
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(31,31,31,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    color: #BDBDBD;
+    padding-right: 42px;
+    padding-left: 42px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+.modal-dialog-button-box {
+    spacing: 21px;
+}
+.modal-dialog-button {
+    border-radius: 4px 4px 4px 4px;
+    font-size: 8pt;
+    color: #E6E6E6;
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(31,31,31,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 4px 32px 5px;
+}
+.modal-dialog-button:hover {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.modal-dialog-button:active,
+.modal-dialog-button:checked {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.modal-dialog-button:disabled {
+    color: rgb(60, 60, 60);
+}
+.modal-dialog-button:focus {
+    padding: 3px 31px 4px;
+}
+.info-osd {
+    font-size: 24pt;
+   border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    color: #E6E6E6;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+.osd-window {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    color: #E6E6E6;
+    padding: 10px;
+    spacing: 5px;
+}
+.osd-window .level {
+    height: 0.7em;
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+/* =====================================================================
+ * A-13                      Run dialog
+ * ===================================================================*/
+.run-dialog-label {
+    font-size: 9pt;
+    color: #E6E6E6;
+}
+.run-dialog-error-label {
+    font-size: 9pt;
+    color: #E6E6E6;
+}
+.run-dialog-error-box {
+    padding-top: 15px;
+    spacing: 5px;
+}
+.run-dialog-entry {
+    font-size: 10.5pt;
+    font-weight: normal;
+    width: 23em;
+    color: #E6E6E6;
+    selection-background-color: #E6E6E6;
+    selected-color: black;
+}
+.run-dialog-completion-box { 
+    padding-left: 15px;
+    font-size: 10px;
+} 
+.run-dialog {
+    border-radius: 4px 4px 4px 4px;	
+    padding-right: 21px;
+    padding-left: 21px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.lightbox {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+/* =====================================================================
+ * A-14                   End session dialog
+ * ===================================================================*/
+.end-session-dialog {
+    spacing: 42px;
+}
+.end-session-dialog-subject {
+    font-size: 12pt;
+    font-weight: normal;
+    color: #666666;
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 30px;
+}
+.end-session-dialog-subject:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
+}
+.end-session-dialog-description {
+    font-size: 10pt;
+    color: #E6E6E6;
+    padding-left: 17px;
+    width: 28em;
+}
+.end-session-dialog-description:rtl {
+    padding-right: 17px;
+}
+.end-session-dialog-logout-icon {
+    border: 2px solid #8b8b8b;
+    border-radius: 4px 4px 4px 4px;
+    width: 32px;
+    height: 32px;
+}
+.end-session-dialog-shutdown-icon {
+    width: 32px;
+    height: 32px;
+}
+.end-session-dialog-app-list {
+    font-size: 10pt;
+    max-height: 200px;
+    padding-top: 42px;
+    padding-left: 49px;
+    padding-right: 32px;
+}
+.end-session-dialog-app-list:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+}
+.end-session-dialog-app-list-item {
+    color: #E6E6E6;
+}
+.end-session-dialog-app-list-item:hover {
+    color: #E6E6E6;
+}
+.end-session-dialog-app-list-item:ltr {
+    padding-right: 1em;
+}
+.end-session-dialog-app-list-item:rtl {
+    padding-left: 1em;
+}
+.end-session-dialog-app-list-item-icon:ltr {
+    padding-right: 17px;
+}
+.end-session-dialog-app-list-item-icon:rtl {
+    padding-left: 17px;
+}
+.end-session-dialog-app-list-item-name {
+    font-size: 10pt;
+}
+.end-session-dialog-app-list-item-description {
+    font-size: 8pt;
+    color: #444444;
+}
+/* CinnamonMountOperation Dialogs */
+.cinnamon-mount-operation-icon {
+    icon-size: 48px;
+}
+.mount-password-reask {
+    color: red;
+}
+.show-processes-dialog,
+.mount-question-dialog {
+    spacing: 24px;
+}
+.show-processes-dialog-subject,
+.mount-question-dialog-subject {
+    font-size: 12pt;
+    font-weight: normal;
+    color: #666666;
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 6px;
+}
+.show-processes-dialog-subject:rtl,
+.mount-question-dialog-subject:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
+}
+.show-processes-dialog-description,
+.mount-question-dialog-description {
+    font-size: 10pt;
+    color: #E6E6E6;
+    padding-left: 17px;
+    width: 28em;
+}
+.show-processes-dialog-description:rtl,
+.mount-question-dialog-description:rtl {
+    padding-right: 17px;
+}
+.show-processes-dialog-app-list {
+    font-size: 10pt;
+    max-height: 200px;
+    padding-top: 24px;
+    padding-left: 49px;
+    padding-right: 32px;
+}
+.show-processes-dialog-app-list:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+}
+.show-processes-dialog-app-list-item {
+    color: rgba(200,200,200,1);
+}
+.show-processes-dialog-app-list-item:hover {
+    color: #E6E6E6;
+}
+.show-processes-dialog-app-list-item:ltr {
+    padding-right: 1em;
+}
+.show-processes-dialog-app-list-item:rtl {
+    padding-left: 1em;
+}
+.show-processes-dialog-app-list-item-icon:ltr {
+    padding-right: 17px;
+}
+.show-processes-dialog-app-list-item-icon:rtl {
+    padding-left: 17px;
+}
+.show-processes-dialog-app-list-item-name {
+    font-size: 10pt;
+}
+/* =====================================================================
+ * A-15              Policykit authentication dialog
+ * ===================================================================*/
+.polkit-dialog {
+    /* this is the width of the entire modal popup */
+    width: 469px;
+}
+.polkit-dialog-main-layout {
+    spacing: 24px;
+    padding: 10px;
+}
+.polkit-dialog-message-layout {
+    spacing: 16px;
+}
+.polkit-dialog-headline {
+    font-size: 12pt;
+    font-weight: normal;
+    color: #666666;
+}
+.polkit-dialog-description {
+    font-size: 10pt;
+    color: #ff0000;
+}
+.polkit-dialog-user-layout {
+    padding-left: 10px;
+    spacing: 10px;
+}
+.polkit-dialog-user-layout:rtl {
+    padding-left: 0px;
+    padding-right: 10px;
+}
+.polkit-dialog-user-root-label {
+    color: #ff0000;
+}
+.polkit-dialog-password-label:ltr {
+    padding-right: 0.5em;
+}
+.polkit-dialog-password-label:rtl {
+    padding-left: 0.5em;
+}
+.polkit-dialog-password-entry {
+    color: black;
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.polkit-dialog-password-entry:focus {
+    border: 2px solid #940000;
+    border-radius: 4px 4px 4px 4px;
+}
+.polkit-dialog-password-entry .capslock-warning {
+    icon-size: 16px;
+    warning-color: #00ff00;
+    padding: 0 4px;
+}
+.polkit-dialog-error-label {
+    font-size: 10pt;
+    color: #FF5000;
+    padding-bottom: 8px;
+}
+.polkit-dialog-info-label {
+    font-size: 10pt;
+    padding-bottom: 8px;
+}
+/* intentionally left transparent to avoid dialog changing size */
+.polkit-dialog-null-label {
+    font-size: 10pt;
+    color: rgba(0,0,0,0);
+    padding-bottom: 8px;
+}
+.network-dialog-secret-table {
+    spacing-rows: 15px;
+}
+/* =====================================================================
+ * A-16                       Magnifier
+ * ===================================================================*/
+.magnifier-zoom-region {
+    border: 2px solid rgba(128, 0, 0, 255);
+}
+.magnifier-zoom-region.full-screen {
+    border-width: 0px;
+}
+/* =====================================================================
+ * A-17                 On screen keyboard
+ * ===================================================================*/
+#keyboard {
+    background-color: rgba(55,55,55,0);
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.5);
+}
+.keyboard-layout {
+    spacing: 10px;
+    padding: 10px;
+}
+.keyboard-row {
+    spacing: 15px;
+}
+.keyboard-key {
+    min-height: 30px;
+    min-width: 30px;
+    border: 1px solid rgba(71,71,71,0.75);
+	background-color: rgba(41,41,41,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    font-size: 14pt;
+    font-weight: bold;
+    color: #D9D9D9;
+}
+.keyboard-key:grayed {
+	color: #808080;
+	border-color: rgba(0,0,0,0.66);
+}
+.keyboard-key:checked,
+.keyboard-key:hover {
+    border: 1px solid rgba(71,71,71,0.75);
+	background-color: rgba(61,61,61,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.keyboard-key:active {
+    border: 1px solid rgba(255,0,0,1);
+	background-color: rgba(21,21,21,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.keyboard-subkeys {
+    color: #D9D9D9;
+    padding: 5px;
+    -arrow-border-radius: 8px;
+    -arrow-background-color: rgba(50,50,50,1);
+    -arrow-border-width: 1px;
+    -arrow-border-color: rgba(0,0,0,0.66);
+    -arrow-base: 20px;
+    -arrow-rise: 10px;
+    -boxpointer-gap: 1px;
+}
+/* <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+ *                      Cinnamon Specific Section 
+ * <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+ * =====================================================================
+ * B-1                       Menu (menu.js)
+ * ===================================================================*/
+/* Main menu title */
+.menu-favorites-box {  
+	margin: auto;
+	padding: 2px 2px 2px 2px;
+	border: 1px solid rgba(71,71,71,0);
+	background-color: rgba(51,51,51,0);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.menu-favorites-button {
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    border: 1px solid rgba(71,71,71,0);
+	background-color: rgba(51,51,51,0);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0);
+}
+.menu-favorites-button:hover {
+	border: 1px solid rgba(71,71,71,0.75);
+	background-color: rgba(41,41,41,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    transition-duration: 999;
+}
+.menu-places-box {  
+	margin: auto;
+	padding: 2px;
+	border: 1px solid #666;  
+}
+.menu-places-button {
+    padding-top: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;    
+}
+.menu-categories-box {
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;    
+}
+.menu-applications-box {
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;    
+}
+.menu-application-button {
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px; 
+    max-width: 10px;   
+}
+.menu-application-button:highlighted {
+    /* This style is used in menu application buttons for applications 
+     * which were newly installed */
+    font-weight: bold;
+}
+.menu-application-button-selected {
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    color: #E6E6E6;
+	border: 1px solid rgba(71,71,71,0.75);
+	background-color: rgba(41,41,41,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    transition-duration: 0;
+}
+.menu-application-button-selected:highlighted {
+    /* This style is used in menu application buttons for applications 
+     * which were newly installed */
+    font-weight: bold;
+}
+.menu-application-button-label:ltr { 
+	padding-left: 4px;
+}
+.menu-application-button-label:rtl { 
+	padding-right: 4px;
+}
+.menu-category-button {
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+}
+.menu-category-button-greyed {
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px; 
+    color: rgba(51,51,51,1);
+    font-style: italic;
+}
+.menu-category-button-selected {
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px; 
+    color: #E6E6E6;
+	border: 1px solid rgba(71,71,71,0.75);
+	background-color: rgba(41,41,41,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.menu-category-button-label:ltr { 
+    padding-left: 4px       
+}
+.menu-category-button-label:rtl { 
+    padding-right: 4px       
+}
+.menu-category-button-button:hover {    
+    border-radius: 4px 4px 4px 4px;    
+}
+/* Name and description of the currently hovered item in the menu
+ * This appears on the bottom right hand corner of the menu*/
+.menu-selected-app-box {
+    padding-right: 30px;
+    padding-left: 28px;
+    text-align: center;
+}
+.menu-selected-app-title {
+    font-weight: normal;
+}
+.menu-selected-app-description {
+    max-width: 369px;
+}
+.menu-search-box {
+	padding-left: 4px;
+}
+#menu-search-entry {
+    padding: 7px 14px;
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(41,41,41,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    selected-color: black;
+    caret-color: rgb(255, 255, 255);
+    caret-size: 1px;
+    width: 458px;
+    transition-duration: 0;
+}
+#menu-search-entry:focus,
+#menu-search-entry:hover {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(41,41,41,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+#menu-search-entry:hover {
+    transition-duration: 0;
+}
+#menu-search-entry:focus {
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+    transition-duration: 0;
+}
+.menu-search-entry-icon {
+    icon-size: 0.1em;
+    background-image: url("user-icon.svg");
+    color: #E6E6E6;
+}
+/* Context menu (at the moment only for favorites) */
+.menu-context-menu {
+}
+/* =====================================================================
+ * B-2              Window list (windowList.js)
+ * ===================================================================*/
+.window-list-box {
+    spacing: 1px;   
+    padding-top: 1px;   
+}
+.window-list-item-label {
+    font-weight: normal;
+    width: 15em;
+    min-width: 5px;
+}
+.window-list-item-box {
+    color: rgba(255,255,255,1.0);
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+    padding: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition-duration: 999;
+    width: 100px;
+}
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box:focus  {    
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(61,61,61,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+    transition-duration: 999;
+    width: 200px;
+}
+.window-list-item-box:hover  {
+	border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(41,41,41,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);   
+}
+.window-list-item-demands-attention {
+	border: 1px solid rgba(255,0,0,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.6);
+}
+/* =====================================================================
+ * B-3             Sound Applet (status/volume.js)
+ * ===================================================================*/
+.sound-button-container {
+    padding-right: 3px;
+    padding-left: 3px;
+}
+.sound-button {
+    width: 22px;
+    height: 13px;
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    padding: 5px;
+}
+.sound-button:hover {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.sound-button:active {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(51,51,51,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.sound-button StIcon {
+    icon-size: 1.4em;
+}
+.sound-track-infos {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.sound-track-info {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.sound-track-info StIcon {
+    icon-size: 1em;
+}
+.sound-track-info StLabel {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.sound-track-box {  
+    padding-left: 15px;
+    padding-right: 15px;  
+    max-width: 220px;
+}
+.sound-seek-box {
+	padding-left: 20px;
+}
+.sound-seek-box StLabel {
+	padding-top: 2px;
+}
+.sound-seek-box StIcon {
+	icon-size: 1em;
+}
+.sound-seek-slider {
+	width: 140px;
+} 
+.sound-volume-menu-item {
+    padding: .4em 1.75em;
+}
+.sound-volume-menu-item StIcon {
+    icon-size: 1.14em;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.sound-playback-control {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* =====================================================================
+ * B-4         Workspace Switcher applet (workspaceSwitcher.js)
+ * ===================================================================*/
+#workspaceSwitcher {
+    spacing: 3px;
+    padding: 3px;
+    }
+.workspace-button {
+    width: 20px;
+    height: 10px;   
+    color: rgba(200,200,200,1);
+    transition-duration: 500;
+    border: 1px;
+    border-color: rgba(200,200,200,1);
+    padding: 1px;
+    transition-duration: 500;
+}
+.workspace-button:outlined {
+    padding: 1px;    
+    background: rgba(200,200,200,1);
+    color: rgba(55,55,55,1);
+}
+/* Controls the style when using the "Visual representation" option */
+.workspace-graph {
+    padding: 3px;
+    spacing: 3px;
+}
+.workspace-graph .workspace {
+    border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.workspace-graph .workspace:active {
+    border: 1px solid rgba(169,169,169,0.9);
+	background-color: rgba(58,58,58,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.workspace-graph .workspace .windows {
+    -active-window-background: rgba(050,050,050,1);
+    -active-window-border: rgba(0,0,0,0.7);
+    -inactive-window-background: rgba(25,25,25,1);
+    -inactive-window-border: rgba(169,169,169,0.7);
+}
+.workspace-graph .workspace:active .windows {
+    -active-window-background: rgba(158,158,158,1);
+    -active-window-border: rgba(0,0,0,1);
+    -inactive-window-background: rgba(99,99,99,1);
+    -inactive-window-border: rgba(0,0,0,0.7);
+}
+/* =====================================================================
+ * B-5          Panel Launchers Applet (panelLaunchers.js)
+ * ===================================================================*/
+#panel-launchers-box {
+	border:1px solid transparent;
+	border-radius: 4px 4px 4px 4px;
+	spacing: 5px;    
+}
+.panel-launcher {
+	margin: 0px;
+	padding-top: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	border: 1px solid rgba(71,71,71,0);
+	background-color: rgba(51,51,51,0);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    margin: 2px;
+    padding: 0px;
+    color: #e6e6e6;
+}
+.panel-launcher:hover {
+    border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(31,31,31,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    border-bottom-width: 2px;
+    transition-duration: 666;
+}
+.panel-launcher-add-dialog-content-box {
+	padding: 5px;
+	spacing: 10px;
+}
+.panel-launcher-add-dialog-content-box-left {
+	padding: 5px;
+	spacing: 10px;
+}
+.panel-launcher-add-dialog-content-box-right {
+	padding: 5px;
+	spacing: 10px;
+}
+.panel-launcher-add-dialog-entry {
+    padding: 5px;
+    border: 1px solid rgba(71,71,71,0);
+	background-color: rgba(51,51,51,0);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    selected-color: black;
+    caret-color: rgb(128, 128, 128);
+    caret-size: 1px;
+    width: 250px;
+    transition-duration: 666;
+}
+.panel-launcher-add-dialog-entry:focus,
+.panel-launcher-add-dialog-entry:hover {
+    border: 1px solid rgba(91,91,91,0.9);
+	background-color: rgba(71,71,71,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.panel-launcher-add-dialog-entry:hover {
+    transition-duration: 666;
+}
+.panel-launcher-add-dialog-entry:focus {
+    color: rgb(64, 64, 64);
+    font-weight: normal;
+    border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    transition-duration: 666;
+}
+/* =====================================================================
+ * B-6                    Overview corner
+ * ===================================================================*/
+#overview-corner {
+	background-image: url("overview.svg");
+	transition-duration: 999;	
+}
+#overview-corner:hover {
+	background-image:  url("overview-hover.svg");
+    transition-duration: 999;
+}
+/* =====================================================================
+ * B-7                   Applets (applet.js) 
+ * ===================================================================*/
+.applet-separator {
+    padding: 2px 2px 2px 2px;
+}
+.applet-separator-line {
+    width: 1px;
+    background-gradient-start: rgb(#000000);
+    background-gradient-end: (#e6e6e6);
+}
+.applet-box {
+    padding-top: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+    color: #E6E6E6;
+    border: 1px solid rgba(71,71,71,0);
+	background-color: rgba(51,51,51,0);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0);
+}
+.applet-box:hover {
+	padding-top: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(31,31,31,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    color: #ff0000;
+    transition-duration: 0;
+}
+.applet-label { 
+    font-weight: normal;
+    color: #E6E6E6;        
+}
+.applet-label:hover,
+.applet-box:hover .applet-label {
+    color: #E6E6E6;
+}
+.applet-icon {
+    color: #E6E6E6;
+    icon-size: 22px;
+}
+.applet-icon:hover,
+.applet-box:hover .applet-icon {
+    color: #E6E6E6;
+    icon-shadow: #E6E6E6 0px 0px 3px;
+}
+/* ===================================================================== 
+ * B-8                        Workspace OSD
+ * ===================================================================*/
+.workspace-osd {
+	color: #E6E6E6;
+	text-shadow: black 5px 5px 5px;
+	font-weight: normal;
+	font-size: 27pt;	
+}
+.expo-workspaces-name-entry {
+	padding: 5px;
+	border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+	selected-color: black;
+	caret-color: rgb(128, 128, 128);
+	caret-size: 1px;
+	width: 250px;
+	height: 15px;	
+	box-shadow: inset 0px 2px 4px rgba(0,0,0,0.6);
+	text-align: center;	
+}
+.expo-workspaces-name-entry#selected {
+	border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(21,21,21,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.expo-workspaces-name-entry:focus {
+	color: rgb(64, 64, 64);
+	font-weight: normal;
+	transition-duration: 333;
+}
+/* =====================================================================
+ * B-9                   Notification Applet
+ * ===================================================================*/
+.notification-applet-padding {
+	padding: .5em 1em;
+}
+.notification-applet-container {
+	max-height: 100px;
+}
+/* Check Boxes */
+.check-box CinnamonGenericContainer {
+    spacing: .2em;
+    min-height: 30px;
+    padding-top: 2px;
+}
+.check-box StBin {
+    width: 24px;
+    height: 18px;
+    background-image: url("checkbox-off.svg");
+}
+.check-box:focus StBin {
+    background-image: url("checkbox-off-focused.svg");
+}
+.check-box:checked StBin {
+    background-image: url("checkbox.svg");
+}
+.check-box:focus:checked StBin {
+    background-image: url("checkbox-focused.svg");
+}
+.check-box StLabel {
+	font-weight: normal;
+}
+.radiobutton CinnamonGenericContainer {
+    spacing: .2em;
+    height: 26px;
+    padding-top: 2px;
+}
+.radiobutton StBin {
+    width: 22px;
+    height: 22px;
+    background-image: url("radiobutton-off.svg");
+    border-radius: 4px 4px 4px 4px;
+}
+.radiobutton:focus StBin {
+    background-image: url("radiobutton-off.svg");
+}
+.radiobutton:checked StBin {
+    background-image: url("radiobutton.svg");
+}
+.radiobutton:focus:checked StBin {
+    background-image: url("radiobutton.svg");
+}
+.radiobutton StLabel {
+	padding-top: 4px;
+	font-size: 0.9em;
+	box-shadow: none;
+}
+.flashspot {
+	background-color: #E6E6E6;
+}
+/* =====================================================================
+ * B-10          About Dialog (applet.js and desklet.js)
+ * ===================================================================*/
+ .about-content {
+    width: 300px;
+    height: 150px;
+    spacing: 8px;
+    padding-bottom: 16px;
+}
+.about-title {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+.about-uuid {
+    font-size: .8em;
+}
+.about-icon {
+    padding-right: 20px;
+}
+.about-scrollBox {
+    border: solid 1px grey;
+    border-radius: 4px 4px 4px 4px;
+}
+.about-scrollBox-innerBox {
+    padding: 1.2em;
+    spacing: 1.2em;
+}
+.about-description {
+    padding-top: 4px;
+}
+.about-version {
+    padding-left: 7px;
+}
+/* =====================================================================
+ * B-11                  Snap/Tile OSD Popup
+ * ===================================================================*/
+.snap-osd {
+    font-size: 18pt;
+    border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    color: #E6E6E6;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;    
+}
+/* Media keys OSD popup */
+.osd-window {
+    border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    padding: 20px;
+    color: #E6E6E6;
+    spacing: 1em;
+}
+.osd-window .level {
+    height: 0.7em;
+    border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.tile-preview,
+.tile-hud {
+    border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.tile-preview.snap,
+.tile-hud.snap {
+    border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.tile-hud:top {
+    border-top-width: 0px;
+    border-radius: 4px 4px 4px 4px;
+}
+.tile-hud:bottom {
+    border-bottom-width: 0px;
+    border-radius: 4px 4px 4px 4px;
+}
+.tile-hud:left {
+    border-left-width: 0px;
+    border-radius: 4px 4px 4px 4px;
+}
+.tile-hud:right {
+    border-right-width: 0px;
+    border-radius: 4px 4px 4px 4px;
+}
+.tile-hud:top-left {
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-radius: 4px 4px 4px 4px;
+}
+.tile-hud:top-right {
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-radius: 4px 4px 4px 4px;
+}
+.tile-hud:bottom-left {
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-radius: 4px 4px 4px 4px;
+}
+.tile-hud:bottom-right {
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-radius: 4px 4px 4px 4px;
+}
+/* <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+ * 						     Apps Section
+ * <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+ * =====================================================================
+ * C-1                 Windows Quick List applet
+ * ===================================================================*/
+.window-sticky {
+	color: #B0B0B0;
+	font-weight: bold;
+}
+.popup-menu-item:active .window-sticky {
+	color: #B0B0B0;
+	font-weight: bold;
+}
+/* =====================================================================
+ * C-2                        User Applet
+ * ===================================================================*/
+ .user-icon {  
+    padding: 1em;
+	border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.user-label {
+	color: #E6E6E6;
+  	font-size: 16px;
+    font-weight: bold;
+  	margin: 6px;
+  	padding-left: 5px;
+}
+/* =====================================================================
+ * C-3                          Slingshot
+   ===================================================================*/
+/* Use to override the '.popup-menu-content' selector */
+.slingshot {
+	padding: 0;
+}
+/* Separator */
+.slingshot .separator {
+    border-style: solid;
+    border: 1px;
+    border-color: #242424;
+    background-color: transparent;
+}
+/* Entry */
+.slingshot .entry {
+	caret-color: #E6E6E6;
+	caret-size: 2px;
+	width: 250px;
+	height: 15px;	
+	text-align: center; 
+    font-size: 10.5pt;
+    font-weight: bold;
+    background-color: #222222;
+    border:solid 1px #E6E6E6;
+    box-shadow: none;
+    border-radius: 4px 4px 4px 4px;
+	color: #424242;
+}
+.slingshot .entry:focus {
+    border: 1px solid rgba(71,71,71,1);
+	background-color: rgba(31,31,31,1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+    height: 25px;
+    font-weight: normal;
+    color: #E6E6E6;
+    font-size: 16px;
+    selected-color: #000000;
+    selected-background-color: #E6E6E6;
+    caret-color: #E6E6E6;
+    caret-size: 2px;
+}
+/* Paginator */
+.slingshot .button {
+	border-image: url("button.svg") 4;
+	background-gradient-direction: none;
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	border-radius: 4px 4px 4px 4px;
+	font-size: 8pt;
+	padding: 8px 0;
+	font-weight: normal;
+	color: #424242;
+}
+.slingshot .button:hover {
+	border-image: url("button-hover.svg") 4;
+	background-gradient-direction: none;
+	background-color: transparent;
+	font-size: 8pt;
+	font-weight: bold;
+	color: #000000;
+}
+.slingshot .button:active {
+	border-image: url("button-pressed.svg") 4;
+	background-gradient-direction: none;
+	background-color: transparent;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #E6E6E6;
+}
+.slingshot .button:checked {
+	border-image: url("button-focused.svg") 4;
+	background-gradient-direction: none;
+	background-color: transparent;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #E6E6E6;
+}
+.slingshot .button:hover:checked, .slingshot .button:hover:active {
+	background-gradient-direction: none;
+	background-color: transparent;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #E6E6E6;
+}
+/* Applications */
+.slingshot .button.app {
+	border-image: none;
+	border-width: 0;
+	font-size: 8pt;
+	padding: 0;
+}
+.slingshot .button.app:hover {
+	border-image: url("hover-3.svg") 4;
+	background-color: transparent;
+}
+.slingshot .button.app:focus {
+	border-image: url("hover.svg") 4;
+	background-color: transparent;
+}
+/* Categories */
+.slingshot .sidebar {
+	padding-left: 8px;
+	padding-right: 0;
+}
+.slingshot .sidebar .button {
+	border-image: none;
+	padding: 8px;
+	border-radius: 0;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 0;
+	border-left: 0;
+	border-color: transparent;
+	font-size: 8pt;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: #E6E6E6;
+	font-weight: bold;
+}
+.slingshot .sidebar .button:hover {
+	border-image: none;
+	padding: 8px;
+	font-size: 8pt;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border: 2px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+	font-weight: bold;
+	color: #424242;
+}
+.slingshot .sidebar .button:active, .slingshot .sidebar .button:hover:active {
+	border-image: none;
+	padding: 8px;
+	font-size: 8pt;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border: 2px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+	font-weight: bold;
+	color: #424242;
+}
+.slingshot .sidebar .button:checked {
+	border-image: none;
+	padding: 8px;
+	font-size: 8pt;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border: 2px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+	font-weight: bold;
+	color: #424242;
+}
+.slingshot .sidebar .button:hover:checked {
+	border-image: none;
+	padding: 8px;
+	font-size: 9pt;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+	font-weight: bold;
+	color: #424242;
+}
+/* Linked buttons */
+/* Middle button */
+.slingshot .linked .button {
+	border-image: url("linked-button-middle.svg") 4;
+	background-gradient-direction: none;
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	color: #ff0000;
+}
+.slingshot .linked .button:hover {
+	border-image: url("linked-button-middle-hover.svg") 4;
+}
+.slingshot .linked .button:active {
+	border-image: url("linked-button-middle-pressed.svg") 4;
+}
+.slingshot .linked .button:checked {
+	border-image: url("linked-button-middle-pressed.svg") 4;
+	color: #E6E6E6;
+}
+/* Leftmost button */
+.slingshot .linked .button:first-child {
+	border-image: url("linked-button-left.svg") 4;
+	background-gradient-direction: none;
+	background-color: transparent;
+	box-shadow: none;
+	border-radius: 0;
+	padding: 6px;
+	color: #E6E6E6;
+}
+.slingshot .linked .button:first-child:hover {
+	border-image: url("linked-button-left-hover.svg") 4;
+}
+.slingshot .linked .button:first-child:active {
+	border-image: url("linked-button-left-pressed.svg") 4;
+}
+.slingshot .linked .button:first-child:checked {
+	border-image: url("linked-button-left-checked.svg") 4;
+	color: #424242;
+}
+/* Rightmost button */
+.slingshot .linked .button:last-child {
+	border-image: url("linked-button-right.svg") 4;
+	background-gradient-direction: none;
+	background-color: transparent;
+	border-right-width: 0;
+	box-shadow: none;
+	border-radius: 0;
+	padding: 6px;
+	color: #E6E6E6;
+}
+.slingshot .linked .button:last-child:hover {
+	border-image: url("linked-button-right-hover.svg") 4;
+}
+.slingshot .linked .button:last-child:active, .slingshot .linked .button:last-child:active:hover {
+	border-image: url("linked-button-right-pressed.svg") 4;
+	border-right-width: 0;
+}
+.slingshot .linked .button:last-child:checked {
+	border-image: url("linked-button-right-checked.svg") 4;
+	color: #424242;
+}
+/* Linked single button */
+.slingshot .linked .button:only-child {
+	border-image: url("button.svg") 4;
+	background-gradient-direction: none;
+	background-color: transparent;
+	border-width: 0;
+	box-shadow: none;
+	border-radius: 0;
+	color: #E6E6E6;
+}
+.slingshot .linked .button:only-child:hover {
+	border-image: url("button-hover.svg") 4;
+}
+.slingshot .linked .button:only-child:active {
+	border-image: url("button-pressed.svg") 4;
+}
+.slingshot .linked .button:only-child:checked {
+	border-image: url("button-pressed.svg") 4;
+	color: #424242;
+}
+/* =====================================================================
+ * C-4                        Xcenter
+   ===================================================================*/
+/* Use to override the '.popup-menu-content' selector */
+.xCenter-menu .popup-menu-content {
+	padding: 0;
+	max-height: 500px;
+}
+.xCenter-menu .popup-menu-item {
+	padding: .4em 1.3em;
+}
+.xCenter-menu .popup-menu-item:hover {
+	border-image: url("hover-2.svg") 4;
+}
+.xCenter-mainBox StIcon {
+	color: #ff0000;
+	padding-bottom: 1px;
+}
+.xCenter-title {
+	border: 0 transparent;
+	border-bottom-width: 4px;
+	font-size: 8pt;
+	font-weight: bold;
+}
+.xCenter-pane {
+	border-image: url("separator-vertical.svg") 4;
+	padding: 7px 0;
+	padding-right: 1px;
+}
+.xCenter-pane:last-child {
+	border-image: none;
+	padding-right: 0;
+}
+.xCenter-menuItemLabel {
+	max-width: 12em;
+}
+/* =====================================================================
+ * C-5                        Stopwatch
+   ===================================================================*/
+.stopwatch-ready,
+.stopwatch-ready:hover,
+.stopwatch-running,
+.stopwatch-running:hover,
+.stopwatch-paused,
+.stopwatch-day-exceeded,
+.stopwatch-running-day-exceeded,
+.stopwatch-paused-day-exceeded {
+	background-color: transparent;
+	padding: 3px 5px;
+}
+/* Different images used in top & bottom panels */
+.panel-top .stopwatch-ready:hover {
+	border-image: url("panel-stopwatch-hover.svg") 4;
+	font-weight: bold;
+	color: #ff0000;
+}
+.panel-top .stopwatch-running {
+	border-image: url("panel-top-item-green.svg") 4;
+}
+.panel-top .stopwatch-running:hover {
+	border-image: url("panel-stopwatch-hover.svg") 4;
+}
+.panel-top .stopwatch-paused,
+.panel-top .stopwatch-paused:hover,
+.panel-top .stopwatch-day-exceeded,
+.panel-top .stopwatch-running-day-exceeded,
+.panel-top .stopwatch-paused-day-exceeded {
+	border-image: url("panel-top-item-red.svg") 4;
+}
+.panel-bottom .stopwatch-ready:hover {
+	border-image: url("panel-stopwatch-hover.svg") 4;
+}
+.panel-bottom .stopwatch-running {
+	border-image: url("panel-bottom-item-green.svg") 4;
+}
+.panel-bottom .stopwatch-running:hover {
+	border-image: url("panel-stopwatch-hover.svg") 4;
+}
+.panel-bottom .stopwatch-paused,
+.panel-bottom .stopwatch-paused:hover,
+.panel-bottom .stopwatch-day-exceeded,
+.panel-bottom .stopwatch-running-day-exceeded,
+.panel-bottom .stopwatch-paused-day-exceeded {
+	border-image: url("panel-bottom-item-red.svg") 4;
+}
+.stopwatch-ready * {
+	color: #424242;
+}
+.stopwatch-ready:hover * {
+	color: #E6E6E6;
+}
+/* =====================================================================
+ * C-6                 Desktop Capture applet
+   ===================================================================*/
+/* Panel icon */
+StBoxLayout.applet-box.desktop-capture StBin {
+	min-width: 22px;
+}
+/* Display of preview image in notifications */
+.screenshot-thumbnail {
+	border-image: url("dark-bg-2.svg") 4;
+	border: 0;
+	padding: 4px;
+}
+.screenshot-thumbnail-hover {
+	border-image: url("hover.svg") 3;
+}
+/* Window capture mode */
+.capture-outline-background {
+	background-color: rgba(127,127,127,0.4);
+}
+.capture-outline-frame {
+	border: 0;
+	border-radius: 0;
+}
+.capture-outline-frame.desktop {
+	border: none;
+}
+/* App icon (window capture mode) */
+.overlay-icon {
+	padding: 5px;
+	border: 0;
+	width: 32px;
+	height: 32px;
+	box-shadow: none;
+	icon-shadow: #E6E6E6 0 0 0;
+}
+.overlay-label-title {
+	padding-top: 5px;
+	color: #E6E6E6;
+	text-shadow: 0 0 0 transparent;
+	font-weight: bold;
+	text-align: center;
+}
+.overlay-label-size {
+	color: #E6E6E6;
+	text-shadow: 0 0 0 transparent;
+	text-align: center;
+	vertical-align: top;
+	font-family: Droid Sans, Sans-Serif;
+	font-size: 10pt;
+	font-weight: bold;
+	clear: both;
+}
+.capture-countdown-timer {
+	border-image: url("popup.svg") 4;
+	width: 50px;
+	padding: 14px 12px;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	color: #E6E6E6;
+}
+/* Dashed border in area selection */
+.border-h, .border-v {
+	border-image: none;
+	background-color: #E6E6E6;
+}
+.handle {
+	border: 1px solid #424242;
+	background-color: rgba(127,127,127,0.7);
+}
+.area-selection {
+	background-color: rgba(44,44,44,0.5);
+	border: 1px solid #424242;
+}
+/* Desktop overlay */
+.cover {
+	background-color: rgba(0,0,0,0.65);
+}
+/* Instructions dialog */
+.instructions-container {
+	border-image: url("popup-2.svg") 4;
+}
+.instructions-label-header {
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+	color: #424242;
+	text-shadow: 0 0 transparent;
+}
+.instructions-label-text {
+	color: #E6E6E6;
+	text-align: center;
+	font-size: 22px;
+	text-shadow: 0 0 transparent;
+}
+.menuitem-detail {
+	color: #E6E6E6;
+}
+.popup-menu-item:active .menuitem-detail {
+	color: #424242;
+}
+/* =====================================================================
+ * C-7                   Color Picker applet
+   ===================================================================*/
+.color-inspector {
+	padding: 6px 14px 10px 8px;
+	border-image: none;
+	border: 0;
+	spacing: 10px;
+	background-color: transparent;
+}
+.color-entry {
+	min-width: 150px;
+	border-radius: 0;
+	border-color: #E6E6E6;
+}
+.color-spectrum {
+	min-width: 14px;
+	min-height: 100px;
+	padding: 0 4px 4px 4px;
+	background-color: #000;
+}
+.color-gradient {
+	padding: 4px 4px 4px 4px;
+	min-width: 100px;
+	min-height: 100px;
+	background-color: #000000;
+	border: 1px;
+	border-color: #E6E6E6;
+}
+.color-cursor {
+	width: 16px;
+	height: 16px;
+}
+.color-palette {
+	padding: 10px 10px;
+	border: 0px;
+	border-color: none;
+	background-color: #222222;
+}
+.color-button .color-button-box {
+	border-radius: 4px 4px 4px 4px;
+	background-color: #ff0000;
+}
+.color-button {
+	border-color: #ff0000;
+	border: 0;
+}
+.color-button:disabled {
+	border-color: #555;
+	border: 1px solid #999999;
+	border-radius: 4px 4px 4px 4px;
+	background-color: #444;
+}
+.color-button:hover {
+	border-color: #E6E6E6;
+	border: 2px solid #000000;
+	border-radius: 4px 4px 4px 4px;
+}
+.icon-button {
+	padding: 2px;
+	border-radius: 4px 4px 4px 4px;
+}
+.popup-scale-menu-item {
+	border-image: none;
+}
+/* =====================================================================
+ * C-8                    Sticky Notes desklet
+   ===================================================================*/
+#sticky-scrollview StScrollBar {
+	padding: 0;
+	padding-left: 6px;
+}
+.sticky-button {
+	height: 24px;
+	width: 24px;
+}
+.sticky-button-selected {
+	border-image: none;
+	height: 24px;
+	width: 24px;
+}
+.sticky-button-selected * {
+	color: #E6E6E6;
+}
+.sticky-button-box {
+	padding: 0;
+	padding-top: 4px;
+	height: 24px;
+}
+.sticky-main-box-staples {
+	border-image: url("popup.svg") 4;
+	background-color: transparent;
+	border-radius: 0;
+	text-shadow: none;
+	min-width: 210px;
+	padding: 4px 10px;
+	padding-top: 0;
+	font-weight: bold;
+	color: #E6E6E6;
+}
+.sticky-main-box-none {
+	border-image: url("popup.svg") 4;
+	background-color: transparent;
+	border-radius: 0;
+	text-shadow: none;
+	min-width: 210px;
+	padding: 4px 10px;
+	padding-top: 0;
+	font-weight: bold;
+	color: #E6E6E6;
+}
+.sticky-top-box {
+	font-weight: bold;
+	color: red;
+}
+.sticky-bottom-box {
+	font-weight: bold;
+	color: #E6E6E6;
+}
+.sticky-title-label {
+	padding: 0 4px 0 4px;
+	max-width: 100px;
+	text-align: center;
+}
+.sticky-information-label {
+	padding: 0 4px 0 4px;
+}
+.sticky-text-box {
+	background-gradient-direction: vertical;
+	background-gradient-start: transparent;
+	background-gradient-end: transparent;
+	border: 0;
+	border-width: 0;
+	box-shadow: none;
+	border-radius: 0;
+	border-image: url("entry.svg") 4;
+	padding: 4px 8px 3px 8px;
+	font-size: 10pt;
+	font-weight: normal;
+	color: #E6E6E6;
+	padding: 6px;
+}
+.sticky-text-box:focus, .sticky-text-box:active, .sticky-text-box:pressed {
+	border-image: url("entry-focused.svg") 4;
+	font-weight: bold;
+	color: #E6E6E6;
+	caret-color: #E6E6E6;
+	caret-size: 1px;
+	selected-color: #000;
+	selection-background-color: #E6E6E6;
+}
+.sticky-text-box StIcon {
+	color: #ff0000;
+}
+.sticky-text-box:focus > StIcon,
+.sticky-text-box:active > StIcon,
+.sticky-text-box:pressed > StIcon {
+	color: #E6E6E6;
+}
+.sticky-text-box:active {
+	background-gradient-direction: vertical;
+	background-gradient-start: transparent;
+	background-gradient-end: #E6E6E6;
+	border: 0;
+	border-width: 0;
+	box-shadow: none;
+	border-radius: 0;
+	padding: 6px;
+}
+.sticky-text-box StEntry {
+	border-image: none;
+}
+#sticky-note-entry {
+	color: #424242;
+	selected-color: #000;
+	caret-color: #E6E6E6;
+	caret-size: 1px;
+	selection-background-color: #E6E6E6;
+}
+/* =====================================================================
+ * C-9                        Reddit reader
+   ===================================================================*/
+.reddit-reader {
+	border-image: url("popup.svg") 4;
+	padding: 4px;
+	color: #E6E6E6;
+}
+.reddit-reader StScrollBar {
+	padding: 3px 5px 8px 3px;
+}
+/* Title */
+.reddit-title-bar {
+	border-image: url("entry.svg") 4;
+	padding: 10px;
+	font-size: 10pt;
+	font-weight: bold;
+}
+.reddit-header-icon {
+	padding-right: 6px;
+	icon-size: 16px;
+	color: #ff0000;
+}
+.reddit-title {
+	padding-right: 6px;
+	font-size: 14pt;
+	color: #424242;
+}
+.reddit-subtitle {
+	color: #E6E6E6;
+	font-size: 10pt;
+}
+/* Posts */
+.reddit-posts-box {
+	spacing: 2px;
+	padding: 2px 0px 8px 0px;
+}
+.reddit-post {
+	border-image: url("dark-bg-top.svg") 4;
+	padding: 10px;
+	color: #E6E6E6;
+	font-size: 8pt;
+}
+.reddit-info-box {
+	border-image: url("dark-bg-bottom.svg") 4;
+	padding: 10px;
+	spacing: 10px;
+	font-size: 7pt;
+	color: #424242;
+}
+/* =====================================================================
+ * C-10                       Calculator
+   ===================================================================*/
+.calc-mainBox {
+	padding: 1;
+}
+.calc-displayArea {
+	padding: 1;
+}
+.calc-displayWindow {
+	border-image: url("entry-focused.svg") 7;
+	padding: 8px;
+	padding-top: 4px;
+	padding-bottom: 2.4em;
+}
+.calc-displayWindow-rpn {
+	border-image: url("entry-focused.svg") 7;
+	padding: 8px;
+	padding-top: 4px;
+}
+.calc-displayText-primary {
+	font-size: 26pt;
+	color: #E6E6E6;
+	text-align: right;
+}
+.calc-displayText-secondary {
+	font-size: 10pt;
+	color: #ff5000;
+	text-align: right;
+	padding-bottom: 8px;
+}
+.calc-displayText-operation {
+	color: #00ff00;
+}
+.calc-displayText-status {
+	font-size: 10pt;
+	color: #ff0000;
+}
+.calc-displayText-rpn {
+	color: #E6E6E6;
+	font-size: 12pt;
+}
+.calc-stackArea {
+	height: 85px;
+	padding-top: .8em;
+	padding-bottom: 0;
+}
+.calc-navigation-box {
+	padding: 0 0 0 8px;
+	width: 16px;
+	border: none;
+}
+.calc-navigation-icon {
+	color: #222;
+	icon-size: 16px;
+}
+.calc-navigation-button {
+	border: none;
+}
+.calc-navigation-button:hover .calc-navigation-icon {
+	color: #E6E6E6;
+}
+.calc-button {
+	background-color: transparent;
+	background-gradient-direction: none;
+	background-gradient-start: transparent;
+	background-gradient-end: transparent;
+	box-shadow: none;
+	border: none;
+	border-width: 0;
+	border-radius: 0;
+	font-weight: bold;
+	font-size: 9pt;
+	border-image: url("button-primary.svg") 10;
+	color: #E6E6E6;
+	width: 3.8em;
+	height: 3em;
+}
+.calc-button:grayed, .calc-button:disabled, .calc-button:insensitive {
+	border-image: url("button-insensitive.svg") 10;
+	color: rgba(255, 255, 255, 0.15);
+}
+.calc-button:grayed StIcon, .calc-button:disabled StIcon, .calc-button:insensitive StIcon {
+	color: #444;
+}
+.calc-button > StIcon {
+	width: 16px;
+	height: 16px;
+	icon-size: 16px;
+}
+.calc-button:hover {
+	border-image: url("hover.svg") 10;
+}
+.calc-button:active, .calc-button:pressed {
+	border-image: url("button-focused-pressed.svg") 10;
+}
+.calc-button:focus {
+	border-image: url("button-focused.svg") 10;
+	color: #E6E6E6;
+}
+.calc-button:focus:hover {
+	border-image: url("button-focused.svg") 10;
+}
+.calc-button:focus:active, .calc-button:focus:pressed {
+	border-image: url("button-focused.svg") 10;
+}
+.calc-button > StIcon {
+	color: #E6E6E6;
+}
+.calc-button:hover > StIcon,
+.calc-button:active > StIcon,
+.calc-button:pressed > StIcon {
+	color: #E6E6E6;
+}
+.calc-button:focus > StIcon,
+.calc-button:focus:hover > StIcon,
+.calc-button:focus:active > StIcon,
+.calc-button:focus:pressed > StIcon {
+	color: #E6E6E6;
+}
+.calc-button-padding {
+	padding: .1em;
+}
+/* =====================================================================
+ * C-11                         G-tile
+   ===================================================================*/
+.grid-panel {
+	border-image: url("popup.svg") 7;
+	width: 220px;
+	padding: 4px;
+	spacing: 0;
+}
+.grid-title {
+	padding: 4px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #E6E6E6;
+	text-align: center;
+}
+.table {
+	padding: 6px;
+}
+.table-element {
+	border-image: url("grey-bg+padding.svg") 7;
+}
+.table-element:hover, .table-element:activate {
+	border-image: url("active-bg.svg") 7;
+}
+.top-box {
+	border-image: url("sub.svg") 7;
+	padding: 8px;
+	padding-bottom: 12px;
+}
+.bottom-box {
+	padding: 0 8px;
+}
+.bottom-box:last-child {
+	padding: 8px;
+	padding-top: 2px;
+}
+.very-bottom-box {
+	padding: 0;
+}
+.grid-preview {
+	background-color: transparent;
+	border-color: transparent;
+}
+.grid-preview:activate {
+	background-color: rgba(127, 127, 127, 0.5);
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	border-radius: 4px 4px 4px 4px;
+}
+	/* buttons */
+.settings-button {
+	border-image: url("button.svg") 7;
+	padding: 3px;
+	width: 46px;
+	height: 34px;
+	color: #E6E6E6;
+}
+.settings-button:activate {
+	border-image: url("button-focused-pressed.svg") 7;
+	color: #E6E6E6;
+}
+.settings-button:activate:hover {
+	border-image: url("button-focused-pressed.svg") 7;
+	color: #E6E6E6;
+}
+.settings-button:hover {
+	border-image: url("button-hover.svg") 7;
+	color: #E6E6E6;
+}
+.close-button {
+	background-image: url("auto-close.svg") 7;
+	width: 24px;
+	height: 24px;
+}
+.close-button:hover {
+	background-image: url("auto-close.svg") 7;
+}
+/* button-icons */
+.tiling-icon {
+	width: 24px;
+	height: 24px;
+}
+.animation-icon {
+	background-image: url("animation.svg") 7;
+	width: 24px;
+	height: 24px;
+}
+.auto-close-icon {
+	background-image: url("auto-close.svg") 7;
+	width: 24px;
+	height: 24px;
+}
+.action-main-list {
+	background-image: url("auto-tile-1.svg") 7;
+	width: 24px;
+	height: 24px;
+}
+.action-two-list {
+	background-image: url("auto-tile-2.svg") 7;
+	width: 24px;
+	height: 24px;
+}
+.action-scale {
+	width: 24px;
+	height: 24px;
+}
+/* =====================================================================
+ * C-12                    Weather applet
+   ===================================================================*/
+/* Use to override the '.popup-menu-content' selector. */
+.weather-menu .popup-menu-content {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+/* Current */
+.current {
+	padding: 2px 10px;
+}
+.weather-current-location-link {
+	font-size: 14pt;
+	color: #E6E6E6;
+}
+.weather-current-location-link:selected, .weather-current-location-link:hover {
+	background-gradient-direction: vertical;
+	background-gradient-start: transparent;
+	background-gradient-end: transparent;
+	color: #00ff00;
+	text-decoration: underline;
+}
+.weather-current-summarybox {
+	padding: 0;
+	spacing: .1em;
+}
+.weather-current-summary {
+	font-size: 35px;
+	color: #00ff00;
+}
+.weather-current-iconbox {
+	padding: .2em 1em 1em 1em;
+}
+.weather-current-icon {
+	padding: 15px 30px 15px 10px;
+	color: #ff5000;
+}
+.weather-current-databox {
+	padding-top: 15px;
+	padding-bottom: .4em;
+	padding-left: 30px;
+	font-size: 8pt;
+	spacing: .2em;
+}
+.weather-current-databox > * {
+	spacing: .2em;
+}
+.weather-current-databox-captions {
+	color: #E6E6E6;
+	text-align: right;
+}
+.weather-current-databox-values {
+	color: #424242;
+}
+.weather-current-astronomy {
+	color: #424242;
+	font-size: 9pt;
+}
+/* Forecast */
+.forecast {
+  /* ! */
+}
+.weather-forecast-icon {
+	padding: 10px 10px 0 30px;
+	color: #8C8C8C;
+}
+.weather-forecast-databox {
+	padding: 14px 30px 0 0;
+	spacing: .2em;
+}
+.weather-forecast-databox > *:last-child {
+	color: #ff0000;
+	font-size: 9pt;
+	font-weight: bold;
+}
+.weather-forecast-day {
+	color: #E6E6E6;
+	font-size: 10pt;
+	font-weight: bold;
+}
+/* =====================================================================
+ * C-13                  Snap/Tile OSD Popup
+ * ===================================================================*/
+.snap-osd {
+	font-size: 18pt;
+	padding: 10px;
+	text-align: center;     
+	color: #E6E6E6;
+	border:6px solid #242424;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: none;
+	background-color: #707070;
+	/*background-image: url('popup-logo.png');*/
+	border-top: 2px;
+	border-bottom: 2px;
+}
+/* =====================================================================
+ * C-14                   TimeAndDate desklet
+ * ===================================================================*/
+.clock-container{
+	padding: 15px; 
+	color: #424242;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0);
+}
+.time-container{
+}
+.date-container{
+    color: #E6E6E6;
+}
+.clock-date-label{
+}
+/*======================================================================
+ * C-15            soundBox desklet (Mint theme)
+ * ===================================================================*/
+.mint-mainBox {
+	padding: 10px 0px 5px 0px;
+	border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+	border-top: 2px;
+	border-bottom: 2px;
+	color: #424242;
+}
+.mint-buttonMenu {
+	color: #E6E6E6;
+    padding: 7px;
+	border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(61,61,61,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.mint-buttonMenu:hover {
+	border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(81,81,81,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.mint-buttonMenu:active {
+	border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(31,31,31,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.mint-divider {
+    background-color: #ff0000;
+    -margin-horizontal: 14px;
+    height: 1px;
+}
+.mint-divider-box {
+    color: #ff0000;
+    padding: 10px 30px 10px 30px;
+}
+.mint-text,
+.mint-buttonText,
+.mint-appTitle,
+.mint-playerTitleText,
+.mint-trackInfo-text {
+    color: #ff0000;
+}
+.mint-volumeBox {
+    padding: 5px 5px 5px 5px;
+}
+.mint-volumeButton {
+    padding: 2px 3px 2px 3px;
+}
+.mint-volumeIcon {
+    icon-size: 16px;
+    color: #E6E6E6;
+}
+.mint-slider {
+	height: 1em;
+	min-width: 165px;
+	-slider-active-height: 0.3em;
+	-slider-handle-color: #E6E6E6;
+	-slider-handle-border-color: #E6E6E6;
+	-slider-height: 0.3em;
+	-slider-background-color: #121212;
+	-slider-border-color: #9E9E9E;
+	-slider-active-background-color: #E6E6E6;
+	-slider-active-border-color: #9E9E9E;
+	-slider-border-width: 1px;
+	-slider-handle-radius: 0.5em;
+}
+.mint-appIcon {
+    icon-size: 20px;
+    padding: 0px 4px 4px 4px;
+}
+.mint-appTitleBox {
+    padding: 0px 0px 2px 0px;
+}
+.mint-titleBar {
+    color: #E6E6E6;
+    background-color: rgba(127, 127, 127,0.2);
+    background-gradient-direction: none;
+    padding: 2px 0px 2px 0px;
+}
+.mint-playerIcon {
+    icon_size: 16px;
+    width: 16px;
+}
+.mint-trackInfoBox {
+    padding: 5px 0px 5px 0px;
+    margin-top: 5px;
+    width: 200px;
+}
+.mint-trackInfo {
+    padding: 3px 0px 5px 0px;
+}
+.mint-trackInfo-icon {
+    icon-size: 1em;
+    color: #E6E6E6;
+}
+.mint-albumCover {
+    border: 0px;
+    icon_size: 200px;
+    width: 200px;
+    height: 200px;
+}
+.mint-buttonBox {
+    padding: 5px 5px 5px 5px;
+}
+.mint-soundButton-box {
+    padding-right: 3px;
+    padding-left: 3px;
+}
+.mint-soundButton {
+	width: 30px;
+	height: 20px;
+	padding: 5px;
+	border:2px solid #808080;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: none;
+	background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,0,0,0.7);
+    background-gradient-end: rgba(0,0,0,0.4);
+}
+.mint-soundButton:hover {
+	border:2px solid #808080;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: none;
+	background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,0,0,0.7);
+    background-gradient-end: rgba(0,0,0,0.4);
+}
+.mint-soundButton:active {
+	border:2px solid #404040;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: none;
+	background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,0,0,0.7);
+    background-gradient-end: rgba(0,0,0,0.4);
+}
+.mint-soundButton-icon {
+    icon-size: 16px;
+    color: #E6E6E6;
+}
+#mint-popup-menuitem {
+    text-mint: 0px 0px 0px 0px;
+    color: #E6E6E6;
+    padding: .4em 1em;
+    spacing: 1em;
+	border:2px;
+}
+#mint-popup-menuitem:active {
+    box-mint: 0px 0px 0px 0px;
+    text-mint: 0px 0px 0px 0px;
+    color: #E6E6E6;
+	border:2px solid #404040;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: none;
+	background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,0,0,0.7);
+    background-gradient-end: rgba(0,0,0,0.4);
+}
+#Tooltip.mint-tooltip {
+    padding: 4px 12px;
+    color: #E6E6E6;
+    font-size: 8pt;
+    font-weight: normal;    
+    text-align: center;
+}
+#mint-popup {}
+#mint-popup-boxPointer {
+
+}
+/*compact*/
+.mint-mainBox:compact {
+    padding: 0px 0px 0px 0px;
+}
+.mint-buttonMenu:compact {
+    padding: 2px 4px 2px 4px;
+}
+.mint-divider:compact {
+    background-color: #000000;
+    height: 0px;
+}
+.mint-divider-box:compact {
+    padding: 0px;
+}
+.mint-volumeButton:compact {
+    padding: 0px 2px 2px 2px;
+}
+.mint-volumeIcon:compact {
+    icon-size: 14px;
+}
+.mint-appIcon:compact {
+    icon-size: 1em;
+}
+.mint-titleBar:compact {
+    padding: 0px;
+}
+.mint-trackInfoBox:compact {
+    padding: 0px;
+}
+.mint-trackInfo:compact {
+    padding: 0px;
+}
+.mint-trackInfo-icon:compact {
+    icon-size: 1em;
+}
+.mint-buttonBox:compact{
+    padding: 0px;
+}
+.mint-soundButton:compact {
+    height: 14px;
+    width: 16px;
+}
+.mint-soundButton-box:compact {
+    padding: 2px;
+}
+/* =====================================================================
+ * C-16				Network Data Usage Monitor applet
+ * ===================================================================*/
+ /* These settings govern the width of the Applet and the space taken by 
+  * the font.*/
+.numa-left {
+    padding-top: 2px;
+    padding-right: 1px;
+    padding-left: 2px;
+    border-style: solid;
+    border-top: 4px;
+    border-right: 14px;
+    border-bottom: 14px;
+    border-left: 4px;
+    background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+	text-align: center;
+    min-height: 16px;
+	min-width: 75px;
+    color: #E6E6E6;
+	font-weight: bold;
+	/*font-size: 95%;*/
+}
+.numa-right {
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-left: 1px;
+    border-style: solid;
+    border-top: 4px;
+    border-right: 14px;
+    border-bottom: 14px;
+    border-left: 4px;
+    background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+	text-align: center;
+    min-height: 16px;
+	min-width: 1px;
+    color: #424242;
+	font-weight: bold;
+	/*font-size: 95%;*/
+}
+/* The following are the styles for the Applet backgrounds - names are 
+ * self explanitory 
+	The colour parameters are rgba or a name */
+.numa-not-connected {
+	background-color: rgba(0,0,0,0.0);
+ 	border-radius: 0px;
+}
+.numa-connected {
+	background-color: rgba(0,0,0,0);
+    color: #00ff00;
+    font-weight: bold;
+	border-radius: 0px;
+}
+.numa-alert {
+    color: #FF0000;
+	border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(51,51,51,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}
+.numa-limit-exceeded {
+    color: #ff0000;
+	border: 1px solid rgba(71,71,71,0.9);
+	background-color: rgba(21,21,21,0.9);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset 2px 1px 0px 0px rgba(0,0,0,0.4);
+}

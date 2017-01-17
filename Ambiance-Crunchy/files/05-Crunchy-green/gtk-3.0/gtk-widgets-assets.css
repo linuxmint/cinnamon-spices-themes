@@ -1,0 +1,431 @@
+/*************************
+ * Check and Radio items *
+ *************************/
+
+.check,
+.radio,
+.check:insensitive,
+.radio:insensitive {
+
+    background-color: transparent;
+    border-style: none;
+    margin: 1px 0;
+}
+
+GtkCheckButton:hover,
+GtkCheckButton:active:hover,
+GtkCheckButton:selected,
+GtkCheckButton:selected:focus {
+    background-color: transparent;
+}
+
+.menu .radio * {
+    box-shadow: none;
+}
+
+
+.check,
+.check:insensitive,
+.check row,
+.check row:selected,
+.check row:selected:focus,
+.check:backdrop,
+.check:insensitive:backdrop,
+.check row:backdrop,
+.check row:selected:backdrop,
+.check:hover:backdrop,
+.check row:hover:backdrop,
+.check row:selected:hover:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@button_bg_color, 0.97)),
+                                     to (shade (@button_bg_color,1.04)));
+    border-style: solid;
+    border-radius: 1px;
+    border-width: 1px;
+    margin: 1px 1px;
+}
+
+.check:hover,
+.check row:hover,
+.check row:selected:hover,
+.check row:selected:focus:hover {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@selected_bg_color, 1.40)),
+                                     to (shade (@selected_bg_color, 1.32)));
+}
+
+.check row:insensitive,
+.check row:selected:insensitive,
+.check row:selected:focus:insensitive,
+.check row:selected:insensitive:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@base_color, 0.97)),
+                                     to (@base_color));
+}
+
+.check:active {
+    background-image: url("assets/check-.png");
+}
+
+.check:active:hover {
+    background-image: url("assets/check-hover.png");
+}
+
+.check row:active,
+.check row:selected:active,
+.check row:selected:focus:active {
+    background-image: url("assets/check-.png");
+}
+
+.check:active:insensitive {
+    background-image: url("assets/check-disabled.png");
+}
+
+.check row:active:insensitive,
+.check row:selected:active:insensitive,
+.check row:selected:focus:active:insensitive {
+    background-image: url("assets/check-disabled.png");
+}
+
+.check:active:backdrop {
+    background-image: url("assets/check-backdrop.png");
+}
+
+.check row:active:backdrop,
+.check row:selected:active:backdrop {
+    background-image: url("assets/check-backdrop.png");
+}
+
+.check row:active:hover:backdrop,
+.check row:selected:active:hover:backdrop {
+    background-image: url("assets/check-backdrop.png");
+}
+
+.check:active:insensitive:backdrop {
+    background-image: url("assets/check-disabled.png");
+}
+
+.check row:selected:active:insensitive:backdrop {
+    background-image: url("assets/check-disabled.png");
+}
+
+.check:inconsistent {
+    background-image: url("assets/check_mixed-.png");
+}
+
+.check:inconsistent:hover {
+    background-image: url("assets/check_mixed-hover.png");
+}
+
+.check row:inconsistent,
+.check row:selected:inconsistent,
+.check row:selected:focus:inconsistent {
+    background-image: url("assets/check_mixed-.png");
+}
+
+.check row:inconsistent:hover,
+.check row:selected:inconsistent:hover,
+.check row:selected:focus:inconsistent:hover {
+    background-image: url("assets/check_mixed-hover.png");
+}
+
+.check:inconsistent:insensitive {
+    background-image: url("assets/check_mixed-disabled.png");
+}
+
+.check row:inconsistent:insensitive,
+.check row:selected:inconsistent:insensitive,
+.check row:selected:focus:inconsistent:insensitive {
+    background-image: url("assets/check_mixed-disabled.png");
+}
+
+.check:inconsistent:backdrop {
+    background-image: url("assets/check_mixed-backdrop.png");
+}
+
+.check:inconsistent:hover:backdrop {
+    background-image: url("assets/check_mixed-backdrop.png");
+}
+
+.check row:inconsistent:backdrop,
+.check row:selected:inconsistent:backdrop {
+    background-image: url("assets/check_mixed-backdrop.png");
+}
+
+.check row:inconsistent:hover:backdrop,
+.check row:selected:inconsistent:hover:backdrop {
+    background-image: url("assets/check_mixed-backdrop.png");
+}
+
+.check:inconsistent:insensitive:backdrop {
+    background-image: url("assets/check_mixed-disabled.png");
+}
+
+.check row:selected:inconsistent:insensitive:backdrop {
+    background-image: url("assets/check_mixed-disabled.png");
+}
+
+.radio,
+.radio row,
+.radio row:selected,
+.radio row:selected:focus,
+.radio:insensitive,
+.radio row:insensitive,
+.radio row:insensitive,
+.radio row:selected:insensitive,
+.radio row:selected:focus:insensitive,
+.radio:backdrop,
+.radio:hover:backdrop,
+.radio row:backdrop,
+.radio row:selected:backdrop,
+.radio row:hover:backdrop,
+.radio row:selected:hover:backdrop,
+.radio:insensitive:backdrop,
+.radio row:selected:insensitive:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@button_bg_color, 0.97)),
+                                     to (shade (@button_bg_color,1.04)));
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    margin: 1px 1px;
+}
+
+.radio:hover,
+.radio row:hover,
+.radio row:selected:hover,
+.radio row:selected:focus:hover {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@selected_bg_color, 1.40)),
+                                     to (shade (@selected_bg_color, 1.32)));
+}
+
+.radio:active {
+    background-image: url("assets/radio-.png");
+}
+
+.radio:active:hover {
+    background-image: url("assets/radio-hover.png");
+}
+
+.radio row:active,
+.radio row:selected:active,
+.radio row:selected:focus:active {
+    background-image: url("assets/radio-.png");
+
+    border-radius: 0px;
+}
+
+.radio row:active:hover,
+.radio row:selected:active:hover,
+.radio row:selected:focus:active:hover {
+    background-image: url("assets/radio-hover.png");
+}
+
+.radio:active:insensitive {
+    background-image: url("assets/radio-disabled.png");
+}
+
+.radio row:insensitive,
+.radio row:selected:active:insensitive,
+.radio row:selected:focus:active:insensitive {
+    background-image: url("assets/radio-disabled.png");
+}
+
+.radio:active:backdrop {
+    background-image: url("assets/radio-backdrop.png");
+}
+
+.radio:active:hover:backdrop {
+    background-image: url("assets/radio-backdrop.png");
+}
+
+.radio row:active:backdrop,
+.radio row:selected:active:backdrop {
+    background-image: url("assets/radio-backdrop.png");
+}
+
+.radio row:active:hover:backdrop,
+.radio row:selected:active:hover:backdrop {
+    background-image: url("assets/radio-backdrop.png");
+}
+
+.radio:active:insensitive:backdrop {
+    background-image: url("assets/radio-disabled.png");
+}
+
+.radio row:selected:active:insensitive:backdrop {
+    background-image: url("assets/radio-disabled.png");
+}
+
+.radio:inconsistent {
+    background-image: url("assets/radio_mixed-.png");
+}
+
+.radio:inconsistent:hover {
+    background-image: url("assets/radio_mixed-hover.png");
+}
+
+.radio row:inconsistent,
+.radio row:selected:inconsistent,
+.radio row:selected:focus:inconsistent {
+    background-image: url("assets/radio_mixed-.png");
+}
+
+.radio row:inconsistent:hover,
+.radio row:selected:inconsistent:hover,
+.radio row:selected:focus:inconsistent:hover {
+    background-image: url("assets/radio_mixed-hover.png");
+}
+
+.radio:inconsistent:insensitive {
+    background-image: url("assets/radio_mixed-disabled.png");
+}
+
+.radio row:inconsistent:insensitive,
+.radio row:selected:inconsistent:insensitive,
+.radio row:selected:focus:inconsistent:insensitive {
+    background-image: url("assets/radio_mixed-disabled.png");
+}
+
+.radio:inconsistent:backdrop {
+    background-image: url("assets/radio_mixed-backdrop.png");
+}
+
+.radio:inconsistent:hover:backdrop {
+    background-image: url("assets/radio_mixed-backdrop.png");
+}
+
+.radio row:inconsistent:backdrop,
+.radio row:selected:inconsistent:backdrop {
+    background-image: url("assets/radio_mixed-backdrop.png");
+}
+
+.radio row:inconsistent:hover:backdrop,
+.radio row:selected:inconsistent:hover:backdrop {
+    background-image: url("assets/radio_mixed-backdrop.png");
+}
+
+.radio:inconsistent:insensitive:backdrop {
+    background-image: url("assets/radio_mixed-disabled.png");
+}
+
+.radio row:selected:inconsistent:insensitive:backdrop {
+    background-image: url("assets/radio_mixed-disabled.png");
+}
+
+.primary-toolbar .menu .check,
+.menubar.toolbar .menu .check,
+.header-bar .menu .check,
+.menu .check {
+    background-image: none;
+}
+
+.primary-toolbar .menu .radio,
+.menubar.toolbar .menu .radio,
+.header-bar .menu .radio,
+.menu .radio {
+    background-image: none;
+}
+
+.menubar.toolbar .menu .check:active,
+.header-bar .menu .check:active,
+.toolbar .menu .check:active:hover,
+.menu .check:active,
+.menu .check:active:hover,
+.primary-toolbar .menu .check:active,
+.toolbar .menu .check:active:hover,
+.menu .check:active,
+.menu .check:active:hover {
+    background-image: url("assets/check_menuitem.png");
+}
+
+.menubar.toolbar .menu .radio:active,
+.header-bar .menu .radio:active,
+.toolbar .menu .radio:active:hover,
+.menu .radio:active,
+.menu .radio:active:hover,
+.primary-toolbar .menu .radio:active,
+.toolbar .menu .radio:active:hover,
+.menu .radio:active,
+.menu .radio:active:hover {
+    background-image: url("assets/radio_menuitem.png");
+}
+
+.toolbar .menu .check {
+    background-image: none;
+}
+
+.toolbar .menu .radio {
+    background-image: none;
+}
+
+.toolbar .menu .check:active {
+    background-image: url("assets/check_menuitem-dark.png");
+}
+
+.toolbar .menu .radio:active {
+    background-image: url("assets/radio_menuitem-dark.png");
+}
+
+/*********************
+ * GtkScale's slider *
+ *********************/
+.scale.slider,
+.scale.slider.horizontal {
+    background-image: url("assets/slider-horizontal.png");
+}
+
+.scale.slider:backdrop,
+.scale.slider.horizontal:backdrop {
+}
+
+.scale.slider:hover,
+.scale.slider.horizontal:hover {
+    background-image: url("assets/slider-horizontal-hover.png");
+}
+
+.scale.slider:focused,
+.scale.slider.horizontal:focused {
+    background-image: url("assets/slider-horizontal-focused.png");
+}
+
+.scale.slider:hover:focused,
+.scale.slider.horizontal:hover:focused {
+    background-image: url("assets/slider-horizontal-focused-hover.png");
+}
+
+.scale.slider:insensitive,
+.scale.slider.horizontal:insensitive {
+    background-image: url("assets/slider-horizontal-disabled.png");
+}
+
+.scale.slider:insensitive:backdrop,
+.scale.slider.horizontal:insensitive:backdrop {
+}
+
+.scale.slider.vertical {
+    background-image: url("assets/slider-vertical.png");
+}
+
+.scale.slider.vertical:backdrop {
+}
+
+.scale.slider.vertical:hover {
+    background-image: url("assets/slider-vertical-hover.png");
+}
+
+.scale.slider.vertical:focused {
+    background-image: url("assets/slider-vertical-focused.png");
+}
+
+.scale.slider.vertical:hover:focused {
+    background-image: url("assets/slider-vertical-focused-hover.png");
+}
+
+.scale.slider.vertical:insensitive {
+    background-image: url("assets/slider-vertical-disabled.png");
+}
+
+.scale.slider.vertical:insensitive:backdrop {
+}

@@ -1,0 +1,1768 @@
+col/* ###################################################################
+ * Join the cinnamon-shell group on deviantart http://cinnamon-shell.deviantart.com/
+ * Insppired on Nord gnome-shell theme by ~0rAX0 http://0rax0.deviantart.com/art/GNOME-Shell-Nord-214295138
+ * ... contains a few cinnamon specific style New nord by elchacmool http://elchacmool.deviantart.com/ 
+ * ###################################################################*/
+stage {
+    font-family: droidsans, cantarell, sans-serif;
+    font-weight: normal;
+}
+
+.cinnamon-link {
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+.cinnamon-link:hover {
+    color: #565656;
+}
+
+.label-shadow {
+    color: rgba(0,0,0,0.5);
+}
+
+
+StScrollBar {
+  padding: 0;
+}
+
+StScrollView.vfade {
+  -st-vfade-offset: 60px;
+}
+
+StScrollView.hfade {
+  -st-vfade-offset: 60px;
+}
+
+StScrollView StScrollBar {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+StScrollBar StBin#trough {
+    background-gradient-start: rgba(255,255,255,0.2);
+    background-gradient-end: rgba(255,255,255,0.0);
+    background-gradient-direction: vertical;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+StScrollBar StButton#vhandle,
+StScrollBar StButton#hhandle {
+    background-gradient-start: rgba(255,255,255,0.5);
+    background-gradient-end: rgba(255,255,255,0.65);
+    background-gradient-direction: vertical;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transition-duration: 200;
+}
+
+StScrollBar StButton#hhandle:hover,
+StScrollBar StButton#vhandle:hover {
+    background-gradient-start: rgba(255,255,255,0.7);
+    background-gradient-end: rgba(255,255,255,0.55);
+    background-gradient-direction: vertical;
+    border: 1px solid rgba(0,0,0,0.4);
+}
+
+StScrollBar StButton#hhandle:active,
+StScrollBar StButton#vhandle:active {
+	background-color: rgba(255,255,255,0.7);
+}
+
+StTooltip StLabel {
+    border: 1px solid rgba(99,99,99,0.4);
+    border-radius: 5px;
+    padding: 2px 12px;
+    background-gradient-end: rgba(255,255,255,0.9);
+    background-gradient-start: rgba(255,255,255,0.9);
+    background-gradient-direction: vertical;
+    color: #000000;
+    font-size: 0.9em;
+    font-weight: normal;    
+    text-align: center;
+}
+
+/* ===================================================================
+ * Shared button properties 
+ * ===================================================================*/
+
+.notification-button, .notification-icon-button,
+.hotplug-notification-item, .hotplug-resident-eject-button,
+.modal-dialog-button {
+    color: white;
+    border: 1px solid #8b8b8b;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255, 255, 255, 0.2);
+    background-gradient-end: rgba(255, 255, 255, 0);
+}
+
+.notification-button:hover,
+.notification-icon-button:hover, .hotplug-notification-item:hover,
+.hotplug-resident-eject-button:hover, .modal-dialog-button:hover {
+    background-gradient-start: rgba(255, 255, 255, 0.3);
+    background-gradient-end: rgba(255, 255, 255, 0.1);
+}
+
+.notification-button:focus,
+.notification-icon-button:focus, .hotplug-notification-item:focus,
+.modal-dialog-button:focus {
+    border: 2px solid #8b8b8b;
+}
+
+.notification-button:active, .notification-icon-button:active,
+.hotplug-notification-item:active, .hotplug-resident-eject-button:active,
+.modal-dialog-button:active, .modal-dialog-button:pressed {
+    background-gradient-start: rgba(255, 255, 255, 0);
+    background-gradient-end: rgba(255, 255, 255, 0.2);
+}
+/* ===================================================================
+ * PopupMenu (popupMenu.js) 
+ * ===================================================================*/
+
+.popup-menu-boxpointer {
+    -arrow-border-radius: 4px;
+/*  -arrow-background-color: rgba(255,255,255,0.95);*/
+
+/*  MAIN MENU BACKGROUND COLOR */
+    -arrow-background-color: rgba(255,255,255,0.95);
+    -arrow-border-width: 1px;
+    -arrow-border-color: rgba(0,0,0,0.4);
+    -arrow-base: 15px;
+    -arrow-rise: 7px;
+}
+
+.popup-menu {
+/*  color: #FFFFFF;*/
+    color: #000000;
+    font-size: 9.5pt;
+    min-width: 100px;
+}
+
+.popup-submenu-menu-item:open {
+    background-color: #EBEBEB;
+}
+
+.popup-sub-menu {
+    background-gradient-start: rgba(222,222,222,0.25);
+    background-gradient-end: rgba(255,255,255,0.85);
+    background-gradient-direction: vertical;
+}
+
+.popup-sub-menu .popup-menu-item:ltr {
+    padding-right: 0em;
+}
+
+.popup-sub-menu .popup-menu-item:rtl {
+    padding-left: 0em;
+}
+
+.popup-sub-menu StScrollBar {
+    padding: 4px;
+}
+
+.popup-sub-menu StScrollBar StBin#trough {
+    border-width: 0px;
+}
+
+.popup-sub-menu StScrollBar StBin#vhandle {
+    background-color: #4c4c4c;
+    border-width: 0px;
+}
+
+.popup-combo-menu {
+    background-color: rgba(0,0,0,0.9);
+    padding: 1em 0em;
+    color: #ffffff;
+    font-size: 10.5pt;
+    border: 1px solid #5f5f5f;
+    border-radius: 9px;
+}
+
+/* The remaining popup-menu sizing is all done in ems, so that if you
+ * override .popup-menu.font-size, everything else will scale with it.
+ */
+.popup-menu-content {
+    padding: 1em 0em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
+.popup-menu-item {
+    color: rgba(0,0,0,0.8);
+    font-size: 9pt;
+    padding: 0.5em 1.5em;
+    border: 1px transparent;
+}
+
+.popup-menu-item:active {
+/*  background-color: #4c4c4c;  color de seleccion en los menues, cambiar en mictlan*/
+    color: black;
+    text-shadow: 0 0px 0px rgba(255,255,255,0.4);
+    /* text-shadow: 0 1px 1px rgba(255,255,255,0.4); */
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(245,245,245,0.9);
+    background-gradient-end: rgba(248,248,248,0.7);
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: inset 1px 1px 0px 0px rgba(255,255,255,0.8);
+}
+
+.popup-menu-item:insensitive {
+    color: #9f9f9f;
+}
+
+.popup-image-menu-item {
+}
+
+.popup-combobox-item {
+    spacing: 1em;
+}
+
+.popup-separator-menu-item {
+    -gradient-height: 1px;
+    -gradient-start: rgba(0,0,0,0);
+    -gradient-end: rgba(0,0,0,0.3);
+    -margin-horizontal: 0.5em;
+    height: 1em;
+}
+
+.popup-alternating-menu-item:alternate {
+    font-weight: bold;
+}
+
+.popup-slider-menu-item {
+    height: 1em;
+    min-width: 15em;
+    -slider-height: 0.3em;
+    -slider-background-color: rgba(0,0,0,0.4);
+    -slider-border-color: rgba(0,0,0,0.4);
+    -slider-active-background-color: rgba(0,0,0,0.9);
+    -slider-active-border-color: rgba(0,0,0,0.4);
+    -slider-border-width: 0px;
+    -slider-handle-radius: 0.5em;
+}
+
+.popup-device-menu-item {
+    spacing: .5em;
+}
+
+.popup-inactive-menu-item {
+    font-weight: normal;
+    color: #999;
+}
+
+.popup-subtitle-menu-item {
+    font-weight: bold;
+}
+
+.popup-menu-icon {
+    icon-size: 1.14em;
+}
+
+/* Switches (to be used in menus) */
+.toggle-switch {
+    width: 65px;
+    height: 22px;
+}
+
+.toggle-switch-us {
+    background-image: url("toggle-on.png");
+}
+.toggle-switch-us:checked {
+    background-image: url("toggle-off.png");
+}
+
+.toggle-switch-intl {
+    background-image: url("toggle-on-intl.png");
+}
+.toggle-switch-intl:checked {
+    background-image: url("toggle-off-intl.png");
+}
+
+.nm-menu-item-icons {
+    spacing: .5em;
+}
+
+/* ===================================================================
+ * Panel (panel.js)
+ * ===================================================================*/
+
+#panel {
+    border: 1px solid rgba(0,0,0,0.6);
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(227,227,227,0.6);
+    background-gradient-end: rgba(227,227,227,0.09);
+    color: rgba(255,255,255,0.98);
+    text-shadow: rgba(0,0,0,0.2) 0px 1px 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    height: 24px;
+    box-shadow:  inset 0px -1px 0px 0px rgba(255,255,255,0.2);
+    font-size: 9pt;
+    transition-duration: 500;
+}
+
+#panelLeft, #panelCenter, #panelRight {
+    spacing: 4px;
+}
+
+#panelLeft:ltr {
+    padding-right: 4px;
+}
+
+#panelLeft:rtl {
+    padding-left: 4px;
+}
+
+#panelRight:ltr {
+    padding-left: 4px;
+}
+
+#panelRight:rtl {
+    padding-right: 4px;
+}
+
+.panel-status-button,
+.panel-button {
+    -natural-hpadding: 5px;
+    -minimum-hpadding: 5px;
+    font-size: 10pt;
+    font-weight: medium;
+    text-shadow: #D2D2D2 0px 1px 1px;
+    color: #2B2B2B;
+    transition-duration: 150;
+    border: 1px solid rgba(0,0,0,0.2);
+    height: 22px; 
+}
+
+.panel-status-button:hover,
+.panel-button:hover {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255,255,255,0);
+    background-gradient-end: rgba(255,255,255,0.4);
+    box-shadow: inset 0px -1px 1px 0px rgba(255,255,255,0.3);
+}
+
+.panel-menu {
+    -boxpointer-gap: 0px
+}
+
+.system-status-icon {
+    icon-size: 1.14em;
+}
+
+#panelLeft:dnd {
+	background-color: #E7E7E7;
+}
+#panelCenter:dnd {
+	background-color: #999;
+}
+#panelRight:dnd {
+	background-color: #fff;
+}
+
+/* ===================================================================
+ * Overview 
+ * ===================================================================*/
+#overview {
+	spacing: 12px;
+    background-color: rgba(0,0,0,0.3);
+}
+.window-caption {
+	color: black;
+	spacing: 25px;
+}
+.workspace-controls {
+	visible-height: 32px; /* Amount visible before hovering */
+}
+.workspace-thumbnails-background {
+    padding: 8px;
+}
+
+.workspace-thumbnails {
+	spacing: 12px;
+}
+.workspace-add-button {
+	background-image: url("workspace-add-button.png");
+	height: 200px;
+	width: 35px;
+	transition-duration: 300;
+}
+.workspace-add-button:hover {
+	background-image: url("add-workspace-hover.png");
+	transition-duration: 300;
+}
+
+.workspace-close-button {
+    background-image: url("close-window.png");
+    height: 34px;
+    width: 34px;
+    -cinnamon-close-overlap: 20px;
+}
+
+.workspace-thumbnail-indicator {
+    padding: 0px 10px;
+
+    border-radius: 2px;
+    outline: 1px solid rgba(250,250,250,0.8);
+  	box-shadow: 0px 0px 2px 2px rgba(38,76,76,0.6);
+}
+.window-caption,
+.dash-label {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.6);
+	background-gradient-end: rgba(255,255,255,0.4);
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: 2px;
+	padding: 3px;
+	transition-duration: 300;
+    
+  color: #101010;
+  text-shadow: #E7E7E7 0px 1px 1px;
+  font-size: 9pt;
+  padding: 6px 10px;
+  -shell-caption-spacing: 12px;
+}
+.window-close {
+    background-image: url("close-window.png");
+    height: 32px;
+    width: 32px;
+    -cinnamon-close-overlap: 20px;
+    -st-background-image-shadow: -2px 2px 6px rgba(0,0,0,0.5);
+    transition-duration: 300;
+}
+.window-close:rtl {
+	-st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.window-close-area {
+	background-image: url("trash-icon.png");
+	height: 120px;
+	width: 400px;
+    background-color: rgba(55,55,55,0.5);
+	box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.15);
+	border: 1px solid rgba(255,255,255,0.15);
+    border-bottom: none;
+	border-radius: 2px 2px 0px 0px;
+}
+
+.icon-grid {
+	spacing: 44px;
+	-cinnamon-grid-item-size: 84px;
+    -cinnamon-grid-horizontal-item-size: 84px;
+    -cinnamon-grid-vertical-item-size: 84px;
+}
+.icon-grid .overview-icon {
+	icon-size: 52px;
+}
+.overview-icon {
+	border-radius: 4px;
+	padding: 3px;
+	border: 1px rgba(0,0,0,0);
+	font-size: 7.5pt;
+	color: white;
+	transition-duration: 100;
+	text-align: center;
+}
+
+.expo-background {
+	background-gradient-start: #AAA;
+	background-gradient-end: #000;
+	background-gradient-direction: vertical
+}
+/* ===================================================================
+ * ViewSelector 
+ * ===================================================================*/
+#viewSelector {
+	spacing: 1em;
+	font-size: 12pt;
+}
+#viewSelectorTabBar {
+	padding: 1em;
+}
+.view-tab-title {
+	color: #888a85;
+	font-weight: bold;
+	padding: 0px 0.75em;
+	height: 1.5em;
+}
+.view-tab-title:hover {
+	color: #bbb;
+}
+.view-tab-title:selected {
+	color: #000000;
+	background-color: #c2c7cd;
+	border-radius: 0.25em;
+}
+===================================================================
+ * ViewSelector 
+ * ===================================================================*/
+
+#viewSelector {
+    spacing: 1em;
+    font-size: 12pt;
+}
+
+#viewSelectorTabBar {
+    padding: 1em;
+}
+
+.view-tab-title {
+    color: #888a85;
+    font-weight: bold;
+    padding: 0px 0.75em;
+    height: 1.5em;
+}
+
+.view-tab-title:hover {
+    color: #bbb;
+}
+
+.view-tab-title:selected {
+    color: #000000;
+    background-color: #c2c7cd;
+    border-radius: 0.25em;
+}
+/* ===================================================================
+ * Looking Glass 
+ * ===================================================================*/
+
+#LookingGlassDialog {
+    background-color: rgba(0,0,0,0.80);
+    spacing: 4px;
+    padding: 4px;
+    border-radius: 2px;
+    border: 1px solid #161616;
+    color: #99CC00;
+    box-shadow: 0px 1px 4px 2px rgba(0,0,0,0.5);
+}
+
+#LookingGlassDialog > #Toolbar {
+    border: 1px solid #ACACAC;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding-bottom: 4px;
+}
+
+#LookingGlassDialog .labels {
+  spacing: 4px;
+}
+
+#LookingGlassDialog .notebook-tab {
+  padding: 1px 8px;
+  color: #C5C5C5;
+}
+
+#LookingGlassDialog .notebook-tab:hover {
+  color: #99CC00;
+}
+
+#LookingGlassDialog .notebook-tab:selected {
+    background-color: #99CC00;
+    border-radius: 2px;
+    color: #000;
+}
+
+#LookingGlassDialog .lg-inspector-title {
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+
+.lg-dialog StLabel {
+    color: #669900;
+}
+
+.lg-dialog StEntry {
+    color: #669900;
+}
+
+.lg-obj-inspector-title {
+    spacing: 4px;
+}
+
+.lg-obj-inspector-button {
+    background-color: rgba(153,204,0,0.2);
+    border: 1px solid rgba(153,204,0,0.5);
+    height: 14px;
+    padding: 0 8px;
+    border-radius: 1px;
+    color: rgba(153,204,0,1.0);
+}
+
+.lg-obj-inspector-button:hover {
+    background-color: rgba(153,204,0,1.0);
+    border: 1px solid rgba(153,204,0,1.0);
+    color: #000;
+}
+
+.lg-dialog .cinnamon-link {
+    color: #B6DB49;
+}
+
+.lg-dialog .cinnamon-link:hover {
+    color: #D3E992;
+}
+
+#LookingGlassDialog StBoxLayout#EvalBox {
+    padding: 4px;
+    spacing: 4px;
+}
+
+#LookingGlassDialog StBoxLayout#ResultsArea {
+  spacing: 4px;
+}
+
+#lookingGlassExtensions {
+    padding: 4px;
+}
+
+.lg-extension-list {
+    padding: 4px;
+    spacing: 6px;
+}
+
+.lg-extension {
+    border: 1px solid #333;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 4px 0px;
+}
+
+.lg-extension-name {
+    font-weight: bold;
+}
+
+.lg-extension-actions {
+    spacing: 6px;
+}
+
+#LookingGlassPropertyInspector {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 3px;
+    border: 1px solid #333;
+    padding: 6px;
+    color: #B6DB49;
+}
+
+
+/* ===================================================================
+ * Date applet 
+ * ===================================================================*/
+
+.calendar {
+    padding: .4em 1.75em;
+    spacing-rows: 0px;
+    spacing-columns: 0px;
+}
+
+.calendar-month-label {
+/*  color: #cccccc*/
+    color: #333333;
+    font-size: 7.5pt;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-weight: bold;
+}
+
+.calendar-change-month-back {
+    width: 18px;
+    height: 12px;
+    background-image: url("calendar-arrow-left.svg");
+    border-radius: 4px;
+}
+
+.calendar-change-month-back:rtl {
+    background-image: url("calendar-arrow-right.svg");
+}
+
+.calendar-change-month-back:hover {
+    background-color: #999999;
+}
+.calendar-change-month-back:active {
+    background-color: #aaaaaa;
+}
+
+.calendar-change-month-forward {
+    width: 18px;
+    height: 12px;
+    background-image: url("calendar-arrow-right.svg");
+    border-radius: 4px;
+}
+
+.calendar-change-month-forward:rtl {
+    background-image: url("calendar-arrow-left.svg");
+}
+
+.calendar-change-month-forward:hover {
+    background-color: #999999;
+}
+.calendar-change-month-forward:active {
+    background-color: #aaaaaa;
+}
+
+.datemenu-date-label {
+    padding: .4em 1.75em;
+    font-size: 10.5pt;
+/*  color: #cccccc*/
+    color: #333333;
+    font-weight: bold;
+}
+
+.calendar-day-base {
+    color: rgba(0,0,0,1);
+    font-size: 8pt;
+    height: 2em;
+    width: 2em;
+    text-align: center;
+    padding: 1em 1em;
+}
+.calendar-day-base:hover {
+    box-shadow: 0 1px 2px 0px rgba(0,0,0,0.3);
+    background-color: #777777;
+    color: #fff;
+}
+.calendar-day-base:active {
+    box-shadow: 0 1px 2px 0px rgba(0,0,0,0.3);
+}
+
+.calendar-day-heading {
+    color: rgba(0,0,0,0.6);
+    border: 0;
+    font-size: 7pt;
+    padding-bottom: 0em;
+    padding-top: 1.5em;
+}
+
+.calendar-week-number {
+    color: rgba(0,0,0,0.8);
+    font-size: 7pt;
+}
+
+.calendar-day {
+    color: rgba(0,0,0,0.5);
+    box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,1);
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: .1em;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255,255,255,1);
+    background-gradient-end: rgba(255,255,255,0);
+    border-top-width: 0;
+    border-left-width: 0;
+}
+
+.calendar-day-top {
+    border-top-width: 1px;
+}
+.calendar-day-left {
+    border-left-width: 1px;
+}
+
+.calendar-work-day {
+}
+
+.calendar-nonwork-day {
+
+}
+
+.calendar-today {
+    background-image: url("calendar-today.svg");
+    text-shadow: white 0px 2px 2px;
+    color: #000000;
+    font-weight: bold;
+}
+.calendar-other-month-day {
+    box-shadow: inset 0px 2px 2px 0px rgba(0,0,0,0.1);
+    background-gradient-direction: vertical;
+    background-gradient-end: rgba(0,0,0,0);
+    background-gradient-start: rgba(0,0,0,0.1);
+    color: rgba(0,0,0,0.25);
+}
+
+/* /* ===================================================================
+ * Notifications
+ * ===================================================================*/
+
+#notification {
+    font-size: 10pt;
+    border-radius: 4px;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(247,247,247,0.4);
+    background-gradient-end: rgba(204,204,204,0.4);
+    box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.1);
+    border: 1px solid rgba(120,120,120,0.7); 
+    padding: 8px 8px 8px 8px;
+    spacing-rows: 10px;
+    spacing-columns: 10px;
+    margin-from-right-edge-of-screen: 10px;
+    margin-from-top-edge-of-screen: 36px;
+    width: 34em;
+    color: #333;
+}
+
+#notification.multi-line-notification {
+    padding-bottom: 8px;
+    color: #333;
+}
+
+/* We use row-span = 2 for the image cell, which prevents its height preferences to be
+   taken into account during allocation, so its height ends up being limited by the height
+   of the content in the other rows. To avoid showing a stretched image, we set the minimum
+   height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
+
+.notification-with-image {
+    min-height: 159px;
+    color: white;
+}
+
+/* ===================================================================
+ * Alt Tab
+ * ===================================================================*/
+#altTabPopup {
+    background: rgba(0,0,0,0.3);
+}
+.switcher-list {
+    background-gradient-direction: vertical;
+    background-gradient-end: rgba(255,255,255,0.6);
+    background-gradient-start: rgba(255,255,255,0.89);
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.2);
+    color: rgba(0,0,0,0.8);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 15px 20px;
+    text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+}
+
+.switcher-list-item-container {
+    spacing: 16px;
+}
+
+.thumbnail-scroll-gradient-left {
+    background-gradient-direction: horizontal;
+    background-gradient-start: rgba(51, 51, 51, 1.0);
+    background-gradient-end: rgba(51, 51, 51, 0);
+    border-radius: 4px;
+    border-radius-topright: 0px;
+    border-radius-bottomright: 0px;
+    width: 60px;
+}
+
+.thumbnail-scroll-gradient-right {
+    background-gradient-direction: horizontal;
+    background-gradient-start: rgba(255,255, 51, 0);
+    background-gradient-end: rgba(51, 51, 51, 1.0);
+    border-radius: 4px;
+    border-radius-topleft: 0px;
+    border-radius-bottomleft: 0px;
+    width: 60px;
+}
+
+.switcher-list .item-box {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.0);
+    transition-duration: 150;
+}
+
+.switcher-list .item-box:outlined {
+    padding: 6px;
+}
+
+.switcher-list .item-box:selected {
+    border: 1px solid #eee; 
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.6);
+}
+
+.switcher-list .thumbnail-box {
+    padding: 2px;
+    spacing: 4px;
+}
+
+.switcher-list .thumbnail {
+    width:  256px;
+}
+
+.switcher-list .separator {
+    width: 1px;
+    background: rgba(255,255,255,0.33);
+}
+
+.ripple-box {
+    width: 52px;
+    height: 52px;
+    background-image: url("corner-ripple-ltr.png");
+}
+
+.switcher-arrow {
+    border-color: rgba(0,0,0,0);
+    color: #808080;
+}
+
+.switcher-arrow:highlighted {
+    border-color: rgba(0,0,0,0);
+    color: white;
+}
+
+/* ===================================================================
+ * Modal dialogs
+ * ===================================================================*/
+.modal-dialog {
+    background-gradient-direction: vertical;
+    background-gradient-end: rgba(255,255,255,0.7);
+    background-gradient-start: rgba(255,255,255,0.95);
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.2);
+    color: rgba(0,0,0,0.85);
+    font-size: 12px;
+    padding: 10px 20px;
+}
+
+.modal-dialog-button-box {
+    spacing: 10px;
+}
+
+.modal-dialog-button {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 4px 32px 5px;
+}
+
+.modal-dialog-button:disabled {
+    color: rgb(60, 60, 60);
+}
+
+.modal-dialog-button:focus {
+    padding: 3px 31px 4px;
+}
+
+
+
+/* ===================================================================
+ * Run dialog
+ * ===================================================================*/
+
+.run-dialog-label {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 12px;
+}
+
+.run-dialog-error-label {
+    font-size: 10pt;
+    color: #333;
+}
+
+.run-dialog-error-box {
+    padding-top: 15px;
+    spacing: 5px;
+}
+
+.run-dialog-entry {
+    padding: 4px;
+    background-color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.4);
+    border-radius: 3px;
+    font-size: 10pt;
+    font-weight: normal;
+    width: 23em;
+    color: #333;
+    selection-background-color: #333;
+    selected-color: #eee;
+}
+
+.run-dialog {
+    border-radius: 4px;	
+    padding: 15px;
+}
+
+.lightbox {
+    background-color: rgba(0,0,0,0.4);
+}
+/* ===================================================================
+ * End session dialog
+ * ===================================================================*/
+
+.end-session-dialog {
+    spacing: 42px;
+}
+
+.end-session-dialog-subject {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #333;
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 30px;
+}
+
+.end-session-dialog-subject:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
+}
+
+.end-session-dialog-description {
+    font-size: 10pt;
+    color: #333;
+    padding-left: 17px;
+    width: 28em;
+}
+
+.end-session-dialog-description:rtl {
+    padding-right: 17px;
+}
+
+.end-session-dialog-logout-icon {
+    border: 2px solid #eee;
+    border-radius: 5px;
+    width: 32px;
+    height: 32px;
+}
+
+.end-session-dialog-shutdown-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.end-session-dialog-app-list {
+    font-size: 10pt;
+    max-height: 200px;
+    padding-top: 42px;
+    padding-left: 49px;
+    padding-right: 32px;
+}
+
+.end-session-dialog-app-list:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+}
+
+.end-session-dialog-app-list-item {
+    color: #333;
+}
+
+.end-session-dialog-app-list-item:hover {
+    color: #333;
+}
+
+.end-session-dialog-app-list-item:ltr {
+    padding-right: 1em;
+}
+
+.end-session-dialog-app-list-item:rtl {
+    padding-left: 1em;
+}
+
+.end-session-dialog-app-list-item-icon:ltr {
+    padding-right: 17px;
+}
+
+.end-session-dialog-app-list-item-icon:rtl {
+    padding-left: 17px;
+}
+
+.end-session-dialog-app-list-item-name {
+    font-size: 10pt;
+}
+
+.end-session-dialog-app-list-item-description {
+    font-size: 8pt;
+    color: #333;
+}
+
+/* CinnamonMountOperation Dialogs */
+.cinnamon-mount-operation-icon {
+    icon-size: 48px;
+}
+
+.mount-password-reask {
+    color: red;
+}
+
+.show-processes-dialog,
+.mount-question-dialog {
+    spacing: 24px;
+}
+
+.show-processes-dialog-subject,
+.mount-question-dialog-subject {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #333;
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 6px;
+}
+
+.show-processes-dialog-subject:rtl,
+.mount-question-dialog-subject:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
+}
+
+.show-processes-dialog-description,
+.mount-question-dialog-description {
+    font-size: 10pt;
+    color: #333;
+    padding-left: 17px;
+    width: 28em;
+}
+
+.show-processes-dialog-description:rtl,
+.mount-question-dialog-description:rtl {
+    padding-right: 17px;
+}
+
+.show-processes-dialog-app-list {
+    font-size: 10pt;
+    max-height: 200px;
+    padding-top: 24px;
+    padding-left: 49px;
+    padding-right: 32px;
+}
+
+.show-processes-dialog-app-list:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+}
+
+.show-processes-dialog-app-list-item {
+    color: #333;
+}
+
+.show-processes-dialog-app-list-item:hover {
+    color: #333;
+}
+
+.show-processes-dialog-app-list-item:ltr {
+    padding-right: 1em;
+}
+
+.show-processes-dialog-app-list-item:rtl {
+    padding-left: 1em;
+}
+
+.show-processes-dialog-app-list-item-icon:ltr {
+    padding-right: 17px;
+}
+
+.show-processes-dialog-app-list-item-icon:rtl {
+    padding-left: 17px;
+}
+
+.show-processes-dialog-app-list-item-name {
+    font-size: 10pt;
+}
+
+/* ===================================================================
+ * Policykit authentication dialog
+ * ===================================================================*/
+
+.prompt-dialog {
+    /* this is the width of the entire modal popup */
+    width: 500px;
+}
+
+.prompt-dialog-main-layout {
+    spacing: 24px;
+    padding: 10px;
+}
+
+.prompt-dialog-message-layout {
+    spacing: 16px;
+}
+
+.prompt-dialog-headline {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #333;
+}
+
+.prompt-dialog-description {
+    font-size: 10pt;
+    color: #333;
+}
+
+.prompt-dialog-user-layout {
+    padding-left: 10px;
+    spacing: 10px;
+}
+
+.prompt-dialog-user-layout:rtl {
+    padding-left: 0px;
+    padding-right: 10px;
+}
+
+.prompt-dialog-user-root-label {
+    color: #ff0000;
+}
+
+.prompt-dialog-password-label:ltr {
+    padding-right: 0.5em;
+}
+
+.prompt-dialog-password-label:rtl {
+    padding-left: 0.5em;
+}
+
+.prompt-dialog-password-entry {
+    background-color: white;
+    color: #333;
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.4);
+    padding: 4px;
+}
+
+.prompt-dialog-password-entry:focus {
+}
+
+.prompt-dialog-password-entry .capslock-warning {
+    icon-size: 16px;
+    warning-color: #333;
+    padding: 0 4px;
+}
+
+.prompt-dialog-error-label {
+    font-size: 10pt;
+    color: #ff0000;
+    padding-bottom: 8px;
+}
+
+.prompt-dialog-info-label {
+    font-size: 10pt;
+    padding-bottom: 8px;
+}
+
+/* intentionally left transparent to avoid dialog changing size */
+.prompt-dialog-null-label {
+    font-size: 10pt;
+    color: rgba(0,0,0,0);
+    padding-bottom: 8px;
+}
+
+.network-dialog-secret-table {
+    spacing-rows: 15px;
+}
+
+/* ===================================================================
+ * Magnifier
+ * ===================================================================*/
+
+
+.magnifier-zoom-region {
+    border: 1px solid #333;
+}
+
+.magnifier-zoom-region.full-screen {
+    border-width: 0px;
+}
+
+/* ===================================================================
+ * On screen keyboard
+ * ===================================================================*/
+
+#keyboard {
+    background-gradient-start: rgba(255,255,255,0.95);
+    background-gradient-end: rgba(255,255,255,0.9);
+    background-gradient-direction: vertical;
+}
+
+.keyboard-layout {
+    spacing: 15px;
+    padding: 15px;
+}
+
+.keyboard-row {
+    spacing: 10px;
+}
+
+.keyboard-key {
+    min-height: 20px;
+    min-width: 30px;
+    background-gradient-start: rgba(255,255,255,0.75);
+    background-gradient-end: rgba(255,255,255,0.45);
+    background-gradient-direction: vertical;
+    font-size: 13pt;
+    box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.95);
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.2) ;
+    color: rgba(0,0,0,0.7);
+    transition-duration: 250;
+
+}
+
+.keyboard-key:grayed {
+   color: #808080;
+   border-color: #808080;
+}
+
+.keyboard-key:checked,
+.keyboard-key:hover {
+    background-gradient-start: rgba(255,255,255,0.98);
+    background-gradient-end: rgba(255,255,255,0.55);
+    background-gradient-direction: vertical;
+    border: 1px solid rgba(0,0,0,0.4);
+    color: rgba(0,0,0,0.8d);
+    transition-duration: 250;
+}
+
+.keyboard-key:active {
+    box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,0.5);
+}
+
+.keyboard-subkeys {
+    color: white;
+    padding: 5px;
+    -arrow-base: 20px;
+    -arrow-rise: 10px;
+    -boxpointer-gap: 5px;
+    -arrow-border-radius: 4px;
+    -arrow-background-color: rgba(255,255,255,0.98);
+    -arrow-border-width: 1px;
+    -arrow-border-color: rgba(0,0,0,0.5);
+}
+
+/* ###################################################################
+ * Cinnamon Specific Section 
+ * ###################################################################*/
+
+/* ===================================================================
+ * Menu (menu.js)
+ * ===================================================================*/
+
+/* Main menu title */
+.menu-label {
+	padding-left: 2px;
+    /*start add*/
+    color: #333333;
+    /*end add*/
+}
+
+.menu-favorites-box {
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid rgba(204,204,204,0.5);  
+  border-radius: 4px;  
+  background-gradient-direction: horizontal;
+/*  background-gradient-start: rgba(85,85,85,0.8);*/
+    background-gradient-start: rgba(255,255,255,0.7);
+/*  background-gradient-end: rgba(85,85,85,0.2);*/
+/*  background-gradient-end: rgba(220,220,220,1.0); */
+    background-gradient-end: rgba(255,255,255,0.8);
+}
+.menu-favorites-button {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;    
+}
+
+.menu-favorites-button:hover {
+    color: white;
+	 background-gradient-direction: vertical;
+/*	 background-gradient-start: rgba(255,255,255,0.);*/
+/*	 background-gradient-end: rgba(255,255,255,0.8);*/
+	 background-gradient-start: rgba(230,230,230,0.02);
+	 background-gradient-end: rgba(255,255,255,0.7);
+	 box-shadow: inset 0px 0px 1px 1px rgba(35,35,35,0.2);
+	 transition-duration: 300;
+    border-radius: 4px;
+}
+
+.menu-places-box {
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+  border: 0px solid #666;  
+}
+
+.menu-places-button {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;    
+}
+
+.menu-categories-box {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;    
+}
+
+.menu-applications-box {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;    
+}
+
+.menu-application-button {
+    padding-top: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 7px;    
+}
+
+.menu-application-button:hover,
+.menu-application-button-selected {
+    padding-top: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 7px;
+    color: black;
+	 background-gradient-direction: vertical;
+	 background-gradient-start: rgba(255,255,255,0.2);
+	 background-gradient-end: rgba(255,255,255,0.08);
+	 box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.06);
+    border-radius: 4px;
+}
+
+.menu-application-button-label { 
+    padding-left: 5px       
+}
+
+.menu-category-button {
+    padding-top: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 7px;         
+}
+
+.menu-category-button-greyed {
+    padding-top: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 7px; 
+    color: #9C9C9C;
+    font-style: italic;
+}
+
+.menu-category-button-selected {
+    padding-top: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 7px; 
+    color: black;
+	 background-gradient-direction: vertical;
+	 background-gradient-start: rgba(230,230,230,0.02);
+	 background-gradient-end: rgba(255,255,255,1);
+	 box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+
+.menu-category-button-label { 
+    padding-left: 5px       
+}
+
+.menu-category-button-button:hover {
+    background-color: #969696;
+    border-radius: 8px;
+}
+
+/* Name and description of the currently hovered item in the menu
+ * This appears on the bottom right hand corner of the menu*/
+.menu-selected-app-box {
+    padding-right: 30px;
+    padding-left: 28px;
+    text-align: right;
+}
+
+.menu-selected-app-title {
+    font-weight: bold;
+}
+
+.menu-selected-app-description {
+    max-width: 150px;
+}
+.menu-search-box:ltr {
+   padding-left: 30px;
+}
+
+.menu-search-box:rtl {
+   padding-right: 30px;
+}
+
+#menu-search-entry {
+    padding: 4px 12px;
+    color: #333;
+    border: 1px solid rgba(255,255,255,0.3);
+  
+    box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.4);
+    border-radius: 150px;
+    background-color: rgba(255,255,255,0.3);
+    selected-color: #eee;
+    caret-color: #333;
+    caret-size: 1px;
+    width: 250px;
+}
+
+.menu-search-entry-icon {
+    icon-size: 1em;
+    color: #333;
+}
+
+/*
+/* Context menu (at the moment only for favorites) */
+.menu-context-menu {
+
+}
+/* ===================================================================
+ * Window list (windowList.js) texto de panel lista aplicaciones
+ * ===================================================================*/
+
+.window-list-box:ltr {
+	spacing: 2px;
+	padding-left: 2px;
+	padding-top: 0px;
+}
+
+.window-list-box:rtl {
+    spacing: 1px;   
+}
+
+.window-list-item-label {
+    font-weight: bold;
+    width: 15em;
+    min-width: 5px;
+}
+
+.window-list-item-box {
+    color: white;
+    text-shadow: rgba(0,0,0,0.3) 0px -1px 0px;
+    font-weight: normal;
+    padding: 0px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition-duration: 300;
+}
+
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box:focus  {  
+        background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.3);
+	background-gradient-end: rgba(255,255,255,0.1);  
+	border: 1px solid transparent;
+	border-radius: 5px;
+	box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.2);
+	transition-duration: 300;
+}
+.window-list-item-box:hover	{ 
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.4);
+	background-gradient-end: rgba(255,255,255,0.3);
+	box-shadow: inset 0px 0px 2px 1px rgba(88,88,88,0.15);
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: 5px;
+	transition-duration: 300;
+}
+.window-list-item-demands-attention {
+        background-gradient-start: rgba(255,255,255,0.5);
+	background-gradient-end: rgba(255,255,255,0.9);
+}
+
+/* ===================================================================
+ * Sound Applet (status/volume.js)
+ * ===================================================================*/
+
+.sound-button-container {
+    padding: 2px;
+}
+
+.sound-button {
+    width: 21px;
+    height: 16px;
+    border: 1px solid rgba(90,90,90,0.4);
+    background-gradient-direction: vertical;
+    background-gradient-start: #FBFBFB;
+    background-gradient-end: #D3D3D3;
+    box-shadow: 1px 2px 2px 0px rgba(0,0,0,0.3);
+    border-radius: 3px;
+    padding: 7px;
+    transition-duration: 100;
+}
+
+.sound-button:hover {
+        border: 1px solid #E7E7E7; 
+	border-radius: 3px;
+        box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.1);
+}
+
+.sound-button StIcon {
+    icon-size: 1.4em;
+}
+
+.sound-track-infos {
+    padding-left: 10px;
+}
+
+.sound-track-info {
+    padding-bottom: 4px;
+}
+
+.sound-track-info StIcon {
+    icon-size: 1em;
+}
+
+.sound-track-info StLabel {
+    padding-left: 5px;
+}
+
+.sound-track-box {
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+.sound-volume-menu-item {
+    padding: .4em 1.75em;
+}
+
+.sound-volume-menu-item StIcon {
+    icon-size: 1.14em;
+    padding-left: 8px;
+}
+
+.sound-playback-control {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+/* ===================================================================
+ * Workspace Switcher applet (workspaceSwitcher.js)
+ * ===================================================================*/
+
+#workspaceSwitcher {
+    spacing: 0px;
+    padding: 2px;
+}
+
+.workspace-button {
+    width: 24px;
+    color: #333;
+    border: 1px;
+    border-color: rgba(0,0,0,0.2);
+    border-radius: 3px;
+    padding: 0px;
+    font-weight: bold;
+    text-shadow: #eee 0px 1px 1px;
+    transition-duration: 150;
+}
+
+.workspace-button:outlined {
+    padding: 0px;   
+    border: 1px;
+    border-color: #ddd;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 2px 1px rgba(0,0,0,0.4);
+    color: #333;
+}
+
+/* ===================================================================
+ * Panel Launchers Applet (panelLaunchers.js)
+ * ===================================================================*/
+
+#panel-launchers-box {
+    padding-left: 0px;
+}
+
+.panel-launcher {
+    margin: 1px;
+    padding: 1px;
+    transition-duration: 150;
+}
+
+.panel-launcher-add-dialog-content-box {
+	padding: 10px;
+	spacing: 20px;
+}
+
+.panel-launcher-add-dialog-content-box-left {
+	padding: 6px;
+	spacing: 20px;
+}
+
+.panel-launcher-add-dialog-content-box-right {
+	padding: 6px;
+	spacing: 10px;
+}
+
+.panel-launcher-add-dialog-entry,
+.panel-launcher-add-dialog-entry:hover {
+    padding: 4px;
+    border-radius: 3px;
+    color: #333;
+    background-color: white;
+    border: 1px solid rgba(120,120,120,0.2);
+    box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.2);
+    selected-color: #fff;
+    caret-color: #333;
+    caret-size: 1px;
+    width: 250px;
+    font-size: 10pt;
+}
+
+.panel-launcher-add-dialog-entry:focus {
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.4);
+}
+
+/* ===================================================================
+ * Overview corner
+ * ===================================================================*/
+
+#overview-corner {
+	background-image: url("overview.png");
+}
+
+#overview-corner:hover {    
+    background-image:  url("overview-hover.png");
+}
+
+/* ===================================================================
+ * Applets (applet.js) panel texto menu y reloj
+ * ===================================================================*/
+
+.applet-box {
+    padding-left: 4px;
+    padding-right: 4px;
+    transition-duration: 350;
+    font-size: 8.7pt;
+    font-weight: normal;
+    text-shadow: rgba(0,0,0,0.2) 0px -1px 0px;
+    color: #FAFAFA;  
+    border: 1px solid rgba(0,0,0,0.0);
+}
+
+.applet-box:hover {
+        border: 1px solid transparent;
+	border-radius: 5px;
+        box-shadow: inset 0px 0px 3px 1px rgba(255,255,255,0.0);
+	color: white;
+	background-gradient-direction: vertical;
+	background-gradient-end: rgba(255,255,255,0.3);
+	background-gradient-start: rgba(255,255,255,0.04);  
+}
+
+.applet-label {
+	padding: 0px;
+}
+
+.applet-icon {  
+    color: #333;
+}

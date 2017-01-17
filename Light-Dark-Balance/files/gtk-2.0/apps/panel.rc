@@ -1,0 +1,293 @@
+style "panel"
+{
+	xthickness				= 0
+	ythickness				= 0
+
+	xthickness				= 0
+	ythickness				= 0
+
+	bg[NORMAL]				= "#555555"
+	bg[PRELIGHT]				= mix( 0.2, "#555555", @selected_bg_color)
+	bg[SELECTED]	  			= @selected_bg_color
+	bg[ACTIVE]				= shade (0.90, "#555555")
+	bg[INSENSITIVE]				= shade (1.10, "#555555")
+
+
+	fg[NORMAL]				= "#e0e0e0"
+	fg[PRELIGHT]				= "#f0f0f0"
+	fg[SELECTED]				= "#e0e0e0"
+	fg[ACTIVE]				= "#e0e0e0"
+	fg[INSENSITIVE]				= "#9b9b9b"
+
+	bg_pixmap[NORMAL]			= "/Panel/panel-dark.png"
+
+	GtkMenuItem::selected-shadow-type	= GTK_SHADOW_IN
+
+	engine "murrine"
+	{
+#		focusstyle 			= 0
+  		contrast			= 1.2
+		roundness			= 5
+ 		gradient_shades     		= {0.90, 0.95, 0.95, 1.00}
+		border_shades       		= {.7, .7}
+		shadow_shades       		= { 0.0, 1.0}
+		lightborder_shade   		= 0.7
+  		#glazestyle 			= 0
+		#glowstyle 			= 1
+		reliefstyle			= 3
+	}
+}
+
+style "panel-handle" 
+{
+	engine "pixmap"
+	{    
+		image
+		{
+			function		= HANDLE
+		}    
+	}
+}
+
+style "pager"
+{
+	xthickness 				= 0
+	ythickness 				= 0
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= SHADOW
+		}
+	}
+}
+
+style "panel-menu-arrow"
+{
+	engine "pixmap"
+	{
+		image
+		{
+			function		= ARROW
+			arrow_direction		= DOWN
+		}
+	}
+}
+style "panel-button" 				#= "default"
+{
+	GtkButton::inner-border			= { 4, 4, 2, 2}
+	GtkButton::outside-border 		= { 0, 0, 0, 0}
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= BOX
+			recolorable		= TRUE
+			detail			= "buttondefault"
+			file			= "Fixes/none.png"
+			border			= { 0, 0, 0, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			state			= NORMAL
+			recolorable		= TRUE
+			file			= "Fixes/none.png"
+			border			={ 0, 0, 0, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			recolorable		= TRUE
+			state			= PRELIGHT
+			shadow			= OUT
+			file			= "Panel/button-normal-dark.png"
+			border			= { 7, 7, 7, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			recolorable		= TRUE
+			state			= PRELIGHT
+			shadow			= IN
+			file			= "Panel/button-active-prelight-dark.png"
+			border			= { 9, 9, 7, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			state			= INSENSITIVE
+			shadow			= OUT
+			file			= "Fixes/none.png"
+			border			= { 0, 0, 0, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			state			= INSENSITIVE
+			shadow			= IN
+			file			= "Fixes/none.png"
+			border			= { 0, 0, 0, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Panel/button-active-dark.png"
+			border			= { 9, 9, 7, 0}
+			stretch			= TRUE
+		}
+	}
+}
+
+style "taskbar-button" 				#= "default"
+{
+	GtkButton::inner-border			= { 3, 3, 2, 2}
+	GtkButton::child-displacement-y		= 0
+
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= BOX
+			recolorable		= TRUE
+			detail			= "buttondefault"
+			file			= "Fixes/none.png"
+			border			= { 0, 0, 0, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			state			= NORMAL
+			recolorable		= TRUE
+			file			= "Panel/button-normal-dark.png"
+			border			= { 7, 7, 7, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			recolorable		= TRUE
+			state			= PRELIGHT
+			shadow			= OUT
+			file			= "Panel/button-prelight-dark.png"
+			border			= { 7, 7, 7, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			recolorable		= TRUE
+			state			= PRELIGHT
+			shadow			= IN
+			file			= "Panel/button-active-prelight-dark.png"
+			border			= { 9, 9, 7, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			state			= INSENSITIVE
+			shadow			= OUT
+			file			= "Fixes/none.png"
+			border			= { 0, 0, 0, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			state			= INSENSITIVE
+			shadow			= IN
+			file			= "Fixes/none.png"
+			border			= { 0, 0, 0, 0}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= BOX
+			state			= ACTIVE
+			file			= "Panel/button-active-dark.png"
+			border			= { 9, 9, 7, 0}
+			stretch			= TRUE
+		}
+	}
+}
+
+############
+# XFCE     #
+############
+
+style "xfce4-tray"				= "panel-dark"
+{
+	bg_pixmap[NORMAL]			= "Panel/tray-dark.png"
+		
+}
+
+style "xfce4-tray-frame"
+{
+	xthickness				= 0
+	ythickness				= 0
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= SHADOW
+		}
+	}
+}
+
+
+################
+# Declarations #
+################
+
+widget "Panel.*.XfceTrayWidget.GtkSocket" 	style:highest "xfce4-tray"
+
+class "PanelToplevel"				style "panel-handle"
+class "PanelApp*"				style "panel"
+class "PanelToplevel*"				style "panel"
+class "WnckSelector"				style:highest "panel"
+class "*Xfce*Panel*"				style "panel"
+widget "?PanelWidget?"				style "panel"
+
+widget "*fast-user-switch*"			style "panel"
+widget "*-user-switch-menubar*"			style "panel"
+widget "PanelToplevel*PanelAppletFrame"		style "panel"
+widget "PanelToplevel*PanelMenuBar"		style "panel"
+widget "PanelToplevel*PanelWidget*"		style "panel"
+widget "*Xfce*Panel*"				style "panel"
+
+widget_class "BonoboPlug*Panel*"		style "panel"
+widget_class "*tray*"				style "panel"
+
+widget "*PanelApplet*"				style "panel"
+
+widget_class "Panel*<GtkButton>"		style:highest "panel-button"
+widget_class "BonoboPlug*Applet*<GtkButton>"	style:highest "panel-button"
+widget_class "BonoboPlug*Panel*<GtkButton>"	style:highest "panel-button"
+
+widget_class "*Tasklist.*<GtkButton>"		style:highest "taskbar-button"
+
+class "WnckPager"				style "pager"
+widget "*FishApplet*"				style "pager"
+
+class "PanelAppletFrame" 			style:highest "panel-handle"
+
+widget "PanelToplevel*PanelMenuButton"		style "panel-menu-arrow"
+
+#widget_class "PanelToplevel*<GtkMenuItem>*"	style:highest "panel-menu-item"
+
+widget "Panel.XfceItembar.XfceInternalPanelPlugin.GtkFrame"	style "xfce4-tray-frame"
+
+

@@ -1,0 +1,51 @@
+/*****************
+ * tabs classic  *
+ *****************/
+.notebook {
+    padding: 0px;
+
+	background-color: shade (@theme_bg_color, 0.97);
+    background-image: none;
+    box-shadow: none;
+
+	border-style: solid;
+    border-width: 1px;
+	border-radius: 3px;
+    border-top-color: 		shade(@notebook_border, 1.00);
+    border-left-color: 		shade(@notebook_border, 1.15);
+    border-right-color: 	shade(@notebook_border, 1.15);
+    border-bottom-color: 	shade(@notebook_border, 1.20);
+	border-image: none;
+
+    -GtkWidget-focus-line-width: 0;
+
+    -GtkNotebook-tab-overlap: 5;
+    -GtkNotebook-tab-curvature: 6;
+}
+
+.notebook tab {
+    padding: 2px 4px;
+    background-color: 	shade(@bg_color, 0.90);
+
+    border-width: 1px 1px 0px 1px;
+    border-style: solid; 
+	border-radius: 0px;
+	border-color: shade(@notebook_border, 1.00);
+	border-image: none;
+}
+
+.notebook tab:active {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_bg_color, 1.00)),
+                                     to   (shade(@theme_bg_color, 0.97)));
+
+	border-color: shade(@notebook_border, 1.00);
+	border-image: none; 
+}
+
+.notebook tab GtkLabel {
+	color: @theme_text_color;
+	text-shadow: 0 1px alpha(#fff, 0.18);
+}
+

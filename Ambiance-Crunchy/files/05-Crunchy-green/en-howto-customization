@@ -1,0 +1,56 @@
+If you want to customize this theme by modifying the color of selection and of the window buttons, here's the method:
+
+**** GTK+ ****
+Colors of selections in "gtk-2.0" and "gtk-3.0":
+orange:#F07746
+blue: #5A91D2
+grey: #A0A0BA
+green: #70AE6C
+
+In the folder "gtk-2.0", in the file "gtkrc":
+line 7: change the colors of "selected_bg_color:" and "link_color:"
+
+In the folder "gtk-3.0", in the file "settings.ini":
+line 2 : change the colors of "selected_bg_color:" and "link_color:"
+
+Same folder, the file "gtk.css":
+line 6: change the color of "selected_bg_color"
+line 30: change the color of "link_color"
+
+**** OPENBOX ****
+In the folder "Openbox-3", in the file "themerc":
+Lighten colors:	orange:#F07746	blue: #5A91D2 	grey: #A0A0BA	green: #70AE6C
+Darken colors:	orange:#A0411E	blue: #233CB4	grey: #4A4A57	green: #3E613C
+
+line 76: menu.items.active.bg.color: <lighten color>
+line 77: menu.items.active.bg.colorTo: <darken color>
+line 102: window.active.button.*.bg.colorTo: <lighten color>
+line 103: window.active.button.*.pressed.bg.color: <lighten color>
+line 109: window.active.button.*.hover.bg.color: <lighten color>
+
+The new buttons set is made in inkscape and then the svg files are converted (-> 00-Customization folder)
+
+**** GNOME-SHELL & Cinnamon (Linux Mint gtk-3) ****
+Colors of the selected items:
+02-Crunchy-orange:	#F07746, 20%:rgba(240, 119, 70, 0.2)	darker-orange:	#A0411E, 40%:rgba(160, 65, 30, 0.4)
+03-Crunchy-blue:	#5A91D2, 20%:rgba(90, 145, 210, 0.2)	darker-blue:	#233CB4, 40%:rgba(35, 60, 180, 0.4)
+04-Crunchy-grey:	#A0A0BA, 20%:rgba(160, 160, 186, 0.2)	darker-grey:	#4A4A57, 40%:rgba(74, 74, 87, 0.4)
+05-Crunchy-green:	#70AE6C, 20%:rgba(112, 174, 108, 0.2)	darker-green:	#3E613C, 40%:rgba(62, 97, 60, 0.4)
+
+Others colors:
+panel:	#66655F		darker:#262523
+darkbackground:#4D4B46	darker-bg:#292825
+greys:	7%:#eee		13%:#ddd	30%:#B3B3B3		40%:#999
+
+named colors:white,grey,black,red,green,blue,transparent
+
+Colors with transparency:
+white: 70%_opacity:rgba(255,255,255,0.7)
+greys:	5%+80%:rgba(242,242,242,0.8), 40%+40%:rgba(153,153,153,0.4), 40%+80%:rgba(153,153,153,0.8), 50%+45%:rgba(128,128,128,0.45)
+
+darkbackground:	20%:rgba(77,75,70,0.2), 70%:rgba(77,75,70,0.7), 80%:rgba(77,75,70,0.8), 90%:rgba(77,75,70,0.9)
+
+**** Buttons ****
+The new buttons set is made in inkscape and then the svg files are converted with the script 00.. and moved to the right folders with the script 01.. (-> 00-Customization folder).
+
+Warning: you have to have imagemagick package installed for the command "convert" in the script. For example, in Ubuntu 13.04, it was necessary to install it.

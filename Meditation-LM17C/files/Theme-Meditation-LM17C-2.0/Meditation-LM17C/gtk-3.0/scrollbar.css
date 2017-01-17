@@ -1,0 +1,78 @@
+/**************
+ * Scrollbars *
+ **************/
+
+.scrollbar {
+    -GtkRange-slider-width: 7;
+    -GtkRange-stepper-size: 0;
+    -GtkRange-stepper-spacing: 0;
+    -GtkRange-trough-border: 3;
+
+    -GtkScrollbar-has-backward-stepper: 0;
+    -GtkScrollbar-has-forward-stepper: 0;
+    
+    -GtkScrollbar-min-slider-length: 30;	
+}
+
+.scrollbar.trough.vertical {
+	box-shadow: none;
+    background-image: -gtk-gradient (linear, left top, right top,
+                                     from (shade (@theme_bg_color, 1.00)),
+                                     to (shade (@theme_bg_color, 1.10)));
+
+	border-style: solid;
+	border-width: 0px 0px 0px 1px;
+    border-radius: 0px;
+	border-left-color: shade (@theme_bg_color, 0.96);
+
+}
+
+.scrollbar.trough.horizontal {
+	box-shadow: none;
+    border-radius: 0px;
+	border-width: 0px;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_bg_color, 1.00)),
+                                     to (shade (@theme_bg_color, 1.10)));
+
+	border-style: solid;
+	border-width: 1px 0px 0px 0px;
+    border-radius: 0px;
+	border-top-color: shade (@theme_bg_color, 0.96);
+}
+
+.scrollbar.slider,
+.scrollbar.button {
+    border-width: 0px;
+	border-style: none;
+    border-radius: 10px;
+	background-color:         alpha (#000, 0.25);
+}
+
+.scrollbar.slider:prelight {
+	background-color:         alpha (#000, 0.42);
+}
+
+.scrollbar.slider:insensitive {
+    -GtkRange-slider-width: 0px;
+}
+
+.scrollbar.trough:insensitive {
+    -GtkRange-trough-border: 3px;
+}
+
+/* overlay scrollbar */
+OsThumb:selected,
+OsScrollbar:selected {
+    background-color: @theme_selected_bg_color;
+}
+
+OsThumb:active,
+OsScrollbar:active {
+    background-color: shade (@theme_bg_color, 0.6);
+}
+
+OsThumb:insensitive,
+OsScrollbar:insensitive {
+    background-color: shade (@theme_bg_color, 0.85);
+}

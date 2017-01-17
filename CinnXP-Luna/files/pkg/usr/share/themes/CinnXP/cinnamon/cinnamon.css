@@ -1,0 +1,1575 @@
+/* ###################################################################
+ * Section common with Gnome Shell
+ * ... contains a few cinnamon specific styles (rare occurences) 
+ * ###################################################################*/
+ 
+stage {
+    font-family: dejavu sans, Droid Sans, sans-serif;
+    font-size: 9pt;
+}
+
+.cinnamon-link {
+    color: rgb(0,0,0);
+    text-decoration: underline;
+}
+
+.cinnamon-link:hover {
+    color: #50a200;
+}
+
+.label-shadow {
+}
+
+StScrollView.vfade {
+  -st-vfade-offset: 68px;
+}
+
+StScrollView StScrollBar {
+  	min-width: 17px;
+  	min-height: 17px;
+}
+
+StScrollBar {
+  	padding: 0px;
+}
+
+StScrollBar StBin#trough {
+	background-color: rgba(0,0,0,0.2);
+}
+
+StScrollBar StButton#hhandle,
+StScrollBar StButton#vhandle,
+StScrollBar StButton#hhandle:hover,
+StScrollBar StButton#vhandle:hover {
+	border-image: url('outset-shadow.png') 3;
+}
+
+#Tooltip {
+    border-radius: 0px;
+    padding: 2px 6px;
+    background-color: #FFFFE2;
+    border: 1px solid black;
+    color: black;
+    font-size: 9pt;
+    font-weight: normal;    
+    text-align: center;
+}	
+/* ===================================================================
+ * Switches (to be used in menus)
+ * ===================================================================*/
+ 
+.toggle-switch {
+	width: 70px;
+	height: 21px;
+}
+
+.toggle-switch-us,
+.toggle-switch-intl {
+     border-image: url("off-intl.png") 4;
+}
+
+.toggle-switch-us:checked,
+.toggle-switch-intl:checked {
+     border-image: url("on-intl.png") 4;
+}
+/* ===================================================================
+ * PopupMenu (popupMenu.js) 
+ * ===================================================================*/
+
+.popup-menu-boxpointer {
+    -arrow-border-radius: 24px;
+    -boxpointer-gap: -1.5px;
+    -arrow-base: 40px; /* for some reason this makes the menu go closer to the edge */
+}
+
+.popup-menu {
+	color: black;
+	min-width: 100px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-image: url('outset-shadow.png') 3;
+}
+
+.popup-menu StEntry {
+	background-color: white;
+	padding: 4px 12px;
+	border: 1px solid #7b9ebd;
+    width: 250px;
+    height: 16px;
+    color: black;
+    selected-color: #fff;
+    caret-color: black;
+    caret-size: 1px;
+    selection-background-color: #1466C9;
+}
+
+.popup-menu StScrollView.vfade {
+    -st-vfade-offset: 0px;
+}
+
+.popup-menu StScrollBar {
+    padding: 2px;
+}
+
+.popup-menu StScrollView {
+	border: 0px solid rgba(0,0,0,0);
+	border-image: url('inset-shadow.png') 3;
+	background-color: #ece9d8;
+}
+
+.popup-submenu-menu-item:open {
+    background-color: rgba(70,70,70,0);
+}
+
+.popup-sub-menu {
+	border-image: url('inset-shadow.png') 3;
+	background-color: #ece9d8;
+    padding: 0.2em 0.2em;
+}
+
+.popup-sub-menu .popup-menu-item:ltr {
+    padding-right: 0em;
+}
+
+.popup-sub-menu .popup-menu-item:rtl {
+    padding-left: 0em;
+}
+
+/* this thing pops up if you go into overview and right click */
+.popup-combo-menu {
+    border: 1px solid #aca899;
+    background-color: white;
+    color: black;
+    padding: 1px;
+}
+
+.popup-combobox-item {
+	spacing: 1em;
+}
+
+/* The remaining popup-menu sizing is all done in ems, so that if you
+ * override .popup-menu.font-size, everything else will scale with it.
+ */
+ 
+.popup-menu-content {
+	padding: 1em 0.1em;
+}
+
+.popup-menu-item {
+	padding: .4em 1.75em;
+	spacing: 1em;
+}
+
+.popup-menu-item:active {
+	background-color: #1466C9;
+	color: #fff;
+}
+
+.popup-inactive-menu-item,
+.popup-menu-item:insensitive {
+	color: #a1a192;
+}
+
+.popup-separator-menu-item {
+	background-color: rgba(0,0,0,0.2);
+	height: 1px;
+}
+
+.popup-alternating-menu-item:alternate {
+	font-weight: bold;
+	color: rgb(70,70,70);
+}
+
+.popup-slider-menu-item {
+    border-image: url("trough-horizontal.png") 2 2 10 11 stretch; 
+    height: 21px;
+    min-width: 15em;
+    -slider-height: 4px;
+    -slider-border-width: 1px;
+    -slider-handle-radius: 6px;
+}
+
+.popup-device-menu-item {
+	spacing: .5em;
+}
+
+.popup-subtitle-menu-item {
+	font-weight: bold;
+	color: black;
+}
+
+.popup-menu-icon {
+	icon-size: 1em;
+}
+
+.nm-menu-item-icons {
+	spacing: .5em;
+}
+/* ===================================================================
+ * Panel (panel.js)
+ * ===================================================================*/
+
+#panel {
+    color: white;
+    font-size: 9pt;
+    height: 30px;
+    padding: 0px;
+	border-image: url('panel.png');
+	spacing: 2px;
+}
+
+#panelRight {
+	border-image: url('panel-right.png') 3 0 1 1;
+}
+
+#panelLeft:dnd {
+    background-color: rgba(255,0,0,1);        
+}
+
+#panelCenter:dnd {
+    background-color: rgba(0,255,0,1);        
+}
+
+#panelRight:dnd {
+    background-color: rgba(0,0,255,1);        
+}
+
+#panelLeft:ltr {
+    padding-right: 4px;
+}
+
+#panelLeft:rtl {
+    padding-left: 4px;
+}
+
+#panelRight:ltr {
+    padding-left: 5px;
+    spacing: 0px;
+}
+
+#panelRight:rtl {
+    padding-right: 5px;
+    spacing: 0px;
+}
+
+.system-status-icon {
+	padding-left: 0px;
+	padding-right: 0px;	
+	spacing: 0px;
+	margin: 0px;
+	icon-size: 1.14em;
+}
+
+#appMenu {
+    spacing: 4px;
+}
+
+.panel-button #appMenuIcon {
+    app-icon-bottom-clip: 1px;
+}
+
+.panel-button:active #appMenuIcon,
+.panel-button:checked #appMenuIcon,
+.panel-button:focus #appMenuIcon {
+    app-icon-bottom-clip: 2px;
+}
+
+/* ===================================================================
+ * Scale 
+ * ===================================================================*/
+
+#overview {
+    spacing: 12px;
+}
+
+.window-caption {
+	border-image: url('entry_shadow_insensitive.png') 6;
+    color: #a1a192;
+    spacing: 25px;
+    font-size: 9pt;
+    padding: 6px 8px;
+    text-shadow: 1px 1px white;
+    -cinnamon-caption-spacing: 10px;
+}
+
+.window-caption#selected {
+	color: black;
+	text-shadow: none;
+	border-image: url('entry_shadow.png') 6;
+}
+
+.workspace-overview-background-shade {
+	background-color: rgba(0,0,0,0.3);
+}
+
+/* shared stuff b/t expo and scale */
+
+.window-close,
+.workspace-close-button {
+    background-image: url("close.png");
+    height: 35px;
+    width: 35px;
+    -cinnamon-close-overlap: 25px;
+}
+
+.window-close:hover,
+.workspace-close-button:hover { 
+	background-image: url("close-hover.png");
+}
+
+/* ===================================================================
+ * Expo
+ * ===================================================================*/
+
+.workspace-thumbnails {
+    spacing: 26px;
+    padding-left: 0.9em;
+    padding-right: 1em;
+}
+
+.workspace-add-button {
+	border: 2px solid #7895e2;
+	border-right-width: 0px;
+	border-radius: 8px 0px 0px 8px;
+	background: url(plus.png);
+	box-shadow: inset 0px 0px 0px 1px #0f40a6;
+    height: 200px;
+    width: 35px;
+}
+
+.workspace-add-button:hover {
+	background: url(plus-hover.png);
+}
+
+.workspace-thumbnail-indicator {
+    outline: 2px solid white;
+    border: 1px solid #888;
+}
+
+.window-close-area {
+	border: 2px solid #7895e2;
+	border-bottom-width: 0px;
+	border-radius: 8px 8px 0px 0px;
+	background: url('trash.png');
+	box-shadow: inset 0px 0px 0px 1px #0f40a6;
+	height: 150px;
+	width: 226px;
+}
+
+.expo-background {
+	border-image: url('big-blue-bg.png') 250 250 290 100;
+}
+
+.expo-workspace-thumbnail-frame {
+  	border: 2px solid #7895e2;
+  	border-radius: 2px;
+}
+
+.expo-workspace-thumbnail-frame#active {
+	border-color: #ffdb00;
+}
+
+.expo-workspaces-name-entry {
+	padding: 10px 15px;
+	border-image: url('entry_shadow_insensitive.png') 6;
+	height: 15px;	
+	text-align: center;
+	color: #aca899;
+	selected-color: #fff;
+    caret-color: black;
+    caret-size: 1px;
+    selection-background-color: #1466C9;
+}
+
+.expo-workspaces-name-entry:focus,
+.expo-workspaces-name-entry#selected,
+.expo-workspaces-name-entry#selected:focus {
+	color: black;
+	border-image: url('entry_shadow.png') 6;
+}
+
+/* ===================================================================
+* Desklets (desklet.js)
+* ===================================================================*/
+
+.desklet {        
+	color: black;   
+}
+
+.desklet-with-borders {
+	border-image: url("bg-1.png") 6;
+	color: white;
+	font-weight: bold;
+	padding: 8px;
+}
+
+.desklet-with-borders-and-header {
+	border-image: url("bg-1.png") 6;
+	color: white;
+	padding: 8px;
+}
+
+.desklet-header { 
+	border-image: url("bg-1.png") 6;
+	font-size: 9pt;
+	font-weight: bold;
+	text-shadow: #eee 0px 0px 0px;
+	color: white;
+	padding: 8px;
+}
+
+.desklet-drag-placeholder {
+    background-color: rgba(49, 106, 197, 0.5);
+    border: 1px solid rgba(49, 106, 197, 0.8);
+}
+
+.xkcd-box {
+	padding: 6px;
+	border: 0px solid #141414;
+	background-color: rgba(0,0,0,0);
+	border-radius: 0px;
+}
+
+.photoframe-box {
+	padding: 10px;
+	border-image: url("desklet-borders.png") 6;
+}
+/* ===================================================================
+ * Clock Desklet (desklet.js) 
+ * ===================================================================*/
+ 
+.clock-desklet-label {
+	color: white;
+}
+/* ===================================================================
+ * Looking Glass
+ * ===================================================================*/
+
+#LookingGlassDialog {
+  	border-image: url('outset-shadow.png') 3;
+	padding: 8px;
+	color: black;
+}
+
+#LookingGlassDialog StLabel {
+	padding: 6px;
+}
+
+/* ===================================================================
+ * Date applet 
+ * ===================================================================*/
+
+.calendar {
+    padding: .4em 1.75em .8em 1.75em;
+    spacing-rows: 0;
+    spacing-columns: 0;
+}
+
+.datemenu-date-label {
+	padding: .5em 0em 1em 0em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.calendar-month-label {
+	padding-bottom: 3px;
+	padding-top: 3px;
+	font-weight: bold;
+}
+
+.calendar-change-month-back,
+.calendar-change-month-forward:rtl {
+	height: 20px;
+    width: 20px;
+    border: 1px rgba(0,0,0,0);
+	background-image: url("calendar-arrow-left.png");
+}
+
+.calendar-change-month-back:hover {
+	background-image: url("calendar-arrow-left-hover.png");
+}
+
+.calendar-change-month-forward,
+.calendar-change-month-back:rtl {
+	height: 20px;
+    width: 20px;
+    border: 1px rgba(0,0,0,0);
+	background-image: url("calendar-arrow-right.png");
+}
+
+.calendar-change-month-forward:hover {
+	background-image: url("calendar-arrow-right-hover.png");
+}
+
+.calendar-day-base {
+    font-size: 9pt;
+    text-align: center;
+    width: 2.4em;
+    height: 2.4em;
+}
+
+.calendar-day-heading {
+    font-size: 9pt;
+    padding-top: 2em;
+}
+
+.calendar-week-number {
+    color: rgba(0,0,0,0.5);
+    font-size: 9pt;
+}
+
+.calendar-day {
+    border: 1px solid #B8B6A8;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    padding-left: 1px;
+    padding-top: 1px;
+    background-color: white;
+}
+
+.calendar-day-top {
+    border-top-width: 1px;
+}
+
+.calendar-day-left {
+    border-left-width: 1px;
+}
+
+.calendar-today {
+	background-color: #1443a7;
+    box-shadow: none;
+    color: white;
+}
+
+.calendar-other-month-day {
+    color: #a1a192;
+    background-color: white;
+}
+/* ===================================================================
+ * Notifications
+ * ===================================================================*/
+
+#notification {
+	color: black;
+    font-size: 8.5pt;
+    padding: 8px 8px 8px 8px;
+    spacing-rows: 10px;
+    spacing-columns: 10px;
+    margin-from-right-edge-of-screen: 20px;    
+    width: 34em;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #FFFFE2;
+}
+
+/* hacky thing to cover up inset border... */
+
+#notification StLabel,
+#notification.multi-line-notification StLabel {
+	background-color: #FFFFE2;
+}
+
+#notification.multi-line-notification {
+    padding-bottom: 8px;
+}
+
+/* We use row-span = 2 for the image cell, which prevents its height preferences to be
+   taken into account during allocation, so its height ends up being limited by the height
+   of the content in the other rows. To avoid showing a stretched image, we set the minimum
+   height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
+.notification-with-image {
+    min-height: 159px;
+}
+
+#notification-scrollview {
+    max-height: 100em;
+}
+
+#notification-scrollview > .top-shadow,
+#notification-scrollview > .bottom-shadow {
+    height: 10em;
+}
+
+#notification-scrollview:ltr > StScrollBar {
+    padding-left: 6px;
+}
+
+#notification-scrollview:rtl > StScrollBar {
+    padding-right: 6px;
+}
+
+#notification-body {
+    spacing: 5px;
+    border: none;
+}
+
+#notification-actions {
+    spacing: 10px;
+}
+
+.notification-button,
+.notification-icon-button,
+StScrollView .notification-button,
+StScrollView .notification-icon-button {
+	border-image: url('notification-button.png') 4;
+    font-size: 11pt;
+    font-weight: normal;
+    padding: 4px 42px 5px;
+    color: #aa9c87;
+    text-align: center;
+}
+
+.notification-button:hover,
+.notification-icon-button:hover,
+StScrollView .notification-button:hover,
+StScrollView .notification-icon-button:hover {
+    border-image: url('notification-button-hover.png') 4 5 4 5;
+    color: white;
+}
+
+.notification-button:active,
+.notification-icon-button:active,
+StScrollView .notification-button:active,
+StScrollView .notification-icon-button:active {
+    border-image: url('notification-button-active.png') 4 5 4 5;
+    color: white;
+}
+
+.notification-button:focus,
+.notification-icon-button:focus {
+}
+
+.notification-icon-button > StIcon {
+    icon-size: 36px;
+}
+
+#notification .cinnamon-link {
+    color: rgb(0,0,0);
+    text-decoration: underline;
+}
+
+#notification StEntry {
+	background-color: white;
+    padding: 4px 12px;
+    color: black;
+    border: 1px solid #7b9ebd;
+    border-radius: 0px;
+    caret-color: black;
+    caret-size: 1px;
+    width: 250px;
+    height: 16px; 
+    selected-color: #fff;
+    selection-background-color: #1466C9;
+}
+
+/* ===================================================================
+ * Alt Tab
+ * ===================================================================*/
+
+#altTabPopup {
+    padding: 8px;
+    spacing: 16px;
+}
+
+.switcher-list {
+	border-image: url('outset-shadow.png') 3;
+    padding: 20px;
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+.switcher-list-item-container {
+    spacing: 8px;
+}
+
+.thumbnail-scroll-gradient-left,
+.thumbnail-scroll-gradient-right {
+    background-color: rgba(51, 51, 51, 0.5);
+    width: 20px;
+}
+
+.switcher-list .item-box {
+    padding: 8px;
+    border: 3px solid rgba(0,0,0,0);
+}
+
+.switcher-list .item-box:outlined {
+    border-color: rgba(85,85,85,0);
+}
+
+.switcher-list .item-box:selected {
+	border-color: #1466C9;
+}
+
+/*
+.switcher-list .item-box {
+	width: 36px;
+}
+*/
+
+.switcher-list .thumbnail {	
+    width: 256px;
+}
+
+.switcher-list .separator {
+    width: 1px;
+    background: rgba(0,0,0,0.3);
+}
+
+.ripple-box {
+    width: 250px;
+    height: 250px;
+    background-image: url("corner-ripple-xp.png");
+}
+
+.switcher-arrow {
+    border: none;
+    color: black;
+}
+
+.switcher-arrow:highlighted {
+    color: white;
+}
+
+.switcher-preview-backdrop {
+   background-color: rgba(25,25,25,0.95);
+}
+/* ===================================================================
+ * Modal dialogs
+ * ===================================================================*/
+
+.modal-dialog {
+    font-size: 10pt;
+    border-image: url('outset-shadow.png') 3;
+    padding-right: 42px;
+    padding-left: 42px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    color: black;
+}
+
+.modal-dialog-button-box {
+    spacing: 110px;
+}
+
+.modal-dialog-button {
+	height: 20px;
+    font-size: 10pt;
+    color: black;
+    border-image: url("button.png") 4;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 3px 22px 3px;
+}
+
+.modal-dialog-button:hover,
+.modal-dialog-button:focus:hover {
+    border-image: url("button-hover.png") 5;
+}
+
+.modal-dialog-button:focus {
+    border-image: url("button-focus.png") 5;
+}
+
+.modal-dialog-button:active,
+.modal-dialog-button:checked,
+.modal-dialog-button:focus:checked,
+.modal-dialog-button:focus:active {
+    border-image: url("button-pressed.png") 4;
+}
+
+.modal-dialog-button:disabled {
+	border-image: url("button-insensitive.png") 4;
+    color: #a1a192;
+}
+/* ===================================================================
+ * Run dialog
+ * ===================================================================*/
+
+.run-dialog {
+    padding: 12px 16px 16px 16px;
+}
+
+.run-dialog-label {
+    font-size: 10pt;
+    padding-bottom: 10px;
+}
+
+.run-dialog-error-label {
+	font-size: 10pt;
+}
+
+.run-dialog-error-box {
+    padding-top: 15px;
+    spacing: 5px;
+}
+
+.run-dialog-entry {
+	background-color: white;
+	border: 1px solid #7b9ebd;
+    padding: 4px 6px;
+    color: black;
+    caret-color: black;
+    caret-size: 1px;
+    width: 250px;
+    height: 16px; 
+    selected-color: #fff;
+    selection-background-color: #1466C9;
+}
+
+.run-dialog-completion-box { 
+    padding-top: 12px;
+    font-size: 10px;
+}
+
+.lightbox {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+/* ===================================================================
+ * CinnamonMountOperation Dialogs
+ * ===================================================================*/
+
+.cinnamon-mount-operation-icon {
+    icon-size: 48px;
+}
+
+.mount-password-reask {
+    color: red;
+}
+
+.show-processes-dialog,
+.mount-question-dialog {
+    spacing: 24px;
+}
+
+.show-processes-dialog-subject,
+.mount-question-dialog-subject {
+    font-size: 12pt;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 6px;
+}
+
+.show-processes-dialog-subject:rtl,
+.mount-question-dialog-subject:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
+}
+
+.show-processes-dialog-description,
+.mount-question-dialog-description {
+    font-size: 10pt;
+    padding-left: 17px;
+    width: 28em;
+}
+
+.show-processes-dialog-description:rtl,
+.mount-question-dialog-description:rtl {
+    padding-right: 17px;
+}
+
+.show-processes-dialog-app-list {
+    font-size: 10pt;
+    max-height: 200px;
+    padding-top: 24px;
+    padding-left: 49px;
+    padding-right: 32px;
+}
+
+.show-processes-dialog-app-list:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+}
+
+.show-processes-dialog-app-list-item {
+    color: rgb(70,70,70);
+}
+
+.show-processes-dialog-app-list-item:hover {
+    color: rgb(120,120,120);
+}
+
+.show-processes-dialog-app-list-item:ltr {
+    padding-right: 1em;
+}
+
+.show-processes-dialog-app-list-item:rtl {
+    padding-left: 1em;
+}
+
+.show-processes-dialog-app-list-item-icon:ltr {
+    padding-right: 17px;
+}
+
+.show-processes-dialog-app-list-item-icon:rtl {
+    padding-left: 17px;
+}
+
+.show-processes-dialog-app-list-item-name {
+    font-size: 10pt;
+}
+/* ===================================================================
+ * Magnifier
+ * ===================================================================*/
+
+.magnifier-zoom-region {
+	border: 3px solid rgba(0,0,0,0);
+	border-image: url('etched-shadow.png') 4;
+}
+
+.magnifier-zoom-region.full-screen {
+    border-width: 0px;
+}
+
+/* ===================================================================
+ * On screen keyboard
+ * ===================================================================*/
+
+#keyboard {
+	background-color: #316bc6;
+	box-shadow: inset 0px 1px #d8e4f8;
+}
+
+.keyboard-layout {
+    spacing: 10px;
+    padding: 10px;
+}
+
+.keyboard-row {
+    spacing: 15px;
+}
+
+.keyboard-key {
+    min-height: 30px;
+    min-width: 30px;
+    border-image: url('key.png') 3;
+    font-size: 18pt;
+    color: black;
+}
+
+.keyboard-key:grayed {
+    color: #a1a192;
+}
+
+.keyboard-key:checked,
+.keyboard-key:hover,
+.keyboard-key:active {
+	border-image: url('key-active.png') 3;
+	color: white;
+}
+
+.keyboard-subkeys {
+	border-image: url('key-sub.png') 3;
+    color: #d8e4f8;
+    padding: 5px;
+    -arrow-border-radius: 4px;
+    -arrow-background-color: rgb(225,225,225);
+    -arrow-border-width: 1px;
+    -arrow-border-color: rgba(40,40,40,0.4);
+    -arrow-base: 18px;
+    -arrow-rise: 10px;
+    -st-shadow: 0px -1px 2px 0px rgba(255,255,255,0.9);
+    -boxpointer-gap: 2px;
+}
+/* ###################################################################
+ * Cinnamon Specific Section 
+ * ###################################################################*/
+
+/* ===================================================================
+ * Menu (menu.js)
+ * ===================================================================*/
+
+/* Start Button */
+
+/*
+ * Here we make the assumption that the menu applet is the first thing
+ * on the left panel...should be valid seeing as this is a WinXP clone
+ * and any sane user will configure their applets accordingly
+ */
+
+#panelLeft .applet-box:first-child {
+	color: white;
+	border-image: url('start-button.png') 6 11 6 6;
+	font-style: italic;
+	font-family: tahoma;
+	font-weight: bold;
+	padding: 0px;
+	padding-right: 25px;
+	padding-left: 8px;
+	font-size: 16px;
+	text-shadow: 1px 1px 2px 1px rgba(0,0,0,0.5);
+}
+
+#panelLeft .applet-box:first-child:hover {
+	border-image: url('start-button-hover.png') 6 11 6 6;
+}
+
+#panelLeft .applet-box:first-child:active {
+	border-image: url('start-button-active.png') 6 11 6 6;
+}
+
+/* Main menu title */
+
+.menu-favorites-box {  
+  	margin: auto;
+	background-color: #D3E5FA;
+    border: 1px solid #95bdee;
+    border-radius: 0px;
+    padding: 0.5em;
+	color: black;
+}
+
+.menu-background {
+	border-image: url("menu-bg.png") 12 12 67 42;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+	padding: 55px 1px 0px 1px;
+}
+
+.menu-favorites-button {
+    padding: 10px;
+    border-radius: 0px;
+}
+
+.menu-favorites-button:hover {
+	background-color: #316ac5;
+}
+
+.menu-places-box {  
+  	margin: auto;
+  	padding: 8px;
+  	border: 0px solid #666;  
+}
+
+.menu-places-button {
+    padding: 10px;
+}
+
+.menu-categories-box {
+    padding: 10px;
+}
+
+.menu-applications-box {
+    padding: 10px 0px 0px 10px;
+    background-color: white;
+    border: none;
+}
+
+.menu-applications-inner-box {
+    padding: 5px;
+    background-color: #d3e5fa;
+}
+
+.menu-applications-box StScrollBar {
+	padding: 0px;
+}
+
+.menu-applications-box StScrollView {
+	border: 1px solid #95bdee;
+	border-image: none;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+}
+
+
+.menu-applications-box StBin#trough {
+	background: none;
+	border-width: 0px;
+	box-shadow: none;
+	border-image: url('trough-scrollbar-vert.png') 1;
+}
+
+.menu-applications-box StButton#vhandle {
+	border-image: url('slider-vert.png') 3;
+	background: url('handle-vert.png') no-repeat center center;
+}
+
+.menu-applications-box StButton#vhandle:hover {
+	border-image: url('slider-vert-hover.png') 3;
+	background: url('handle-vert-hover.png') no-repeat center center;
+}
+
+.menu-application-button {
+    padding: 7px;
+    max-width: 10px;
+    color: #0a246a;
+}
+
+.menu-application-button-selected {
+    padding: 7px;
+    color: white;
+    background-color: #316ac5;
+}
+
+.menu-application-button-label:ltr { 
+  	padding-left: 5px;
+}
+
+.menu-application-button-label:rtl { 
+  	padding-right: 5px;
+}
+
+.menu-category-button {
+    padding: 7px;
+    color: #373738;
+}
+
+.menu-category-button-greyed {
+    padding: 7px;
+    color: #808080;
+}
+
+.menu-category-button-selected {
+    padding: 7px;
+    color: white;
+	background-color: #316ac5;
+}
+
+.menu-category-button-label:ltr { 
+    padding-left: 5px       
+}
+
+.menu-category-button-label:rtl { 
+    padding-right: 5px       
+}
+
+/* Name and description of the currently hovered item in the menu
+ * This appears on the bottom right hand corner of the menu*/
+ 
+.menu-selected-app-box {
+	padding-top: 6px;
+    padding-right: 30px;
+    padding-left: 28px;
+    text-align: right;
+    color: white;
+}
+
+.menu-selected-app-title {
+    font-weight: bold;
+}
+
+.menu-selected-app-description {
+    max-width: 150px;
+}
+
+.menu-search-box {
+   padding-left: 30px;
+   padding-bottom: 10px;
+}
+
+.menu-search-entry-icon {
+    icon-size: 1.2em;
+    color: black;
+}
+
+/* Context menu (at the moment only for favorites) */
+.menu-context-menu {
+}
+/* ===================================================================
+ * Window list (windowList.js)
+ * ===================================================================*/
+
+.window-list-box {
+    spacing: 0px;
+    padding: 4px 2px;
+}
+
+.window-list-item-label {
+    width: 15em;
+    min-width: 5px;
+}
+
+.window-list-item-box {
+	font-weight: normal; 
+	color: white;
+	border-image: url('applet-button.png') 3 3 6 5;
+}
+
+.window-list-item-box:hover,
+.window-list-item-demands-attention  {     
+     border-image: url('applet-button-hover.png') 3 3 6 5;
+}
+
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box:focus  {
+     border-image: url('applet-button-active.png') 3 3 6 5;
+}
+
+.window-list-item-box:checked:hover,
+.window-list-item-box:focus:hover,
+.window-list-item-box:active:hover  {     
+     border-image: url('applet-button-active-hover.png') 3 3 6 5;
+}
+
+/* ===================================================================
+ * Sound Applet (status/volume.js)
+ * ===================================================================*/
+ 
+.sound-player StButton {
+	width: 22px;
+	height: 13px;
+	padding: 5px;
+	color: #000;
+}
+
+.sound-player StButton:small {
+	width: 16px;
+	height: 8px;
+	padding: 1px;
+}
+
+.sound-player StButton:small StIcon {
+	icon-size: 1em;
+}
+
+.sound-player StButton StIcon {
+	icon-size: 1.5em;
+}
+
+.sound-player StButton:hover, .sound-player StButton:active {
+	color: #666;
+}
+
+.sound-player .slider {
+    height: 0.5em;
+    -slider-height: 0.5em;
+    -slider-background-color: #666;
+    -slider-border-color: #000;
+    -slider-active-background-color: #aaa;
+    -slider-active-border-color: #000;
+    -slider-border-width: 0px;
+    -slider-handle-radius: 0px;
+}
+
+.sound-player StBoxLayout {
+	spacing: 0.5em;
+}
+
+.sound-player>StBoxLayout {
+	padding: 5px;
+}
+
+.sound-player-overlay {
+	width: 300px;
+	height: 80px;
+	padding: 15px;
+	spacing: 0.5em;
+	background: rgba(0,0,0,0.0);
+}
+
+.sound-player-overlay StBoxLayout {
+	padding: 3px;
+	background: #000;
+	border: 1px solid #999;
+	color: #fff;
+}
+
+.sound-player-overlay StButton {
+	color: #fff;
+}
+
+.sound-player-overlay StButton:hover {
+	color: #aaa;
+}
+
+.sound-player-generic-coverart {
+	background: rgba(0,0,0,0.2);
+}
+/* ===================================================================
+ * Workspace Switcher applet (workspaceSwitcher.js)
+ * ===================================================================*/
+ 
+#workspaceSwitcher {
+    spacing: 0px;
+}
+
+.workspace-button {
+    width: 20px;
+    height: 6px;   
+    color: white;
+    padding: 3px;
+    padding-top: 5px;
+}
+
+.workspace-button:outlined {
+    border-image: url('applet-button-active.png') 3 3 6 5;
+}
+
+.workspace-button:hover {
+	border-image: url('applet-button-hover.png') 3 3 6 5;
+}
+
+.workspace-button:outlined:hover {
+    border-image: url('applet-button-active-hover.png') 3 3 6 5;
+}
+
+/* ===================================================================
+ * Panel Launchers Applet (panelLaunchers.js)
+ * ===================================================================*/
+
+#panel-launchers-box {
+    padding: 0px;
+}
+
+.panel-launcher {
+    margin: 0px;
+    padding: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: #7bb6e8;
+}
+
+.panel-launcher:hover {
+    border-image: url('applet-button-hover.png') 3 3 6 5;
+    color: white;
+}
+
+/* ===================================================================
+ * Overview corner
+ * ===================================================================*/
+ 
+#overview-corner {
+	background-image: url("overview.png");
+}
+
+#overview-corner:hover {    
+    background-image:  url("overview-hover.png");
+}
+/* ===================================================================
+ * Applets (applet.js) 
+ * ===================================================================*/
+ 
+.applet-separator {
+	background: url('separator-left.png') no-repeat center center;
+  	padding: 0px 6px;
+}
+
+#panelRight .applet-separator {
+	background-image: url('separator-right.png');
+}
+
+.applet-box {
+	color: white;
+    padding: 0px 4px 0px 4px;
+}
+
+#panelLeft .applet-box {
+	color: #7bb6e8;
+}
+
+#panelLeft .applet-box:hover {
+	color: white;
+	border-image: url('applet-button-hover.png') 3 3 6 5;
+}
+
+#panelLeft .applet-box:active {
+	color: white;
+	border-image: url('applet-button-active.png') 3 3 6 5;
+}
+
+.applet-icon {
+    icon-size: 22px;
+}
+
+/* ===================================================================
+ * Workspace OSD
+ * ===================================================================*/
+
+.workspace-osd {
+	border-image: url('outset-shadow.png') 3;
+	padding: 9px 15px;
+	color: black;
+	font-weight: bold;
+	font-size: 26pt;	
+}
+
+/* ===================================================================
+ * About Dialog (applet.js and desklet.js)
+ * ===================================================================*/
+.about-content {
+    width: 550px;
+    height: 200px;
+    spacing: 8px;
+    padding-bottom: 16px;
+}
+
+.about-title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.about-uuid {
+    font-size: .8em;
+}
+
+.about-icon {
+    padding-right: 20px;
+}
+
+.about-description {
+    padding-top: 4px;
+}
+
+.about-version {
+    padding-left: 7px;
+}
+
+/* ===================================================================
+ * Notification Applet
+ * ===================================================================*/
+
+.notification-applet-padding {
+	padding: .5em 1em;
+}
+
+.notification-applet-container {
+	max-height: 100px;
+}
+
+/* ===================================================================
+ * Checks and Radios
+ * ===================================================================*/
+
+.check-box CinnamonGenericContainer {
+    spacing: .2em;
+    min-height: 30px;
+    padding-top: 2px;
+}
+
+.check-box StBin,
+.check-box:focus StBin {
+    width: 22px;
+    height: 22px;
+    background-image: url('checkbox-off.png');
+}
+
+.check-box:checked StBin,
+.check-box:checked:focus StBin {
+    background-image: url('checkbox-focus.png');
+}
+
+.check-box StLabel {
+	font-weight: normal;
+}
+
+.radiobutton CinnamonGenericContainer {
+    spacing: .2em;
+    height: 26px;
+    padding-top: 2px;
+}
+
+.radiobutton StBin,
+.radiobutton:focus StBin {
+    width: 16px;
+    height: 16px;
+    background-image: url('radio-unselected.png');
+}
+
+.radiobutton:checked StBin,
+.radiobutton:checked:focus StBin {
+    background-image: url('radio-selected.png');
+}
+
+.radiobutton StLabel {
+   	padding-top: 4px;
+   	font-size: 0.9em;
+   	box-shadow: none;
+}
+
+.flashspot {
+   	background-color: white;
+}
+/* ===================================================================
+ * User Applet
+ * ===================================================================*/
+ 
+.user-icon {  
+  	background-color: rgb(236,236,236);
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    padding: 0px;
+}
+
+.user-label {
+  	color: black;
+  	font-size: 14px;
+  	margin: 6px;
+}
+/* ===================================================================
+ * Snap/Tile OSD Popup
+ * ===================================================================*/
+
+.info-osd {
+    font-size: 18pt;
+    font-weight: bold;
+    border-image: url('outset-shadow.png') 3;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.osd-window {
+	border-image: url('outset-shadow.png') 3;
+    padding: 20px;
+    color: black;
+    spacing: 1em;
+}
+
+.osd-window .level {
+    height: 0.7em;
+    border-radius: 0px;
+    background-color: rgba(0,0,0,0.35);
+}
+
+.tile-preview,
+.tile-preview.snap,
+.tile-hud,
+.tile-hud.snap {
+    background-color: rgba(49, 106, 197, 0.5);
+    border: 1px solid rgba(49, 106, 197, 0.8);
+}
+
+.tile-hud:top {
+    border-top-width: 0px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.tile-hud:bottom {
+    border-bottom-width: 0px;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.tile-hud:left {
+    border-left-width: 0px;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.tile-hud:right {
+    border-right-width: 0px;
+    border-radius: 8px 0px 0px 8px;
+}
+
+.tile-hud:top-left {
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-radius: 0px 0px 8px 0px;
+}
+
+.tile-hud:top-right {
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-radius: 0px 0px 0px 8px;
+}
+
+.tile-hud:bottom-left {
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-radius: 0px 8px 0px 0px;
+}
+
+.tile-hud:bottom-right {
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-radius: 8px 0px 0px 0px;
+}

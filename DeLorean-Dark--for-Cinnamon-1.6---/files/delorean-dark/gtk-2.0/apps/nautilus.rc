@@ -1,0 +1,108 @@
+style "nautilus-sidebar" {	
+	base[NORMAL]		= shade(1.1, @bg_color)
+
+ 	GtkTreeView::odd_row_color		= shade(0.95, @base_color)
+	GtkTreeView::even_row_color		= shade(0.95, @base_color)
+	
+	GtkPaned::handle_size             = 1
+	GtkWidget::wide_separator		  = 1
+	GtkWidget::separator_width		  = 1
+	GtkWidget::separator_height		  = 1
+	GtkWidget::focus_line_width		  = 1 # Changed in 1.30
+	GtkWidget::draw_border            = {0,0,0,0}
+
+	GtkTreeView::vertical_separator           = 0 # Changed in 1.30
+	GtkTreeView::horizontal_separator         = 10 # Changed in 1.30
+	GtkTreeView::indent-expanders             = 1 # 1 means TRUE
+	GtkTreeView::expander-size                = 12
+	GtkExpander::expander_spacing             = 10
+	GtkButton::image_spacing                  = 4
+  GtkScrolledWindow::scrollbar-spacing       = 0
+  GtkScrolledWindow::scrollbars-within-bevel = 1
+  xthickness                                = 0
+	ythickness                                = 1
+
+	engine "equinox" {
+		separatorstyle = 0
+	}
+}
+
+style "nautilus-view" = "theme-default" {
+	xthickness		= 0
+  GtkScrolledWindow::scrollbar-spacing       = 0
+  GtkScrolledWindow::scrollbars-within-bevel = 1
+}
+
+
+style "nautilus-sidebar-title" {
+	engine "pixmap" {
+		image {
+			function	= SHADOW
+		}
+	}
+}
+
+
+style "nautilus-window-base" {}
+
+style "nautilus-handle" {
+	GtkPaned::handle-size         = 1
+	engine "pixmap" {
+		image # for the thin gray line separating the sidepane and viewpane
+		{
+		    function	= HANDLE
+		    recolorable	= TRUE
+		    file		= "images/handle-nautilus.png"
+		    stretch		= TRUE
+		    border 		= { 0, 0, 0, 0 }
+		}
+	}
+}
+
+style "nautilus-extra-view" {
+	bg[NORMAL] = mix(0.3, @selected_bg_color, shade(1.1, @bg_color)) #mix (0.4, @bg_color, @base_color)
+}
+
+style "smaller-text" {}
+
+style "handle" {}
+
+style "nautilus-scrollbar" = "theme-scrollbar" {
+  GtkRange::stepper_size    = 2
+  text[NORMAL]      = @base_color
+  text[ACTIVE]      = @base_color
+  text[INSENSITIVE] = @base_color
+  text[PRELIGHT]    = @base_color
+  text[SELECTED]    = @base_color
+  bg[NORMAL]   = @base_color
+  base[NORMAL] = @base_color
+  engine "equinox" {
+    scrollbartrough = 1
+  }
+}
+
+style "nautilus-sidebar-scrollbar" = "nautilus-scrollbar" {
+  text[NORMAL]      = shade(1.1, @bg_color)
+  text[ACTIVE]      = shade(1.1, @bg_color)
+  text[INSENSITIVE] = shade(1.1, @bg_color)
+  text[PRELIGHT]    = shade(1.1, @bg_color)
+  text[SELECTED]    = shade(1.1, @bg_color)
+  bg[NORMAL]   = shade(1.1, @bg_color)
+  base[NORMAL] = shade(1.1, @bg_color)
+  bg[ACTIVE]   = shade (0.6, @bg_color)
+  bg[PRELIGHT] = shade (0.4, @bg_color)
+}
+
+
+widget_class "*Nautilus*Window*"                		style "nautilus-window-base"
+widget "*Nautilus*Splitter"                     		style "nautilus-handle"
+widget_class "*NautilusSidePane.<GtkContainer>"			style "nautilus-sidebar-title"
+widget_class "*Nautilus*HPaned"                     style "nautilus-handle"
+widget_class "*Nautilus*View*"							        style "nautilus-view"
+widget_class "*Nautilus*Places*Sidebar*"				    style "nautilus-sidebar"
+widget_class "*Nautilus*Scrollbar"   					      style:highest "nautilus-scrollbar"
+widget_class "*NautilusSidePane.*Scrollbar"   			style:highest "nautilus-sidebar-scrollbar"
+
+widget "*.nautilus-extra-view-widget" 					    style:highest "nautilus-extra-view"
+
+

@@ -1,0 +1,145 @@
+style "tabs"					= "notebook"
+{
+	xthickness				= 3
+	ythickness				= 3
+
+	engine "pixmap" 
+	{
+		image
+		{
+			function		= FOCUS
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			state			= ACTIVE
+			file			= "Tabs/tab-top.png"
+			border			= { 3, 3, 3, 3}
+			stretch			= TRUE
+			gap_side		= TOP
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			state			= ACTIVE
+			file			= "Tabs/tab-top.png"
+			border			= { 3, 3, 3, 3}
+			stretch			= TRUE
+			gap_side		= BOTTOM
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			state			= ACTIVE
+			file			= "Tabs/tab-top.png"
+			border			= { 3, 3, 3, 3}
+			stretch			= TRUE
+			gap_side		= RIGHT
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			state			= ACTIVE
+			file			= "Tabs/tab-top.png"
+			border			= { 3, 3, 3, 3}
+			stretch			= TRUE
+			gap_side		= LEFT
+		}	
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			file			= "Tabs/tab-top-active.png"
+			border			= { 3, 3, 6, 3}
+			stretch			= TRUE
+			gap_side		= BOTTOM
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			file			= "Tabs/tab-bottom-active.png"
+			border			= { 3, 3, 3, 6}
+			stretch			= TRUE
+			gap_side		= TOP
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			file			= "Tabs/tab-left-active.png"
+			border			= { 6, 3, 3, 3}
+			stretch			= TRUE
+			gap_side		= RIGHT
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			file			= "Tabs/tab-right-active.png"
+			border			= { 3, 6, 3, 3}
+			stretch			= TRUE
+			gap_side		= LEFT
+		}
+	}
+}
+
+style "mozilla-tabs"
+{
+	xthickness				= 3
+	ythickness				= 3
+
+	engine "pixmap"
+	{
+		image
+		{
+			function		= FOCUS
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			state			= ACTIVE
+			file			= "Tabs/tab-top.png"
+			border			= { 3, 3, 3, 3}
+			stretch			= TRUE
+			gap_side		= BOTTOM
+		}
+		image 
+		{
+			function		= EXTENSION
+			recolorable		= TRUE
+			file			= "Tabs/Mozilla/tab-top-active.png"
+			border			= { 3, 3, 5, 4}
+			stretch			= TRUE
+			gap_side		= BOTTOM
+		}
+		# How to draw boxes with a gap on one side (ie the page of a notebook)
+		image 
+		{
+			function		= BOX_GAP
+			recolorable		= TRUE
+			file			= "Notebook/notebook.png" 
+			border			= { 10, 10, 10, 10}
+			stretch			= TRUE
+			gap_file		= "Notebook/Mozilla/gap-top.png"
+			gap_border     		= { 4, 7, 2, 0}
+			gap_side		= TOP
+		}
+		image 
+		{
+			function		= BOX
+			recolorable		= TRUE
+			file			= "Notebook/notebook.png" 
+			border			= { 10, 10, 10, 10}
+			stretch			= TRUE
+		}
+	}
+}
+
+#Firefox notebook
+widget "MozillaGtkWidget.GtkFixed.GtkNotebook"		style "mozilla-tabs"

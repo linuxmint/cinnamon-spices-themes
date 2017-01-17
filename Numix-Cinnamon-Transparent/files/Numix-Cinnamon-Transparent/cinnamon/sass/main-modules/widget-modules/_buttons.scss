@@ -1,0 +1,171 @@
+// ===================================================================
+// Button common properties
+// ===================================================================
+
+@mixin btn-common {
+    background-color: rgba(0, 0, 0, 0);
+    background-gradient-direction: none;
+    background-gradient-start: rgba(0, 0, 0, 0);
+    background-gradient-end: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 rgba(0, 0, 0, 0);
+    border: none;
+    border-width: 0;
+    border-radius: 0;
+
+    font-weight: bold;
+    font-size: 9pt;
+
+    &:grayed,
+    &:disabled,
+    &:insensitive {
+        border-image: url("button-assets/button-insensitive.svg") 10;
+        color: $text-disabled;
+
+        StIcon {
+            color: $icon-disabled;
+        }
+    }
+
+    > StIcon {
+        @include size(16px);
+        icon-size: 16px;
+    }
+}
+
+// ===================================================================
+// Generate button
+//
+//  Provide 2 additional parameters to modify
+//  focused states(focus, focus:hover, focus:pressed)
+//  independently from normal/hover/pressed states
+//
+//  Additionally, provide $mod:true to instead modify
+//  the normal state independently from all other states
+//
+//  The $bg parameteres modify image URL's
+//  Name pattern for button assets:
+//      button-{ $bg }.svg
+//      button-{ $bg }-hover.svg
+//      button-{ $bg }-pressed.svg
+// ===================================================================
+
+@mixin btn( $color, $bg,
+            $color-focus:$color, $bg-focus:$bg,
+            $mod:false ) {
+
+
+    // $bg paramteres in this case are strings, not css colors
+    // Quote them to prevent conversion to hex values
+    $bg: quote($bg);
+    $bg-focus: quote($bg-focus);
+
+
+    // Include common properties
+    @include btn-common;
+
+
+    // No mod
+    @if $mod == false {
+        border-image: url("button-assets/button-#{$bg}.svg") 10;
+        color: $color;
+
+        &:hover {
+            border-image: url("button-assets/button-#{$bg}-hover.svg") 10;
+        }
+
+        &:active,
+        &:pressed {
+            border-image: url("button-assets/button-#{$bg}-pressed.svg") 10;
+        }
+
+        &:focus {
+            border-image: url("button-assets/button-#{$bg-focus}.svg") 10;
+            color: $color-focus;
+        }
+
+        &:focus:hover {
+            border-image: url("button-assets/button-#{$bg-focus}-hover.svg") 10;
+        }
+
+        &:focus:active,
+        &:focus:pressed {
+            border-image: url("button-assets/button-#{$bg-focus}-pressed.svg") 10;
+        }
+    }
+
+
+    // Mod style
+    @if $mod == true {
+        border-image: url("button-assets/button-#{$bg}.svg") 10;
+        color: $color;
+
+        &:hover,
+        &:focus {
+            border-image: url("button-assets/button-#{$bg-focus}.svg") 10;
+            color: $color-focus;
+        }
+
+        &:focus:hover {
+            border-image: url("button-assets/button-#{$bg-focus}-hover.svg") 10;
+        }
+
+        &:active,
+        &:pressed,
+        &:focus:active,
+        &:focus:pressed {
+            border-image: url("button-assets/button-#{$bg-focus}-pressed.svg") 10;
+        }
+    }
+}
+
+// ===================================================================
+// Generate StIcon colors FIX
+//
+// StIcon cannot use transparency in cinnamon,
+// and, therefore, cannot use text colors
+//
+// Use in conjunction with the "btn" mixin
+// ===================================================================
+
+@mixin btn-icon-color($icn, $icn-focus:$icn, $mod:false) {
+    > StIcon {
+        color: $icn;
+    }
+
+    &:hover > StIcon,
+    &:active > StIcon,
+    &:pressed > StIcon {
+        color: if($mod, $icn-focus, $icn);
+    }
+
+    &:focus > StIcon,
+    &:focus:hover > StIcon,
+    &:focus:active > StIcon,
+    &:focus:pressed > StIcon {
+        color: $icn-focus;
+    }
+}
+
+// ===================================================================
+// Standard buttons
+// ===================================================================
+
+@mixin btn-primary {
+    @include btn($text-primary, primary, $bg-focus:orange);
+    @include btn-icon-color($icon-primary, $icon-primary);
+}
+
+// ===================================================================
+// Standard button widths
+// ===================================================================
+
+@mixin btn-width($btn-width) {
+    @if $btn-width == "small" {
+        padding: .9em;
+    }
+
+    @if $btn-width == "wide" {
+        padding: .9em 2.2em .9em 2.2em;
+        -st-natural-width: 8em;
+    }
+}

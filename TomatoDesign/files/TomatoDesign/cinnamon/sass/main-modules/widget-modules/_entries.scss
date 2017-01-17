@@ -1,0 +1,49 @@
+@mixin entry($height: 22px, $width: 220px) {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(0, 0, 0, 0);
+    background-gradient-end: rgba(0, 0, 0, 0);
+    border: 0;
+    border-width: 0;
+    box-shadow: 0 0 rgba(0, 0, 0, 0);
+    border-radius: 0;
+
+    border-image: url("widget-assets/entry.svg") 6;
+    padding: 4px 8px 3px 8px;
+    height: $height;
+    width: $width;
+    font-size: 10pt;
+    font-weight: normal;
+    color: $text-secondary;
+
+    &:focus,
+    &:active,
+    &:pressed {
+        border-image: url("widget-assets/entry-focused.svg") 6;
+        font-weight: bold;
+        color: $text-primary;
+        caret-color: $text-primary;
+        caret-size: 1px;
+        selected-color: $text-active;
+        selection-background-color: $accent-primary;
+    }
+
+    StIcon {
+        color: $icon-secondary;
+    }
+
+    &:focus > StIcon,
+    &:active > StIcon,
+    &:pressed > StIcon {
+        color: $icon-primary;
+    }
+}
+
+/* ===================================================================
+   ! Entries
+   ===================================================================*/
+
+.popup-menu StEntry,
+.modal-dialog StEntry,
+#notification StEntry {
+    @include entry;
+}

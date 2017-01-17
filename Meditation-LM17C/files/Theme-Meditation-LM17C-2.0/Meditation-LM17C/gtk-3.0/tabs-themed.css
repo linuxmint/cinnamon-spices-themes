@@ -1,0 +1,72 @@
+/*****************
+ * tabs themed   *
+ *****************/
+@define-color theme_tab_bg_color shade(@button_bg_active, 0.95);
+
+.notebook tab {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_tab_bg_color, 1.20)),
+                                     color-stop (0.40, shade(@theme_tab_bg_color, 1.15)),
+                                     color-stop (0.60, shade(@theme_tab_bg_color, 1.10)),
+                                     to (shade(@theme_tab_bg_color, 1.05)));
+
+    border-width: 1px;
+    border-style: solid; 
+	border-radius: 0px;
+	border-color:       shade(@button_border_active, 0.95);
+
+    border-top-color: 	shade(@button_border_active, 0.90);
+    border-left-color: 	shade(@button_border_active, 0.80);
+    border-right-color: shade(@button_border_active, 0.80);
+
+	border-image: none;
+
+    box-shadow: inset  0px  1px alpha(#eee, 0.1),
+                inset  1px  0px alpha(#eee, 0.1),
+                inset -1px  0px alpha(#eee, 0.1),
+                inset  0px -1px alpha(#000, 0.1); 
+}
+
+.notebook tab:active {
+	background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade (@button_bg_active, 0.55)),
+                                     color-stop (0.47, shade (@button_bg_active, 0.70)),
+                                     color-stop (0.53, shade (@button_bg_active, 0.75)),
+                                     to (shade (@button_bg_active, 0.95)));
+
+	border-color:       shade(@button_border_active, 1.10);
+
+    border-top-color: 	shade(@button_border_active, 0.60);
+    border-left-color: 	shade(@button_border_active, 0.70);
+    border-right-color: shade(@button_border_active, 0.70);
+
+	border-image: none;
+/*
+    box-shadow: inset  0px  3px alpha(#000, 0.03),
+				inset  0px  2px alpha(#000, 0.03),
+				inset  0px  1px alpha(#000, 0.03),
+                inset  2px  0px alpha(#000, 0.03),
+                inset  1px  0px alpha(#000, 0.05),
+                inset -2px  0px alpha(#000, 0.03),
+                inset -1px  0px alpha(#000, 0.05);
+*/
+
+    box-shadow: inset  0px  3px alpha(#000, 0.03),
+				inset  0px  2px alpha(#000, 0.03),
+				inset  0px  1px alpha(#000, 0.03),
+                inset  2px  0px alpha(#000, 0.02),
+                inset  1px  0px alpha(#000, 0.03),
+                inset -2px  0px alpha(#000, 0.02),
+                inset -1px  0px alpha(#000, 0.03),
+                inset  0px -1px alpha(#000, 0.20);	
+}
+
+.notebook tab,
+.notebook tab GtkLabel {
+	color: shade(@theme_selected_fg_color, 1.00);
+	text-shadow: 1px 1px @theme_selected_shadow_color;
+}
+
+

@@ -1,0 +1,84 @@
+/* Decorations */
+
+UnityDecoration.top {
+    border: 1px solid shade (@dark_bg_color, 1.60); /* shade (@dark_bg_color, 1.04) - shade (@dark_bg_color, 1.5) */
+    border-bottom-width: 0;
+    border-radius: 6px 6px 0 0;
+    padding: 1px 6px 0 6px;
+    background-color: transparent;
+    background-clip: border-box;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 1.2)),
+                                     to (shade (@dark_bg_color, 1.2)));
+
+    color: @dark_fg_color;
+    text-shadow: 1px 0 #333, -1px 0 #333, 0 1px #333, 0 -1px #333;
+}
+
+UnityDecoration.top:backdrop {
+    border: 1px solid shade (@dark_bg_color, 1.50); /* shade (@dark_bg_color, 1.04) - shade (@dark_bg_color, 1.5) */
+    border-bottom-width: 0;
+    border-radius: 6px 6px 0 0;
+    padding: 1px 6px 0 6px;
+    background-color: transparent;
+    background-clip: border-box;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 1.2)),
+                                     to (shade (@dark_bg_color, 1.2)));
+    color: #807d78;
+}
+
+UnityDecoration.left,
+UnityDecoration.right {
+    background-color: shade (@dark_bg_color, 1.60);
+}
+
+UnityDecoration.left:backdrop,
+UnityDecoration.right:backdrop {
+    /* start color: mix of the top border color and bg-image gradient end */
+    background-color: shade (@dark_bg_color, 1.50);
+}
+
+UnityDecoration.bottom {
+    background-color: shade (@dark_bg_color, 1.60);
+}
+
+UnityDecoration.bottom:backdrop {
+    background-color: shade (@dark_bg_color, 1.50);
+}
+
+/* Panel Style */
+
+UnityPanelWidget,
+.unity-panel {
+    background-color: shade (@dark_bg_color, 1.2);
+    background-image: none;
+    color: @dark_fg_color;
+}
+
+UnityPanelWidget:backdrop,
+.unity-panel:backdrop {
+    color: #807d78;
+}
+
+.unity-panel.menubar,
+.unity-panel .menubar {
+}
+
+.unity-panel.menuitem,
+.unity-panel .menuitem {
+    border-width: 1px 1px 0 1px;
+    icon-shadow: 0 -1px shade (@dark_bg_color, 0.7);
+}
+
+.unity-panel.menubar:backdrop,
+.unity-panel .menubar *:backdrop {
+    color: @backdrop_dark_fg_color;
+}
+
+.unity-panel.menubar.menuitem:hover,
+.unity-panel.menubar .menuitem *:hover {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 1.42)),
+                                     to (shade (@dark_bg_color, 1.42)));
+}

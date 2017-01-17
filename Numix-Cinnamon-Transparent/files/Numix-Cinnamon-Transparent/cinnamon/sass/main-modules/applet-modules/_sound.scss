@@ -1,0 +1,55 @@
+/* ===================================================================
+   ! Sound Applet
+   ===================================================================*/
+
+.sound-player {
+    padding: 0 0 1px 0;
+
+    > StBoxLayout:first-child {
+        padding: .4em 1.3em .6em 1.3em;
+        spacing: .4em;
+        font-weight: bold;
+        font-size: 10pt;
+
+        StButton:small {
+            @include size(16px);
+            padding: 1px;
+
+            &:hover * {
+                color: $accent-primary;
+            }
+        }
+    }
+
+    &-generic-coverart {
+        padding: 0 2px;
+    }
+
+    &-overlay {
+        border-image: url("background-assets/sound-applet-album-overlay.svg") 7;
+        @include size(290px, 70px);
+        padding: 1.3em 1.3em 2.5em 1.3em;
+        spacing: .5em;
+        color: $text-primary;
+
+        StButton {
+            @include btn-primary;
+            @include btn-width(small);
+        }
+
+        StBoxLayout {
+            padding-top: .2em;
+            spacing: .4em;
+        }
+    }
+
+    .slider {
+        border-image: none;
+        padding: 0;
+        height: .5em;
+        -slider-height: .4em;
+        -slider-background-color: #333;
+        -slider-active-background-color: $accent-primary;
+        -slider-handle-radius: 0;
+    }
+}

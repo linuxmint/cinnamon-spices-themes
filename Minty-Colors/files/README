@@ -1,0 +1,50 @@
+Minty Colors is a chameleon theme for Cinnamon. It can change colors according to the current GTK theme, current wallpaper (uses imagemagick to get color) or a user defined color. Also various other aspects of the theme are customizable.
+
+A process runs in the background which detects any change and reloads the theme accordingly. Everything will be automatic.
+
+You can launch the GUI from the menu which lets you customise various aspects of the the theme. It will take few seconds for the changes to be applied.
+
+The configuration file is automatically created and replaced every time you change the configuration. It should not be edited by hand.
+
+---
+
+Linux Mint/Ubuntu users can install Minty Colors from our themes PPA using the following commands,
+
+sudo add-apt-repository ppa:satyajit-happy/themes
+sudo apt-get update && sudo apt-get install cinnamon-theme-minty-colors
+
+If you don't use Linux Mint/Ubuntu, you need to compile from source. This is needed for the GUI. I could have provided a precompiled binary. But due to architecture differences, the GUI might not run on your distro.
+
+Don't worry, it is easy and straight forward.
+
+You will need to install the build-dependencies first (package names may vary depending on your distro),
+
+glib2-devel gtk3-devel vala
+
+Extract the archive, navigate to the directory and type the following commands in a terminal,
+
+make
+sudo make install
+
+To make "Match wallpaper color" work, you will need to install ImageMagick
+
+After installation, run "minty-colors" from the terminal to start the process. the process will start in background, so you won't see any outputs. It will also make a theme basing upon the template and default configuration.
+
+Use Cinnamon Settings to choose the theme, or run the following commands in Terminal,
+
+gsettings set org.cinnamon.theme name "minty-colors"
+
+It will usually take few seconds to apply new configuration. When applying the new configuration, the theme is reloaded, and Cinnamon may freeze if you do things really fast when reloading the theme.
+
+---
+
+Troubleshooting:
+
+To view any error messages produced, stop the background process first and then run the process in Terminal,
+
+minty-colors stop
+minty-colors start 
+
+---
+
+License: GPL

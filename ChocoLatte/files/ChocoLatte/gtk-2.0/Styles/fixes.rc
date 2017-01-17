@@ -1,0 +1,242 @@
+style "infobar" 
+{
+	engine "murrine" 
+	{
+	}
+}
+
+style "nautilus_location" 
+{
+	bg[NORMAL]  				= mix (0.60, shade (1.05, @bg_color), @selected_bg_color)
+}
+
+style "calendar" 
+{
+	xthickness 				= 0
+	ythickness 				= 0
+
+	engine "murrine" 
+	{
+		roundness			= 0
+	}
+}
+
+style "calendar_menu_item" 			= "calendar" 
+{
+	base[NORMAL] 				= "#605E58"
+	base[ACTIVE] 				= "#4b4944"
+}
+
+style "soundfix"
+{
+}
+
+style "scrolled"				= "default"
+{
+	xthickness				= 3
+	ythickness				= 3
+
+	engine "pixmap"
+	{
+		image 
+		{
+			function        	= SHADOW
+			file            	= "Shadows/shadow-in.png"
+			border          	= { 6, 6, 6, 6}
+			stretch         	= TRUE
+		}
+	}
+}
+
+
+# Wrokaround style for places where the text color is used instead of the fg color.
+style "text_is_fg_color_workaround" 
+{
+	text[NORMAL]      			= @text_color
+	text[PRELIGHT]    			= @text_color
+	text[SELECTED]    			= "#1e160e"
+	text[INSENSITIVE]			= @text_insensitive
+	text[ACTIVE]      			= "#a9895b"
+}
+
+# Workaround style for menus where the text color is used instead of the fg color.
+style "menuitem_text_is_fg_color_workaround" 
+{
+	text[NORMAL]      			= @text_color
+	text[PRELIGHT]    			= @text_color
+	text[SELECTED]    			= "#1e160e"
+	text[INSENSITIVE]			= @text_insensitive
+	text[ACTIVE]      			= "#a9895b"
+}
+
+# Workaround style for places where the fg color is used instead of the text color.
+style "fg_is_text_color_workaround" 
+{
+	fg[NORMAL]        			= @text_color
+	fg[PRELIGHT]      			= @text_color
+	fg[SELECTED]      			= "#1e160e"
+	fg[ACTIVE]        			= "#a9895b"
+	fg[INSENSITIVE]   			= @text_insensitive
+}
+
+# Style to set the toolbar to use a flat style. This is because the "New" button in
+# Evolution is not drawn transparent. So if there is a gradient in the background it will
+# look really wrong.
+# See http://bugzilla.gnome.org/show_bug.cgi?id=446953.
+style "evo_new_button_workaround" 
+{
+}
+
+style "separator_menu_item" 
+{
+#	xthickness 				= 1
+#	ythickness 				= 0
+
+#	GtkSeparatorMenuItem::horizontal-padding = 0
+#	GtkWidget::wide-separators 		= 1
+#	GtkWidget::separator-width 		= 1
+#	GtkWidget::separator-height 		= 7
+	
+	engine "murrine" 
+	{
+		contrast 			= 1.1
+		separatorstyle 			= 1
+	}
+}
+
+style "separator_tool_item" 
+{
+#	xthickness 				= 0
+#	ythickness 				= 1
+
+#	GtkVSeparator::vertical-padding 	= 0
+#	GtkWidget::wide-separators 		= 1
+#	GtkWidget::separator-width 		= 7
+#	GtkWidget::separator-height 		= 1
+
+	engine "murrine" 
+	{
+		contrast 			= 1.1
+		separatorstyle 			= 1
+	}
+}
+
+style "deluge-treeview"
+{
+	GtkTreeView::horizontal_separator	= 26
+}
+
+style "moz-entry"
+{
+	xthickness				= 3
+	ythickness				= 3
+
+	base[INSENSITIVE]   			= @base_color
+}
+
+style "no-gtk-base" 
+{
+	text[NORMAL]      			= @text_color
+	text[PRELIGHT]    			= @text_color
+	text[SELECTED]    			= "#1e160e"
+	text[INSENSITIVE]			= @text_insensitive
+	text[ACTIVE]      			= "#a9895b"
+	base[NORMAL]				= "#5c5c5c"#shade(1.54, @bg_color)
+}
+
+style "no-gtk-entry"				= "entry"
+{
+	xthickness				= 3
+	ythickness				= 3
+
+	GtkEntry::honors-transparent-bg-hint 	= 1
+	GtkEntry::state-hint 			= 0
+	GtkEntry::progress-border 		= { 2, 2, 2, 2}
+
+	bg[SELECTED]				= shade( 0.85, "#5c5c5c")
+
+	base[NORMAL]				= "#5c5c5c"
+
+	text[NORMAL]      			= @text_color
+	text[PRELIGHT]    			= @text_color
+	text[SELECTED]    			= "#1e160e"
+	text[INSENSITIVE]			= @text_insensitive
+	text[ACTIVE]      			= "#a9895b"
+}
+
+style "no-gtk-comboentry"			= "entry"
+{
+	xthickness				= 3
+	ythickness				= 3
+
+	GtkButton::inner-border 		= { 0, 1, 0, 0 }
+
+	bg[SELECTED]				= shade( 0.85, "#5c5c5c")
+
+	text[NORMAL]      			= @text_color
+	text[PRELIGHT]    			= @text_color
+	text[SELECTED]    			= "#1e160e"
+	text[INSENSITIVE]			= @text_insensitive
+	text[ACTIVE]      			= "#a9895b"
+
+	base[NORMAL]      			= "#5c5c5c"
+	base[PRELIGHT]   			= "#5c5c5c"
+	base[INSENSITIVE] 			= shade (0.97, "#5c5c5c")
+	base[ACTIVE]      			= "#5c5c5c"
+}
+
+style "evo-event-box"
+{
+	bg_pixmap[NORMAL]			= "Fixes/black.png"
+}
+
+style "software-center-text"
+{
+	fg[NORMAL]        			= @text_color
+	fg[PRELIGHT]      			= @text_color
+	fg[SELECTED]      			= "#1e160e"
+	fg[ACTIVE]        			= "#a9895b"
+	fg[INSENSITIVE]   			= @text_insensitive
+}
+
+style "software-center-button"
+{
+	fg[NORMAL]        			= @text_color
+	fg[PRELIGHT]      			= @text_color
+	fg[SELECTED]      			= "#1e160e"
+	fg[ACTIVE]        			= "#a9895b"
+	fg[INSENSITIVE]   			= @text_insensitive
+
+	text[NORMAL]      			= @text_color
+	text[PRELIGHT]    			= @text_color
+	text[SELECTED]    			= "#1e160e"
+	text[INSENSITIVE]			= @text_insensitive
+	text[ACTIVE]      			= "#a9895b"
+}
+
+style "details-button"
+{
+	fg[NORMAL]        			= @selected_fg_color
+	fg[PRELIGHT]      			= @selected_fg_color
+	fg[SELECTED]      			= @selected_fg_color
+	fg[INSENSITIVE]   			= shade (1.5, @bg_color)
+	fg[ACTIVE]        			= @selected_fg_color
+}
+
+style "asdf"
+{
+	text[NORMAL]      			= @text_color
+	text[PRELIGHT]    			= @text_color
+	text[SELECTED]    			= "#1e160e"
+	text[INSENSITIVE]			= @text_insensitive
+	text[ACTIVE]      			= "#a9895b"
+}
+
+#widget "GtkWindow.GtkVBox.GtkNotebook.GtkVBox.GtkVBox.GtkEventBox.GtkHBox.GtkCellView" style "text_is_fg_color_workaround"
+
+style "liferea-view"
+{
+	bg[NORMAL]				= @base_color
+}
+
+#widget "GtkWindow.GtkVBox.GtkNotebook.GtkVBox.GtkVBox.GtkEventBox.GtkHBox.GtkCellView" style "text_is_fg_color_workaround"

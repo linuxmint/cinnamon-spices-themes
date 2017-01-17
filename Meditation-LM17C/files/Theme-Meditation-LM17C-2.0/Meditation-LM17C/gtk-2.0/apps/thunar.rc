@@ -1,0 +1,30 @@
+## Some additional thunar-specific theming
+style "thunar-path-entry-increased-style"
+{
+  ThunarPathEntry::icon-size = 16
+}
+class "ThunarPathEntry" style "thunar-path-entry-increased-style"
+
+style "thunar-location-buttons"
+{
+  ThunarLocationButtons::spacing = 0
+}
+class "ThunarLocationButtons" style "thunar-location-buttons"
+
+style "sidepane" 
+{
+	base[NORMAL]		= @sidebar_background			# backgroung
+	bg[NORMAL]			= shade (0.91, @base_color)
+	bg[PRELIGHT]		= @fg_color
+	
+	engine "murrine"
+	{
+		# gradient_shades		= {1.00, 1.05, 1.05, 1.10} 
+		contrast			= 0.80
+	}
+}
+
+widget_class "*ThunarShortcutsView*" 	style "sidepane"
+widget_class "*ThunarTreeView*" 		style "sidepane"
+widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkVBox.GtkScrolledWindow.GtkTreeView*"	style "sidepane"
+

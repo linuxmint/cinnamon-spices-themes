@@ -1,0 +1,381 @@
+
+
+/* Button background */
+
+.button,
+.toolbar .button.raised,
+.toolbar .raised .button,
+.toolbar .button.raised:focus,
+.toolbar .raised .button:focus,
+.toolbar GtkComboBox .button,
+.toolbar GtkComboBox .button:focus,
+.button:backdrop,
+.toolbar .button.raised:backdrop,
+.toolbar .raised .button:backdrop,
+.toolbar .button.raised:focus:backdrop,
+.toolbar .raised .button:focus:backdrop,
+.toolbar GtkComboBox .button:backdrop,
+.toolbar GtkComboBox .button:focus:backdrop,
+.button:hover:backdrop,
+.toolbar .button.raised:hover:backdrop,
+.toolbar .raised .button:hover:backdrop,
+.toolbar .button.raised:focus:hover:backdrop,
+.toolbar .raised .button:focus:hover:backdrop,
+.toolbar GtkComboBox .button:hover:backdrop,
+.toolbar GtkComboBox .button:focus:hover:backdrop {
+
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+                                     from (@button_gradient_color_a),
+                                     color-stop (0.4, @button_gradient_color_b),
+                                     to (@button_gradient_color_c));
+
+    background-color: transparent;
+}
+
+.button.default,
+.button.default:backdrop,
+.button.default:hover:backdrop {
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+                     from (@button_default_gradient_color_a),
+                     to (@button_default_gradient_color_c));
+    background-color: transparent;
+}
+
+.button.default:hover {
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+                     from (shade(@button_default_gradient_color_a, 0.9)),
+                     to (shade(@button_default_gradient_color_c, 0.9)));
+    background-color: transparent;
+}
+
+.button.default:active,
+.button.default:active:hover {
+    background-image: -gtk-gradient (linear,
+    				     left top, left bottom,
+					 from (mix(@button_active_gradient_color_d, @button_default_active_gradient_color_d, 0.5)),
+				     color-stop (0.2, mix(@button_active_gradient_color_e, @button_default_active_gradient_color_e, 0.5)),
+				     color-stop (0.3, mix(@button_active_gradient_color_c, @button_default_active_gradient_color_c, 0.5)),
+				     to (mix(@button_active_gradient_color_f, @button_default_active_gradient_color_f, 0.5)));
+    background-color: transparent; 
+}
+
+/* Pushed button background */
+.button:active, 
+.button:active:hover,
+.toolbar .button:active,
+.toolbar .button:active:hover,
+.toolbar .button.raised:active,
+.toolbar .raised .button:active,
+.toolbar .button.raised:active:hover,
+.toolbar .raised .button:active:hover,
+.button:active:backdrop, 
+.button:active:hover:backdrop,
+.toolbar .button:active:backdrop,
+.toolbar .button:active:hover:backdrop,
+.toolbar .button.raised:active:backdrop,
+.toolbar .raised .button:active:backdrop,
+.toolbar .button.raised:active:hover:backdrop,
+.toolbar .raised .button:active:hover:backdrop {
+    background-image: -gtk-gradient (linear,
+    				     left top, left bottom,
+					 from (@button_active_gradient_color_d),
+				     color-stop (0.2, @button_active_gradient_color_e),
+				     color-stop (0.3, @button_active_gradient_color_c),
+				     to (@button_active_gradient_color_f));
+    background-color: transparent; 
+    transition: 300ms ease-in-out;
+}
+
+GtkScale.slider,
+GtkScale.slider:backdrop,
+GtkScale.slider:hover:backdrop {
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+				     from (shade(@button_inline_hover_gradient_color_a, 1.0)),
+					 color-stop (0.4, shade(@button_inline_hover_gradient_color_b, 0.82)),
+				     to (@button_inline_hover_gradient_color_c));
+	background-color: transparent;			     
+				     }
+
+
+
+
+.inline-toolbar .button,
+.inline-toolbar .button:backdrop,
+.inline-toolbar .button:hover:backdrop {
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+                                     from (@button_inline_gradient_color_b),
+                                     color-stop (0.4, @button_inline_gradient_color_a),
+                                     to (@button_inline_gradient_color_c));
+
+    background-color: transparent;
+}
+
+/* Primary and inline toolbars pushed button background */
+/*.primary-toolbar .button:active,
+.primary-toolbar .button:active:hover,*/
+GtkScale.slider:active,
+GtkScale.slider:active:backdrop,
+GtkScale.slider:active:hover:backdrop,
+.inline-toolbar .button:active,
+.inline-toolbar .button:active:hover,
+.inline-toolbar .button:active:backdrop,
+.inline-toolbar .button:active:hover:backdrop {
+    background-image: -gtk-gradient (linear,
+    				     left top, left bottom,
+                                     from (@button_inline_gradient_color_c),
+                                     color-stop (0.4, @button_inline_gradient_color_a),
+                                     to (@button_inline_gradient_color_b));
+    background-color: transparent;
+}
+
+
+
+/* Prelit button background */
+
+.button:hover,
+.toolbar .button:hover,
+.toolbar .button.raised:hover,
+.toolbar .raised .button:hover,
+.toolbar GtkComboBox .button:hover {
+    background-color: transparent;
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+				     from (@button_hover_gradient_color_a),
+					 color-stop (0.4, @button_hover_gradient_color_b),
+				     to (@button_hover_gradient_color_c));
+transition: 300ms ease-in-out;				     
+}
+
+GtkScale.slider:hover,
+.inline-toolbar .button:hover {
+    background-color: transparent;
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+				     from (shade(@button_inline_hover_gradient_color_a, 0.9)),
+					 color-stop (0.4, shade(@button_inline_hover_gradient_color_b, 0.96)),
+				     to (@button_inline_hover_gradient_color_c));
+}
+
+.inline-toolbar .button:insensitive,
+.inline-toolbar .button:insensitive:backdrop {
+    background-image: none;
+    background-color: @insensitive_bg_color;
+}
+
+/* Prelit button on primary toolbar background */
+
+.primary-toolbar .button:hover {
+    background-color: transparent;
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+				     from (alpha (@toolbar_gradient_c, 0.9)),
+				     
+			             to (alpha (@toolbar_gradient_a, 0.02)));
+	    background-color: transparent;
+transition: 300ms ease-in-out;	    		             
+}
+
+.primary-toolbar .button:active:hover,
+.primary-toolbar .button:active:hover:backdrop,
+.primary-toolbar .button:active:backdrop {
+    background-color: transparent;
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+				     from (mix (@toolbar_active_gradient_b, @toolbar_active_gradient_c, 0.35)),
+				     /*color-stop (0.4, mix (@toolbar_active_gradient_b, @toolbar_active_gradient_c, 0.15)),*/
+			             to (alpha (@toolbar_active_gradient_a, 0.08)));
+	    background-color: transparent;
+transition: 600ms ease-in-out;	    		             
+}
+
+
+.primary-toolbar .button:active {
+    background-color: transparent;
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+				     from (mix (@toolbar_active_gradient_b, @toolbar_active_gradient_c, 0.1)),
+				    /* color-stop (0.4, mix (@toolbar_active_gradient_b, @toolbar_active_gradient_c, 0.05)),*/
+			             to (alpha (@toolbar_active_gradient_a, 0.12)));
+	    background-color: transparent;
+transition: 600ms ease-in-out;	    		             
+}
+
+/*.primary-toolbar .button:active,
+.primary-toolbar .button:active:hover,
+.primary-toolbar .button:active:hover:backdrop,
+.primary-toolbar .button:active:backdrop {
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+				     from (shade (@toolbar_gradient_f, 0.12)),
+				     
+			             to (shade (@toolbar_gradient_d, 0.12)));
+    background-color: transparent;
+    transition: 300ms ease-in-out;
+}*/
+
+/* Insensitive button background */
+GtkScale.slider:insensitive,
+.button:insensitive,
+.toolbar GtkComboBox .button:insensitive,
+GtkScale.slider:insensitive:backdrop,
+.button:insensitive:backdrop,
+.toolbar GtkComboBox .button:insensitive:backdrop {
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+                                     from (@insensitive_button_gradient_color_a),
+                                     color-stop (0.4, @insensitive_button_gradient_color_b),
+                                     to (@insensitive_button_gradient_color_c));
+
+    background-color: transparent;
+}
+
+/* Pushed + Insensitive button background */
+.button:active:insensitive,
+.toolbar .button:active:insensitive,
+.toolbar GtkComboBox .button:active:insensitive,
+.button:active:insensitive:backdrop,
+.toolbar .button:active:insensitive:backdrop,
+.toolbar GtkComboBox .button:active:insensitive:backdrop {
+    background-color: transparent;
+    background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+				     from (shade (@insensitive_bg_color, 0.95)),
+                                     color-stop (0.4, @insensitive_bg_color),
+				     to (@insensitive_bg_color)); 
+}
+
+/* Entry background */
+GtkComboBox.combobox-entry .button {
+    background-color: #3c3c3c;
+    }
+
+GtkComboBox.combobox-entry .button:hover {
+	background-color: #343434;
+}
+
+.entry,
+GtkComboBox.combobox-entry .button,
+.primary-toolbar GtkComboBox.combobox-entry .button {
+
+      background-image:-gtk-gradient (linear, left top, left bottom,
+		from (rgba(5,9,15,.2)),
+		to (rgba(5,9,15,.0)));
+    box-shadow: 0 1 inset rgba(5,9,15,0.2), 0 2 inset rgba(5,9,15,0.1), 0 3 inset rgba(5,9,15,0.08), 0 4 inset rgba(5,9,15,0.04), 0 5 inset rgba(5,9,15,0.02), 0 6 inset rgba(5,9,15,0.01);
+}
+
+GtkComboBox.combobox-entry .button:hover,
+.primary-toolbar GtkComboBox.combobox-entry .button:hover, 
+.spinbutton .button:hover,
+.entry:focus {
+background-image:-gtk-gradient (linear, left top, left bottom,
+		from (rgba(5,9,15,.2)),
+		to (rgba(5,9,15,.0)));
+    box-shadow: 0 1 inset rgba(5,9,15,0.2), 0 2 inset rgba(5,9,15,0.1), 0 3 inset rgba(5,9,15,0.08), 0 4 inset rgba(5,9,15,0.04), 0 5 inset rgba(5,9,15,0.02), 
+    0 6 inset rgba(5,9,15,0.01),1 1 inset alpha(shade(@theme_bg_color, 1.22),.8),
+                -1 -1 inset alpha(shade(@theme_bg_color, 1.12),0.6);
+}
+
+.spinbutton .button:hover:focus {
+	box-shadow: 1 2 inset alpha(@theme_selected_bg_color, 1.5),
+                1 1 inset alpha(@theme_selected_bg_color, 1.0);
+                }
+
+.entry:backdrop,
+.spinbutton .button:hover:backdrop,
+GtkComboBox.combobox-entry .button:backdrop,
+.primary-toolbar GtkComboBox.combobox-entry .button:backdrop {
+      box-shadow: none;
+    /*box-shadow: 1 1 inset rgba(15,11,5,0.48), 0 2 inset rgba(15,11,5,0.2), 3 3 inset rgba(15,11,5,0.1), 0 4 inset rgba(15,11,5,0.04), 5 6 inset rgba(15,11,5,0.02);*/
+}
+
+/* Entry pushed button background */
+.primary-toolbar GtkComboBox.combobox-entry .button:active,
+/* .primary-toolbar GtkComboBox.combobox-entry .button:hover:active,*/
+GtkComboBox.combobox-entry .button:active,
+.spinbutton .button:active,
+.spinbutton .button:active:hover,
+column-header.button:active,
+column-header .button:active,
+column-header.button:active:hover,
+column-header .button:active:hover,
+column-header.button:active:hover:focus,
+column-header .button:active:hover:focus,
+column-header.button:active:focus,
+column-header .button:active:focus {
+    background-color: transparent;
+    background-image: -gtk-gradient(linear,
+                                    left top, left bottom,
+                                    from(shade(@entry_background_a, 0.9)),
+                                    to(@entry_background_b));
+    box-shadow: 0 1 inset @entry_inset, 0 2 inset alpha(@entry_inset, 0.4);
+}
+
+/* Insensitive entry background */
+.entry:insensitive,
+GtkComboBox.combobox-entry .button:insensitive
+/*.entry:insensitive:backdrop*/ {
+    background-color: @insensitive_bg_color;
+    background-image: none;
+    box-shadow: none;
+}
+
+/* Unfocused windows entry background */
+/*.entry:backdrop,
+GtkComboBox.combobox-entry .button:backdrop,*/
+column-header.button:backdrop,
+column-header .button:backdrop,
+column-header.button:hover:backdrop,
+column-header .button:hover:backdrop,
+column-header.button:insensitive:backdrop,
+column-header .button:insensitive:backdrop {
+    background-image: none;
+    background-color: @theme_unfocused_base_color;
+    box-shadow: none;
+}
+
+/* Unfocused windows insensitive entry background */
+.entry:insensitive:backdrop,
+GtkComboBox.combobox-entry .button:insensitive:backdrop {
+    background-image: none;
+    background-color: @insensitive_bg_color;
+}
+
+
+/* Primary and inline toolbars background */
+.primary-toolbar .toolbar,
+.primary-toolbar.toolbar,
+.inline-toolbar.toolbar  {
+	background-color: transparent;
+	background-image: url("assets/ToolbarDark.png");
+}
+
+/* Unfocused window primary and inline toolbars background */
+.primary-toolbar .toolbar:backdrop,
+.primary-toolbar.toolbar:backdrop,
+.inline-toolbar.toolbar:backdrop  {
+	background-color: transparent;
+	background-image: url("assets/ToolbarDark.png");
+}
+
+/* Switch background*/
+GtkSwitch.trough {
+    background-color: transparent;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (@switch_trough_bg_a),
+                                     to (@switch_trough_bg_b));
+}
+
+GtkSwitch.trough:active {
+    background-color: transparent;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (@switch_trough_active_bg_a),
+                                     to (@switch_trough_active_bg_b));
+}
+

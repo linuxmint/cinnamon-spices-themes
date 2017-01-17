@@ -1,0 +1,165 @@
+/*************************
+ * progressbar and scale *
+ *************************/
+.menubar .menuitem GtkScale.trough {
+
+	background-color: @theme_base_color;
+	background-image: none;
+
+    border-image: url("borders/entry-border-dark.svg") 3 3 4 3 / 3 3 4 3 stretch;
+    border-radius: 3px;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+}
+ 
+GtkScale {
+	-GtkRange-slider-width: 10;
+	-GtkRange-trough-border: 1;
+	-GtkScale-slider-length: 24;
+	border-radius: 0;
+	border-width: 1px;
+	padding: 0;
+}
+
+GtkScale.vertical {
+    -GtkScale-slider-length: 12;
+    -GtkRange-slider-width: 18;
+}
+
+.menubar .menuitem .scale.highlight.left,
+.scale.highlight.left {
+	background-color: shade(@theme_selected_bg_color, 1.40);
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_selected_bg_color, 1.05)),
+                                     to (shade (@theme-selected_bg_color, 1.4)));
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.scale.highlight.bottom {
+	background-color: shade(@theme_selected_bg_color, 1.40);
+    background-image: -gtk-gradient (linear, left top, right top,
+                                     from (shade (@theme_selected_bg_color, 1.05)),
+                                     to (shade (@theme-selected_bg_color, 1.4)));
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.scale.highlight.left:insensitive {
+	background-color: shade(@theme_base_color, 2.40);
+	background-image: none;
+}
+
+.scale.highlight.bottom:insensitive {
+	background-color: shade(@theme_base_color, 2.40);
+	background-image: none;
+}
+
+.scale.trough {
+    margin: 0px 0 0px 0;
+}
+
+.scale.trough.vertical {
+    margin: 0 6px 0 6px;
+}
+
+GtkScale.trough,
+GtkScale.trough row,
+GtkScale.trough row:hover,
+GtkScale.trough row:selected,
+GtkScale.trough row:selected:focused {
+    border-image: url("borders/scale-trough-border.svg") 3 3 4 3 / 3 3 4 3 stretch;
+    border-radius: 3px;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+    	background-image: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@theme_base_color, 0.25)),
+		to (shade (@theme_base_color, 0.45)));
+
+    }
+
+GtkScale.trough.vertical {
+    border-image: url("borders/scale-trough-border.svg") 3 3 4 3 / 3 3 4 3 stretch;
+    border-radius: 3px;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+    	background-image: -gtk-gradient (linear, left top, right top,
+		from (shade (@bg_color, 0.25)),
+		to (shade (@bg_color, 0.45)));
+}
+
+GtkScale.slider {
+	color: alpha(black, 0.28);
+    border-image: url("borders/scale-border-dark.svg") 3 3 4 3 / 3 3 4 3 stretch;
+    border-radius: 3px;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+GtkScale.slider.vertical {
+	color: alpha(black, 0.28);
+    border-image: url("borders/scale-border-dark.svg") 3 3 4 3 / 3 3 4 3 stretch;
+    border-radius: 3px;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+GtkScale.slider:hover,
+GtkScale.slider:active,
+GtkScale.slider:hover:active {
+	color: alpha(black, 0.38);
+    border-image: url("borders/scale-border-hover-dark.svg") 3 3 4 3 / 3 3 4 3 stretch;
+    border-radius: 3px;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+		}
+
+GtkScale.slider:insensitive,
+GtkScale.slider.horizontal:insensitive,
+GtkScale.slider.vertical:insensitive {
+	color: alpha(black, 0.16);
+    border-image: url("borders/button-insensitive-border-dark.svg") 3 3 4 3 / 3 3 4 3 stretch;
+    border-radius: 3px;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: transparent;
+
+}
+
+GtkScale.scale-has-marks-above,
+GtkScale.scale-has-marks-below {
+    -GtkScale-slider-length: 16;
+    -GtkRange-slider-width: 20;
+    -GtkRange-trough-border: 0;
+    }
+
+GtkScale.scale-has-marks-above.slider,
+GtkScale.scale-has-marks-below.slider,
+GtkScale.scale-has-marks-above.slider:hover,
+GtkScale.scale-has-marks-below.slider:hover,
+GtkScale.scale-has-marks-above.slider:insensitive,
+GtkScale.scale-has-marks-below.slider:insensitive {
+    border-image: none;
+    border-radius: 0;
+    border-width: 0;
+    border-style: none;
+    border-color: transparent;
+    }
+
+GtkScale.mark {
+    color: alpha(@theme_fg_color, 0.3);
+}
+
+GtkScale.mark {
+	border-color: shade (@theme_base_color, 0.8);
+}
+
+/*************/

@@ -1,0 +1,237 @@
+#!/bin/bash
+# Script to change the colors of Minty Colors Cinnamon theme
+#
+# Copyright (C) 2012  Satyajit sahoo
+#
+# Contains code for getting color from wallpaper by Matthew Richardson
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+show_info() {
+echo -e "\033[0;34m[$(date +"%H.%M.%S.%N")]\033[0m \033[0;32m[INFO]\033[0m $@"
+}
+
+show_err() {
+echo -e "\033[0;34m[$(date +"%H.%M.%S.%N")]\033[0m \033[0;31m[ERROR]\033[0m $@" 1>&2
+}
+
+workarounds() {
+# Workaround for locales which use comma instead of dot
+panel=`echo "$panel" | sed -e 's/,/./g'`
+menu=`echo "$menu" | sed -e 's/,/./g'`
+}
+
+get_color() {
+if [[ "$mode" = "gtk" ]]; then
+	show_info "GTK theme found at $gtkpath"
+	# Get the color values from the gtk.css file
+	if [[ `grep "@define-color selected_bg_color #" "$gtkpath"` ]]; then
+		color=`grep "@define-color selected_bg_color" "$gtkpath" | sed "s/@define-color selected_bg_color //g" | sed "s/;//g"`
+	fi
+	if [[ `grep "@define-color selected_fg_color #" "$gtkpath"` ]]; then
+		text=`grep "@define-color selected_fg_color" "$gtkpath" | sed "s/@define-color selected_fg_color //g" | sed "s/;//g"`
+	fi
+elif [[ "$mode" = "wallpaper" ]]; then
+	show_info "Wallpaper found at $img"
+	# Scale background image to 2x2 and take the color from top-left
+	color=`convert "$img" -brightness-contrast 15% -fuzz 15% -alpha off -filter cubic -resize 2x2 -transparent black -colorspace RGB -format '%[pixel:s]' info:-`
+	bf=`convert "$img" -colorspace gray -format "%[fx:100*mean]" info:`
+	bi=$(printf "${bf/.*}")
+	if [[ "$bi" -ge "70" ]]; then
+		text="#000"
+	else
+		text="#fff"
+	fi
+elif [[ "$color" =~ "#" || "$color" =~ "rgb" ]]; then
+	show_info "Using custom color"
+	text="#fff"
+	color="$mode"
+fi
+}
+
+make_theme() {
+# Copy Elegance Colors to create a new theme
+if [[ -d "$installdir/cinnamon" ]]; then
+	rm -rf "$tempdir/minty-colors"
+	mkdir -p "$tempdir/minty-colors"
+	cp -rf "$installdir/cinnamon" "$tempdir/minty-colors/"
+else
+	show_err "Could not copy files"
+fi
+show_info "Making the theme"
+# Get color values
+get_color
+# Arrange variables and values in an array
+vars=( "@font-size" "@panel-opacity" "@arrow-base" "@arrow-rise" "@menu-color" "@menu-background" "@menu-opacity" "@custom-color" "@text-color" )
+values=( "$font" "$panel" "$arrowbase" "$arrowrise" "$menufg" "$menubg" "$menu" "$color" "$text" )
+for ((i=0; i < ${#vars[@]}; i++))
+do
+	show_info "Replacing ${vars[i]} with ${values[i]}"
+	sed -i "s/${vars[i]}/${values[i]}/g" "$tempdir/minty-colors/cinnamon/cinnamon.css"
+done
+# Copy the newly created theme
+if [[ `grep "@" "$tempdir/minty-colors/cinnamon/cinnamon.css"` ]]; then
+	show_err "Could not make the theme"
+else
+	rm -rf "$HOME/.themes/minty-colors"
+	mv "$tempdir/minty-colors" "$HOME/.themes/"
+fi
+}
+
+set_theme() {
+# Make the theme
+workarounds
+make_theme
+# Set the theme
+show_info "Reloading the theme"
+gsettings set org.cinnamon.theme name "minty-colors"
+# Enable or disable autostart
+if [[ "$background" = "off" && ! -f "$HOME/.config/autostart/minty-colors-process.desktop" ]]; then
+	show_info "Disabling autostart"
+	cp -f "/etc/xdg/autostart/minty-colors-process.desktop" "$HOME/.config/autostart/minty-colors-process.desktop"
+	echo "X-GNOME-Autostart-enabled=false" >> "$HOME/.config/autostart/minty-colors-process.desktop"
+elif [[ "$background" = "on" && -f "$HOME/.config/autostart/minty-colors-process.desktop" ]]; then
+	show_info "Enabling autostart"
+	rm -f "$HOME/.config/autostart/minty-colors-process.desktop"
+fi
+}
+
+monitor_changes() {
+# Check if config has been changed
+md5conf="$tempdir/conf-md5"
+md5c=`md5sum "$config"`
+if [ -f "$md5conf" ]; then
+	oldmd5c=`cat "$md5conf"`
+	if [[ ! "$oldmd5c" = "$md5c" ]]; then
+	show_info "Configuration change detected"
+	set_theme
+	fi
+fi
+echo "$md5c" > "$md5conf"
+# Check if the gtk theme has been changed
+if [[ "$mode" = "gtk" ]]; then
+	md5gtk="$tempdir/gtk-md5"
+	md5g=`md5sum "$gtkpath"`
+	if [[ -f "$md5gtk" ]]; then
+		oldmd5g=`cat "$md5gtk"`
+		if [[ ! "$oldmd5g" = "$md5g" ]]; then
+			show_info "GTK theme change detected"
+			set_theme
+		fi
+	fi
+	echo "$md5g" > "$md5gtk"
+# Check if the wallpaper has been changed
+elif [[ "$mode" = "wallpaper" ]]; then
+	md5bg="$tempdir/background-md5"
+	md5b=`md5sum "$img"`
+	if [[ -f "$md5bg" ]]; then
+		oldmd5b=`cat "$md5bg"`
+		if [[ ! "$oldmd5b" = "$md5b" ]]; then
+			show_info "Wallpaper change detected"
+			set_theme
+		fi
+	fi
+	echo "$md5b" > "$md5bg"
+fi
+}
+
+set_config() {
+# Load the config file if exists
+if [[ -f "$config" ]]; then
+	font="$(grep font $config | awk -F"=" '{print $2}')pt"
+	panel="$(grep panel $config | awk -F"=" '{print $2}')"
+	menu="$(grep menu $config | awk -F"=" '{print $2}')"
+	background="$(grep background $config | awk -F"=" '{print $2}')"
+	arrow="$(grep arrow $config | awk -F"=" '{print $2}')"
+	light="$(grep light $config | awk -F"=" '{print $2}')"
+	mode="$(grep mode $config | awk -F"=" '{print $2}')"
+fi
+# Set default config for unset variables
+[[ -z "$font" ]] && font="9"
+[[ -z "$panel" ]] && panel="0.8"
+[[ -z "$menu" ]] && menu="0.8"
+[[ -z "$background" ]] && background="on"
+[[ -z "$arrow" ]] && arrow="on"
+[[ -z "$light" ]] && light="off"
+[[ -z "$mode" ]] && mode="wallpaper"
+[[ -z "$color" ]] && color="rgb(75,141,249)"
+[[ -z "$text" ]] && text="#fff"
+# Set arrow styles
+if [ "$arrow" = "off" ]; then
+	arrowbase="0"
+	arrowrise="3px"
+else
+	arrowbase="21px"
+	arrowrise="9px"
+fi
+# Set menu colors
+if [ "$light" = "on" ]; then
+	menubg="255,255,255"
+	menufg="#000"
+else
+	menubg="0,0,0"
+	menufg="#fff"
+fi
+}
+
+initialize() {
+# Set default paths
+config="$HOME/.config/minty-colors.ini"
+tempdir="$HOME/.cache/minty-colors"
+installdir="/usr/share/minty-colors"
+# If config file doesn't exist, copy the default one
+[[ -f "$config" ]] || cp -f "$installdir/minty-colors.ini" "$config"
+# Create the temporary directory
+[[ -d "$tempdir" ]] || mkdir -p "$tempdir"
+# If minty-colors doesn't exist in ~./themes, create it
+[[ -d "$HOME/.themes/minty-colors" ]] || make_theme
+# Get the gtk theme name
+themename=$(gsettings get org.gnome.desktop.interface gtk-theme)
+gtktheme=$(echo $themename | sed "s/'//g")
+theme=$(printf "${gtktheme//%/\\x}")
+# Get the gtk theme path
+if [[ -f "$HOME/.themes/$theme/gtk-3.0/gtk-main.css" ]]; then
+	gtkpath="$HOME/.themes/$theme/gtk-3.0/gtk-main.css"
+elif [[ -f "$HOME/.themes/$theme/gtk-3.0/gtk.css" ]]; then
+	gtkpath="$HOME/.themes/$theme/gtk-3.0/gtk.css"
+elif [[ -f "/usr/share/themes/$theme/gtk-3.0/gtk-main.css" ]]; then
+	gtkpath="/usr/share/themes/$theme/gtk-3.0/gtk-main.css"
+elif [[ -f "/usr/share/themes/$theme/gtk-3.0/gtk.css" ]]; then
+	gtkpath="/usr/share/themes/$theme/gtk-3.0/gtk.css"
+fi
+# Get the background image path
+path=$(gsettings get org.gnome.desktop.background picture-uri)
+bg=$(echo "$path" | sed "s/'//g" | sed "s/file:\/\///g")
+img=$(printf "${bg//%/\\x}")
+}
+
+run_process() {
+show_info "Starting process"
+while true; do
+	# No need to run in background if Cinnamon is not running
+	if ( [ ! "$(pidof cinnamon)" ] ); then
+		show_err "Cinnamon not running"
+		exit 1
+	fi
+	initialize
+	set_config
+	# Check if the current theme name matches minty-colors
+	if [[ `gsettings get org.cinnamon.theme name | grep -i "minty-colors"` ]]; then
+		monitor_changes
+	fi
+	sleep 5
+done
+}
+
+run_process

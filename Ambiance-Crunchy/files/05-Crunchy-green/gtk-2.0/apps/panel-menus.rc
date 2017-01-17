@@ -1,0 +1,34 @@
+style "panel-menus" {
+	xthickness = 0
+	ythickness = 1
+
+	bg[NORMAL] = shade (1.30, @bg_color_dark)
+	bg[ACTIVE] = shade (1.25, @selected_bg_color)
+	bg[PRELIGHT] = shade (0.95, @selected_bg_color)
+	fg[NORMAL] = @fg_color_dark
+	fg[ACTIVE] = shade (0.80, @fg_color)
+	fg[PRELIGHT] = @selected_fg_color
+	fg[INSENSITIVE]   = shade (0.55, @fg_color_dark)
+	GtkWidget::focus-line-width = 0
+}
+
+style "favorites" {
+	base[NORMAL]	= mix (0.84, shade (1.05, @bg_color), shade (0.99, @selected_bg_color))
+	bg[NORMAL]		= mix (0.35, @bg_color, shade (1.45, @selected_bg_color))
+	GtkPaned::handle-size		= 0
+	GtkWidget::focus-line-width	= 1
+	
+	engine "murrine" {
+		contrast		= 0.5
+		gradient_shades	= {1.1,0.95,0.95,0.85}
+	}
+}
+
+style "mintmenu-style" = "panel-menus" {
+    bg_pixmap[NORMAL] = "img/mintmenu-bg.png"
+}
+
+# MintMenu WhiskerMenu applets
+widget "mintmenu*"						style "mintmenu-style"
+widget "whiskermenu-window*"			style "panel-menus"
+widget "whiskermenu-window*TreeView*"	style "favorites"

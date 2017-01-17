@@ -1,0 +1,33 @@
+/* ===================================================================
+   ! Scrollbars
+   ===================================================================*/
+
+StScrollView {
+    &.vfade { -st-vfade-offset: 0; }
+    &.hfade { -st-hfade-offset: 0; }
+}
+
+StScrollBar {
+    padding: 3px;
+    padding-right: 6px;
+    min-width: 8px;
+    min-height: 16px;
+
+    StBin#trough {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    StButton#vhandle,
+    StButton#hhandle {
+        border-image: url("widget-assets/scroll-handle.svg") 3;
+    }
+
+    StButton#vhandle:hover,
+    StButton#hhandle:hover,
+    StButton#vhandle:active,
+    StButton#hhandle:active,
+    StButton#vhandle:focus,
+    StButton#hhandle:focus {
+        border-image: url("widget-assets/scroll-handle-hover.svg") 3;
+    }
+}

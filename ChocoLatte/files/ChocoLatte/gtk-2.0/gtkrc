@@ -1,0 +1,339 @@
+#Atolm by SkiesOfAzel and Ceedeebg/MonkeyMagico.
+#License GPL3
+#Mod it for OldSteampunk by Sam Riggs, thanks to Half-Left also cbowman57 for the color scheme
+# /* Mod it for ChocoLatte by Charles Bowman, (aka cbowman57) thanks to tsujan, Frogs Hair & stinkeye for technical assistance. 12/10/2011  */
+
+gtk-color-scheme = "base_color:#dcca9a\nfg_color:#dcca9a\ntooltip_fg_color:#dcca9a\nselected_bg_color:#a9895b\nselected_fg_color:#382b1b\ntext_color:#382b1b\ntext_insensitive:#0b0502\nbg_color:#382b1b\ntooltip_bg_color:#382b1b\nlink_color:#486a98\ndarkback:#2a1f12"
+gtk_color_scheme = "frame_color:#323232\ninactive_frame_color:#323232"			# Fix for Chrome
+gtk-icon-sizes 					= "panel-menu=22,22:gtk-button=16,16"
+
+gtk-auto-mnemonics 				= 1
+
+style "default" 
+{
+	xthickness				= 1
+	ythickness 				= 1
+
+	####################
+	# Style Properties #
+	####################
+	GtkWidget::new-tooltip-style 		= 1
+	GtkButton::child-displacement-x 	= 1
+	GtkButton::child-displacement-y 	= 1
+	GtkButton::default-border 		= { 0, 0, 0, 0 }
+
+	#GtkCheckButton::indicator-size 	= 16
+
+	GtkPaned::handle-size 			= 6
+
+
+
+	#GtkScrollbar::activate-slider 		= 1
+	#GtkScrollbar::trough-border 		= 0
+	#GtkScrollbar::slider-width 		= 13
+	#GtkScrollbar::min-slider-length 	= 31
+
+	GtkMenuBar::internal-padding 		= 0
+	GtkExpander::expander-size 		= 11
+	GtkToolbar::internal-padding		= 1
+	#GtkToolbar::shadow-type 		= GTK_SHADOW_NONE
+
+	GtkTreeView::expander-size 		= 7
+	GtkTreeView::vertical-separator 	= 0
+#	GtkTreeView::odd-row-color 		= shade (0.96, @base_color)
+	#GtkNotebook::tab-overlap 		= -1
+
+	GtkMenu::horizontal-padding 		= 0
+	GtkMenu::vertical-padding 		= 0
+
+	GtkMenuBar:: shadow-type		= GTK_SHADOW_NONE
+
+	WnckTasklist::fade-overlay-rect 	= 0
+	# The following line hints to gecko (and possibly other appliations)
+	# that the entry should be drawn transparently on the canvas.
+	# Without this, gecko will fill in the background of the entry.
+	GtkEntry::honors-transparent-bg-hint 	= 1
+	GtkEntry::state-hint 			= 0
+
+	GtkEntry::progress-border 		= { 2, 2, 2, 2 }
+
+	GtkProgressBar::min-horizontal-bar-height = 20
+	GtkProgressBar::min-vertical-bar-width 	= 20
+	
+	GtkImage::x-ayatana-indicator-dynamic 	= 1
+	GtkMenuBar::window-dragging 		= 1
+
+	GtkStatusbar::shadow-type 		= GTK_SHADOW_NONE
+
+	GtkWidget::link-color 			= @link_color
+	GtkWidget::visited-link-color 		= @text_color
+
+	#####################
+	# Color Definitions #
+	#####################
+	bg[NORMAL]        			= @darkback
+       # bg_pixmap[NORMAL]                       = "/Shadows/background.png"
+	bg[PRELIGHT]      			= shade (1.05, @bg_color)
+	bg[SELECTED]      			= @selected_bg_color
+	bg[INSENSITIVE]   			= shade (0.95, @bg_color)
+	bg[ACTIVE]        			= shade (0.9, @bg_color)
+
+	fg[NORMAL]        			= @fg_color
+	fg[PRELIGHT]      			= @fg_color
+	fg[SELECTED]      			= @selected_fg_color
+	fg[INSENSITIVE]   			= shade (0.5, @bg_color)
+	fg[ACTIVE]        			= @fg_color
+
+	text[NORMAL]      			= @text_color
+	text[PRELIGHT]    			= @text_color
+	text[SELECTED]    			= @selected_fg_color
+	text[INSENSITIVE]			= @text_insensitive
+	text[ACTIVE]      			= @selected_fg_color
+
+	base[NORMAL]      			= @base_color
+	base[PRELIGHT]   			= shade (0.98, @bg_color)
+	base[SELECTED]    			= @selected_bg_color
+	base[INSENSITIVE] 			= shade (0.97, @bg_color)
+	base[ACTIVE]      			= shade (0.94, @bg_color)
+
+	engine "murrine" 
+	{
+		contrast 			= 1.1
+		arrowstyle 			= 2
+		reliefstyle 			= 3
+		highlight_shade 		= 1.0
+		gradient_shades 		= {1.4, 1.2, 1.2, 1.0}
+		shadow_shades 			= { 0.8, 3.2 }
+		roundness 			= 2
+		lightborder_shade 		= 1.60
+		lightborderstyle 		= 0
+
+		border_shades 			= {1.0, 0.9}
+		glazestyle 			= 0
+#		default_button_color 		= shade (0.9, @selected_bg_color)
+
+		listviewstyle 			= 2
+		progressbarstyle 		= 1
+		colorize_scrollbar 		= FALSE
+		menubaritemstyle 		= 1
+		menubarstyle 			= 2
+		menustyle 			= 2
+#		focusstyle 			= 3
+#		handlestyle			= 1
+		sliderstyle 			= 3
+		scrollbarstyle 			= 2
+		stepperstyle 			= 3
+		separatorstyle 			= 0
+		textstyle 			= 0
+		toolbarstyle			= 2
+#		rgba = TRUE
+	}
+}
+
+style "tooltips" 
+{
+	xthickness 				= 4
+	ythickness 				= 4
+
+	bg[NORMAL]        			= @tooltip_bg_color
+	fg[NORMAL]        			= @tooltip_fg_color
+	bg[SELECTED]      			= "#000000"
+
+	engine "murrine" 
+	{
+		rgba 				= TRUE
+	}
+}
+
+############
+# Includes #
+############
+
+include "Styles/button.rc"
+include "Styles/entry.rc"
+include "Styles/fixes.rc"
+include "Styles/list.rc"
+include "Styles/menu.rc"
+include "Styles/notebook.rc"
+include "Styles/scrollbar-smaller.rc"
+include "Styles/sliders.rc"
+include "Styles/surface.rc"
+include "Styles/tabs1.rc"
+###############################################################################
+# The following part of the gtkrc applies the different styles to the widgets #
+###############################################################################
+
+# The default style is applied to every widget
+class "GtkWidget" 				style "default"
+widget "GtkWindow"				style "no-gtk-base"
+class "GtkSeparator" 				style "wide"
+class "GtkFrame" 				style "wide"
+
+class "GtkCalendar" 				style "wide"
+class "GtkCalendar" 				style "calendar"
+class "GtkInfoBar" 				style "infobar"
+class "GtkIconView" 				style "iconview"
+
+# General matching follows. The order is choosen so that the right styles override
+# each other. EG. progressbar needs to be more important than the menu match.
+
+#Toolbar
+#widget_class "*<GtkToolbar>*" 			style "toolbar"
+
+#Buttons
+widget_class "*<GtkButton>" 			style "button"
+#widget_class "*<GtkToggleButton>" 		style "togglebutton"
+widget_class "*<GtkButton>*<GtkLabel>" 		style "button"
+
+widget_class "*<GtkCheckButton>"		style "checkbutton"
+widget_class "*<GtkRadioButton>"		style "radiobutton"
+
+#Statusbar
+widget_class "*<GtkStatusbar>" 			style "statusbar"
+
+#Notebook
+widget_class "*<GtkNotebook>"			style "notebook"
+widget_class "*<GtkNotebook>"			style "tabs"
+widget_class "*<GtkNotebook>*<GtkEventBox>" 	style "notebook_bg"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>" 	style "notebook_bg"
+widget_class "*<GtkNotebook>*<GtkLayout>" 	style "notebook_bg"
+widget_class "*<GtkNotebook>*<GtkLabel>" 	style "notebook_bg"
+widget "main_window*torrent_info.*viewport?"	style "notebook_bg"
+
+#Menu & Menubar
+#widget_class "*<GtkMenuBar>*" 			style "menubar"
+
+#widget_class "*<GtkMenu>*" 			style "menu"
+#widget_class "*<GtkMenuItem>*" 			style "menu_item"
+
+#widget_class "*<GtkMenuBar>*<GtkMenuItem>*" 	style "menubar_item"
+
+#Frame title
+#widget_class "*.<GtkFrame>.<GtkLabel>" 		style "frame_title"
+
+#Treeview
+widget_class "*.<GtkTreeView>*" 		style "treeview"
+
+#Range
+widget_class "*<GtkScale>"     			style "range"
+widget_class "*<GtkMenuItem>.*.<GtkScale>" 	style "range"
+
+#Progressbar
+#widget_class "*<GtkProgress>" 			style "progressbar"
+#widget_class "*<GtkMenuItem>.*.<GtkProgressBar>" style "progressbar_menu_item"
+
+
+widget_class "*<GtkMenuItem>.*.<GtkCalendar>"	style "calendar_menu_item"
+
+# Treeview headers (and similar stock GTK+ widgets)
+widget_class "*.<GtkScrolledWindow>*<GtkTreeView>*" style "treeview_header_scrolled"
+widget_class "*.<GtkTreeView>.<GtkButton>" 	style "treeview_header"
+widget_class "*.<GtkCTree>.<GtkButton>" 	style "treeview_header"
+widget_class "*.<GtkList>.<GtkButton>" 		style "treeview_header"
+widget_class "*.<GtkCList>.<GtkButton>" 	style "treeview_header"
+widget_class "*.<GtkTreeView>.<GtkButton>.*<GtkLabel>" style "treeview_header"
+widget_class "*.<GtkCTree>.<GtkButton>.*<GtkLabel>" style "treeview_header"
+widget_class "*.<GtkList>.<GtkButton>.*<GtkLabel>" style "treeview_header"
+widget_class "*.<GtkCList>.<GtkButton>.*<GtkLabel>" style "treeview_header"
+
+#Scrolled Window
+widget_class "*<GtkScrolledWindow>"		style "scrolled"
+
+#Separators
+widget_class "*<GtkSeparatorMenuItem>*" 	style:highest "separator_menu_item"
+widget_class "*<GtkSeparatorToolItem>*" 	style:highest "separator_tool_item"
+
+#Combobox and Entry stuff
+widget_class "*<GtkEntry>" 			style "entry"
+widget_class "*<GtkCombo>*"                 	style "combo"
+widget_class "*<GtkComboBoxEntry>*"         	style "comboentry"
+widget_class "*<GtkSpinButton>*"            	style "comboentry"
+
+# The window of the tooltip is called "gtk-tooltip"
+##################################################################
+# FIXME:
+# This will not work if one embeds eg. a button into the tooltip.
+# As far as I can tell right now we will need to rework the theme
+# quite a bit to get this working correctly.
+# (It will involve setting different priorities, etc.)
+##################################################################
+widget "gtk-tooltip*" 				style "tooltips"
+
+
+include "Apps/nautilus-elementary.rc"
+include "Apps/gnome-terminal.rc"
+include "Apps/gnome-panel.rc"
+##########################################################################
+# Following are special cases and workarounds for issues in applications.
+##########################################################################
+
+# Workaround for the evolution ETable (bug #527532)
+widget_class "*.ETable.ECanvas" 		style "treeview_header"
+# Workaround for the evolution ETree
+widget_class "*.ETree.ECanvas" 			style "treeview_header"
+
+# Special case the nautilus-extra-view-widget
+# ToDo: A more generic approach for all applications that have a widget like this.
+widget "*.nautilus-extra-view-widget" 		style : highest "nautilus_location"
+
+# Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
+# Note that this work around assumes that the combobox is _not_ in appears-as-list mode.
+#widget_class "*.<GtkComboBox>.<GtkCellView>" 	style "text_is_fg_color_workaround"
+widget_class "*.<GtkCellView>" 	style "text_is_fg_color_workaround"
+
+#emesene button colors
+widget "MainWindow+MainWindow.GtkVBox.GtkVBox.GtkHBox.GtkHBox.GtkVBox.GtkHBox.GtkButton*" style "text_is_fg_color_workaround" 
+#pidgin status button color
+widget "*pidgin_blist_statusbox.GtkToggleButton*" style "text_is_fg_color_workaround"
+# This is the part of the workaround that fixes the menus
+widget "*.gtk-combobox-popup-menu.*" 		style "menuitem_text_is_fg_color_workaround"
+
+# Work around the usage of GtkLabel inside GtkListItems to display text.
+# This breaks because the label is shown on a background that is based on the base color.
+widget_class "*<GtkListItem>*" 			style "fg_is_text_color_workaround"
+# GtkCList also uses the fg color to draw text on top of the base colors.
+widget_class "*<GtkCList>" 			style "fg_is_text_color_workaround"
+# Nautilus when renaming files, and maybe other places.
+widget_class "*<EelEditableLabel>" 		style "fg_is_text_color_workaround"
+# Work around for ubuntu's lucid sound indicator
+widget "ido-offscreen-scale" 			style "soundfix"
+# Thickness for indicator menu items
+widget "*IdoEntryMenuItem*" 			style "wide"
+
+#Deluge treeview
+widget "main_window*sidebar_notebook*GtkTreeView"	style "deluge-treeview"
+
+#OpenOffice and other non Gtk Application base and text color fixes
+widget "GtkWindow.GtkFixed.GtkToggleButton" 		style:highest "no-gtk-base"
+widget "GtkWindow.GtkFixed.GtkTreeView" 		style:highest "no-gtk-base"
+widget "GtkWindow.GtkFixed.GtkCheckButton" 		style:highest "no-gtk-base"
+widget "GtkWindow.GtkFixed.GtkOptionMenu" 		style:highest "no-gtk-base"
+
+widget "GtkWindow.GtkFixed.GtkEntry" 			style:highest "no-gtk-entry"
+
+widget "GtkWindow.GtkFixed.GtkCombo*" 			style:highest "no-gtk-comboentry"
+widget "GtkWindow.GtkFixed.*Spin*" 			style:highest "no-gtk-comboentry"
+
+#Evolution Fixes
+widget_class "EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" 	style "evo_new_button_workaround"
+widget "EShellWindow.*.GtkNotebook.ECalShellContent.EPaned.GtkNotebook.E*View" 	style "no-gtk-base"
+widget "EShellWindow.*.ECalShellSidebar.EPaned.ECalendar" 			style "no-gtk-base"
+widget "EShellWindow*EShellSwitcher.GtkNotebook.E*Sidebar.GtkEventBox" 		style "evo-event-box"
+
+#Ubuntu Software center fixes
+widget "*softwarecenter+view+catview_gtk+CategoriesViewGtk*"		style "software-center-text"
+widget "*softwarecenter+view+appview+AppView*"				style "software-center-button"
+widget "*softwarecenter+view+appdetailsview_gtk+AppDetailsViewGtk*" 	style "software-center-button"
+widget "*softwarecenter+view+appdetailsview_gtk+AppDetailsViewGtk*GtkAlignment.GtkVBox.GtkAlignment*" 	style "details-button"
+
+#Mozilla html entry color fix
+widget "MozillaGtkWidget.GtkFixed.GtkEntry" 				style "moz-entry"
+
+#Non gtk progressbar
+widget "GtkWindow.GtkFixed.GtkProgressBar"				style "text_is_fg_color_workaround"
+
+#Non gtk text view
+widget "GtkWindow.GtkFixed.GtkTextView"					style "text_is_fg_color_workaround"
+
+#liferea view
+widget "mainwindow.*.browsertabs.*.vbox2628*.GtkScrolledWindow*"	style "liferea-view"

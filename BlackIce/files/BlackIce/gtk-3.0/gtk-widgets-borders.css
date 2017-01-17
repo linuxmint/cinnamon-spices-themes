@@ -1,0 +1,1399 @@
+/***********
+ * Buttons *
+ ***********/
+.button,
+.button:backdrop:hover,
+GtkComboBox .button,
+GtkComboBox .button:backdrop:hover,
+.spinbutton.vertical .button,
+.suggested-action.button,
+.suggested-action.button:hover,
+.suggested-action.button:backdrop:hover {
+	padding: 4px 8px; /* we include padding here because it is linked with the size of the border */
+	border-radius: 3px;
+	border: 1px solid @button_border;
+	box-shadow: none;
+/*
+	box-shadow: 0 1px alpha(white, 0.04) inset,
+				0 2px alpha(white, 0.015) inset,
+			
+				1px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(white, 0.02) inset,
+			
+				0 -1px alpha(white, 0.03) inset,
+				0 -2px alpha(black, 0.02) inset,
+				0 -3px alpha(black, 0.01) inset;
+*/
+}
+.button:hover,
+GtkComboBox .button:hover,
+GtkInfoBar .button:hover,
+.info .button:hover,
+.warning .button:hover,
+.question .button:hover,
+.error .button:hover,
+GtkInfoBar .button.default:hover,
+.info .button.default:hover,
+.warning .button.default:hover,
+.question .button.default:hover,
+.error .button.default:hover,
+.toolbar .raised .button:hover,
+.toolbar .raised.button:hover,
+.notebook .button:hover,
+.notebook .spinbutton .button:hover,
+.notebook .spinbutton .button:hover:first-child,
+.notebook .spinbutton .button:hover:last-child {
+	box-shadow: 0px 0px 1px 1px @hover_button_shadow inset;
+	border: 1px solid @hover_button_border;
+}
+.button:active,
+GtkComboBox .button:active {
+	padding: 4px 8px 5px 8px;
+	border-width: 1px 1px 0px 1px;
+	border-color: transparent;
+	border-radius: 4px;   
+	box-shadow: 0 1px #0e0e0e inset,
+				
+				1px 0 #0f0f0f inset,
+				-1px 0 #0f0f0f inset,
+				
+				0 -2px alpha(black,0.2) inset,
+				0 -1px shade(@bg_color,1.95) inset;
+}
+/*
+.button:active:hover,
+.toolbar .raised .button:active:hover,
+.toolbar .raised.button:active:hover,
+.linked .button:active,
+.linked .button:active:hover,
+.linked .button:backdrop:active,
+.linked .button:backdrop:active:hover {
+*/
+.button:active:hover,
+GtkComboBox .button:active:hover,
+.toolbar .raised .button:active:hover,
+.toolbar .raised.button:active:hover {
+	padding: 4px 8px 5px 8px;
+	border-radius: 4px;
+	border-width: 1px 1px 0px 1px;
+	border-color: transparent;
+	box-shadow: 0 1px #0e0e0e inset,
+				
+				1px 0 #0f0f0f inset,
+				-1px 0 #0f0f0f inset,
+				
+				0 -2px #111111 inset,
+				0 -1px shade(@bg_color,1.95) inset;
+}
+.button:insensitive,
+GtkComboBox .button:insensitive {
+	border-color: @insensative_button_border;
+	box-shadow: 0 1px alpha(white, 0.02) inset,
+				0 2px alpha(white, 0.007) inset,
+				
+				1px 0 alpha(white, 0.015) inset,
+				-1px 0 alpha(white, 0.01) inset,
+				
+				0 -1px alpha(white, 0.015) inset,
+				0 -2px alpha(black, 0.01) inset,
+				0 -3px alpha(black, 0.005) inset;
+}
+
+/***************************
+ * Primary Toolbar Buttons *
+ ***************************/
+.primary-toolbar .toolbar .button,
+.primary-toolbar.toolbar .button {
+	border: 0px solid transparent;
+	padding: 5px;
+	box-shadow: none;
+}
+.primary-toolbar .toolbar .button:hover,
+.primary-toolbar.toolbar .button:hover{
+	padding: 5px;
+	box-shadow: 0px 0px 2px 2px @hover_button_shadow inset,
+				1px 0px @hover_button_border inset,
+				-1px 0px @hover_button_border inset,
+				0px 1px @hover_button_border inset,
+				0px -1px 0px @hover_button_border inset;
+}
+.primary-toolbar .toolbar .button:active,
+.primary-toolbar.toolbar .button:active,
+.primary-toolbar .toolbar .button:backdrop:active,
+.primary-toolbar.toolbar .button:backdrop:active,
+.primary-toolbar .toolbar .button:active:hover,
+.primary-toolbar.toolbar .button:active:hover,
+.primary-toolbar .toolbar .button:backdrop:hover,
+.primary-toolbar.toolbar .button:backdrop:hover,
+.primary-toolbar .toolbar .button:backdrop:active:hover,
+.primary-toolbar.toolbar .button:backdrop:active:hover  {
+	box-shadow: 0 1px #030303 inset,
+				
+				-1px 0 #060606 inset,
+				1px 0 #060606 inset,
+				
+				0 -2px #090909 inset,
+				0 -1px #303030 inset;
+}
+.primary-toolbar .toolbar .button:backdrop:hover,
+.primary-toolbar.toolbar .button:backdrop:hover {
+	border: 0px solid transparent;
+}
+
+/**********************************
+ * Primary Toolbar Raised Buttons *
+ **********************************/
+.primary-toolbar .raised .button,
+.primary-toolbar .raised.button,
+.primary-toolbar .raised.button,
+.primary-toolbar .raised .button:backdrop,
+.primary-toolbar .raised.button:backdrop:hover,
+.primary-toolbar .raised .button:backdrop:hover {
+	border: 1px solid @button_raised_border;
+	box-shadow: none;
+/*
+	box-shadow: 0 1px alpha(white, 0.04) inset,
+				0 2px alpha(white, 0.015) inset,
+				
+				1px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(white, 0.02) inset,
+				
+				0 -1px alpha(white, 0.03) inset,
+				0 -2px alpha(black, 0.02) inset,
+				0 -3px alpha(black, 0.01) inset;
+*/
+    padding: 4px 6px;
+}
+.primary-toolbar .raised .button:hover,
+.primary-toolbar .raised.button:hover {
+    padding: 4px 6px;
+}
+.primary-toolbar .raised .button:active,
+.primary-toolbar .raised.button:active,
+.primary-toolbar .raised .button:active:hover,
+.primary-toolbar .raised.button:active:hover {
+    padding: 4px 6px 5px 6px;
+}
+
+/********************
+ * Titlebar Buttons *
+ ********************/
+.titlebar .titlebutton,
+.titlebar .titlebutton:hover,
+.titlebar .titlebutton:active:hover,
+.titlebar .titlebutton:backdrop
+.titlebar .titlebutton:backdrop:hover {
+	padding: 6px;
+	border: 0px solid transparent;
+	box-shadow: none;
+	border-radius: 3px;
+}
+.titlebar .titlebutton:hover {
+	box-shadow: 0px 1px alpha(black,0.3) inset,
+    
+				1px 0px alpha(black,0.15) inset,
+				-1px 0px alpha(black,0.15) inset,
+
+				0px -1px alpha(white,0.08) inset;
+}
+.titlebar .titlebutton:active,
+.titlebar .titlebutton:active:hover,
+.titlebar .titlebutton:backdrop:hover {
+    box-shadow: 0px 1px alpha(black,0.5) inset,
+    
+				1px 0px alpha(black,0.3) inset,
+				-1px 0px alpha(black,0.3) inset,
+
+				0px -1px alpha(white,0.08) inset;
+}
+
+/*******************************
+ * Linked Buttons (Horizontal) *
+ *******************************/
+/* Middle button */
+.primary-toolbar .linked .button,
+.primary-toolbar .linked .button:active,
+.primary-toolbar .linked .button:active:hover,
+.primary-toolbar .linked .button:insensitive,
+.primary-toolbar .linked .button:backdrop,
+.primary-toolbar .linked .button:backdrop:hover,
+.primary-toolbar .button.raised.linked,
+.primary-toolbar .button.raised.linked:active,
+.primary-toolbar .button.raised.linked:active:hover,
+.primary-toolbar .button.raised.linked:insensitive,
+.primary-toolbar .button.raised.linked:backdrop,
+.primary-toolbar .button.raised.linked:backdrop:hover,
+.primary-toolbar .raised.linked .button,
+.primary-toolbar .raised.linked .button:active,
+.primary-toolbar .raised.linked .button:active:hover,
+.primary-toolbar .raised.linked .button:insensitive,
+.primary-toolbar .raised.linked .button:backdrop,
+.primary-toolbar .raised.linked .button:backdrop:hover,
+.inline-toolbar.toolbar .button,
+.inline-toolbar.toolbar .button:active,
+.inline-toolbar.toolbar .button:active:hover,
+.inline-toolbar.toolbar .button:insensitive,
+.inline-toolbar.toolbar .button:backdrop,
+.inline-toolbar.toolbar .button:backdrop:hover,
+.inline-toolbar.toolbar .button:backdrop:active,
+.inline-toolbar.toolbar .button:backdrop:insensitive,
+.inline-toolbar.toolbar GtkToolButton > .button,
+.inline-toolbar.toolbar GtkToolButton > .button:active,
+.inline-toolbar.toolbar GtkToolButton > .button:active:hover,
+.inline-toolbar.toolbar GtkToolButton > .button:insensitive,
+.inline-toolbar.toolbar GtkToolButton > .button:backdrop,
+.inline-toolbar.toolbar GtkToolButton > .button:backdrop:hover,
+.inline-toolbar.toolbar GtkToolButton > .button:backdrop:active,
+.inline-toolbar.toolbar GtkToolButton > .button:backdrop:insensitive,
+.toolbar .linked .button,
+.toolbar .linked .button:active,
+.toolbar .linked .button:active:hover,
+.toolbar .linked .button:insensitive,
+.toolbar .linked .button:backdrop,
+.toolbar .linked .button:backdrop:hover,
+.toolbar .button.raised.linked,
+.toolbar .button.raised.linked:active,
+.toolbar .button.raised.linked:active:hover,
+.toolbar .button.raised.linked:insensitive,
+.toolbar .button.raised.linked:backdrop,
+.toolbar .button.raised.linked:backdrop:hover,
+.toolbar .raised.linked .button,
+.toolbar .raised.linked .button:active,
+.toolbar .raised.linked .button:active:hover,
+.toolbar .raised.linked .button:insensitive,
+.toolbar .raised.linked .button:backdrop,
+.toolbar .raised.linked .button:backdrop:hover,
+.notebook .linked .button,
+.notebook .linked .button:active,
+.notebook .linked .button:active:hover,
+.notebook .linked .button:insensitive,
+.linked .button,
+.linked .button:active,
+.linked .button:active:hover,
+.linked .button:insensitive,
+.linked .button:backdrop,
+.linked .button:backdrop:hover,
+.linked.suggested-action.button,
+.linked.suggested-action.button:hover,
+.linked.suggested-action.button:backdrop:hover,
+.linked .suggested-action.button,
+.linked .suggested-action.button:hover,
+.linked .suggested-action.button:backdrop:hover {
+	padding: 4px 8px;
+	border-width: 1px 0px 1px 0px;
+	border-color: @button_border;
+    border-radius: 0px;
+	box-shadow: 0 1px alpha(white, 0.04) inset,
+				0 2px alpha(white, 0.015) inset,
+				
+				2px 0 0px -1px alpha(black, 0.3) inset,
+				-2px 0 0px -1px alpha(white, 0.05) inset,
+				
+				0 -1px alpha(white, 0.03) inset,
+				0 -2px alpha(black, 0.02) inset,
+				0 -3px alpha(black, 0.01) inset;
+}
+.primary-toolbar .linked .button:hover,
+.primary-toolbar .button.raised.linked:hover,
+.primary-toolbar .raised.linked .button:hover,
+.inline-toolbar.toolbar .button:hover,
+.inline-toolbar.toolbar GtkToolButton > .button:hover,
+.toolbar .linked .button:hover,
+.toolbar .button.raised.linked:hover,
+.toolbar .raised.linked .button:hover,
+.linked .button:hover,
+.notebook .linked .button:hover {
+	border-color: @hover_button_border;
+	box-shadow: 0px 0px 1px 1px alpha(@fg_color,0.6) inset,
+	
+				3px 0px 4px -2px alpha(@fg_color,0.6) inset,
+				-3px 0px 4px -2px alpha(@fg_color,0.6) inset,
+				
+				1px 0 @hover_button_border inset,
+				-1px 0 @hover_button_border inset;
+}
+/* Leftmost button */
+.primary-toolbar .linked .button:first-child,
+.primary-toolbar .linked .button:active:first-child,
+.primary-toolbar .linked .button:active:hover:first-child,
+.primary-toolbar .linked .button:insensitive:first-child,
+.primary-toolbar .linked .button:backdrop:first-child,
+.primary-toolbar .linked .button:backdrop:hover:first-child,
+.primary-toolbar .button.raised.linked:first-child,
+.primary-toolbar .button.raised.linked:active:first-child,
+.primary-toolbar .button.raised.linked:active:hover:first-child,
+.primary-toolbar .button.raised.linked:insensitive:first-child,
+.primary-toolbar .button.raised.linked:backdrop:first-child,
+.primary-toolbar .button.raised.linked:backdrop:hover:first-child,
+.primary-toolbar .raised.linked .button:first-child,
+.primary-toolbar .raised.linked .button:active:first-child,
+.primary-toolbar .raised.linked .button:active:hover:first-child,
+.primary-toolbar .raised.linked .button:insensitive:first-child,
+.primary-toolbar .raised.linked .button:backdrop:first-child,
+.primary-toolbar .raised.linked .button:backdrop:hover:first-child,
+.inline-toolbar.toolbar .button:first-child,
+.inline-toolbar.toolbar .button:active:first-child,
+.inline-toolbar.toolbar .button:active:hover:first-child,
+.inline-toolbar.toolbar .button:insensitive:first-child,
+.inline-toolbar.toolbar .button:backdrop:first-child,
+.inline-toolbar.toolbar .button:backdrop:hover:first-child,
+.inline-toolbar.toolbar .button:backdrop:active:first-child,
+.inline-toolbar.toolbar .button:backdrop:insensitive:first-child,
+.inline-toolbar.toolbar GtkToolButton:first-child > .button,
+.inline-toolbar.toolbar GtkToolButton:first-child > .button:active,
+.inline-toolbar.toolbar GtkToolButton:first-child > .button:active:hover,
+.inline-toolbar.toolbar GtkToolButton:first-child > .button:insensitive,
+.inline-toolbar.toolbar GtkToolButton:first-child > .button:backdrop,
+.inline-toolbar.toolbar GtkToolButton:first-child > .button:backdrop:hover,
+.inline-toolbar.toolbar GtkToolButton:first-child > .button:backdrop:active,
+.inline-toolbar.toolbar GtkToolButton:first-child > .button:backdrop:insensitive,
+.toolbar .linked .button:first-child,
+.toolbar .linked .button:active:first-child,
+.toolbar .linked .button:active:hover:first-child,
+.toolbar .linked .button:insensitive:first-child,
+.toolbar .linked .button:backdrop:first-child,
+.toolbar .linked .button:backdrop:hover:first-child,
+.toolbar .button.raised.linked:first-child,
+.toolbar .button.raised.linked:active:first-child,
+.toolbar .button.raised.linked:active:hover:first-child,
+.toolbar .button.raised.linked:insensitive:first-child,
+.toolbar .button.raised.linked:backdrop:first-child,
+.toolbar .button.raised.linked:backdrop:hover:first-child,
+.toolbar .raised.linked .button:first-child,
+.toolbar .raised.linked .button:active:first-child,
+.toolbar .raised.linked .button:active:hover:first-child,
+.toolbar .raised.linked .button:insensitive:first-child,
+.toolbar .raised.linked .button:backdrop:first-child,
+.toolbar .raised.linked .button:backdrop:hover:first-child,
+.notebook .linked .button:first-child,
+.notebook .linked .button:active:first-child,
+.notebook .linked .button:active:hover:first-child,
+.notebook .linked .button:insensitive:first-child,
+.linked .button:first-child,
+.linked .button:active:first-child,
+.linked .button:active:hover:first-child,
+.linked .button:insensitive:first-child,
+.linked .button:backdrop:first-child,
+.linked .button:backdrop:hover:first-child,
+.linked.suggested-action.button:first-child,
+.linked.suggested-action.button:hover:first-child,
+.linked.suggested-action.button:backdrop:hover:first-child,
+.linked .suggested-action.button:first-child,
+.linked .suggested-action.button:hover:first-child,
+.linked .suggested-action.button:backdrop:hover:first-child {
+	padding: 4px 8px;
+	border-width: 1px 0px 1px 1px;
+	border-color: @button_border;
+    border-radius: 3px 0px 0px 3px;
+	box-shadow: 0 1px alpha(white, 0.04) inset,
+				0 2px alpha(white, 0.015) inset,
+				
+				1px 0 alpha(white, 0.03) inset,
+				-2px 0 0px -1px alpha(white, 0.05) inset,
+				
+				0 -1px alpha(white, 0.03) inset,
+				0 -2px alpha(black, 0.02) inset,
+				0 -3px alpha(black, 0.01) inset;
+}
+.primary-toolbar .linked .button:hover:first-child,
+.primary-toolbar .button.raised.linked:hover:first-child,
+.primary-toolbar .raised.linked .button:hover:first-child,
+.inline-toolbar.toolbar .button:first-child:hover,
+.inline-toolbar.toolbar GtkToolButton:first-child > .button:hover,
+.toolbar .linked .button:hover:first-child,
+.toolbar .button.raised.linked:hover:first-child,
+.toolbar .raised.linked .button:hover:first-child,
+.linked .button:hover:first-child,
+.notebook .linked .button:hover:first-child {
+	border-color: @hover_button_border;
+	box-shadow: -3px 0px 4px -2px alpha(@fg_color,0.6) inset,
+				0px 0px 1px 1px alpha(@fg_color,0.6) inset,
+				-1px 0 @hover_button_border inset;
+}
+/* Rightmost button */
+.primary-toolbar .linked .button:last-child,
+.primary-toolbar .linked .button:active:last-child,
+.primary-toolbar .linked .button:active:hover:last-child,
+.primary-toolbar .linked .button:insensitive:last-child,
+.primary-toolbar .linked .button:backdrop:last-child,
+.primary-toolbar .linked .button:backdrop:hover:last-child,
+.primary-toolbar .button.raised.linked:last-child,
+.primary-toolbar .button.raised.linked:active:last-child,
+.primary-toolbar .button.raised.linked:active:hover:last-child,
+.primary-toolbar .button.raised.linked:insensitive:last-child,
+.primary-toolbar .button.raised.linked:backdrop:last-child,
+.primary-toolbar .button.raised.linked:backdrop:hover:last-child,
+.primary-toolbar .raised.linked .button:last-child,
+.primary-toolbar .raised.linked .button:active:last-child,
+.primary-toolbar .raised.linked .button:active:hover:last-child,
+.primary-toolbar .raised.linked .button:insensitive:last-child,
+.primary-toolbar .raised.linked .button:backdrop:last-child,
+.primary-toolbar .raised.linked .button:backdrop:hover:last-child,
+.inline-toolbar.toolbar .button:last-child,
+.inline-toolbar.toolbar .button:active:last-child,
+.inline-toolbar.toolbar .button:active:hover:last-child,
+.inline-toolbar.toolbar .button:insensitive:last-child,
+.inline-toolbar.toolbar .button:backdrop:last-child,
+.inline-toolbar.toolbar .button:backdrop:hover:last-child,
+.inline-toolbar.toolbar .button:backdrop:active:last-child,
+.inline-toolbar.toolbar .button:backdrop:insensitive:last-child,
+.inline-toolbar.toolbar GtkToolButton:last-child > .button,
+.inline-toolbar.toolbar GtkToolButton:last-child > .button:active,
+.inline-toolbar.toolbar GtkToolButton:last-child > .button:active:hover,
+.inline-toolbar.toolbar GtkToolButton:last-child > .button:insensitive,
+.inline-toolbar.toolbar GtkToolButton:last-child > .button:backdrop,
+.inline-toolbar.toolbar GtkToolButton:last-child > .button:backdrop:hover,
+.inline-toolbar.toolbar GtkToolButton:last-child > .button:backdrop:active,
+.inline-toolbar.toolbar GtkToolButton:last-child > .button:backdrop:insensitive,
+.toolbar .linked .button:last-child,
+.toolbar .linked .button:active:last-child,
+.toolbar .linked .button:active:hover:last-child,
+.toolbar .linked .button:insensitive:last-child,
+.toolbar .linked .button:backdrop:last-child,
+.toolbar .linked .button:backdrop:hover:last-child,
+.toolbar .button.raised.linked:last-child,
+.toolbar .button.raised.linked:active:last-child,
+.toolbar .button.raised.linked:active:hover:last-child,
+.toolbar .button.raised.linked:insensitive:last-child,
+.toolbar .button.raised.linked:backdrop:last-child,
+.toolbar .button.raised.linked:backdrop:hover:last-child,
+.toolbar .raised.linked .button:last-child,
+.toolbar .raised.linked .button:active:last-child,
+.toolbar .raised.linked .button:active:hover:last-child,
+.toolbar .raised.linked .button:insensitive:last-child,
+.toolbar .raised.linked .button:backdrop:last-child,
+.toolbar .raised.linked .button:backdrop:hover:last-child,
+.notebook .linked .button:last-child,
+.notebook .linked .button:active:last-child,
+.notebook .linked .button:active:hover:last-child,
+.notebook .linked .button:insensitive:last-child,
+.linked .button:last-child,
+.linked .button:active:last-child,
+.linked .button:active:hover:last-child,
+.linked .button:insensitive:last-child,
+.linked .button:backdrop:last-child,
+.linked .button:backdrop:hover:last-child,
+.linked.suggested-action.button:last-child,
+.linked.suggested-action.button:hover:last-child,
+.linked.suggested-action.button:backdrop:hover:last-child,
+.linked .suggested-action.button:last-child,
+.linked .suggested-action.button:hover:last-child,
+.linked .suggested-action.button:backdrop:hover:last-child {
+	padding: 4px 8px;
+    border-width: 1px 1px 1px 0;
+    border-color: @button_border;
+    border-radius: 0px 3px 3px 0px;
+    box-shadow: 0 1px alpha(white, 0.04) inset,
+				0 2px alpha(white, 0.015) inset,
+				
+				2px 0 0px -1px alpha(black, 0.3) inset,
+				-1px 0 alpha(white, 0.02) inset,
+				
+				0 -1px alpha(white, 0.03) inset,
+				0 -2px alpha(black, 0.02) inset,
+				0 -3px alpha(black, 0.01) inset;
+}
+.primary-toolbar .linked .button:hover:last-child,
+.primary-toolbar .button.raised.linked:hover:last-child,
+.primary-toolbar .raised.linked .button:hover:last-child,
+.inline-toolbar.toolbar .button:last-child:hover,
+.inline-toolbar.toolbar GtkToolButton:last-child > .button:hover,
+.toolbar .linked .button:hover:last-child,
+.toolbar .button.raised.linked:hover:last-child,
+.toolbar .raised.linked .button:hover:last-child,
+.linked .button:hover:last-child,
+.notebook .linked .button:hover:last-child {
+	border-color: @hover_button_border;
+	box-shadow: 3px 0px 4px -2px alpha(@fg_color,0.6) inset,
+				0px 0px 1px 1px alpha(@fg_color,0.6) inset,
+				1px 0 @hover_button_border inset;
+}
+/* Linked single button */
+.primary-toolbar .linked .button:only-child,
+.primary-toolbar .linked .button:active:only-child,
+.primary-toolbar .linked .button:active:hover:only-child,
+.primary-toolbar .linked .button:insensitive:only-child,
+.toolbar .linked .button:only-child,
+.toolbar .linked .button:active:only-child,
+.toolbar .linked .button:active:hover:only-child,
+.toolbar .linked .button:insensitive:only-child,
+.inline-toolbar.toolbar .button:only-child,
+.inline-toolbar.toolbar .button:active:only-child,
+.inline-toolbar.toolbar .button:active:hover:only-child,
+.inline-toolbar.toolbar .button:insensitive:only-child,
+.inline-toolbar.toolbar .button:backdrop:only-child,
+.inline-toolbar.toolbar .button:backdrop:hover:only-child,
+.inline-toolbar.toolbar .button:backdrop:active:only-child,
+.inline-toolbar.toolbar .button:backdrop:insensitive:only-child,
+.inline-toolbar.toolbar GtkToolButton:only-child > .button,
+.inline-toolbar.toolbar GtkToolButton:only-child > .button:active,
+.inline-toolbar.toolbar GtkToolButton:only-child > .button:active:hover,
+.inline-toolbar.toolbar GtkToolButton:only-child > .button:insensitive,
+.inline-toolbar.toolbar GtkToolButton:only-child > .button:backdrop,
+.inline-toolbar.toolbar GtkToolButton:only-child > .button:backdrop:hover,
+.inline-toolbar.toolbar GtkToolButton:only-child > .button:backdrop:active,
+.inline-toolbar.toolbar GtkToolButton:only-child > .button:backdrop:insensitive,
+.linked .button:only-child,
+.linked .button:active:only-child,
+.linked .button:active:hover:only-child,
+.linked .button:insensitive:only-child {
+	background-clip: padding-box;
+    border-width: 2px;
+    border-color: transparent;
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px 1px @button_border inset;
+}
+.primary-toolbar .linked .button:only-child,
+.inline-toolbar.toolbar .button:only-child:hover,
+.inline-toolbar.toolbar GtkToolButton:only-child > .button:hover,
+.toolbar .linked .button:only-child,
+.linked .button:hover:only-child,
+.notebook .linked .button:hover:only-child {
+	border-color: transparent;
+    box-shadow: 0px 0px 0px 1px @hover_button_border inset,
+				0px 0px 2px 2px alpha(@fg_color,0.6) inset;
+}
+/*****************************
+ * Linked Buttons (Vertical) *
+ *****************************/
+/* middle */
+.linked.vertical .button,
+.linked.vertical .button:active,
+.linked.vertical .button:active:hover,
+.linked.vertical .button:insensitive,
+.linked.vertical .button:backdrop,
+.linked.vertical .button:backdrop:active,
+.linked.vertical .button:backdrop:active:hover,
+.linked.vertical .button:backdrop:insensitive,
+.inline-toolbar.toolbar.vertical .button,
+.inline-toolbar.toolbar.vertical .button:active,
+.inline-toolbar.toolbar.vertical .button:active:hover,
+.inline-toolbar.toolbar.vertical .button:insensitive,
+.inline-toolbar.toolbar.vertical .button:backdrop,
+.inline-toolbar.toolbar.vertical .button:backdrop:hover,
+.inline-toolbar.toolbar.vertical .button:backdrop:active,
+.inline-toolbar.toolbar.vertical .button:backdrop:insensitive,
+.inline-toolbar.toolbar.vertical GtkToolButton > .button,
+.inline-toolbar.toolbar.vertical GtkToolButton > .button:active,
+.inline-toolbar.toolbar.vertical GtkToolButton > .button:active:hover,
+.inline-toolbar.toolbar.vertical GtkToolButton > .button:insensitive,
+.inline-toolbar.toolbar.vertical GtkToolButton > .button:backdrop,
+.inline-toolbar.toolbar.vertical GtkToolButton > .button:backdrop:hover,
+.inline-toolbar.toolbar.vertical GtkToolButton > .button:backdrop:active,
+.inline-toolbar.toolbar.vertical GtkToolButton > .button:backdrop:insensitive {
+	border-top-width: 0;
+    border-bottom-width: 0;
+    border-radius: 0;
+	box-shadow: 0px 2px 0px -1px alpha(black, 0.2) inset,
+				0px -2px 0px -1px alpha(white, 0.05) inset,
+				1px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(white, 0.02) inset;
+}
+.linked.vertical .button:hover,
+.notebook .linked.vertical .button:hover,
+.spinbutton.vertical .button:hover,
+.inline-toolbar.toolbar.vertical .button:hover,
+.inline-toolbar.toolbar.vertical GtkToolButton > .button:hover {
+	box-shadow: 0px 0px 1px 1px alpha(@fg_color,0.6) inset,
+				0px 3px 4px -2px alpha(@fg_color,0.6) inset,
+				0px -3px 4px -2px alpha(@fg_color,0.6) inset,
+				
+				0px 1px @hover_button_border inset,
+				0px -1px @hover_button_border inset;
+}
+/* top */
+.linked.vertical .button:first-child,
+.linked.vertical .button:active:first-child,
+.linked.vertical .button:active:hover:first-child,
+.linked.vertical .button:insensitive:first-child,
+.linked.vertical .button:backdrop:first-child,
+.linked.vertical .button:backdrop:active:first-child,
+.linked.vertical .button:backdrop:active:hover:first-child,
+.linked.vertical .button:backdrop:insensitive:first-child,
+.inline-toolbar.toolbar.vertical .button:first-child,
+.inline-toolbar.toolbar.vertical .button:active:first-child,
+.inline-toolbar.toolbar.vertical .button:active:hover:first-child,
+.inline-toolbar.toolbar.vertical .button:insensitive:first-child,
+.inline-toolbar.toolbar.vertical .button:backdrop:first-child,
+.inline-toolbar.toolbar.vertical .button:backdrop:hover:first-child,
+.inline-toolbar.toolbar.vertical .button:backdrop:active:first-child,
+.inline-toolbar.toolbar.vertical .button:backdrop:insensitive:first-child,
+.inline-toolbar.toolbar.vertical GtkToolButton:first-child > .button,
+.inline-toolbar.toolbar.vertical GtkToolButton:first-child > .button:active,
+.inline-toolbar.toolbar.vertical GtkToolButton:first-child > .button:active:hover,
+.inline-toolbar.toolbar.vertical GtkToolButton:first-child > .button:insensitive,
+.inline-toolbar.toolbar.vertical GtkToolButton:first-child > .button:backdrop,
+.inline-toolbar.toolbar.vertical GtkToolButton:first-child > .button:backdrop:hover,
+.inline-toolbar.toolbar.vertical GtkToolButton:first-child > .button:backdrop:active,
+.inline-toolbar.toolbar.vertical GtkToolButton:first-child > .button:backdrop:insensitive {
+	border-bottom-width: 0;
+    border-radius: 3px 3px 0px 0px;
+	box-shadow: 0 1px alpha(white, 0.04) inset,
+				0 2px alpha(white, 0.015) inset,
+				
+				1px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(white, 0.02) inset,
+				
+				0px -2px 0px -1px alpha(white, 0.05) inset;
+}
+.linked.vertical .button:hover:first-child,
+.notebook .linked.vertical .button:hover:first-child,
+.spinbutton.vertical .button:hover:first-child,
+.inline-toolbar.toolbar.vertical .button:first-child:hover,
+.inline-toolbar.toolbar.vertical GtkToolButton:first-child > .button:hover {
+	box-shadow: 0px 3px 4px -2px alpha(@fg_color,0.6) inset,
+				0px 0px 1px 1px alpha(@fg_color,0.6) inset,
+				0px 1px @hover_button_border inset;
+}
+/* bottom */
+.linked.vertical .button:last-child,
+.linked.vertical .button:active:last-child,
+.linked.vertical .button:active:hover:last-child,
+.linked.vertical .button:insensitive:last-child,
+.linked.vertical .button:backdrop:last-child,
+.linked.vertical .button:backdrop:active:last-child,
+.linked.vertical .button:backdrop:active:hover:last-child,
+.linked.vertical .button:backdrop:insensitive:last-child,
+.inline-toolbar.toolbar.vertical .button:last-child,
+.inline-toolbar.toolbar.vertical .button:active:last-child,
+.inline-toolbar.toolbar.vertical .button:active:hover:last-child,
+.inline-toolbar.toolbar.vertical .button:insensitive:last-child,
+.inline-toolbar.toolbar.vertical .button:backdrop:last-child,
+.inline-toolbar.toolbar.vertical .button:backdrop:hover:last-child,
+.inline-toolbar.toolbar.vertical .button:backdrop:active:last-child,
+.inline-toolbar.toolbar.vertical .button:backdrop:insensitive:last-child,
+.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button,
+.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button:active,
+.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button:active:hover,
+.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button:insensitive,
+.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button:backdrop,
+.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button:backdrop:hover,
+.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button:backdrop:active,
+.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button:backdrop:insensitive {
+	border-top-width: 0;
+    border-radius: 0px 0px 3px 3px;
+	box-shadow: 0px 2px 0px -1px alpha(black, 0.2) inset,
+				
+				1px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(white, 0.02) inset,
+				
+				0 -1px alpha(white, 0.03) inset,
+				0 -2px alpha(black, 0.02) inset,
+				0 -3px alpha(black, 0.01) inset;
+}
+.linked.vertical .button:hover:last-child,
+.notebook .linked.vertical .button:hover:last-child,
+.spinbutton.vertical .button:hover:last-child,
+.inline-toolbar.toolbar.vertical .button:last-child:hover,
+.inline-toolbar.toolbar.vertical GtkToolButton:last-child > .button:hover {
+	box-shadow: 0px 3px 4px -2px alpha(@fg_color,0.6) inset,
+				0px 0px 1px 1px alpha(@fg_color,0.6) inset,
+				0px 1px @hover_button_border inset;
+}
+
+/*******************
+ * InfoBar Widgets *
+ *******************/
+GtkInfoBar .button,
+.info .button,
+.warning .button,
+.question .button,
+.error .button,
+GtkInfoBar .button.default,
+.info .button.default,
+.warning .button.default,
+.question .button.default,
+.error .button.default,
+GtkInfoBar .button.default:hover,
+.info .button.default:hover,
+.warning .button.default:hover,
+.question .button.default:hover,
+.error .button.default:hover,
+GtkInfoBar .button.default:backdrop,
+.info .button.default:backdrop,
+.warning .button.default:backdrop,
+.question .button.default:backdrop,
+.error .button.default:backdrop {
+	border-color: @info_button_border;
+}
+GtkInfoBar .button:backdrop:hover,
+.info .button:backdrop:hover,
+.warning .button:backdrop:hover,
+.question .button:backdrop:hover,
+.error .button:backdrop:hover,
+GtkInfoBar .button.default:backdrop:hover,
+.info .button.default:backdrop:hover,
+.warning .button.default:backdrop:hover,
+.question .button.default:backdrop:hover,
+.error .button.default:backdrop:hover {
+	border-color: @info_button_border;
+	box-shadow: none;
+}
+GtkInfoBar .button:hover,
+.info .button:hover,
+.warning .button:hover,
+.question .button:hover,
+.error .button:hover,
+GtkInfoBar .button.default:hover,
+.info .button.default:hover,
+.warning .button.default:hover,
+.question .button.default:hover,
+.error .button.default:hover {
+	border-color: lighter(@info_bg_color);
+	box-shadow: 0px 0px 1px 1px @info_fg_color inset;
+}
+GtkInfoBar .button:active,
+.info .button:active,
+.warning .button:active,
+.question .button:active,
+.error .button:active {
+	border-color: transparent;
+	box-shadow: 0px 1px shade(@info_bg_color,0.6) inset,
+	
+				1px 0px shade(@info_bg_color,0.7) inset,
+				-1px 0px shade(@info_bg_color,0.7) inset,
+				
+				0 -2px alpha(black,0.15) inset,
+				0px -1px mix(@info_bg_color,#bbb,0.3) inset;
+}
+GtkInfoBar .button.default:active,
+.info .button.default:active,
+.warning .button.default:active,
+.question .button.default:active,
+.error .button.default:active {
+	border-color: transparent;
+	box-shadow: 0px 1px shade(@info_bg_color,0.6) inset,
+	
+				1px 0px shade(@info_bg_color,0.7) inset,
+				-1px 0px shade(@info_bg_color,0.7) inset,
+				
+				0 -2px alpha(black,0.34) inset,
+				0px -1px mix(@info_bg_color,#bbb,0.3) inset;
+}
+GtkInfoBar .button.close,
+.info .button.close,
+.warning .button.close,
+.question .button.close,
+.error .button.close {
+	padding: 5px 7px;
+	border: 1px solid @info_button_border;
+	box-shadow: none;
+}
+GtkInfoBar .button.close:active,
+.info .button.close:active,
+.warning .button.close:active,
+.question .button.close:active,
+.error .button.close:active {
+	padding: 5px 7px 6px 7px;
+	border-width: 1px 1px 0px 1px;
+	border-color: transparent;
+	box-shadow: 0px 1px shade(@info_bg_color,0.6) inset,
+	
+				1px 0px shade(@info_bg_color,0.7) inset,
+				-1px 0px shade(@info_bg_color,0.7) inset,
+				
+				0 -2px alpha(black,0.3) inset,
+				0px -1px mix(@info_bg_color,#bbb,0.3) inset;
+}
+GtkInfoBar .entry,
+.info .entry,
+.warning .entry,
+.question .entry,
+.error .entry {
+	box-shadow: 0px 1px shade(@info_bg_color,0.4) inset,
+	
+				1px 0px shade(@info_bg_color,0.5) inset,
+				-1px 0px shade(@info_bg_color,0.5) inset,
+
+				0px -1px mix(@info_bg_color,#eee,0.4) inset;
+}
+
+/****************
+ * Text Entries *
+ ****************/
+.entry,
+.entry:focus,
+.entry:backdrop,
+.entry:insensitive {
+	border-radius: 3px;
+	border: 0px solid transparent;
+	box-shadow: 0px 1px @entry_top_edge inset,
+				1px 0px @entry_side_edge inset,
+				-1px 0px @entry_side_edge inset,
+				0px -1px @entry_bottom_edge inset;
+    padding: 6px 3px;
+}
+.primary-toolbar.toolbar .entry,
+.primary-toolbar.toolbar .entry:focus,
+.primary-toolbar.toolbar .entry:backdrop,
+.primary-toolbar.toolbar .entry:insensitive {
+	box-shadow: 0px 1px shade(@entry_top_edge,0.8) inset,
+				1px 0px shade(@entry_side_edge,0.8) inset,
+				-1px 0px shade(@entry_side_edge,0.8) inset,
+				0px -1px shade(@primary_toolbar_bg_b,1.7) inset;
+}
+.linked.vertical .entry,
+.linked.vertical .entry:backdrop,
+.linked.vertical .entry:backdrop:hover {
+	border-radius: 0px;
+	box-shadow: 0px 1px @entry_linked_boundry inset,
+				1px 0px @entry_side_edge inset,
+				-1px 0px @entry_side_edge inset;
+}
+.linked.vertical .entry:first-child,
+.linked.vertical .entry:first-child:backdrop,
+.linked.vertical .entry:first-child:backdrop:hover {
+	border-radius: 3px 3px 0px 0px;
+	box-shadow: 1px 0px  @entry_side_edge inset,
+				0px 1px @entry_top_edge inset,
+				-1px 0px @entry_side_edge inset;
+}
+.linked.vertical .entry:last-child,
+.linked.vertical .entry:last-child:backdrop,
+.linked.vertical .entry:last-child:backdrop:hover {
+	border-radius: 0px 0px 3px 3px;
+	box-shadow: 0px 1px @entry_linked_boundry inset,
+				1px 0px @entry_side_edge inset,
+				-1px 0px @entry_side_edge inset,
+				0px -1px @entry_bottom_edge inset;
+}
+.entry.progressbar,
+.entry.progressbar:focus,
+.entry.progressbar:backdrop,
+.entry.progressbar:backdrop:focus {
+	border-radius: 0px;
+	box-shadow: 0px 1px @entry_top_edge inset,
+				0px -1px @entry_bottom_edge inset;
+}
+/*****************
+ * GtkSpinButton *
+ *****************/
+.spinbutton .button,
+.spinbutton .button:backdrop,
+.spinbutton .button:backdrop:hover,
+.spinbutton .button:insensitive,
+.spinbutton .button:backdrop:insensitive {
+	border: 0px solid transparent;
+	padding: 4px;
+}
+.spinbutton.vertical .button,
+.spinbutton.vertical .button:focused,
+.spinbutton.vertical .button:backdrop,
+.spinbutton.vertical .button:backdrop:hover {
+	border: 1px solid @button_border;
+}
+.spinbutton.vertical .button:hover {
+	border-color: @hover_button_border;
+}
+.spinbutton.vertical .button:active,
+.spinbutton.vertical .button:active:first-child,
+.spinbutton.vertical .button:active:last-child {
+	box-shadow: 0 1px alpha(black, 0.16) inset,
+				0 2px alpha(black, 0.06) inset,
+				
+				1px 0 alpha(black, 0.1) inset,
+				-1px 0 alpha(black, 0.1) inset,
+				
+				0 -1px alpha(white, 0.04) inset;
+	border-color: @button_border;
+}
+.spinbutton.vertical .button:first-child,
+.spinbutton.vertical .button:first-child:backdrop,
+.spinbutton.vertical .button:first-child:backdrop:hover {
+	border-bottom-width: 0;
+    border-radius: 3px 3px 0px 0px;
+	box-shadow: 0 1px alpha(white, 0.04) inset,
+				0 2px alpha(white, 0.015) inset,
+				
+				1px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(white, 0.02) inset,
+				
+				0px -2px 0px -1px alpha(white, 0.05) inset;
+}
+.spinbutton.vertical .button:first-child:hover {
+	box-shadow: 0px 1px @hover_button_border inset,
+				0px -1px @hover_button_border inset,
+				0px 0px 1px 1px alpha(@fg_color,0.6) inset,
+				0px 3px 4px -2px alpha(@fg_color,0.6) inset,
+				0px -3px 4px -2px alpha(@fg_color,0.6) inset;
+}
+.spinbutton.vertical .button:last-child,
+.spinbutton.vertical .button:last-child:backdrop,
+.spinbutton.vertical .button:last-child:backdrop:hover {
+	border-top-width: 0;
+    border-radius: 0px 0px 3px 3px;
+	box-shadow: 0px 2px 0px -1px alpha(black, 0.2) inset,
+				
+				1px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(white, 0.02) inset,
+				
+				0 -1px alpha(white, 0.03) inset,
+				0 -2px alpha(black, 0.02) inset,
+				0 -3px alpha(black, 0.01) inset;
+}
+.spinbutton.vertical .button:last-child:hover {
+	box-shadow: 0px 1px @hover_button_border inset,
+				0px 3px 4px -2px alpha(@fg_color,0.6) inset,
+				0px 0px 1px 1px alpha(@fg_color,0.6) inset;
+}
+.spinbutton.entry,
+.spinbutton.entry:backdrop,
+.spinbutton.entry:backdrop:hover {
+    padding: 3px 6px 3px 3px;
+}
+.spinbutton.vertical.entry,
+.spinbutton.vertical.entry:backdrop,
+.spinbutton.vertical.entry:backdrop:hover {
+	border-radius: 0px;
+	box-shadow: 1px 0px @entry_side_edge inset,
+				-1px 0px @entry_side_edge inset,
+				0px 1px #0D0D0D inset,
+				0px -1px #0D0D0D inset;
+}
+GtkComboBox.combobox-entry .entry,
+GtkComboBox.combobox-entry .button,
+GtkComboBox.combobox-entry .button:backdrop:hover,
+.spinbutton .button,
+.spinbutton .button:backdrop,
+.spinbutton .button:backdrop:hover,
+.linked .entry,
+.linked .entry:backdrop,
+.linked .entry:backdrop:hover {
+	border-radius: 0px;
+	box-shadow: 0px 1px @entry_top_edge inset,
+				1px 0px @entry_linked_boundry inset,
+				0px -1px @entry_bottom_edge inset;
+}
+GtkComboBox.combobox-entry .entry:first-child,
+GtkComboBox.combobox-entry .button:first-child,
+GtkComboBox.combobox-entry .button:first-child:backdrop:hover,
+.spinbutton .button:first-child,
+.spinbutton .button:first-child:backdrop,
+.spinbutton .button:first-child:backdrop:hover,
+.linked .entry:first-child,
+.linked .entry:first-child:backdrop,
+.linked .entry:first-child:backdrop:hover {
+	border-radius: 3px 0px 0px 3px;
+	box-shadow: 0px 1px @entry_top_edge inset,
+				1px 0px @entry_side_edge inset,
+				0px -1px @entry_bottom_edge inset;
+}
+GtkComboBox.combobox-entry .entry:last-child,
+GtkComboBox.combobox-entry .button:last-child,
+GtkComboBox.combobox-entry .button:last-child:backdrop:hover,
+.spinbutton .button:last-child,
+.spinbutton .button:last-child:backdrop,
+.spinbutton .button:last-child:backdrop:hover,
+.linked .entry:last-child,
+.linked .entry:last-child:backdrop,
+.linked .entry:last-child:backdrop:hover {
+	border-radius: 0px 3px 3px 0px;
+	box-shadow: 0px 1px @entry_top_edge inset,
+				1px 0px @entry_linked_boundry inset,
+				-1px 0px @entry_side_edge inset,
+				0px -1px @entry_bottom_edge inset;
+}
+GtkComboBox.combobox-entry .button:hover,
+GtkComboBox.combobox-entry .button:hover:first-child,
+GtkComboBox.combobox-entry .button:hover:last-child,
+GtkComboBox.combobox-entry .button:active:hover,
+GtkComboBox.combobox-entry .button:active:hover:first-child,
+GtkComboBox.combobox-entry .button:active:hover:last-child,
+.spinbutton .button:hover,
+.spinbutton .button:hover:first-child,
+.spinbutton .button:hover:last-child,
+.notebook GtkComboBox.combobox-entry .button:hover,
+.notebook GtkComboBox.combobox-entry .button:hover:first-child,
+.notebook GtkComboBox.combobox-entry .button:hover:last-child,
+.notebook GtkComboBox.combobox-entry .button:active:hover,
+.notebook GtkComboBox.combobox-entry .button:active:hover:first-child,
+.notebook GtkComboBox.combobox-entry .button:active:hover:last-child,
+.notebook .spinbutton .button:hover,
+.notebook .spinbutton .button:hover:first-child,
+.notebook .spinbutton .button:hover:last-child {
+	box-shadow: 0px 0px 0px 1px @hover_button_border inset,
+				0px 0px 2px 2px @hover_button_shadow inset;
+}
+GtkComboBox.combobox-entry .button:active,
+.spinbutton .button:active,
+.notebook GtkComboBox.combobox-entry .button:active,
+.notebook .spinbutton .button:active  {
+	box-shadow: 0px 1px alpha(black,0.7) inset,
+				0px 2px alpha(black,0.3) inset,
+	
+				0px -1px @entry_bottom_edge inset;
+}
+GtkComboBox.combobox-entry .button:last-child:active,
+.spinbutton .button:last-child:active,
+.notebook GtkComboBox.combobox-entry .button:last-child:active,
+.notebook .spinbutton .button:last-child:active {
+	box-shadow: 0px 1px alpha(black,0.7) inset,
+				0px 2px alpha(black,0.3) inset,
+				
+				0px -1px @entry_bottom_edge inset,
+				
+				-1px 0px alpha(black,0.4) inset;
+}
+GtkComboBox.combobox-entry .button:first-child:active,
+.spinbutton .button:first-child:active,
+.notebook GtkComboBox.combobox-entry .button:first-child:active,
+.notebook .spinbutton .button:first-child:active {
+	box-shadow: 0px 1px alpha(black,0.7) inset,
+				0px 2px alpha(black,0.3) inset,
+	
+				0px -1px @entry_bottom_edge inset,
+
+				1px 0px alpha(black,0.4) inset;
+}
+GtkComboBox.combobox-entry .button, 
+GtkComboBox.combobox-entry .button:backdrop,
+GtkComboBox.combobox-entry .button:backdrop:hover,
+.notebook GtkComboBox.combobox-entry .button, 
+.notebook GtkComboBox.combobox-entry .button:backdrop,
+.notebook GtkComboBox.combobox-entry .button:backdrop:hover {
+	border: 0px solid transparent;
+}
+
+/*********************************************************************
+ * Trough Tools (Progressbar, Scalebar, Levelbar, Switch, Scrollbar) *
+ *********************************************************************/
+/*
+GtkSwitch.trough{
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 1px @horizontal_trough_top_edge inset,
+				0 3px alpha(black, 0.08) inset,
+				0 -1px @horizontal_trough_bottom_edge inset;
+}
+*/
+.trough,
+.level-bar.fill-block.empty-fill-block,
+.level-bar.fill-block.empty-fill-block:backdrop,
+.level-bar.indicator-continuous.fill-block.empty-fill-block,
+.level-bar.indicator-continuous.fill-block.empty-fill-block:backdrop
+/*
+,
+GtkSwitch.trough
+*/
+{
+	border-radius: 3px;
+	border: none;
+	box-shadow: 0 1px alpha(black, 0.2) inset,
+				0 -1px alpha(white, 0.08) inset,
+				0 3px alpha(black, 0.08) inset;
+}
+.scale.trough.vertical,
+.trough.vertical {
+	box-shadow: 1px 0 alpha(black, 0.18) inset,
+				-1px 0 alpha(white, 0.08) inset,
+				3px 0 alpha(black, 0.06) inset;
+}
+.trough row,
+.trough row:hover {
+	box-shadow: 0 1px alpha(black, 0.8) inset,
+				0 -1px alpha(white, 0.08) inset,
+				0 3px alpha(black, 0.08) inset;
+}
+.trough row:selected,
+.trough row:selected:focused {
+	box-shadow: 0 1px alpha(black, 0.6) inset,
+				0 -1px mix(@selected_bg_color,#777,0.4) inset,
+				0 3px alpha(black, 0.08) inset;
+}
+/*
+.scale.highlight,
+.scale.highlight:backdrop,
+.scale.highlight:insensitive,
+.scale.highlight:insensitive:backdrop,
+*/
+.level-bar.fill-block,
+.level-bar.fill-block:backdrop,
+.level-bar.fill-block:insensitive,
+.level-bar.fill-block:insensitive:backdrop,
+.level-bar.indicator-continuous.fill-block,
+.level-bar.indicator-continuous.fill-block:backdrop,
+.level-bar.indicator-continuous.fill-block:insensitive,
+.level-bar.indicator-continuous.fill-block:insensitive:backdrop,
+GtkSwitch.slider {
+    border-radius: 3px;
+    border: 0px solid transparent;
+    box-shadow: inset 0 3px alpha(black, 0.06),
+				inset 0 -1px alpha(white, 0.02);
+}
+.level-bar.indicator-continuous.fill-block {
+    padding: 0px;
+}
+.scale.highlight.left,
+.scale.highlight.right,
+.scale.highlight.horizontal,
+.scrollbar.slider {
+	border-radius: 15px;
+    border: 0px solid transparent;
+	box-shadow: 0 2px alpha(white, 0.03) inset,
+				0 -1px alpha(black, 0.08) inset;
+}
+.scale.highlight.bottom,
+.scale.highlight.top.
+.scale.highlight.vertical,
+.scrollbar.slider.vertical {
+	border-radius: 15px;
+    border: 0px solid transparent;
+	box-shadow: 2px 0 alpha(white, 0.03) inset,
+				-1px 0 alpha(black, 0.08) inset;
+}
+
+/***********************************
+ * GtkScale (Specific borders) *
+ ***********************************/
+.level-bar.trough {
+    padding: 0px;
+    border: none;
+	box-shadow: none;
+}
+
+/***********************************
+ * Progress bar (Specific borders) *
+ ***********************************/
+GtkProgressBar {
+    padding: 1px;
+}
+GtkProgressBar.vertical {
+    padding: 1px 2px 1px 1px;	/* need to pad the bar to avoid it "spilling over" the trough */
+}
+.progressbar,
+.progressbar row,
+.progressbar row:hover,
+.progressbar row:selected,
+.progressbar row:selected:focus {
+	border: none;
+	box-shadow: none;
+	border-radius: 3px;
+}
+
+/*********************************
+ * Scrollbars (Specific borders) *
+ *********************************/
+.scrollbar.trough, 
+.scrollbar.trough.vertical {
+    border: none;
+    box-shadow: none;
+}
+
+/********************************
+ * GtkSwitch (Specific borders) *
+ ********************************/
+GtkSwitch.slider {
+	padding: 1px 1px 2px 1px;
+	border: 1px solid shade(@button_border,0.8);
+}
+
+.notebook GtkSwitch.slider {
+	padding: 1px 1px 2px 1px;
+	border: 1px solid shade(@notebook_button_border,0.8);
+}
+
+/************
+ * Notebook *
+ ************/
+.notebook {
+	border-radius: 0px;
+    padding: 0px 0px;
+    border: 1px solid #1d1d1d;
+}
+.notebook tab.top {
+	border-image: url("assets/tab/tab-top.png") 3 15 2 15 / 3px 15px 2px 15px stretch;
+	border-width: 3px 15px 2px 15px;
+	padding: 11px 16px 7px 16px;
+}
+.notebook tab.top:active {
+	border-image: url("assets/tab/tab-top-active.png") 3 15 2 15 / 3px 15px 2px 15px stretch;
+}
+.notebook tab.bottom {
+	border-image: url("assets/tab/tab-bottom.png") 2 15 3 15 / 2px 15px 3px 15px stretch;
+	border-width: 2px 15px 3px 15px;
+	padding: 7px 16px 11px 16px;
+}
+.notebook tab.bottom:active {
+	border-image: url("assets/tab/tab-bottom-active.png") 2 15 3 15 / 2px 15px 3px 15px stretch;
+}
+.notebook tab.right {
+	border-image: url("assets/tab/tab-right.png") 15 3 15 2 / 15px 3px 15px 2px stretch;
+	border-width: 15px 3px 15px 2px;
+	padding: 16px 11px 16px 7px;
+}
+.notebook tab.right:active {
+	border-image: url("assets/tab/tab-right-active.png") 15 3 15 2 / 15px 3px 15px 2px stretch;
+}
+.notebook tab.left {
+	border-image: url("assets/tab/tab-left.png") 15 2 15 3 / 15px 2px 15px 3px stretch;
+	border-width: 15px 2px 15px 3px;
+	padding: 16px 7px 16px 11px;
+}
+.notebook tab.left:active {
+	border-image: url("assets/tab/tab-left-active.png") 15 2 15 3 / 15px 2px 15px 3px stretch;
+}
+
+/*****************************
+ * Notebook Tab Close Button *
+ *****************************/
+.notebook tab .button,
+.notebook tab .button:hover,
+.notebook tab .button:active,
+.notebook tab .button:active:hover,
+.notebook tab .button:backdrop,
+.notebook tab .button:backdrop:hover {
+	border: 0px solid transparent;
+	padding: 3px;
+}
+.notebook tab .button:hover,
+.notebook tab .button:active:hover,
+.notebook tab .button:backdrop:hover {
+	box-shadow: 0px 1px alpha(black,0.7) inset,
+    
+				1px 0px alpha(black,0.25) inset,
+				-1px 0px alpha(black,0.25) inset,
+
+				0px -1px alpha(white,0.06) inset;
+}
+
+/*******************
+ * Notebook Button *
+ *******************/
+.notebook .button,
+.notebook GtkComboBox .button,
+.notebook .button:backdrop:hover,
+.notebook GtkComboBox .button:backdrop:hover {
+	border-color: @notebook_button_border;
+	box-shadow: none;
+}
+.notebook .button:active,
+.notebook GtkComboBox .button:active {
+	border-color: transparent;
+	box-shadow: 0 1px #090909 inset,
+				
+				1px 0 #0a0a0a inset,
+				-1px 0 #0a0a0a inset,
+				
+				0 -2px alpha(black,0.7) inset,
+				0 -1px shade(@notebook_bg,1.95) inset;
+}
+.notebook .linked .button,
+.notebook .linked .button:first-child,
+.notebook .linked .button:last-child,
+.notebook .linked .button:backdrop:hover,
+.notebook .linked .button:backdrop:hover:first-child,
+.notebook .linked .button:backdrop:hover:last-child,
+.notebook .linked .button:active,
+.notebook .linked .button:active:first-child,
+.notebook .linked .button:active:last-child,
+.notebook .linked .button:active:hover,
+.notebook .linked .button:active:hover:first-child,
+.notebook .linked .button:active:hover:last-child {
+	border-color: @notebook_button_border;
+}
+.notebook .linked .button:hover,
+.notebook .linked .button:hover:first-child,
+.notebook .linked .button:hover:last-child {
+	border-color: @hover_button_border;
+}
+
+/******************
+ * Notebook Entry *
+ ******************/
+.notebook .entry,
+.notebook .entry:focus,
+.notebook .entry:backdrop,
+.notebook .entry:insensitive {
+	box-shadow: 0px 1px shade(@entry_top_edge,0.8) inset,
+				1px 0px shade(@entry_side_edge,0.8) inset,
+				-1px 0px shade(@entry_side_edge,0.8) inset,
+				0px -1px shade(@notebook_bg,1.95) inset;
+}
+.notebook .linked.vertical .entry,
+.notebook .linked.vertical .entry:backdrop,
+.notebook .linked.vertical .entry:backdrop:hover {
+	box-shadow: 0px 1px @entry_linked_boundry inset,
+				1px 0px shade(@entry_side_edge,0.8) inset,
+				-1px 0px shade(@entry_side_edge,0.8) inset;
+}
+.notebook .linked.vertical .entry:first-child,
+.notebook .linked.vertical .entry:first-child:backdrop,
+.notebook .linked.vertical .entry:first-child:backdrop:hover {
+	box-shadow: 1px 0px  shade(@entry_side_edge,0.8) inset,
+				0px 1px shade(@entry_top_edge,0.8) inset,
+				-1px 0px shade(@entry_side_edge,0.8) inset;
+}
+.notebook .linked.vertical .entry:last-child,
+.notebook .linked.vertical .entry:last-child:backdrop,
+.notebook .linked.vertical .entry:last-child:backdrop:hover {
+	box-shadow: 0px 1px @entry_linked_boundry inset,
+				1px 0px shade(@entry_side_edge,0.8) inset,
+				-1px 0px shade(@entry_side_edge,0.8) inset,
+				0px -1px shade(@notebook_bg,1.95) inset;
+}
+.notebook .entry.progressbar,
+.notebook .entry.progressbar:focus,
+.notebook .entry.progressbar:backdrop,
+.notebook .entry.progressbar:backdrop:focus {
+	box-shadow: 0px 1px shade(@entry_top_edge,0.8) inset,
+				0px -1px shade(@notebook_bg,1.95) inset;
+}
+
+/**************************
+ * Notebook GtkSpinButton *
+ **************************/
+.notebook .spinbutton.vertical .button,
+.notebook .spinbutton.vertical .button:focused,
+.notebook .spinbutton.vertical .button:backdrop,
+.notebook .spinbutton.vertical .button:backdrop:hover,
+.notebook .spinbutton.vertical .button:active,
+.notebook .spinbutton.vertical .button:active:first-child,
+.notebook .spinbutton.vertical .button:active:last-child {
+	border-color: @notebook_button_border;
+}
+.notebook GtkComboBox.combobox-entry .entry,
+.notebook GtkComboBox.combobox-entry .button,
+.notebook GtkComboBox.combobox-entry .button:backdrop:hover,
+.notebook .spinbutton .button,
+.notebook .spinbutton .button:backdrop,
+.notebook .spinbutton .button:backdrop:hover,
+.notebook .linked .entry,
+.notebook .linked .entry:backdrop,
+.notebook .linked .entry:backdrop:hover {
+	border-radius: 0px;
+	border: 0px solid transparent;
+	box-shadow: 0px 1px shade(@entry_top_edge,0.8) inset,
+				1px 0px @entry_linked_boundry inset,
+				0px -1px shade(@notebook_bg,1.95) inset;
+}
+.notebook GtkComboBox.combobox-entry .entry:first-child,
+.notebook GtkComboBox.combobox-entry .button:first-child,
+.notebook GtkComboBox.combobox-entry .button:first-child:backdrop:hover,
+.notebook .spinbutton .button:first-child,
+.notebook .spinbutton .button:first-child:backdrop,
+.notebook .spinbutton .button:first-child:backdrop:hover,
+.notebook .linked .entry:first-child,
+.notebook .linked .entry:first-child:backdrop,
+.notebook .linked .entry:first-child:backdrop:hover {
+	border-radius: 3px 0px 0px 3px;
+	border: 0px solid transparent;
+	box-shadow: 0px 1px shade(@entry_top_edge,0.8) inset,
+				1px 0px shade(@entry_side_edge,0.8) inset,
+				0px -1px shade(@notebook_bg,1.95) inset;
+}
+.notebook GtkComboBox.combobox-entry .entry:last-child,
+.notebook GtkComboBox.combobox-entry .button:last-child,
+.notebook GtkComboBox.combobox-entry .button:last-child:backdrop:hover,
+.notebook .spinbutton .button:last-child,
+.notebook .spinbutton .button:last-child:backdrop,
+.notebook .spinbutton .button:last-child:backdrop:hover,
+.notebook .linked .entry:last-child,
+.notebook .linked .entry:last-child:backdrop,
+.notebook .linked .entry:last-child:backdrop:hover {
+	border-radius: 0px 3px 3px 0px;
+	border: 0px solid transparent;
+	box-shadow: 0px 1px shade(@entry_top_edge,0.8) inset,
+				1px 0px @entry_linked_boundry inset,
+				-1px 0px shade(@entry_side_edge,0.8) inset,
+				0px -1px shade(@notebook_bg,1.95) inset;
+}

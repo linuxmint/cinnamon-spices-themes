@@ -1,0 +1,96 @@
+/* Decorations */
+
+UnityDecoration {
+    -UnityDecoration-extents: 28px 0px 0px 0px;
+    -UnityDecoration-input-extents: 10px;
+
+    -UnityDecoration-shadow-offset-x: 1px;
+    -UnityDecoration-shadow-offset-y: 5px;
+    -UnityDecoration-active-shadow-color: rgba (0, 0, 0, 0.75);
+    -UnityDecoration-active-shadow-radius: 30px;
+    -UnityDecoration-inactive-shadow-color: rgba (0, 0, 0, 0.3);
+    -UnityDecoration-inactive-shadow-radius: 25px;
+
+    -UnityDecoration-glow-size: 10px;
+    -UnityDecoration-glow-color: rgb (221, 72, 20);
+
+    -UnityDecoration-title-indent: 10px;
+    -UnityDecoration-title-fade: 35px;
+    -UnityDecoration-title-alignment: 0px.0px;
+}
+
+UnityDecoration.top {
+    border: none;
+    border-bottom-width: 0px;
+    border-radius: 3px 3px 0px 0px;
+    padding: 1px 6px 0px 6px;
+    box-shadow: none;
+    background-color: @bg_color;
+    background-clip: border-box;
+    background-image: none;
+    color: @fg_color;
+    text-shadow: none;
+}
+
+UnityDecoration.top:backdrop {
+    border: none;
+    border-bottom-width: 0px;
+    background-color: @bg_color;
+    background-clip: border-box;
+    background-image: none;
+    box-shadow: none;
+    color: @fg_color;
+}
+
+UnityDecoration.left,
+UnityDecoration.right {
+    background-color: @bg_color;
+    background-image: none;
+}
+
+UnityDecoration.left:backdrop,
+UnityDecoration.right:backdrop {
+    /* start color: mix of the top border color and bg-image gradient end */
+    background-image: none;
+}
+
+UnityDecoration.bottom {
+    background-image: none;
+    background-color: @bg_color;
+}
+
+/* Panel Style */
+
+UnityPanelWidget,
+.unity-panel {
+    background-color: @bg_color;
+    background-image: none;
+    border-width: 0px;
+    color: @fg_color;
+    text-shadow: none;
+}
+
+UnityPanelWidget:backdrop,
+.unity-panel:backdrop {
+    color: @fg_color;
+}
+
+.unity-panel.menubar,
+.unity-panel .menubar {
+}
+
+.unity-panel.menuitem,
+.unity-panel .menuitem {
+    border-width: 1px 1px 0px 1px;
+    icon-shadow: 0px -1px shade (@bg_color, 0.7);
+}
+
+.unity-panel.menubar:backdrop,
+.unity-panel .menubar *:backdrop {
+    color: @fg_color;
+}
+
+.unity-panel.menubar.menuitem:hover,
+.unity-panel.menubar .menuitem *:hover {
+    background-image: none;
+}

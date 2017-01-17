@@ -1,0 +1,2178 @@
+
+# Set GtkSettings color scheme property.
+# This can be overriden (via an xsetting) with eg. the gnome-appearance-properties.
+gtk_color_scheme = "fg_color:#b0b0b0\nbg_color:#000000\nbase_color:#1a1a1a\ntext_color:#b0b0b0\nselected_bg_color:#707070\nselected_fg_color:#3d3d3d\ntooltip_bg_color:#707070\ntooltip_fg_color:#3d3d3d"
+
+gtk-icon-sizes = "panel-menu=16,16"
+
+gtk-button-images = 0
+
+style "default"
+{
+	########
+	# Style Properties
+	########
+
+	
+	GtkWidget::link-color = "#ff0000"
+	GtkWidget::visited-link-color = "#ff0000"
+	GtkButton      ::default_border    		= { 1, 1, 1, 1 }
+	GtkButton      ::default_outside_border    	= { 1, 1, 1, 1 }
+	GtkButton      ::child-displacement-x = 1
+	GtkButton      ::child-displacement-y = 1
+	GtkCheckButton ::indicator-size       = 14
+	GtkWidget      ::focus_padding			= 0
+	GtkProgressBar ::trough_border			= 0
+
+	GtkPaned       ::handle-size          = 6
+
+	GtkRange       ::trough-border        = 0
+	GtkRange       ::slider-width         = 15
+	GtkRange       ::stepper-size         = 15
+
+	GtkScale       ::slider-length        = 31
+	#GtkScale       ::trough-side-details  = 1
+	GtkScrollbar   ::min-slider-length    = 40
+
+	GtkMenuBar     ::internal-padding     = 0
+
+	#GtkToolbar     ::internal-padding     = 1
+
+
+	#GtkMenu        ::horizontal-padding   = 0
+	#GtkMenu        ::vertical-padding     = 0
+
+	GtkTreeView    ::expander_size     		= 8
+	GtkExpander    ::expander_size     		= 8
+
+	# Glow the tasklist by changing the color, instead of overlaying it with a rectangle
+	WnckTasklist   ::fade-overlay-rect    = 0
+	GtkStatusbar     ::shadow-type       	= GTK_SHADOW_NONE
+
+	#xthickness = 1
+	#ythickness = 1
+
+	GtkEntry::cursor_color = @text_color
+	GtkTextView::cursor_color = @text_color
+	GtkWidget::cursor_color = @text_color
+
+
+	fg[NORMAL]        = @fg_color
+	fg[PRELIGHT]      = shade (1.30, @fg_color)
+	fg[SELECTED]      = @selected_fg_color
+	fg[ACTIVE]        = shade (0.9, @fg_color)
+	fg[INSENSITIVE]   = shade (0.4, @fg_color)
+
+	bg[NORMAL]        = @bg_color
+	bg[PRELIGHT]      = shade (1.30,  @bg_color)
+	bg[SELECTED]	  = @selected_bg_color
+	bg[INSENSITIVE]   = @bg_color
+	bg[ACTIVE]        = shade (0.9, @bg_color)
+
+	# window background
+	#bg_pixmap[NORMAL] = "/shadows/window-bg.svg"
+
+	base[NORMAL]      = @base_color
+	base[PRELIGHT]    = shade (1.30,  @bg_color)
+	base[ACTIVE]      = shade (0.7, @selected_bg_color)
+	base[SELECTED]    = shade (0.9, @selected_bg_color)
+	base[INSENSITIVE] = shade (0.40, @base_color)
+
+	text[NORMAL]      = @text_color
+	text[PRELIGHT]    = shade (1.30, @text_color)
+	text[ACTIVE]      = shade (0.9, @selected_fg_color)
+	text[SELECTED]    = shade (0.4, @selected_fg_color)
+	text[INSENSITIVE] = shade (0.40, @text_color)
+
+	engine "ubuntulooks" 
+	{
+		menubarstyle      = 0       # 0 = flat, 1 = sunken, 2 = flat gradient
+		menuitemstyle     = 1       # 0 = flat, 1 = 3d-ish (gradient), 2 = 3d-ish (button)
+		listviewitemstyle = 1       # 0 = flat, 1 = 3d-ish (gradient)
+		progressbarstyle  = 1       # 0 = candy bar, 1 = fancy candy bar, 2 = flat
+		animation         = FALSE
+	}
+
+engine "pixmap"
+{
+	image
+	{
+		function	= HANDLE
+		recolorable	= TRUE
+		overlay_file	= "/handles/handle-v.svg"
+		overlay_stretch	= FALSE
+		orientation	= VERTICAL
+	}
+
+	image
+	{
+		function	= HANDLE
+		recolorable	= TRUE
+		overlay_file	= "/handles/handle-h.svg"
+		overlay_stretch	= FALSE
+		orientation	= HORIZONTAL
+	}
+
+	image
+	{
+		function	= ARROW
+		recolorable	= TRUE
+		overlay_file	= "/arrows/arrow-up.svg"
+		overlay_border	= {2,2,2,2}
+		overlay_stretch	= FALSE
+		arrow_direction	= UP
+	}
+
+	image
+	{
+		function	= ARROW
+		recolorable	= TRUE
+		overlay_file	= "/arrows/arrow-down.svg"
+		overlay_border	= {2,2,2,2}
+		overlay_stretch	= FALSE
+		arrow_direction	= DOWN
+	}
+
+	image
+	{
+		function	= ARROW
+		recolorable	= TRUE
+		overlay_file	= "/arrows/arrow-left.svg"
+		overlay_border	= {2,2,2,2}
+		overlay_stretch	= FALSE
+		arrow_direction	= LEFT
+	}
+
+	image
+	{
+		function	= ARROW
+		recolorable	= TRUE
+		overlay_file	= "/arrows/arrow-right.svg"
+		overlay_border	= {2,2,2,2}
+		overlay_stretch	= FALSE
+		arrow_direction	= RIGHT
+	}
+
+	image
+	{
+		function	= VLINE
+		recolorable	= TRUE
+		file		= "/lines/line-v.svg"
+		border		= {0,0,0,0}
+		stretch		= TRUE
+		}
+
+	image
+	{
+		function	= HLINE
+		recolorable	= TRUE
+		file		= "/lines/line-h.svg"
+		border		= {0,0,0,0}
+		stretch		= TRUE
+		}
+
+
+	image
+	{
+		function	= SHADOW
+		shadow		= IN
+		recolorable	= FALSE
+		file		= "/shadows/shadow-in.svg"
+		border		= {1,1,1,1}
+		stretch		= TRUE
+		}
+
+	image
+	{
+		function	= SHADOW
+		shadow		= OUT
+		recolorable	= TRUE
+		file		= "/shadows/shadow-in.svg"
+		border		= {1,1,1,1}
+		stretch		= TRUE
+		}
+
+	image
+	{
+		function	= SHADOW
+		shadow		= ETCHED_IN
+		recolorable	= TRUE
+		file		= "/shadows/frame1.svg"
+		border		= {1,1,1,1}
+		stretch		= TRUE
+		}
+
+	image
+	{
+		function	= SHADOW
+		shadow		= ETCHED_OUT
+		recolorable	= TRUE
+		file		= "/shadows/shadow-none.svg"
+		border		= {1,1,1,1}
+		stretch		= TRUE
+		}
+
+	image
+	{
+		function	= SHADOW_GAP
+		recolorable	= TRUE
+		file		= "/shadows/frame1.svg"
+		border		= {1,1,1,1}
+		stretch		= TRUE
+		gap_start_file	= "/shadows/shadow-none.svg"
+		gap_start_border= { 1 , 1 ,1 ,1}
+		gap_start_file	= "/shadows/shadow-none.svg"
+		gap_start_border= { 1 , 1 ,1 ,1}
+		gap_side	= TOP
+		
+		}
+
+	image
+	{
+		function	= FOCUS
+		recolorable	= TRUE
+		file		= "/other/focus.svg"
+		border		= {5,5,5,5}
+		stretch		= TRUE
+		}
+
+
+}
+
+}
+
+style "scrollbars" = "default"
+{
+engine "pixmap"
+{
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		detail		= "trough"
+		file		= "/scrollbar/trough-scrollbar-horiz.svg"
+		border		= { 30 , 30 , 0 , 0 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		detail		= "trough"
+		file		= "/scrollbar/trough-scrollbar-vert.svg"
+		border		= { 0 , 0 , 30 , 30 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+	}
+
+	image
+	{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/scrollbar/slider-horiz.svg"
+		border		= { 4 , 4 , 2 , 2 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		overlay_file	= "/scrollbar/grip-horiz.svg"
+		overlay_stretch	= FALSE
+		orientation	= HORIZONTAL
+		
+	}
+
+	image
+	{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/scrollbar/slider-horiz-prelight.svg"
+		border		= {4 , 4 , 2 , 2 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		overlay_file	= "/scrollbar/grip-horiz-prelight.svg"
+		overlay_stretch	= FALSE
+		orientation	= HORIZONTAL
+		
+	}
+
+	image
+	{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "/scrollbar/slider-horiz-prelight.svg"
+		border		= {4 , 4  , 2 , 2 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		overlay_file	= "/scrollbar/grip-horiz-prelight.svg"
+		overlay_stretch	= FALSE
+		orientation	= HORIZONTAL
+		
+	}
+
+	image
+	{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "/scrollbar/slider-horiz-prelight.svg"
+		border		= {4 , 4  , 2 , 2 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		overlay_file	= "/scrollbar/grip-horiz-prelight.svg"
+		overlay_stretch	= FALSE
+		orientation	= HORIZONTAL
+		
+	}
+
+	image
+	{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/scrollbar/slider-vert.svg"
+		border		= { 2 , 2 , 4 , 4  }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		overlay_file	= "/scrollbar/grip-vert.svg"
+		overlay_stretch	= FALSE
+		orientation	= VERTICAL
+		
+	}
+
+	image
+	{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/scrollbar/slider-vert-prelight.svg"
+		border		= { 2 , 2 , 4 , 4  }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		overlay_file	= "/scrollbar/grip-vert-prelight.svg"
+		overlay_stretch	= FALSE
+		orientation	= VERTICAL
+		
+	}
+
+	image
+	{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "/scrollbar/slider-vert-prelight.svg"
+		border		= { 2 , 2 , 4 , 4  }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		overlay_file	= "/scrollbar/grip-vert-prelight.svg"
+		overlay_stretch	= FALSE
+		orientation	= VERTICAL
+		
+	}
+
+	image
+	{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "/scrollbar/slider-vert-prelight.svg"
+		border		= { 2 , 2 , 4 , 4  }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		overlay_file	= "/scrollbar/grip-vert-prelight.svg"
+		overlay_stretch	= FALSE
+		orientation	= VERTICAL
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/scrollbar/stepper-up.svg"
+		stretch		= TRUE
+		arrow_direction	= UP
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/scrollbar/stepper-up-prelight.svg"
+		stretch		= TRUE
+		arrow_direction	= UP
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "/scrollbar/stepper-up-prelight.svg"
+		stretch		= TRUE
+		arrow_direction	= UP
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "/scrollbar/stepper-up.svg"
+		stretch		= TRUE
+		arrow_direction	= UP
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/scrollbar/stepper-down.svg"
+		stretch		= TRUE
+		arrow_direction	= DOWN
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/scrollbar/stepper-down-prelight.svg"
+		stretch		= TRUE
+		arrow_direction	= DOWN
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "/scrollbar/stepper-down-prelight.svg"
+		stretch		= TRUE
+		arrow_direction	= DOWN
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "/scrollbar/stepper-down.svg"
+		stretch		= TRUE
+		arrow_direction	= DOWN
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/scrollbar/stepper-left.svg"
+		stretch		= TRUE
+		arrow_direction	= LEFT
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/scrollbar/stepper-left-prelight.svg"
+		stretch		= TRUE
+		arrow_direction	= LEFT
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "/scrollbar/stepper-left-prelight.svg"
+		stretch		= TRUE
+		arrow_direction	= LEFT
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "/scrollbar/stepper-left.svg"
+		stretch		= TRUE
+		arrow_direction	= LEFT
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/scrollbar/stepper-right.svg"
+		stretch		= TRUE
+		arrow_direction	= RIGHT
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/scrollbar/stepper-right-prelight.svg"
+		stretch		= TRUE
+		arrow_direction	= RIGHT
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "/scrollbar/stepper-right-prelight.svg"
+		stretch		= TRUE
+		arrow_direction	= RIGHT
+
+		
+	}
+
+	image
+	{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "/scrollbar/stepper-right.svg"
+		stretch		= TRUE
+		arrow_direction	= RIGHT
+
+		
+	}
+
+}
+
+}
+
+style "radiobutton-menu"
+{
+engine "pixmap"
+{
+
+	image
+	{
+
+		function	= OPTION
+		state		= NORMAL
+		shadow		= OUT
+		overlay_file	= "/check-radio/option1.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		state		= PRELIGHT
+		shadow		= OUT
+		overlay_file	= "/check-radio/option3.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		state		= ACTIVE
+		shadow		= OUT
+		overlay_file	= "/check-radio/option1.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		state		= INSENSITIVE
+		shadow		= OUT
+		overlay_file	= "/check-radio/option5.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		recolorable	= TRUE
+		state		= NORMAL
+		shadow		= IN
+		overlay_file	= "/check-radio/option2.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		recolorable	= TRUE
+		state		= PRELIGHT
+		shadow		= IN
+		overlay_file	= "/check-radio/option4.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		recolorable	= TRUE
+		state		= ACTIVE
+		shadow		= IN
+		overlay_file	= "/check-radio/option4.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		shadow		= IN
+		overlay_file	= "/check-radio/option6.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= FLAT_BOX
+		recolorable	= TRUE
+		shadow		= IN
+		file		= "/check-radio/checklight.svg"
+		border		= { 2 ,2 , 2 ,2}
+		stretch		= TRUE
+	}
+}
+}
+
+style "radiobutton"
+{
+
+
+engine "pixmap"
+{
+
+	image
+	{
+
+		function	= OPTION
+		state		= NORMAL
+		shadow		= OUT
+		overlay_file	= "/cherad/option1.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		state		= PRELIGHT
+		shadow		= OUT
+		overlay_file	= "/cherad/option3.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		state		= ACTIVE
+		shadow		= OUT
+		overlay_file	= "/cherad/option1.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		state		= INSENSITIVE
+		shadow		= OUT
+		overlay_file	= "/cherad/option5.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		recolorable	= TRUE
+		state		= NORMAL
+		shadow		= IN
+		overlay_file	= "/cherad/option2.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		recolorable	= TRUE
+		state		= PRELIGHT
+		shadow		= IN
+		overlay_file	= "/cherad/option4.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		recolorable	= TRUE
+		state		= ACTIVE
+		shadow		= IN
+		overlay_file	= "/cherad/option4.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= OPTION
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		shadow		= IN
+		overlay_file	= "/cherad/option6.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= FLAT_BOX
+		recolorable	= TRUE
+		shadow		= IN
+		file		= "/cherad/checklight.svg"
+		border		= { 2 ,2 , 2 ,2}
+		stretch		= TRUE
+	}
+}
+}
+
+style "checkbutton-menu"
+{
+engine "pixmap"
+{
+
+	image
+	{
+
+		function	= CHECK
+		state		= NORMAL
+		shadow		= OUT
+		overlay_file	= "/check-radio/check1.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		state		= PRELIGHT
+		shadow		= OUT
+		overlay_file	= "/check-radio/check3.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		state		= ACTIVE
+		shadow		= OUT
+		overlay_file	= "/check-radio/check1.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		state		= INSENSITIVE
+		shadow		= OUT
+		overlay_file	= "/check-radio/check5.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		recolorable	= TRUE
+		state		= NORMAL
+		shadow		= IN
+		overlay_file	= "/check-radio/check2.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		recolorable	= TRUE
+		state		= PRELIGHT
+		shadow		= IN
+		overlay_file	= "/check-radio/check4.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		recolorable	= TRUE
+		state		= ACTIVE
+		shadow		= IN
+		overlay_file	= "/check-radio/check4.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		shadow		= IN
+		overlay_file	= "/check-radio/check6.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= FLAT_BOX
+		recolorable	= TRUE
+		shadow		= IN
+		file		= "/check-radio/checklight.svg"
+		border		= { 2 ,2 , 2 ,2}
+		stretch		= TRUE
+	}
+}
+}
+
+style "checkbutton"
+{
+
+
+engine "pixmap"
+{
+
+	image
+	{
+
+		function	= CHECK
+		state		= NORMAL
+		shadow		= OUT
+		overlay_file	= "/cherad/check1.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		state		= PRELIGHT
+		shadow		= OUT
+		overlay_file	= "/cherad/check3.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		state		= ACTIVE
+		shadow		= OUT
+		overlay_file	= "/cherad/check1.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		state		= INSENSITIVE
+		shadow		= OUT
+		overlay_file	= "/cherad/check5.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		recolorable	= TRUE
+		state		= NORMAL
+		shadow		= IN
+		overlay_file	= "/cherad/check2.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		recolorable	= TRUE
+		state		= PRELIGHT
+		shadow		= IN
+		overlay_file	= "/cherad/check4.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		recolorable	= TRUE
+		state		= ACTIVE
+		shadow		= IN
+		overlay_file	= "/cherad/check4.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= CHECK
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		shadow		= IN
+		overlay_file	= "/cherad/check6.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+
+		function	= FLAT_BOX
+		recolorable	= TRUE
+		shadow		= IN
+		file		= "/cherad/checklight.svg"
+		border		= { 2 ,2 , 2 ,2}
+		stretch		= TRUE
+	}
+}
+}
+style "menubar"
+{
+fg[PRELIGHT] = "#ffffff"
+fg[ACTIVE] = "#ffffff"
+text[PRELIGHT] = "#ffffff"
+text[ACTIVE] = "#ffffff"
+
+
+xthickness = 0
+ythickness = 2
+
+
+engine "pixmap"
+{
+
+	image
+	{
+		function	= BOX
+		state		= NORMAL
+		file		= "/menubar/menubar.svg"
+		border		= { 2 ,2 , 2 ,2}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/menubar/menubar-item.svg"
+		border		= { 2 ,2 , 2 ,2}
+		stretch		= TRUE
+	}
+
+}
+
+}
+
+style "menu" = "default"
+{
+
+xthickness = 2
+ythickness = 2
+
+#bg[NORMAL] = "#353535"
+#bg[SELECTED] = "#FFFFFF"
+#bg[PRELIGHT] = "#000000"
+text[NORMAL] = "#d7d7d7"
+text[PRELIGHT] = "#FFFFFF"
+text[ACTIVE] = "#FFFFFF"
+fg[NORMAL] = "#d7d7d7"
+fg[PRELIGHT] = "#ffffff"
+fg[ACTIVE] = "#ffffff"
+
+
+engine "pixmap"
+{
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		detail		= "menu"
+		file		= "/menu/menu.svg"
+		border		= { 28 ,2 , 2 ,2}
+		stretch		= TRUE
+	}
+
+
+}
+}
+
+style "menuitem"
+{
+
+xthickness = 2
+ythickness = 4
+
+fg[NORMAL] = "#d7d7d7"
+fg[PRELIGHT] = "#ffffff"
+fg[ACTIVE] = "#ffffff"
+fg[SELECTED] = "#ffffff"
+fg[INSENSITIVE] = "#6b6b6b"
+
+text[PRELIGHT] = "#d7d7d7"
+text[NORMAL] = "#d7d7d7"
+text [ACTIVE] = "#d7d7d7"
+
+base[PRELIGHT] = "#d7d7d7"
+base[NORMAL] = "#d7d7d7"
+
+bg[NORMAL] = "#d7d7d7"
+bg [SELECTED] = "#000000"
+
+
+
+engine "pixmap"
+{
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		file		= "/menu/menuitem.svg"
+		border		= { 2 ,2 , 2 ,2}
+		stretch		= TRUE
+	}
+
+}
+
+}
+
+style "optionmenu" = "default"
+{
+
+	text[NORMAL]        = @fg_color
+	text[PRELIGHT]      = shade (1.20, @fg_color)
+	text[SELECTED]      = @selected_fg_color
+	text[ACTIVE]        = shade (0.9, @fg_color)
+	text[INSENSITIVE]   = shade (0.4, @fg_color)
+
+engine "pixmap"
+{
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/button/button-normal.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/button/button-prelight.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "/button/button-prelight.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "/button/button-inactive.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= TAB
+		recolorable	= TRUE
+		state		= NORMAL
+		overlay_file	= "/arrows/arrow-down.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+		function	= TAB
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		overlay_file	= "/arrows/arrow-down.svg"
+		overlay_stretch	= FALSE
+	}
+
+	image
+	{
+		function	= TAB
+		recolorable	= TRUE
+		state		= PRELIGHT
+		overlay_file	= "/arrows/arrow-down.svg"
+		overlay_stretch	= FALSE
+	}
+
+
+
+}
+
+}
+
+style "button" = "default"
+{
+
+engine "pixmap"
+{
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		detail		= "buttondefault"
+		file		= "/button/button-default.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		state		= NORMAL
+		file		= "/button/button-normal.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= PRELIGHT
+		shadow		= OUT
+		file		= "/button/button-prelight.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= PRELIGHT
+		shadow		= IN
+		file		= "/button/button-active-prelight.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		state		= INSENSITIVE
+		file		= "/button/button-inactive.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+
+	image
+	{
+		function	= BOX
+		state		= ACTIVE
+		file		= "/button/button-active.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+
+}
+
+}
+
+style "listheader"
+{
+
+engine "pixmap"
+{
+
+	image
+	{
+		function	= BOX
+		state		= NORMAL
+		recolorable	= TRUE
+		file		= "/listheaders/list-header.svg"
+		border		= { 2 ,2, 2, 2}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		state		= PRELIGHT
+		recolorable	= TRUE
+		file		= "/listheaders/list-header-prelight.svg"
+		border		= { 2 ,2, 2, 2}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		state		= ACTIVE
+		recolorable	= TRUE
+		file		= "/listheaders/list-header-active.svg"
+		border		= { 2 ,2, 2, 2}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		state		= INSENSITIVE
+		recolorable	= TRUE
+		file		= "/listheaders/list-header.svg"
+		border		= { 2 ,2, 2, 2}
+		stretch		= TRUE
+	}
+
+}
+
+}
+
+style "toolbutton" = "default"
+{
+xthickness = 1
+ythickness = 0
+engine "pixmap"
+{
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/toolbar/button-toolbar-normal.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		shadow		= OUT
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/toolbar/button-toolbar-prelight.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		shadow		= IN
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/toolbar/button-toolbar-active-prelight.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "/toolbar/button-toolbar-inactive.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "/toolbar/button-toolbar-active.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= ARROW
+		recolorable	= TRUE
+		overlay_file	= "/arrows/arrow-down.svg"
+		overlay_border	= { 2 ,2 , 2 ,2}
+		overlay_stretch	= FALSE
+		arrow_direction	= DOWN
+	}
+
+
+}
+
+}
+
+style "tabs"  = "default"
+{
+xthickness = 1
+ythickness = 1
+
+engine "pixmap"
+{
+
+	image
+	{
+		function	= EXTENSION
+		state		= NORMAL
+		gap_side	= BOTTOM
+		file		= "/tabs/tab-top-active.svg"
+		stretch		= TRUE
+		border		= { 2 ,2 ,2 ,2}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= ACTIVE
+		gap_side	= BOTTOM
+		file		= "/tabs/tab-top.svg"
+		stretch		= TRUE
+		border		= { 2 ,2 ,2 ,2}
+	}
+
+
+	image
+	{
+		function	= EXTENSION
+		state		= NORMAL
+		gap_side	= TOP
+		file		= "/tabs/tab-bottom-active.svg"
+		stretch		= TRUE
+		border		= { 2 ,2 ,2 ,2}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= ACTIVE
+		gap_side	= TOP
+		file		= "/tabs/tab-bottom.svg"
+		stretch		= TRUE
+		border		= { 2 ,2 ,2 ,2}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= NORMAL
+		gap_side	= LEFT
+		file		= "/tabs/tab-right-active.svg"
+		stretch		= TRUE
+		border		= { 2 ,2 ,2 ,2}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= ACTIVE
+		gap_side	= LEFT
+		file		= "/tabs/tab-right.svg"
+		stretch		= TRUE
+		border		= { 2 ,2 ,2 ,2}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= NORMAL
+		gap_side	= RIGHT
+		file		= "/tabs/tab-left-active.svg"
+		stretch		= TRUE
+		border		= { 2 ,2 ,2 ,2}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= ACTIVE
+		gap_side	= RIGHT
+		file		= "/tabs/tab-left.svg"
+		stretch		= TRUE
+		border		= { 2 ,2 ,2 ,2}
+	}
+
+	image
+	{
+		function	= BOX_GAP
+		gap_side	= TOP
+		file		= "/tabs/notebook_top_flat.svg"
+		stretch		= TRUE
+		border		= { 1 ,1 ,1 ,1}
+		gap_file	= "/tabs/tab-top-active-gap.svg"
+		gap_border	= { 1 ,1 ,1 ,1}
+		gap_start_file	= "/tabs/null.svg"
+		gap_start_border= { 1 ,1 ,1 ,1}
+		gap_end_file	= "/tabs/null.svg"
+		gap_end_border	= { 1 ,1 ,1 ,1}
+		
+	}
+
+	image
+	{
+		function	= BOX_GAP
+		gap_side	= BOTTOM
+		file		= "/tabs/notebook_bottom_flat.svg"
+		stretch		= TRUE
+		border		= { 1 ,1 ,1 ,1}
+		gap_file	= "/tabs/tab-bottom-active-gap.svg"
+		gap_border	= { 1 ,1 ,1 ,1}
+		gap_start_file	= "/tabs/null.svg"
+		gap_start_border= { 1 ,1 ,1 ,1}
+		gap_end_file	= "/tabs/null.svg"
+		gap_end_border	= { 1 ,1 ,1 ,1}
+		
+	}
+
+	image
+	{
+		function	= BOX_GAP
+		gap_side	= LEFT
+		file		= "/tabs/notebook_left_flat.svg"
+		stretch		= TRUE
+		border		= { 1 ,1 ,1 ,1}
+		gap_file	= "/tabs/tab-left-active-gap.svg"
+		gap_border	= { 1 ,1 ,1 ,1}
+		gap_start_file	= "/tabs/null.svg"
+		gap_start_border= { 1 ,1 ,1 ,1}
+		gap_end_file	= "/tabs/null.svg"
+		gap_end_border	= { 1 ,1 ,1 ,1}
+		
+	}
+
+	image
+	{
+		function	= BOX_GAP
+		gap_side	= RIGHT
+		file		= "/tabs/notebook_right_flat.svg"
+		stretch		= TRUE
+		border		= { 1 ,1 ,1 ,1}
+		gap_file	= "/tabs/tab-right-active-gap.svg"
+		gap_border	= { 1 ,1 ,1 ,1}
+		gap_start_file	= "/tabs/null.svg"
+		gap_start_border= { 1 ,1 ,1 ,1}
+		gap_end_file	= "/tabs/null.svg"
+		gap_end_border	= { 1 ,1 ,1 ,1}
+		
+	}
+
+	
+
+}
+}
+
+style "combobutton" = "default"
+{
+
+
+
+engine "pixmap"
+{
+
+
+
+	image
+	{
+		function	= BOX
+		state		= NORMAL
+		file		= "/entry/entry-button-normal.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= PRELIGHT
+		shadow		= OUT
+		file		= "/entry/entry-button-prelight.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= PRELIGHT
+		shadow		= IN
+		file		= "/entry/entry-button-prelight.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		state		= INSENSITIVE
+		file		= "/entry/entry-button-normal.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+
+	image
+	{
+		function	= BOX
+		state		= ACTIVE
+		file		= "/entry/entry-button-prelight.svg"
+		border		= { 4 ,4 , 4 ,4}
+		stretch		= TRUE
+	}
+
+
+}
+
+}
+
+style "comboentry" = "default"
+{
+
+xthickness = 2
+ythickness = 2
+
+GtkWidget::interior_focus = 1
+
+engine "pixmap"
+{
+
+	image
+	{
+		function	= FOCUS
+		recolorable	= TRUE
+		file		= "/entry/combo-active.svg"
+		border		= { 2 , 2 , 2 ,2 }
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		shadow		= OUT
+		state		= NORMAL
+		detail		= "entry"
+		file		= "/entry/combo-inactive.svg"
+		border		= { 2 , 2 , 2 ,2 }
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= SHADOW
+		state		= NORMAL
+		recolorable	= FALSE
+		shadow		= IN
+		detail		= "entry"
+		file		= "/entry/combo-inactive.svg"
+		border		= { 2 , 2 , 2 ,2 }
+		stretch		= TRUE
+	}
+
+
+
+}
+
+}
+
+
+style "entry" = "default"
+{
+
+xthickness = 2
+ythickness = 2
+
+GtkWidget::interior_focus = 1
+
+engine "pixmap"
+{
+
+	image
+	{
+		function	= FOCUS
+		recolorable	= TRUE
+		file		= "/entry/entry-active.svg"
+		border		= { 2 , 2 , 2 ,2 }
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		shadow		= OUT
+		state		= NORMAL
+		detail		= "entry"
+		file		= "/entry/entry-inactive.svg"
+		border		= { 2 , 2 , 2 ,2 }
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= SHADOW
+		state		= NORMAL
+		recolorable	= FALSE
+		shadow		= IN
+		detail		= "entry"
+		file		= "/entry/entry-inactive.svg"
+		border		= { 2 , 2 , 2 ,2 }
+		stretch		= TRUE
+	}
+
+
+	image
+	{
+		function	= ARROW
+	}
+
+	image
+	{
+		function	= BOX
+		state		= NORMAL
+		detail		= "spinbutton_up"
+		recolorable	= TRUE
+		file		= "/scrollbar/spin-up.svg"
+		border		= { 3 , 3 , 3 , 3 }
+		stretch		= TRUE
+		overlay_file	= "/scrollbar/arrow-up.svg"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+	image
+	{
+		function	= BOX
+		state		= PRELIGHT
+		detail		= "spinbutton_up"
+		recolorable	= TRUE
+		file		= "/scrollbar/spin-up.svg"
+		border		= { 3 , 3 , 3 , 3 }
+		stretch		= TRUE
+		overlay_file	= "/scrollbar/arrow-up-prelight.svg"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+	image
+	{
+		function	= BOX
+		state		= ACTIVE
+		detail		= "spinbutton_up"
+		recolorable	= TRUE
+		file		= "/scrollbar/spin-up.svg"
+		border		= { 3 , 3 , 3 , 3 }
+		stretch		= TRUE
+		overlay_file	= "/scrollbar/arrow-up-prelight.svg"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+	image
+	{
+		function	= BOX
+		state		= INSENSITIVE
+		detail		= "spinbutton_up"
+		recolorable	= TRUE
+		file		= "/scrollbar/spin-up.svg"
+		border		= { 3 , 3 , 3 , 3 }
+		stretch		= TRUE
+		overlay_file	= "/scrollbar/arrow-up-insensitive.svg"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+
+
+	image
+	{
+		function	= BOX
+		state		= NORMAL
+		detail		= "spinbutton_down"
+		recolorable	= TRUE
+		file		= "/scrollbar/spin-down.svg"
+		border		= { 0 , 0 , 0 , 0 }
+		stretch		= TRUE
+		overlay_file	= "/scrollbar/arrow-down.svg"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+	image
+	{
+		function	= BOX
+		state		= PRELIGHT
+		detail		= "spinbutton_down"
+		recolorable	= TRUE
+		file		= "/scrollbar/spin-down.svg"
+		border		= { 0 , 0 , 0 , 0 }
+		stretch		= TRUE
+		overlay_file	= "/scrollbar/arrow-down-prelight.svg"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+	image
+	{
+		function	= BOX
+		state		= ACTIVE
+		detail		= "spinbutton_down"
+		recolorable	= TRUE
+		file		= "/scrollbar/spin-down.svg"
+		border		= { 0 , 0 , 0 , 0 }
+		stretch		= TRUE
+		overlay_file	= "/scrollbar/arrow-down-prelight.svg"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+	image
+	{
+		function	= BOX
+		state		= INSENSITIVE
+		detail		= "spinbutton_down"
+		recolorable	= TRUE
+		file		= "/scrollbar/spin-down.svg"
+		border		= { 0 , 0 , 0 , 0 }
+		stretch		= TRUE
+		overlay_file	= "/scrollbar/arrow-down-insensitive.svg"
+		overlay_stretch	= FALSE
+		overlay_border	= { 0 , 0 , 0 , 0 }
+	}
+
+
+}
+
+}
+
+
+style "toolbar"
+{
+xthickness = 1
+ythickness = 0
+engine "pixmap"
+{
+	image
+	{
+		function	= BOX
+		file		= "/toolbar/toolbar.svg"
+		border		= { 2 , 2 , 2 , 2 }
+		stretch		= TRUE
+	}
+}
+}
+
+style "range" #= "default"
+{
+engine "pixmap"
+{
+
+	image
+	{
+
+		function	= BOX
+		#recolorable	= TRUE
+		#detail		= "trough"
+		file		= "/range/trough-horiz.svg"
+		border		= { 9 , 9 ,2 ,2}
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+	}
+
+
+
+	image
+	{
+
+		function	= BOX
+		#recolorable	= TRUE  #when I comment these two lines it seems to fix the 
+		#detail		= "trough" #problem with these pixmaps not being loaded
+		file		= "/range/trough-vert.svg"
+		border		= {2 ,2 ,9 ,9}
+		stretch		= TRUE
+		orientation	= VERTICAL
+	}
+
+	image
+	{
+
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/range/null.svg"
+		border		= { 0 , 0 ,0 ,0}
+		stretch		= TRUE
+		overlay_file	= "/range/slider-horiz.svg"
+		overlay_stretch	= FALSE
+		orientation	= HORIZONTAL
+	}
+
+	image
+	{
+
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/range/null.svg"
+		border		= { 0 , 0 ,0 ,0}
+		stretch		= TRUE
+		overlay_file	= "/range/slider-horiz-prelight.svg"
+		overlay_stretch	= FALSE
+		orientation	= HORIZONTAL
+	}
+
+	image
+	{
+
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "/range/null.svg"
+		border		= { 0 , 0 ,0 ,0}
+		stretch		= TRUE
+		overlay_file	= "/range/slider-horiz.svg"
+		overlay_stretch	= FALSE
+		orientation	= HORIZONTAL
+	}
+
+	image
+	{
+
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/range/null.svg"
+		border		= { 0 , 0 ,0 ,0}
+		stretch		= TRUE
+		overlay_file	= "/range/slider-vert.svg"
+		overlay_stretch	= FALSE
+		orientation	= VERTICAL
+	}
+
+	image
+	{
+
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "/range/null.svg"
+		border		= { 0 , 0 ,0 ,0}
+		stretch		= TRUE
+		overlay_file	= "/range/slider-vert-prelight.svg"
+		overlay_stretch	= FALSE
+		orientation	= VERTICAL
+	}
+
+	image
+	{
+
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "/range/null.svg"
+		border		= { 0 , 0 ,0 ,0}
+		stretch		= TRUE
+		overlay_file	= "/range/slider-vert.svg"
+		overlay_stretch	= FALSE
+		orientation	= VERTICAL
+	}
+
+}
+
+}
+
+style "statusbar" = "default"
+{
+engine "pixmap"
+{
+
+	image
+	{
+		function	= RESIZE_GRIP
+		recolorable	= TRUE
+		detail		= "statusbar"
+		overlay_file	= "/other/statusgrip.svg"
+		overlay_border	= { 0 , 0 , 0 , 0}
+		overlay_stretch	= TRUE
+	}
+}
+
+}
+
+style "progressbar" = "default"
+{
+xthickness = 2
+ythickness = 2
+
+bg[PRELIGHT] = "#000000"
+fg[PRELIGHT] = "#000000"
+
+
+
+engine "pixmap"
+{
+
+	image
+	{
+
+		function	= BOX
+		recolorable	= TRUE
+		detail		= "trough"
+		file		= "/progressbar/trough-progressbar-horiz.svg"
+		border		= { 6 , 6 , 4 ,4}
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+	}
+
+
+
+	image
+	{
+
+		function	= BOX
+		recolorable	= TRUE
+		detail		= "bar"
+		file		= "/progressbar/progressbar-horiz.svg"
+		border		= { 2 , 2 , 2 , 2}
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+	}
+
+	image
+	{
+
+		function	= BOX
+		recolorable	= TRUE
+		detail		= "trough"
+		file		= "/progressbar/trough-progressbar-vert.svg"
+		border		= {4 , 4 ,6 , 6}
+		stretch		= TRUE
+		orientation	= VERTICAL
+	}
+
+	image
+	{
+
+		function	= BOX
+		recolorable	= TRUE
+		detail		= "bar"
+		file		= "/progressbar/progressbar-vert.svg"
+		border		= { 2 , 2 , 2 ,2}
+		stretch		= TRUE
+		orientation	= VERTICAL
+	}
+}
+}
+
+style "layout"
+{
+engine "pixmap"
+{
+	image
+	{
+		function	= SHADOW
+		detail		= "entry"
+		recolorable	= FALSE
+		shadow		= IN
+		file		= "entry/entry-inactive.svg"
+		border		= {4 , 4 ,4 ,4 }
+		stretch		= TRUE
+	}
+
+	image
+	{
+		function	= BOX
+		detail		= "button"
+		recolorable	= FALSE
+		state		= NORMAL
+		file		= "button/button-normal.svg"
+		border		= {4 , 4 ,4 ,4 }
+		stretch		= TRUE
+	}
+
+}
+}
+
+style "nostyle" = "default"
+{
+engine "pixmap"
+{
+	image
+	{
+		function	= SHADOW
+	}
+}
+}
+
+style "unstyle"
+{
+engine ""
+{}
+}
+
+style "cruxtext"
+{
+engine "crux-engine" {
+
+}
+
+
+}
+
+
+# widget styles
+class "GtkWidget"      				style "default"
+class "GtkButton"      				style "button"
+class "GtkCombo*"       			style "optionmenu"
+widget_class "*GtkCombo*"       		style "optionmenu"
+class "GtkOptionMenu"       			style "optionmenu"
+class "GtkRange"       				style "range"
+class "GtkFrame"       				style "default"
+class "GtkMenu"        				style "menu"
+widget_class"*Menu*"        			style "menu"
+widget_class"*MenuItem*"        		style "menuitem"
+widget_class"*MenuItem.*"        		style "menuitem"
+widget_class"*.GtkMenuItem.*"        		style "menuitem"
+widget_class"*.GtkAccelMenuItem.*"        	style "menuitem"
+
+
+class "GtkMenuItem"    				style "menuitem"
+class "GtkImageMenuItem"    			style "menuitem"
+class "GtkTearoffMenuItem"    			style "menuitem"
+class "GtkItem"    				style "menuitem"
+#class "GtkEntry"       				style "entry"
+#class "GtkOldEditable"				style "entry"
+class "GtkNotebook"    				style "tabs"
+class "GtkProgressBar" 				style "progressbar"
+widget_class "*ProgressBar*" 			style "progressbar"
+widget_class "*MenuItem.*ProgressBar*" 		style "progressbar"
+
+#class "MetaFrames"     				style "metacity-frame"
+#class "GtkWindow"      				style "metacity-frame"
+class "GtkScrollbar"				style "scrollbars"
+class "GtkStatusbar"				style "statusbar"
+class "*MenuBar*"				style "menubar"
+widget_class "*MenuBar.*"			style "menubar"
+
+class "*Font*"					style "optionmenu"
+
+
+widget_class "*Entry*Button*"       		style "combobutton"
+class "GtkEntry"       				style "entry"
+class "GtkOldEditable"				style "entry"
+widget_class "*GtkCombo.*Button*" 		style "combobutton"
+widget_class "*Combo*Entry*"    		style "comboentry"
+
+
+class "GtkHandleBox"				style "default"
+class "GtkPaned"				style "default"
+class "GtkSpinButton" 				style "entry"
+class "GtkCheckButton" 				style "checkbutton"
+class "GtkCheckMenuItem" 			style "checkbutton-menu"
+class "GtkRadioButton" 				style "radiobutton"
+class "GtkCheckMenuItem" 			style "radiobutton-menu"
+widget "gtk-tooltips" 				style "default"
+
+class "PanelDItemEditor"			style "default"
+
+class "GtkEventBox"				style "nostyle"
+class "SPColorSlider"				style "unstyle"
+# treeview stuff
+
+widget_class "*.GtkCTree.GtkButton" 		style "listheader"
+widget_class "*.GtkList.GtkButton" 		style "listheader"
+widget_class "*.GtkCList.GtkButton" 		style "listheader"
+class "GtkLayout"				style "layout"
+
+
+
+class "GtkToolBar"				style "nostyle"
+widget_class "*.GtkTool*"			style "toolbar"
+widget_class "*Tool*Button*"      		style "toolbutton"
+widget_class "*Tool*GtkToggleButton"  		style "toolbutton"
+widget_class "*SpinButton*" 			style "entry"

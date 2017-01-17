@@ -1,0 +1,76 @@
+/* ===================================================================
+   ! Notifications
+   ===================================================================*/
+
+#notification {
+    border-image: url("background-assets/popup.svg") 9;
+    padding: 16px;
+    spacing-rows: 10px;
+    spacing-columns: 10px;
+    margin-from-right-edge-of-screen: 6px;
+    opacity: 255px;
+    mouseover-opacity: 255px;
+    width: 34em;
+    font-weight: bold;
+    font-size: 10pt;
+    color: $text-primary;
+
+
+    &.multi-line-notification {
+        padding: 16px;
+        color: $text-primary;
+    }
+
+    &-scrollview {
+        max-height: 100em;
+
+        > .top-shadow,
+        > .bottom-shadow {
+            height: 10em;
+        }
+
+        &:ltr > StScrollBar {
+            padding-left: 6px;
+        }
+
+        &:rtl > StScrollBar {
+            padding-right: 6px;
+        }
+    }
+
+    &-body {
+        font-weight: normal;
+        font-size: 9pt;
+        spacing: 5px;
+        padding: 12px;
+    }
+
+    &-actions {
+        spacing: 10px;
+    }
+}
+
+.notification-with-image {
+    min-height: 159px;
+}
+/* ===================================================================
+   ! Notification applet
+   ===================================================================*/
+
+.notification-applet-padding {
+    padding: .6em .4em;
+
+    &:first-child {
+        padding-top: 1.3em;
+    }
+
+    &:last-child {
+        padding-bottom: .5em;
+    }
+}
+
+/* Notifs look inside the notification applet & other popups. */
+.popup-menu-content #notification {
+    border-image: url("background-assets/dark-bg.svg") 7;
+    padding: 12px;
+}

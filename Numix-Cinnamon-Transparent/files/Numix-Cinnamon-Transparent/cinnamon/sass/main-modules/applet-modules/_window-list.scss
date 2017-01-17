@@ -1,0 +1,67 @@
+/* ===================================================================
+   ! Window list
+   ===================================================================*/
+
+.window-list-box {
+    spacing: 0px;
+    padding-left: 0;
+}
+
+.window-list-item-label {
+    width: 15em;
+    min-width: 5px;
+}
+
+.window-list-item-box {
+    color: $text-active;
+    font-weight: bold;
+    padding-left: 0px;
+    padding-right: 0px;
+	max-width: 10em;
+}
+
+/* Different images used in top & bottom panels. */
+@each $v in panel-top, panel-bottom {
+    .#{$v} {
+        .window-list-item-box:hover  {
+            color: $text-active;
+        }
+
+        .window-list-item-box:active,
+        .window-list-item-box:checked,
+        .window-list-item-box:focus  {
+            border-image: url("panel-assets/#{$v}-item-active.svg") 4;
+        }
+
+        .window-list-item-box:checked:hover,
+        .window-list-item-box:focus:hover,
+        .window-list-item-box:active:hover  {
+            border-image: url("panel-assets/#{$v}-item-active-hover.svg") 4;
+        }
+
+        .window-list-item-demands-attention {
+            border-image: url("panel-assets/#{$v}-item-attention.svg") 4;
+        }
+
+        .window-list-item-demands-attention:hover {
+            border-image: url("panel-assets/#{$v}-item-attention-hover.svg") 4;
+        }
+    }
+}
+
+/* This styles the window-list preview and window name
+   in "cover" and "timeline" alt-tab modes */
+.switcher-list {
+    border-image: url("background-assets/tooltip.svg") 7;
+    color: $text-primary;
+    padding: 0 3px;
+    font-weight: bold;
+
+    > StBoxLayout {
+        spacing: .4em;
+
+        > StBoxLayout {
+            spacing: .4em;
+        }
+    }
+}

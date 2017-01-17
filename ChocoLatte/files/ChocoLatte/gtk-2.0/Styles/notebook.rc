@@ -1,0 +1,78 @@
+style "notebook"
+{
+	#GtkNotebook::tab-overlap 		= 3
+
+	xthickness    		        	= 3
+	ythickness    		        	= 3
+
+	engine "pixmap" 
+	{
+		image
+		{
+			function		= FOCUS
+		}
+		# How to draw boxes with a gap on one side (ie the page of a notebook)
+		image 
+		{
+			function		= BOX_GAP
+			recolorable		= TRUE
+			file			= "Notebook/notebook.png" 
+			border			= { 10, 10, 10, 10}
+			stretch			= TRUE
+		}
+		image 
+		{
+			function		= BOX
+			recolorable		= TRUE
+			file			= "Notebook/notebook.png" 
+			border			= { 10, 10, 10, 10}
+			stretch			= TRUE
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			overlay_file		= "Arrows/arrow-up.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= UP
+		}    
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			overlay_file		= "Arrows/arrow-down.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= DOWN
+		}    
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			overlay_file		= "Arrows/arrow-left.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= LEFT
+		}
+		image
+		{
+			function		= ARROW
+			recolorable		= TRUE
+			overlay_file		= "Arrows/arrow-right.png"
+			overlay_border		= { 0, 0, 0, 0}
+			overlay_stretch		= FALSE
+			arrow_direction		= RIGHT
+		}
+	}
+}
+
+style "notebook_bg" 
+{
+	xthickness				= 1
+	ythickness				= 1
+
+	bg[NORMAL] 				= shade (0.95, @bg_color)
+	bg[ACTIVE] 				= shade (0.97, @bg_color)
+	fg[ACTIVE] 				= mix (0.8, @fg_color, shade (0.97, @bg_color))
+}

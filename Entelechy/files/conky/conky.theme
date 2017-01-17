@@ -1,0 +1,89 @@
+#
+# Lara Maia <lara@craft.net.br> 2015
+#
+# WARNING: CONKY MUST BE COMPILED WITH LUA SUPPORT
+# Adjust your network params in bargraph.lua
+
+#### --- Process options --- ###
+background false
+#append_file
+no_buffers no
+
+
+#### --- Window options --- ###
+own_window yes
+own_window_type panel
+double_buffer yes
+
+own_window_colour 251925
+own_window_argb_visual yes
+own_window_argb_value 110
+own_window_transparent no
+
+own_window_hints undecorated,above,sticky,skip_taskbar,skip_pager
+
+update_interval 1
+
+
+### --- Alignment, sizes, fonts, colors --- ###
+alignment bottom_middle
+
+minimum_size 1910 5
+default_bar_size 170 5
+border_width 2
+gap_x 0
+gap_y 32
+
+default_color 150020
+default_shade_color 000000
+
+draw_borders yes
+draw_shades yes
+draw_outline no
+extra_newline no
+
+use_spacer right
+
+font Monospace:size=8:weight=regular
+use_xft yes
+
+
+### --- Extra Options --- ###
+format_human_readable yes
+override_utf8_locale yes
+temperature_unit celsius
+uppercase false
+
+### --- Lua Scripting --- ###
+lua_load /home/lara/.themes/Entelechy/conky/bargraph.lua
+lua_draw_hook_post main_bars
+
+####################################################
+TEXT
+#
+# RAM
+${voffset -1}${color white}Used:${color DD99BB} $memperc% ($mem)
+${voffset -13}${goto 145}${color white}Free:${color DD99BB} $memfree
+${voffset -13}${goto 242}${color white}Cached:${color DD99BB} $cached
+${voffset -13}${goto 355}${color white}Buffers:${color DD99BB} $buffers
+#
+# CPU
+${voffset -13}${goto 478}${color white}APU:${color DD99BB} ${cpu cpu1}%
+${voffset -13}${goto 545}${cpu cpu2}%
+${voffset -13}${goto 575}${cpu cpu3}%
+${voffset -13}${goto 605}${cpu cpu4}%
+#
+# SENSORS
+${voffset -13}${goto 640}${hwmon 0 temp 1}°C
+${voffset -13}${goto 685}${color white}SYS:${color DD99BB} ${hwmon 0 temp 3}°C
+#
+# FANS
+${voffset -13}${goto 765}${color white}APUFAN:${color DD99BB} ${hwmon 0 fan 1}rpm
+${voffset -13}${goto 880}${color white}SYSFAN:${color DD99BB} ${hwmon 0 fan 2}rpm ${color DD99BB}
+#
+# Entropy
+${voffset -13}${goto 1000}${color white}Entropy:${color DD99BB} $entropy_perc%
+#
+# Network
+${voffset -13}${goto 1100}${color white}Down:${color DD99BB} ${downspeed enp1s0} (Total: ${totaldown enp1s0})
+${voffset -13}${goto 1315}${color white}Up:${color DD99BB} ${upspeed enp1s0} (Total ${totalup enp1s0})

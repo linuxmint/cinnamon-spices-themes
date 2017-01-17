@@ -1,0 +1,93 @@
+NautilusWindow * {
+	-GtkPaned-handle-size: 0;
+}
+
+NautilusWindow .frame{border:none; border-image:none;}
+NautilusWindow .notebook{border-color: @transparent;}
+
+/* desktop mode */
+.nautilus-desktop.nautilus-canvas-item {
+	color: #FFFFFF;
+	text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
+.nautilus-desktop.nautilus-canvas-item:active {
+	background-image: none;
+	background-color: alpha (#FFFFFF, 0.84);
+	border-radius: 0px;
+
+	color: @fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected {
+	background-image: none;
+	background-color: alpha (@selected_bg_color, 0.84);
+	border-radius: 0px;
+
+	color: @selected_fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active,
+.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:selected {
+	text-shadow: none;
+}
+
+/* browser window */
+NautilusTrashBar.info,
+NautilusXContentBar.info,
+NautilusSearchBar.info,
+NautilusQueryEditor.info {
+	/* this background-color controls the symbolic icon in the entry */
+	background-color: @bg_color;
+	border-radius: 0;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+}
+
+NautilusSearchBar .entry {
+}
+
+.nautilus-cluebar-label {
+	color: @fg_color;
+	font: bold;
+}
+
+#nautilus-search-button *:active,
+#nautilus-search-button *:active:prelight {
+	color: @fg_color;
+}
+
+NautilusFloatingBar {
+	background-color: @info_bg_color;
+	color: #000000;
+	border-radius: 0px 0px 0px 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: darker (@info_bg_color);
+
+	-unico-border-gradient: none;
+}
+
+NautilusFloatingBar .button {
+	background-color: alpha (@base_color, 0.0);
+	background-image: none;
+	border-style: none;
+	border-image: none;
+
+	-GtkButton-image-spacing: 0;
+	-GtkButton-inner-border: 0;
+}
+
+/* sidebar */
+NautilusWindow .sidebar row:selected {
+    background-image: url("../assets/sidebar-dark.png");
+    background-position:right top;
+    background-repeat:repeat-y;
+}
+
+NautilusWindow .sidebar .cell {
+    background-image: url("../assets/sidebar-dark.png");
+    background-position:right top;
+    background-repeat:repeat-y;
+}

@@ -1,0 +1,174 @@
+/* Message Tray */
+#message-tray {
+    height: 27px;
+}
+
+#notification {
+    border: 1px solid rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.9);
+    background-color: rgba(0,0,0,0.8);
+    border-bottom: 0px;
+    border-radius: 5px 5px 0px 0px;
+    font-size: 8.7pt;
+    padding: 8px 40px 15px 15px;
+    spacing-columns: 10px;
+    spacing-rows: 10px;
+    width: 350px;
+}
+
+#notification.multi-line-notification {
+    padding-bottom: 8px;
+}
+
+/* We use row-span = 2 for the image cell, which prevents its height preferences to be
+   taken into account during allocation, so its height ends up being limited by the height
+   of the content in the other rows. To avoid showing a stretched image, we set the minimum
+   height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
+.notification-with-image {
+    min-height: 159px;
+}
+
+#notification-scrollview {
+    max-height: 10em;
+}
+
+#notification-scrollview > .top-shadow, #notification-scrollview > .bottom-shadow {
+    height: 1em;
+}
+
+#notification-scrollview:ltr > StScrollBar {
+    padding-left: 6px;
+}
+
+#notification-scrollview:rtl > StScrollBar {
+    padding-right: 6px;
+}
+
+#notification-body {
+    spacing: 5px;
+}
+
+#notification-actions {
+    spacing: 10px;
+}
+
+.notification-button {
+    border-radius: 18px;
+    font-size: 11pt;
+    padding: 4px 42px 5px;
+}
+
+.notification-button:focus {
+    padding: 3px 41px 4px;
+}
+
+.notification-icon-button {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.notification-icon-button:focus {
+    padding: 4px;
+}
+
+.notification-icon-button > StIcon {
+    icon-size: 36px;
+}
+
+/*Hotplug*/
+
+
+.hotplug-transient-box {
+    spacing: 6px;
+    padding: 2px;
+}
+
+.hotplug-notification-item {
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 10.5pt;
+}
+
+.hotplug-notification-item:focus {
+}
+
+.hotplug-notification-item-icon {
+    icon-size: 16px;
+    padding: 2px 5px;
+}
+
+.hotplug-resident-box {
+    spacing: 8px;
+}
+
+.hotplug-resident-mount {
+    spacing: 8px;
+    padding: 3px;
+    color: #fff;
+}
+
+.hotplug-resident-mount:hover {
+    color: #fff;
+    border: 1px  rgba(0,0,0,0.5);
+    background-color: #3D95E7;
+    box-shadow: inset 0px 1px 0px rgba(255,255,255,0.4);
+    text-shadow: rgba(0,0,0,0.4) 0px 1px 0px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.3);
+    padding: 2px;    
+}
+
+.hotplug-resident-mount-label {
+    color: #fff;
+    font-size: 8.7pt;
+    font-weight: bold;
+    padding: 0.1em .5em;
+}
+
+.hotplug-resident-mount-icon {
+    icon-size: 16px;
+    padding-left: 3px;
+}
+
+.hotplug-resident-eject-icon {
+    icon-size: 16px;
+}
+
+.hotplug-resident-eject-button {
+    padding: 3px;
+    color: #fff;
+}
+
+.hotplug-resident-eject-button:hover{
+    color: #000;
+    background-color: #fff;
+    border-radius: 35px;
+}
+
+#notification StEntry {
+    padding: 4px;
+    border-radius: 4px;
+    color: #a8a8a8;
+    selected-color: black;
+    border: 1px solid rgba(245,245,245,0.2);
+    background-gradient-direction: vertical;
+    background-gradient-start: rgb(200,200,200);
+    background-gradient-end: white;
+    transition-duration: 300;
+    box-shadow: inset 0px 2px 4px rgba(0,0,0,0.6);
+
+    caret-color: #a8a8a8;
+    caret-size: 1px;
+}
+
+#notification StEntry:focus {
+    border: 1px solid #8b8b8b;
+    color: #333333;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgb(200,200,200);
+    background-gradient-end: white;
+
+    caret-color: #545454;
+    selection-background-color: #808080;
+}
+

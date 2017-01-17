@@ -1,0 +1,18 @@
+// Use percentages for alpha values
+// Use '.65' instead of '65%' for percentages
+
+// Example-1: 'alpha(#000, .65) --> rgba(0, 0, 0, .65)'
+// Example-2: 'alpha(rgba(0, 0, 0, .7), .65) --> rgba(0, 0, 0, .455)'
+@function alpha($color, $percentage) {
+    $current-alpha: opacity($color);
+    $new-alpha: $current-alpha * $percentage;
+
+    @return rgba($color, $new-alpha);
+}
+
+
+// Shorthand for size properties
+@mixin size($width, $height:$width) {
+    width: $width;
+    height: $height;
+}

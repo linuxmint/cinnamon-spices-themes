@@ -1,0 +1,17 @@
+/* ===================================================================
+   ! Panel Launchers Applet (panelLaunchers.js)
+   ===================================================================*/
+
+#panel-launchers-box {}
+
+.panel-launcher {
+    margin: 0;
+    padding: 0 4px;
+}
+
+/* Different images used in top & bottom panels. */
+@each $v in panel-top, panel-bottom {
+    .#{$v} .panel-launcher:hover {
+        border-image: url("panel-assets/#{$v}-item-hover.svg") 4;
+    }
+}

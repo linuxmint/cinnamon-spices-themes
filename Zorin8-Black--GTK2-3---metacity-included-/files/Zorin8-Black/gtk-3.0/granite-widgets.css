@@ -1,0 +1,119 @@
+/* Copyright 2011-2013 elementary LLC.
+*
+* This file is part of the elementary GTK theme.
+*
+* The elementary GTK theme is free software: you can redistribute it
+* and/or modify it under the terms of the GNU General Public License as
+* published by the Free Software Foundation, either version 3 of the
+* License, or (at your option) any later version.
+*
+* The elementary GTK theme is distributed in the hope that it will be
+* useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+* Public License for more details.
+*
+* You should have received a copy of the GNU General Public License along
+* with the elementary GTK theme. If not, see http://www.gnu.org/licenses/.
+*/
+
+/**************
+ * SourceList *
+ *************/
+
+.sidebar-pane-separator,
+.sidebar-pane-separator:prelight,
+.sidebar-pane-separator:selected {
+
+    -unico-centroid-texture: none;
+    border-width: 0;
+    -GtkPaned-handle-size: 1;
+    background-image: none;
+    background-color: alpha (#FFF, 0.1);
+    border-color: alpha (#FFF, 0.1);
+}
+
+.source-list.badge,
+.source-list.badge:prelight {
+    background-image: none;
+    background-color: @selected_bg_color;
+    color: #FFF;
+    border-radius: 0px;
+    padding: 0 6px;
+    margin: 0 3px;
+    border-width: 0;
+	-unico-inner-stroke-width: 0;
+	-unico-outer-stroke-width: 0;
+}
+
+.source-list.badge:selected,
+.source-list.badge:prelight:selected {
+    color: @selected_bg_color;
+    background-color: #FFF;
+}
+
+/*************
+ * Statusbar *
+ ************/
+
+GraniteWidgetsStatusBar {
+    padding: 1px;
+		     
+    border: 0px solid;
+		     
+    border-top-width: 5px;
+
+    border-top-color: @selected_bg_color;
+
+}
+
+/***********
+ * Popover *
+ **********/
+
+GraniteWidgetsPopOver {
+
+    -GraniteWidgetsPopOver-arrow-width: 21;
+    -GraniteWidgetsPopOver-arrow-height: 10;
+    -GraniteWidgetsPopOver-border-radius: 0px;
+    -GraniteWidgetsPopOver-border-width: 1;
+    -GraniteWidgetsPopOver-shadow-size: 12;
+    
+    border-style: solid;
+    border-color: alpha (#000, 0.3);
+    margin: 0;
+}
+
+.popover_bg {
+    background-color: @bg_color;
+    border-style: solid;
+    border-width: 1px;
+    border-color: @selected_bg_color;
+}
+
+GraniteWidgetsPopOver .sidebar.view,
+GraniteWidgetsPopOver * {
+    background-color: @transparent;
+}
+
+GraniteWidgetsPopOver .button {
+
+    background-image: none;
+    
+    background-color: @bg_color;    
+}
+
+GraniteWidgetsPopOver .button:active,
+GraniteWidgetsPopOver .button:hover:active {
+
+	background-image: none;
+
+	background-color: @button_pressed_color;
+	color: @base_color;
+	border-color: @button_focus_color;
+}
+
+GraniteWidgetsPopOver .entry {
+
+	background-image: none;
+	background: none;
+}

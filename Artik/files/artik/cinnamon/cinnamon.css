@@ -1,0 +1,1153 @@
+/* ###################################################################
+* Section common with Gnome Shell
+* ... contains a few cinnamon specific styles (rare occurences)
+* ###################################################################*/
+stage {
+font-family: Noto Sans, sans-serif;
+color: #fff;
+font-size: 12px;
+}
+.cinnamon-link {
+color: #bada55;
+}
+.cinnamon-link:hover {
+text-decoration: underline;
+}
+StScrollBar {
+padding: 0px;
+}
+StScrollView.vfade {
+-st-vfade-offset: 68px;
+}
+StScrollView StScrollBar {
+min-width: 10px;
+min-height: 20px;
+}
+StScrollBar StBin#trough {
+border-image: url("scrollbar-trough.svg") 4 4 4 8;
+}
+StScrollBar StButton#vhandle {
+border-image: url("scrollbar.svg") 4;
+}
+#Tooltip {
+padding: 4px 12px 3px 12px;
+background-color: rgba(0,0,0,0.0);
+color:  rgba(0,0,0,0.0);
+}
+/* ===================================================================
+* CommonClasses
+* ===================================================================*/
+/*background: rgba(255, 255, 255, 0.15);*/
+/*background: #383838;*/
+.popup-submenu-menu-item:open,
+.popup-menu-item:active,
+.panel-button:hover,
+.panel-status-button:hover,
+.window-caption,
+.datemenu-date-label,
+.calendar-month-label,
+.calendar-day-heading,
+.run-dialog,
+.menu-application-button:hover,
+.menu-application-button-selected,
+.menu-category-button-selected,
+.menu-selected-app-title,
+#menu-search-entry,
+.sound-playback-control,
+.workspace-button:hover,
+.workspace-button:outlined,
+.expo-workspaces-name-entry {
+color: #92d92e;
+}
+.popup-menu,
+#notification,
+.switcher-list,
+.workspace-osd,
+.modal-dialog-button,
+.popup-menu #notification,
+.expo-workspaces-name-entry,
+.expo-workspaces-name-entry:hover,
+.expo-workspaces-name-entry:focus {
+border: 4px solid #92d92e;
+}
+.panel-launcher:hover,
+.applet-box:hover,
+.modal-dialog-button,
+.popup-submenu-menu-item:open,
+.popup-menu-item:active,
+.popup-separator-menu-item,
+.datemenu-date-label,
+.switcher-list .item-box:selected,
+.menu-favorites-button:hover,
+.menu-application-button:hover,
+.menu-application-button-selected,
+.menu-category-button-selected,
+#menu-search-entry,
+.popup-menu #notification {
+background: #2a2f34;
+}
+.popup-combo-menu,
+.window-caption,
+.window-close-area,
+#LookingGlassDialog,
+#notification,
+.switcher-list,
+.modal-dialog,
+#keyboard,
+.photoframe-box,
+.workspace-osd,
+.expo-workspaces-name-entry,
+.expo-workspaces-name-entry:hover,
+.expo-workspaces-name-entry:focus {
+background-color: rgba(0,0,0,0.85);
+}
+/* ===================================================================
+* PopupMenu (popupMenu.js)
+* ===================================================================*/
+.popup-menu-boxpointer {
+-boxpointer-gap: 4px;
+/*-arrow-border-radius: 4px;*/
+-arrow-background-color: rgba(0,0,0,0.85);
+/*-arrow-base: 15px;
+-arrow-rise: 8px;*/
+}
+.popup-menu {
+border-top: none;
+border-left: none;
+border-right: none;
+}
+.panel-menu {
+}
+.popup-submenu-menu-item:open {
+}
+.popup-sub-menu {
+}
+.popup-sub-menu StScrollBar {
+padding: 4px;
+}
+.popup-combo-menu {
+padding: 0px;
+/*border-radius: 4px;*/
+}
+.popup-menu-content {
+padding: 20px;
+}
+.popup-menu-item {
+padding: .5em 1.3em;
+spacing: 1em;
+transition-duration: 200;
+}
+.popup-menu-item:active {
+transition-duration: 0;
+}
+
+.popup-menu-item:insensitive {
+font-weight: bold;
+color: #444;
+}
+.popup-image-menu-item {
+}
+.popup-combobox-item {
+spacing: 1em;
+}
+.popup-separator-menu-item {
+border-left: 0;
+border-right: 0;
+border-top: 0;
+height: 1px;
+}
+.popup-slider-menu-item {
+height: 10px;
+min-width: 15em;
+-slider-height: 0.3em;
+-slider-background-color: rgba(0,0,0,0.0);
+-slider-border-color: transparent;
+-slider-active-background-color: rgba(0,0,0,0.0);
+-slider-active-border-color: transparent;
+-slider-border-width: 1px;
+-slider-handle-radius: 0.4em;
+border-image: url("slider.svg") 0 0 4 4 stretch;
+color: #fff;
+}
+.popup-device-menu-item {
+spacing: .5em;
+}
+.popup-inactive-menu-item {
+font-weight: bold;
+color: #444;
+}
+.popup-subtitle-menu-item {
+font-weight: bold;
+}
+.popup-menu-icon {
+icon-size: 1em;
+}
+/* Switches (to be used in menus) */
+.toggle-switch {
+width: 18px;
+height: 18px;
+}
+.toggle-switch-us,
+.toggle-switch-intl {
+border: 2px solid #92d92e;
+border-radius: 100px;
+background-size: contain;
+}
+.toggle-switch-us:checked,
+.toggle-switch-intl:checked {
+background-image: url("checkbox-focus.svg");
+background-size: 50%;
+background-size: contain;
+transition-duration: 200;
+}
+.nm-menu-item-icons {
+spacing: .5em;
+}
+/* ===================================================================
+* Panel (panel.js)
+* ===================================================================*/
+#panel {
+background-color: rgba(0,0,0,0.75);
+/*font-weight: bold;*/
+height: 30px;
+/*box-shadow: 0px 0px 4px 3px rgba(0,0,0,0.6);*/
+font-size: 9pt;
+}
+#panelLeft, #panelCenter, #panelRight {
+spacing: 0px;
+}
+#panelLeft:dnd,
+#panelRight:dnd {
+background: #22597e;
+}
+#panelCenter:dnd {
+background: #ff9600;
+}
+#panelLeft:ltr {
+padding-right: 4px;
+}
+#panelLeft:rtl {
+padding-left: 4px;
+}
+#panelRight:ltr {
+padding-left: 4px;
+}
+#panelRight:rtl {
+padding-right: 4px;
+}
+.panel-button,
+.panel-status-button {
+-natural-hpadding: 5px;
+-minimum-hpadding: 5px;
+/*transition-duration: 50;*/
+}
+.panel-button:hover,
+.panel-status-button:hover {
+/*border-image: url("window-active.svg") 2 2 0 0;*/
+background: black;
+/*transition-duration: 50;*/
+}
+.popup-menu-item-dot {
+background-image: url("dot.svg");
+background-size: contain;
+color: transparent;
+}
+.system-status-icon {
+icon-size: 1.3em;
+/*icon-shadow: 0px 1px 1px rgba(0,0,0,0.2);*/
+}
+/* ===================================================================
+* Overview
+* ===================================================================*/
+#overview {
+spacing: 0px;
+background: rgba(0,0,0,0.0);
+}
+.expo-background {
+background: rgba(0,0,0,0.0);
+}
+.window-caption {
+spacing: 25px;
+padding: 5px 15px 6px 15px;
+-cinnamon-caption-spacing: 8px;
+font-size: 12px;
+}
+.workspace-thumbnails {
+spacing: 7px;
+}
+.workspace-add-button {
+background-image: url("workspace-add.svg");
+height: 52px;
+width: 37px;
+/*transition-duration: 50;*/
+-st-background-image-shadow: 0px 2px 6px rgba(0,0,0,0.5);
+}
+.workspace-add-button:hover {
+background-image: url("workspace-add-hover.svg");
+/*transition-duration: 50;*/
+-st-background-image-shadow: 0px 2px 6px rgba(0,0,0,0.8);
+}
+.workspace-add-button:active {
+background-image: url("workspace-add.svg");
+transition-duration: 0;
+-st-background-image-shadow: 0px 2px 6px rgba(0,0,0,0.0);
+}
+.workspace-close-button {
+background-image: url("close.svg");
+background-size: contain;
+height: 29px;
+width: 29px;
+-cinnamon-close-overlap: 28px;
+-st-background-image-shadow: 0px 2px 6px rgba(0,0,0,0.5);
+/*transition-duration: 50;*/
+}
+.workspace-close-button:hover {
+background-image: url("close-hover.svg");
+-st-background-image-shadow: 0px 2px 6px rgba(0,0,0,0.8);
+/*transition-duration: 50;*/
+}
+.workspace-close-button:active {
+background-image: url("close.svg");
+-st-background-image-shadow: 0px 2px 6px rgba(0,0,0,0.0);
+transition-duration: 0;
+}
+.window-close {
+background-image: url("close.svg");
+background-size: 30px;
+height: 30px;
+width: 30px;
+-cinnamon-close-overlap: 18px;
+/*transition-duration: 50;*/
+}
+.window-close:hover {
+background-image: url("close-hover.svg");
+/*transition-duration: 50;*/
+}
+.window-close:active {
+background-image: url("close.svg");
+transition-duration: 0;
+}
+.window-close-area {
+/*border-radius: 2px 2px 0px 0px;*/
+background-image: url("trash.svg");
+height: 150px;
+width: 250px;
+}
+/* ===================================================================
+* Looking Glass
+* ===================================================================*/
+#LookingGlassDialog {
+spacing: 4px;
+padding: 8px;
+/*border-radius: 4px;*/
+}
+#LookingGlassDialog > #Toolbar {
+border: 1px solid rgba(0,0,0,0.5);
+border-top: none;
+border-left: none;
+border-right: none;
+padding: 4px;
+}
+#LookingGlassDialog .labels {
+spacing: 4px;
+}
+#LookingGlassDialog .notebook-tab {
+-natural-hpadding: 12px;
+-minimum-hpadding: 6px;
+font-weight: bold;
+/*transition-duration: 50;*/
+padding-left: .3em;
+padding-right: .3em;
+}
+#LookingGlassDialog .notebook-tab:hover,
+#LookingGlassDialog .notebook-tab:selected {
+color: #bada55;
+}
+#LookingGlassDialog .lg-inspector-title {
+font-weight: bold;
+padding-bottom: 8px;
+}
+.lg-dialog StEntry {
+height: 18px;
+selection-background-color: #4f6d2c;
+selected-color: #fff;
+caret-size: 1px;
+padding: 4px 8px;
+border-image: url("checkbox-off.svg") 4;
+/*transition-duration: 50;*/
+}
+.lg-completions-text {
+font-size: .9em;
+font-style: italic;
+}
+.lg-obj-inspector-title {
+spacing: 4px;
+}
+.lg-obj-inspector-button {
+border: 1px solid rgba(0,0,0,0.5);
+padding: 4px;
+/*border-radius: 3px;*/
+}
+.lg-obj-inspector-button:hover {
+border: 1px solid #bada55;
+}
+.lg-dialog .cinnamon-link {
+color: #bada55;
+}
+.lg-dialog .cinnamon-link:hover {
+text-decoration: underline;
+}
+#LookingGlassDialog StBoxLayout#EvalBox {
+padding: 4px;
+spacing: 4px;
+}
+#LookingGlassDialog StBoxLayout#ResultsArea {
+spacing: 4px;
+}
+#lookingGlassExtensions {
+padding: 4px;
+}
+.lg-extension-list {
+padding: 4px;
+spacing: 6px;
+}
+.lg-extension {
+border: 1px solid rgba(0,0,0,0.5);
+/*border-radius: 3px;*/
+padding: 4px;
+}
+.lg-extension-name {
+font-weight: bold;
+}
+.lg-extension-meta {
+spacing: 6px;
+}
+#LookingGlassPropertyInspector {
+background: rgba(0,0,0,0.85);
+border: 2px solid black;
+/*border-radius: 3px;*/
+padding: 6px;
+}
+/* ===================================================================
+* Date applet
+* ===================================================================*/
+.calendar {
+padding: 0em 1.75em;
+spacing-rows: 0px;
+spacing-columns: 0px;
+}
+.datemenu-date-label {
+font-weight: bold;
+padding: .6em 0em .6em 0em;
+text-align: center;
+}
+.calendar-month-label {
+padding-bottom: 1em;
+padding-top: 1em;
+font-weight: bold;
+font-size: 8pt;
+}
+.calendar-change-month-back,
+.calendar-change-month-forward:rtl {
+width: 5px;
+height: 7px;
+padding-left: 26px;
+background-image: url("calendar-arrow-left-hover.svg");
+/*transition-duration: 50;*/
+}
+.calendar-change-month-back:hover,
+.calendar-change-month-forward:hover:rtl {
+background-image: url("calendar-arrow-left.svg");
+/*transition-duration: 50;*/
+}
+.calendar-change-month-forward,
+.calendar-change-month-back:rtl {
+width: 5px;
+height: 7px;
+padding-right: 26px;
+background-image: url("calendar-arrow-right-hover.svg");
+}
+.calendar-change-month-forward:hover,
+.calendar-change-month-back:hover:rtl {
+background-image: url("calendar-arrow-right.svg");
+/*transition-duration: 50;*/
+}
+.calendar-day-base {
+font-size: 8pt;
+text-align: center;
+width: 2em;
+height: 2em;
+}
+.calendar-day-heading {
+font-size: 8pt;
+padding-top: .5em;
+font-weight: bold;
+}
+.calendar-week-number {
+font-size: 8pt;
+padding-right: .5em;
+padding-top: .8em;
+font-weight: bold;
+}
+.calendar-day {
+font-size: 8pt;
+padding: 5px;
+}
+.calendar-nonwork-day {
+color: #2e3436;
+}
+.calendar-today {
+font-weight: bold;
+color: #92d92e;
+border: 2px solid #92d92e;
+border-radius: 100px;
+}
+.calendar-other-month-day {
+color: #444;
+}
+/* ===================================================================
+* Notifications
+* ===================================================================*/
+#notification {
+/*border-radius: 3px 0px 0px 3px;*/
+padding: 13px 25px 13px;
+spacing-rows: 10px;
+spacing-columns: 10px;
+width: 28em;
+margin-from-right-edge-of-screen: 5px;
+font-size: 13px;
+border-top: none;
+border-left: none;
+border-right: none;
+}
+#notification.multi-line-notification {
+padding-bottom: 8px;
+}
+#notification-scrollview {
+max-height: 10em;
+-st-vfade-offset: 24px;
+}
+#notification-scrollview > .top-shadow, #notification-scrollview > .bottom-shadow {
+height: 1em;
+}
+#notification-scrollview:ltr > StScrollBar {
+padding-left: 6px;
+}
+#notification-scrollview:rtl > StScrollBar {
+padding-right: 6px;
+}
+#notification-body {
+spacing: 5px;
+}
+#notification-actions {
+spacing: 10px;
+}
+/* ===================================================================
+* Alt Tab
+* ===================================================================*/
+#altTabPopup {
+background: rgba(0,0,0,0.0);
+padding: 8px;
+spacing: 5px;
+}
+.switcher-list {
+/*border-radius: 4px;*/
+padding: 20px;
+font-weight: bold;
+border-top: none;
+border-left: none;
+border-right: none;
+}
+.switcher-list-item-container {
+spacing: 8px;
+}
+.switcher-list .item-box {
+padding: 8px;
+}
+.switcher-list .item-box:outlined {
+}
+.switcher-list .item-box:selected {
+/*border-image: url("checkbox-off-focus.svg") 3;*/
+/*transition-duration: 50;*/
+}
+.switcher-list .thumbnail-box {
+padding: 2px;
+spacing: 4px;
+}
+.switcher-list .thumbnail {
+width:  256px;
+}
+.ripple-box {
+width: 104px;
+height: 104px;
+background-image: url("corner-ripple.svg");
+}
+.switcher-arrow {
+color: #45883b;
+}
+.switcher-preview-backdrop {
+background: rgba(0,0,0,0.4);
+}
+/* ===================================================================
+* Modal dialogs
+* ===================================================================*/
+.modal-dialog {
+border: 4px solid #92d92e;
+border-right: none;
+border-top: none;
+border-left: none;
+}
+.modal-dialog > * {
+padding: 15px;
+/*border-radius: 0px;*/
+}
+.modal-dialog-button-box {
+spacing: 15px;
+padding: 15px;
+}
+.modal-dialog-button {
+height: 28px;
+min-width: 90px;
+padding: 0px 10px;
+border: 2px solid #92d92e;
+font-weight: bold;
+border-right: none;
+border-top: none;
+border-left: none;
+/*transition-duration: 50;*/
+}
+.modal-dialog-button:hover {
+color: #92d92e;
+}
+.modal-dialog-button:focus {
+color: #fff;
+border: 2px solid #2a2f34;
+border-right: none;
+border-top: none;
+border-left: none;
+border-image: none;
+}
+.modal-dialog-button:active,
+.modal-dialog-button:pressed {
+border: 2px solid white;
+border-right: none;
+border-top: none;
+border-left: none;
+border-image: none;
+color: #fff;
+}
+.modal-dialog-button:disabled {
+color: #4f6d2c;
+}
+/* ===================================================================
+* Run dialog
+* ===================================================================*/
+.run-dialog > * {
+padding: 0px;
+}
+.run-dialog-error-box {
+padding: 10px 0px;
+spacing: 5px;
+}
+.run-dialog-label {
+font-size: 1px;
+color: transparent;
+}
+.run-dialog-entry {
+border-image: url("entry-run.svg") 8 0 0 0;
+selection-background-color: #4f6d2c;
+selected-color: #fff;
+padding: 0px 6px 0px 16px;
+width: 20em;
+height: 26px;
+caret-color: #eee;
+font-family: monospace;
+}
+.run-dialog {
+/*border-image: url("entry-run-modal.svg") 4 4 4 4;*/
+padding: 10px 15px;
+}
+.lightbox {
+background: rgba(0,0,0,0.0);
+}
+/* ===================================================================
+* Magnifier
+* ===================================================================*/
+.magnifier-zoom-region {
+border: 2px solid #bada55;
+}
+.magnifier-zoom-region.full-screen {
+border-width: 0px;
+}
+/* ===================================================================
+* On screen keyboard
+* ===================================================================*/
+#keyboard {
+}
+.keyboard-layout {
+spacing: 10px;
+padding: 10px;
+}
+.keyboard-row {
+spacing: 15px;
+}
+.keyboard-key {
+color: #3B5220;
+min-height: 30px;
+min-width: 30px;
+border-image: url("button.svg") 4;
+font-size: 13pt;
+font-weight: bold;
+/*transition-duration: 50;*/
+}
+.keyboard-key:grayed {
+color: #4f6d2c;
+}
+.keyboard-key:hover {
+border-image: url("button-hover.svg") 3;
+}
+.keyboard-key:checked,
+.keyboard-key:active,
+.keyboard-key:pressed {
+border-image: url("button-active.svg") 3;
+transition-duration: 0;
+}
+.keyboard-subkeys {
+-boxpointer-gap: 4px;
+/*-arrow-border-radius: 4px;*/
+-arrow-background-color: rgba(0,0,0,0.85);
+-arrow-base: 22px;
+-arrow-rise: 12px;
+padding: 5px;
+}
+/* ###################################################################
+* Cinnamon Specific Section
+* ###################################################################*/
+/* ===================================================================
+* Menu (menu.js)
+* ===================================================================*/
+.menu-favorites-box {
+padding: 0px;
+}
+.menu-favorites-button {
+padding: 10px 20px 10px 20px;
+transition-duration: 400;
+}
+.menu-favorites-button:hover {
+/*border-image: url("fav.svg") 9;*/
+/*transition-duration: 50;*/
+transition-duration: 0;
+}
+.menu-places-box {
+padding: 10px;
+}
+.menu-places-button {
+padding: 10px;
+}
+.menu-categories-box {
+padding-top: 15px;
+padding-left: 15px;
+padding-right: 5px;
+padding-bottom: 0px;
+}
+.menu-applications-box {
+padding-top: 15px;
+padding-left: 0px;
+padding-right: 15px;
+padding-bottom: 0px;
+}
+.menu-application-button {
+height: 36px;
+padding: 0px 0px 0px 7px;
+transition-duration: 400;
+}
+.menu-application-button:hover,
+.menu-application-button-selected {
+height: 36px;
+padding: 0px 7px;
+/*border-image: url("checkbox-off-focus.svg") 3;*/
+}
+.menu-application-button-label:ltr {
+padding-left: 10px;
+}
+.menu-application-button-label:rtl {
+padding-right: 10px;
+}
+.menu-category-button {
+height: 36px;
+padding: 0px 40px 0px 7px;
+transition-duration: 400;
+}
+.menu-category-button-greyed {
+height: 36px;
+padding: 0px 7px;
+color: #444;
+}
+.menu-category-button-selected {
+height: 36px;
+padding: 0px 7px;
+/*border-image: url("checkbox-off-focus.svg") 3;*/
+}
+.menu-category-button-label:ltr {
+padding-left: 10px;
+}
+.menu-category-button-label:rtl {
+padding-right: 10px;
+}
+/* Name and description of the currently hovered item in the menu
+* This appears on the bottom right hand corner of the menu*/
+.menu-selected-app-box {
+padding-right: 30px;
+padding-left: 28px;
+text-align: right;
+}
+.menu-selected-app-title {
+font-weight: bold;
+font-size: 13px;
+}
+.menu-selected-app-description {
+font-size: 8pt;
+max-width: 150px;
+}
+.menu-search-box:ltr {
+padding-left: 15px;
+}
+.menu-search-box:rtl {
+padding-right: 15px;
+}
+#menu-search-entry {
+/*border-image: url("entry-menu.svg") 4 32 4 4;*/
+selection-background-color: #4f6d2c;
+selected-color: #fff;
+caret-size: 1px;
+padding: 0px 0px 0px 8px;
+width: 21em;
+height: 26px;
+}
+.menu-search-entry-icon {
+color: #4f6d2c;
+padding: 1px 6px 0px 6px;
+icon-size: 1em;
+icon-shadow: 6px 2px 1px 0px rgba(255,255,255,0.2);
+}
+/* ===================================================================
+* Window list (windowList.js)
+* ===================================================================*/
+.window-list-box {
+}
+.window-list-item-label {
+font-weight: bold;
+width: 15em;
+min-width: 5px;
+}
+.window-list-item-box {
+margin: 0px;
+padding: 6px 15px 4px 15px;
+transition-duration: 400;
+border: none;
+background: black;
+}
+.window-list-item-box:hover,
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box:focus	{
+transition-duration: 0;
+padding: 6px 15px 4px 15px;
+box-shadow: 0px -3px 0px rgba(152, 216, 42, 1);
+background: #202327;
+}
+.window-list-item-box:focus,
+.window-list-item-box:hover:focus {
+background: #2a2f34;
+box-shadow: 0px -3px 0px rgba(152, 216, 42, 1);
+}
+.window-list-item-box:not(:active):hover {
+background: yellow;
+}
+.window-list-item-demands-attention {
+color: #009ff1;
+background: black;
+border: 3px solid #009ff1;
+border-bottom: none;
+border-left: none;
+border-right: none;
+transition-duration: 400;
+}
+/* ===================================================================
+* Sound Applet (status/volume.js)
+* ===================================================================*/
+.sound-button-container {
+padding-right: 2px;
+padding-left: 2px;
+}
+.sound-button {
+color: #92d92e;
+border: 2px solid #92d92e;
+padding: 7px;
+border-radius: 100px;
+/*transition-duration: 50;*/
+}
+.sound-button:hover,
+.sound-button:active {
+color: white;
+border: 2px solid white;
+}
+.sound-button StIcon {
+icon-size: 1em;
+}
+.sound-track-infos {
+padding-left: 5px;
+padding-right: 5px;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+.sound-track-info {
+padding-top: 2px;
+padding-bottom: 2px;
+}
+.sound-track-info StIcon {
+icon-size: 1em;
+}
+.sound-track-info StLabel {
+padding-left: 5px;
+padding-right: 5px;
+}
+.sound-track-box {
+padding-left: 18px;
+padding-right: 18px;
+max-width: 220px;
+}
+.sound-seek-box {
+padding-top: 6px;
+padding-left: 1.3em;
+}
+.sound-seek-box StLabel {
+   padding-top: 2px;
+}
+.sound-seek-box StIcon {
+   icon-size: 1em;
+}
+.sound-seek-slider {
+   width: 160px;   
+}
+.sound-volume-menu-item {
+padding: .4em 1.3em;
+}
+.sound-volume-menu-item StIcon {
+icon-size: 1.14em;
+padding-left: 6px;
+}
+.sound-playback-control {
+padding-top: 5px;
+padding-bottom: 5px;
+}
+/* ===================================================================
+* Workspace Switcher applet (workspaceSwitcher.js)
+* ===================================================================*/
+#workspaceSwitcher {
+spacing: 0px;
+padding: 0px;
+}
+.workspace-button {
+width: 21px;
+height: 26px;
+/*transition-duration: 50;*/
+}
+.workspace-button:hover,
+.workspace-button:outlined {
+/*border-image: url("window-active.svg") 2 2 0 0 stretch;*/
+background: black;
+/*transition-duration: 50;*/
+}
+/* ===================================================================
+* Panel Launchers Applet (panelLaunchers.js)
+* ===================================================================*/
+#panel-launchers-box {
+padding-left: 0px;
+}
+.panel-launcher {
+margin: 0px;
+padding: 4px 5px 5px 5px;
+transition-duration: 400;
+border: none;
+}
+.panel-launcher:hover {
+transition-duration: 0;
+box-shadow: 0px 3px 0px #92d92e;
+}
+/* ===================================================================
+* Applets (applet.js)
+* ===================================================================*/
+.applet-separator {
+}
+.applet-separator-line {
+}
+.applet-box {
+padding-left: 10px;
+padding-right: 10px;
+transition-duration: 400;
+/*transition-duration: 50;*/
+}
+.applet-box:hover {
+/*border-image: url("window-active.svg") 2 2 0 0;*/
+/*text-shadow: 0px 1px 1px rgba(0,0,0,0.2);*/
+/*transition-duration: 50;*/
+box-shadow: 0px 3px 0px #92d92e;
+transition-duration: 0;
+}
+.applet-label {
+padding: 0px;
+text-align: center;
+font-weight: bold;
+transition-duration: 400;
+}
+/* ===================================================================
+ * Desklets (desklet.js)
+ * ===================================================================*/
+.desklet {        
+color: #fff
+}
+.desklet-with-borders {
+border: 0px;
+background: rgba(0,0,0,0.85);
+color: #fff;
+padding: 6px;
+border: 3px solid #92d92e;
+border-top: none;
+border-left: none;
+border-right: none;
+}
+.desklet-with-borders-and-header {
+padding: 6px;
+background: rgba(0,0,0,0.85);
+color: #fff;
+/*border-radius-bottomleft: 3px;*/
+/*border-radius-bottomright: 3px;*/
+}
+.desklet-header { 
+border-image: url("desklet-header.svg") 3 3 3 3;
+/*border-radius-topleft: 3px;*/
+/*border-radius-topright: 3px;*/
+font-size: 9pt;
+font-weight: bold;
+color: #fff;
+padding: 6px;
+}
+.desklet-drag-placeholder { 
+border: 2px solid rgba(0,0,0,0.85);
+background-color: none;
+/*border-radius: 3px;*/
+}
+.clock-desklet-label {
+}
+.photoframe-box {
+padding: 6px;
+border: none;
+/*border-radius: 3px;*/
+}
+.xkcd-box {
+padding: 0px;
+border: none;
+background-color: none;
+/*border-radius: 0px;*/
+}
+/* ===================================================================
+* Workspace OSD
+* ===================================================================*/
+.workspace-osd {
+/*border-radius: 4px;*/
+font-weight: bold;
+padding: 1em 2em;
+font-size: 20px;
+border-top: none;
+border-left: none;
+border-right: none;
+}
+.expo-workspaces-name-entry {
+height: 18px;
+selection-background-color: #4f6d2c;
+selected-color: #fff;
+caret-size: 1px;
+padding: 4px 8px 5px 8px;
+/*border-image: url("caption.svg") 4;*/
+/*transition-duration: 50;*/
+}
+.expo-workspaces-name-entry,
+.expo-workspaces-name-entry:hover,
+.expo-workspaces-name-entry:focus {
+border-right: none;
+border-top: none;
+border-bottom: none;
+}
+.expo-workspaces-name-entry:hover,
+.expo-workspaces-name-entry:focus {
+color: white
+}
+/* ===================================================================
+* Notification Applet
+* ===================================================================*/
+.notification-applet-padding {
+padding: .4em 1.25em;
+spacing: 0px;
+}
+.notification-applet-container {
+max-height: 100px;
+}
+.popup-menu #notification {
+/*border-image: url("checkbox-off-focus.svg") 3;*/
+/*border-radius: 0px;*/
+border-right: none;
+border-top: none;
+border-bottom: none;
+}
+/* Check Boxes */
+.check-box CinnamonGenericContainer {
+spacing: .3em;
+height: 20px;
+}
+.check-box StBin {
+width: 18px;
+height: 18px;
+border: 2px solid #92d92e;
+border-radius: 100px;
+}
+.check-box:focus StBin {
+border: 2px solid #92d92e;
+border-radius: 100px;
+}
+.check-box:checked StBin {
+width: 18px;
+height: 18px;
+border: 2px solid #92d92e;
+border-radius: 100px;
+}
+.check-box:focus:checked StBin {
+background-image: url("checkbox-focus.svg");
+border: 2px solid #92d92e;
+border-radius: 100px;
+}
+.check-box StLabel {
+font-size: 9pt;
+}
+.radiobutton CinnamonGenericContainer {
+spacing: .3em;
+height: 20px;
+}
+.radiobutton StBin,
+.radiobutton:focus StBin {
+width: 18px;
+height: 18px;
+background-image: url("radiobutton-off.svg");
+}
+.radiobutton:checked StBin {
+background-image: url("radiobutton.svg");
+}
+.radiobutton:focus:checked StBin {
+/*background-image: url("radiobutton-focus.svg");*/
+}
+.radiobutton StLabel {
+font-size: 9pt;
+}
+.flashspot {
+background-color: white;
+}

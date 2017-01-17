@@ -1,0 +1,236 @@
+@define-color cluebar_color shade (mix (@bg_color, @base_color, 0.5), 0.95);
+
+NautilusWindow *,
+NemoWindow * {
+    -GtkPaned-handle-size: 1;
+}
+
+.nautilus-canvas-item,
+.nemo-canvas-item {
+    border-radius: 4px;
+}
+
+/* desktop mode */
+.nautilus-desktop.nautilus-canvas-item,
+.nemo-desktop.nemo-canvas-item {
+    color: @dark_fg_color;
+    text-shadow: 1px 1px alpha (black, 0.8);
+}
+
+.nautilus-desktop.nautilus-canvas-item:active,
+.nemo-desktop.nemo-canvas-item:active {
+    background-image: none;
+    background-color: alpha (@bg_color, 0.84);
+
+    color: @fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected,
+.nemo-desktop.nemo-canvas-item:selected {
+    background-image: none;
+    background-color: alpha (@selected_bg_color, 0.84);
+
+    color: @selected_fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active,
+.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:selected,
+.nemo-desktop.nemo-canvas-item:active,
+.nemo-desktop.nemo-canvas-item:prelight,
+.nemo-desktop.nemo-canvas-item:selected {
+    text-shadow: none;
+}
+
+/* browser window */
+NautilusTrashBar.info,
+NautilusXContentBar.info,
+NautilusSearchBar.info,
+NautilusQueryEditor.info,
+NemoTrashBar.info,
+NemoXContentBar.info,
+NemoSearchBar.info,
+NemoQueryEditor.info {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@cluebar_color, 0.92)),
+                                     to (shade (@cluebar_color, 0.92)));
+    background-color: @cluebar_color;
+    border-bottom-color: shade (@cluebar_color, 0.86);
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+}
+
+NautilusTrashBar.info:backdrop,
+NautilusXContentBar.info:backdrop,
+NautilusSearchBar.info:backdrop,
+NautilusQueryEditor.info:backdrop,
+NemoTrashBar.info:backdrop,
+NemoXContentBar.info:backdrop,
+NemoSearchBar.info:backdrop,
+NemoQueryEditor.info:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@cluebar_color, 1.01)),
+                                     to (shade (@cluebar_color, 1.01)));
+    background-color: @search_bg_color;
+    border-bottom-color: shade (@cluebar_color, 0.86);
+}
+
+NautilusSearchBar .entry,
+NemoSearchBar .entry {
+}
+
+.nautilus-cluebar-label,
+.nemo-cluebar-label {
+    font: bold;
+}
+
+.nautilus-cluebar-label:backdrop,
+.nemo-cluebar-label:backdrop {
+    color: mix (@fg_color, @cluebar_color, 0.2);
+}
+
+nautilus-search-button *:active,
+nautilus-search-button *:active:prelight,
+nemo-search-button *:active,
+nemo-search-button *:active:prelight {
+    color: @dark_fg_color;
+}
+
+NautilusFloatingBar,
+NemoFloatingBar {
+    background-color: shade (@cluebar_color, 2.92);
+}
+
+NautilusFloatingBar .button,
+NemoFloatingBar .button {
+    -GtkButton-image-spacing: 0;
+    -GtkButton-inner-border: 0;
+}
+
+/* sidebar */
+NautilusWindow .sidebar,
+NautilusWindow .sidebar .view,
+NemoWindow .sidebar,
+NemoWindow .sidebar .view {
+    background-color: shade (@dark_bg_color, 1.2);
+
+    color: @bg_color;
+}
+
+NautilusWindow .sidebar .frame,
+NemoWindow .sidebar .frame {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: shade (@fg_color, 0.86);
+    border-radius: 0;
+}
+
+NautilusWindow .sidebar:backdrop,
+NautilusWindow .sidebar .view:backdrop,
+NemoWindow .sidebar:backdrop,
+NemoWindow .sidebar .view:backdrop {
+    background-color: shade (@dark_bg_color, 1.2);
+    color: mix (@bg_color, shade (@fg_color, 0.95), 0.2);
+}
+
+NautilusWindow .sidebar row:selected,
+NemoWindow .sidebar row:selected {
+    color: @selected_fg_color;
+}
+
+NautilusWindow .sidebar row:selected:backdrop,
+NemoWindow .sidebar row:selected:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (shade (@bg_color, 0.95), 0.95)),
+                                     to (shade (shade (@bg_color, 0.95), 0.95)));
+    border-top-color: shade (shade (@bg_color, 0.95), 0.88);
+
+    color: @fg_color;
+}
+
+NautilusWindow .pane-separator,
+NemoWindow .pane-separator {
+    background-color: shade (shade (@bg_color, 0.95), 0.94);
+    border-color: @dark_bg_color;
+    border-style: solid;
+    border-width: 0;
+    box-shadow: none;
+}
+
+NautilusWindow .pane-separator:backdrop,
+NemoWindow .pane-separator:backdrop {
+    background-color: shade (shade (@bg_color, 0.95), 0.96);
+}
+
+NautilusWindow .toolbar.menubar,
+NemoWindow .toolbar.menubar {
+    -GtkToolbar-button-relief: normal;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 1.0)),
+                                     to (shade (@dark_bg_color, 1.0)));
+    color: @fg_color;
+    padding: 3px;
+    box-shadow: none; 
+}
+/* for breadcrumbs path bar */
+NautilusWindow .toolbar.menubar .button,
+.nemo-pathbar-button,
+NemoPathbarButton {
+    -GtkWidget-focus-line-width: 0;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 1.30)),
+                                     to (shade (@dark_bg_color, 1.30)));
+    color: @dark_fg_color;
+    padding: 6px 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: alpha(shade (@dark_bg_color, 0.6), 0.5);
+    -NemoPathbarButton-border-radius: 3px;
+}
+
+NautilusWindow .toolbar.menubar .button:hover,
+NautilusWindow .toolbar.menubar .button:active:hover,
+NemoPathbarButton:hover,
+NemoPathbarButton:active:hover {
+    border-width: 1px;
+    border-color: alpha (@selected_bg_color, 0.6);
+}
+
+NautilusWindow .toolbar.menubar .button:active,
+NemoPathbarButton:active {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (mix (shade (@selected_bg_color, 1.22), shade(@dark_bg_color, 1.1), 0.9)),
+                                     to (mix (shade (@selected_bg_color, 1.0), shade(@dark_bg_color, 1.18), 0.7)));
+
+    border-width: 1px;
+    border-color: alpha (@selected_bg_color, 0.6);
+}
+
+.toolbar.menubar .separator {
+    border-color: shade (@dark_bg_color, 0.96);
+    border-bottom-color: alpha (shade (@dark_bg_color, 1.26), 0.5);
+    border-right-color: alpha (shade (@dark_bg_color, 1.26), 0.5);
+}
+
+/* For Places Sidebar diskfull indicators */
+
+NemoPlacesTreeView {
+    -NemoPlacesTreeView-disk-full-bg-color: shade(@bg_color, .65);
+    -NemoPlacesTreeView-disk-full-fg-color: shade(@selected_bg_color, 1.0);
+    -NemoPlacesTreeView-disk-full-bar-width: 1px;
+    -NemoPlacesTreeView-disk-full-bar-radius: 1px;
+    -NemoPlacesTreeView-disk-full-bottom-padding: 1px;
+    -NemoPlacesTreeView-disk-full-max-length: 70px;
+}
+
+NemoPlacesTreeView:selected {
+    -NemoPlacesTreeView-disk-full-bg-color: shade(@bg_color, 2.0);
+    -NemoPlacesTreeView-disk-full-fg-color: shade(@fg_color, 2.0);
+}
+
+NemoPlacesTreeView:hover {
+}
+
+NemoPlacesTreeView:selected:hover {
+}

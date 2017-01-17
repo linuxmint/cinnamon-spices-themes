@@ -1,0 +1,14 @@
+# ==============================================================================
+# GNOME TERMINAL SPECIFIC SETTINGS
+# ==============================================================================
+
+style "terminal-screen" {
+	base[NORMAL]		= "#000000"
+	fg[NORMAL]		= "#eee"
+	text[NORMAL]		= "#eee"
+	
+	TerminalScreen::background-darkness	= 0.95
+}
+
+widget "*TerminalWindow"				style "default"
+widget "*TerminalWindow.*.TerminalScreen*"              style "terminal-screen"

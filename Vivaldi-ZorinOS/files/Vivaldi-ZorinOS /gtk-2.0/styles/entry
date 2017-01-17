@@ -1,0 +1,93 @@
+# Copyright (C) 2015 Zorin Group
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# See the file COPYING for the full license text.
+
+style "entry"			= "default"
+{
+  xthickness            			= 2
+  ythickness            			= 2
+  GtkWidget::interior_focus	= 0
+  base[NORMAL] = "#0F0F0F"
+  base[PRELIGHT] = "#0F0F0F"
+  base[SELECTED] = "#E62D23"
+  base[ACTIVE] = "#0F0F0F"
+  base[INSENSITIVE] = "#0F0F0F" 
+  text[NORMAL] = "#EFEFEF"
+  text[PRELIGHT] = "#EFEFEF"
+  text[SELECTED] = "#FFFFFF"
+  text[ACTIVE] = "#EFEFEF"
+  text[INSENSITIVE] = "#595959"
+ 
+  engine "pixmap"
+  {
+    image
+    {
+      function			= FOCUS
+      recolorable		= TRUE
+      file			= "Shadows/entry-shadow-in.png"
+      border			= { 6,6,6,6 }
+      stretch			= TRUE
+    }	
+ image
+    {
+      function			= BOX
+      recolorable		= TRUE
+	 shadow			= IN
+      state			= NORMAL
+      file			= "Shadows/entry-shadow-in.png"
+      border			= { 6,6,6,6 }
+      stretch			= TRUE
+    }	
+image
+    {
+      function			= BOX
+      recolorable		= TRUE
+	shadow			= OUT
+      state			= NORMAL
+      file			= "Shadows/text-entry.png"
+      border			= { 24,24,11,11 }
+      stretch			= TRUE
+    }  
+image
+    {
+      function			= BOX
+      recolorable		= TRUE
+	shadow			= OUT
+      state			= INSENSITIVE
+      file			= "Shadows/text-entry-inactive.png"
+      border			= { 24,24,11,11 }
+      stretch			= TRUE
+    }  
+  image
+   {
+     function			= SHADOW
+     detail			= "entry"
+     shadow			= IN
+     recolorable		= FALSE
+      state			= NORMAL
+     file			= "Shadows/text-entry.png"
+      border			= { 24,24,11,11 }
+     stretch			= TRUE
+    }
+  image
+   {
+     function			= SHADOW
+     detail			= "entry"
+     shadow			= IN
+     recolorable		= FALSE
+      state			= INSENSITIVE
+     file			= "Shadows/text-entry.png"
+      border			= { 24,24,11,11 }
+     stretch			= TRUE
+    }
+  }
+}
+
+class "GtkEntry"           		style "entry"
+class "GtkOldEditable" 			style "entry"
+class "GtkEditable" 			style "entry"

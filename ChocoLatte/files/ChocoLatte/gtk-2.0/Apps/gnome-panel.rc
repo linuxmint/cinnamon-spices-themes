@@ -1,0 +1,65 @@
+# ==============================================================================
+# GNOME PANEL SPECIFIC SETTINGS
+# ==============================================================================
+
+style "panel" 					= "default"
+{
+	xthickness 				= 0
+	ythickness 				= 0
+
+	bg_pixmap[NORMAL] 			= "img/panel.png"
+	bg[NORMAL] 				= "#3c3c3c"
+
+	engine "murrine" 
+	{
+		#contrast 			= 1.0
+		textstyle 			= 2
+#		text_shade 			= 0.35
+	}
+}
+
+style "panel-menu-arrow"
+{
+	engine "pixmap"
+	{
+		image
+		{
+			function		= ARROW
+			arrow_direction		= DOWN
+		}
+		image
+		{
+			function		= FOCUS
+		}
+	}
+}
+
+style "panel-handle" 
+{
+	engine "pixmap"
+	{    
+		image
+		{
+			function		= HANDLE
+		}    
+	}
+}
+
+#widget_class "*Panel*"            		style "panel"
+widget "*PanelWidget*"            		style "panel"
+widget "*PanelApplet*"            		style "panel"
+widget "*fast-user-switch*"       		style "panel" # workaround for Fast User Switch applet
+widget "*CPUFreqApplet*"          		style "panel" # workaround for CpuFreq Applet
+class "PanelApp*"                 		style "panel"
+class "PanelToplevel*"            		style "panel"
+#widget_class "*Mail*"             		style "panel"
+widget_class "*notif*"            		style "panel"
+
+#widget_class "*?anel*utton"       		style "panel_task_button" # causing problems to monodevelop
+widget "*task*"                   		style "button"
+widget "*.tasklist-button"        		style "button"
+widget "*PanelApplet*TaskTitle*"  		style "button"
+
+class "PanelAppletFrame" 			style:highest "panel-handle"
+
+widget "PanelToplevel*PanelMenuButton"		style "panel-menu-arrow"

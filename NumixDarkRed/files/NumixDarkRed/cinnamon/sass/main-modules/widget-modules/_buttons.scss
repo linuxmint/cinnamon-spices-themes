@@ -1,0 +1,92 @@
+/* ===================================================================
+   ! Buttons
+   ===================================================================*/
+
+/* --- normal buttons ---*/
+.modal-dialog-button,
+.notification-button {
+    background-color: rgba(0, 0, 0, 0);
+    background-gradient-direction: none;
+    border: none;
+    border-radius: 0;
+
+    border-image: url("button-assets/button.svg") 9;
+    padding: 9px;
+    padding-right: 32px;
+    padding-left: 32px;
+    -st-natural-width: 80px;
+    font-weight: bold;
+    color: $text-primary;
+
+    &:hover {
+        border-image: url("button-assets/button-hover.svg") 9;
+    }
+
+    &:focus {
+        border-image: url("button-assets/button-focused.svg") 9;
+        color: $text-active;
+    }
+
+    &:active, &:pressed {
+        border-image: url("button-assets/button-pressed.svg") 9;
+    }
+
+    &:focus:hover {
+        border-image: url("button-assets/button-focused-hover.svg") 9;
+        color: $text-active;
+    }
+
+    &:focus:active, &:focus:pressed {
+        border-image: url("button-assets/button-focused-pressed.svg") 9;
+        color: $text-active;
+    }
+
+    &:disabled {
+        border-image: url("button-assets/button-insensitive.svg") 9;
+        color: $text-disabled;
+    }
+}
+
+/* --- icon buttons ---*/
+.notification-icon-button {
+    background-color: rgba(0, 0, 0, 0);
+    background-gradient-direction: none;
+    border: none;
+    border-radius: 0;
+
+    border-image: url("button-assets/button.svg") 10;
+    padding: 10px;
+    color: $icon-primary;
+
+    &:hover {
+        border-image: url("button-assets/button-hover.svg") 10;
+    }
+
+    &:focus {
+        border-image: url("button-assets/button-focused.svg") 10;
+        color: $icon-active;
+    }
+
+    &:active,
+    &:pressed {
+        border-image: url("button-assets/button-pressed.svg") 10;
+    }
+
+    &:focus:hover {
+        border-image: url("button-assets/button-focused-hover.svg") 10;
+        color: $icon-active;
+    }
+
+    &:focus:active,
+    &:focus:pressed {
+        border-image: url("button-assets/button-focused-pressed.svg") 10;
+        color: $icon-active;
+    }
+
+    &:disabled {
+        border-image: url("button-assets/button-insensitive.svg") 10;
+        color: $icon-disabled;
+    }
+
+    & > StIcon { icon-size: 16px; }
+}

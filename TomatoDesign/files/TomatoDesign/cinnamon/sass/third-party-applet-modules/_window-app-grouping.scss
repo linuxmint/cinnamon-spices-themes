@@ -1,0 +1,41 @@
+/* ===================================================================
+ * ! Window list with app grouping
+ *
+ * - This applet has no stylesheet; it uses the alt-tab styles
+ * - The elements are placed inside ".popup-menu-content"
+ * - A combinator is used to isolate the styles
+ * ===================================================================*/
+.popup-menu-content {
+    spacing: 0;
+    padding: 0;
+    border-image: url("background-assets/tooltip--window-app-grouping.svg") 6;
+
+    .switcher-list {
+        spacing: 0;
+        padding: 0;
+        border-image: none;
+
+        .item-box {
+            padding: 0;
+            spacing: 0;
+            border-image: none;
+            color: $text-primary;
+
+            &:selected {
+                border-image: none;
+                color: $text-primary;
+            }
+
+            .thumbnail-iconLabel {
+                spacing: 4px;
+                padding: 0;
+                font-size: 9pt;
+            }
+
+            .window-close {
+                background-image: url("widget-assets/close-2.svg");
+                background-size: 20px;
+            }
+        }
+    }
+}

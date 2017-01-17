@@ -1,0 +1,96 @@
+style "combo"		= "default"
+{
+  GtkWidget::wide-separators                    = 0
+  xthickness			= 2
+  ythickness			= 2
+  GtkWidget::interior_focus	= 0
+  base[NORMAL] = "#0F0F0F"
+  base[PRELIGHT] = "#0F0F0F"
+  base[SELECTED] = "#00AAFF"
+  base[ACTIVE] = "#0F0F0F"
+  base[INSENSITIVE] = "#0F0F0F" 
+  text[NORMAL] = "#EFEFEF"
+  text[PRELIGHT] = "#EFEFEF"
+  text[SELECTED] = "#FFFFFF"
+  text[ACTIVE] = "#EFEFEF"
+  text[INSENSITIVE] = "#595959"   
+  engine "pixmap"
+  {
+    image
+    {
+      function			= BOX
+      recolorable		= TRUE
+      state			= PRELIGHT
+      file			= "Combo/combo-prelight.png"
+      border			= { 24, 24, 12, 12 }
+      stretch			= TRUE
+    }
+    image
+    {
+      function			= BOX
+      recolorable		= TRUE
+      state			= NORMAL
+      file			= "Combo/combo-normal.png"
+      border			= { 24, 24, 12, 12 }
+      stretch			= TRUE
+    }
+
+  image
+    {
+      function			= BOX
+      recolorable		= TRUE
+      state			= ACTIVE
+      file			= "Combo/combo-pressed.png"
+      border			= { 24, 24, 12, 12 }
+      stretch			= TRUE
+    }
+ image
+    {
+      function			= BOX
+      recolorable		= TRUE
+      state			= INSENSITIVE
+      file			= "Combo/combo-inactive.png"
+      border			= { 24, 24, 12, 12 }
+      stretch			= TRUE
+    }
+    image
+    {
+      function			= TAB
+      state			= INSENSITIVE
+      recolorable		= TRUE
+      overlay_file		= "Combo/combo-arrow-insens.png"
+      overlay_stretch	= FALSE
+    }
+    image
+    {
+      function			= TAB
+      recolorable		= TRUE
+      state			= NORMAL
+      overlay_file		= "Combo/combo-arrow.png"
+      overlay_border		= { 0, 0, 0, 0 }
+      overlay_stretch		= FALSE
+    }
+  image
+    {
+      function			= TAB
+      recolorable		= TRUE
+      state			= PRELIGHT
+      overlay_file		= "Combo/combo-arrow-prelight.png"
+      overlay_border		= { 0, 0, 0, 0 }
+      overlay_stretch		= FALSE
+    }
+    image
+    {
+       function			= VLINE
+       recolorable		= TRUE
+       file			= "Others/null.png"
+       border			= { 0, 0, 0, 0 }
+       stretch			= TRUE
+    }    
+  }
+}
+
+class "GtkCombo*"      			style "combo"
+widget_class "*Combo*" style "combo"
+widget "*.gtk-combobox-popup-menu.*" style "menuitem_text_is_fg_color_workaround"
+widget_class "*.<GtkComboBox>.<GtkCellView>"   style "combo"

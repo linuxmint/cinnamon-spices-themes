@@ -1,0 +1,321 @@
+@define-color search_bg_color mix (shade (@selected_bg_color, 1.2), shade (@bg_color, 1.05), 0.85);
+
+NautilusWindow * {
+    -GtkPaned-handle-size: 1;
+}
+
+NautilusDesktopWindow GtkWidget {
+    background-color: @transparent;
+}
+
+.nautilus-canvas-item,
+.nemo-canvas-item {
+    border-radius: 4px;
+}
+
+/* desktop mode */
+.nautilus-desktop.nautilus-canvas-item,
+.nemo-desktop.nemo-canvas-item {
+    color: @dark_fg_color;
+    text-shadow: 1px 1px alpha (black, 0.8);
+}
+
+.nautilus-desktop.nautilus-canvas-item:active,
+.nemo-desktop.nemo-canvas-item:active {
+    background-image: none;
+    background-color: alpha (@bg_color, 0.84);
+
+    color: @fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected,
+.nemo-desktop.nemo-canvas-item:selected {
+    background-image: none;
+    background-color: alpha (@selected_bg_color, 0.84);
+
+    color: @selected_fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active,
+.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:selected,
+.nemo-desktop.nemo-canvas-item:active,
+.nemo-desktop.nemo-canvas-item:prelight,
+.nemo-desktop.nemo-canvas-item:selected {
+    text-shadow: none;
+}
+
+/* browser window */
+NautilusTrashBar.info,
+NautilusXContentBar.info,
+NautilusSearchBar.info,
+NautilusQueryEditor.info,
+NemoTrashBar.info,
+NemoXContentBar.info,
+NemoSearchBar.info,
+NemoQueryEditor.info {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@search_bg_color, 1.03)),
+                                     to (shade (@search_bg_color, 0.92)));
+    background-color: @search_bg_color;
+    border-bottom-color: shade (@search_bg_color, 0.86);
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+}
+
+NautilusTrashBar.info:backdrop,
+NautilusXContentBar.info:backdrop,
+NautilusSearchBar.info:backdrop,
+NautilusQueryEditor.info:backdrop,
+NemoTrashBar.info:backdrop,
+NemoXContentBar.info:backdrop,
+NemoSearchBar.info:backdrop,
+NemoQueryEditor.info:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@search_bg_color, 1.01)),
+                                     to (shade (@search_bg_color, 0.96)));
+    background-color: @search_bg_color;
+    border-bottom-color: shade (@search_bg_color, 0.86);
+}
+
+NautilusSearchBar .entry,
+NemoSearchBar .entry {
+}
+
+.nautilus-cluebar-label,
+.nemo-cluebar-label {
+    font: bold;
+}
+
+.nautilus-cluebar-label:backdrop,
+.nemo-cluebar-label:backdrop {
+    color: mix (@fg_color, @search_bg_color, 0.2);
+}
+
+nautilus-search-button *:active,
+nautilus-search-button *:active:prelight,
+nemo-search-button *:active,
+nemo-search-button *:active:prelight {
+    color: @dark_fg_color;
+}
+
+NautilusFloatingBar,
+NemoFloatingBar {
+    background-color: shade (@search_bg_color, 0.92);
+}
+
+NautilusFloatingBar .button,
+NemoFloatingBar .button {
+    -GtkButton-image-spacing: 0;
+    -GtkButton-inner-border: 0;
+}
+
+/* sidebar */
+NautilusWindow .sidebar .view,
+NemoWindow .sidebar .view {
+    -GtkWidget-focus-padding: 0;
+    -GtkWidget-focus-line-width: 1;
+    -GtkTreeView-vertical-separator: 0;
+    background-color: shade (@search_bg_color, 0.97);
+    color: @fg_color;
+    text-shadow: none;
+    icon-shadow: none;
+}
+
+NautilusWindow .sidebar .view:backdrop,
+NemoWindow .sidebar .view:backdrop {
+    background-color: shade (@bg_color, 0.96);
+    color: mix (@fg_color, shade (@bg_color, 0.95), 0.2);
+}
+
+NautilusWindow .sidebar .view:selected,
+NemoWindow .sidebar .view:selected {
+    text-shadow: 1px 1px alpha(black, 0.2);
+    icon-shadow: 1px 1px alpha(black, 0.2);
+}
+
+NautilusWindow .sidebar .frame,
+NemoWindow .sidebar .frame {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: shade (@bg_color, 0.86);
+    border-radius: 0;
+}
+
+NautilusWindow .sidebar row:selected,
+NemoWindow .sidebar row:selected {
+    color: @selected_fg_color;
+}
+
+NautilusWindow .sidebar row:selected:backdrop,
+NemoWindow .sidebar row:selected:backdrop {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (shade (@bg_color, 0.95), 0.94)),
+                                     to (shade (shade (@bg_color, 0.95), 0.86)));
+    border-top-color: shade (shade (@bg_color, 0.95), 0.88);
+    color: @fg_color;
+    text-shadow: none;
+    icon-shadow: none;
+}
+
+NemoWindow .sidebar .scrollbar {
+    -GtkRange-slider-width: 10;
+}
+
+NautilusWindow .pane-separator,
+NemoWindow .pane-separator,
+NemoWindow > GtkGrid > .pane-separator {
+    background-color: shade (shade (@bg_color, 0.95), 0.94);
+    border-color: @dark_bg_color;
+    border-style: solid;
+    border-width: 0;
+    box-shadow: none;
+}
+
+NautilusWindow .pane-separator:backdrop,
+NemoWindow .pane-separator:backdrop {
+    background-color: shade (shade (@bg_color, 0.95), 0.96);
+}
+
+NautilusWindow .toolbar.menubar,
+NemoWindow .toolbar.menubar {
+    -GtkToolbar-button-relief: normal;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 0.96)),
+                                     to (shade (@dark_bg_color, 1.4)));
+    color: @fg_color;
+    padding: 3px;
+    box-shadow: none; 
+}
+
+/* for breadcrumbs path bar */
+NautilusWindow .toolbar.menubar .button,
+NemoWindow .toolbar.menubar .button,
+.nemo-pathbar-button,
+NemoPathbarButton {
+    -GtkWidget-focus-line-width: 0;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 1.23)),
+                                     to (shade (@dark_bg_color, 1.70)));
+    color: @dark_fg_color;
+    padding: 6px 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: alpha(shade (@dark_bg_color, 1.72), 0.6);
+    -NemoPathbarButton-border-radius: 3px;
+}
+
+NautilusWindow .toolbar.menubar .button:hover,
+NautilusWindow .toolbar.menubar .button:active:hover,
+NemoWindow .toolbar.menubar .button:hover,
+NemoWindow .toolbar.menubar .button:active:hover,
+NemoPathbarButton:hover,
+NemoPathbarButton:active:hover {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (mix (shade (@selected_bg_color, 1.38), shade(@dark_bg_color, 1.1), 0.5)),
+                                     to (mix (shade (@selected_bg_color, 1.05), shade(@dark_bg_color, 1.18), 0.5)));
+
+    border-width: 1px;
+    border-color: alpha (@selected_bg_color, 0.6);
+}
+
+NautilusWindow .toolbar.menubar .button:active,
+NemoWindow .toolbar.menubar .button:active,
+NemoPathbarButton:active {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (mix (shade (@selected_bg_color, 1.32), shade(@dark_bg_color, 1.1), 0.7)),
+                                     to (mix (shade (@selected_bg_color, 1.05), shade(@dark_bg_color, 1.18), 0.7)));
+
+    border-width: 1px;
+    border-color: alpha (@selected_bg_color, 0.6);
+}
+
+.toolbar.menubar .separator {
+    border-color: shade (@dark_bg_color, 0.96);
+    border-bottom-color: alpha (shade (@dark_bg_color, 1.26), 0.5);
+    border-right-color: alpha (shade (@dark_bg_color, 1.26), 0.5);
+}
+
+NemoWindow .toolbar .button.image-button {
+    -GtkWidget-focus-line-width: 0;
+    -GtkWidget-focus-padding: 0;
+    padding: 4px;
+}
+
+/* the fix above for the statusbar buttons also affects the primary toolbar so we need to reset the
+    padding for those buttons */
+
+NemoWindow .primary-toolbar.toolbar .button.image-button {
+    padding: 4px 7px 5px;
+}
+
+/* For Places Sidebar diskfull indicators */
+
+NemoPlacesTreeView {
+    -NemoPlacesTreeView-disk-full-bg-color: shade(@bg_color, .65);
+    -NemoPlacesTreeView-disk-full-fg-color: shade(@selected_bg_color, 1.0);
+    -NemoPlacesTreeView-disk-full-bar-width: 1px;
+    -NemoPlacesTreeView-disk-full-bar-radius: 1px;
+    -NemoPlacesTreeView-disk-full-bottom-padding: 1px;
+    -NemoPlacesTreeView-disk-full-max-length: 70px;
+}
+
+NemoPlacesTreeView:selected {
+    -NemoPlacesTreeView-disk-full-bg-color: shade(@bg_color, 2.0);
+    -NemoPlacesTreeView-disk-full-fg-color: shade(@fg_color, 2.0);
+}
+
+NemoPlacesTreeView:hover {
+}
+
+NemoPlacesTreeView:selected:hover {
+}
+
+NemoView.frame,
+NemoNotebook.notebook {
+    background-color: shade (@bg_color, 1.02);
+    background-image: none;
+    padding: 0 2px 2px 2px;
+    background-clip: border-box;
+    border-color: shade (@bg_color, 0.82);
+    border-width: 0 2px 2px 2px;
+    border-style: solid;
+    -GtkNotebook-tab-overlap: -1;
+    -GtkNotebook-tab-curvature: 6;
+}
+
+NemoNotebook.notebook tab {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                 from (alpha (shade (@bg_color, 0.96), 0.3)),
+                                 to (shade (@bg_color, 0.96)));
+    border-radius: 6px;
+    border-style: solid;
+    border-color: shade (@bg_color, 0.82);
+    border-width: 2px;
+    padding: 2px 2px 6px 2px;
+}
+
+NemoNotebook.notebook tab:active {
+    border-color: shade (@bg_color, 0.82);
+    border-style: solid;
+    border-width: 2px;
+    padding: 2px 2px 0 2px;
+    background-color: shade (@base_color, 1.0);
+    background-image: none;
+}
+
+.nemo-inactive-pane .view {
+    background-color: shade(@bg_color, 1.04);
+    color: shade(@fg_color, 0.8);
+}
+
+.nemo-inactive-pane .view:selected,
+.nemo-inactive-pane .nautilus-canvas-item:selected {
+    background-color: alpha(@selected_bg_color, 0.95);
+    color: @selected_fg_color;
+}
+
+NemoWindow GtkStatusbar {
+    padding: 0;
+}

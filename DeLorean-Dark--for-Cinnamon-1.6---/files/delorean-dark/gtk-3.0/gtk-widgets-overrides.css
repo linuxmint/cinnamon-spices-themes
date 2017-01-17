@@ -1,0 +1,53 @@
+
+GtkColorSwatch,
+GtkColorSwatch:selected,
+GtkColorSwatch:hover,
+GtkColorSwatch:selected:hover,
+GtkColorEditor GtkColorSwatch.color-dark:hover,
+GtkColorEditor GtkColorSwatch.color-light:hover {
+    border-color: @borders;
+    box-shadow: 0 2 inset alpha(black, 0.15), 1 1 inset alpha(black, 0.15);
+}
+
+GtkColorSwatch.color-dark:hover {
+    background-image: linear-gradient(to bottom,
+                                      alpha(white, 0) 40%,
+                                      alpha(white, 0.2)
+                                      );
+
+}
+
+GtkColorSwatch.color-light:hover {
+    background-image: linear-gradient(to top,
+                                      alpha(black, 0) 40%,
+                                      alpha(black, 0.3)
+                                      );
+
+}
+
+GtkColorSwatch:backdrop:hover {
+
+    background-image: none;
+    box-shadow: none;
+}
+
+GtkColorChooserWidget #add-color-button,
+GtkColorChooserWidget #add-color-button:hover {
+    color: @theme_bg_color;
+}
+
+.color-active-badge.color-light:backdrop {
+    border-color: #444444;
+    color: #444444;
+}
+
+.color-active-badge.color-dark:backdrop {
+    border-color: #cccccc;
+    color: #cccccc;
+}
+
+GtkColorEditor GtkColorSwatch.color-dark:hover,
+GtkColorEditor GtkColorSwatch.color-light:hover {
+    background-image: none;
+    border-color: @unfocused_borders;
+}

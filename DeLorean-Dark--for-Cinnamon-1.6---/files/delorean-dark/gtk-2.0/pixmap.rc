@@ -1,0 +1,150 @@
+#############################
+#            ***            #
+#     ***  PIXMAPS  ***     #
+#            ***            #
+#############################
+style "scrolled"			
+{
+	xthickness				= 1
+	ythickness				= 1
+
+	engine "pixmap"
+	{
+		image 
+		{
+			function        	= SHADOW
+			recolorable	= TRUE
+			file            	= "/images/scrolledWindow.png"
+			border          	= { 3, 3, 3, 3}
+			stretch         	= TRUE
+		}
+	}
+}
+widget_class "*<GtkScrolledWindow>"		style "scrolled"
+class "GtkScrolledWindow"		style "scrolled"
+
+
+style "scrolledwindow-vieport-fix" {
+	engine "pixmap" {
+		#image {
+		#	function	= SHADOW
+		#}		
+			image
+	{
+		function	= FLAT_BOX
+		recolorable	= TRUE
+		file		= "/images/null.png"
+		border		= { 6, 6 , 6 , 6 }
+		stretch		= TRUE
+	}
+	}
+}
+
+class "<GtkScrolledWindow>.<GtkViewport>"		style "scrolledwindow-vieport-fix"
+
+#############################
+#          TOOLBAR          #
+#############################
+
+style "toolbar"  {
+	xthickness				= 2
+	ythickness				= 4
+
+	  
+engine "pixmap"
+{
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		file		= "/images/WindowBg.png" #"/images/ToolbarBg.png
+		border		= { 0 , 0 , 0 , 0 }
+		stretch		= FALSE
+			overlay_file    	= "/images/toolbar-border2.png" #"/images/toolbar-border.png"
+            overlay_border 		= {6, 6, 6, 6}
+            overlay_stretch 	= TRUE
+	}
+
+	
+	
+}
+}
+
+
+class "GtkToolbar"			style 		"toolbar"
+class "*<GtkToolbar>*"		style 		"toolbar"
+
+
+#############################
+#         MENU-BAR          #
+#############################
+style "menubar" = "theme-default" {
+
+  xthickness = 0
+  ythickness = 0
+  
+	bg_pixmap[NORMAL] = "/images/WindowBg.png"
+  
+  engine "pixmap"
+{
+
+	image
+	{
+		function	= BOX
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "/images/WindowBg.png"
+		border		= { 0 ,0 , 0 ,0}
+		stretch		= FALSE
+	}
+}
+}
+widget_class "*<GtkMenuBar>*"			style        "menubar"
+
+#############################
+#   Synaptic Entry          #
+#############################
+style "synaptic_entry" = "theme-default" {
+
+        #the border is disabled 
+	xthickness = 4
+	ythickness = 4
+GtkWidget	:: focus-line-width		=1
+GtkEntry::inner-border 	= { 0,0,0,0}
+	bg[NORMAL] = @base_color
+	  base[NORMAL] 		= "#4c4c4c"
+	  base[INSENSITIVE]	= "#2f2f2f"
+	  text[NORMAL]     	= "#dbdbdb"
+	  bg[PRELIGHT] 		= @base_color
+
+	engine "pixmap" {
+		image
+		{
+			state           = NORMAL
+			function	= FLAT_BOX
+			file		= "images/bg_entry.png"
+			border          = {0, 0, 0, 0}
+			stretch		= TRUE
+		}
+		image
+		{
+			state           = INSENSITIVE
+			function	= FLAT_BOX
+		}
+		image
+		{
+			#state           = NORMAL
+			function	= FLAT_BOX
+			detail		= "entry"
+			file		= "images/bg_entry.png"
+			border          = {2, 2, 2, 2}
+			stretch		= TRUE
+			overlay_file	= "images/entry_border.png"
+			overlay_border	= {6,6,6,6}
+			overlay_stretch	= TRUE
+		}
+
+	}
+}
+widget_class "GtkWindow.GtkVBox.GtkHandleBox.GtkHBox.GtkVBox*GtkEntry*" style:highest "synaptic_entry"

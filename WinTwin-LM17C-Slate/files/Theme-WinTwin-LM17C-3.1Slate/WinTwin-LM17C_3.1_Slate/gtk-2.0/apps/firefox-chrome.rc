@@ -1,0 +1,308 @@
+
+#################################### 
+# FIREFOX SPECIFIC SETTINGS TOOLKIT
+#################################### 
+
+#style "ff-default" {
+#	GtkCheckButton::indicator-size = 14
+#}
+
+#style	"ff-statusbar" {
+#}
+
+##### ? #### widget	"MozillaGtkWidget*Toolbar*"		style	"theme-toolbar"
+##### ? #### widget	"MozillaGtkWidget*Statusbar*"	        style	"ff-statusbar"
+
+
+#widget	"MozillaGtkWidget*"	style	"ff-default"
+
+
+
+#################################### 
+# Following are special cases and workarounds for issues in applications.
+#################################### 
+
+#################################### 
+# Firefox
+#################################### 
+
+#style "FireFox-MenuBar" = "menubar" {
+#	GtkMenuBar::shadow-type = GTK_SHADOW_NONE
+#}
+#widget "MozillaGtkWidget*GtkMenuBar" 			style "FireFox-MenuBar"
+#widget "MozillaGtkWidget*GtkCheck*"				style:highest "checkbutton"
+#widget "MozillaGtkWidget*GtkRadio*"				style:highest "radiobutton"
+
+
+
+#################################### 
+# For Google Chrome/Chromium integration
+#################################### 
+
+#style "chrome-gtk-frame" {
+#    ChromeGtkFrame::frame-gradient-size		    = 120
+#    ChromeGtkFrame::frame-gradient-color		    = shade (1.06, @theme_bg_dark_color)
+#    ChromeGtkFrame::inactive-frame-gradient-color	    = shade (1.06, @theme_bg_dark_color)
+#    ChromeGtkFrame::frame-color			            = shade (0.64, @theme_bg_dark_color)
+#    ChromeGtkFrame::inactive-frame-color		    = shade (0.64, @theme_bg_dark_color)
+
+#    ChromeGtkFrame::scrollbar-trough-color		    = shade (0.99, @bg_color)
+#    ChromeGtkFrame::scrollbar-slider-prelight-color	    = shade (0.87, @bg_color)
+#    ChromeGtkFrame::scrollbar-slider-normal-color	    = shade (0.80, @bg_color)
+#}
+#class "ChromeGtkFrame"	style "chrome-gtk-frame"
+
+
+#################################### 
+# Another Chrome/Chromium modification FROM Lazulum
+# Google Chrome/Chromium theming (requires 9.0.597 or newer)
+#################################### 
+
+#style "chrome-gtk-frame"
+#{
+#    ChromeGtkFrame::frame-color = shade (0.5, @bg_color)
+#    ChromeGtkFrame::inactive-frame-color = shade (0.5, @bg_color)
+
+#    ChromeGtkFrame::frame-gradient-size = 100
+#    ChromeGtkFrame::frame-gradient-color = shade (1.08,@bg_color)
+#    ChromeGtkFrame::inactive-frame-gradient-color = shade (1.08,@bg_color)
+
+#    ChromeGtkFrame::scrollbar-trough-color = @base_color
+#    ChromeGtkFrame::scrollbar-slider-prelight-color = @panel_bg
+#    ChromeGtkFrame::scrollbar-slider-normal-color = shade (1.4, @panel_bg)
+#}
+#class "ChromeGtkFrame"		style "chrome-gtk-frame"
+
+
+
+
+
+
+
+
+#################################### 
+# For places where the text color is used instead of the fg color
+#################################### 
+
+#style "text_is_fg_color_workaround" {
+#	text[NORMAL]		= "#404040"
+#	text[PRELIGHT]		= "#404040"
+#	text[SELECTED]		= "#404040"
+#	text[ACTIVE]		= "#404040"
+#	text[INSENSITIVE]	= "#404040"
+#}
+#widget_class "*.<GtkComboBox>.<GtkCellView>"	style "text_is_fg_color_workaround"
+
+
+
+#################################### 
+# For menus where the text color is used instead of the fg color
+#################################### 
+
+#style "menuitem_text_is_fg_color_workaround" {
+
+#	text[NORMAL]		= "#404040"
+#	text[PRELIGHT]	= "#404040"
+#	text[SELECTED]	= "#404040"
+#	text[ACTIVE]		= "#404040"
+#	text[INSENSITIVE]	= "#404040"
+#}
+#widget "*.gtk-combobox-popup-menu.*"	style "menuitem_text_is_fg_color_workaround"
+
+
+#################################### 
+# For places where the fg color is used instead of the text color
+#################################### 
+
+#style "fg_is_text_color_workaround" {
+#	fg[NORMAL]		= @text_color
+#	fg[PRELIGHT]	= @text_color
+#	fg[SELECTED]	= @selected_fg_color
+#	fg[ACTIVE]		= @selected_fg_color
+#	fg[INSENSITIVE] = mix(0.65, @fg_color, @bg_color)
+#}
+#widget_class "*<GtkListItem>*"		style "fg_is_text_color_workaround"
+#widget_class "*<GtkCList>"		    style "fg_is_text_color_workaround"
+#widget_class "*<EelEditableLabel>"	style "fg_is_text_color_workaround"
+
+#################################### 
+#################################### 
+#################################### 
+# Style and Color Settings FROM Meditation-LM17C
+# (ONLY For referencing the styles and colors)
+# May need for editing gtkrc
+#################################### 
+
+
+#################################### 
+#################################### 
+#################################### 
+# Style and Color Settings FROM Lazulum
+# (ONLY For referencing the styles and colors)
+# May need for editing gtkrc
+#################################### 
+
+#gtk_color_scheme	= "bg_color:#f1f1f1\nselected_bg_color:#c6d7e3\nbase_color:#e8e8e8" # Background, base.
+#gtk_color_scheme	= "fg_color:#7f7f7f\nselected_fg_color:#6e6e6e\ntext_color:#7f7f7f" # Foreground, text.
+#gtk_color_scheme	= "tooltip_bg_color:#000000\ntooltip_fg_color:#e8e8e8" # Tooltips.
+#gtk_color_scheme	= "link_color:#2c82dd" # Hyperlinks
+#gtk_color_scheme	= "panel_bg:#e8e8e8" # Panel bg color
+#gtk_color_scheme	= "fm_color:#F7F7F7" # Color used in Nautilus and Thunar.
+#gtk_color_scheme	= "bg_color_dark:#686868\ntext_color_dark:#FFF"
+
+#style "menu"
+#{
+#	ythickness        = 3
+#	xthickness        = 0
+#	GtkMenuBar	:: shadow-type		= GTK_SHADOW_NONE
+
+#	bg[SELECTED] 	  = shade (1.19, @selected_bg_color)
+#	bg[NORMAL]        = shade (1.05, @base_color)
+#	bg[PRELIGHT] 	  = shade (1.19, @selected_bg_color)
+#	bg[ACTIVE]        = shade (1.05, @base_color)
+#	bg[INSENSITIVE]   = shade (1.05, @base_color)
+#	fg[NORMAL]        = @fg_color # Color for normal text.
+#	fg[PRELIGHT]      = @selected_fg_color
+#	fg[SELECTED]      = @selected_fg_color
+#	fg[ACTIVE]        = @base_color
+#	fg[INSENSITIVE]   = mix (0.4, @fg_color, @bg_color) # Text color for non
+nteractive menu items
+#	text[NORMAL]      = @text_color # Color for menu-item radio/checks.
+#	base[NORMAL]      = @bg_color # Color for menu-item radio/checks background.
+#	text[PRELIGHT]    = @text_color
+#	text[SELECTED]    = @text_color
+#	text[ACTIVE]      = @text_color
+#	text[INSENSITIVE] = shade (1.08, @fg_color)
+	
+#	engine "murrine" 
+#	{
+#		roundness = 0 # Roundness of menu items.
+#		contrast = 0.9
+#		lightborder_shade = 0.9
+#		border_shades 	    = {0.9, 1.2}
+#		textstyle           = 1
+#		text_shade	    = 1.55
+#	}
+
+#style "menubar" = "menu"
+#{
+#	xthickness	= 3
+#	ythickness	= 2
+	
+#	bg[NORMAL]	= @bg_color
+	
+#	engine "murrine"
+#	{
+#		roundness 	    = 0
+#		textstyle           = 1
+#		text_shade	    = 1.55
+#	}
+
+#}
+
+#style "menubar-menuitem"
+#{
+#	ythickness        = 4
+#	xthickness        = 2
+	
+#	bg_pixmap[PRELIGHT]   = "images/tab-active.png"
+#	bg_pixmap[SELECTED]   = "images/tab-active.png"
+#	fg[NORMAL]     = @base_color
+#	fg[PRELIGHT]   = @selected_fg_color
+#	fg[SELECTED]   = @selected_fg_color
+#	text[NORMAL]   = @base_color
+#	text[PRELIGHT] = @base_color
+#	text[SELECTED] = @base_color
+
+#	engine "murrine"
+#	{
+#		roundness = 1 # Roundness of menu items.
+#		contrast = 0.9
+#		lightborder_shade = 0.9
+#		border_shades 	    = {0.9, 1.2}
+#		textstyle           = 1
+#		text_shade	    = 1.55
+#	}
+#}
+
+# Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
+# Note that the work around assumes that the combobox is _not_ in appears-as-list mode.
+# This style does not affect GtkComboBoxEntry, it does have an effect on comboboxes in appears-as-list mode though.
+#style "text-is-fg-color-workaround"
+#{
+#	text[NORMAL]      = @fg_color
+#	text[PRELIGHT]    = @fg_color
+#	text[SELECTED]    = @selected_fg_color
+#	text[ACTIVE]      = @fg_color
+#	text[INSENSITIVE] = darker (@bg_color)
+#}
+#widget_class "*.<GtkComboBox>.<GtkCellView>"	style "text-is-fg-color-workaround"
+
+#style "menuitem-text-is-fg-color-workaround"
+#{
+#	text[NORMAL]        = @fg_color
+#	text[PRELIGHT]      = @selected_fg_color
+#	text[SELECTED]      = @selected_fg_color
+#	text[ACTIVE]        = @fg_color
+#	text[INSENSITIVE]   = darker (@bg_color)
+#}
+#widget "*.gtk-combobox-popup-menu.*"	style "menuitem-text-is-fg-color-workaround"
+
+# Work around the usage of GtkLabel inside GtkListItems to display text.
+# This breaks because the label is shown on a background that is based on the base color set.
+#style "fg-is-text-color-workaround"
+#{
+#	fg[NORMAL]      = @text_color
+#	fg[PRELIGHT]    = @text_color
+#	fg[ACTIVE]      = @selected_fg_color
+#	fg[SELECTED]    = @selected_fg_color
+#	fg[INSENSITIVE] = mix (0.4, @text_color, @bg_color)
+#}
+#widget_class "*<GtkListItem>*"		style "fg-is-text-color-workaround"
+# The same problem also exists for GtkCList and GtkCTree.
+# Only match GtkCList and not the parent widgets, because that would also change the headers.
+#widget_class "*<GtkCList>"		style "fg-is-text-color-workaround"
+#widget_class "*<EelEditableLabel>"	style "fg-is-text-color-workaround"
+
+#################################### 
+#################################### 
+#################################### 
+# Style and Color Settings FROM w7-n
+# (ONLY For referencing the styles and colors)
+# May need for editing gtkrc
+#################################### 
+
+#style "menuitem"	= "default"
+#{
+	
+#  xthickness				= 1
+#  fg[NORMAL] 		= "#404040"  
+#  fg[SELECTED] 		= "#404040"  
+#  fg[PRELIGHT] 		= "#404040"  
+#######Adding the following lines here made chrome drop down menu items dark text when highlighted####
+
+#   	text[NORMAL]   = "#404040"  
+#	text[PRELIGHT] = "#404040"  
+#	text[SELECTED] = "#404040"  
+
+
+
+#style "menubar"		
+
+#{
+#  xthickness			= 2
+#  ythickness			= 0
+
+#  	text[NORMAL]   = "#404040"  
+#	text[PRELIGHT] = "#404040"  
+#	text[SELECTED] = "#404040"  
+#######Adding the following lines here made tab text in firefox dark when highlighted#####
+
+#  fg[NORMAL] 			= "#404040"  
+#  fg[SELECTED] 		= "#404040"  
+#  fg[PRELIGHT] 		= "#404040"  
+
+
+
+
+

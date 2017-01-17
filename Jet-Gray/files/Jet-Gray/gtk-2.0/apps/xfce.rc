@@ -1,0 +1,77 @@
+# XFCE Styles
+
+style "workspace-switcher" = "murrine-panel" {
+	bg[SELECTED] = @selected_bg_color
+}
+
+style "xfce-header" {
+	bg[NORMAL] = shade (0.9, @bg_color)
+	base[NORMAL] = shade (1.18, @bg_color)
+}
+
+style "xfdesktop-windowlist" {
+	bg[NORMAL] = @base_color
+	fg[INSENSITIVE] = shade (0.95, @base_color)
+	text[INSENSITIVE] = shade (0.95, @base_color)
+}
+
+style "xfdesktop-icon-view" {
+	XfdesktopIconView::label-alpha = 0
+	XfdesktopIconView::selected-label-alpha = 60
+	XfdesktopIconVIew::ellipsize-icon-labels = 1
+
+	base[NORMAL] = @selected_bg_color
+	base[SELECTED] = @selected_bg_color
+	base[ACTIVE] = @selected_bg_color
+
+	fg[NORMAL] = @selected_fg_color
+	fg[SELECTED] = @selected_fg_color
+	fg[ACTIVE] = @selected_fg_color
+
+	engine "murrine" {
+		textstyle = 5
+		text_shade = 0.05
+	}
+}
+
+style "xfwm-tabwin" {
+	Xfwm4TabwinWidget::border-width = 0
+	Xfwm4TabwinWidget::icon-size = 64
+
+	bg[NORMAL] = @menu_bg_color
+	fg[NORMAL] = @menu_fg_color
+
+	engine "murrine" {
+		focusstyle = 0
+	}
+}
+
+style "xfsm-logout" {
+	bg[NORMAL] = @menu_bg_color
+	bg[ACTIVE] = @menu_bg_color
+	bg[PRELIGHT] = shade (1.1, @menu_bg_color)
+	bg[SELECTED] = shade (0.5, @menu_bg_color)
+	bg[INSENSITIVE] = shade (1.3, @menu_bg_color)
+
+	fg[NORMAL] = @menu_fg_color
+	fg[PRELIGHT] = @menu_fg_color
+
+	text[NORMAL] = @menu_fg_color
+
+	engine "murrine" {
+	}
+}
+
+style "xfsm-logout-button" {
+	bg[NORMAL] = shade (1.2, @menu_bg_color)
+	bg[PRELIGHT] = shade (1.4, @menu_bg_color)
+
+	engine "murrine" {
+	}
+}
+
+widget "*WnckPager*" style "workspace-switcher"
+
+widget "*Xfce*Panel*" style "panel"
+class "*Xfce*Panel*" style "panel"
+

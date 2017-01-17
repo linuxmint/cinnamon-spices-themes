@@ -1,0 +1,51 @@
+/* ===================================================================
+   ! Window list
+   ===================================================================*/
+
+.window-list-box {
+    spacing: 3px;
+    padding-left: 0;
+}
+
+.window-list-item-label {
+    width: 15em;
+    min-width: 5px;
+}
+
+.window-list-item-box {
+    color: $text-secondary;
+    font-weight: bold;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+/* Different images used in top & bottom panels. */
+@each $v in panel-top, panel-bottom {
+    .#{$v} {
+        .window-list-item-box:hover  {
+            border-image: url("panel-assets/#{$v}-item-hover.svg") 4;
+            color: $text-primary;
+        }
+
+        .window-list-item-box:active,
+        .window-list-item-box:checked,
+        .window-list-item-box:focus  {
+            border-image: url("panel-assets/#{$v}-item-active.svg") 4;
+            color: $text-active;
+        }
+
+        .window-list-item-box:checked:hover,
+        .window-list-item-box:focus:hover,
+        .window-list-item-box:active:hover  {
+            border-image: url("panel-assets/#{$v}-item-active-hover.svg") 4;
+        }
+
+        .window-list-item-demands-attention {
+            border-image: url("panel-assets/#{$v}-item-attention.svg") 4;
+        }
+
+        .window-list-item-demands-attention:hover {
+            border-image: url("panel-assets/#{$v}-item-attention-hover.svg") 4;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+// Use percentages for alpha values
+
+// Example-1: 'alpha(#000, .65) --> rgba(0, 0, 0, .65)'
+// Example-2: 'alpha(rgba(0, 0, 0, .7), .65) --> rgba(0, 0, 0, .455)'
+
+// Use '.65' instead of '65%' for percentages
+@function alpha($color, $percentage) {
+    $current-alpha: opacity($color);
+    $new-alpha: $current-alpha * $percentage;
+
+    @return rgba($color, $new-alpha);
+}

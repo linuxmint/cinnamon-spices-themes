@@ -1,0 +1,71 @@
+# ===========================================================================================================================
+# GNOME,XFCE,LXDE & GTK Desktop(S) PANEL SPECIFIC SETTINGS *SPECIFIC SETTINGS TO ENABLE PROPER FUNCTION ON XFCE/LXDE*
+# ===========================================================================================================================
+
+style "panel" = "dark"
+{
+	xthickness = 0
+	ythickness = 0
+
+	bg[NORMAL]	= "#454545"
+
+	text[NORMAL]		= shade (1.5, @text_color)
+	bg[PRELIGHT]		= shade (1.5, @bg_color_dark)
+
+	engine "murrine" {
+		colorize_scrollbar = TRUE
+	}
+}
+
+style "panel_task_button" = "dark"
+{
+	xthickness = 3
+	ythickness = 3
+
+	GtkWidget::focus-line-width        = 0
+	GtkWidget::focus_padding           = 0
+	GtkWidget::interior_focus          = 0
+	GtkWidget::internal_padding        = 0
+
+	GtkButton::child_displacement_x    = 0
+	GtkButton::child_displacement_y    = 0
+	GtkButton::default_border          = {0, 0, 0, 0}
+	GtkButton::default_outside_border  = {0, 0, 0, 0}
+	GtkButtonBox::child_internal_pad_x = 0
+	GtkButtonBox::child_internal_pad_y = 0
+	GtkButtonBox::child_min_heigth     = 0
+
+	bg[PRELIGHT]	= shade (1.5, @bg_color_dark)
+        bg[NORMAL]	= shade (1.0, @bg_color_dark)
+
+	engine "murrine"
+	{
+		roundness   = 0
+		rgba = TRUE
+	}
+}
+
+style "XFCE"
+{
+	xthickness = 3
+	ythickness = 3
+
+	bg[NORMAL]	= "#454545"
+}
+
+widget "*Panel*"                  style "panel"
+widget "*PanelWidget*"            style "panel"
+widget "*PanelApplet*"            style "panel"
+widget "*fast-user-switch*"       style "panel" # workaround for Fast User Switch applet
+widget "*CPUFreqApplet*"          style "panel" # workaround for CpuFreq Applet
+class "PanelApp*"                 style "panel"
+class "PanelToplevel*"            style "panel"
+#widget_class "*Mail*"            style "panel"
+widget_class "*notif*"            style "panel"
+
+#widget_class "*?anel*utton"      style "panel_task_button" # causing problems to monodevelop
+widget "*task*"                   style "panel_task_button"
+widget "*.tasklist-button"        style "panel_task_button"
+widget "*PanelApplet*TaskTitle*"  style "panel_task_button"
+widget_class "*Xfce*Panel*"	  style "XFCE"
+class "GtkScrollbar"		  style "scrollbar"

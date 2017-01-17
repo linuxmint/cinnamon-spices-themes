@@ -1,0 +1,60 @@
+CatfishWindow .pane-separator {
+    background-color: mix(shade(@base_color, 0.9), shade(@selected_bg_color, 1.35), 0.1);
+}
+
+XfceHeading,
+.XfceHeading {
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    background-image: none;
+    background-color: shade(@bg_color, 0.35);
+    color: @text_color;
+    text-shadow: none;
+}
+
+.xfce4-panel {
+    background-color: #454545;
+    color: @fg_color;
+    font: normal;
+}
+
+.xfce4-panel .button {
+    border-image: none;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 1.5)),
+                                     to (shade (@dark_bg_color, 1.5)));
+    border-color: alpha (shade (@dark_bg_color, 1.0), 0.6);
+    border-radius: 0;
+    border-width: 0 1px 0 1px;
+    color: @dark_fg_color;
+    text-shadow: none;
+}
+
+.xfce4-panel .button:active {
+    border-image: none;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 1.5)),
+                                     to (shade (@dark_bg_color, 1.5)));
+    border-color: alpha (shade (@dark_bg_color, 1.0), 0.6);
+    border-radius: 0;
+    border-width: 0 1px 0 1px;
+
+    color: @dark_fg_color;
+    text-shadow: none;
+}
+
+.xfce4-panel .button:hover,
+.xfce4-panel .button:active:hover {
+   border-image: none;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 1.4)),
+                                     to (shade (@dark_bg_color, 1.4))); 
+    border-color: shade (@dark_bg_color, 0.9);
+}
+
+.xfce4-panel .menu {
+    -gtk-image-effect: none;
+
+    text-shadow: none;
+}

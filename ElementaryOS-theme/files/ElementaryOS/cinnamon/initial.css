@@ -1,0 +1,79 @@
+
+/*Set the default font*/
+stage {
+    font-family: ubuntu, cantarell, sans-serif;    
+
+}
+
+.cinnamon-link {
+    color: #000;
+    text-decoration: underline;
+}
+
+.cinnamon-link:hover {
+    color: #565656;
+}
+
+.label-shadow {
+    color: rgba(0,0,0,0);
+}
+
+StScrollBar {
+  padding: 2px 2px 2px 15px;
+}
+
+StScrollView.vfade {
+  -st-vfade-offset: 60px;
+}
+
+StScrollView StScrollBar {
+  min-width: 8px;
+  min-height: 20px;
+}
+
+
+StScrollBar StBin#trough {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255,255,255,0.2);
+    background-gradient-end: rgba(255,255,255,0.0);
+    box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.1) ;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+StScrollBar StButton#vhandle {
+    background-gradient-direction: horizontal;
+    background-gradient-start: rgba(255,255,255,0.4);
+    background-gradient-end: rgba(255,255,255,0.3);
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 8px;
+}
+
+StScrollBar StButton#hhandle {
+    background-gradient-direction: horizontal;
+    background-gradient-start: rgba(255,255,255,0.5);
+    background-gradient-end: rgba(255,255,255,0.6);
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 8px;
+}
+
+StScrollBar StButton#hhandle:hover,
+StScrollBar StButton#vhandle:hover {
+    background-gradient-direction: horizontal;
+    background-gradient-start: rgba(255,255,255,0.8);
+    background-gradient-end: rgba(255,255,255,0.9);
+}
+
+StTooltip StLabel { /*Controls the tooltips. Oh really, Einstein!*/
+    border-radius: 4px;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255,255,255,0.9);
+    background-gradient-end: rgba(255,255,255,0.8);
+    border: 1px solid rgba(0,0,0,0.3);      
+    box-shadow:  inset 0px -1px 0px 0px rgba(255,255,255,0.9);
+    color: rgba(0,0,0,0.8);
+    padding: 4px;
+    font-size: 8.5pt;
+    font-weight: bold;
+    text-align: center;
+}

@@ -1,0 +1,32 @@
+# ==============================================================================
+# CHROMIUM SPECIFIC SETTINGS
+# ==============================================================================
+
+style "chrome-gtk-frame" = "dark" {
+	ChromeGtkFrame::frame-color = shade (1.1, @bg_color_dark)
+	ChromeGtkFrame::inactive-frame-color = @bg_color_dark
+	
+	ChromeGtkFrame::frame-gradient-size = 120
+	ChromeGtkFrame::frame-gradient-color = @bg_color_dark
+	
+	ChromeGtkFrame::incognito-frame-color = shade (1.1, @bg_color_dark)
+	ChromeGtkFrame::incognito-inactive-frame-color = @bg_color_dark
+	
+	ChromeGtkFrame::incognito-frame-gradient-size = 120
+	ChromeGtkFrame::incognito-frame-gradient-color = @bg_color_dark
+	
+	ChromeGtkFrame::scrollbar-trough-color = shade (0.912, @bg_color)
+	ChromeGtkFrame::scrollbar-slider-prelight-color = shade (1.04, @bg_color)
+	ChromeGtkFrame::scrollbar-slider-normal-color = @bg_color
+	
+	engine "murrine" {
+		textstyle = 0
+		border_shades = { 1.2, 1.2 }
+	}
+}
+
+class "ChromeGtkFrame"									style "chrome-gtk-frame"
+widget_class "*Chrom*Button*" 							style "button"
+widget_class "*<GtkCustomMenu>*<GtkCustomMenuItem>*"	style "menu_item"
+widget_class "<GtkEntry>"								style "entry"
+widget_class "*Chrom*Separator*" 						style "separator_menu_item"

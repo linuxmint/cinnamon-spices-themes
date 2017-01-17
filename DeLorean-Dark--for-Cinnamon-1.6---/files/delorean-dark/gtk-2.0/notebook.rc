@@ -1,0 +1,177 @@
+style "notebook1"  =  "theme-default"
+{
+	xthickness = 4 # Width of tabs and notebook borders.
+	ythickness = 4 # Height of tabs and notebook borders.
+
+
+	engine "pixmap"
+{
+
+		image
+      	{
+        	function        = FOCUS
+		recolorable     = TRUE
+      	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= NORMAL
+		gap_side	= BOTTOM
+		file		= "images/tabs/tab-top-active.png"
+		stretch		= TRUE
+		border		= { 6 ,6 ,6 ,6}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= ACTIVE
+		gap_side	= BOTTOM
+		file		= "images/tabs/tab-top.png"
+		stretch		= TRUE
+		border		= { 6 ,6 ,6 ,6}
+	}
+
+
+	image
+	{
+		function	= EXTENSION
+		state		= NORMAL
+		gap_side	= TOP
+		file		= "images/tabs/tab-bottom-active.png"
+		stretch		= TRUE
+		border		= { 6 ,6 ,6 ,6}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= ACTIVE
+		gap_side	= TOP
+		file		= "images/tabs/tab-bottom.png"
+		stretch		= TRUE
+		border		= { 6 ,6 ,6 ,6}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= NORMAL
+		gap_side	= LEFT
+		file		= "images/tabs/tab-right-active.png"
+		stretch		= TRUE
+		border		= { 6 ,6 ,6 ,6}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= ACTIVE
+		gap_side	= LEFT
+		file		= "images/tabs/tab-right.png"
+		stretch		= TRUE
+		border		= { 6 ,6 ,6 ,6}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= NORMAL
+		gap_side	= RIGHT
+		file		= "images/tabs/tab-left-active.png"
+		stretch		= TRUE
+		border		= { 6 ,6 ,6 ,6}
+	}
+
+	image
+	{
+		function	= EXTENSION
+		state		= ACTIVE
+		gap_side	= RIGHT
+		file		= "images/tabs/tab-left.png"
+		stretch		= TRUE
+		border		= { 6 ,6 ,6 ,6}
+	}
+
+	image
+	{
+		function	= BOX_GAP
+		gap_side	= TOP
+		file		= "images/tabs/notebook_top_flat.png"
+		stretch		= TRUE
+		border		= { 5 ,5 ,5 ,5}
+		gap_file	= "images/tabs/tab-top-active-gap.png"
+		gap_border	= { 3 ,3 ,3 ,3}
+		gap_start_file	= "images/tabs/tab-bottom-active-gap-start.png"
+		gap_start_border= { 3 ,3 ,3 ,3}
+		gap_end_file	= "images/tabs/tab-top-active-gap-end.png"
+		gap_end_border	= { 1 ,1 ,1,1}
+		
+	}
+
+	image
+	{
+		function	= BOX_GAP
+		gap_side	= BOTTOM
+		file		= "images/tabs/notebook_bottom_flat.png"
+		stretch		= TRUE
+		border		= { 5 ,5 ,5 ,5}
+		gap_file	= "images/tabs/tab-bottom-active-gap.png"
+		gap_border	= { 3 ,3 ,3 ,3}
+		gap_start_file	= "images/tabs/tab-bottom-active-gap-start.png"
+		gap_start_border= { 3 ,3 ,3 ,3}
+		gap_end_file	= "images/tabs/tab-bottom-active-gap-end.png"
+		gap_end_border	= { 2 ,2 ,1 ,1}
+		
+	}
+
+	image
+	{
+		function	= BOX_GAP
+		gap_side	= LEFT
+		file		= "images/tabs/notebook_top_flat.png"
+		stretch		= TRUE
+		border		= { 5, 5, 5, 5}
+		gap_file	= "images/tabs/tab-left-active-gap.png"
+		gap_border	= { 3 ,3 ,3 ,3}
+		gap_start_file	= "images/tabs/tab-left-active-gap-start.png"
+		gap_start_border= { 3 ,3 ,3 ,3}
+		gap_end_file	= "images/tabs/tab-left-active-gap-end.png"
+		gap_end_border	= { 1 ,1 ,2 ,2}
+		
+	}
+
+	image
+	{
+		function	= BOX_GAP
+		gap_side	= RIGHT
+		file		= "images/tabs/notebook_right_flat.png"
+		stretch		= TRUE
+		border		= { 5, 5, 5, 5}
+		gap_file	= "images/tabs/tab-right-active-gap.png"
+		gap_border	= { 3 ,3 ,3 ,3}
+		gap_start_file	= "images/tabs/tab-right-active-gap-start.png"
+		gap_start_border= { 3 ,3 ,3 ,3}
+		gap_end_file	= "images/tabs/tab-right-active-gap-end.png"
+		gap_end_border	= { 1 ,1 ,2 ,2}
+		
+	}
+
+	
+
+}
+}
+
+style "notebook-close" { stock["gtk-close"] = {{ "images/tabs/close.png", *, *, * }} } # Close icon on tabs
+
+widget_class "*<GtkNotebook>*<GtkEventBox>"		style "notebook1"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "notebook1"
+widget_class "*<GtkNotebook>*<GtkLayout>"		style "notebook1"
+#widget_class "*<GtkNotebook>*<GtkViewport>"		style "notebook1"
+#widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook1"
+#widget_class "*<GtkNotebook>*<GtkLabel>"		style "notebook1"
+#widget "main_window*torrent_info.*viewport?"	style "notebook1"
+widget_class "*<GtkNotebook>"	style "notebook1"
+widget_class "*<GtkNotebook>*"	style "notebook-close"
+

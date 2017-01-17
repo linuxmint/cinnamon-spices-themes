@@ -1,0 +1,30 @@
+# Panel specific settings for correct theming on MATE
+
+style "panel" = "dark"
+{
+	xthickness = 0
+	ythickness = 0
+
+	engine "murrine" {
+		colorize_scrollbar = TRUE
+	}
+}
+
+style "panel_default" = "dark"
+{
+	engine "murrine" {
+		colorize_scrollbar = TRUE
+	}
+}
+
+widget "*Panel*"                  style "panel"
+widget "*PanelWidget*"            style "panel"
+widget "*PanelApplet*"            style "panel"		# workaround for right click menu corrupted bg
+widget "*fast-user-switch*"       style "panel" 	# workaround for Fast User Switch applet
+widget "*CPUFreqApplet*"          style "panel" 	# workaround for CpuFreq Applet
+class "PanelApp*"                 style "panel"
+class "PanelToplevel*"            style "panel"
+widget_class "*notif*"            style "panel"
+widget_class "*PanelApplet*"      style "panel_default"	# workaround for right click menu corrupted bg
+widget_class "*Tray*"             style "panel"		# workaround for StarDict, gnubiff... tray icon bg
+class "GtkScrollbar"              style "scrollbar"

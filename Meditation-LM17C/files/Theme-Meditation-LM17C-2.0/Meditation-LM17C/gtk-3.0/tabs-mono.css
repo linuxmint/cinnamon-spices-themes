@@ -1,0 +1,63 @@
+/*****************
+ * tabs mono     *
+ *****************/
+.notebook tab {
+	background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (@button_gradient1),
+                                     color-stop (0.40, @button_gradient2),
+                                     color-stop (0.60, @button_gradient3),
+                                     to   (@button_gradient4)); 
+
+    border-width: 1px; 
+    border-style: solid; 
+	border-radius: 0px;
+	border-top-color: 		shade(@notebook_border, 1.00);
+	border-left-color: 		shade(@notebook_border, 0.97);
+	border-right-color: 	shade(@notebook_border, 0.97);
+	border-bottom-color: 	shade(@notebook_border, 0.95);
+
+	border-image: none;
+    box-shadow: inset  1px  1px alpha(#fff, 0.08),
+                inset -1px -1px alpha(#fff, 0.08);
+	color: shade(@theme_text_color, 0.95); 
+	text-shadow: 0 1px @theme_shadow_color;
+}
+
+.notebook tab:active {
+
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (@theme_tab_active1),
+                                     to   (@theme_tab_active2));
+
+	border-top-color: 		shade(@notebook_border, 0.90);
+	border-left-color: 		shade(@notebook_border, 0.85);
+	border-right-color: 	shade(@notebook_border, 0.85);
+	border-bottom-color: 	shade(@notebook_border, 0.95);
+	border-image: none;
+
+    box-shadow: inset  0px  4px alpha(#000, 0.00),
+				inset  0px  3px alpha(#000, 0.00),
+				inset  0px  2px alpha(#000, 0.00),
+				inset  0px  1px alpha(#000, 0.00),
+
+                inset  4px  0px alpha(#000, 0.01),
+                inset  3px  0px alpha(#000, 0.02),
+                inset  2px  0px alpha(#000, 0.04),
+                inset  1px  0px alpha(#000, 0.06),
+
+                inset -4px  0px alpha(#000, 0.01),
+                inset -3px  0px alpha(#000, 0.02),
+                inset -2px  0px alpha(#000, 0.04),
+                inset -1px  0px alpha(#000, 0.06);
+}
+
+
+.notebook tab GtkLabel {
+    padding: 0px 2px;
+	color: @theme_fg_color;
+	text-shadow: 1px 1px @theme_shadow_color;
+}
+
+

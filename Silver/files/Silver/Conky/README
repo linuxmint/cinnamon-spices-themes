@@ -1,0 +1,304 @@
+############################### READ ME ################################
+########################################################################
+
+### General Information:
+
+	You can use any font you wish, however you will need the Xirod font 
+	to make the conky display as intended.
+	If you do not have this font, it is available at:
+	
+	http://www.dafont.com/xirod.font
+	
+	To install additional fonts, such as webdings, ( you will have to,
+	or you will get square boxes where it is used), open a terminal and 
+	type or paste:
+	
+	sudo apt-get install ttf-mscorefonts-installer  
+	
+	If you don't have a .fonts folder, simply make one and place it in 
+	your home folder. Make certain to make it a .font not a font folder
+	as it needs the dot to be recognized by the system and make it 
+	hidden.                   
+	                                                                  ##
+
+########################################################################
+
+###	The remaining section of this README has detailed instructions on 
+	how to get the weather, computer temperature, and graph scaling set 
+	correctly.
+																	 ###
+							##############
+							
+### CONKY FEATURES AND INSTALLATION ###
+
+### PROCESSES ### 
+	
+	Time -
+            Local time
+            Date -Month -Year
+    
+    Weather - 
+            Conditions 
+            Temperature
+            Wind
+            Humidity
+            Barometer
+            Sunrise and sunset
+    
+    Forecast-        
+            Three Day Forecast
+    
+    Battery -
+            Percent charging / discharging
+            Time left on battery
+            
+    Core temp -
+            Temperature in fahrenheit of the processor
+    
+    HDD Temp -
+	    Temperature in fahrenheit of the Hard Disk Drive 
+    
+    CPU -
+            CPU usage in percent and Bargraphs
+            CPU Guage
+            Total usage in percent
+            CPU Frequency
+            
+    CPU clients -
+            Top five CPU clients and % usage of CPU and % usage of 
+            memory        
+            
+            RAM percentage
+            MiB  used vs. total RAM
+            Total processes and amount running
+            Total threads and amount running
+            Swap % and total available swap + swapbar
+            Total uptime for your machine 
+            Disk usage in GiB
+            Free GiB vs. total available GiB
+            % used of available drive +
+            Additional drives as needed
+    
+    Network -
+            Upload speed in kb/s and MiB/s
+            Upload Bargraph - 2:30 in length
+            Download speed in kb/s and MiB/s
+            Download bargraph - 2:30 in length
+            Ports: In - Out- All
+            Local Ip
+            Public Ip
+	        Signal strength percentage
+	
+	Newsfeed -
+	    Scrolling RSS Newsfeed news from selectable RSS feed-
+			                                                          ##
+
+########################################################################
+
+### CONKY INSTALLATION ###
+
+    Step 1
+### Download Conky-all from either the repository:
+ 
+	(sudo apt-get install conky-all)
+
+	or Source Forge if you haven't already and install it. 
+	After installation, the stock conky will start. Open a terminal and 
+	type or past:
+	 
+							killall conky 
+							
+    This will terminate the process and allow you to proceed to step 2         
+                                                                      ##
+
+    Step 2
+### Un-tar (extract) the Frankula Conky tar.gz; then either drag or copy
+	the .conkyrc to your home folder. In the terminal type or paste: 
+							
+							conky &
+							
+	This will start-up the new conky.
+	Do not use uppercase letters for the commands, only for the "&"
+	symbol, as they will not be	recognized by the system.
+	To stop and restart conky in a single command, type or paste in a 
+	terminal:
+	
+						killall -SIGUSR1 conky
+						             
+	For conky to begin at start up in Linux Mint, open the system 
+	manager and then open start up programs. Click "add" then in the 
+	start up command type or paste: 
+	
+	                             conky                       
+	
+	It helps to give it a few seconds delay in the start up time 
+	section too.                                                      ##
+
+    Step 3
+### To set the weather to your locale, simply Google, Yahoo Weather, 
+    (now there's irony), and select "Detect My Location" from the left 
+    hand menu, and allow it to. Then you only need to copy and paste 
+    the digits at the end of the URL in the search bar into line below 
+    in the .conkyrc replacing the 2408784                             
+    
+    ${voffset -8}${execi 300 curl -s "http://weather.yahooapis.com/fore
+    castrss?w=2408784&u=f" -o ~/.cache/weather.xml} 
+              ^^^^^^^
+              ^ HERE ^                                                ##              
+    
+	Step 4
+###	First, in a terminal for the HDD temperature:
+		
+		$ sudo apt-get install hddtemp
+		
+	Then, after installation to configure HDD temp you must do the 
+	following which will allow conky to access it without having to 
+	access it with a root password, type or paste:
+	
+					sudo dpkg-reconfigure hddtemp
+					
+	1. Answer No to the first question and YES to all subsequent 
+	   questions making sure not to allow external access
+	to your ports, only internal.
+	(NOTE) If you use rkhunter or chkrootkit, these programs will give a 
+	false-positive as it will show up as an unknown root permission.
+	                                                                  ##
+	
+	Step 5
+###	To enable core temp, open a terminal and type or paste:
+
+				$ sudo apt-get install lm-sensors
+				                                                      ##    
+ 
+	Step 6
+### Install CURL, this enables the weather report, and some other things
+	that you may install such as RSS feeds.
+			
+				$ sudo apt-get install curl
+													                  ##
+
+### CONKY ADJUSTMENTS ###
+ 
+### To add or remove a transparent backgound to the conky, open the 
+    .conkyrc with a text editor and change "own_window_transparent yes "
+    to "no"                                                          ##
+
+### To make the background vary from transparent to opaque,change
+    "own_window_argb_value 155"
+    to any number between 1 (near complete transparency) and 255 
+    (completely opaque). Changing the xftalpha number from 0.1 - 1 will
+    alter how well the text in conky is seen, and make it more or less
+    transparent, too, it can be adjusted in tenths, i.e.: 0.1, 0.2, 0.3
+    , etc., up to a value of 1.0, the most transparent.               ##
+    
+### Below is a list of some RSS newsfeeds for convenience, or you can 
+	use any other you may wish. Just paste your choice into the 
+	following line in the .conkyrc file:
+	
+	${color3}${font DejaVu Sans Condensed:size=8}${scroll 44${rss 
+	http://feeds.abcnews.com/abcnews/topstories 15 item_titles 12}|}
+	
+	Make certain not to remove the "${rss" that is just before the 
+	"HTTP" or the "15 item_titles 12}|}" that is at the end. The former 
+	commands the feed, and the latter adjusts the update time 
+	(15 minutes)and amount of headlines (12 headlines). These can be
+	adjusted according to preference, but be warned you will tax your
+	system if you update more often than the default 15 minutes. 
+
+# CNN News:
+# Top Stories    	http://rss.cnn.com/rss/cnn_topstories.rss
+# U.S. Headlines   	http://rss.cnn.com/rss/cnn_us.rss
+# World Headlines 	http://rss.cnn.com/rss/cnn_world.rss
+
+# ABC News:
+# Top Stories    	http://feeds.abcnews.com/abcnews/topstories
+# U.S. Headlines 	http://feeds.abcnews.com/abcnews/usheadlines
+# World Headlines 	http://feeds.abcnews.com/abcnews/internationalheadlines
+
+# Reuters News:
+# Top Stories		http://feeds.reuters.com/reuters/topNews
+# U.S. Headlines	http://feeds.reuters.com/Reuters/domesticNews
+# World Headlines	http://feeds.reuters.com/Reuters/worldNews
+
+# New York Times:
+# Top Stories		http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+# U.S. Headlines	http://rss.nytimes.com/services/xml/rss/nyt/US.xml
+# World Headlines	http://rss.nytimes.com/services/xml/rss/nyt/World.xml
+
+# Fox News:
+# Top Stories		http://feeds.foxnews.com/foxnews/latest
+# U.S. Headlines	http://feeds.foxnews.com/foxnews/national
+# World Headlines	http://feeds.foxnews.com/foxnews/world
+
+# BBC News:
+# Top Stories		http://feeds.bbci.co.uk/news/rss.xml
+# World Headlines	http://feeds.bbci.co.uk/news/world/rss.xml
+
+
+###	To set the Network graph perameters simply take your ISP's download
+	speed in Megabites and multiply by 1024 (to get KiB per second)and 
+	insert the numbers in the following line in the .conkyrc:
+	(You can do the same proceedure for upload speed.)
+	
+	   ${voffset -2}${color}${font webdings:size=14}6${font}${downspeed 
+	   wlan0}/s${alignr}${downspeedgraph wlan0 26,150 ffffff 000000 
+	   17578KiB -l -t}                                               
+	   ^ HERE ^                                                	      ##
+
+### You can tag along extra text in the Scroll line, (the last line in 
+	the .conkyrc), such as quotes, jokes, or anything you like, or 
+	change it completely if you want.                   			  
+	If you add anything past the scroll line you must place a "|" symbol
+	at the end, or whatever you place after it will scroll also.      ##
+	
+###	Changing colors is easy with a couple of easily downloaded programs.
+	Gcolor2 and Geany are the perfect tools to easily swap out the 
+	colors. Geany will find any bit of text you are searching for, so if
+	there are a lot of things you want to change, it will make seaching 
+	and making repetitious cutting and pasting of hexidecimal code easy. 
+	Gcolor2 will provide you with the 6 digit / hex code for any of the 
+	16 million colors you might desire. Both programs are avialable in
+	the repository. 
+	
+	Though this conky is white and gray, it has also been set up with 
+	some pre-set color sets in the configuration section of the .conkyrc
+	file to make it easier to change the colors, you only need to change
+	hexidecimals that are in the .conkyrc here:
+	
+	# Default colors and also border colors
+	default_color 707070
+	color1 e6e6e6
+	color2 cccccc
+	color3 ff0000
+	color4 b3b3b3
+	color5 ffffff
+	color6 8c8c8c
+	
+	Example: change ffffff to FF0000 and it will change from White to 
+	Red
+	
+	And all colors tagged in the TEXT section will change 
+	correspondingly, though some colors in the CPU client
+	section will need to be changed individually.					  ##
+	
+###	To change the temperature from Fahrenheit to Celsius, remove the
+	temperature_unit fahrenheit text from the Conky and it will default
+	back to Celsius.                                                  ##
+	
+													  ##
+
+### Conky is easy to alter. 
+	Some good sources for conky knowledge are:
+	
+	http://conky.sourceforge.net/variables.html
+	
+	http://conky.sourceforge.net/docs.html
+	 
+	http://conky.sourceforge.net/config_settings.html
+	
+	If you have any problems with installation or performance, feel free
+	to contact me through my profile at Gnome-look.org and I will 
+	address your concerns as soon as possible. 
+	
+	
+	                                                                  ##

@@ -1,0 +1,56 @@
+Si vous souhaitez créer une version personnalisée de ce thème en changeant la couleur de sélection et des boutons des fenêtres, voici la méthode :
+
+**** GTK+ ****
+Couleurs des sélections pour "gtk-2.0" et "gtk-3.0" :
+orange:#F07746
+bleu: #5A91D2
+gris: #A0A0BA
+vert: #70AE6C
+
+Dans le dossier "gtk-2.0", le fichier "gtkrc" :
+ligne 7: changer les couleurs de "selected_bg_color:" et "link_color:"
+
+Dans le dossier "gtk-3.0", le fichier "settings.ini" :
+ligne 2: changer les couleurs de "selected_bg_color:" et "link_color:"
+
+Même dossier, le fichier "gtk.css" :
+ligne 6: changer la couleur de "selected_bg_color"
+ligne 30: changer la couleur de "link_color"
+
+**** OPENBOX ****
+Dans le dossier "Openbox-3", le fichier "themerc" :
+Couleur claire:	orange:#F07746	bleu: #5A91D2 	gris: #A0A0BA	vert: #70AE6C
+Couleur foncée:	orange:#A0411E	bleu: #233CB4	gris: #4A4A57	vert: #3E613C
+
+ligne 76: menu.items.active.bg.color: <couleur claire>
+ligne 77: menu.items.active.bg.colorTo: <couleur foncée>
+ligne 102: window.active.button.*.bg.colorTo: <couleur claire>
+ligne 103: window.active.button.*.pressed.bg.color: <couleur claire>
+ligne 109: window.active.button.*.hover.bg.color: <couleur claire>
+
+La nouvelle gamme de boutons est réalisée avec inkscape ensuite les fichiers sont convertis au bon format (-> 00-Customizations)
+
+**** GNOME-SHELL & Cinnamon (Linux Mint gtk-3) ****
+Couleurs de sélection:
+02-Crunchy-orange:	#F07746, 20%:rgba(240, 119, 70, 0.2)	darker-orange:	#A0411E, 40%:rgba(160, 65, 30, 0.4)
+03-Crunchy-blue:	#5A91D2, 20%:rgba(90, 145, 210, 0.2)	darker-blue:	#233CB4, 40%:rgba(35, 60, 180, 0.4)
+04-Crunchy-grey:	#A0A0BA, 20%:rgba(160, 160, 186, 0.2)	darker-grey:	#4A4A57, 40%:rgba(74, 74, 87, 0.4)
+05-Crunchy-green:	#70AE6C, 20%:rgba(112, 174, 108, 0.2)	darker-green:	#3E613C, 40%:rgba(62, 97, 60, 0.4)
+
+Autres couleurs:
+panel:	#66655F		darker:#262523
+darkbackground:#4D4B46	darker-bg:#292825
+greys:	7%:#eee		13%:#ddd	30%:#B3B3B3		40%:#999
+
+named colors:white,grey,black,red,green,blue,transparent
+
+Couleurs avec transparence:
+white: 70%_opacité:rgba(255,255,255,0.7)
+greys:	5%+80%:rgba(242,242,242,0.8), 40%+40%:rgba(153,153,153,0.4), 40%+80%:rgba(153,153,153,0.8), 50%+45%:rgba(128,128,128,0.45)
+
+darkbackground:	20%:rgba(77,75,70,0.2), 70%:rgba(77,75,70,0.7), 80%:rgba(77,75,70,0.8), 90%:rgba(77,75,70,0.9)
+
+**** Buttons ****
+La nouvelle gamme de boutons est réalisée avec inkscape ensuite les fichiers sont convertis au bon format avec le script 00.. et copiés vers les dossiers des thèmes avec le script 01.. (-> 00-Customizations)
+
+Attention, pour fonctionner, la commande "convert" dans le script a besoin du paquet "imagemagick" (sous Ubuntu 13.04, il était nécessaire de l'installer).

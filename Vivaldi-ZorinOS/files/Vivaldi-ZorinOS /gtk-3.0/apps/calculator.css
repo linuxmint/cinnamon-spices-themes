@@ -1,0 +1,92 @@
+/* Copyright 2015 Zorin Group.
+*
+* This file is part of the Zorin OS GTK theme.
+*
+* The Zorin OS GTK theme is free software: you can redistribute it
+* and/or modify it under the terms of the GNU General Public License as
+* published by the Free Software Foundation, either version 3 of the
+* License, or (at your option) any later version.
+*
+* The Zorin OS GTK theme is distributed in the hope that it will be
+* useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+* Public License for more details.
+*
+* You should have received a copy of the GNU General Public License along
+* with the Zorin OS GTK theme. If not, see http://www.gnu.org/licenses/.
+*/
+
+/***********
+ * Buttons *
+ ***********/
+MathButtons .button,
+MathButtons .button GtkImage,
+MathButtons .button.text-button,
+MathButtons .button.image-button {
+	background: none;
+	border: 1px solid transparent;
+	color: @text_color;
+	border-radius: 25px;
+	padding: 8px;
+}
+
+MathButtons .button.text-button:focus,
+MathButtons .button.image-button:focus,
+MathButtons .button:focus {
+	background: transparent;
+	color: @text_color;
+	border: 1px solid transparent;
+}
+
+MathButtons .button.text-button:active,
+MathButtons .button.image-button:active,
+MathButtons .button:active,
+MathButtons .button.text-button:active:hover,
+MathButtons .button.image-button:active:hover,
+MathButtons .button:active:hover {
+	background-color: @selected_bg_color;
+	color: @base_color;
+	border: 1px solid @selected_bg_color;
+}
+
+MathButtons .button.text-button:hover,
+MathButtons .button.image-button:hover,
+MathButtons .button:hover {
+	background: none;
+	color: @selected_bg_color;
+	border: 1px solid @selected_bg_color;
+}
+
+/***************
+ * Combo Boxes *
+ ***************/
+
+MathButtons GtkComboBox .button GtkImage {
+	color: transparent;
+}
+
+MathButtons GtkComboBox .button,
+MathButtons GtkComboBox .button:backdrop,
+MathButtons GtkComboBox .button:insensitive,
+MathButtons GtkComboBox .button:hover,
+MathButtons GtkComboBox .button:active,
+MathButtons GtkComboBox .button:focus,
+MathButtons GtkComboBox .button:hover:focus {
+	background: none;
+	border-width: 1px;
+	padding: 3px;
+	border-image: url('../assets/combobox.svg') 0 10 10 0 / 0px 10px 10px 0px stretch;
+	transition: all 100ms ease;
+}
+MathButtons GtkComboBox .button:hover,
+MathButtons GtkComboBox .button:active,
+MathButtons GtkComboBox .button:focus {
+	 border-image: url('../assets/combobox-focus.svg') 0 10 10 0 / 0px 10px 10px 0px stretch;
+}
+MathButtons GtkComboBox .button:insensitive{
+	border-image: url('../assets/combobox-insensitive.svg') 0 10 10 0 / 0px 10px 10px 0px stretch;
+}
+
+MathDisplay GtkTextView {
+	background-color: @bg_color;
+}

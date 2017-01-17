@@ -1,0 +1,272 @@
+/* Header bars */
+.header-bar .button.text-button {
+    padding: 2px 6px;
+}
+
+.header-bar .button.image-button {
+    padding: 5px;
+}
+
+/*********************************
+ * CSD (Client Side Decorations) *
+ *********************************/
+.titlebar,
+.titlebar:backdrop,
+.titlebar.header-bar,
+.titlebar.header-bar:backdrop {
+	border-radius: 6px 6px 0px 0px;
+	padding: 7px 10px 5px 10px;
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 1.65)),
+                                     color-stop (0.4, shade (@dark_bg_color, 1.1)),
+                                     to (shade (@dark_bg_color, 0.99)));
+
+    color: @dark_fg_color;
+}
+
+.header-bar .title,
+.header-bar .title:backdrop,
+.titlebar.header-bar .title,
+.titlebar.header-bar .title:backdrop,
+.titlebar .title,
+.titlebar .title:backdrop {
+	padding: 0;
+    font: bold;
+}
+
+.header-bar .subtitle,
+.header-bar .subtitle:backdrop,
+.titlebar.header-bar .subtitle,
+.titlebar.header-bar .subtitle:backdrop {
+	padding: 0;
+    font-size: smaller;
+    opacity: 0.7;
+}
+
+.tiled .titlebar,
+.tiled .titlebar:backdrop {
+	border-radius: 0;
+}
+
+.maximized .titlebar,
+.maximized .titlebar:backdrop {
+	border-radius: 0;
+    border: none;
+}
+
+/* this is the default titlebar that is added by GTK
+ * when client-side decorations are in use and the application
+ * did not set a custom titlebar.
+ */
+.titlebar.default-decoration,
+.titlebar.default-decoration:backdrop {
+	box-shadow: none;
+}
+
+.titlebar .titlebutton,
+.titlebar .titlebutton:backdrop,
+.titlebar.header-bar .button.titlebutton,
+.titlebar.header-bar .button.titlebutton:backdrop {
+    background-image: linear-gradient(to top, shade (@dark_bg_color, 1.28), shade (@dark_bg_color, 1.48) 50%, shade (@dark_bg_color, 1.96));
+	padding: 0px;
+
+	border-radius: 9px;
+    border: none;
+	border-width: 0;
+    color: shade (@dark_fg_color, 0.7);
+}
+
+.titlebar .titlebutton:hover,
+.titlebar .titlebutton:hover:backdrop,
+.titlebar.header-bar .button.titlebutton:hover,
+.titlebar.header-bar .button.titlebutton:backdrop:hover {
+    background-image: linear-gradient(to top, shade (@dark_bg_color, 1.58), shade (@dark_bg_color, 1.98) 50%, shade (@dark_bg_color, 2.46));
+    color: @dark_bg_color;
+}
+
+.titlebar .titlebutton:active,
+.titlebar .titlebutton:active:backdrop,
+.titlebar.header-bar .button.titlebutton:active,
+.titlebar.header-bar .button.titlebutton:active:backdrop {
+    background-image: linear-gradient(to top, shade (@dark_bg_color, 2.16), shade (@dark_bg_color, 1.68) 50%, shade (@dark_bg_color, 1.48));
+}
+
+.titlebar.header-bar .button.titlebutton.close {
+    background-image: linear-gradient(to top, shade (@selected_bg_color, 0.75), shade (@selected_bg_color, 0.81) 50%, shade (@selected_bg_color, 1.01));
+	color: black;
+	padding: 1px;
+	border-color: @dark_bg_color;
+}
+
+.titlebar.header-bar .button.titlebutton.close:backdrop {
+    background-image: linear-gradient(to top, shade (@dark_bg_color, 1.28), shade (@dark_bg_color, 1.48) 50%, shade (@dark_bg_color, 1.96));
+	color: black;
+	padding: 1px;
+	border-color: @dark_bg_color;
+}
+
+.titlebar.header-bar .button.titlebutton.close:hover {
+    background-image: linear-gradient(to top, shade (@selected_bg_color, 0.95), shade (@selected_bg_color, 1.09) 50%, shade (@selected_bg_color, 1.18));
+}
+
+.titlebar.header-bar .button.titlebutton.close:hover:backdrop {
+    background-image: linear-gradient(to top, shade (@dark_bg_color, 1.58), shade (@dark_bg_color, 1.98) 50%, shade (@dark_bg_color, 2.46));
+}
+
+.titlebar.header-bar .button.titlebutton.close:active,
+.titlebar.header-bar .button.titlebutton.close:active:backdrop {
+    background-image: linear-gradient(to top, shade (@selected_bg_color, 1.08), shade (@selected_bg_color, 0.94) 50%, shade (@selected_bg_color, 0.8));
+}
+
+.titlebar .right .titlebutton:first-child,
+.titlebar .right .titlebutton:first-child:backdrop {
+}
+
+.titlebar .right .titlebutton:last-child,
+.titlebar .right .titlebutton:last-child:backdrop {
+}
+
+.titlebar .left .titlebutton:last-child,
+.titlebar .left .titlebutton:last-child:backdrop {
+}
+
+.titlebar .left .titlebutton:first-child,
+.titlebar .left .titlebutton:first-child:backdrop {
+}
+
+.window-frame,
+.window-frame:backdrop {
+	border-radius: 6px 6px 0 0;
+	border-width: 1px;
+	border-style: solid;
+    box-shadow: 0 3px 8px @shadow_color;
+}
+
+.window-frame.tiled,
+.window-frame.tiled:backdrop {
+	border-radius: 0;
+	background-color: @dark_bg_color;
+}
+
+/************
+ * popover  *
+ ************/
+GtkPopover,
+.header-bar .menu,
+.header-bar .primary-toolbar .menu {
+    background-clip: border-box;
+    padding: 3px;
+    border-width: 1px;
+    color: @dark_fg_color;
+    border-bottom-color: shade (@dark_bg_color, 1.18);
+    border-left-color: shade (@dark_bg_color, 1.02);
+    border-right-color: shade (@dark_bg_color, 1.02);
+    border-top-color: shade (@dark_bg_color, 1.18);
+
+    border-radius: 5px;
+
+    box-shadow: 0 2px 3px @shadow_color;
+    margin: 8px;
+}
+
+GtkPopover.background {
+    background-image: -gtk-gradient (linear, left center, right center,
+                                                 from (shade (@dark_bg_color, 1.08)),
+                                                 color-stop (0.60, shade (@dark_bg_color, 1.22)),
+                                                 to (shade (@dark_bg_color, 1.62)));
+    background-color: shade (@dark_bg_color, 1.55);
+}
+
+GtkPopover:backdrop {
+    box-shadow: none;
+}
+
+GtkPopover .separator {
+    border: 0;
+    background-color: transparent;
+    color: alpha(currentColor, 0.1);
+    font-size: 80%;
+    font-weight: bold;
+}
+
+/* Popover menuitems are actually buttons. The following rules reset most of
+ * the button styles for them.
+ */
+GtkPopover .menuitem,
+GtkPopover .menuitem:active,
+GtkPopover .menuitem:hover,
+GtkPopover .menuitem:insensitive {
+    border-image: none;
+    border: none;
+    text-shadow: none;
+    border-radius: 3px;
+}
+
+GtkPopover .menuitem:backdrop:hover,
+GtkPopover .menuitem:backdrop {
+    border: none;
+    border-image: none;
+    background: transparent;
+    color: @dark_fg_color;
+}
+
+GtkPopover .menuitem:active,
+GtkPopover .menuitem.check,
+GtkPopover .menuitem.check:active,
+GtkPopover .menuitem.radio,
+GtkPopover .menuitem.radio:active {
+    background-image: none;
+    border: none;
+}
+
+GtkPopover .menuitem:insensitive,
+GtkPopover .menuitem *:insensitive {
+    text-shadow: none;
+    background: none;
+}
+
+GtkPopover.osd {
+    box-shadow: 0 2px 7px 3px alpha(@dark_bg_color, 0.6);
+}
+
+GtkPopover > .list,
+GtkPopover > .view,
+GtkPopover > .toolbar {
+    background-image: none;
+    background-color: transparent;
+}
+
+GtkPopover .list-row {
+    color: @dark_fg_color;
+}
+
+GtkPopover .list-row:hover {
+    background-image: none;
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+GtkPopover .frame {
+    border: 1px solid mix(@dark_bg_color, @dark_fg_color, 0.12);
+    border-radius: 2px;
+}
+
+GtkPopover .entry {
+    border-color: mix(@dark_bg_color, @dark_fg_color, 0.12);
+    background-color: @dark_bg_color;
+    background-image: none;
+    color: @dark_fg_color;
+}
+
+GtkPopover .entry:hover,
+GtkPopover .entry:focus,
+GtkPopover .entry:active  {
+    border-color: mix(@dark_bg_color, @dark_fg_color, 0.21);
+}
+
+GtkPopover.osd > .toolbar .button {
+    border-radius: 0;
+    border-width: 0;
+    background-image: none;
+    background-color: transparent;
+}

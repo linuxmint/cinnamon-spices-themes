@@ -1,0 +1,217 @@
+/******************
+ * Nautilus 3.6.x *
+ ******************/
+
+/*******************
+ * Symbolic images *
+ *******************/
+NautilusWindow .sidebar .image {
+    color: 	@sidebar_icon;
+	icon-shadow: 1px 1px @theme_shadow_color;
+}
+
+NautilusWindow .sidebar .image:prelight {
+    color: 	shade(@sidebar_icon, 1.10);
+}
+
+NautilusWindow .primary-toolbar.toolbar {
+	/* search-toolbar */
+    background-image: url("assets/background-noise-toolbar.png"),
+                      -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade(@theme_bg_dark_color, 0.89)),
+                                     color-stop (0.20, shade(@theme_bg_dark_color, 0.97)),
+                                     to   (shade(@theme_bg_dark_color, 1.00)));
+    background-repeat: repeat;
+    background-position: top left;
+
+    border-width: 0px 0px 1px 0px;
+    border-radius: 0px;
+    border-style: solid;
+    border-color: shade(@theme_bg_dark_color, 0.78) transparent shade(@theme_bg_dark_color, 0.65) transparent;
+    box-shadow: none;
+    padding: 3px 5px 3px;
+    -GtkWidget-window-dragging: true;
+    -GtkToolbar-button-relief: normal;    
+}
+
+
+NautilusWindow .toolbar {
+	/* secondary search-toolbar */
+    -GtkWidget-window-dragging: true;
+    -GtkToolbar-button-relief: normal;    
+    padding: 3px 5px;
+}
+
+.toolbar.menubar NautilusPathBar .button *,
+NautilusWindow .toolbar .button *,
+NautilusWindow .toolbar.menubar .linked .button *,
+NautilusWindow .toolbar.menubar .button *  {
+    padding: 0px;
+}
+
+/* buttons pathbar */
+NautilusWindow .toolbar.menubar .button, 
+.toolbar.menubar NautilusPathBar .button {
+    padding: 2px 4px;
+}
+
+/* buttons search-toolbar */
+NautilusWindow .primary-toolbar.toolbar .button {
+    padding: 4px 4px;
+}
+
+/* buttons secondary-search-toolbar */
+NautilusWindow .toolbar .button {
+    padding: 2px 4px;
+}
+
+
+NautilusToolbar .button {
+    icon-shadow: 1px 1px @theme_shadow_color;
+}
+
+NautilusToolbar .button *:active {
+    icon-shadow: 1px 1px @theme_selected_shadow_color;
+}
+
+NautilusToolbar .button *:insensitive,
+NautilusToolbar .button *:active:insensitive {
+    text-shadow: none;
+}
+
+.toolbar NautilusPathBar .button *:active,
+.toolbar NautilusPathBar .button *:hover {
+	
+}
+
+NautilusFloatingBar {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from 	(shade(@theme_bg_color, 0.97)),
+                                     to 	(shade(@theme_bg_color, 0.90)));
+
+    border-color: shade (@notebook_tab_gradient_b, 0.80);
+
+    border-radius: 3px 3px 0px 0px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+NautilusFloatingBar .button {
+    background-color: alpha (@theme_base_color, 0.0);
+    background-image: none;
+
+    border-style: none;
+    border-image: none;
+
+    -GtkButton-image-spacing: 0;
+    -GtkButton-inner-border: 0;
+}
+
+NautilusWindow .sidebar .scrollbar {
+	-GtkRange-trough-border: 	1;
+    -GtkRange-slider-width:     6;
+}
+
+NautilusWindow .sidebar .scrollbar.trough,
+NautilusWindow .sidebar .scrollbar.trough.vertical {
+    background-image: none;
+    background-color: @sidebar_background;
+
+}
+
+NautilusWindow .sidebar .frame {
+    border-width: 0px;
+    border-style: none;	
+}
+
+
+NautilusWindow > GtkTable > .pane-separator,
+NautilusWindow .pane-separator {
+    background-color: @sidebar_background;
+    /* border-color: @sidebar_background; */
+    border-style: none;
+    border-width: 0px;
+    background-image: -gtk-gradient(linear,
+                                    left top, right top,
+                                    from (@sidebar_background),
+                                    color-stop (0.50, @sidebar_background),
+                                    to   (shade(@theme_bg_color, 0.65)));
+}
+
+.toolbar.menubar NautilusPathBar.linked .button *, 
+.toolbar.menubar NautilusPathBar .button * {
+	color: shade(@theme_fg_dark_color, 1.00);
+
+}
+
+
+
+.toolbar.menubar NautilusPathBar.linked .button *:active,
+.toolbar.menubar NautilusPathBar.linked .button *:active:hover {
+	color: shade(@theme_text_dark_color, 0.95);
+	text-shadow: 1px 1px @theme_shadow_dark_color;
+}
+
+
+/* Middle toolbar-button */
+.toolbar.menubar NautilusPathBar.linked .button,
+.toolbar.menubar NautilusPathBar.linked .button:hover,
+.toolbar.menubar NautilusPathBar.linked .button:active,
+.toolbar.menubar NautilusPathBar.linked .button:active:hover,
+.toolbar.menubar NautilusPathBar.linked .button:insensitive {
+    border-width: 1px;
+    border-right-width: 0px;
+    border-left-width:  0px;
+    border-radius: 0;
+    padding-left:  6px;
+    padding-right: 6px;
+}
+
+/* Leftmost toolbars-button */
+.toolbar.menubar NautilusPathBar.linked .button:first-child,
+.toolbar.menubar NautilusPathBar.linked .button:hover:first-child,
+.toolbar.menubar NautilusPathBar.linked .button:active:first-child,
+.toolbar.menubar NautilusPathBar.linked .button:active:hover:first-child,
+.toolbar.menubar NautilusPathBar.linked .button:insensitive:first-child {
+    padding-left:  10px;
+    padding-right: 6px;
+    border-width: 1px;
+    border-right-width: 0;
+    border-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+/* Rightmost toolbar-button */
+.toolbar.menubar NautilusPathBar.linked .button:last-child,
+.toolbar.menubar NautilusPathBar.linked .button:hover:last-child,
+.toolbar.menubar NautilusPathBar.linked .button:active:last-child,
+.toolbar.menubar NautilusPathBar.linked .button:active:hover:last-child,
+.toolbar.menubar NautilusPathBar.linked .button:insensitive:last-child {
+    padding-left:  6px;
+    padding-right: 10px;
+    border-width: 1px;
+    border-left-width: 0px;
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+/* Linked single toolbar-button */
+.toolbar.menubar NautilusPathBar.linked .button:only-child,
+.toolbar.menubar NautilusPathBar.linked .button:hover:only-child,
+.toolbar.menubar NautilusPathBar.linked .button:active:only-child,
+.toolbar.menubar NautilusPathBar.linked .button:active:hover:only-child,
+.toolbar.menubar NautilusPathBar.linked .button:insensitive:only-child {
+    padding-left:  10px;
+    padding-right: 10px;
+    border-width: 1px;
+    border-radius: 20px;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+

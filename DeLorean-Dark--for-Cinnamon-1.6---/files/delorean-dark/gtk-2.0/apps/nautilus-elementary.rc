@@ -1,0 +1,97 @@
+style "nautilus-breadcrumbs" {
+	xthickness = 6
+	ythickness = 0
+	
+	GtkButton::child-displacement-y		= 0
+	GtkButton::inner-border			= { 0, 11, 0, 0}
+
+	engine "pixmap"	{	
+		image {
+			function      = BOX
+			recolorable   = TRUE
+			state				  = PRELIGHT
+			file				  = "../images/breadcrumb_prelight.png"
+			border				= { 3, 14, 3, 3 }
+			stretch       = TRUE
+		}		
+		image {
+			function      = BOX
+			recolorable   = TRUE
+			state				  = NORMAL
+			file				  = "../images/breadcrumb_normal.png"
+			border				= { 3, 14, 3, 3 }
+			stretch       = TRUE
+		}
+		image {
+			function      = BOX
+			recolorable   = TRUE
+			state				  = ACTIVE
+			file				  = "../images/breadcrumb_normal.png"
+			border				= { 3, 14, 3, 3 }
+			stretch       = TRUE
+		}
+		image {
+			function      = BOX
+			recolorable   = TRUE
+			state				  = INSENSITIVE
+			file				  = "../images/breadcrumb_normal.png"
+			border				= { 3, 14, 3, 3 }
+			stretch       = TRUE
+		} 
+		image {
+			function      = BOX
+			recolorable   = TRUE
+			state				  = SELECTED
+			file				  = "../images/breadcrumb_normal.png"
+			border				= { 3, 14, 3, 3 }
+			stretch       = TRUE
+		}
+	}
+}
+
+style "nautilus-left-slider" {
+	xthickness = 0
+	ythickness = 0
+	
+	engine "pixmap" {
+		image {
+			function 		= BOX
+			file			  = "../images/left_slider_normal.png"
+			border			= { 3, 3, 3, 3 }
+			stretch			= TRUE
+		}
+	}
+
+}
+
+style "nautilus-right-slider" {	
+	xthickness = 0
+	ythickness = 0
+	
+	engine "pixmap" {
+		image {
+			function 		= BOX
+			file			  = "../images/right_slider_normal.png"
+			border			= { 3, 3, 3, 3 }
+			stretch			= TRUE
+		}
+	}
+}
+
+widget_class "*NautilusPathBar.*ToggleButton*"		  style "nautilus-breadcrumbs" 
+widget "Nautilus*left_slider*"				              style "nautilus-left-slider" 
+widget "Nautilus*right_slider*"				              style "nautilus-right-slider"
+
+style "pixmap-mode-button" {
+  bg[NORMAL] = shade(0.95, @bg_color)
+	engine "pixmap" {	
+		image { function = BOX state = PRELIGHT    file = "../images/mode_prelight.png" border = { 4, 13, 4, 4 } stretch = TRUE }
+		image { function = BOX state = NORMAL      file = "../images/mode_normal.png"   border = { 4, 13, 4, 4 } stretch = TRUE }
+	  image { function = BOX state = ACTIVE      file = "../images/mode_pressed.png"  border = { 4, 13, 4, 4 } stretch = TRUE }  
+		image { function = BOX state = INSENSITIVE file = "../images/mode_normal.png"   border = { 4, 13, 4, 4 } stretch = TRUE } 
+	  image { function = BOX state = SELECTED    file	= "../images/mode_pressed.png"  border = { 4, 13, 4, 4 } stretch = TRUE }
+	}
+}
+widget "*ModeButton*"                       style "pixmap-mode-button"
+
+

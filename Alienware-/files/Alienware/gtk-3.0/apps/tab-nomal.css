@@ -1,0 +1,229 @@
+/*****************
+ * Notebooks and *
+ * tabs          *
+ *****************/
+.notebook {
+    padding: 0;
+    border-style: solid;
+    border-color: shade(@theme_base_color, 0.7);
+    border-top: 1px solid shade(@theme_base_color, 0.7);
+
+    background-color: @theme_base_color;
+    -GtkNotebook-initial-gap: 10;
+    -GtkNotebook-arrow-spacing: 5;
+    -GtkNotebook-tab-curvature: 0;
+    -GtkNotebook-tab-overlap: 1;
+    -GtkNotebook-has-tab-gap: false;
+    -GtkWidget-focus-padding: 0;
+    -GtkWidget-focus-line-width: 0;
+}
+
+.notebook.frame {
+    border-width: 1px;
+}
+
+.notebook.header,
+.notebook.header:backdrop {
+    background-color: shade(@theme_bg_color, 0.95);
+    box-shadow: inset 0 3px alpha(black, 0.03), inset 0 2px alpha(black, 0.03), inset 0 1px alpha(black, 0.03);
+    border-width: 0;
+}
+
+.notebook.header.frame.top,
+.notebook.header.frame.top:backdrop {
+    border-top: 1px solid shade(@theme_base_color, 0.7);
+    border-left: 1px solid shade(@theme_base_color, 0.7);
+    border-right: 1px solid shade(@theme_base_color, 0.7);
+}
+
+.notebook.header.frame.bottom,
+.notebook.header.frame.bottom:backdrop {
+    border-bottom: 1px solid shade(@theme_base_color, 0.7);
+    border-left: 1px solid shade(@theme_base_color, 0.7);
+    border-right: 1px solid shade(@theme_base_color, 0.7);
+}
+
+.notebook.header.frame.left,
+.notebook.header.frame.left:backdrop {
+    border-top: 1px solid shade(@theme_base_color, 0.7);
+    border-bottom: 1px solid shade(@theme_base_color, 0.7);
+    border-left: 1px solid shade(@theme_base_color, 0.7);
+}
+
+.notebook.header.frame.right,
+.notebook.header.frame.right:backdrop {
+    border-top: 1px solid shade(@theme_base_color, 0.7);
+    border-bottom: 1px solid shade(@theme_base_color, 0.7);
+    border-right: 1px solid shade(@theme_base_color, 0.7);
+}
+
+.notebook GtkViewport {
+    background-color: @theme_base_color;
+    border-width: 0px;
+}
+
+.notebook:backdrop,
+.notebook GtkViewport:backdrop {
+    background-color: @theme_base_color;
+    border-color: shade(@theme_base_color, 0.7);
+}
+
+.notebook tab,
+.notebook tab:backdrop {
+    border-color: shade (shade(@theme_base_color, 0.7), 1.15);
+    border-width: 0px;
+    background-image: none;
+    background-color: transparent;
+}
+
+.notebook tab GtkLabel {
+    color: mix (@theme_fg_color, @theme_bg_color, 0.40);
+    font-weight: bold;
+    transition: all 200ms ease-out;
+}
+
+.notebook .prelight-page,
+.notebook .prelight-page GtkLabel {
+    color: mix (@theme_fg_color, @theme_bg_color, 0.15);
+    transition: all 200ms ease-in;
+}
+
+.notebook .active-page,
+.notebook tab .active-page GtkLabel {
+    color: @theme_fg_color;
+    transition: all 200ms ease-in;
+}
+
+/* horizontal tabs */
+
+.notebook tab.top,
+.notebook tab.bottom {
+    padding: 5px 15px 4px;
+}
+
+.notebook tab.top:hover,
+.notebook tab.top:active {
+    border-bottom-width: 3px;
+}
+
+.notebook tab.top:active {
+    border-bottom-color: @theme_selected_bg_color;
+}
+
+.notebook tab.top:active:backdrop {
+    border-bottom-color: shade(@theme_base_color, 0.7);
+}
+
+.notebook tab.bottom:hover,
+.notebook tab.bottom:active {
+    border-top-width: 3px;
+}
+
+.notebook tab.bottom:active {
+    border-top-color: @theme_selected_bg_color;
+}
+
+.notebook tab.bottom:active:backdrop {
+    border-top-color: shade(@theme_base_color, 0.7);
+}
+
+/* vertical tabs */
+
+.notebook tab.left,
+.notebook tab.right {
+    padding: 4px 15px;
+}
+
+.notebook tab.left:hover,
+.notebook tab.left:active {
+    border-right-width: 3px;
+}
+
+.notebook tab.left:active {
+    border-right-color: @theme_selected_bg_color;
+}
+
+.notebook tab.left:active:backdrop {
+    border-right-color: shade(@theme_base_color, 0.7);
+}
+
+.notebook tab.right:hover,
+.notebook tab.right:active {
+    border-left-width: 3px;
+}
+
+.notebook tab.right:active {
+    border-left-color: @theme_selected_bg_color;
+}
+
+.notebook tab.right:active:backdrop {
+    border-left-color: shade(@theme_base_color, 0.7);
+}
+
+.notebook tab.reorderable-page:hover {
+    background-color: shade(@theme_bg_color, 0.97);
+    box-shadow: inset 0 3px alpha(black, 0.03), inset 0 2px alpha(black, 0.03), inset 0 1px alpha(black, 0.03);
+    border-left: 1px solid shade (shade(@theme_base_color, 0.7), 1.25);
+    border-right: 1px solid shade (shade(@theme_base_color, 0.7), 1.25);
+}
+.notebook tab.reorderable-page:active {
+    background-color: @theme_bg_color;
+    box-shadow: inset 0 3px alpha(black, 0.03), inset 0 2px alpha(black, 0.03), inset 0 1px alpha(black, 0.03);
+    border-left: 1px solid shade (shade(@theme_base_color, 0.7), 1.2);
+    border-right: 1px solid shade (shade(@theme_base_color, 0.7), 1.2);
+}
+
+/* close button styling */
+.notebook tab .button {
+    color: mix (@theme_fg_color, @theme_bg_color, 0.85);
+    border-image: none;
+    background-image: none;
+    background-color: transparent;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px;
+    padding: 1px;
+    icon-shadow: none;
+    transition: all 200ms ease-out;
+}
+
+.notebook .prelight-page .button,
+.notebook tab.prelight-page .button,
+.notebook .active-page .button,
+.notebook tab.active-page .button {
+    color: mix(@theme_fg_color, @theme_base_color, 0.6);
+    icon-shadow: 0 1px @button_text_shadow;
+    transition: all 200ms ease-in;
+}
+
+.notebook tab .button:hover {
+    color: @theme_fg_color;
+    border-color: alpha(black, 0.1);
+    transition: all 200ms ease-in;
+}
+
+.notebook tab .button:active,
+.notebook tab .button:active:hover {
+    color:  @theme_text_color;
+    background-color: alpha(black, 0.08);
+    box-shadow: inset 0 1px alpha(black, 0.05);
+/*    icon-shadow: 0 1px white;*/
+
+    border-color: alpha(black, 0.27)
+                  alpha(black, 0.13)
+                  alpha(black, 0.13)
+                  alpha(black, 0.13);
+}
+
+.notebook tab .button:backdrop {
+    color: mix(@theme_fg_color, @theme_base_color, 0.7);
+    icon-shadow: none;
+    transition: all 200ms ease-out;
+}
+
+.notebook tab .button:backdrop:hover {
+    color: @theme_text_color;
+    transition: all 200ms ease-out;
+}
+
