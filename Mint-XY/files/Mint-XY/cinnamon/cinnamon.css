@@ -162,12 +162,27 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu {
-    color: rgb(70, 70, 70);
-    min-width: 100px;
-    border-radius: 4px;
     background-color: #ececec;
     border-width: 1px;
     border-color: rgba(40, 40, 40, 0.3);
+    color: rgb(70, 70, 70);
+    min-width: 100px;
+}
+
+.menu.top {
+    border-radius: 0 0 4px 4px;
+}
+
+.menu.bottom {
+    border-radius: 4px 4px 0 0;
+}
+
+.menu.left {
+    border-radius: 0 4px 4px 0;
+}
+
+.menu.right {
+    border-radius: 4px 0 0 4px;
 }
 
 .menu StEntry,
@@ -264,7 +279,10 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .popup-separator-menu-item {
-    background-color: rgb(210, 210, 210);
+    -gradient-height: 1px;
+    -gradient-start: rgb(210, 210, 210);
+    -gradient-end: rgb(210, 210, 210);
+    -margin-horizontal: 0;
     height: 1px;
 }
 
@@ -315,6 +333,7 @@ StScrollBar StButton#vhandle:hover {
     color: #000;
     font-size: 9pt;
     height: 26px;
+    width: 32px;
     padding: 0px;
 }
 
@@ -334,6 +353,15 @@ StScrollBar StButton#vhandle:hover {
 #panelLeft,
 #panelCenter {
     spacing: 4px;
+}
+
+.panel-left #panelLeft,
+.panel-left #panelRight,
+.panel-left #panelCenter,
+.panel-right #panelLeft,
+.panel-right #panelRight,
+.panel-right #panelCenter {
+    spacing: 0;
 }
 
 #panelLeft:dnd {
@@ -619,6 +647,12 @@ StScrollBar StButton#vhandle:hover {
 * ===================================================================*/
 .desklet {
     color: rgb(70, 70, 70);
+}
+
+.desklet:highlight,
+.desklet-with-borders:highlight,
+.desklet-with-borders-and-header:highlight {
+    background-color: #accd8a;
 }
 
 .desklet-with-borders {
@@ -1853,41 +1887,93 @@ StScrollBar StButton#vhandle:hover {
     padding-top: 1px;
     padding-left: 4px;
     padding-right: 4px;
-    border-image: url("panel-assets/hover-3.png") 6;
+    border-image: url("panel-assets/hover-3.svg") 6;
 }
 
-.window-list-item-box.right {
-    border-radius: 4px 4px 4px 4px;
-    padding-left: 0px;
-    padding-right: 0px;
+.panel-top .window-list-item-box {
+    border-image: url("panel-assets/hover-3-top.svg") 6;
 }
 
-.window-list-item-box.left {
-    border-radius: 4px 4px 4px 4px;
+.panel-left .window-list-item-box {
     padding-left: 0px;
     padding-right: 0px;
+    border-image: url("panel-assets/hover-3-left.svg") 6;
+}
+
+.panel-right .window-list-item-box {
+    padding-left: 0px;
+    padding-right: 0px;
+    border-image: url("panel-assets/hover-3-right.svg") 6;
 }
 
 .window-list-item-box:hover {
-    border-image: url("panel-assets/hover-1.png") 6;
+    border-image: url("panel-assets/hover-1.svg") 6;
+}
+
+.panel-top .window-list-item-box:hover {
+    border-image: url("panel-assets/hover-1-top.svg") 6;
+}
+
+.panel-left .window-list-item-box:hover {
+    border-image: url("panel-assets/hover-1-left.svg") 6;
+}
+
+.panel-right .window-list-item-box:hover {
+    border-image: url("panel-assets/hover-1-right.svg") 6;
 }
 
 .window-list-item-box:active,
 .window-list-item-box:checked,
-.window-list-item-box:focus {
-    font-weight: bold;
-    color: #fff;
-    border-image: url("panel-assets/pressed.png") 6;
-}
-
+.window-list-item-box:focus,
 .window-list-item-box:checked:hover,
 .window-list-item-box:focus:hover,
 .window-list-item-box:active:hover {
-    border-image: url("panel-assets/pressed.png") 6;
+    font-weight: bold;
+    color: #fff;
+    border-image: url("panel-assets/pressed.svg") 6;
+}
+
+.panel-top .window-list-item-box:active,
+.panel-top .window-list-item-box:checked,
+.panel-top .window-list-item-box:focus,
+.panel-top .window-list-item-box:checked:hover,
+.panel-top .window-list-item-box:focus:hover,
+.panel-top .window-list-item-box:active:hover {
+    border-image: url("panel-assets/pressed-top.svg") 6;
+}
+
+.panel-left .window-list-item-box:active,
+.panel-left .window-list-item-box:checked,
+.panel-left .window-list-item-box:focus,
+.panel-left .window-list-item-box:checked:hover,
+.panel-left .window-list-item-box:focus:hover,
+.panel-left .window-list-item-box:active:hover {
+    border-image: url("panel-assets/pressed-left.svg") 6;
+}
+
+.panel-right .window-list-item-box:active,
+.panel-right .window-list-item-box:checked,
+.panel-right .window-list-item-box:focus,
+.panel-right .window-list-item-box:checked:hover,
+.panel-right .window-list-item-box:focus:hover,
+.panel-right .window-list-item-box:active:hover {
+    border-image: url("panel-assets/pressed-right.svg") 6;
 }
 
 .window-list-item-demands-attention {
-    border-image: url("panel-assets/attention.png") 6;
+    border-image: url("panel-assets/attention.svg") 6;
+}
+
+.panel-top .window-list-item-demands-attention {
+    border-image: url("panel-assets/attention-top.svg") 6;
+}
+
+.panel-left .window-list-item-demands-attention {
+    border-image: url("panel-assets/attention-left.svg") 6;
+}
+
+.panel-right .window-list-item-demands-attention {
+    border-image: url("panel-assets/attention-right.svg") 6;
 }
 
 /* ===================================================================
@@ -1987,34 +2073,44 @@ StScrollBar StButton#vhandle:hover {
     padding-top: 5px;
 }
 
-.workspace-button:outlined {
-    border-image: url("panel-assets/pressed.png") 6;
-    padding: 3px;
-    padding-right: 1px;
-    background: rgba(200, 200, 200, 1);
-    color: #fff;
-    font-weight: bold;
-    padding-top: 5px;
+.workspace-button.vertical {
+    padding: 0px;
 }
 
 .workspace-button:hover {
-    border-image: url("panel-assets/hover-1.png") 6;
+    border-image: url("panel-assets/hover-1.svg") 6;
     color: rgb(70, 70, 70);
     border-color: rgba(200, 200, 200, 1);
-    padding: 3px;
-    padding-right: 1px;
-    font-weight: bold;
-    padding-top: 5px;
 }
 
-.workspace-button:outlined:hover {
-    border-image: url("panel-assets/pressed.png") 6;
-    padding: 3px;
-    padding-right: 1px;
+.panel-top .workspace-button:hover {
+    border-image: url("panel-assets/hover-1-top.svg") 6;
+}
+
+.panel-left .workspace-button:hover {
+    border-image: url("panel-assets/hover-1-left.svg") 6;
+}
+
+.panel-right .workspace-button:hover {
+    border-image: url("panel-assets/hover-1-right.svg") 6;
+}
+
+.workspace-button:outlined {
+    border-image: url("panel-assets/pressed.svg") 6;
     background: rgba(200, 200, 200, 1);
     color: #fff;
-    font-weight: bold;
-    padding-top: 5px;
+}
+
+.panel-top .workspace-button:outlined {
+    border-image: url("panel-assets/pressed-top.svg") 6;
+}
+
+.panel-left .workspace-button:outlined {
+    border-image: url("panel-assets/pressed-left.svg") 6;
+}
+
+.panel-right .workspace-button:outlined {
+    border-image: url("panel-assets/pressed-right.svg") 6;
 }
 
 /* Controls the style when using the "Visual representation" option */
@@ -2058,13 +2154,48 @@ StScrollBar StButton#vhandle:hover {
     padding-left: 0px;
 }
 
+/* START Left for retro-compatibility */
 .panel-launcher {
     margin: 1px;
     padding: 2px;
 }
 
 .panel-launcher:hover {
-    border-image: url("panel-assets/hover-1.png") 6;
+    border-image: url("panel-assets/hover-1.svg") 6;
+}
+/* END Left for retro-compatibility */
+
+.panel-launchers {
+    spacing: 0;
+}
+
+.panel-launchers .launcher {
+    border: 1px solid transparent;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.panel-left .panel-launchers .launcher,
+.panel-right .panel-launchers .launcher {
+    padding: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.panel-launchers .launcher:hover {
+    border-image: url("panel-assets/hover-1.svg") 6;
+}
+
+.panel-top .panel-launchers .launcher:hover {
+    border-image: url("panel-assets/hover-1-top.svg") 6;
+}
+
+.panel-left .panel-launchers .launcher:hover {
+    border-image: url("panel-assets/hover-1-left.svg") 6;
+}
+
+.panel-right .panel-launchers .launcher:hover {
+    border-image: url("panel-assets/hover-1-right.svg") 6;
 }
 
 .panel-launcher-add-dialog-content-box {
@@ -2142,9 +2273,34 @@ StScrollBar StButton#vhandle:hover {
     padding-top: 1px;
 }
 
+.applet-box.vertical {
+    padding: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .applet-box:checked,
 .applet-box:hover {
-    border-image: url("panel-assets/hover-1.png") 6;
+    border-image: url("panel-assets/hover-1.svg") 6;
+}
+
+.panel-top .applet-box:checked,
+.panel-top .applet-box:hover {
+    border-image: url("panel-assets/hover-1-top.svg") 6;
+}
+
+.panel-left .applet-box:checked,
+.panel-left .applet-box:hover {
+    border-image: url("panel-assets/hover-1-left.svg") 6;
+}
+
+.panel-right .applet-box:checked,
+.panel-right .applet-box:hover {
+    border-image: url("panel-assets/hover-1-right.svg") 6;
+}
+
+.applet-box:highlight {
+    background-color: #accd8a;
 }
 
 .applet-box:active {
@@ -2164,9 +2320,9 @@ StScrollBar StButton#vhandle:hover {
     icon-size: 22px;
 }
 
+.applet-icon:hover,
 .applet-icon:checked,
 .applet-box:checked > .applet-icon,
-.applet-icon:hover,
 .applet-box:hover > .applet-icon {
 }
 
