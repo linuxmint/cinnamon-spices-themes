@@ -16,4 +16,4 @@ This theme is basically the default **Mint-X** theme with some graphics (check/r
 - **This theme is NOT compatible with gtk3 versions 3.20.x nor 3.22.x (Ubuntu 16.10 or Arch Linux)**
 </span>
 
-[Full change log](https://github.com/Odyseus/CinnamonTools/blob/master/Themes/0dyseus%40Mint-XY-Greybird-Blue/CHANGELOG.md)
+[Full change log](https://github.com/Odyseus/CinnamonTools/blob/master/Themes/Mint-XY-Greybird-Blue/files/Mint-XY-Greybird-Blue/CHANGELOG.md)
