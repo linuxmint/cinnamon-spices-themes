@@ -19,19 +19,21 @@
     }
 
     .popup-menu-content {
-        border-image: url("background-assets/popup-inside.svg") 9;
+        border-image: url("background-assets/popup-inside.svg") 10;
         padding: .7em 0;
         color: $text-primary;
+        max-height: 70em;
     }
 
     &-icon,  StIcon {
         icon-size: 16px;
-        color: $icon-primary;
+        color: $text-primary;
     }
 
     &-arrow {
-		@include size(10px);
-        padding:0;
+        icon-size: 13px;
+	    @include size(10px);
+        padding: 0;
     }
 
     &-item {
@@ -43,11 +45,11 @@
             color: $text-active;
 
             .popup-menu-icon, StIcon {
-                color: $icon-active;
+                color: $text-active;
             }
 
             .popup-menu-item-dot {
-                background-image: url("widget-assets/check-dot-hover.svg");
+                background-image: url("widget-assets/check-dot.svg");
                 background-size: 10px;
                 color: rgba(0, 0, 0, 0);
             }
@@ -58,7 +60,7 @@
             color: $text-disabled;
 
             .popup-menu-icon, StIcon {
-                color: $icon-disabled;
+                color: $text-disabled;
             }
         }
     }
@@ -79,7 +81,7 @@
 
     .popup-menu-item:active {
         border-image: url("background-assets/hover.svg") 9;
-        color: $text-active;
+        color: $text-primary;
     }
 
     // FIX for strange padding in "StDrawingArea"
@@ -112,7 +114,7 @@
     -slider-active-border-color: rgba(0, 0, 0, 0);
     -slider-border-width: 2px;
     -slider-handle-radius: 4px;
-    color: $icon-primary;
+    color: $text-primary;
 
     border-image: url("widget-assets/slider.svg") 9 6 8 8;
     border: 0 solid transparent;
