@@ -99,3 +99,9 @@ The Cinnamon team is also entitled to do so. Common reasons are lack of maintena
 New spices can be added by Pull Request.
 
 The Cinnamon team can accept or reject the addition and should give justification in the PR comments section.
+
+# Reporting Bugs
+
+It's important to use a proper title when opening new issues. The title must be in the format `spice name: simple description of the problem`.
+
+Issues that don't follow this format will be closed.
