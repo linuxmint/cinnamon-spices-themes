@@ -64,21 +64,30 @@ StScrollBar StButton#vhandle:hover {
 	-arrow-border-width: 0px;
 }
 .popup-menu {
-  	background-gradient-direction: vertical;
+    background-gradient-direction: vertical;
       	background-gradient-start:  rgba(0,0,0,.99);
       	background-gradient-end: rgba(0,0,0,.85);
        	border: 1px #42bee1;
 	border-left: 0px;
 	border-right: 0px;
-box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.76);
-
+    box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.76);
     color: #fff;
     font-size: 9pt;
     min-width: 66px;
-	 
+}
+.menu {
+    background-gradient-direction: vertical;
+    background-gradient-start:  rgba(0,0,0,.99);
+    background-gradient-end: rgba(0,0,0,.85);
+    border: 1px #42bee1;
+	border-left: 0px;
+	border-right: 0px;
+    box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.76);
+    color: #fff;
+    font-size: 9pt;
+    min-width: 66px;
 }
 .popup-submenu-menu-item:open {
-
 }
 .popup-sub-menu {
 	color: #fff;	
@@ -204,12 +213,19 @@ background-color: #232527;
  * ===================================================================*/
 #panel {
 	background-color: #000;
-      	font-weight: bold;
-      	color: #fff; 
-      	font-size: 9.5pt;
-      	height: 25px; 
+    font-weight: bold;
+    color: #fff;
+    font-size: 9.5pt;
+    height: 25px;
  	box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.15);
 }
+.panel-dummy {
+    background-color: rgba(50, 50, 50, 0.4);
+}
+.panel-dummy:entered {
+    background-color: rgba(255, 35, 35, 0.4);
+}
+
 #panelLeft, #panelCenter, #panelRight {
 	spacing: 0px;
 }
@@ -925,6 +941,23 @@ border-image: url('button.svg') 5 5 5 5 stretch;
 color: #fff;
 border-image: url('button-hover.svg') 5 5 5 5 stretch;
 }
+
+/* Info OSD popup */
+.info-osd {
+    background-color: #000;
+    color:  #42bee1;
+    border-radius: 0px;
+    border-color: rgba(37,154,202,1);
+    border-width: 1px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+    font-size: 14pt;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+
 /* ===================================================================
  * Run dialog
  * ===================================================================*/
@@ -1660,13 +1693,25 @@ padding: 1px;
  * Applets (applet.js) 
  * ===================================================================*/
 .applet-box {
-	 padding-left: 6px;
-    	padding-right: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
 	transition-duration: 300;
 }
 .applet-box:hover {
    	background-color: #000;
 	color:  #42bee1;
+	box-shadow: inset 0px -1px 0px 0px rgba(37,154,202,1);
+	transition-duration: 100;
+}
+.applet-box.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.applet-box.vertical:hover {
+    background-color: #000;
+    color:  #42bee1;
 	box-shadow: inset 0px -1px 0px 0px rgba(37,154,202,1);
 	transition-duration: 100;
 }
@@ -1683,6 +1728,8 @@ padding: 1px;
 .applet-box:hover > .applet-label {
 	color: #42bee1;
 	box-shadow: inset 0px -1px 0px 0px rgba(37,154,202,1);    	
+}
+.applet-box.vertical:hover > .applet-label {
 }
 .applet-icon {
 	color: #42bee1;
@@ -1887,4 +1934,22 @@ padding: 0.5em 1em;
    padding-top: 4px;
    font-size: 0.9em;
    box-shadow: none;
+}
+.flashspot {
+   background-color: white;
+}
+/* Media keys OSD popup */
+.osd-window {
+    background: #000;
+    border: 2px rgba(37,154,202,1);
+    border-radius: 4px;
+    padding: 20px;
+    color: white;
+    spacing: 1em;
+}
+
+.osd-window .level {
+    height: 0.7em;
+    border-radius: 0.3em;
+    background-color: rgba(190,190,190,0.2);
 }
