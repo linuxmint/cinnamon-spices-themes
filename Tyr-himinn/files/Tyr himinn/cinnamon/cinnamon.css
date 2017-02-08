@@ -29,6 +29,9 @@ border-image: url("scrollbar-trough.svg") 4 4 4 8;
 StScrollBar StButton#vhandle {
 border-image: url("scrollbar.svg") 4;
 }
+StScrollBar StButton#hhandle {
+border-image: url("scrollbar.svg") 4;
+}
 #Tooltip {
 padding: 4px 8px 5px 8px;
 background-color: rgba(0,0,0,0.85);
@@ -47,6 +50,10 @@ font-size: 8.5pt;
 -arrow-rise: 12px;
 }
 .popup-menu {
+}
+.menu {
+background-color: rgba(0,0,0,0.75);
+border-radius: 4px
 }
 .panel-menu {
 }
@@ -86,6 +93,8 @@ spacing: 1em;
 .popup-separator-menu-item {
 background-color: rgba(0,0,0,0.5);
 border: 1px solid rgba(255,255,255,0.05);
+	-gradient-start: rgba(0,0,0,0.5);
+	-gradient-end: rgba(0,0,0,0.5);
 border-left: 0;
 border-right: 0;
 border-top: 0;
@@ -230,7 +239,7 @@ transition-duration: 250;
 .workspace-add-button:active {
 background-image: url("workspace-add.svg");
 transition-duration: 0;
--st-background-image-shadow: 0px 2px 6px rgba(0,0,0,0.0);
+-st-background-image-shadow: 0px 2px 6px rgba(0,0,0,0.01);
 }
 .workspace-close-button {
 background-image: url("close-workspace.svg");
@@ -248,7 +257,7 @@ transition-duration: 250;
 }
 .workspace-close-button:active {
 background-image: url("close-workspace.svg");
--st-background-image-shadow: 0px 2px 6px rgba(0,0,0,0.0);
+-st-background-image-shadow: 0px 2px 6px rgba(0,0,0,0.01);
 transition-duration: 0;
 }
 .window-close {
@@ -267,7 +276,7 @@ transition-duration: 250;
 }
 .window-close:active {
 background-image: url("close.svg");
--st-background-image-shadow: 0px 2px 6px rgba(0,0,0,0.0);
+-st-background-image-shadow: 0px 2px 6px rgba(0,0,0,0.01);
 transition-duration: 0;
 }
 .window-close-area {
@@ -896,10 +905,17 @@ border-image: url("window-active.svg") 2 2 0 0;
 text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
 transition-duration: 250;
 }
+.applet-box.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
 .applet-label {
 padding: 0px;
 text-align: center;
 }
+
 /* ===================================================================
  * Desklets (desklet.js)
  * ===================================================================*/
@@ -975,6 +991,7 @@ transition-duration: 250;
 .expo-workspaces-name-entry:focus {
 border-image: url("caption-focus.svg") 4;
 }
+
 /* ===================================================================
 * Notification Applet
 * ===================================================================*/
@@ -1036,3 +1053,34 @@ font-size: 9pt;
 .flashspot {
 background-color: white;
 }
+/* Media keys OSD popup */
+.osd-window {
+    background: rgba(0,0,0,0.9);
+    border: 2px solid blue;
+    border-radius: 0px;
+    padding: 20px;
+    color: white;
+    spacing: 1em;
+ /* border-image: url("checkbox-off-focus.svg") 3; preferable if it works */
+}
+
+.osd-window .level {
+    height: 0.7em;
+    border-radius: 0.3em;
+    background-color: rgba(190,190,190,0.2);
+}
+/* Info OSD popup */
+.info-osd {
+    background: rgba(0,0,0,0.9);
+    border: 2px solid blue;
+    border-radius: 0px;
+    color: white;
+    font-size: 16pt;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+ /* border-image: url("checkbox-off-focus.svg") 3; preferable if it works */
+}
+
