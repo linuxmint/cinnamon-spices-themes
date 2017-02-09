@@ -35,6 +35,9 @@ StScrollBar StButton#vhandle {
 StScrollBar StButton#vhandle:hover {
     border-image: url("scrollbar-hover.svg") 5;
 }
+StScrollBar StButton#hhandle {
+border-image: url("scrollbar.svg") 4;
+}
 #Tooltip {
 color: #fff;
 padding: 8px 10px;
@@ -58,6 +61,17 @@ font-size: 8pt;
 }
 .popup-menu {
     color: #333;
+    background-gradient-start: #f4f4f4;
+    background-gradient-end: #e8e8e8;
+    background-gradient-direction: vertical;
+    border-radius: 6px;
+}
+.menu {
+    color: #333;
+    background-gradient-start: #f4f4f4;
+    background-gradient-end: #e8e8e8;
+    background-gradient-direction: vertical;
+    border-radius: 6px;
 }
 .panel-menu {
 }
@@ -112,6 +126,8 @@ padding: 4px;
 .popup-separator-menu-item {
     border-image: url('separator-horizontal.svg') 1 1 1 1 stretch;
     -margin-horizontal: 0em;
+	-gradient-start: rgba(0,0,0,0.5);
+	-gradient-end: rgba(0,0,0,0.5);
     height: 2px;
 }
 .popup-alternating-menu-item:alternate {
@@ -204,6 +220,8 @@ padding-right: 4px;
     -panel-corner-background-color: black;
     -panel-corner-border-width: 2px;
     -panel-corner-border-color: transparent;
+    -panel-corner-outer-border-color: transparent;
+    -panel-corner-inner-border-color: transparent;
 }
 .panel-button,
 .panel-status-button {
@@ -1057,6 +1075,12 @@ padding: 0px 2px 4px 2px;
 padding-left: 5px;
 padding-right: 5px;
 }
+.applet-box.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
 .applet-box:hover {
     color: white;
     text-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
@@ -1175,4 +1199,46 @@ background-image: url("radiobutton.svg");
 }
 .radiobutton StLabel {
 font-size: 14px;
+}
+.flashspot {
+background-color: white;
+}
+/* Media keys OSD popup */
+.osd-window {
+    background-gradient-start: #464e5a;
+    background-gradient-end: #3d444f;
+    background-gradient-direction: vertical;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 16px;
+    color: #fff;
+    font-size: 16px;
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.35);
+    border-radius: 6px;
+    spacing: 1em;
+}
+
+.osd-window .level {
+    height: 0.7em;
+    border-radius: 0.3em;
+    background-color: rgba(190,190,190,0.2);
+}
+/* Info OSD popup */
+.info-osd {
+    background-gradient-start: #464e5a;
+    background-gradient-end: #3d444f;
+    background-gradient-direction: vertical;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 16px;
+    color: #fff;
+    font-size: 3em;
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.35);
+    border-radius: 6px;;
+    font-size: 16pt;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
 }
