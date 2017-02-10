@@ -119,6 +119,18 @@ StScrollBar StButton#vhandle:hover
 	-arrow-rise: 4px;*/
 	font-size: 13px;
 }
+.menu {
+/* ('RU') Сама плоскость со всплывающим меню. */
+    color: rgb(230,230,230);
+    border-radius: 8px;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(46,45,42,0.8);
+    background-gradient-end: rgba(46,45,42,0.8); /* это цвет меню */
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+    border: 1px solid rgb(22,22,22);
+/* ('RU') Это стрелки, наподобие тех что в диалогах в комиксах, от апплета до плоскости всплывающих меню этих апплетов */
+	font-size: 13px;
+}
 
 .popup-sub-menu StScrollBar {
 	padding: 4px;
@@ -185,6 +197,8 @@ StScrollBar StButton#vhandle:hover
 .popup-separator-menu-item {
 /* ('RU') Разделитель (линия). */
 	background: rgba(0,0,0,0.1);
+	-gradient-start: rgba(0,0,0,0.1);
+	-gradient-end: rgba(0,0,0,0.1);
 	border: 1px solid rgba(220,220,220,0.1);
 	border-top: 0px;
 	border-left: 0px;
@@ -1710,6 +1724,12 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 	transition-duration: 450;
 	/*min-width: 12px;*/ /* ('RU') убрал чтобы апплеты не уменьшались в размерах в случае,
 	если список окон увеличится и не останется места на панели */
+}
+.applet-box.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 .applet-box:hover {
 			background-gradient-direction: vertical;
