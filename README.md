@@ -114,12 +114,12 @@ Cinnamon will generally pick CSS elements out of the default theme if there is s
 Themes can use this facility for some aspects and still look fine - you may be perfectly happy that the sound player look and feel in the default theme matches yours adequately, for example, and skip over reworking this in your theme for now. Each panel is in three parts .panelLeft .panelCenter and .panelRight
 The same names are used if a panel is vertical.
 
-Cinnamon themes are read from the .themes directory in your home directory
+Cinnamon themes are read from the .themes directory in your home directory.  Copying the latest change in your theme under development into there, and either restarting Cinnamon or changing to another theme and back will allow you to test it iteratively.
 
 If things are not working as you expect then it is worth looking in the error files .cinnamon/glass.log and .xsession-errors
 in your home directory. If your screen reverts to the default Cinnamon theme then your CSS is probably failing to parse and contains a syntax error.
 
-Please check that your theme works correctly with a panel on any of the four sides of the screen.  This is the most common fault in submitted themes. If you have CSS that needs to work differently on different sides of the screen then .panel-top .panel-bottom .panel-left and .panel-right will be your friend.
+Please check that your theme works correctly with a panel on any of the four sides of the screen.  This is the most common fault in submitted themes. If you have CSS that needs to work differently on different sides of the screen then .panel-top .panel-bottom .panel-left and .panel-right can be combined with other CSS - there are some examples in the default theme.
 
 # Git basics
 
@@ -144,7 +144,7 @@ It may well show up in red to indicate it is new to git
 
 now type git add Wunderbar-Black/
 
-copy and paste is your friend here
+copy and paste in terminal is useful here
 
 now git status will show a long list of files, probably in green. They are not committed yet, that is the next step
 
