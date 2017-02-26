@@ -105,3 +105,18 @@ The Cinnamon team can accept or reject the addition and should give justificatio
 It's important to use a proper title when opening new issues. The title must be in the format `spice name: simple description of the problem`.
 
 Issues that don't follow this format will be closed.
+
+# Getting Started
+
+The default theme is in the Cinnamon github repository under Cinnamon/data/theme
+This will give you a good idea of the CSS that Cinnamon responds to, and provides a default set of graphical elements.
+Cinnamon will generally pick CSS elements out of the default theme if there is something absent from your theme.
+Themes can use this facility for some smaller aspects and still look fine.
+
+Cinnamon themes are read from the .themes directory in your home directory
+
+If things are not working as you expect then it is worth looking in the error files .cinnamon/glass.log and .xsession-errors
+in your home directory. If your screen reverts to the default Cinnamon theme then your CSS is probably failing to parse and contains a syntax error.
+
+Please check that your theme works correctly with a panel on any of the four sides of the screen.  This is the most common fault in submitted themes.
+
