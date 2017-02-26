@@ -121,3 +121,52 @@ in your home directory. If your screen reverts to the default Cinnamon theme the
 
 Please check that your theme works correctly with a panel on any of the four sides of the screen.  This is the most common fault in submitted themes. If you have CSS that needs to work differently on different sides of the screen then .panel-top .panel-bottom .panel-left and .panel-right will be your friend.
 
+# Git basics
+
+If you are used to creating a theme as a zip file and hosting it somewhere like deviantart you might want a few pointers as to how to use git. It is not hard at all for simple use, but the huge complexity of what it can do can be offputting if you browse around and find your head hurting from articles dealing with complex cases.  For what you are going to need to do it doesn't have to be complicated
+
+First of all get yourself a github account and set up git locally  https://help.github.com/articles/set-up-git/
+
+Now fork the cinnamon-spices-themes repo  https://help.github.com/articles/fork-a-repo/  this will create a fork of the linux mint repo in your own github account. Now clone it onto your machine. That is all in that same article. So let's say that you were in a directory dev under your home account when you started the cloning on your local machine, you will now find dev/cinnamon-spices-themes in there, if you change directory into there then you can fire off the git commands you need in terminal. However first you need to create your theme. You might well want to copy a suitable theme out of the repository to ensure you have a working file hierarchy first. Git will be tracking everything you do in the git directory so doing all your development work elsewhere is protection against whoopsies.  Just make sure you copy rather than move ;-). The theme development is all over to you - I generally work dual panel in nemo, copy each iteration to the .themes directory for testing, and hit alt-ctrl-esc to restart Cinnamon,  but your working style is entirely up to you. You need to ensure that the UUID directory names have no spaces in, dashes are fine. So let's assume that you have just created your theme called Wunderbar-Black for example. 
+
+Don't copy it into your git directory yet. That would put it into your master branch, and that will cause confusion if you want to work on multiple themes, or intend to make further changes over time.
+
+Create a branch wb1 - say - the name is entirely up to you, and check it out
+
+git branch wb1
+git checkout wb1
+
+Now you can copy your new theme in
+
+Typing 'git status' should show that git is aware of the new directory tree Wunderbar-Black/
+It mmay well show up in red to indicate it is new to git
+
+now type git add Wunderbar-Black/
+
+copy and paste is your friend here
+
+now git status will show a long list of files, probably in green. They are not committed yet, that is the next step
+
+git commit -m "Wunderbar-Black: Initial creation"
+
+This will create a single commit ready to be pushed, we prefer our commit comments to have the theme name at the front like this.
+
+Now push to your github account
+
+git push origin wb1
+
+you will have to enter your github username and password at this point.
+
+Your new pull request should be transferred successfully to your github account.
+
+Now go to your github account and navigate to your cinnamon-spices-themes fork. If you do this within a reasonable time after pushing from your computer github will tell you that you have a new commit ready for pushing upstream. Pretty much all you have to do now is to go into it and press the green button. A Pull Request will be created on the linuxmint repository, and it is now over to one of us to pull the commit through to live.  Once we have checked it over to ensure that it is safe and appears to function, of course ...
+
+Don't forget that you are still in branch wb1 on your local machine. If you start work on something new without changing branch then it will be layered on top of your first set of work. Which is probably not what you want. So at this stage I will usually change to a new branch just so I don't have to keep track of where I was
+
+git checkout master
+git branch wb2
+git checkout wb2
+
+Hope this helps get you going. We look forward to seeing your themes !
+
+
