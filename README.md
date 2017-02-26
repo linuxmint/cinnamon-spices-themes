@@ -111,12 +111,13 @@ Issues that don't follow this format will be closed.
 The default theme is in the Cinnamon github repository under Cinnamon/data/theme
 This will give you a good idea of the CSS that Cinnamon responds to, and provides a default set of graphical elements.
 Cinnamon will generally pick CSS elements out of the default theme if there is something absent from your theme.
-Themes can use this facility for some smaller aspects and still look fine.
+Themes can use this facility for some smaller aspects and still look fine. Each panel is in three parts .panelLeft .panelCenter and .panelRight
+The same names are used if a panel is vertical.
 
 Cinnamon themes are read from the .themes directory in your home directory
 
 If things are not working as you expect then it is worth looking in the error files .cinnamon/glass.log and .xsession-errors
 in your home directory. If your screen reverts to the default Cinnamon theme then your CSS is probably failing to parse and contains a syntax error.
 
-Please check that your theme works correctly with a panel on any of the four sides of the screen.  This is the most common fault in submitted themes.
+Please check that your theme works correctly with a panel on any of the four sides of the screen.  This is the most common fault in submitted themes. If you have CSS that needs to work differently on different sides of the screen then .panel-top .panel-bottom .panel-left and .panel-right will be your friend.
 
