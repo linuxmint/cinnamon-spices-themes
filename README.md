@@ -134,9 +134,10 @@ Don't copy it into your git directory yet. That would put it into your master br
 Create a branch wb1 - say - the name is entirely up to you, and check it out
 
 git branch wb1
+
 git checkout wb1
 
-Now you can copy your new theme in
+Now you can copy your new theme in to your git directory
 
 Typing 'git status' should show that git is aware of the new directory tree Wunderbar-Black/
 It mmay well show up in red to indicate it is new to git
@@ -164,7 +165,9 @@ Now go to your github account and navigate to your cinnamon-spices-themes fork. 
 Don't forget that you are still in branch wb1 on your local machine. If you start work on something new without changing branch then it will be layered on top of your first set of work. Which is probably not what you want. So at this stage I will usually change to a new branch just so I don't have to keep track of where I was
 
 git checkout master
+
 git branch wb2
+
 git checkout wb2
 
 Hope this helps get you going. We look forward to seeing your themes !
