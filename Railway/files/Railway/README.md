@@ -1,5 +1,5 @@
-# Railway Cinnamon theme
-> For those who like _Doors 8_ style
+# [Railway Cinnamon theme][repo]
+> For those who like _Doors 8_ style, in spite of everything
 
 [![](screenshot.png)][repo]
 
@@ -12,20 +12,20 @@ Download it from [here][spices] or search for "Railway" in your Cinnamon theme s
 
 ---
 ## Developing
-Run `./utils.sh --watch` to automatically reload the theme. It will create a link in `~/.themes`.
+Run `./utils.sh --watch` to automatically compile and reload the theme. It will create a link in `~/.themes`.
 
 ### Contributing
-Contributions are accepted via GitHub pull requests. Please, run `./utils.sh --compile` before submitting a pull request. Also if you modify any image resource, run `./utils.sh --simplify`.
+Contributions are accepted via GitHub pull requests [here][repo]. Please, if you modify any image resource, run `./utils.sh --simplify` before creating a commit.
+
+**NOTE**: never edit CSS files directly. They are overriden at build.
 
 ### Dependencies
 * `inotifywait (inotify-tools)`: watch for changes
 * `sassc`: compile sass files
 * `scour`: remove svg metadata
 
-**NOTE**: never edit CSS files directly. They are overriden at build.
-
 ## Credits
-Special thanks to @zagortenay333 for the codebase.
+Special thanks to [@zagortenay333](https://github.com/zagortenay333) for the codebase.
 
 [repo]: https://github.com/germanfr/railway-cinnamon
-[spices]: https://cinnamon-spices.linuxmint.com/themes
+[spices]: https://cinnamon-spices.linuxmint.com/themes/view/Railway
