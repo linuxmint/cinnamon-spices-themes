@@ -13,20 +13,6 @@
     background-color: transparent;
 }
 
-#panelRight {
-    padding-right: 10px;
-    padding-left: 10px;
-    border-image: url('panel.png') 5 6 5 5;
-}
-
-#panelLeft {
-    padding-left: 6px;
-}
-
-#panelLeft .applet-box:first-child{
-    border-image: url('applet-box.png') 5 5 5 8;
-}
-
 .popup-menu,
 .menu,
 .window-caption, /* Open windows aka "exposé" */
@@ -365,17 +351,29 @@ StScrollBar StButton#hhandle {
     border: inset 0 rgba(0,0,0,0.9);
     border-bottom-width: 4px;
 }
-#panelLeft {
-    spacing: 0px;
-}
+
 #panelCenter {
     spacing: 0px;
     padding-left: 1px;
     padding-right: 1px;
 }
+
 #panelRight {
-    spacing: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-image: url('panel.png') 5 6 5 5;
 }
+
+#panelLeft {
+    padding-left: 6px;
+}
+
+#panelLeft .applet-box:first-child{
+    color: transparent;
+    border-image: url('search.png') 5 5 5 8;
+    background-image: url('magnify.png');
+}
+
 #panelLeft:dnd {
     background-color: rgba(255,0,0,0.6);
 }
@@ -734,7 +732,7 @@ StScrollBar StButton#hhandle {
     icon-size: 36px;
 }
 #notification StEntry {
-    padding: 4px;
+    padding: 10px 8px;
     color: black;
     border-image: url('entry.png') 2;
     caret-color: black;
@@ -852,7 +850,7 @@ StScrollBar StButton#hhandle {
     font-size: 10.5pt;
     font-weight: normal;
     width: 23em;
-    padding: 8px;
+    padding: 10px 8px;
     color: black;
     selection-background-color: white;
 }
@@ -1264,7 +1262,7 @@ StScrollBar StButton#hhandle {
     padding-right: 30px;
 }
 #menu-search-entry {
-    padding: 8px;
+    padding: 10px 8px;
     color: black;
     border-image: url('menu-entry.png') 6;
     caret-color: white;
@@ -1503,12 +1501,6 @@ StScrollBar StButton#hhandle {
     padding-bottom: 0px;
     color: white;
     transition-duration: 50;
-}
-.applet-box.vertical {
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 3px;
-    padding-bottom: 3px;
 }
 .applet-box:hover {
     border-image: url('hover-box.png') 4 4 4 4;

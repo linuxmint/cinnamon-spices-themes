@@ -313,6 +313,15 @@ GtkAssistant .sidebar {
     background-color: shade(@theme_selected_bg_color, 0.97);
 }
 
+/* flat button */
+.button.flat,
+.button.flat:checked {
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    box-shadow: none;
+}
+
 /****************
  * cell and row *
  ****************/
@@ -1160,6 +1169,17 @@ GtkPopover {
     background-color: @theme_bg_color;
     color: @theme_fg_color;
     box-shadow: 0 2px 3px alpha(black, 0.5);
+}
+
+GtkPopover .button.flat:hover,
+GtkPopover .button.flat:active {
+    border-width: 0;
+    border-radius: 0;
+    border-color: transparent;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+    background-image: none;
+    box-shadow: none;
 }
 
 GtkPopover.osd {
