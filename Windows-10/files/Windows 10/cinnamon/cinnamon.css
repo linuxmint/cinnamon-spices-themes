@@ -32,8 +32,7 @@ stage {
  * ===================================================================*/
 
 StScrollBar {
-    padding: 3px;
-    padding-right: 1px;
+    padding: 1px;
 }
 
 StScrollView.vfade {
@@ -45,18 +44,18 @@ StScrollView.hfade {
 }
 
 StScrollView StScrollBar {
-    min-width: 12px;
-    min-height: 16px;
+    min-width: 4px;
+    min-height: 4px;
 }
 
 StScrollBar StBin#trough {
-    background-color: rgba(250,50,50,0.92);
-    border-image: url('background-assets/scrollthrough.png');
+    padding: 3px;
+    background-color: transparent;
 }
 
 StScrollBar StButton#vhandle,
 StScrollBar StButton#hhandle {
-    border-image: url("control-assets/scroll-handle.png") 12;
+    background-color: rgba(255,255,255,0.3);
 }
 
  StScrollBar StButton#vhandle:hover,
@@ -65,7 +64,7 @@ StScrollBar StButton#hhandle {
  StScrollBar StButton#hhandle:active,
  StScrollBar StButton#vhandle:focus,
  StScrollBar StButton#hhandle:focus {
-    border-image: url("control-assets/scroll-handle-hover.png") 12;
+    background-color: rgba(255,255,255,0.5);
 }
 
 
@@ -199,6 +198,7 @@ StScrollBar StButton#hhandle {
     box-shadow: none;
 }
 
+.menu stEntry,
 .popup-menu StEntry {
     border-image: url("misc-assets/entry.svg") 7;
     background-gradient-direction: none;
@@ -285,8 +285,6 @@ spacing: 1em;
 }
 .popup-separator-menu-item {
     background-color: rgba(50,50,50,1);
-    -gradient-start: rgba(50,50,50,1);
-    -gradient-end: rgba(50,50,50,1);
     box-shadow: 0px 1px 1px 0px rgba(220,220,220,0.06);
     border-radius: 5px; 
     -margin-horizontal: 14px;
@@ -355,6 +353,7 @@ background-color: none;
     color: #fff;
     font-size: 9pt;
     height: 40px;
+    width: 50px;
     padding: 0px;
 }
 
@@ -362,31 +361,65 @@ background-color: none;
     spacing: 0px;
 }
 
+/* Start Menu icon */
+#panelLeft .applet-box:first-child {
+	background-image: url("orb/menu.png");
+	transition-duration: 300;
+    background-size: cover;
+    width: 35px;
+    height: 40px;
+	color: rgba(255,0,0,0) !important;
+}
+
+#panelLeft .applet-box:first-child:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+#panelLeft .applet-box:first-child:active {
+    background-color: rgba(255,255,255,0.25);
+}
+
 #panelLeft:ltr {
-padding-left: 0px;
+    padding-left: 0px;
 }
 
 #panelLeft:rtl {
-padding-left: 0px;
+    padding-left: 0px;
 }
 
 #panelRight:ltr {
-padding-right: 0px;
-spacing: 0px;
+    padding-right: 0px;
+    spacing: 0px;
 }
 
 #panelRight:rtl {
-padding-right: 0px;
-spacing: 0px;
+    padding-right: 0px;
+    spacing: 0px;
+}
+
+#panelLeft.vertical {
+    padding: 0px;
+}
+
+#panelLeft.vertical:ltr {
+    padding-right: 0px;
+}
+
+#panelLeft.vertical:rtl {
+    padding-left: 0px;
+}
+
+#panel:highlight {
+    background-color: #aa5555;
 }
 
 .panel-status-button,
 .panel-button {
--natural-hpadding: 5px;
--minimum-hpadding: 5px;
-font-weight: bold;
-border: 1px solid transparent;
-transition-duration: 150; 
+    -natural-hpadding: 5px;
+    -minimum-hpadding: 5px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition-duration: 150; 
 }
 
 .panel-status-button:hover,
@@ -399,38 +432,35 @@ transition-duration: 150;
 }
 
 .system-status-icon {
-icon-size: 1.3em;
+    icon-size: 1.3em;
 }
 
 #panelLeft:dnd {
-background: #1f1f1f;
-
+    background: #1f1f1f;
 }
 
 #panelCenter:dnd {
-background: #222;
+    background: #222;
 }
 
 #panelRight:dnd {
-background: #111;
+    background: #111;
 }
+
 /* ===================================================================
  * Expo view
  * ===================================================================*/
 
 .expo-background {
-    background: rgba(0, 0, 0, .2) url("expo-scale-assets/stripes.svg");
+    background-color: rgba(0, 0, 0, .35);
     background-repeat: none;
 }
 
 .expo-workspace-thumbnail-frame {
-    border: 3px transparent;
-    border-image: url("expo-scale-assets/workspace-frame.svg") 6;
+    border: 1px rgb(20,20,20);
 }
 
 .expo-workspace-thumbnail-frame#active {
-    border: 3px transparent;
-    border-image: url("expo-scale-assets/workspace-frame.svg") 6;
 }
 
 .workspace-thumbnails {
@@ -445,7 +475,7 @@ background: #111;
 }
 
 .workspace-overview-background-shade {
-    background: rgba(0, 0, 0, .8) url("expo-scale-assets/stripes.svg");
+    background-color: rgba(0, 0, 0, .8);
     background-repeat: repeat;
 }
 
@@ -478,34 +508,27 @@ background: #111;
 }
 
 .expo-workspaces-name-entry {
-    border-image: url("expo-scale-assets/workspace-name.svg") 6;
-    height: 15px;
-    padding: 10px 12px;
+    height: 12px;
+    padding: 6px 12px;
     text-align: center;
-    font-weight: normal;
+    font-weight: bold;
+    border: 2px transparent;
     color: #fff;
 }
 
 .expo-workspaces-name-entry#selected {
-    border-image: url("expo-scale-assets/workspace-name-focused.svg") 6;
-    height: 15px;
-    padding: 10px 12px;
-    text-align: center;
-    font-weight: normal;
-    color: #fff;
+    border-color: white;
 }
 
 .expo-workspaces-name-entry:focus,
 .expo-workspaces-name-entry#selected:focus {
-    border-image: url("expo-scale-assets/workspace-name-pressed.svg") 12;
-    height: 15px;
-    padding: 10px 12px;
-    text-align: center;
     font-weight: normal;
     color: #000;
     selected-color: #fff;
     caret-color: #000;
     caret-size: 1px;
+    border-color: transparent;
+    background-color: rgba(255,255,255,0.85);
     selection-background-color: #2975E9;
 }
 
@@ -529,16 +552,16 @@ background: #111;
  * ===================================================================*/
 
 .window-caption {
-    border-image: url("expo-scale-assets/window-name.svg") 6;
     color: #fff;
+    border: 2px transparent;
     font-size: 9pt;
     font-weight: bold;
-    padding: 0 0;
+    padding: 5px 8px;
     -cinnamon-caption-spacing: 10px;
 }
 
 .window-caption#selected {
-    border-image: url("expo-scale-assets/window-name-focused.svg") 6;
+    border-color: white;
     font-weight: bold;
     color: #fff;
     spacing: 25px;
@@ -850,6 +873,7 @@ background: #111;
 }
 
 .switcher-list .item-box {
+    border: 3px solid transparent;
     padding: 8px;
 }
 
@@ -858,7 +882,8 @@ background: #111;
 }
 
 .switcher-list .item-box:selected {
-    border-image: url("background-assets/hover.svg") 7;
+/*    border-image: url("background-assets/hover.svg") 7;*/
+    border-color: white;
     color: #fff;
 }
 
@@ -1568,7 +1593,7 @@ background: #111;
 
 .window-list-box {
     spacing: 4px;   
-    padding-top: 0;   
+    padding-top: 0;
 }
 
 .window-list-item-label {
@@ -1585,9 +1610,11 @@ background: #111;
     transition-duration: 100;
 }
 
+.app-list-item-box {
+    border-image: none;    
+}
 
 .window-list-item-box:hover  {     
-    /*box-shadow: inset 0px 0px 0px 1px rgba(120,120,120,0.5);  */
     border-image:url("panel-assets/bottom-item-active.svg") 4;
     transition-duration: 100;
 
@@ -2060,3 +2087,7 @@ background: #111;
     border-right-width: 0px;
     border-radius: 8px 0px 0px 0px;
 }
+
+/*.slingshot .button.app {
+    border-image: url('buttons/app-button.svg') 6;
+}*/
