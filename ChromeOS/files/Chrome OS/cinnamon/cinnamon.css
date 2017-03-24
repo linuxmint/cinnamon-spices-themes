@@ -348,6 +348,7 @@ StScrollBar StButton#hhandle {
     font-size: 8.5pt;
     font-weight: normal;
     height: 44px;
+    width: 52px;
     border: inset 0 rgba(0,0,0,0.9);
     border-bottom-width: 4px;
 }
@@ -372,6 +373,7 @@ StScrollBar StButton#hhandle {
     color: transparent;
     border-image: url('search.png') 5 5 5 8;
     background-image: url('magnify.png');
+    height: 35px;
 }
 
 #panelLeft:dnd {
@@ -395,6 +397,18 @@ StScrollBar StButton#hhandle {
 }
 #panelRight:rtl {
     padding-right: 0px;
+}
+#panelLeft.vertical {
+    padding: 0px;
+}
+#panelLeft.vertical:ltr {
+    padding-right: 0px;
+}
+#panelLeft.vertical:rtl {
+    padding-left: 0px;
+}
+#panel:highlight {
+    background-color: #aa5555;
 }
 .panel-top {}
 .panel-bottom {}
@@ -1501,6 +1515,12 @@ StScrollBar StButton#hhandle {
     padding-bottom: 0px;
     color: white;
     transition-duration: 50;
+}
+.applet-box.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 .applet-box:hover {
     border-image: url('hover-box.png') 4 4 4 4;
