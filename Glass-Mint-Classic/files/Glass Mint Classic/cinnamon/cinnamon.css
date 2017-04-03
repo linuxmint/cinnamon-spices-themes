@@ -38,16 +38,13 @@ StScrollBar StBin#trough {
 		background-gradient-direction: vertical;
 		background-gradient-start: rgba(0,0,0,0.4);
 		background-gradient-end: rgba(0,0,0,0.4);
-		/*border: 1px solid rgb(0,0,0);*/
-		/*box-shadow: 0px 0px 0px 1px rgb(0,0,0);*/
-		/*box-shadow: 0px 0px 5px 2px rgb(172,205,138);*/
 }
 StScrollBar StButton#vhandle {
 /* ('RU') Сам ползунок, только для вертикальной прокрутки. */
 		background-image: url("scroll-vhandle.svg");
 		background-color:  rgba(172,205,138,0.5);
 		box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
-		border: 1px solid rgb(172,205,138);
+		border: 1px solid rgba(172,205,138, 0.8);
 	border-radius: 4px;
 	border-left-width: 0px;
 	border-right-width: 0px;
@@ -58,7 +55,7 @@ StScrollBar StButton#hhandle {
 		background-image: url("scroll-hhandle.svg");
 		background-color:  rgba(172,205,138,0.5);
 		box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
-		border: 1px solid rgb(172,205,138);
+		border: 1px solid rgba(172,205,138, 0.8);
 	border-radius: 4px;
 	border-top-width: 0px;
 	border-bottom-width: 0px;
@@ -67,8 +64,6 @@ StScrollBar StButton#hhandle {
 StScrollBar StButton#hhandle:hover,
 StScrollBar StButton#vhandle:hover
 {
-		/*background-color:  rgba(194,221,167,0.6);
-		box-shadow: inset 2px 2px 2px rgba(255,255,255,0.5);*/
 		background-color:  rgba(172,205,138,1);
 		box-shadow: inset 1px 1px 1px transparent;
 	transition-duration: 450;
@@ -100,8 +95,8 @@ StScrollBar StButton#vhandle:hover
   ==================================================================== */
 
 
-.popup-menu-boxpointer {
-/* ('RU') Сама плоскость со всплывающим меню. */
+.popup-menu-boxpointer {  /* ('RU') Устарело. */
+/* ('RU') Сама плоскость со всплывающим меню. В Сinnamon 3.2 заменена на .menu */
 	color: rgb(230,230,230);
 	-boxpointer-gap: 2px;
 	-arrow-border-color: transparent;
@@ -121,16 +116,20 @@ StScrollBar StButton#vhandle:hover
 }
 
 .menu {
-/* ('RU') Сама плоскость со всплывающим меню. */
+/* ('RU') Сама плоскость со всплывающим меню. 
+Появился в Cinnamon 3.2. 
+То же, что и .popup-menu-boxpointer и .popup-menu в более ранних версиях Cinnamon.
+Стрелки удалены.
+*/
+	font-size: 13px;
 	color: rgb(230,230,230);
-    border-radius: 8px;
-    background-gradient-direction: vertical;
-    background-gradient-start: rgba(46,45,42,0.8);
-    background-gradient-end: rgba(46,45,42,0.8); /* это цвет меню */
-    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
-    border: 1px solid rgb(22,22,22);
-/* ('RU') Это стрелки, наподобие тех что в диалогах в комиксах, от апплета до плоскости всплывающих меню этих апплетов */
-    font-size: 13px;
+	text-shadow: -1px 1px 3px rgba(0,0,0,1);
+	border-radius: 8px;
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end: rgba(46,45,42,0.8); /* это цвет меню */
+		box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+		border: 1px solid rgb(22,22,22);
 }
 
 .popup-sub-menu StScrollBar {
@@ -140,11 +139,11 @@ StScrollBar StButton#vhandle:hover
 .popup-combo-menu {
 /* ('RU') Плоскость меню, которое всплывает при нажатии на окно в режиме обзора окон. */
 	padding: 9px 0px 9px 0px;
-	border-radius: 0px 22px 0px 22px;
+	border-radius: 12px;
 		background-gradient-direction: vertical;
-		background-gradient-start: rgba(60,59,55,0.8);
-		background-gradient-end: rgba(60,59,55,0.8);
-		box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+		background-gradient-start: rgba(46,45,42,0.9);
+		background-gradient-end: rgba(46,45,42,0.8);
+		/*box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);*/
 		border: 1px solid rgb(22,22,22);
 }
 
@@ -163,14 +162,16 @@ StScrollBar StButton#vhandle:hover
 /* ('RU') Кнопки или пункты во всплывающих окнах (неактивные, не наведена мышь). */
 	padding: 5px 24px 5px 24px;
 	spacing: 2px;
+	/*text-shadow: 0px 1px 1px rgba(22,22,22,0.7);*/
+	text-shadow: -1px 1px 3px rgba(0,0,0,0.8);
 }
 .popup-menu-item:active {
 /* ('RU') Активный пункт всплывающего меню (на него наведена мышь). */
 			background-gradient-direction: vertical;
-			background-gradient-start: rgba(194,221,167,0.2);
+			background-gradient-start: rgba(194,221,167,0.0);
 			background-gradient-end:  rgba(172,205,138,0.7);
 			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
-		text-shadow: 0px 1px 1px rgba(0,0,0,0.7);
+		/*text-shadow: 0px 1px 1px rgba(0,0,0,0.7);*/
 	border-radius: 4px;
 	transition-duration: 150;
 }
@@ -180,7 +181,7 @@ StScrollBar StButton#vhandle:hover
 			background-gradient-start: rgba(172,205,138,0.3);
 			background-gradient-end:  rgba(194,221,167,0.8);
 			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
-		text-shadow: 0px 1px 1px rgba(0,0,0,0.7);
+		/*text-shadow: 0px 1px 1px rgba(0,0,0,0.7);*/
 	border-radius: 4px;
 	color: white;
 }
@@ -198,8 +199,6 @@ StScrollBar StButton#vhandle:hover
 .popup-separator-menu-item {
 /* ('RU') Разделитель (линия). */
 	background: rgba(0,0,0,0.1);
-	-gradient-start: rgba(51,51,51,1);
-	-gradient-end: #555555;
 	border: 1px solid rgba(220,220,220,0.1);
 	border-top: 0px;
 	border-left: 0px;
@@ -275,41 +274,98 @@ StScrollBar StButton#vhandle:hover
 
 #panel {
 	font-size: 12px;
-	height: 28px;
+	height: 31px;
+	width: 38px;	
 }
 
 .panel-top {
-	background-image: url("panel-border-v.svg");
-	background-color: rgba(46,45,42,0.7);
-	background-repeat: repeat;
-	box-shadow: 0px 1px 3px 1.5px rgba(0,0,0,0.5);
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end: rgba(46,45,42,0.8); 
+		box-shadow: inset 0px -1px 0px 0px rgb(0,0,0);
 }
 
 .panel-bottom {
-	background-image: url("panel-border-n.svg");
-	background-color: rgba(46,45,42,0.7);
-	background-repeat: repeat;
-	box-shadow: 0px -1px 3px 1.5px rgba(0,0,0,0.5);
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end: rgba(46,45,42,0.8); 
+		box-shadow: inset 0px 1px 0px 0px rgb(0,0,0);
+}
+.panel-left {
+		background-gradient-direction: horizontal;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end: rgba(46,45,42,0.8); 
+		box-shadow: inset -1px 0px 0px 0px rgb(0,0,0);
+}
+.panel-right {
+		background-gradient-direction: horizontal;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end: rgba(46,45,42,0.8); 
+		box-shadow: inset 1px 0px 0px 0px rgb(0,0,0);	
 }
 
 .panel-corner {
 	-panel-corner-radius: 5px;
-	-panel-corner-background-color: rgba(60,59,55,0.5);
-	-panel-corner-outer-border-color: transparent;
-	-panel-corner-inner-border-color: transparent;
+	-panel-corner-background-color: rgba(46,45,42,0.7);
+	-panel-corner-outer-border-color: black;
+	-panel-corner-inner-border-color: black;
 	spacing: 12px;
 }
+
+#panel:highlight {
+/* (EN) Hightlights panel when you go to panel edit tab in cinnamon-control-center. */
+	background-gradient-direction: horizontal;
+	background-gradient-start: rgba(130,45,42,0.8);
+	background-gradient-end: rgba(130,45,42,0.8); 
+}
+
+
+.panelLeft:ltr {
+	padding-right: 0px;
+}
+.panelLeft:rtl {
+	padding-left: 0px;
+}
+.panelRight:ltr {
+	padding-left: 0px;
+	spacing: 0px;
+}
+.panelRight:rtl {
+	padding-right: 0px;
+	spacing: 0px;
+}
+.panelLeft.vertical {
+	padding: 0px;
+}
+.panelRight.vertical {
+	padding: 0px;
+}
+.panelCenter.vertical {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.panelLeft.vertical:dnd {
+}
+.panelCenter.vertical:dnd {
+}
+.panelRight.vertical:dnd {
+}
+
+
+
 
 #panelLeft, #panelCenter, #panelRight {
 	spacing: 0px;
 }
 #panelLeft:ltr {
-	padding-right: 4px;
+/* ('RU') Левая часть любой панели (нижняя в боковых панелях).  */
+	padding-right: 0px;
 }
 #panelLeft:rtl {
-	padding-left: 4px;
+	padding-left: 0px;
 }
 #panelRight:ltr {
+/* ('RU') Правая часть любой панели (нижняя в боковых панелях).  */
 	padding-left: 0px;
 	spacing: 0px;
 }
@@ -317,6 +373,8 @@ StScrollBar StButton#vhandle:hover
 	padding-right: 0px;
 	spacing: 0px;
 }
+
+
 
 
 /* ('RU') Кнопки, отображающие запущенные приложения, но не все, как Window list, а только поддерживающие данную функцию. Данный апплет еще называется системным треем. */
@@ -342,39 +400,60 @@ StScrollBar StButton#vhandle:hover
 }
 
 
+
+
 /* ('RU') Панель в режиме редактирования, разбита на три части: #panelLeft:dnd, #panelCenter:dnd, #panelRight:dnd (слева, справа и по центру, соответственно). */
 
 #panelLeft:dnd {
-		background-gradient-direction: vertical;
-		background-gradient-start: rgba(172,205,138,0);
-		background-gradient-end:  rgba(194,221,167,1);
-		border-top: 0px solid transparent;
-		border-bottom: 1px solid rgb(22,22,22);
-		border-left: 1px solid rgb(22,22,22);
-		border-right: 1px solid rgb(22,22,22);
-		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(172,205,138,0);
+			background-gradient-end:  rgba(194,221,167,1);
+			box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
 	border-radius: 6px;
 }
 #panelCenter:dnd {
-		background-gradient-direction: vertical;
-		background-gradient-start: rgba(172,205,138,0);
-		background-gradient-end:  rgba(194,221,167,1);
-		border-top: 0px solid transparent;
-		border-bottom: 1px solid rgb(22,22,22);
-		border-left: 1px solid rgb(22,22,22);
-		border-right: 1px solid rgb(22,22,22);
-		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(172,205,138,0);
+			background-gradient-end:  rgba(194,221,167,1);
+			box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
+		border-right: 3px solid transparent;
+		border-left: 3px solid transparent;
 	border-radius: 6px;
 }
 #panelRight:dnd {
-		background-gradient-direction: vertical;
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(172,205,138,0);
+			background-gradient-end:  rgba(194,221,167,1);
+			box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
+	border-radius: 6px;
+}
+
+
+
+
+#panelLeft.vertical:dnd {
+		background-gradient-direction: horizontal;
 		background-gradient-start: rgba(172,205,138,0);
 		background-gradient-end:  rgba(194,221,167,1);
-		border-top: 0px solid transparent;
-		border-bottom: 1px solid rgb(22,22,22);
-		border-left: 1px solid rgb(22,22,22);
-		border-right: 1px solid rgb(22,22,22);
-		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
+	border-radius: 6px;
+}
+#panelCenter.vertical:dnd {
+			background-gradient-direction: horizontal;
+			background-gradient-start: rgba(172,205,138,0);
+			background-gradient-end:  rgba(194,221,167,1);
+			box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
+		border-top: 3px solid transparent;
+		border-bottom: 3px solid transparent;
+		border-right: 0px solid transparent;
+		border-left: 0px solid transparent;
+	border-radius: 6px;
+}
+#panelRight.vertical:dnd {
+			background-gradient-direction: horizontal;
+			background-gradient-start: rgba(172,205,138,0);
+			background-gradient-end:  rgba(194,221,167,1);
+			box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
 	border-radius: 6px;
 }
 
@@ -563,7 +642,7 @@ StScrollBar StButton#vhandle:hover
 
 /* ===================================================================
   ('EN') Date applet.
-  ('RU') Апплет календаря.
+  ('RU') Апплет календаря (calendar.js).
    ===================================================================*/
 /* ('RU') Апплет с календарем и часами. */
 
@@ -578,21 +657,22 @@ StScrollBar StButton#vhandle:hover
 .datemenu-date-label {
 /* ('RU') Дата. Пишется в самом верху всплывающего окна (пример: Четверг, Сентябрь 24, 2015). */
 	font-size: 11pt;
-	padding-top: 0.6em;
+	padding-top: 0.65em;
 	padding-bottom: 0.3em;
 	font-weight: bold;
 	text-align: center;
 }
 .calendar-month-label {
 /* ('RU') Название месяца и года, пишется между кнопками перелистывания месяцев и годов. */
-	font-size: 10pt;
+	font-size: 11pt;
 	font-weight: bold;
-	padding-top: 0.6em;
-	padding-bottom: 0.1px;
+	padding-top: 0.45em;
+	padding-bottom: 0.3em;
 	text-align: center;
 }
 .calendar-day-heading {
 /* ('RU') Названия дней недели (Пнд, Вто, ...). */
+	padding-top: 0.8em;
 	font-size: 9pt;
 	font-weight: bold;
 }
@@ -607,7 +687,7 @@ StScrollBar StButton#vhandle:hover
 
 .calendar-day-base {
 /* ('RU') Клетка (база) с одним днем месяца, в ней пишется число этого дня. Именно клетка (база), а не кнопка. */
-    /*font-size: 9pt;*/ /* ('RU') отвечает за размер шрифта не только в кнопках дней месяца (чисел), но подобное есть и в .calendar-day . */
+	/*font-size: 9pt;*/ /* ('RU') отвечает за размер шрифта не только в кнопках дней месяца (чисел), но подобное есть и в .calendar-day . */
 	text-align: center;
 	width: 30px;
 	height: 20px;
@@ -674,7 +754,7 @@ StScrollBar StButton#vhandle:hover
 	height: 32px;
 		background-image: url("calendar-arrow-left.svg");
 	border-radius: 4px;
-	transition-duration: 400;
+	transition-duration: 550;
 }
 .calendar-change-month-back:hover {
  	/* ('RU') При наведении на стрелки переключения по месяцам и годам,
@@ -682,10 +762,11 @@ StScrollBar StButton#vhandle:hover
 	которая задавалась изображением. А при использовании в качестве подсветки сплошного прозрачног цвета, стрелка,
 	заданная изображением, отображается. */
 		background-image: url("calendar-arrow-left-hover.svg");
-	transition-duration: 300;
+		box-shadow: 0 0 3px 0 rgb(172,205,138);
 }
 .calendar-change-month-back:active {
 		background-image: url("calendar-arrow-left-active.svg");
+		box-shadow: 0 0 6px 0 rgb(194,221,167);
 	transition-duration: 100;
 }
 .calendar-change-month-forward,
@@ -694,7 +775,7 @@ StScrollBar StButton#vhandle:hover
 	height: 32px;
 		background-image: url("calendar-arrow-right.svg");
 	border-radius: 4px;
-	transition-duration: 400;
+	transition-duration: 550;
 }
 .calendar-change-month-forward:hover {
 	/* ('RU') При наведении на стрелки переключения по месяцам и годам,
@@ -702,10 +783,11 @@ StScrollBar StButton#vhandle:hover
 	которая задавалась изображением. А при использовании в качестве подсветки сплошного прозрачног цвета,
 	стрелка, заданная изображением, отображается. */
 		background-image: url("calendar-arrow-right-hover.svg");
-	transition-duration: 300;
+		box-shadow: 0 0 3px 0 rgb(172,205,138);
 }
 .calendar-change-month-forward:active {
 		background-image: url("calendar-arrow-right-active.svg");
+		box-shadow: 0 0 6px 0 rgb(194,221,167);
 	transition-duration: 100;
 }
 
@@ -1040,6 +1122,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 	padding-bottom: 14px;
 	font-size: 9pt;
 	color: white;
+	text-shadow: -1px 1px 3px rgba(0,0,0,1);
 }
 
 .run-dialog-error-label {
@@ -1062,8 +1145,8 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 	color: rgb(0,0,0);
 		border: 1px solid rgb(172,205,138);
 		background-gradient-direction: vertical;
-		background-gradient-start: rgba(172,205,138,0);
-		background-gradient-end:  rgba(194,221,167,1);
+		background-gradient-start: rgba(172,205,138,0.2);
+		background-gradient-end:  rgba(194,221,167,0.8);
 	selected-color: rgb(230,230,230);
 	caret-color: rgb(60,59,55);
 	font-weight: normal;
@@ -1099,7 +1182,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 
 .lightbox {
 /* ('RU') этот пункт указывает затенение (затемнение) рабочего стола и всего что не связано со всплывающими окнами, при вызове всплывающих окон. */
-	background-color: rgba(60,59,55,0.1);
+	background-color: rgba(46,45,42,0.4);
 	transition-duration: 450;
 }
 
@@ -1434,6 +1517,8 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .menu-category-button {
 /* ('RU') Кнопки с категориями приложений. */
 	padding: 7px;
+	/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+	text-shadow: -1px 1px 3px rgba(0,0,0,1);
 }
 .menu-category-button-greyed {
 /* ('RU') Неактивные кнопки с категориями приложений. */
@@ -1443,15 +1528,16 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 }
 .menu-category-button-selected {
 /* ('RU') Выбранная кнопка с категориями приложений (на них наведена мышь либо пользователь перешел к списку программ из текущей категории. */
-    padding-top: 7px;
-    padding-left: 7px;
-    padding-right: 7px;
+	padding-top: 7px;
+	padding-left: 7px;
+	padding-right: 7px;
 	padding-bottom: 7px;
 			background-gradient-direction: vertical;
 			background-gradient-start: rgba(194,221,167,0.0);
 			background-gradient-end:  rgba(172,205,138,0.7);
 			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
-		text-shadow: 0px 1px 1px rgba(0,0,0,0.7);
+		/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+		text-shadow: -1px 1px 3px rgba(0,0,0,1);
 	border-radius: 3.5px;
 	transition-duration: 150;
 }
@@ -1494,6 +1580,8 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .menu-application-button {
 /* ('RU') Кнопки с приложениями. */
 	padding: 7px;
+	/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+	text-shadow: -1px 1px 3px rgba(0,0,0,1);
 }
 .menu-application-button-selected {
 	padding: 7px;
@@ -1501,7 +1589,8 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 			background-gradient-start: rgba(194,221,167,0.0);
 			background-gradient-end:  rgba(172,205,138,0.7);
 			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
-		text-shadow: 0px 1px 1px rgba(0,0,0,0.7);
+		/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+		text-shadow: -1px 1px 3px rgba(0,0,0,1);
 	border-radius: 3.5px;
 	transition-duration: 150;
 }
@@ -1509,10 +1598,11 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 /* ('EN') This style is used in menu application buttons for applications which were newly installed. */
 /* ('RU') Стиль подсветки недавно установленных программ. */
 			background-gradient-direction: horizontal;
-			background-gradient-start: rgba(172,205,138,0.2);
-			background-gradient-end:  rgba(194,221,167,0.8);
+			background-gradient-start: rgba(172,205,138,0.3);
+			background-gradient-end:  rgba(194,221,167,0.7);
 			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
-		text-shadow: 0px 1px 1px rgba(0,0,0,0.7);
+		/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+		text-shadow: -1px 1px 3px rgba(0,0,0,1);
 		color: rgb(255,255,255);
 	border-radius: 3.5px;
 }
@@ -1539,10 +1629,11 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 	padding-left: 28px;
 	text-align: right;
 	color: black;
+	text-shadow: -1px 1px 3px rgba(0,0,0,0);
 		border: 1px solid rgb(172,205,138);
 		background-gradient-direction: vertical;
-		background-gradient-start: rgba(172,205,138,0);
-		background-gradient-end:  rgba(194,221,167,1);
+		background-gradient-start: rgba(172,205,138,0.2);
+		background-gradient-end:  rgba(194,221,167,0.8);
 	border-radius: 8px;
 }
 .menu-selected-app-box:rtl {
@@ -1571,8 +1662,8 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 /* ('RU') Диалог ввода текста для поиска по меню. */
 		border: 1px solid rgb(172,205,138);
 		background-gradient-direction: vertical;
-		background-gradient-start: rgba(172,205,138,0);
-		background-gradient-end:  rgba(194,221,167,1);
+		background-gradient-start: rgba(172,205,138,0.2);
+		background-gradient-end:  rgba(194,221,167,0.8);
 	border-radius: 4px;
 	selected-color: rgb(234,227,209);
 	caret-color: rgb(60,59,55);
@@ -1617,11 +1708,22 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .window-list-box {
 	spacing: 3px;
 }
+.window-list-box.vertical {
+	spacing: 4px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+.window-list-box.vertical #appMenuIcon {
+	padding-top: 3px;
+}
 
 .window-list-item-label {
 	width: 15em;
 	min-width: 5px;
 }
+
 
 
 
@@ -1632,74 +1734,42 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 	padding-bottom: 1px;
 	padding-left: 5px;
 	padding-right: 5px;
-		background-gradient-direction: vertical; /* ('RU') указан градиент а не просто цвет, без градиента box-shadow не работает */
-		background-gradient-start: rgba(0,0,0, 0.4);
-		background-gradient-end:  rgba(0,0,0, 0.0);
-		/*background-gradient-direction: vertical;*/ /* ('RU') указан градиент а не просто цвет, без градиента box-shadow не работает */
-		/*background-gradient-direction: vertical;
-		background-gradient-start: rgba(0,0,0, 0);
-		background-gradient-end:  rgba(0,0,0, 0);*/
-		/*box-shadow: inset 0px 0px 1px 1px rgb(194,221,167);*/
-		/*box-shadow: 0px 0px 1px 1px rgb(194,221,167);*/
-
-		/*border: 1px solid rgb(194,221,167);
-		border-top-width: 0px;
-		border-left-width: 0px;
-		border-right-width: 0px;*/
-		box-shadow: inset 0px -1px 0px 0px rgb(194,221,167);
-		/*border-right: 1px solid rgb(194,221,167);*/
-
-	border-radius: 0px 0px 8px 8px;
+				background-gradient-direction: vertical; /* ('RU') указан градиент а не просто цвет, без градиента box-shadow не работает */
+				background-gradient-start: rgba(0,0,0, 0.0);
+				background-gradient-end:  rgba(0,0,0, 0.1);
+				box-shadow: inset 0px -1px 0px 0px rgb(194,221,167);
+		/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+		text-shadow: -1px 1px 3px rgba(0,0,0,1);
+	border-radius: 1px;
 	color: rgb(230,230,230);
 	transition-duration: 450;
+}
+.window-list-item-box.left,
+.window-list-item-box.right {
+	padding-left: 0;
+	padding-right: 0;
 }
 .window-list-item-box:active,
 .window-list-item-box:checked,
 .window-list-item-box:focus {
-		/*background-gradient-direction: vertical;
-		background-gradient-start: rgba(172,205,138,0.3);
-		background-gradient-end:  rgba(194,221,167,0.8);
-		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);*/
 	color: white;
-
-		/*color: black;*/
-		background-gradient-direction: vertical;
-		background-gradient-start: rgba(172,205,138,0);
-		background-gradient-end:  rgba(194,221,167,0.7);
-		box-shadow: inset 0 0 0 1px rgb(172,205,138);
-		text-shadow: 0px 1px 1px rgba(0,0,0,0.8);
-	border-radius: 0px 0px 10px 10px;
+				background-gradient-direction: vertical;
+				background-gradient-start: rgba(172,205,138,0.0);
+				background-gradient-end:  rgba(194,221,167,0.7);
+				box-shadow: inset 0 0 0 1px rgb(172,205,138);
+	border-radius: 3px;
 }
 .window-list-item-box:hover {
-		/*background-gradient-direction: vertical;
-		background-gradient-start: rgba(194,221,167,0.2);
-		background-gradient-end:  rgba(172,205,138,0.7);
-		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);*/
-		/*background-gradient-direction: vertical;
-		background-gradient-start: rgba(194,221,167,0.0);
-		background-gradient-end:  rgba(172,205,138,0.5);
-		box-shadow: inset 0 0px 0px 1px rgba(172,205,138,0.9);
-		border: 1px solid transparent;
-		border-top-width: 0px;
-		border-left-width: 0px;
-		border-right-width: 0px;
-		text-shadow: 0px 1px 1px rgba(0,0,0,0.8);*/
-		/*font-weight: 550;*/
-		/*border: 1px solid black;
-	border-top-width: 0px;
-	border-left-width: 0px;
-	border-right-width: 0px;*/
 			border-image: url("windowlist_hover.svg");
-			/*border-radius: 0px 0px 10px 10px;*/
-		/*text-shadow: 0px 0px 8px white;*/
 	transition-duration: 150;
 }
 .window-list-item-demands-attention {
-		background-gradient-direction: horizontal;
-		background-gradient-start: rgba(172,205,138,0.3);
-		background-gradient-end:  rgba(194,221,167,0.8);
-		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
-	color: white;
+				background-gradient-direction: horizontal;
+				background-gradient-start: rgba(172,205,138,0.2);
+				background-gradient-end:  rgba(194,221,167,0.6);
+				box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
+			color: white;
+	border-radius: 4px;
 }
 
 
@@ -1720,17 +1790,18 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 	font-weight: normal;
 	color: rgb(230,230,230); /* ('RU') этот color не для текста, а для картинок стандартных,
 	но не тех, что назначаются изображениями темой icon theme */
-	text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+	/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+	text-shadow: -1px 1px 3px rgba(0,0,0,1);
 	border-radius: 1px;
 	transition-duration: 450;
 	/*min-width: 12px;*/ /* ('RU') убрал чтобы апплеты не уменьшались в размерах в случае,
 	если список окон увеличится и не останется места на панели */
 }
 .applet-box.vertical {
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .applet-box:hover {
 			background-gradient-direction: vertical;
@@ -1739,7 +1810,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 			box-shadow: inset 0px 1px 1px rgba(255,255,255,0.8);
 	/*color: white;*/ /* ('RU') этот color не для текста, а для картинок стандартных, но не тех,
 	что назначаются изображениями темой icon theme */
-	text-shadow: 0px 1px 1px rgba(0,0,0,0.8);
+	/*text-shadow: -1px 1px 1px rgba(0,0,0,1);*/
 	transition-duration: 150;
 }
 .applet-box:active {
@@ -1749,7 +1820,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 			background-gradient-start: rgba(172,205,138,0.3);
 			background-gradient-end: rgba(194,221,167,0.8);
 		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.7);
-		text-shadow: 0px 1px 1px rgba(0,0,0,0.8);
+		/*text-shadow: 0px 1px 1px rgba(0,0,0,0.8);*/
 }
 
 
@@ -1791,7 +1862,7 @@ color: white;
 		но на всякий случай оставил, по-идее должен меняться цвет картинок что идут с темой icon theme
 		(иконка кнопки свернуть рабочий стол, логотип меню т.д.), но эти картинки сами по себе уже имеют цвет,
 		поэтому он не может измениться. */
-	icon-shadow: white 0px 0px 3px; /* ('RU') меняет цвет тени картинок иконок,
+	/*icon-shadow: white 0px 0px 3px;*/  /* ('RU') меняет цвет тени картинок иконок,
 	не затрагивает тень от текста, она в .applet-box:hover .applet-label */
 }
 .applet-box:active .applet-icon {
@@ -2002,16 +2073,16 @@ color: white;
 
 .sound-player .slider {
 	height: 15px;  /* ограничивает увеличение апплета */
-    	border: 1px solid rgb(172,205,138);
+		border: 1px solid rgb(172,205,138);
 	border-radius: 4px;
 	/*box-shadow: inset 0px 0px 1px 1px rgb(172,205,138);*/
-    -slider-height: 45px;  /* неизвестно на что влияет */ /* Узнать. */
-    -slider-background-color: rgba(0,0,0, 0.8);
-    -slider-active-background-color: rgba(172,205,138,0.4);
+	-slider-height: 45px;  /* неизвестно на что влияет */ /* Узнать. */
+	-slider-background-color: rgba(0,0,0, 0.8);
+	-slider-active-background-color: rgba(172,205,138,0.4);
 	-slider-border-color: rgba(0,0,0, 0);  /* Не работает. */
 	-slider-active-border-color: rgba(0,0,0,0);  /* Не работает. */
 	-slider-border-width: 0px;  /* Не работает. */
-    -slider-handle-radius: 0px;
+	-slider-handle-radius: 0px;
 }
 
 .sound-player StBoxLayout {
@@ -2171,28 +2242,39 @@ padding: .4em 1.75em;
 /* ('RU') Если в настройках апплета были выбраны "простые кнопки". */
 /* ('EN') Controls the styling when using the "Simple buttons" option */
 
-#workspaceSwitcher {
+#workspaceSwitcher { /* ('RU') Устарело? */
 	spacing: 2px;
-	padding: 3px;
 }
 
+
+
+.panel-top .workspace-switcher,
+.panel-bottom .workspace-switcher {
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.panel-left .workspace-switcher,
+.panel-right .workspace-switcher {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+
+
+
 .workspace-button {
+/* ('RU') Кнопки на плоскости апплета переключателя рабочих областей. */
 	width: 28px;
 	font-size: 11px;
-	color: rgb(172,205,138) /*transparent*/ /*rgb(230,230,230)*/; /* ('RU') Цвет надписи (цифры) на кнопке рабочей области. */
+	color: rgb(172,205,138); /* ('RU') Цвет надписи (цифры) на кнопке рабочей области. */
 		background-gradient-direction: vertical;
 		background-gradient-start: rgb(41,40,38);
 		background-gradient-end:  rgb(41,40,38);
-		/*border: 0px solid rgb(172,205,138);
-	border-top-width: 1px;
-	border-bottom-width: 1px;*/
-	/*border-top: 2px solid transparent;
-	border-bottom: 1px solid transparent;*/ /* ('RU') Только границами можно ограничить высоту, за ширину отвечает свойство "width". */
 	transition-duration: 450;
 }
 .workspace-button:hover {
 	box-shadow: inset 0 0 0 1px rgb(172,205,138);
-	/*border: 1px solid rgb(172,205,138);*/
 }
 
 .workspace-button:outlined {
@@ -2202,6 +2284,9 @@ padding: .4em 1.75em;
 		background-gradient-end:  rgba(194,221,167,0.8);
 		box-shadow: inset 0 0 0 1px rgb(172,205,138);
 }
+
+
+
 
 /* ('RU') Если в настройках апплета были выбраны кнопки с "видимым представлением рабочих областей". */
 /* ('EN') Controls the style when using the "Visual representation" option. */
@@ -2253,23 +2338,78 @@ padding: .4em 1.75em;
 /* ('RU') Это апплет с кнопками (значка) быстрого запуска программ прямо на панели. */
 
 
-#panel-launchers-box {
+#panel-launchers-box { /* (RU) Устарело? */
 	padding-left: 0px;
 }
 
-.panel-launcher {
+.panel-launcher { /* (RU) Устарело? */
 	margin: 1px;
 	padding: 1px;
 	border-radius: 0px;
 	transition-duration: 450;
 }
-.panel-launcher:hover {
+.panel-launcher.vertical { /* (RU) Устарело? */
+	margin: 1px;
+	padding: 1px;
+	border-radius: 4px;
+	transition-duration: 450;
+}
+.panel-launcher:hover { /* (RU) Устарело? */
 		background-gradient-direction: vertical;
 		background-gradient-start: rgba(194,221,167,0.2);
 		background-gradient-end:  rgba(172,205,138,0.7);
 		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.8);
 	transition-duration: 150;
 }
+
+
+
+
+.launcher {
+/* (RU) Плоскость с элементами для быстрого доступа. */
+		padding-left: 3px;
+		padding-right: 3px;
+		/*border-bottom-width: 1px;*/
+		transition-duration: 300;
+}
+.launcher .icon-box {
+/* (RU) Иконки на плоскости .launcher{}. */
+		padding-top: 2px;
+}
+
+
+
+.panel-launchers {
+/* (RU) Виджеты на плоскости .launcher{}. */
+		padding-left: 2px;
+		spacing: 0px;
+}
+.panel-launchers.vertical {
+/* (RU) Виджеты на плоскости .launcher{} в случае с вертикальными панелями. */
+		/*width: 38px;*/
+		padding-top: 2px;
+		padding-bottom: 2px;
+		padding-left: 0px;
+		padding-right: 0px;
+		spacing: 0px;
+}
+
+.panel-launchers.vertical .launcher .icon-box {
+/* (RU) Иконки на плоскости .launcher{} в случае с вертикальными панелями. */
+		padding-top: 2px;
+		padding-bottom: 1px;
+}
+
+.panel-launchers .launcher:hover {
+/* (RU) Виджеты на плоскости .launcher{}. */
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0.2);
+		background-gradient-end:  rgba(172,205,138,0.7);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.8);
+	transition-duration: 150;
+}
+
+
 
 
 .panel-launcher-add-dialog-content-box {
@@ -2284,6 +2424,8 @@ padding: .4em 1.75em;
 	padding: 6px;
 	spacing: 10px;
 }
+
+
 
 
 .panel-launcher-add-dialog-entry {
@@ -2322,8 +2464,8 @@ padding: .4em 1.75em;
 		/*background-color: rgba(0,0,0,0.4);*//* убрал чтобы не накладывался фон и нормально отображались тени. */
 		border: 5px solid rgba(0,0,0,0.4) /*rgb(172,205,138)*/;
 		/*box-shadow: 0px 0px 0px 5px rgb(172,205,138);*/
-    border-radius: 6px;
-    padding: 0.2em;
+	border-radius: 6px;
+	padding: 0.2em;
 }
 
 .user-label {
@@ -2375,8 +2517,8 @@ background-image: url("corner-ripple.svg");
 
 
 /* ================================================================================================
-  ('RU') Сами режимы обзора.
-  ('EN') Overview modes.
+  ('RU') Сами режимы обзора. Общие для обоих режимов обзора параменты.
+  ('EN') Overview modes. Same for both overview modes parameters.
   ================================================================================================= */
 
 
@@ -2434,7 +2576,7 @@ background-gradient-start: rgba(230,230,230,0.2);
 
 
 .workspace-osd {
-/* ('RU') Эта штука выводит имя рабочих областей при изменении рабочей области в режиме обзора рабочих областей. */
+/* ('RU') Эта штука выводит имя рабочих областей при переключении рабочей области в режиме обзора рабочих областей. */
 /* ('RU') (раньше думал или было) Форматирование (разметка расположения элементов) режима обзора рабочих столов. */
 	font-size: 22pt;
 	font-weight: bold;
@@ -2450,8 +2592,8 @@ background-gradient-start: rgba(230,230,230,0.2);
 			box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);*/
 			border: 1.5px solid rgb(172,205,138);
 			background-gradient-direction: vertical;
-			background-gradient-start: rgba(194,221,167, 0.3);
-			background-gradient-end:  rgba(172,205,138, 0.8);
+			background-gradient-start: rgba(172,205,138, 0.1);
+			background-gradient-end:  rgba(194,221,167, 0.9);
 			box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
 		color: /*rgb(22,22,22)*/ black;
 }
@@ -2494,17 +2636,17 @@ background-gradient-start: rgba(230,230,230,0.2);
 			border: 1px solid rgb(22,22,22);
 			box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
 	padding: 3px 8px 2px 9px;
-	height: 16px;
+	height: 18px;
 	transition-duration: 450;
 }
 .expo-workspaces-name-entry:focus {
 	color: rgb(230,230,230);
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 .expo-workspaces-name-entry#selected {
 			border: 1px solid rgb(172,205,138);
 			background-gradient-direction: vertical;
-			background-gradient-start: rgba(172,205,138,0);
+			background-gradient-start: rgba(172,205,138,0.2);
 			background-gradient-end:  rgba(194,221,167,1);
 		color: /*rgb(22,22,22)*/ black;
 }
@@ -2619,8 +2761,8 @@ background-gradient-start: rgba(230,230,230,0.2);
 	font-weight: bold;
 	color: rgb(230,230,230);
 	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
-	padding: 3px 8px 2px 9px;
-	height: 16px;
+	padding: 4px 8px -2px 9px;
+	height: 20px;
 	spacing: 25px;
 	transition-duration: 450;
 	-cinnamon-caption-spacing: 6px;
@@ -2629,7 +2771,7 @@ background-gradient-start: rgba(230,230,230,0.2);
 /* ('RU') Название (подпись) к текущему (активному) окну. */
 		border: 1px solid rgb(172,205,138);
 		background-gradient-direction: vertical;
-		background-gradient-start: rgba(172,205,138,0);
+		background-gradient-start: rgba(172,205,138,0.2);
 		background-gradient-end:  rgba(194,221,167,1);
 	color: /*rgb(22,22,22)*/black;
 	font-weight: bold;
@@ -2787,3 +2929,4 @@ background-gradient-start: rgba(230,230,230,0.2);
 	border-right-width: 0px;
 	border-radius: 8px 0px 0px 0px;
 }
+
