@@ -108,7 +108,7 @@ Issues that don't follow this format will be closed.
 
 # Getting Started
 
-The default theme is in the Cinnamon github repository under Cinnamon/data/theme
+The default theme is in the Cinnamon github repository under https://github.com/linuxmint/Cinnamon/tree/master/data/theme.
 This will give you a good idea of the CSS that Cinnamon responds to, and provides a default set of graphical elements.
 Cinnamon will generally pick CSS elements out of the default theme if there is something absent from your theme.
 Themes can use this facility for some aspects and still look fine - you may be perfectly happy that the sound player look and feel in the default theme matches yours adequately, for example, and skip over reworking this in your theme for now. Each panel is in three parts .panelLeft .panelCenter and .panelRight
