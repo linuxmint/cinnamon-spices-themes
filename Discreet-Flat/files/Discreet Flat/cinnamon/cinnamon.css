@@ -156,11 +156,12 @@ StScrollBar StButton#hhandle:hover {
   padding-right: 0px;
   spacing: 0px;
   margin: 0px;
+  icon-size: 1.15em;
 }
-.system-status-icon.warning {
+.system-status-icon .warning {
   color: #e1da1a;
 }
-.system-status-icon.error {
+.system-status-icon .error {
   color: #d54444;
 }
 .panel-corner {
@@ -200,9 +201,6 @@ StScrollBar StButton#hhandle:hover {
 }
 .panel-menu {
   -boxpointer-gap: 4px;
-}
-.system-status-icon {
-  icon-size: 1.15em;
 }
 #overview {
   spacing: 12px;
@@ -1198,7 +1196,7 @@ StScrollBar StButton#hhandle:hover {
 }
 .window-list-box .window-list-item-box {
   background-gradient-direction: horizontal;
-  background-gradient-start: #363636;
+  background-gradient-start: #383838;
   background-gradient-end: #222;
   border-radius: 0 0 0 5px;
   border: 0px solid #484848;
@@ -1209,7 +1207,7 @@ StScrollBar StButton#hhandle:hover {
 .window-list-box .window-list-item-box:active,
 .window-list-box .window-list-item-box:checked,
 .window-list-box .window-list-item-box:focus {
-  background-gradient-start: #5a5a5a;
+  background-gradient-start: #626262;
   background-gradient-end: #505050;
   box-shadow: 0 0 3px #141414 inset;
   border: 0 solid #000;
@@ -1219,12 +1217,12 @@ StScrollBar StButton#hhandle:hover {
 .window-list-box .window-list-item-box:active:hover,
 .window-list-box .window-list-item-box:checked:hover,
 .window-list-box .window-list-item-box:focus:hover {
-  background-gradient-start: #6a6a6a;
+  background-gradient-start: #707070;
   background-gradient-end: #606060;
   border-bottom: none;
 }
 .window-list-box .window-list-item-box:hover {
-  background-gradient-start: #404040;
+  background-gradient-start: #454545;
   background-gradient-end: #303030;
   border-radius: 0 0 0 3px;
   color: #e8e8e8;
@@ -1236,8 +1234,20 @@ StScrollBar StButton#hhandle:hover {
   width: 15em;
   min-width: 5px;
 }
-.window-list-item-demands-attention {
-  background: #073642;
+.panel-top .window-list-item-demands-attention,
+.panel-bottom .window-list-item-demands-attention,
+.panel-left .window-list-item-demands-attention,
+.panel-right .window-list-item-demands-attention {
+  background-gradient-start: #03b8e3;
+  background-gradient-end: #039fc4;
+  color: #222;
+}
+.panel-top .window-list-item-demands-attention:hover,
+.panel-bottom .window-list-item-demands-attention:hover,
+.panel-left .window-list-item-demands-attention:hover,
+.panel-right .window-list-item-demands-attention:hover {
+  background-gradient-start: #0390b2;
+  background-gradient-end: #02738e;
 }
 #keyboard {
   background-color: rgba(0,0,0,0.5);
