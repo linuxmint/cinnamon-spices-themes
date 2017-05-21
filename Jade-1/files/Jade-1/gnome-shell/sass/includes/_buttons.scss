@@ -1,0 +1,68 @@
+/* General Buttons */
+
+.button {
+   @include btn($blueBtnTop, $blueBtnBottom, $blueBtnBorder);
+}
+
+/* Cancel Buttons */
+
+.modal-dialog {
+   .button:first-child {
+      @include btn($greyBtnTop, $greyBtnBottom, $greyBtnBorder);
+   }
+}
+
+/* End Session Dialog Buttons */
+
+.end-session-dialog {
+   .button:last-child {
+      @include btn($redBtnTop, $redBtnBottom, $redBtnBorder);
+   }
+}
+
+/* Notification Banner Buttons */
+
+.notification-banner {
+   .notification-button {
+      @include btn($blueBtnTop, $blueBtnBottom, $blueBtnBorder);
+      padding:8px 5px;
+   }
+
+   .notification-button:first-child {
+      margin-right:5px;
+   }
+
+   .notification-button:last-child {
+      margin-left:5px;
+   }
+}
+
+/* OnScreen Keyboard Keys */
+
+.keyboard-key {
+   @include btn($greyBtnTop, $greyBtnBottom, $greyBtnBorder);
+   padding:0;
+   min-height:2em;
+   min-width:2em;
+   font-size:14pt;
+   font-weight:bold;
+}
+
+.keyboard-subkeys {
+   color:#fff;
+   padding:5px;
+   -arrow-border-radius:6px;
+   -arrow-background-color:$modalPopoverBg;
+   -arrow-border-width:1px;
+   -arrow-border-color:$modalPopoverBorder;
+   -arrow-base:20px;
+   -arrow-rise:10px;
+   -boxpointer-gap:5px;
+}
+
+/* Looking Glass Button */
+
+.lg-obj-inspector-button {
+   @include btn($blueBtnTop, $blueBtnBottom, $blueBtnBorder);
+   padding:5px 15px;
+}
