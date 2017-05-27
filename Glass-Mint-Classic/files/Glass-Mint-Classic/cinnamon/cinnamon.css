@@ -1,0 +1,2946 @@
+/* ###################################################################
+  ('EN') General.
+  ###################################################################*/
+
+
+stage {
+font-family: Liberation Sans;
+color: rgb(230,230,230);
+font-size: 13px;
+}
+
+
+.cinnamon-link {
+	color: #f07746;
+	text-decoration: underline;
+}
+.cinnamon-link:hover {
+	color: #333;
+}
+
+
+StScrollBar {
+	padding: 0px;
+}
+StScrollView.vfade {
+	-st-vfade-offset: 68px;
+}
+StScrollView StScrollBar {
+	min-width: 20px;
+	min-height: 16px;
+}
+
+
+
+StScrollBar StBin#trough {
+/* ('RU') Штука по которой ползет ползунок. */
+	border-radius: 4px;
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(0,0,0,0.4);
+		background-gradient-end: rgba(0,0,0,0.4);
+}
+StScrollBar StButton#vhandle {
+/* ('RU') Сам ползунок, только для вертикальной прокрутки. */
+		background-image: url("scroll-vhandle.svg");
+		background-color:  rgba(172,205,138,0.5);
+		box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
+		border: 1px solid rgba(172,205,138, 0.8);
+	border-radius: 4px;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	transition-duration: 850;
+}
+StScrollBar StButton#hhandle {
+/* ('RU') Сам ползунок, только для горизонтальной прокрутки. */
+		background-image: url("scroll-hhandle.svg");
+		background-color:  rgba(172,205,138,0.5);
+		box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
+		border: 1px solid rgba(172,205,138, 0.8);
+	border-radius: 4px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	transition-duration: 850;
+}
+StScrollBar StButton#hhandle:hover,
+StScrollBar StButton#vhandle:hover
+{
+		background-color:  rgba(172,205,138,1);
+		box-shadow: inset 1px 1px 1px transparent;
+	transition-duration: 450;
+}
+
+
+#Tooltip {
+/* ('RU') Всплывающие подсказки при наведении на апплеты (и прочее) на панели и в других местах (к примеру, при наведении на окна в режиме обзора рабочих областей. */
+	padding: 7px 7px 8px 7px;
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(46,45,42,0.6);
+		background-gradient-end: rgba(46,45,42,0.6);
+		box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+		border: 1px solid rgb(22,22,22);
+	color: white;
+	font-size: 10pt;
+	font-weight: normal;
+	text-align: center;
+	border-radius: 6px;
+
+}
+
+
+
+
+/* ===================================================================
+  ('RU') Всплывающее меню (любое, что открывается с панели, в том числе и главное.
+  ('EN') Popup Menu (popupMenu.js).
+  ==================================================================== */
+
+
+.popup-menu-boxpointer {  /* ('RU') Устарело. */
+/* ('RU') Сама плоскость со всплывающим меню. В Сinnamon 3.2 заменена на .menu */
+	color: rgb(230,230,230);
+	-boxpointer-gap: 2px;
+	-arrow-border-color: transparent;
+	-arrow-background-color: transparent;
+	-arrow-border-width: 0px;
+	-arrow-border-radius: 0px;
+	border-radius: 8px;
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end: rgba(46,45,42,0.8); /* это цвет меню */
+		box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+		border: 1px solid rgb(22,22,22);
+/* ('RU') Это стрелки, наподобие тех что в диалогах в комиксах, от апплета до плоскости всплывающих меню этих апплетов */
+	/*-arrow-base: 15px;
+	-arrow-rise: 4px;*/
+	font-size: 13px;
+}
+
+.menu {
+/* ('RU') Сама плоскость со всплывающим меню. 
+Появился в Cinnamon 3.2. 
+То же, что и .popup-menu-boxpointer и .popup-menu в более ранних версиях Cinnamon.
+Стрелки удалены.
+*/
+	font-size: 13px;
+	color: rgb(230,230,230);
+	text-shadow: -1px 1px 3px rgba(0,0,0,1);
+	border-radius: 8px;
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end: rgba(46,45,42,0.8); /* это цвет меню */
+		box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+		border: 1px solid rgb(22,22,22);
+}
+
+.popup-sub-menu StScrollBar {
+	padding: 4px;
+}
+
+.popup-combo-menu {
+/* ('RU') Плоскость меню, которое всплывает при нажатии на окно в режиме обзора окон. */
+	padding: 9px 0px 9px 0px;
+	border-radius: 12px;
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(46,45,42,0.9);
+		background-gradient-end: rgba(46,45,42,0.8);
+		/*box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);*/
+		border: 1px solid rgb(22,22,22);
+}
+
+/* ('EN') The remaining popup-menu sizing is all done in ems, so that if you
+* override .popup-menu.font-size, everything else will scale with it.
+*/
+
+.popup-menu-content {
+/* ('RU') Плоскость всплывающего меню, на которой располагаются элементы. Находится на плоскости со всплывающим меню popup-menu-boxpointer. */
+	padding: 9px 0px 9px 0px;
+}
+
+
+
+.popup-menu-item {
+/* ('RU') Кнопки или пункты во всплывающих окнах (неактивные, не наведена мышь). */
+	padding: 5px 24px 5px 24px;
+	spacing: 2px;
+	/*text-shadow: 0px 1px 1px rgba(22,22,22,0.7);*/
+	text-shadow: -1px 1px 3px rgba(0,0,0,0.8);
+}
+.popup-menu-item:active {
+/* ('RU') Активный пункт всплывающего меню (на него наведена мышь). */
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(194,221,167,0.0);
+			background-gradient-end:  rgba(172,205,138,0.7);
+			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
+		/*text-shadow: 0px 1px 1px rgba(0,0,0,0.7);*/
+	border-radius: 4px;
+	transition-duration: 150;
+}
+.popup-submenu-menu-item:open {
+/* ('RU') Открытый пункт меню (когда высвечены подменю). */
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(172,205,138,0.3);
+			background-gradient-end:  rgba(194,221,167,0.8);
+			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
+		/*text-shadow: 0px 1px 1px rgba(0,0,0,0.7);*/
+	border-radius: 4px;
+	color: white;
+}
+
+
+
+.popup-image-menu-item {
+}
+
+.popup-combobox-item {
+	spacing: 1em;
+}
+
+
+.popup-separator-menu-item {
+/* ('RU') Разделитель (линия). */
+	background: rgba(0,0,0,0.8);
+	/*box-shadow: inset 0px 1px 2px rgba(0,0,0,0.6);*/
+	border: 1px solid rgba(220,220,220,0.4);
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	color: #444;
+	height: 0.1em;
+}
+
+.popup-alternating-menu-item:alternate {
+	font-weight: bold;
+}
+
+.popup-slider-menu-item {
+/* ('RU') Ползунок (слайдер) для плавной настройки уровня чего-либо. Присутствует, к примеру, в звуковом апплете (sound applet). */
+	height: 19px;
+	min-width: 15em;
+	-slider-height: 4px;
+	-slider-border-color: rgb(172,205,138);
+	-slider-active-border-color: rgb(172,205,138); /* ('RU') Если убрать, то вообще никакого не будет на активной зоне */
+	-slider-border-width: 1px;
+	-slider-background-color: rgb(22,22,22);
+	-slider-active-background-color: rgba(172,205,138,0.2);
+	-slider-handle-radius: 9px;
+}
+
+.popup-device-menu-item {
+	spacing: .5em;
+}
+.popup-inactive-menu-item {
+/* ('EN') This is used for some applet menu items to show a menu item is unselectable.
+          You can see it in the menu for the power applet. */
+	color: black; /* ('RU') Добавлено из Mint-X */
+}
+.popup-subtitle-menu-item {
+	font-weight: bold;
+}
+.popup-menu-icon {
+	icon-size: 1.14em;
+}
+
+
+/* ('EN') Switches (to be used in menus). */
+/* ('RU') Переключатели (0 или 1, on или off). */
+
+.toggle-switch {
+	width: 64px;
+	height: 22px;
+}
+.toggle-switch-us {
+	background-image: url("toggle-off-us.svg");
+}
+.toggle-switch-us:checked {
+	background-image: url("toggle-on-us.svg");
+}
+.toggle-switch-intl {
+	background-image: url("toggle-off-intl.svg");
+}
+.toggle-switch-intl:checked {
+	background-image: url("toggle-on-intl.svg");
+}
+
+.nm-menu-item-icons {
+	spacing: .5em;
+}
+
+
+
+
+/* ===================================================================
+* ('EN') Panel (panel.js).
+* ===================================================================*/
+/* ('RU') Цвет панели (если выбрать отображать две, то двух) задается в #panel. Также цвет каждой панели можно задаеть отдельно в .panel-top и .panel-bottom . */
+
+
+#panel {
+	font-size: 12px;
+	height: 31px;
+	width: 38px;	
+}
+
+.panel-top {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end: rgba(46,45,42,0.8); 
+		box-shadow: inset 0px -1px 0px 0px rgb(0,0,0);
+}
+
+.panel-bottom {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end: rgba(46,45,42,0.8); 
+		box-shadow: inset 0px 1px 0px 0px rgb(0,0,0);
+}
+.panel-left {
+		background-gradient-direction: horizontal;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end: rgba(46,45,42,0.8); 
+		box-shadow: inset -1px 0px 0px 0px rgb(0,0,0);
+}
+.panel-right {
+		background-gradient-direction: horizontal;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end: rgba(46,45,42,0.8); 
+		box-shadow: inset 1px 0px 0px 0px rgb(0,0,0);	
+}
+
+.panel-corner {
+	-panel-corner-radius: 5px;
+	-panel-corner-background-color: rgba(46,45,42,0.7);
+	-panel-corner-outer-border-color: black;
+	-panel-corner-inner-border-color: black;
+	spacing: 12px;
+}
+
+#panel:highlight {
+/* (EN) Hightlights panel when you go to panel edit tab in cinnamon-control-center. */
+	background-gradient-direction: horizontal;
+	background-gradient-start: rgba(130,45,42,0.8);
+	background-gradient-end: rgba(130,45,42,0.8); 
+}
+
+
+.panelLeft:ltr {
+	padding-right: 0px;
+}
+.panelLeft:rtl {
+	padding-left: 0px;
+}
+.panelRight:ltr {
+	padding-left: 0px;
+	spacing: 0px;
+}
+.panelRight:rtl {
+	padding-right: 0px;
+	spacing: 0px;
+}
+.panelLeft.vertical {
+	padding: 0px;
+}
+.panelRight.vertical {
+	padding: 0px;
+}
+.panelCenter.vertical {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.panelLeft.vertical:dnd {
+}
+.panelCenter.vertical:dnd {
+}
+.panelRight.vertical:dnd {
+}
+
+
+
+
+#panelLeft, #panelCenter, #panelRight {
+	spacing: 0px;
+}
+#panelLeft:ltr {
+/* ('RU') Левая часть любой панели (нижняя в боковых панелях).  */
+	padding-right: 0px;
+}
+#panelLeft:rtl {
+	padding-left: 0px;
+}
+#panelRight:ltr {
+/* ('RU') Правая часть любой панели (нижняя в боковых панелях).  */
+	padding-left: 0px;
+	spacing: 0px;
+}
+#panelRight:rtl {
+	padding-right: 0px;
+	spacing: 0px;
+}
+
+
+
+
+/* ('RU') Кнопки, отображающие запущенные приложения, но не все, как Window list, а только поддерживающие данную функцию. Данный апплет еще называется системным треем. */
+
+.panel-status-button,
+.panel-button {
+	-natural-hpadding: 5px;
+	-minimum-hpadding: 5px;
+	font-weight: normal;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+	transition-duration: 450;
+	icon-size: 16px;
+}
+.panel-status-button:hover,
+.panel-button:hover {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0);
+		background-gradient-end:  rgba(172,205,138,1);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+}
+.system-status-icon {
+	icon-size: 1.14em;
+}
+
+
+
+
+/* ('RU') Панель в режиме редактирования, разбита на три части: #panelLeft:dnd, #panelCenter:dnd, #panelRight:dnd (слева, справа и по центру, соответственно). */
+
+#panelLeft:dnd {
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(172,205,138,0);
+			background-gradient-end:  rgba(194,221,167,1);
+			box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
+	border-radius: 6px;
+}
+#panelCenter:dnd {
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(172,205,138,0);
+			background-gradient-end:  rgba(194,221,167,1);
+			box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
+		border-right: 3px solid transparent;
+		border-left: 3px solid transparent;
+	border-radius: 6px;
+}
+#panelRight:dnd {
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(172,205,138,0);
+			background-gradient-end:  rgba(194,221,167,1);
+			box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
+	border-radius: 6px;
+}
+
+
+
+
+#panelLeft.vertical:dnd {
+		background-gradient-direction: horizontal;
+		background-gradient-start: rgba(172,205,138,0);
+		background-gradient-end:  rgba(194,221,167,1);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
+	border-radius: 6px;
+}
+#panelCenter.vertical:dnd {
+			background-gradient-direction: horizontal;
+			background-gradient-start: rgba(172,205,138,0);
+			background-gradient-end:  rgba(194,221,167,1);
+			box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
+		border-top: 3px solid transparent;
+		border-bottom: 3px solid transparent;
+		border-right: 0px solid transparent;
+		border-left: 0px solid transparent;
+	border-radius: 6px;
+}
+#panelRight.vertical:dnd {
+			background-gradient-direction: horizontal;
+			background-gradient-start: rgba(172,205,138,0);
+			background-gradient-end:  rgba(194,221,167,1);
+			box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
+	border-radius: 6px;
+}
+
+
+
+
+/* ===================================================================
+  ('EN') Looking Glass.
+  ('RU') Линза.
+   =================================================================== */
+/* ('RU') Линза для проведения отладки. В настоящее время заменена альтернативной программой с интерфейсом GTK 3 (24.09.2015),
+   из темы новой версии Cinnamon 2.8 удалено все кроме #LookingGlassDialog {} из данной категории. */
+
+
+#LookingGlassDialog {
+/* ('RU') Само окно линзы. */
+		background-color: rgba(60,59,55,0.8);
+		border: 1px solid rgb(22,22,22);
+		box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	spacing: 3px;
+	padding: 4px;
+	border-radius: 8px;
+	color: rgb(230,230,230);
+}
+
+
+#LookingGlassDialog > #Toolbar {
+/* ('RU') Панель с кнопками выбора в линзе. */
+		background-gradient-direction: horizontal;
+		background-gradient-start: rgb(46,46,46);
+		background-gradient-end: rgb(60,59,55);
+		box-shadow: inset 0px 0px 4px rgba(0,0,0,0.5);
+		border: 1px solid rgb(0,0,0);
+	border-radius: 8px 4px 4px 8px;
+	height: 28px;
+}
+
+#LookingGlassDialog .labels {
+	spacing: 4px;
+}
+
+
+#LookingGlassDialog .notebook-tab {
+/* ('RU') Кнопки на панели линзы для переключения функций (режимов) линзы. */
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(0,0,0,0);
+		background-gradient-end: rgba(0,0,0,0);
+	border-radius: 4px;
+		box-shadow: inset 0px 0px 1px 1px rgba(194,221,167,0.6);
+	padding: 2px;
+	transition-duration: 150;
+}
+#LookingGlassDialog .notebook-tab:hover {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0);
+		background-gradient-end:  rgba(172,205,138,1);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+	transition-duration: 150;
+}
+#LookingGlassDialog .notebook-tab:selected {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0);
+		background-gradient-end: rgba(194,221,167,1);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+	color: rgb(255,255,255);
+	padding: 2px;
+}
+
+
+#LookingGlassDialog .lg-inspector-title {
+	font-weight: bold;
+	padding-bottom: 8px;
+}
+
+.lg-dialog StLabel {
+	color: rgb(230,230,230);
+}
+
+.lg-dialog StEntry {
+	color: rgb(230,230,230);
+	selection-background-color: rgb(234,227,209);
+	selected-color: black;
+}
+
+
+.lg-obj-inspector-button {
+/* ('RU') Кнопки вверху в субпанели инспектора (линзы): */
+		background-gradient-direction: vertical;
+		background-gradient-start: rgb(0,0,0);
+		background-gradient-end: rgb(0,0,0);
+	border-radius: 4px;
+		box-shadow: inset 0px 0px 1px 1px rgba(194,221,167,0.6);
+	padding: 4px;
+	transition-duration: 150;
+}
+.lg-obj-inspector-button:hover {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0);
+		background-gradient-end:  rgba(172,205,138,1);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+	transition-duration: 150;
+}
+.lg-obj-inspector-button:active {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0);
+		background-gradient-end:  rgba(194,221,167,1);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+	transition-duration: 150;
+}
+
+
+.lg-obj-inspector-title {
+/* ('RU') Название кнопки (надпись в ней) .lg-obj-inspector-button (вверху в субпанели инспектора (линзы)): */
+	color: rgb(230,230,230);
+	spacing: 4px;
+}
+
+
+.lg-dialog .cinnamon-link {
+/* ('RU') Ссылки на запущенные приложения в циннамоне (не кнопки, а те ссылки, что в виде текста со значками находятся в области просмотра линзы): */
+	color: rgb(230,230,230);
+	font-weight: bold;
+	transition-duration: 150;
+}
+.lg-dialog .cinnamon-link:hover {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0);
+		background-gradient-end:  rgba(172,205,138,1);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+	border-radius: 0px 8px 0px 8px;
+}
+.lg-dialog .cinnamon-link:active
+{
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0);
+		background-gradient-end:  rgba(194,221,167,1);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+	border-radius: 6px;
+}
+
+#LookingGlassDialog StBoxLayout#EvalBox
+{
+	padding: 4px;
+	spacing: 4px;
+}
+#LookingGlassDialog StBoxLayout#ResultsArea
+{
+	spacing: 4px;
+}
+
+#lookingGlassExtensions {
+	padding: 4px;
+}
+
+.lg-extension-list {
+	padding: 4px;
+	spacing: 6px;
+}
+
+.lg-extension {
+	border: 1px solid #6f6f6f;
+	border-radius: 4px;
+	padding: 4px;
+}
+
+.lg-extension-name {
+	font-weight: bold;
+}
+
+.lg-extension-meta {
+	spacing: 6px;
+}
+
+#LookingGlassPropertyInspector {
+		background-gradient-direction: horizontal;
+		background-gradient-start: rgb(46,46,46);
+		background-gradient-end: rgb(60,59,55);
+		border: 1px solid black;
+	border-radius: 4px;
+	padding: 6px;
+	color: rgb(230,230,230);
+}
+
+
+
+
+/* ===================================================================
+  ('EN') Date applet.
+  ('RU') Апплет календаря (calendar.js).
+   ===================================================================*/
+/* ('RU') Апплет с календарем и часами. */
+
+
+.calendar {
+	padding: .4em 1.75em;
+	spacing-rows: 1px;
+	spacing-columns: 1px;
+}
+
+
+.datemenu-date-label {
+/* ('RU') Дата. Пишется в самом верху всплывающего окна (пример: Четверг, Сентябрь 24, 2015). */
+	font-size: 11pt;
+	padding-top: 0.65em;
+	padding-bottom: 0.3em;
+	font-weight: bold;
+	text-align: center;
+}
+.calendar-month-label {
+/* ('RU') Название месяца и года, пишется между кнопками перелистывания месяцев и годов. */
+	font-size: 11pt;
+	font-weight: bold;
+	padding-top: 0.45em;
+	padding-bottom: 0.3em;
+	text-align: center;
+}
+.calendar-day-heading {
+/* ('RU') Названия дней недели (Пнд, Вто, ...). */
+	padding-top: 0.8em;
+	font-size: 9pt;
+	font-weight: bold;
+}
+.calendar-week-number {
+/* ('RU') Номера недели, вообще не нашел подобного в апплете. */
+	padding-left: 0px;
+	font-weight: bold;
+	border: 1px solid transparent;
+}
+
+
+
+.calendar-day-base {
+/* ('RU') Клетка (база) с одним днем месяца, в ней пишется число этого дня. Именно клетка (база), а не кнопка. */
+	/*font-size: 9pt;*/ /* ('RU') отвечает за размер шрифта не только в кнопках дней месяца (чисел), но подобное есть и в .calendar-day . */
+	text-align: center;
+	width: 30px;
+	height: 20px;
+	max-height: 2.4em;
+	padding: 5px 0px 5px 0px;
+}
+
+.calendar-day {
+/* ('RU') Кнопки с днями (числами) месяца, располагаются над (поверх, ближе к пользователю клетками (базами). */
+/* ('EN') Hack used in lieu of border-collapse - see calendar.js . */
+	font-size: 11pt;
+	font-weight: 550;
+		/* ('RU') если не добавить фон градиентом, тень box-shadow будет иметь острые углы,
+		если не добавить фон вообще - не будет и тени вообще. */
+		background-gradient-direction: vertical;
+		background-gradient-start: rgb(41,40,38);
+		background-gradient-end:  rgb(41,40,38);
+		border: 1px solid rgba(22,22,22, 0.9);
+		box-shadow: 0px 0px 4px 1px rgba(22,22,22, 0.9);
+}
+.calendar-day-top {
+/* ('RU') Кнопки, что располагаются сверху таблицы (матрицы) месяца.
+	(нижнего и других нету) */
+}
+.calendar-day-left {
+/* ('RU') Кнопки, что располагаются слева таблицы (матрицы) месяца. */
+}
+.calendar-work-day {
+/* ('RU') Кнопки, соответствующие рабочим дням недели. */
+}
+.calendar-nonwork-day {
+/* ('RU') Кнопки, соответствующие выходным дням недели. */
+	color: rgb(172,205,138);
+}
+.calendar-today {
+/* Кнопка, соответствующая текущему дню недели */
+	color: black;
+	font-weight: 900;
+	/* ('RU') без рамки (border) будет тень налазить. */
+	/* ('RU') зеленая обводка сделана не рамкой а тенью потому,
+	что рамка уже есть. */
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0.0);
+		background-gradient-end:  rgba(194,221,167,0.7);
+		border: 1px solid rgb(172,205,138);
+		/* ('RU') border-radius родителя в пункте .calendar-day . */
+}
+.calendar-other-month-day {
+/* ('RU') Другие дни месяца (те, что принадлежат другому месяцу, но просто попали в таблицу). */
+	color: rgb(109,91,74);
+}
+.calendar-day-with-events {
+	font-weight: 900;
+	color: rgb(255,113,113);
+}
+
+
+
+/* ('RU') Кнопки перелистывания месяцев и годов. ============================================ */
+
+.calendar-change-month-back,
+.calendar-change-month-forward:rtl {
+	width: 32px;  /* ('RU') На размер картинки не влияет, только виджета */
+	height: 32px;
+		background-image: url("calendar-arrow-left.svg");
+	border-radius: 4px;
+	transition-duration: 550;
+}
+.calendar-change-month-back:hover {
+ 	/* ('RU') При наведении на стрелки переключения по месяцам и годам,
+	не делал подсветку градиентом потому, что при использовании градиента при наведении не отображается стрелочка,
+	которая задавалась изображением. А при использовании в качестве подсветки сплошного прозрачног цвета, стрелка,
+	заданная изображением, отображается. */
+		background-image: url("calendar-arrow-left-hover.svg");
+		box-shadow: 0 0 3px 0 rgb(172,205,138);
+}
+.calendar-change-month-back:active {
+		background-image: url("calendar-arrow-left-active.svg");
+		box-shadow: 0 0 6px 0 rgb(194,221,167);
+	transition-duration: 100;
+}
+.calendar-change-month-forward,
+.calendar-change-month-back:rtl {
+	width: 32px;
+	height: 32px;
+		background-image: url("calendar-arrow-right.svg");
+	border-radius: 4px;
+	transition-duration: 550;
+}
+.calendar-change-month-forward:hover {
+	/* ('RU') При наведении на стрелки переключения по месяцам и годам,
+	не делал подсветку градиентом потому, что при использовании градиента при наведении не отображается стрелочка,
+	которая задавалась изображением. А при использовании в качестве подсветки сплошного прозрачног цвета,
+	стрелка, заданная изображением, отображается. */
+		background-image: url("calendar-arrow-right-hover.svg");
+		box-shadow: 0 0 3px 0 rgb(172,205,138);
+}
+.calendar-change-month-forward:active {
+		background-image: url("calendar-arrow-right-active.svg");
+		box-shadow: 0 0 6px 0 rgb(194,221,167);
+	transition-duration: 100;
+}
+
+
+
+
+/* ===================================================================
+   ('EN') Notifications.
+   =================================================================== */
+
+
+#notification {
+/* ('RU') Сама плоскость со всплывающими уведомлениями. */
+	color: rgb(230,230,230);
+	border-radius: 4px;
+		box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+		border: 1px solid rgb(22,22,22);
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(46,45,42,0.6);
+		background-gradient-end: rgba(46,45,42,0.6);
+	padding: 8px;
+	spacing-rows: 10px;
+	spacing-columns: 10px;
+	margin-from-right-edge-of-screen: 34px;
+	width: 42em;
+}
+
+#notification.multi-line-notification {
+	padding-bottom: 8px;
+}
+
+/* ('EN') We use row-span = 2 for the image cell, which prevents its height preferences to be
+taken into account during allocation, so its height ends up being limited by the height
+of the content in the other rows. To avoid showing a stretched image, we set the minimum
+height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
+
+.notification-with-image {
+	min-height: 159px;
+}
+
+#notification-scrollview {
+	max-height: 10em;
+}
+#notification-scrollview > .top-shadow, #notification-scrollview > .bottom-shadow {
+	height: 1em;
+}
+#notification-scrollview:ltr > StScrollBar {
+	padding-left: 6px;
+}
+#notification-scrollview:rtl > StScrollBar {
+	padding-right: 6px;
+}
+#notification-body {
+	spacing: 5px;
+}
+#notification-actions {
+	spacing: 10px;
+}
+
+
+
+/* ('RU') Добавлено к Cinnamon 2.8.
+   ('EN') Added in Cinnamon 2.8. */
+
+.notification-button {
+/* ('EN') Some things like media players show this buttons in notifications.
+          I think both banshee and rhythmbox do this. */
+	border-radius: 5px;
+	padding: 4px 8px 5px;
+}
+.notification-button:focus {
+	padding: 3px 8px 4px;
+}
+.notification-icon-button {
+	border-radius: 5px;
+	padding: 5px;
+}
+.notification-icon-button:focus {
+	padding: 4px;
+}
+.notification-icon-button > StIcon {
+	icon-size: 36px;
+}
+#notification StEntry {
+	padding: 4px;
+	border-radius: 4px;
+	color: #a8a8a8;
+	selected-color: black;
+	border: 1px solid rgba(245,245,245,0.2);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgb(200,200,200);
+	background-gradient-end: white;
+	transition-duration: 300;
+	box-shadow: inset 0px 2px 4px rgba(0,0,0,0.6);
+	caret-color: #a8a8a8;
+	caret-size: 1px;
+}
+#notification StEntry:focus {
+	border: 1px solid #8b8b8b;
+	color: #333333;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgb(200,200,200);
+	background-gradient-end: white;
+	caret-color: #545454;
+	selection-background-color: #808080;
+}
+
+
+
+
+/* ===================================================================
+  ('EN') Alt Tab.
+  ('RU') Переключатель окон с помощью alt+tab.
+* ===================================================================*/
+
+
+#altTabPopup {
+	padding: 16px;
+	spacing: 16px;
+}
+
+
+.switcher-list {
+/* ('RU') Сама плоскость со списком открытых окон. */
+	border-radius: 12px;
+		border: 1px solid rgb(22,22,22);
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end:  rgba(46,45,42,0.8);
+		box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	padding: 20px;
+}
+.switcher-list-item-container {
+	spacing: 8px;
+}
+
+
+
+.switcher-list .item-box {
+/* ('RU') Окна в списке переключателя alt-tab. Относится только к меньшему варианту что в самом списке,
+но не к большему, так как оно появляется только для активных окон. */
+	color: rgb(230,230,230);
+	padding: 8px;
+	border-radius: 12px;
+	border: 1px solid transparent;
+	transition-duration: 450;
+}
+.switcher-list .item-box:outlined {
+	padding: 8px;
+}
+.switcher-list .item-box:selected {
+/* ('RU') Выбранной (текущее, подсвеченное) окно в списке. Отностся и к меньшему варианту что в списке и к большему, которое находится ниже в предпросмотре. */
+	color: rgb(22,22,22);
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0.0);
+		background-gradient-end:  rgba(194,221,167,0.8);
+		box-shadow: inset 1px 1px 1px rgba(255,255,255,0.5);
+}
+.switcher-list .thumbnail-box {
+	padding: 2px;
+	spacing: 4px;
+}
+.switcher-list .thumbnail {
+	width:  256px;
+}
+
+.switcher-list .separator {
+	width: 1px;
+	background: transparent;
+}
+
+
+
+.switcher-arrow {
+/* ('RU') Стрелка указывающая вниз от названия окна до миниатюры этого окна, если показ миниатюр был включен
+   в настройках. */
+	border-color: transparent;
+	color: rbg(230,230,230);
+}
+.switcher-arrow:highlighted {
+	border-color: transparent;
+	color: white;
+}
+.switcher-preview-backdrop {
+	background-color: transparent;
+}
+
+
+
+.thumbnail-scroll-gradient-left {/* ('RU') Узнать: что это. */
+	background-gradient-direction: horizontal;
+	background-gradient-start: rgba(46,46,46,1);
+	background-gradient-end: rgba(46,46,46,0);
+	border-radius: 0px 0px 0px 24px;
+	width: 160px;
+}
+.thumbnail-scroll-gradient-right {/* ('RU') Узнать: что это. */
+	background-gradient-direction: horizontal;
+	background-gradient-start: rgba(46,46,46,0);
+	background-gradient-end: rgba(46,46,46,1);
+	border-radius: 0px 24px 0px 0px;
+	width: 160px;
+}
+
+
+
+
+/* ===================================================================
+  ('EN') Modal dialogs.
+  ('RU') Дополнительные (всплывающие) диалоги.
+  ===================================================================*/
+/* ('RU') Всплывающие (дополнительные) диалоги с информацией и кнопками (да, нет, закрыть, т.д.) и все что с ними связано.
+Конкренно всплывающие диалоги с информацией о апплете/десклете находятся в разделе About Dialog (ниже). */
+
+
+.modal-dialog {
+/* ('RU') Плоскость всплывающего (дополнительного) диалога. */
+	font-weight: bold;
+		border: 1px solid rgb(22,22,22);
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(46,45,42,0.8);
+		background-gradient-end:  rgba(46,45,42,0.8);
+		box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	border-radius: 8px;
+	padding: 30px 35px;
+}
+
+.modal-dialog-button-box {
+	spacing: 21px;
+	padding-top: 30px;
+}
+
+
+
+.modal-dialog-button {
+/* ('RU') Кнопки всплывающего (дополнительного) диалога. */
+			background-gradient-direction: vertical; /* ('RU') указан градиент а не просто цвет,
+			без градиента box-shadow не работает */
+			background-gradient-start: rgba(41,40,38, 1);
+			background-gradient-end:  rgba(41,40,38, 1);
+			box-shadow: 0px 0px 5px 3px rgb(172,205,138);
+		border-left: 1px solid rgb(172,205,138);
+		border-top: 1px solid rgb(172,205,138);
+		border-right: 0px solid rgb(172,205,138);
+		border-bottom: 1px solid rgb(172,205,138);
+	color: rgb(230,230,230);
+	border-radius: 6px;
+	font-weight: normal;
+	padding: 8px 5px;
+	min-width: 105px;
+	transition-duration: 250;
+}
+.modal-dialog-button:hover,
+.modal-dialog-button:focus {
+			background-gradient-direction: vertical; /* ('RU') указан градиент а не просто цвет,
+			без градиента box-shadow не работает. */
+			background-gradient-start: rgba(194,221,167,0.1);
+			background-gradient-end:  rgba(172,205,138,0.7);
+		border-bottom: 1px solid rgb(172,205,138);
+		border-left: 1px solid rgb(172,205,138);
+		border-top: 1px solid rgb(172,205,138);
+		border-right: 0px solid rgb(172,205,138);
+}
+.modal-dialog-button:active,
+.modal-dialog-button:pressed {
+			background-gradient-direction: vertical; /* ('RU') указан градиент а не просто цвет,
+			без градиента box-shadow не работает. */
+			background-gradient-start: rgba(172,205,138,0.2);
+			background-gradient-end:  rgba(194,221,167,0.8);
+			box-shadow: 0px 0px 5px 3px rgb(194,221,167);
+		border-left: 1px solid rgb(194,221,167);
+		border-top: 1px solid rgb(194,221,167);
+		border-right: 0px solid rgb(194,221,167);
+		border-bottom: 1px solid rgb(194,221,167);
+	color: white;
+	transition-duration: 50;
+}
+.modal-dialog-button:disabled {
+	border: 1px solid rgb(22,22,22);/* ('RU') Проверить нужно, ни разу не встречал такой кнопки. */
+	box-shadow: inset 0px 0px 0px rgba(255,255,255,0.0);
+}
+
+
+
+
+/* ===================================================================
+  ('EN') About Dialog (applet.js and desklet.js).
+   =================================================================== */
+/* ('RU') Конкренно всплывающие диалоги с информацией о апплете/десклете, общие данные о всплывающих диалогах находятся выше в разделе Modal Dialogs (предыдущем). */
+
+
+.about-content {
+	/* width: 300px;
+	height: 150px;*/ /* ('RU') закомментировал чтобы окно излишне не увеличивалось в размерах. */
+	spacing: 8px;
+	padding-bottom: 16px;
+}
+.about-title {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.about-uuid {
+	font-size: .8em;
+}
+.about-icon {
+	padding-right: 20px;
+}
+.about-scrollBox {
+	/*border: solid 1px grey;
+	border-radius: 4px;*/ /* закомментировал чтобы не появлялся посреди окна окошко с границой (border) */
+}
+.about-scrollBox-innerBox {
+	padding: 1.2em;
+	spacing: 1.2em;
+}
+.about-description {
+	padding-top: 4px;
+}
+.about-version {
+	padding-left: 7px;
+}
+
+
+
+
+/* ===================================================================
+  ('EN') Run dialog.
+   ===================================================================*/
+/* Всплывающее окно для запуска программ. Вызывается нажатием двух клавиш: alt, f2 */
+
+
+.run-dialog-label {
+/* ('RU') Заголовок сверху над полем ввода команд. */
+	font-weight: bold;
+	padding-bottom: 14px;
+	font-size: 9pt;
+	color: white;
+	text-shadow: -1px 1px 3px rgba(0,0,0,1);
+}
+
+.run-dialog-error-label {
+/* ('RU') Надпись об ошибке, которая появляется под полем ввода команд. */
+	font-weight: bold;
+	font-size: 9pt;
+	color: white;
+}
+
+.run-dialog-error-box {
+/* ('RU') Плоскость, что содержит надпись об ошибке. */
+	padding-top: 15px;
+	spacing: 5px;
+}
+
+
+.run-dialog-entry {
+/* ('EN') этот пункт отвечает за область ввода текста (можно ее расширить, к примеру). */
+	border-radius: 4px;
+	color: rgb(0,0,0);
+		border: 1px solid rgb(172,205,138);
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0.2);
+		background-gradient-end:  rgba(194,221,167,0.8);
+	selected-color: rgb(230,230,230);
+	caret-color: rgb(60,59,55);
+	font-weight: normal;
+	padding: 4px;
+	padding-bottom: 3px;
+	width: 23em;
+}
+
+
+.run-dialog {
+/* ('RU') Сама плоскость диалога запуска. */
+	border: 1px solid rgba(22,22,22,1);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(46,45,42,0.8);
+	background-gradient-end:  rgba(46,45,42,0.8);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	border-radius: 8px;
+	padding-right: 21px;
+	padding-left: 21px;
+	padding-bottom: 20px;
+	padding-top: 15px;
+}
+
+.run-dialog > .modal-dialog-button-box {
+	padding-top: 5px;
+}
+
+.run-dialog-completion-box {
+	padding-left: 15px;
+	font-size: 10px;
+}
+
+
+.lightbox {
+/* ('RU') этот пункт указывает затенение (затемнение) рабочего стола и всего что не связано со всплывающими окнами, при вызове всплывающих окон. */
+	background-color: rgba(46,45,42,0.4);
+	transition-duration: 450;
+}
+
+
+/* ('RU') Данные диалоги скопированы с новой версии темы Cinnamon,
+          но уже не нужны и могут быть удалены (вроде до самого низа - следующей секции). */
+/* ('EN') CinnamonMountOperation Dialogs. */
+
+.cinnamon-mount-operation-icon {
+/* ('EN') These are junk and unused now, can be removed. */
+	icon-size: 48px;
+}
+.mount-password-reask {
+/* ('EN') These are junk and unused now, can be removed. */
+	color: red;
+}
+.show-processes-dialog,
+.mount-question-dialog {
+/* ('EN') These are junk and unused now, can be removed. */
+	spacing: 24px;
+}
+.show-processes-dialog-subject,
+.mount-question-dialog-subject {
+	font-size: 12pt;
+	font-weight: bold;
+	color: #666666;
+	padding-top: 10px;
+	padding-left: 17px;
+	padding-bottom: 6px;
+}
+.show-processes-dialog-subject:rtl,
+.mount-question-dialog-subject:rtl {
+	padding-left: 0px;
+	padding-right: 17px;
+}
+.show-processes-dialog-description,
+.mount-question-dialog-description {
+	font-size: 10pt;
+	color: white;
+	padding-left: 17px;
+	width: 28em;
+}
+.show-processes-dialog-description:rtl,
+.mount-question-dialog-description:rtl {
+	padding-right: 17px;
+}
+.show-processes-dialog-app-list {
+	font-size: 10pt;
+	max-height: 200px;
+	padding-top: 24px;
+	padding-left: 49px;
+	padding-right: 32px;
+}
+.show-processes-dialog-app-list:rtl {
+	padding-right: 49px;
+	padding-left: 32px;
+}
+.show-processes-dialog-app-list-item {
+	color: #ccc;
+}
+.show-processes-dialog-app-list-item:hover {
+	color: white;
+}
+.show-processes-dialog-app-list-item:ltr {
+	padding-right: 1em;
+}
+.show-processes-dialog-app-list-item:rtl {
+	padding-left: 1em;
+}
+.show-processes-dialog-app-list-item-icon:ltr {
+	padding-right: 17px;
+}
+.show-processes-dialog-app-list-item-icon:rtl {
+	padding-left: 17px;
+}
+.show-processes-dialog-app-list-item-name {
+	font-size: 10pt;
+}
+
+
+
+
+/* ===================================================================
+  ('EN') Policykit authentication dialog.
+  ===================================================================*/
+
+
+.polkit-dialog {
+/* ('EN') this is the width of the entire modal popup. */
+	width: 500px;
+}
+
+.polkit-dialog-main-layout {
+	spacing: 24px;
+	padding: 10px;
+}
+
+.polkit-dialog-message-layout {
+	spacing: 16px;
+}
+
+.polkit-dialog-headline {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.polkit-dialog-description {
+	font-weight: normal;
+}
+
+.polkit-dialog-user-layout {
+	padding-left: 10px;
+	spacing: 10px;
+}
+.polkit-dialog-user-layout:rtl {
+	padding-left: 0px;
+	padding-right: 10px;
+}
+
+.polkit-dialog-user-root-label {
+	color: rgb(172,205,138);
+}
+
+.polkit-dialog-password-label:ltr {
+	padding-top: 5px;
+	padding-right: 0.5em;
+}
+
+.polkit-dialog-password-label:rtl {
+	padding-left: 0.5em;
+}
+
+.polkit-dialog-password-entry {
+		border: 1px solid rgb(172,205,138);
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0);
+		background-gradient-end:  rgba(194,221,167,1);
+	border-radius: 4px;
+	selected-color: rgb(234,227,209);
+	caret-color: rgb(60,59,55);
+	caret-size: 1px;
+	color: rgba(0,0,0,0.9);
+	width: 250px;
+	font-weight: normal;
+	padding: 4px;
+	padding-bottom: 3px;
+}
+
+.polkit-dialog-error-label {
+	font-weight: bold;
+	color: rgb(172,205,138);
+	padding-bottom: 8px;
+}
+.polkit-dialog-info-label {
+	padding-bottom: 8px;
+}
+.polkit-dialog-null-label {
+/* ('EN') intentionally left transparent to avoid dialog changing size. */
+	color: rgba(0,0,0,0);
+	padding-bottom: 8px;
+}
+
+.network-dialog-secret-table {
+	spacing-rows: 15px;
+}
+
+
+
+
+/* ===================================================================
+  ('EN') Magnifier.
+  =================================================================== */
+
+
+.magnifier-zoom-region {
+	border: 2px solid #f07746;
+}
+
+.magnifier-zoom-region.full-screen {
+	border-width: 0px;
+}
+
+
+
+
+/* ===================================================================
+  ('EN') On screen keyboard.
+  =================================================================== */
+
+
+#keyboard {
+	background: rgba(60,59,55,0.8);
+	border: 1px solid rgb(22,22,22);
+	border-radius: 8px 8px 0px 0px;
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+}
+
+.keyboard-layout {
+	spacing: 10px;
+	padding: 10px;
+}
+
+.keyboard-row {
+	spacing: 15px;
+}
+
+.keyboard-key {
+	min-height: 30px;
+	min-width: 30px;
+	background-gradient-direction: horizontal;
+	background-gradient-start: rgba(46,46,46,0.8);
+	background-gradient-end: rgba(60,59,55,0.8);
+	border-radius: 8px;
+		box-shadow: inset 0px 0px 1px 1px rgba(194,221,167,0.8);
+	color: rgb(230,230,230);
+	transition-duration: 150;
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+.keyboard-key:grayed {
+	color: #808080;
+	border-color: #808080;
+}
+
+.keyboard-key:checked,
+.keyboard-key:hover {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0);
+		background-gradient-end:  rgba(172,205,138,1);
+		box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
+	border: 0px solid transparent;
+}
+
+.keyboard-key:active {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0);
+		background-gradient-end:  rgba(194,221,167,1);
+		box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
+	color: rgba(255,255,255,1);
+}
+
+.keyboard-subkeys {
+	color: rgb(60,59,55);
+	padding: 5px;
+	-arrow-border-radius: 4px;
+	-arrow-background-color: rgba(0,0,0,0.8);
+	-arrow-border-width: 1px;
+	-arrow-border-color: rgba(0,0,0,0.8);
+	-arrow-base: 15px;
+	-arrow-rise: 4px;
+	-boxpointer-gap: 5px;
+}
+
+
+
+
+/* ###################################################################
+* ('EN') Cinnamon Specific Section
+* ###################################################################*/
+
+
+
+/* ===================================================================
+  ('EN') Menu (menu.js)
+  =================================================================== */
+
+
+.menu-favorites-box {
+/* ('EN') Плоскость избранного (левее списка категорий приложений) */
+	padding: 0px;
+	border-radius: 6px;
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(0,0,0,0.4);
+		background-gradient-end: rgba(0,0,0,0.4);
+}
+.menu-favorites-button {
+/* ('RU') Кнопки с картинками на плоскости избранного.
+Вместе с увеличением отступа padding, увеличивается и сама плоскость избранного. */
+	padding: 15px;
+}
+.menu-favorites-button:hover {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0.4);
+		background-gradient-end:  rgba(172,205,138,0.9);
+		box-shadow: inset 1px 1px 0.5px rgba(255,255,255,0.6);
+	transition-duration: 150;
+}
+.menu-favorites-button:first-child {
+	border-radius: 5px 5px 0 0;
+}
+.menu-favorites-button:last-child {
+	border-radius: 0 0 4px 4px;
+}
+.menu-favorites-button:only-child {
+	border-radius: 5px 5px 4px 4px;
+}
+
+.menu-help-button {/* ('RU') Узнать: что это */
+	padding-top: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	border: 1px solid transparent;
+}
+.menu-help-button:hover {/* ('RU') Узнать: что это */
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0);
+		background-gradient-end:  rgba(172,205,138,1);
+		box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
+	border-radius: 4px;
+}
+.menu-places-box {/* ('RU') Узнать: что это */
+	padding: 10px;
+	border: 0px solid #666;
+}
+.menu-places-button {/* ('RU') Узнать: что это */
+	color: #eae3d1;
+	padding: 10px;
+}
+
+
+/* ('EN') Categories. ==================================================
+   ('RU') Категории приложений в меню. =================================== */
+
+.menu-categories-box {
+/* ('RU') Плоскость со списком категорий приложений. */
+	padding-top: 15px;
+	padding-left: 15px;
+	padding-right: 5px;
+	padding-bottom: 0px;
+}
+
+
+
+.menu-category-button {
+/* ('RU') Кнопки с категориями приложений. */
+	padding: 7px;
+	/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+	text-shadow: -1px 1px 3px rgba(0,0,0,1);
+}
+.menu-category-button-greyed {
+/* ('RU') Неактивные кнопки с категориями приложений. */
+	padding: 7px;
+	color: rgb(172,205,138);
+	font-weight: normal;
+}
+.menu-category-button-selected {
+/* ('RU') Выбранная кнопка с категориями приложений (на них наведена мышь либо пользователь перешел к списку программ из текущей категории. */
+	padding-top: 7px;
+	padding-left: 7px;
+	padding-right: 7px;
+	padding-bottom: 7px;
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(194,221,167,0.0);
+			background-gradient-end:  rgba(172,205,138,0.7);
+			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
+		/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+		text-shadow: -1px 1px 3px rgba(0,0,0,1);
+	border-radius: 3.5px;
+	transition-duration: 150;
+}
+.menu-category-button-label:ltr {
+	padding-left: 5px;
+}
+
+.menu-category-button-label:rtl {
+	padding-right: 5px;
+}
+
+
+/* ('EN') Applications. ===============================================
+   ('RU') Приложения главного меню, разбиваются на категории. =========== */
+
+/*.menu-applications-box { ('RU') Плоскость со списком приложений, категорий, избранного и полосой прокрутки. Не включает в себя плоскость с именем и описанием программ, на которые наведен указатель мыши.
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-right: 15px;
+	padding-bottom: 0px;} */
+/*>>>Вместо данной категории для новых версий cinnamon лучше использовать (и используется) .menu-applications-outer-box {}, так как он позволяет настроить отдельно и плоскость для списка приложений (.menu-applications-inner-box{}). */
+
+.menu-applications-outer-box {
+/* ('RU') Плоскость со списком программ, категорий, избранного и полосой прокрутки. Не включает в себя плоскость с именем и описанием программ, на которые наведен указатель мыши. */
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+.menu-applications-inner-box {
+/* ('RU') Плоскость непосредственно со списком программ. */
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+}
+
+
+
+.menu-application-button {
+/* ('RU') Кнопки с приложениями. */
+	padding: 7px;
+	/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+	text-shadow: -1px 1px 3px rgba(0,0,0,1);
+}
+.menu-application-button-selected {
+	padding: 7px;
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(194,221,167,0.0);
+			background-gradient-end:  rgba(172,205,138,0.7);
+			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
+		/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+		text-shadow: -1px 1px 3px rgba(0,0,0,1);
+	border-radius: 3.5px;
+	transition-duration: 150;
+}
+.menu-application-button:highlighted {
+/* ('EN') This style is used in menu application buttons for applications which were newly installed. */
+/* ('RU') Стиль подсветки недавно установленных программ. */
+			background-gradient-direction: horizontal;
+			background-gradient-start: rgba(172,205,138,0.3);
+			background-gradient-end:  rgba(194,221,167,0.7);
+			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
+		/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+		text-shadow: -1px 1px 3px rgba(0,0,0,1);
+		color: rgb(255,255,255);
+	border-radius: 3.5px;
+}
+.menu-application-button-label:ltr {
+	padding-left: 5px;
+}
+.menu-application-button-label:rtl {
+	padding-right: 5px;
+}
+.menu-place-cat-button-label:ltr {
+	padding-top: 3px;
+	padding-left: 5px;
+}
+.menu-place-cat-button-label:rtl {
+	padding-top: 3px;
+	padding-right: 5px;
+}
+
+
+.menu-selected-app-box {
+/* ('EN') Name and description of the currently hovered item in the menu. This appears on the bottom right hand corner of the menu.
+ * ('RU') Имя и описание приложений, на которые в текущий момент наведена мышь, находится в правом нижнем углу плоскости меню. */
+	padding-right: 30px;
+	padding-left: 28px;
+	text-align: right;
+	color: black;
+	text-shadow: -1px 1px 3px rgba(0,0,0,0);
+		border: 1px solid rgb(172,205,138);
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0.2);
+		background-gradient-end:  rgba(194,221,167,0.8);
+	border-radius: 6px;
+}
+.menu-selected-app-box:rtl {
+	padding-top: 10px;
+	height: 30px;
+}
+.menu-selected-app-title {
+	font-weight: bold;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+	color: black;
+}
+.menu-selected-app-description {
+	max-width: 150px;
+	color: black;
+}
+
+.menu-search-box:ltr {
+	padding-left: 25px;
+}
+.menu-search-box:rtl {
+	padding-right: 25px;
+}
+
+
+#menu-search-entry {
+/* ('RU') Диалог ввода текста для поиска по меню. */
+		border: 1px solid rgb(172,205,138);
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0.2);
+		background-gradient-end:  rgba(194,221,167,0.8);
+	border-radius: 4px;
+	selected-color: rgb(234,227,209);
+	caret-color: rgb(60,59,55);
+	caret-size: 1px;
+	color: black;
+	width: 300px;
+	font-weight: normal;
+	padding: 4px;
+	padding-bottom: 3px;
+}
+.menu-search-entry-icon {
+/* ('RU') Изображение с увеличительным стеклом в диалоге ввода текста для поиска по меню. */
+	icon-size: 1.2em;
+	color: rgb(60,59,55);
+}
+
+
+.menu-context-menu {
+/* ('RU') Всплывающее подменю при нажатии правой кнопкой мыши на пункте меню (приложения и другие). */
+/* ('EN') Context menu (at the moment only for favorites). */
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(22,22,22,1);
+		background-gradient-end: rgba(22,22,22,1);
+		/*border: 1px solid rgb(172,205,138);*/
+		/*box-shadow: 0px 0px 5px 3px rgb(172,205,138);*/
+	border-radius: 4px;
+	padding: 5px 0px 5px 0px;
+}
+
+
+
+
+/* ===================================================================
+* ('EN') Window list (windowList.js)
+* ===================================================================*/
+/* ('RU') Стандартный апплет: все запущенные окна отображаются на панели. */
+/* ('RU') Миниатюры предпросмотра окон при наведении мыши на кнопки открытых окон, в частности, скругление углов, настраиваются в
+   разделе переключателя Alt-Tab в разделе .switcher-list {}. */
+
+
+
+.window-list-box {
+	spacing: 3px;
+}
+.window-list-box.vertical {
+	spacing: 4px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+.window-list-box.vertical #appMenuIcon {
+	padding-top: 3px;
+}
+
+.window-list-item-label {
+	width: 15em;
+	min-width: 5px;
+}
+
+
+
+
+.window-list-item-box {
+/* ('RU') Кнопки с открытыми окнами. */
+	font-weight: normal;
+	padding-top: 0px;
+	padding-bottom: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+				background-gradient-direction: vertical; /* ('RU') указан градиент а не просто цвет, без градиента box-shadow не работает */
+				background-gradient-start: rgba(0,0,0, 0.0);
+				background-gradient-end:  rgba(0,0,0, 0.1);
+				box-shadow: inset 0px -1px 0px 0px rgb(194,221,167);
+		/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+		text-shadow: -1px 1px 3px rgba(0,0,0,1);
+	border-radius: 1px;
+	color: rgb(230,230,230);
+	transition-duration: 450;
+}
+.window-list-item-box.left,
+.window-list-item-box.right {
+	padding-left: 0;
+	padding-right: 0;
+}
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box:focus {
+	color: white;
+				background-gradient-direction: vertical;
+				background-gradient-start: rgba(172,205,138,0.0);
+				background-gradient-end:  rgba(194,221,167,0.7);
+				box-shadow: inset 0 0 0 1px rgb(172,205,138);
+	border-radius: 3px;
+}
+.window-list-item-box:hover {
+			border-image: url("windowlist_hover.svg");
+	transition-duration: 150;
+}
+.window-list-item-demands-attention {
+				background-gradient-direction: horizontal;
+				background-gradient-start: rgba(172,205,138,0.2);
+				background-gradient-end:  rgba(194,221,167,0.6);
+				box-shadow: inset 0px 1px 1px rgba(255,255,255,0.9);
+			color: white;
+	border-radius: 4px;
+}
+
+
+
+
+/* ===================================================================
+* ('EN') Applets (applet.js).
+  ('RU') Аплеты. Общие стили для всех апплетов.
+* ===================================================================*/
+/* ('RU') Апплеты - небольшие объекты (дополнения), располагающиеся на панели. */
+
+
+.applet-box {
+/* ('RU') Сами кнопки апплетов. */
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 12px;
+	font-weight: normal;
+	color: rgb(230,230,230); /* ('RU') этот color не для текста, а для картинок стандартных,
+	но не тех, что назначаются изображениями темой icon theme */
+	/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+	text-shadow: -1px 1px 3px rgba(0,0,0,1);
+	border-radius: 1px;
+	transition-duration: 450;
+	/*min-width: 12px;*/ /* ('RU') убрал чтобы апплеты не уменьшались в размерах в случае,
+	если список окон увеличится и не останется места на панели */
+}
+.applet-box.vertical {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.applet-box:hover {
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(194,221,167,0.2);
+			background-gradient-end:  rgba(172,205,138,0.7);
+			box-shadow: inset 0px 1px 1px rgba(255,255,255,0.8);
+	/*color: white;*/ /* ('RU') этот color не для текста, а для картинок стандартных, но не тех,
+	что назначаются изображениями темой icon theme */
+	/*text-shadow: -1px 1px 1px rgba(0,0,0,1);*/
+	transition-duration: 150;
+}
+.applet-box:active {
+		color: white; /* ('RU') этот color не для текста, а для картинок стандартных, но не тех,
+	что назначаются изображениями темой icon theme */
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(172,205,138,0.3);
+			background-gradient-end: rgba(194,221,167,0.8);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.7);
+		/*text-shadow: 0px 1px 1px rgba(0,0,0,0.8);*/
+}
+
+
+
+.applet-label {
+/* ('RU') Текст внутри коробок апплетов. */
+	text-align: center;
+	padding-top: 2px;
+	transition-duration: 450;
+}
+.applet-box:hover .applet-label {
+/* ('RU') Текст внутри коробок апплетов. */
+	/*color: white;*/ /* ('RU') отключил и текст и тень - transition-duration для них не работает, получается резкий рывок */
+	/*text-shadow: white 0px 0px 5px;*/
+}
+.applet-box:active .applet-label {
+/* ('RU') Цветные картинки в апплетах. */
+/* ('RU') для кнопки меню, для остальных параметр :active не работает */
+color: white;
+}
+
+
+
+.applet-icon {
+/* ('RU') Цветные картинки в апплетах. */
+/* ('RU') изменение цвета и размера иконок не работало, оставил как было */
+	color: #ccc; /* ('RU') цвет стандартных (монохромных картинок иконок не меняется - он задается в
+		.applet-box с помощью color,
+		но на всякий случай оставил, по-идее должен меняться цвет картинок что идут с темой icon theme
+		(иконка кнопки свернуть рабочий стол, логотип меню т.д.), но эти картинки сами по себе уже имеют цвет,
+		поэтому он не может измениться */
+	icon-size: 22px; /* ('RU') размер не менялся - он обычно задан в самой картинке или интерпретаторе css
+	в соответствии с размером пустого места */
+}
+.applet-box:hover .applet-icon {
+/* ('RU') Цветные картинки в апплетах. */
+	/*color: white;*/ /* ('RU') цвет стандартных (монохромных картинок иконок не меняется - он задается в
+		.applet-box с помощью color,
+		но на всякий случай оставил, по-идее должен меняться цвет картинок что идут с темой icon theme
+		(иконка кнопки свернуть рабочий стол, логотип меню т.д.), но эти картинки сами по себе уже имеют цвет,
+		поэтому он не может измениться. */
+	/*icon-shadow: white 0px 0px 3px;*/  /* ('RU') меняет цвет тени картинок иконок,
+	не затрагивает тень от текста, она в .applet-box:hover .applet-label */
+}
+.applet-box:active .applet-icon {
+/* ('RU') Цветные картинки в апплетах. */
+/* ('RU') для кнопки меню, для остальных параметр :active не работает */
+}
+
+
+
+.applet-separator {
+	padding: 5px 4px;
+}
+.applet-separator-line {
+	width: 2px;
+	background: rgba(255,255,255,0.5);
+}
+
+
+
+
+/* ==================================================================
+   ('RU') Различные апплеты.
+   ================================================================== */
+
+
+
+
+/* ===================================================================
+  ('EN') Notification Applet.
+  ('RU') Апплет уведомлений.
+* ===================================================================*/
+/* ('RU') Присылает в верхнем правом углу уведомления пользователю */
+
+
+.notification-applet-padding {
+	padding: .4em 1.25em;
+	spacing: 5px;
+}
+
+.notification-applet-container {
+	border: 1px solid rgb(0,0,0);
+	background-gradient-direction: horizontal;
+	background-gradient-start: rgb(46,46,46);
+	background-gradient-end: rgb(60,59,55);
+	border-radius: 4px;
+	max-height: 100px;
+}
+
+.popup-menu #notification {
+	box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0);
+}
+
+.flashspot {
+	background-color: white;
+}
+
+
+/* ('EN') Check Boxes. ==========================================
+   ('RU') Переключатели вкл\выкл в виде галочек. ================= */
+
+.check-box CinnamonGenericContainer {
+	spacing: .2em;
+	min-height: 30px;
+	padding-top: 2px;
+}
+.check-box StBin {
+	width: 24px;
+	height: 18px;
+	background-image: url("checkbox-off.svg");
+}
+.check-box:focus StBin {
+	background-image: url("checkbox-off-focused.svg");
+}
+.check-box:checked StBin {
+	background-image: url("checkbox.svg");
+}
+.check-box:focus:checked StBin {
+	background-image: url("checkbox-focused.svg");
+}
+.check-box StLabel {
+	font-weight: normal;
+}
+
+.radiobutton CinnamonGenericContainer {
+	spacing: .2em;
+	height: 26px;
+	padding-top: 2px;
+}
+.radiobutton StBin {
+	width: 22px;
+	height: 22px;
+	background-image: url("radiobutton-off.svg");
+	border-radius: 15px;
+}
+.radiobutton:focus StBin {
+	background-image: url("radiobutton-off.svg");
+}
+.radiobutton:checked StBin {
+	background-image: url("radiobutton.svg");
+}
+.radiobutton:focus:checked StBin {
+	background-image: url("radiobutton.svg");
+}
+.radiobutton StLabel {
+	padding-top: 4px;
+	font-size: 0.9em;
+	box-shadow: none;
+}
+
+
+
+
+/* ===================================================================
+* ('EN') Sound Applet (status/volume.js)
+* ===================================================================*/
+/* ('RU') Стандартный апплет настройки громкости звука как всей системы, так и отдельных приложений. Также можно запускать музыкальный проигрыватель и управлять им. */
+/* ('RU') Слайдер для настройки звука (.popup-slider-menu-item) находится в разделе PopupMenu - он общий для разных апплетов. */
+
+
+.sound-player StButton {
+/* ('RU') Кнопки проигрывателя: воспроизвести, стоп, т.д. */
+	width: 22px;
+	height: 12px;
+	padding: 8px 20px 8px 20px;
+		color: rgb(230,230,230);
+		border: 1px solid transparent;  /* освобождает места для увеличения кнопки */
+	border-radius: 6px;
+	transition-duration: 250;
+}
+.sound-player StButton:hover {
+		/*box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.6);*/
+		box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.6);
+		border: 1px solid rgb(0,0,0);
+	transition-duration: 200;
+}
+.sound-player StButton:active {
+		/*box-shadow: 2px 2px 2px 0px rgba(172,205,138,0.8);*/
+		/*box-shadow: 2px 2px 2px 0px rgba(255,255,255,0.7);*/
+		box-shadow: 0px 0px 3px 1px rgba(255,255,255,0.7);
+		/*border: 1px solid *//*rgb(172,205,138)*/ /*rgb(194,221,167);*/
+	transition-duration: 0;
+}
+
+.sound-player StButton StIcon {
+/* ('RU') Изображения в кнопках прогрывания, паузы (треугольник, палочки). */
+	icon-size: 20px; /*(1.6em)*/
+		color: black;
+	/*transition-duration: 800;*/ /*не работает*/
+}
+.sound-player StButton:hover StIcon {
+/* ('RU') Изображения в кнопках прогрывания, паузы (треугольник, палочки). */
+		icon-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
+}
+.sound-player StButton:active StIcon {
+/* ('RU') Изображения в кнопках прогрывания, паузы (треугольник, палочки). */
+		/*color: rgb(172,205,138);*/
+		color: rgb(255,255,255);
+		/*color: rgb(200,59,55);*/
+		icon-shadow: white 0px -2px 2px 1px;
+}
+
+
+.sound-player StButton:small {
+/* ('RU') Маленькие кнопки сверху: закрыть и открыть плеер. */
+	width: 28px;
+	height: 12px;
+	padding: 7px 11px 7px 11px;
+	border-radius: 5px;
+		border: 1px solid transparent;  /* освобождает места для увеличения кнопки */
+	transition-duration: 250;
+}
+.sound-player StButton:small:hover {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0.2);
+		background-gradient-end:  rgba(172,205,138,0.7);
+		box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
+		/*border: 1px solid rgb(172,205,138);*/
+	transition-duration: 150;
+}
+.sound-player StButton:small:active {
+	padding: 8px 12px 8px 12px;
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0.3);
+		background-gradient-end:  rgba(194,221,167,0.8);
+		box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
+	border: 0px solid transparent;  /* освобождает места для увеличения кнопки */
+	transition-duration: 100;
+}
+
+.sound-player StButton:small StIcon {
+/* ('RU') Изображения в маленьких кнопках (стрелочка, крестики). */
+	icon-size: 16px; /*(1.1em - 14px)*/
+		/*color: rgb(172,205,138);*/ /*меньше подходит - выделяется*/
+		color: rgb(230,230,230);
+		/*icon-shadow: white 0px -2px 2px;*/
+}
+.sound-player StButton:small:hover StIcon {
+	icon-size: 18px;
+		color: white;
+		/*icon-shadow: transparent 0px 0px 0px;*/
+}
+.sound-player StButton:small:active StIcon {
+	icon-size: 20px;
+		color: black;
+		/*color: rgb(255,255,255);*/
+}
+
+
+.sound-player .slider {
+	height: 15px;  /* ограничивает увеличение апплета */
+		border: 1px solid rgb(172,205,138);
+	border-radius: 4px;
+	/*box-shadow: inset 0px 0px 1px 1px rgb(172,205,138);*/
+	-slider-height: 45px;  /* неизвестно на что влияет */ /* Узнать. */
+	-slider-background-color: rgba(0,0,0, 0.8);
+	-slider-active-background-color: rgba(172,205,138,0.4);
+	-slider-border-color: rgba(0,0,0, 0);  /* Не работает. */
+	-slider-active-border-color: rgba(0,0,0,0);  /* Не работает. */
+	-slider-border-width: 0px;  /* Не работает. */
+	-slider-handle-radius: 0px;
+}
+
+.sound-player StBoxLayout {
+/* (RU) Элементы проигрывателя (кнопки, надписи). */
+	spacing: 0.5em;
+}
+.sound-player>StBoxLayout {
+/* (RU) Плоскость надписи с названием проигрывателя и меленькими кнопками. */
+	padding: 5px;
+}
+
+.sound-player-overlay {
+/* (RU) Плоскость с названием песни, исполнителем, кнопками старта/паузы/листания. */
+	width: 300px;
+	height: 70px;
+	padding: 15px;
+	spacing: 0.5em;
+	/*background: rgba(46,45,42,0.8);*/
+		border-bottom: 14px solid transparent /*rgb(172,205,138)*/;
+		box-shadow: inset 0px 0px 0px 1px rgb(172,205,138);
+		/*background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0.2);
+		background-gradient-end:  rgba(194,221,167,0.7);*/ /*это старый и прозрачный, новый дает возможность прочесть текст в нем*/
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(65,71,57,0.9);
+		background-gradient-end:  rgba(130,147,110,0.9);
+	color: /*rgb(230,230,230)*/ black;
+	/*border: 1px solid black;*/
+	border-radius: 6px;
+}
+
+.sound-player-overlay StBoxLayout {
+	padding-top: 2px;
+}
+
+.sound-player-generic-coverart {
+/* (RU) Плоскость с обложкой альбома. */
+	background: /*transparent*/ rgba(0,0,0,0.4);
+	padding-bottom: 120px;
+}
+
+
+
+/* ('EN') Old items. They are absent in new theme. ==========================================
+   ('RU') Старые пункты. Отсутствуют в стандартной теме. ================= */
+
+.sound-button-container {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	padding-right: 3px;
+	padding-left: 3px;
+}
+.sound-button {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+/*border: 1px solid rgba(22,22,22,0.4);*/
+/*background-color: rgb(60,59,55);
+box-shadow: inset 0px 1px 1px rgba(255,255,255,0.2), inset 0px 0px 1px rgba(22,22,22,0.4);;
+border-radius: 5px;*/
+		background-gradient-direction: horizontal;
+		background-gradient-start: rgba(46,46,46,0.8);
+		background-gradient-end: rgba(60,59,55,0.8);
+		box-shadow: inset 0px 0px 1px 1px rgba(194,221,167,0.6);
+	border-radius: 5px;
+	padding: 5px;
+}
+.sound-button:hover,
+.sound-button:focus {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0);
+		background-gradient-end:  rgba(172,205,138,1);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.4);
+	transition-duration: 100;
+}
+.sound-button:active,
+.sound-button:pressed {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0);
+		background-gradient-end:  rgba(194,221,167,1);
+		box-shadow: inset 0px 0px 1px 1px rgb(60,59,55);
+}
+.sound-button StIcon {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	icon-size: 1.4em;
+}
+.sound-seek-box {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	padding-left: 20px;
+}
+.sound-seek-box StLabel {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	padding-top: 2px;
+}
+.sound-seek-box StIcon {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	icon-size: 1em;
+}
+.sound-seek-slider {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	width: 140px;
+}
+.sound-track-infos {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.sound-track-info {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.sound-track-info StIcon {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	icon-size: 1em;
+}
+.sound-track-info StLabel {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.sound-track-box {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	padding-left: 15px;
+	padding-right: 15px;
+	max-width: 220px;
+}
+.sound-volume-menu-item {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+padding: .4em 1.75em;
+}
+.sound-volume-menu-item StIcon {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	icon-size: 1.14em;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+.sound-playback-control {
+/* ('RU') Устарело. Отсутствует в стандартной теме. */
+	padding-top: 5px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+
+
+/* ===================================================================
+* ('EN') Workspace Switcher applet (workspaceSwitcher.js)
+* ('RU') Апплет переключения рабочих столов.
+Переключения рабочих столов на панели щелчком или колесиком мыши.
+* =================================================================== */
+
+
+/* ('RU') Если в настройках апплета были выбраны "простые кнопки". */
+/* ('EN') Controls the styling when using the "Simple buttons" option */
+
+#workspaceSwitcher { /* ('RU') Устарело? */
+	spacing: 2px;
+}
+
+
+
+.panel-top .workspace-switcher,
+.panel-bottom .workspace-switcher {
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.panel-left .workspace-switcher,
+.panel-right .workspace-switcher {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+
+
+
+.workspace-button {
+/* ('RU') Кнопки на плоскости апплета переключателя рабочих областей. */
+	width: 28px;
+	font-size: 11px;
+	color: rgb(172,205,138); /* ('RU') Цвет надписи (цифры) на кнопке рабочей области. */
+		background-gradient-direction: vertical;
+		background-gradient-start: rgb(41,40,38);
+		background-gradient-end:  rgb(41,40,38);
+	transition-duration: 450;
+}
+.workspace-button:hover {
+	box-shadow: inset 0 0 0 1px rgb(172,205,138);
+}
+
+.workspace-button:outlined {
+	color: black;
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0);
+		background-gradient-end:  rgba(194,221,167,0.8);
+		box-shadow: inset 0 0 0 1px rgb(172,205,138);
+}
+
+
+
+
+/* ('RU') Если в настройках апплета были выбраны кнопки с "видимым представлением рабочих областей". */
+/* ('EN') Controls the style when using the "Visual representation" option. */
+
+.workspace-graph {
+	padding: 0px;
+	spacing: 0px;
+}
+.workspace-graph .workspace {
+	border: 1px solid black;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgb(41,40,38);
+	background-gradient-end:  rgb(41,40,38);
+
+}
+.workspace-graph .workspace:first-child {
+	/*box-shadow: -1px 0 0 0px black;*/
+	border-left-width: 2px;
+}
+.workspace-graph .workspace:last-child {
+	/*box-shadow: 1px 0 0 0px black;*/
+	border-right-width: 2px;
+}
+.workspace-graph .workspace:active {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(194,221,167,0);
+	background-gradient-end:  rgba(172,205,138,1);
+}
+.workspace-graph .workspace .windows {
+	-active-window-background: rgb(110,110,110);
+	-active-window-border: rgb(0,0,0);
+	-inactive-window-background: rgb(110,110,110);
+	-inactive-window-border: rgb(0,0,0);
+}
+.workspace-graph .workspace:active .windows {
+	-active-window-background: rgb(220,220,220);
+	-active-window-border: rgb(0,0,0);
+	-inactive-window-background: rgba(140,140,140,1.0);
+	-inactive-window-border: rgb(0,0,0);
+}
+
+
+
+
+/* ===================================================================
+* ('EN') Panel Launchers Applet (panelLaunchers.js)
+* ('RU') Апплет значков запуска.
+* ===================================================================*/
+/* ('RU') Это апплет с кнопками (значка) быстрого запуска программ прямо на панели. */
+
+
+#panel-launchers-box { /* (RU) Устарело? */
+	padding-left: 0px;
+}
+
+.panel-launcher { /* (RU) Устарело? */
+	margin: 1px;
+	padding: 1px;
+	border-radius: 0px;
+	transition-duration: 450;
+}
+.panel-launcher.vertical { /* (RU) Устарело? */
+	margin: 1px;
+	padding: 1px;
+	border-radius: 4px;
+	transition-duration: 450;
+}
+.panel-launcher:hover { /* (RU) Устарело? */
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0.2);
+		background-gradient-end:  rgba(172,205,138,0.7);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.8);
+	transition-duration: 150;
+}
+
+
+
+
+.launcher {
+/* (RU) Плоскость с элементами для быстрого доступа. */
+		padding-left: 3px;
+		padding-right: 3px;
+		/*border-bottom-width: 1px;*/
+		transition-duration: 300;
+}
+.launcher .icon-box {
+/* (RU) Иконки на плоскости .launcher{}. */
+		padding-top: 2px;
+}
+
+
+
+.panel-launchers {
+/* (RU) Виджеты на плоскости .launcher{}. */
+		padding-left: 2px;
+		spacing: 0px;
+}
+.panel-launchers.vertical {
+/* (RU) Виджеты на плоскости .launcher{} в случае с вертикальными панелями. */
+		/*width: 38px;*/
+		padding-top: 2px;
+		padding-bottom: 2px;
+		padding-left: 0px;
+		padding-right: 0px;
+		spacing: 0px;
+}
+
+.panel-launchers.vertical .launcher .icon-box {
+/* (RU) Иконки на плоскости .launcher{} в случае с вертикальными панелями. */
+		padding-top: 2px;
+		padding-bottom: 1px;
+}
+
+.panel-launchers .launcher:hover {
+/* (RU) Виджеты на плоскости .launcher{}. */
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0.2);
+		background-gradient-end:  rgba(172,205,138,0.7);
+		box-shadow: inset 0px 1px 1px rgba(255,255,255,0.8);
+	transition-duration: 150;
+}
+
+
+
+
+.panel-launcher-add-dialog-content-box {
+	padding-bottom: 20px;
+	spacing: 20px;
+}
+.panel-launcher-add-dialog-content-box-left {
+	padding: 9px;
+	spacing: 20px;
+}
+.panel-launcher-add-dialog-content-box-right {
+	padding: 6px;
+	spacing: 10px;
+}
+
+
+
+
+.panel-launcher-add-dialog-entry {
+	background: white;
+	border: 1px solid rgb(60,59,55);
+	border-radius: 4px;
+	box-shadow: inset 0px 0px 0px 0px #accd8a;
+	selected-color: #eae3d1;
+	caret-color: rgb(60,59,55);
+	caret-size: 1px;
+	color: rgb(60,59,55);
+	width: 250px;
+	font-weight: normal;
+	padding: 4px;
+	padding-bottom: 3px;
+	transition-duration: 450;
+}
+.panel-launcher-add-dialog-entry:focus {
+	border: 1px solid #f07746;
+}
+
+
+
+
+/* ===================================================================
+ * ('EN') User Applet.
+ * ===================================================================*/
+/* ('RU') Апплет с иконкой пользователя и некоторыми действиям с компьютером. */
+
+
+.user-icon {
+/* ('RU') фотография пользователя. */
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(0,0,0,0.4);
+	background-gradient-end:  rgba(0,0,0,0.4);
+		/*background-color: rgba(0,0,0,0.4);*//* убрал чтобы не накладывался фон и нормально отображались тени. */
+		border: 5px solid rgba(0,0,0,0.4) /*rgb(172,205,138)*/;
+		/*box-shadow: 0px 0px 0px 5px rgb(172,205,138);*/
+	border-radius: 6px;
+	padding: 0.2em;
+}
+
+.user-label {
+/* ('RU') надпись перед фотографией пользователя. */
+  	font-size: 16px;
+  	margin: 6px;
+}
+
+
+
+
+/* ===================================================================================
+   ('RU') Все для режима(ов) обзора. ================================================
+   ('EN') All for overview mode(s). =================================================
+   ================================================================================== */
+
+
+
+
+/* ====================================================================================
+   ('EN') Overview corner.
+   ('RU') Угол для перехода в режим обзора.
+   ==================================================================================== */
+
+
+#overview-corner {
+/* ('RU') Изображение, которое находится в горячих углах, если их отображение включено в настройках */
+	background-image: url("overview.png");
+transition-duration: 350;
+}
+
+#overview-corner:hover {
+	background-image:	url("overview-hover.png");
+-st-background-image-shadow: 0px 0px 0px 0px rgb(172,205,138);
+}
+
+/* Изображения, которые появляются при прикосновении указателем мыши в горячие углы */
+.ripple-box {
+width: 160px;
+height: 160px;
+background-image: url("corner-ripple.svg");
+}
+
+.ripple-box:rtl {
+	background-image: url("corner-ripple.svg");
+}
+
+
+
+
+/* ================================================================================================
+  ('RU') Сами режимы обзора. Общие для обоих режимов обзора параменты.
+  ('EN') Overview modes. Same for both overview modes parameters.
+  ================================================================================================= */
+
+
+#overview {/* ('RU') Узнать: что это */
+/* ('RU') Фон в режиме обзора,неизвестно какого - почему-то не работает. */
+}
+
+.workspace-overview-background-shade {/* ('RU') Узнать: что это */
+/* ('RU') Тень на весь экран в режиме обзора окон, в режиме обзора рабочих областей не на весь экран,
+   только в миниатюрах рабочих областей в то время, когда на них мы не наводен указатель мыши, когда наводим - убирается. */
+	background-color: rgba(22,22,22,0.2);
+}
+
+.workspace-controls {/* ('RU') Узнать: что это */
+   visible-height: 32px; /* ('EN') Amount visible before hovering. */
+}
+
+
+
+
+/* =============================================================================================
+  ('RU') Режим обзора рабочих областей (столов).
+  ('EN') Overview workspace mode.
+  ============================================================================================== */
+
+
+.expo-background {
+/* ('RU') Тень (фон) на весь экран в режиме обзора рабочих областей, затеняет картинку-фон рабочего стола. */
+	background-gradient-direction: vertical;
+background-gradient-start: rgba(230,230,230,0.2);
+	background-gradient-end: rgba(230,230,230,0.2);
+}
+
+
+
+.workspace-close-button {
+/* ('RU') Кнопки закрытия рабочих областей. */
+	background-image: url("workspace-close.svg");
+	-st-background-image-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	height: 40px;
+	width: 40px;
+	-cinnamon-close-overlap: 37px; /* дистанция от угла миниатюры рабочего стола до кнопки закрытия */
+	transition-duration: 450;
+}
+.workspace-close-button:hover {
+	background-image: url("workspace-close-hover.svg");
+	transition-duration: 350;
+}
+.workspace-close-button:active {
+	background-image: url("workspace-close-active.svg");
+	-st-background-image-shadow: 0px 0px 3px 1px rgba(255,0,0,0.6);
+	transition-duration: 150;
+}
+
+
+
+.workspace-osd {
+/* ('RU') Эта штука выводит имя рабочих областей при переключении рабочей области в режиме обзора рабочих областей. */
+/* ('RU') (раньше думал или было) Форматирование (разметка расположения элементов) режима обзора рабочих столов. */
+	font-size: 22pt;
+	font-weight: bold;
+	border-radius: 8px;
+		color: rgb(200, 200, 200);
+	padding: 6px 18px 4px 18px;
+			/*background: rgba(0,0,0,0.9);
+			border: 1px solid rgba(44,44,44,0.4);
+			box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.3);*/
+		/*color: rgb(230,230,230);
+			background: rgba(46,45,42,0.7);
+			border: 1px solid rgb(22,22,22);
+			box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);*/
+			border: 1.5px solid rgb(172,205,138);
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(172,205,138, 0.1);
+			background-gradient-end:  rgba(194,221,167, 0.9);
+			box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+		color: /*rgb(22,22,22)*/ black;
+}
+
+
+
+.workspace-thumbnails {
+/* ('RU') Окошки (миниатюры) предпросмотра рабочих областей (столов). */
+	spacing: 34px; /*лучше всего 14 (как в стандартной или 34*/
+}
+
+
+.expo-workspace-thumbnail-frame {
+/* ('RU') Рамка вокруг миниатюр рабочих областей. */
+	border-radius: 4px;
+	transition-duration: 450;
+}
+.expo-workspace-thumbnail-frame#active {
+/* ('RU') Рамка вокруг активной миниатюры рабочего стола. */
+	border: 2px solid rgb(22,22,22);
+}
+/* ('RU') Два следующих пункта добавлены из темы Cinnamon 2.8. */
+.workspace-thumbnails-background {
+/* ('RU') Узнать: что это.*/
+}
+.workspace-thumbnails-background:rtl {
+}
+
+
+
+.expo-workspaces-name-entry {
+/* ('RU') Названия (подписи) к окошкам предпросмотра рабочих областей в режиме обзора рабочих областей. */
+	border-radius: 4px;
+	font-weight: bold;
+	caret-size: 1px;
+		color: rgb(230,230,230);
+		selected-color: rgb(60,59,55);
+		caret-color: rgb(230,230,230);
+			background: rgba(46,45,42,0.7);
+			border: 1px solid rgb(22,22,22);
+			box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	padding: 3px 8px 2px 9px;
+	height: 18px;
+	transition-duration: 450;
+}
+.expo-workspaces-name-entry:focus {
+	color: rgb(230,230,230);
+	/*font-weight: bold;*/
+}
+.expo-workspaces-name-entry#selected {
+			border: 1px solid rgb(172,205,138);
+			background-gradient-direction: vertical;
+			background-gradient-start: rgba(172,205,138,0.2);
+			background-gradient-end:  rgba(194,221,167,1);
+		color: /*rgb(22,22,22)*/ black;
+}
+
+
+
+.workspace-add-button {
+/* ('RU') Кнопка добавления рабочего стола. */
+	/*background-gradient-direction: vertical;
+	background-gradient-start: rgba(92,91,86,1);
+	background-gradient-end: rgba(50,50,45,0);
+	border: 1px solid rgb(22,22,22);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);*/
+		background-color:  rgba(46,45,42, 0.6);
+		border-left: 1px solid rgb(22,22,22);
+		border-top: 1px solid rgb(22,22,22);
+		border-right: 0px solid rgb(22,22,22);
+		border-bottom: 1px solid rgb(22,22,22);
+		box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.5);
+	border-radius: 40px 0px 0px 40px;
+	height: 220px;
+	width: 38px;
+	transition-duration: 450;
+	background-image: url('add-workspace.svg');
+}
+.workspace-add-button:hover {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(194,221,167,0.0);
+		background-gradient-end:  rgba(172,205,138,0.7);
+		border-left: 1px solid rgb(172,205,138);
+		border-top: 1px solid rgb(172,205,138);
+		border-right: 0px solid rgb(172,205,138);
+		border-bottom: 1px solid rgb(172,205,138);
+		box-shadow: 0px 0px 5px 3px rgb(172,205,138);
+	transition-duration: 250;
+	background-image: url();
+}
+.workspace-add-button:active {
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0.2);
+		background-gradient-end:  rgba(194,221,167,0.8);
+		border-left: 1px solid rgb(194,221,167);
+		border-top: 1px solid rgb(194,221,167);
+		border-right: 0px solid rgb(194,221,167);
+		border-bottom: 1px solid rgb(194,221,167);
+		box-shadow: 0px 0px 5px 3px rgb(194,221,167);
+	transition-duration: 150;
+	background-image: url();
+}
+
+
+
+.window-close-area {
+/* ('RU') Область закрытия окон (куда перетаскивают окна чтобы закрыть). */
+	background-image: url("trash.svg");
+	-st-background-image-shadow: 0px 0px 4px 3px rgb(172,205,138);
+	background-color: rgba(46,45,42,0.4);
+	border: 1px solid rgb(22,22,22);
+	color: rgb(230,230,230);
+	border-radius: 16px 16px 0px 0px;
+	height: 115px;
+	width: 320px;
+	box-shadow: 0px 0px 3px 7.5px rgba(0,0,0,0.5);/* тут 7.5 соответствует 1 в случае, если активирован -st-background-image-shadow, если нет - тени слишком много и лучше поставить 1. */
+}
+
+
+
+
+/* ==================================================================================
+  ('RU') Режим обзора окон.
+  ('EN') Windows overview mode.
+  ===================================================================================*/
+
+
+.window-close {
+/* ('RU') Кнопки закрытия окон в режиме обзора. */
+	background-image: url("window-close.svg");
+	height: 40px;
+	width: 40px;
+	-cinnamon-close-overlap: 24px; /* ('RU') дистанция от угла окна до кнопки закрытия окна. */
+	transition-duration: 50;
+	-st-background-image-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+}
+.window-close:hover {
+	background-image: url("window-close-hover.svg");
+	transition-duration: 350;
+}
+.window-close:active {
+	background-image: url("window-close-active.svg");
+	-st-background-image-shadow: 0px 0px 3px 1px rgba(255,0,0,0.6);
+	transition-duration: 150;
+}
+
+
+
+.icon-grid {
+/* ('RU') Вероятно, кладка окон в режиме обзора окон. */
+	spacing: 36px;
+	-cinnamon-grid-item-size: 118px;
+}
+.icon-grid .overview-icon {
+	icon-size: 96px;
+}
+
+
+
+.window-caption {
+/* ('RU') Названия (подписи) к окнам в режиме обзора. */
+	background: rgba(46,45,42,0.6);
+	border: 1px solid rgb(22,22,22);
+	border-radius: 4px;
+	font-weight: bold;
+	color: rgb(230,230,230);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	padding: 4px 8px -2px 9px;
+	height: 20px;
+	spacing: 25px;
+	transition-duration: 450;
+	-cinnamon-caption-spacing: 6px;
+}
+.window-caption#selected {
+/* ('RU') Название (подпись) к текущему (активному) окну. */
+		border: 1px solid rgb(172,205,138);
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(172,205,138,0.2);
+		background-gradient-end:  rgba(194,221,167,1);
+	color: /*rgb(22,22,22)*/black;
+	font-weight: bold;
+}
+
+
+
+.osd-window {
+/* ('EN') This is the little window that pops up when you use your
+          keyboard function keys to do things like change the volume or screen brightness. */
+	border: 1px solid rgba(22,22,22,1);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(60,59,55,0.8);
+	background-gradient-end:  rgba(60,59,55,0.8);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	border-radius: 8px;
+	padding: 20px;
+	spacing: 1em;
+}
+.osd-window .level { /* ('RU') Узнать что это. */
+	height: 0.7em;
+	border-radius: 8px;
+	background-color: rgba(70,70,70,0.4);
+}
+
+
+
+
+/* ======================================================================
+ * ('RU') Desklets (desklet.js) Тут все десклеты, что и на рабочем столе.
+ * ======================================================================*/
+
+
+.desklet {
+	color: rgb(230,230,230);
+}
+
+.desklet-with-borders {
+	border: 1px solid rgb(22,22,22);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(46,45,42,0.6);
+	background-gradient-end:  rgba(46,45,42,0.6);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	color: rgb(230,230,230);
+	padding: 0px 10px 0px 10px;
+	border-radius: 12px;
+}
+
+.desklet-with-borders-and-header {
+	border: 1px solid rgb(22,22,22);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(46,45,42,0.6);
+	background-gradient-end:  rgba(46,45,42,0.6);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	color: rgb(230,230,230);
+	padding: 0px 10px 0px 10px;
+	border-radius: 0px 0px 12px 12px;
+}
+
+.desklet-header {
+	border-radius: 12px 12px 0px 0px;
+	font-size: 10.5pt;
+	border: 1px solid rgb(22,22,22);
+	border-bottom: 0px;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(46,45,42,0.6);
+	background-gradient-end:  rgba(46,45,42,0.6);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	color: rgb(230,230,230);
+	padding: 6px;
+}
+
+.desklet-drag-placeholder {
+	border: 1px solid rgb(172,205,138);
+	background-color: rgba(194,221,167,0.4);
+}
+
+
+
+
+/* ===================================================================
+ * Clock Desklet (desklet.js)
+ * ===================================================================*/
+
+.clock-desklet-label {
+}
+
+
+
+
+/* =========================================================================================
+  ('EN') Snap/Tile Chrome.
+  ('RU') Эффекты, которые возникают при перетаскивании окон к краям монитора (рабочей области).
+   ========================================================================================== */
+
+
+.info-osd {
+/* ('RU') Подсказки пользователю, которые возникают при перетаскивании окна к краю монитора. */
+/* ('EN') Info OSD popup. */
+		border: 1px solid rgba(22,22,22,1);
+		background-gradient-direction: vertical;
+		background-gradient-start: rgba(22,22,22,0.8);
+		background-gradient-end:  rgba(22,22,22,0.8);
+		box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	border-radius: 16px;
+	color: rgb(230,230,230);
+	font-size: 18pt;
+	padding: 12px;
+	text-align: center;
+}
+
+
+.tile-preview,
+.tile-hud {
+/* ('RU') Основной фон (заполнение, границы, т.д.), который появляется при перетаскивании окна к краю монитора. */
+	/*background-color: rgba(172,205,138,0.4);*/
+	background-color: rgba(194,221,167,0.4);
+	border: 1px solid rgba(172,205,138,1);
+}
+.tile-preview.snap,
+.tile-hud.snap {
+/* ('EN') Frame, which appears when you move your window near an edge of screen
+          and press <Ctrl> or other key to pull up the tile hud or preview. */
+	background-color: rgba(194,221,167,0.7);
+	border: 1px solid rgba(172,205,138,1);
+}
+.tile-hud:top {
+	border-top-width: 0px;
+	border-radius: 0px 0px 8px 8px;
+}
+.tile-hud:bottom {
+	border-bottom-width: 0px;
+	border-radius: 8px 8px 0px 0px;
+}
+.tile-hud:left {
+	border-left-width: 0px;
+	border-radius: 0px 8px 8px 0px;
+}
+.tile-hud:right {
+	border-right-width: 0px;
+	border-radius: 8px 0px 0px 8px;
+}
+.tile-hud:top-left {
+	border-top-width: 0px;
+	border-left-width: 0px;
+	border-radius: 0px 0px 8px 0px;
+}
+.tile-hud:top-right {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-radius: 0px 0px 0px 8px;
+}
+.tile-hud:bottom-left {
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-radius: 0px 8px 0px 0px;
+}
+.tile-hud:bottom-right {
+	border-bottom-width: 0px;
+	border-right-width: 0px;
+	border-radius: 8px 0px 0px 0px;
+}
+
