@@ -157,36 +157,41 @@ font-size: 9pt;
 #panel:highlight {
     background-color: #aa5555;
 }
-#panelLeft, #panelCenter, #panelRight {
+.panelLeft, .panelCenter, .panelRight {
 spacing: 0px;
 }
-#panelLeft:dnd {
+.panelLeft:dnd {
 background-gradient-start: #bada55;
 background-gradient-end: #45883b;
 background-gradient-direction: vertical;
 }
-#panelCenter:dnd {
+.panelCenter:dnd {
 background-gradient-start: transparent;
 background-gradient-end: transparent;
 background-gradient-direction: vertical;
 }
-#panelRight:dnd {
+.panelRight:dnd {
 background-gradient-start: #51bbe9;
 background-gradient-end: #22597e;
 background-gradient-direction: vertical;
 }
-#panelLeft:ltr {
+.panelLeft:ltr {
 padding-right: 4px;
 }
-#panelLeft:rtl {
+.panelLeft:rtl {
 padding-left: 4px;
 }
-#panelRight:ltr {
+.panelRight:ltr {
 padding-left: 4px;
 }
-#panelRight:rtl {
+.panelRight:rtl {
 padding-right: 4px;
 }
+.panelLeft.vertical, .panelRight.vertical, .panelCenter.vertical {
+padding-left: 0px;
+padding-right: 0px;
+}
+
 .panel-button,
 .panel-status-button {
 -natural-hpadding: 5px;
@@ -206,6 +211,12 @@ color: transparent;
 .system-status-icon {
 icon-size: 1.3em;
 icon-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+}
+.system-status-icon.warning {
+color: #e5e887;
+}
+.system-status-icon.error {
+color: #fb5858;
 }
 /* ===================================================================
 * Overview
@@ -770,6 +781,12 @@ icon-shadow: 6px 2px 1px 0px rgba(255,255,255,0.2);
 * ===================================================================*/
 .window-list-box {
 }
+.window-list-box.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .window-list-item-label {
 font-weight: bold;
 width: 15em;
@@ -777,6 +794,10 @@ min-width: 5px;
 }
 .window-list-item-box {
 padding: 0px 4px 0px 4px;
+transition-duration: 250;
+}
+.panel-left .window-list-item-box, .panel-right .window-list-item-box {
+padding: 0px;
 transition-duration: 250;
 }
 .window-list-item-box:hover,
@@ -903,6 +924,7 @@ padding: 0px 0px 0px 1px;
 padding-left: 5px;
 padding-right: 5px;
 transition-duration: 250;
+spacing: 3px;
 }
 .applet-box:hover {
 border-image: url("window-active.svg") 2 2 0 0;
