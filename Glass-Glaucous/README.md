@@ -3,21 +3,25 @@
 
 **Supported Cinnamon:**
 `Themes have Cinnamon 1.8 and later versions support.
-Last supported version: 3.2.7`
+Last supported version: 3.4.3`
 
 **Installation:**
-`Extract folder from archive into either /usr/share/themes/ (as root) or ~/.themes/ (recommended).`
+`Extract {Glass-Theme-Name} folder (which contains 'cinnamon' folder) from archive into either /usr/share/themes/ (as root) or ~/.themes/ (recommended).`
 
 **Other Glass themes:**
-- On Github: https://github.com/vlad1777d/glass_themes
-- Glass Mint: http://cinnamon-spices.linuxmint.com/themes/view/150
-- Glass Mint Classic: http://cinnamon-spices.linuxmint.com/themes/view/225
-- Glass Ubuntu: http://cinnamon-spices.linuxmint.com/themes/view/182
-- Glass Ubuntu Classic: http://cinnamon-spices.linuxmint.com/themes/view/224
-- Glass Fedora: http://cinnamon-spices.linuxmint.com/themes/view/183
-- Glass Fedora Classic: https://cinnamon-spices.linuxmint.com/themes/view/222
-- Glass Wheezy: http://cinnamon-spices.linuxmint.com/themes/view/184
-- Glass Wheezy Classic: http://cinnamon-spices.linuxmint.com/themes/view/223
+- On Github: https://github.com/vlad1777d/Cinnamon_Glass_Themes
+- Glass Mint: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Mint
+- Glass Mint Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Mint-Classic
+- Glass Ubuntu: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Ubuntu
+- Glass Ubuntu Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Ubuntu-Classic
+- Glass Fedora: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Fedora
+- Glass Fedora Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Fedora-Classic
+- Glass Lemon: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Lemon
+- Glass Lemon Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Lemon-Classic
+- Glass Glaucous: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Glaucous
+- Glass Glaucous Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Glaucous-Classic
+- Glass Wheezy: https://github.com/vlad1777d/Cinnamon_Glass_Themes/tree/master/Glass-Wheezy
+- Glass Wheezy Classic: https://github.com/vlad1777d/Cinnamon_Glass_Themes/tree/master/Glass-Wheezy-Classic
 
 **Contacts:**
 - My webpage: https://vlad1777d.github.io/
