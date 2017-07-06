@@ -116,11 +116,12 @@ StScrollBar StButton#vhandle:hover
 }
 
 .menu {
-/* (RU) Сама плоскость со всплывающим меню. 
-Появился в Cinnamon 3.2. 
-То же, что и .popup-menu-boxpointer и .popup-menu в более ранних версиях Cinnamon.
-Стрелки удалены.
-*/
+/* (RU) Сама плоскость со всплывающим меню. Появился в Cinnamon 3.2. 
+  То же, что и .popup-menu-boxpointer и .popup-menu в более ранних версиях Cinnamon.
+  Стрелки удалены.
+  (EN) Plane with popup menu itself. Appeared in Cinnamon 3.2.
+  Same, as .opup-menu-boxpointer and .popup-menu in earlier Cinnamon versions.
+   */
 	font-size: 13px;
 	color: rgb(230,230,230);
 	text-shadow: -1px 1px 3px rgba(0,0,0,1);
@@ -159,20 +160,22 @@ StScrollBar StButton#vhandle:hover
 
 
 .popup-menu-item {
-/* (RU) Кнопки или пункты во всплывающих окнах (неактивные, не наведена мышь). */
+/* (RU) Кнопки или пункты во всплывающих плоскостях (меню) (неактивные, не наведена мышь).
+   (EN) Buttons (or items) in popup menus (inactive,mouse is not above it). */
 	padding: 5px 24px 5px 24px;
 	spacing: 2px;
 	/*text-shadow: 0px 1px 1px rgba(22,22,22,0.7);*/
 	text-shadow: -1px 1px 3px rgba(0,0,0,0.8);
+	border-radius: 3px;
 }
 .popup-menu-item:active {
 /* (RU) Активный пункт всплывающего меню (на него наведена мышь). */
 			background-gradient-direction: vertical;
-			background-gradient-start: rgba(245,130,84,0.0);
+			background-gradient-start: rgba(245,130,84,0.05);
 			background-gradient-end:  rgba(234,112,63,0.7);
-			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
+			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.8);
 		/*text-shadow: 0px 1px 1px rgba(0,0,0,0.7);*/
-	border-radius: 4px;
+	
 	transition-duration: 150;
 }
 .popup-submenu-menu-item:open {
@@ -180,9 +183,9 @@ StScrollBar StButton#vhandle:hover
 			background-gradient-direction: vertical;
 			background-gradient-start: rgba(234,112,63,0.3);
 			background-gradient-end:  rgba(245,130,84,0.8);
-			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
+			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.8);
 		/*text-shadow: 0px 1px 1px rgba(0,0,0,0.7);*/
-	border-radius: 4px;
+	
 	color: white;
 }
 
@@ -1468,6 +1471,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 /* (RU) Кнопки с картинками на плоскости избранного.
 Вместе с увеличением отступа padding, увеличивается и сама плоскость избранного. */
 	padding: 15px;
+    border-radius: 0px;
 }
 .menu-favorites-button:hover {
 		background-gradient-direction: vertical;
@@ -1510,44 +1514,48 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 }
 
 
-/* (EN) Categories. ==================================================
-   (RU) Категории приложений в меню. =================================== */
+/* (EN) Categories. ========================================================================
+   (RU) Категории приложений в меню. ========================================================= */
 
 .menu-categories-box {
-/* (RU) Плоскость со списком категорий приложений. */
+/* (RU) Плоскость со списком категорий приложений.
+   (EN) Plane with list of categories of applications. */
 	padding-top: 15px;
 	padding-left: 15px;
 	padding-right: 5px;
 	padding-bottom: 0px;
+	
+	color: white;
 }
 
 
 
 .menu-category-button {
-/* (RU) Кнопки с категориями приложений. */
+/* (RU) Кнопки с категориями приложений.
+   (EN) Buttons with application categories. */
 	padding: 7px;
-	/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
 	text-shadow: -1px 1px 3px rgba(0,0,0,1);
 }
 .menu-category-button-greyed {
-/* (RU) Неактивные кнопки с категориями приложений. */
+/* (RU) Неактивные кнопки с категориями приложений.
+   (EN) Inactive buttons with application categories. */
 	padding: 7px;
 	color: rgb(234,112,63);
 	font-weight: normal;
 }
 .menu-category-button-selected {
-/* (RU) Выбранная кнопка с категориями приложений (на них наведена мышь либо пользователь перешел к списку программ из текущей категории. */
+/* (RU) Выбранная кнопка с категориями приложений (на них наведена мышь).
+   (EN) Chosen button with applications categories (when mouse hover on them) */
 	padding-top: 7px;
 	padding-left: 7px;
 	padding-right: 7px;
 	padding-bottom: 7px;
 			background-gradient-direction: vertical;
-			background-gradient-start: rgba(245,130,84,0.0);
+			background-gradient-start: rgba(245,130,84,0.05);
 			background-gradient-end:  rgba(234,112,63,0.7);
-			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
-		/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.8);
 		text-shadow: -1px 1px 3px rgba(0,0,0,1);
-	border-radius: 3.5px;
+	border-radius: 3px;
 	transition-duration: 150;
 }
 .menu-category-button-label:ltr {
@@ -1559,8 +1567,8 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 }
 
 
-/* (EN) Applications. ===============================================
-   (RU) Приложения главного меню, разбиваются на категории. =========== */
+/* (EN) Applications. ========================================================================
+   (RU) Приложения главного меню, разбиваются на категории. ==================================== */
 
 /*.menu-applications-box { (RU) Плоскость со списком приложений, категорий, избранного и полосой прокрутки. Не включает в себя плоскость с именем и описанием программ, на которые наведен указатель мыши.
 	padding-top: 15px;
@@ -1582,6 +1590,8 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-bottom: 0px;
+	
+	color: white;
 }
 
 
@@ -1589,18 +1599,16 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .menu-application-button {
 /* (RU) Кнопки с приложениями. */
 	padding: 7px;
-	/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
 	text-shadow: -1px 1px 3px rgba(0,0,0,1);
 }
 .menu-application-button-selected {
 	padding: 7px;
 			background-gradient-direction: vertical;
-			background-gradient-start: rgba(245,130,84,0.0);
+			background-gradient-start: rgba(245,130,84,0.05);
 			background-gradient-end:  rgba(234,112,63,0.7);
-			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
-		/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
+			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.8);
 		text-shadow: -1px 1px 3px rgba(0,0,0,1);
-	border-radius: 3.5px;
+	border-radius: 3px;
 	transition-duration: 150;
 }
 .menu-application-button:highlighted {
@@ -1609,11 +1617,11 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 			background-gradient-direction: horizontal;
 			background-gradient-start: rgba(234,112,63,0.3);
 			background-gradient-end:  rgba(245,130,84,0.7);
-			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.6);
+			box-shadow: inset 1px 1px 1px rgba(255,255,255,0.8);
 		/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
 		text-shadow: -1px 1px 3px rgba(0,0,0,1);
 		color: rgb(255,255,255);
-	border-radius: 3.5px;
+	border-radius: 3px;
 }
 .menu-application-button-label:ltr {
 	padding-left: 5px;
@@ -1747,10 +1755,10 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 				background-gradient-start: rgba(0,0,0, 0.0);
 				background-gradient-end:  rgba(0,0,0, 0.1);
 				box-shadow: inset 0px -1px 0px 0px rgb(245,130,84);
-		/*text-shadow: -1px 1px 1px rgba(22,22,22,0.7);*/
 		text-shadow: -1px 1px 3px rgba(0,0,0,1);
 	border-radius: 1px;
 	color: rgb(230,230,230);
+	color: white;
 	transition-duration: 450;
 }
 .window-list-item-box.left,
@@ -1763,7 +1771,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .window-list-item-box:focus {
 	color: white;
 				background-gradient-direction: vertical;
-				background-gradient-start: rgba(234,112,63,0.0);
+				background-gradient-start: rgba(234,112,63,0.05);
 				background-gradient-end:  rgba(245,130,84,0.7);
 				box-shadow: inset 0 0 0 1px rgb(234,112,63);
 	border-radius: 3px;
