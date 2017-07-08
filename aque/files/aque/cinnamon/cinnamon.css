@@ -49,7 +49,7 @@ StScrollBar StButton#vhandle:hover {
    background-color: rgba(55,55,55,1);
 border-radius: 3px;
 }
-#Tooltip {
+#Tooltip, .info-osd {
     border-radius:  0px;
     border-style: solid;
     border-width: 2px;
@@ -287,6 +287,20 @@ spacing: 0px;
 padding-right: 0px;
 spacing: 0px;
 }
+
+.panel-left {
+
+    background: url("panlv.png");
+         background-size: cover;
+         background-repeat: repeat;
+         }
+
+.panel-right {
+
+    background: url("panlv.png");
+         background-size: cover;
+         background-repeat: repeat;
+         }
 
 .panel-status-button,
 .panel-button {
@@ -629,14 +643,14 @@ color: #00ff00;
 	background-image: url("calendar-arrow-right.svg");
 }
 .calendar-change-month-back:hover {
-    background-color: rgba(24,24,24,0.9);
+    background-color: rgba(180,180,180,0.9);
     box-shadow:  1px 1px 2px 0px rgba(0,0,0,0.38);
 	border-top:  1px rgba(255,255,255,0.06);
 	border-left:  1px rgba(255,255,255,0.06);
 	border-radius: 2px;
 }
 .calendar-change-month-back:active {
-    background-color: rgba(54,54,54,0.9);
+    background-color: rgba(180,180,180,0.9);
     box-shadow:  -1px -1px 2px 0px rgba(0,0,0,0.42);
 	border-bottom:  1px rgba(255,255,255,0.16);
 	border-right:  1px rgba(255,255,255,0.16);
@@ -654,14 +668,14 @@ color: #00ff00;
 	background-image: url("calendar-arrow-left.svg");
 }
 .calendar-change-month-forward:hover {
-    background-color: rgba(24,24,24,0.9);
+    background-color: rgba(180,180,180,0.9);
     box-shadow:  1px 1px 2px 0px rgba(0,0,0,0.38);
 	border-top:  1px rgba(255,255,255,0.06);
 	border-left:  1px rgba(255,255,255,0.06);
 	border-radius: 2px;
 }
 .calendar-change-month-forward:active {
-    background-color: rgba(54,54,54,0.9);
+    background-color: rgba(180,180,180,0.9);
     box-shadow:  -1px -1px 2px 0px rgba(0,0,0,0.42);
 	border-bottom:  1px rgba(255,255,255,0.16);
 	border-right:  1px rgba(255,255,255,0.16);
@@ -1653,8 +1667,8 @@ border-color: rgba(255,255,255,0.13);
 }
 
 .window-list-item-demands-attention {
-         background-gradient-start:  rgba(184,255,102,1);
-	 background-gradient-end:  rgba(184,255,102,1);
+         background-gradient-start:  #888;
+	 background-gradient-end:  #ccc;
 }
 /* ===================================================================
  * Sound Applet (status/volume.js)
@@ -2102,26 +2116,27 @@ border-radius: 0px;
     border-radius:  0px;
     border-style: solid;
     border-width: 2px;
-    border-color: #aaa;
+    border-color: #4d93ff;
     background-gradient-end: #ccc;
     background-gradient-start: #fff;
     background-gradient-direction: vertical;
     padding: 20px;
-    color: black;
+    color: #4d93ff;
     spacing: 1em;
 }
 
 .osd-window .level {
+    color: #4d93ff;
+	background-color: #555;
     height: 0.7em;
     border-radius: 0.3em;
-    background-color: rgba(190,190,190,0.2);
 }
 /* ===================================================================
  * User Applet
  * ===================================================================*/
 
 .user-icon {  
-  	border-radius: 0px 15px 15px 15px;
+  	border-radius: 15px;
     background-gradient-start: rgba(70,70,70,.2);
     background-gradient-end: rgba(10,10,10,.2);
     background-gradient-direction: vertical;
