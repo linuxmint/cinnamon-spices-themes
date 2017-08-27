@@ -36,4 +36,6 @@ Tested on Linux Mint `18.2` 64bit with Cinnamon `3.4.6`
 ## Changelog
 
 2017-08-26 - Release
+
 2017-08-27 - GTK3 tidy up. Added borders to GTK tooltips and a darker background to Nemo inactive pane in dual pane mode.
+
