@@ -27,7 +27,7 @@ To allow the GTK2, GTK3 and Metacity1 themes to apply to GUI apps running as roo
 
 This theme is compatible with Cinnamon versions `3.2.x` and `3.4.x`
 
-The GTK3 themes require GTK `3.18.x` or `3.20.x`
+The GTK3 themes require GTK `3.18.x`
 
 The GTK2 theme requires the package `gtk2-engines-murrine` to be installed. This is a default package in Linux Mint.
 
@@ -36,3 +36,5 @@ Tested on Linux Mint `18.2` 64bit with Cinnamon `3.4.6`
 ## Changelog
 
 2017-08-26 - Release
+
+2017-08-27 - Fixed Screenshot.png to screenshot.png. GTK3 tidy up. Added border to GTK3 tooltip. Added darker background to Nemo inactive pane.
