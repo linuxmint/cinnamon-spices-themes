@@ -1,0 +1,33 @@
+/* ======================================
+ * ! Panel
+ * ====================================== */
+
+@each $pos in top, bottom, left, right {
+    .panel-#{$pos} {
+        font-size: $font-size-base;
+        @include size(32px, 26px);
+
+        &:highlight {
+            border-image: none;
+            background-color: rgba($accent-primary, .75);
+        }
+
+        .panelLeft:dnd,
+        .panelRight:dnd,
+        .panelLeft.vertical:dnd,
+        .panelRight.vertical:dnd {
+            border-image: url("img/panel/DND__panel-#{$pos}__side.svg") 4;
+        }
+
+        .panelCenter:dnd,
+        .panelCenter.vertical:dnd {
+            border-image: url("img/panel/DND__panel-#{$pos}__center.svg") 4;
+        }
+    }
+}
+
+.panel-dummy {
+    background-color: rgba($accent-primary, .75);
+
+    &:entered { background-color: $accent-primary; }
+}
