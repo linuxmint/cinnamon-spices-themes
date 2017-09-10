@@ -159,6 +159,9 @@ There is now a basic facility to theme the systray. It's marked as 'important' s
 .systray {
 }
 ```
+# CSS changes introduced in Cinnamon 3.6
+
+The 'progress' pseudoclass has been added to window-list-item-box so that progress on long-running tasks can be shown
 
 # Git basics
 
