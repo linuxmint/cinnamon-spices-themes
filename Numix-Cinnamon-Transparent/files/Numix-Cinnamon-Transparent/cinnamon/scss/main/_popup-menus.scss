@@ -1,0 +1,124 @@
+/* ======================================
+ * ! Popup Menus
+ * ====================================== */
+
+.menu {
+    min-width: 100px;
+}
+
+.popup-menu-content {
+    border-image: url("img/containers/dark-bg.svg") 9;
+    padding: .5em 1px;
+    color: $text-primary;
+    max-height: 70em;
+}
+
+.popup-menu-icon {
+    icon-size: 16px;
+    color: $text-primary;
+}
+
+/* old cinnamon */
+.popup-menu-arrow {
+    icon-size: 13px;
+    @include size(10px);
+    padding: 0;
+}
+
+.popup-menu-item {
+    padding: .5em 1.3em;
+    spacing: .8em;
+
+    &:active {
+        border-image: url("img/containers/hover.svg") 9;
+        color: $text-primary;
+
+        .popup-menu-icon, StIcon {
+            color: $text-primary;
+        }
+
+        .popup-menu-item-dot {
+            background-image: url("img/controls/check-dot-hover.svg");
+            background-size: 10px;
+            color: rgba(0, 0, 0, 0);
+        }
+    }
+
+    &:insensitive {
+        font-weight: normal;
+        color: $text-disabled;
+
+        .popup-menu-icon, StIcon {
+            color: $text-disabled;
+        }
+    }
+}
+
+.popup-menu-item-dot {
+    background-image: url("img/controls/check-dot.svg");
+    background-size: 10px;
+    color: rgba(0, 0, 0, 0);
+}
+
+.popup-sub-menu {
+    border-image: url("img/containers/popup.svg") 9;
+    box-shadow: none;
+    background-gradient-direction: none;
+    padding: 12px 0;
+    color: $text-primary;
+
+    .popup-menu-item:active {
+        border-image: url("img/containers/hover.svg") 9;
+        color: $text-primary;
+    }
+}
+
+.popup-submenu-menu-item:open {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.popup-separator-menu-item {
+    -gradient-height: 1px;
+    -gradient-start: rgba(0, 0, 0, 0);
+    -gradient-end: rgba(0, 0, 0, 0);
+    -margin-horizontal: 0;
+    background-image: url("img/misc/separator.svg");
+    background-repeat: repeat;
+    height: 13px;
+}
+
+.popup-slider-menu-item {
+    height: 16px;
+    min-width: 15em;
+    -slider-height: 0;
+    -slider-background-color: rgba(0, 0, 0, 0);
+    -slider-border-color: #525252;
+    -slider-active-background-color: rgba(0, 0, 0, 0);
+    -slider-active-border-color: $accent-primary;
+    -slider-border-width: 2px;
+    -slider-handle-radius: 4px;
+}
+
+/* Right click in scale (show all windows) */
+.popup-combo-menu {
+    border-image: url("img/containers/popup.svg") 9;
+    padding: .8em .3em;
+    color: $text-primary;
+}
+
+.popup-inactive-menu-item {
+    color: $text-secondary;
+}
+
+.popup-subtitle-menu-item {
+    font-weight: bold;
+}
+
+/* used in power applet */
+.popup-device-menu-item {
+    spacing: .8em;
+
+    .popup-inactive-menu-item {
+        color: $text-info;
+    }
+}
