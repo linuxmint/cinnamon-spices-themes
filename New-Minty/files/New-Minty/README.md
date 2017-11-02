@@ -38,5 +38,9 @@ recompile sass and reload the theme when a change occurs.
   * inotifywait
   * sassc
 
-> **NOTE:**  
+> **NOTE:**
 > The script creates a link to the `New-Minty` dir in `~/.themes`.
+
+
+
+_Original author: [zagortenay333](http://zagortenay333.deviantart.com)_
