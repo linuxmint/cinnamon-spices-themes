@@ -1,7 +1,9 @@
 # [Railway Cinnamon theme][repo]
 > For those who like _Doors 8_ style, in spite of everything
 
-[![](screenshot.png)][repo]
+Website: [https://github.com/germanfr/railway-cinnamon][repo]
+
+![Screenshot][screenshot]
 
 ## Installation
 ### From source
@@ -29,3 +31,4 @@ Special thanks to [@zagortenay333](https://github.com/zagortenay333) for the cod
 
 [repo]: https://github.com/germanfr/railway-cinnamon
 [spices]: https://cinnamon-spices.linuxmint.com/themes/view/Railway
+[screenshot]: https://cinnamon-spices.linuxmint.com/git/themes/Railway/screenshot2.png
