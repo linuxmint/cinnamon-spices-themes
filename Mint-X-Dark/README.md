@@ -8,7 +8,7 @@ Move the `Mint-X-Dark` folder into your `~/.themes` directory.
 
 ## Compatibility
 
-Tested and developed in Cinnamon `3.4.2`.
+Tested and developed in Cinnamon `3.6.2`.
 
 ## Font
 
