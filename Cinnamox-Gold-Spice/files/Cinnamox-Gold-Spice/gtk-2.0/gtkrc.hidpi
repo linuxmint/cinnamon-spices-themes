@@ -1,24 +1,20 @@
 # Oomox GTK Theme (Numix Fork)
 
 gtk-color-scheme =
-"base_color:#4f5947\nbg_color:#6f7f5f\ntooltip_bg_color:#6f7f5f\nselected_bg_color:#417f23\ntext_color:#e6f2da\nfg_color:#e6f2da\ntooltip_fg_color:#e6f2da\nselected_fg_color:#e6f2da\nmenubar_bg_color:#444c3d\nmenubar_fg_color:#e6f2da\ntoolbar_bg_color:#6f7f5f\ntoolbar_fg_color:#e6f2da\nmenu_bg_color:#444c3d\nmenu_fg_color:#e6f2da\npanel_bg_color:#6f7f5f\npanel_fg_color:#e6f2da\nlink_color:#417f23\nbtn_bg_color:#4f5947\nbtn_fg_color:#e6f2da\ntitlebar_bg_color:#444c3d\ntitlebar_fg_color:#e6f2da\nprimary_caret_color:#e6f2da\nsecondary_caret_color:#e6f2da\n"
+"base_color:#663d2b\nbg_color:#99461e\ntooltip_bg_color:#99461e\nselected_bg_color:#D93A00\ntext_color:#f2e2da\nfg_color:#f2e2da\ntooltip_fg_color:#f2e2da\nselected_fg_color:#f2e2da\nmenubar_bg_color:#382218\nmenubar_fg_color:#f2e2da\ntoolbar_bg_color:#99461e\ntoolbar_fg_color:#f2e2da\nmenu_bg_color:#382218\nmenu_fg_color:#f2e2da\npanel_bg_color:#99461e\npanel_fg_color:#f2e2da\nlink_color:#D93A00\nbtn_bg_color:#663d2b\nbtn_fg_color:#f2e2da\ntitlebar_bg_color:#382218\ntitlebar_fg_color:#f2e2da\n"
 # Default Style
 
 style "murrine-default" {
 	GtkArrow::arrow-scaling= 0.6
-
-	GtkWidget::cursor_color = @primary_caret_color
-	GtkWidget::secondary_cursor_color = @secondary_caret_color
-	GtkWidget::cursor_aspect_ratio = 0.05
 
 	GtkButton::child-displacement-x = 0
 	GtkButton::child-displacement-y = 0
 
 	GtkButton::default-border = { 0, 0, 0, 0 }
 
-	GtkButtonBox::child-min-height = 26
+	GtkButtonBox::child-min-height = 52
 
-	GtkCheckButton::indicator-size = 16
+	GtkCheckButton::indicator-size = 30
 
 	# The following line hints to gecko (and possibly other appliations)
 	# that the entry should be drawn transparently on the canvas.
@@ -26,31 +22,31 @@ style "murrine-default" {
 	GtkEntry::honors-transparent-bg-hint = 1
 	GtkEntry::state-hint = 0
 
-	GtkExpander::expander-size = 16
+	GtkExpander::expander-size = 30
 
 	GtkImage::x-ayatana-indicator-dynamic = 1
 
-	GtkMenu::horizontal-padding = 0
-	GtkMenu::vertical-padding = 0
+	GtkMenu::horizontal-padding = 2
+	GtkMenu::vertical-padding = 2
 
-	GtkMenuBar::internal-padding = 0
+	GtkMenuBar::internal-padding = 1
 	GtkMenuBar::window-dragging = 1
 
 	GtkMenuItem::arrow-scaling= 0.5
 
 	GtkPaned::handle-size = 1
 
-	GtkProgressBar::min-horizontal-bar-height = 12
-	GtkProgressBar::min-vertical-bar-width = 12
+	GtkProgressBar::min-horizontal-bar-height = 14
+	GtkProgressBar::min-vertical-bar-width = 14
 
 	GtkRange::trough-border = 0
-	GtkRange::slider-width = 12
-	GtkRange::stepper-size = 12
+	GtkRange::slider-width = 24
+	GtkRange::stepper-size = 24
 	GtkRange::stepper_spacing = 0
 	GtkRange::trough-under-steppers = 1
 
-	GtkScale::slider-length = 16
-	GtkScale::slider-width = 16
+	GtkScale::slider-length = 30
+	GtkScale::slider-width = 30
 	GtkScale::trough-side-details = 1
 
 	GtkScrollbar::activate-slider = 1
@@ -58,8 +54,8 @@ style "murrine-default" {
 	GtkScrollbar::has-forward-stepper = 0
 	GtkScrollbar::has-secondary-backward-stepper = 0
 	GtkScrollbar::has-secondary-forward-stepper = 0
-	GtkScrollbar::min-slider-length = 80
-	GtkScrollbar::slider-width = 12
+	GtkScrollbar::min-slider-length = 160
+	GtkScrollbar::slider-width = 24
 	GtkScrollbar::trough-border = 0
 
 	GtkScrolledWindow::scrollbar-spacing = 0
@@ -69,20 +65,20 @@ style "murrine-default" {
 
 	GtkToolbar::internal-padding = 0
 
-	GtkTreeView::expander-size = 11
+	GtkTreeView::expander-size = 22
 	GtkTreeView::vertical-separator = 0
 
-	GtkWidget::focus-line-width = 1
+	GtkWidget::focus-line-width = 2
 	# The following line prevents the Firefox tabs
 	# from jumping a few pixels when you create a new tab
 	GtkWidget::focus-padding = 0
 
 	GtkWidget::wide-separators = 1
-	GtkWidget::separator-width = 1
-	GtkWidget::separator-height = 1
+	GtkWidget::separator-width = 2
+	GtkWidget::separator-height = 2
 
-	GtkWindow::resize-grip-height = 0
-	GtkWindow::resize-grip-width = 0
+	GtkWindow::resize-grip-height = 2
+	GtkWindow::resize-grip-width = 2
 
 	WnckTasklist::fade-overlay-rect = 0
 
@@ -96,8 +92,8 @@ style "murrine-default" {
 	GtkToolbar::shadow-type = GTK_SHADOW_NONE # Makes toolbars flat and unified
 	GtkMenuBar::shadow-type = GTK_SHADOW_NONE # Makes menubars flat and unified
 
-	xthickness = 1
-	ythickness = 1
+	xthickness = 2
+	ythickness = 2
 
 	fg[NORMAL] = @fg_color
 	fg[PRELIGHT] = @fg_color
@@ -147,7 +143,7 @@ style "murrine-default" {
 		menustyle = 0 # 0 = none, 1 = vertical striped
 		progressbarstyle = 0 # 0 = none, 1 = diagonal striped, 2 = vertical striped
 		reliefstyle = 0 # 0 = flat, 1 = inset, 2 = shadow, 3 = shadow with gradient, 4 = stronger shadow with gradient
-		roundness = 10 # roundness of widgets
+		roundness = 20# roundness of widgets
 		scrollbarstyle = 0 # 0 = none, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
 		sliderstyle = 0 # 0 = none, 1 = handles
 		stepperstyle = 1 # 0 = standard, 1 = integrated stepper handles
@@ -156,18 +152,18 @@ style "murrine-default" {
 }
 
 style "murrine-wide" {
-	xthickness = 2
-	ythickness = 2
+	xthickness = 6
+	ythickness = 6
 }
 
 style "murrine-wider" {
-	xthickness = 3
-	ythickness = 3
+	xthickness = 4
+	ythickness = 8
 }
 
 style "murrine-thin" {
-	xthickness = 0
-	ythickness = 0
+	xthickness = 1
+	ythickness = 1
 }
 
 # Notebook
@@ -178,8 +174,8 @@ style "clearlooks-notebook-bg" {
 }
 
 style "clearlooks-notebook" = "clearlooks-notebook-bg" {
-	xthickness = 2
-	ythickness = 2
+	xthickness = 8
+	ythickness = 4
 
 	engine "clearlooks" {
 		radius = 0.1
@@ -190,14 +186,14 @@ style "clearlooks-notebook" = "clearlooks-notebook-bg" {
 
 style "murrine-button"  = "murrine-wider" {
 	bg[NORMAL] = @btn_bg_color
-	bg[PRELIGHT] = shade (1.10, @btn_bg_color)
+	bg[PRELIGHT] = shade (1.04, @btn_bg_color)
 	bg[SELECTED] = shade (0.7, @btn_bg_color)
 	bg[ACTIVE] = shade (0.95, @btn_bg_color)
 	bg[INSENSITIVE] = shade (0.75, @btn_bg_color)
 
 	engine "murrine" {
-		border_colors = { mix(0.2, @btn_fg_color, @btn_bg_color), mix(0.2, @btn_fg_color, @btn_bg_color) }
-		roundness = 10
+		border_colors = { mix(0.4, @btn_fg_color, @btn_bg_color), mix(0.4, @btn_fg_color, @btn_bg_color) }
+		roundness = 20
 	}
 }
 
@@ -218,7 +214,7 @@ style "murrine-scrollbar" {
 	bg[ACTIVE] = @selected_bg_color
 
 	engine "murrine" {
-		roundness = 0
+		roundness = 20
 		contrast = 0.0
 		border_shades = { 0.9, 0.9 }
 		trough_shades = { 0.97, 0.97 }
@@ -235,15 +231,15 @@ style "murrine-overlay-scrollbar" {
 }
 
 style "murrine-scale" = "murrine-thin" {
-	bg[NORMAL] = @bg_color
+	bg[NORMAL] = @btn_bg_color
 	bg[ACTIVE] = @bg_color
 	bg[SELECTED] = @selected_bg_color
-	bg[INSENSITIVE] = shade (0.95, @bg_color)
+	bg[INSENSITIVE] = shade (0.95, @btn_bg_color)
 
 	engine "murrine" {
-		roundness = 8
+		roundness = 25
 		gradient_shades = { 1.08, 1.08, 1.08, 1.08 }
-		border_shades = { 1.0, 1.0 }
+		border_shades = { 0.5, 0.5 }
 		trough_shades = { 1.08, 1.08 }
 		trough_border_shades = { 0.8, 0.8 }
 	}
@@ -256,7 +252,7 @@ style "murrine-progressbar" = "murrine-thin" {
 	fg[PRELIGHT] = @selected_fg_color
 
 	engine "murrine" {
-		roundness = 2
+		roundness = 20
 		border_shades = { 1.2, 1.2 }
 		trough_border_shades = { 0.8, 0.8 }
 	}
@@ -294,8 +290,8 @@ style "murrine-frame-title" {
 }
 
 style "murrine-tooltips" {
-	xthickness = 5
-	ythickness = 5
+	xthickness = 10
+	ythickness = 10
 
 	bg[NORMAL] = @tooltip_bg_color
 	bg[SELECTED] = @tooltip_bg_color
@@ -304,7 +300,7 @@ style "murrine-tooltips" {
 
 	engine "murrine" {
 		textstyle = 0
-		roundness = 2
+		roundness = 20
 		rgba = FALSE
 	}
 }
@@ -322,7 +318,7 @@ style "clearlooks-radiocheck" = "murrine-default" {
 	text[PRELIGHT] = @selected_bg_color
 
 	engine "clearlooks" {
-		radius = 4.0
+		radius = 20.0
 	}
 }
 
@@ -332,8 +328,9 @@ style "clearlooks-base-radiocheck" = "clearlooks-radiocheck" {
 
 style "murrine-entry" = "murrine-wider" {
 	engine "murrine" {
-		border_shades = { 1.15, 1.15 }
-		roundness = 10
+		#border_shades = { 1.15, 1.15 }
+		border_colors = { mix(0.4, @text_color, @base_color), mix(0.4, @text_color, @base_color) }
+		roundness = 20
 	}
 }
 
@@ -559,21 +556,21 @@ style "xfdesktop-windowlist" {
 }
 
 style "xfdesktop-icon-view" {
-	XfdesktopIconView::label-alpha = 0
-	XfdesktopIconView::selected-label-alpha = 60
-	XfdesktopIconView::shadow-x-offset = 0
-	XfdesktopIconView::shadow-y-offset = 1
-	XfdesktopIconView::selected-shadow-x-offset = 0
-	XfdesktopIconView::selected-shadow-y-offset = 1
-	XfdesktopIconView::shadow-color = "#000000"
-	XfdesktopIconView::selected-shadow-color = "#000000"
-	XfdesktopIconView::shadow-blur-radius = 2
-	XfdesktopIconView::cell-spacing = 2
-	XfdesktopIconView::cell-padding = 6
-	XfdesktopIconView::cell-text-width-proportion = 1.9
+       XfdesktopIconView::label-alpha = 0
+       XfdesktopIconView::selected-label-alpha = 60
+       XfdesktopIconView::shadow-x-offset = 0
+       XfdesktopIconView::shadow-y-offset = 1
+       XfdesktopIconView::selected-shadow-x-offset = 0
+       XfdesktopIconView::selected-shadow-y-offset = 1
+       XfdesktopIconView::shadow-color = "#000000"
+       XfdesktopIconView::selected-shadow-color = "#000000"
+       XfdesktopIconView::shadow-blur-radius = 2
+       XfdesktopIconView::cell-spacing = 2
+       XfdesktopIconView::cell-padding = 6
+       XfdesktopIconView::cell-text-width-proportion = 1.9
 
-	fg[NORMAL] = @selected_fg_color
-	fg[ACTIVE] = @selected_fg_color
+       fg[NORMAL] = @selected_fg_color
+       fg[ACTIVE] = @selected_fg_color
 
 }
 
@@ -676,7 +673,7 @@ widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkV
 
 style "chromium-toolbar-button" {
 	engine "murrine" {
-		roundness = 2
+		roundness = 20
 		textstyle = 0
 	}
 }
@@ -826,6 +823,81 @@ widget "*HandleBox*LPEToolToolbar*" style "inkscape-toolbar-fix"
 widget "*HandleBox*DropperToolbar*" style "inkscape-toolbar-fix"
 widget "*HandleBox*ConnectorToolbar*" style "inkscape-toolbar-fix"
 widget "*HandleBox*PaintbucketToolbar*" style "inkscape-toolbar-fix"
+
+
+
+
+style "gimp-default-style" {
+# Uncommenting this line allows to set a different (smaller) font for GIMP.
+#
+# font_name = "sans 8"
+# Enabling the following line for some reason breaks toolbox resize
+# increment calculation. You can enable it to get an even smaller GUI
+# but need to restart GIMP after the theme change.
+#
+# GtkWidget::focus-padding         = 0
+  GtkOptionMenu::indicator-size    = { 15, 25 }
+  GtkOptionMenu::indicator-spacing = { 10, 8, 4, 4 }
+  GtkPaned::handle-size             = 5
+  GimpDockWindow::default-height    = 600
+  GimpDock::font-scale              = 1.0
+  GimpMenuDock::minimal-width       = 400
+  GimpToolPalette::tool-icon-size   = large-toolbar
+  GimpToolPalette::button-relief    = none
+  GimpDockbook::tab-border          = 0
+  GimpDockbook::tab-icon-size       = button
+  GimpColorNotebook::tab-border     = 0
+  GimpColorNotebook::tab-icon-size  = button
+  GimpDeviceEditor::handle-size     = 30
+  GimpDockable::content-border      = 1
+  GimpEditor::content-spacing       = 1
+  GimpEditor::button-spacing        = 1
+  GimpEditor::button-icon-size      = button
+  GimpDataEditor::minimal-height    = 150
+  GimpFrame::label-spacing          = 5
+  GtkDialog::content-area-border    = 2
+  GtkDialog::button-spacing         = 20
+  GtkDialog::action-area-border     = 25
+  GimpUnitComboBox::appears-as-list = 0
+}
+
+class "GtkWidget" style "gimp-default-style"
+style "gimp-tool-dialog-style" = "gimp-default-style"
+{
+  GtkDialog::action-area-border = 6
+}
+class "GimpToolDialog" style "gimp-tool-dialog-style"
+style "gimp-grid-view-style" = "gimp-default-style"
+{
+  bg[NORMAL] = { 1.0, 1.0, 1.0 }
+}
+widget "*GimpContainerGridView*GtkViewport*" style "gimp-grid-view-style"
+style "gimp-dockable-style" = "gimp-default-style"
+{
+  GimpFrame::label-bold       = 0
+  GtkButton::focus-line_width = 1
+  GtkButton::focus-padding    = 0
+}
+widget "*GimpDockable.*" style "gimp-dockable-style"
+style "gimp-display-style" = "gimp-default-style"
+{
+  GimpRuler::font-scale          = 1.0
+  GimpUnitComboBox::label-scale  = 1.0
+  GimpScaleComboBox::label-scale = 1.0
+  GtkComboBox::arrow-size        = 20
+  GtkButton::inner-border        = { 0, 0, 0, 0 }
+  GtkButton::focus-line-width    = 0
+  GtkButton::focus-padding       = 0
+}
+widget "*GimpDisplayShell.*" style "gimp-display-style"
+style "gimp-overlay-style" = "gimp-display-style"
+{
+  GtkButton::focus-line_width = 2
+}
+widget_class "*<GimpOverlayFrame>*" style "gimp-overlay-style"
+
+
+
 
 # Performance Fixes
 
