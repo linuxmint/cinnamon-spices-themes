@@ -1,6 +1,6 @@
 # Cinnamox Theme
 
-Kashmir Blue features a soothing blue colour scheme with gradiants, gentle curves and light borders and text. It includes a Cinnamon Desktop theme along with matching Numix style GTK2, GTK3 and Metacity1 themes for a full Cinnamox experience.
+Kashmir Blue features a soothing blue colour scheme with gradients, gentle curves, light borders and text. It includes a Cinnamon Desktop theme along with matching Numix style GTK2, GTK3 and Metacity1 themes for a full Cinnamox experience.
 
 
 ## Credits
@@ -39,4 +39,4 @@ Tested on Linux Mint `18.2` 64bit with Cinnamon `3.4.6`
 
 2017-08-27 - Fixed Screenshot.png to screenshot.png. GTK3 tidy up. Added border to GTK3 tooltip. Added darker background to Nemo inactive pane.
 
-2017-11-19 - Cinnamon Theme - Added theming for .progress bar class for `3.6.x`. Tweaks to Panel, Windows List and Panel Launchers. GTK3 - Recreated GTK3 theme to add gradiants to buttons, taskbars etc. GTK2 - included optional HDPI version.
+2017-11-19 - Cinnamon Theme - Added theming for .progress bar class for `3.6.x`. Tweaks to Panel, Windows List and Panel Launchers. GTK3 - Recreated GTK3 theme to add gradients to buttons, taskbars etc. GTK2 - included optional HDPI version.
