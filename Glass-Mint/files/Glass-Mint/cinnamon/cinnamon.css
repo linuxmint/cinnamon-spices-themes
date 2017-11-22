@@ -143,8 +143,8 @@ StScrollBar StButton#vhandle:hover {
 	border-radius: 8px;
 	
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(46, 45, 42, 0.8);
-	background-gradient-end: rgba(46, 45, 42, 0.8);
+	background-gradient-start: rgba(46, 45, 42, 0.9);
+	background-gradient-end: rgba(46, 45, 42, 0.9);
 	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
 	border: 1px solid rgb(22, 22, 22);
 	text-shadow: -1px 1px 3px rgba(0, 0, 0, 1);
@@ -779,8 +779,8 @@ StScrollBar StButton#vhandle:hover {
 /* (RU) Клетка (база) с одним днем месяца, в ней пишется число этого дня. Именно клетка (база), а не кнопка. */
 	/*font-size: 9pt;*/ /* (RU) отвечает за размер шрифта не только в кнопках дней месяца (чисел), но подобное есть и в .calendar-day . */
 	text-align: center;
-	width: 30px;
-	height: 20px;
+	width: 34px;
+	height: 24px;
 	max-height: 2.4em;
 	padding: 5px 0px 5px 0px;
 }
@@ -796,6 +796,8 @@ StScrollBar StButton#vhandle:hover {
 	background-gradient-start: rgb(41,40,38);
 	background-gradient-end:  rgb(41,40,38);
 	border: 1px solid rgba(22,22,22, 0.9);
+	color: rgb(230, 230, 230);
+	text-shadow: -1px 1px 3px rgba(0, 0, 0, 1);
 	box-shadow: 0px 0px 4px 1px rgba(22,22,22, 0.9);
 }
 
@@ -825,8 +827,8 @@ StScrollBar StButton#vhandle:hover {
 	/* (RU) зеленая обводка сделана не рамкой а тенью потому,
 	что рамка уже есть. */
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(172, 205, 138, 0.0);
-	background-gradient-end:  rgba(194, 221, 167, 0.7);
+	background-gradient-start: rgba(172, 205, 138, 0.3);
+	background-gradient-end:  rgba(194, 221, 167, 0.8);
 	border: 1px solid rgb(172, 205, 138);
 	/* (RU) border-radius родителя в пункте .calendar-day . */
 	color: black;
@@ -2008,7 +2010,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 	
 	color: white;
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(172, 205, 138, 0.05);
+	background-gradient-start: rgba(172, 205, 138, 0.15);
 	background-gradient-end:  rgba(194, 221, 167, 0.7);
 	box-shadow: inset 0 0 0 1px rgb(172, 205, 138);
 }
@@ -2606,7 +2608,7 @@ padding: .4em 1.75em;
 .workspace-button:outlined {
 	color: black;
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(172, 205, 138, 0);
+	background-gradient-start: rgba(172, 205, 138, 0.2);
 	background-gradient-end:  rgba(194, 221, 167, 0.8);
 	box-shadow: inset 0 0 0 1px rgb(172, 205, 138);
 }
@@ -2640,8 +2642,8 @@ padding: .4em 1.75em;
 }
 .workspace-graph .workspace:active {
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(194, 221, 167, 0);
-	background-gradient-end:  rgba(172, 205, 138, 1);
+	background-gradient-start: rgba(194, 221, 167, 0.5);
+	background-gradient-end:  rgba(172, 205, 138, 0.8);
 }
 .workspace-graph .workspace .windows {
 	-active-window-background: rgb(110,110,110);
@@ -2895,9 +2897,13 @@ padding: .4em 1.75em;
 .expo-background {
 /* (EN) Shadow (background) on all screen in workspace overvieww mode, shades desktop background.
    (RU) Тень (фон) на весь экран в режиме обзора рабочих областей, затеняет картинку-фон рабочего стола. */
+	/*background-gradient-direction: vertical;
+	background-gradient-start: rgba(230, 230, 230, 0.2);
+	background-gradient-end: rgba(230, 230, 230, 0.2);*/
+	
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(230,230,230,0.2);
-	background-gradient-end: rgba(230,230,230,0.2);
+	background-gradient-start: rgba(22, 22, 22, 0.2);
+	background-gradient-end: rgba(22, 22, 22, 0.2);
 }
 
 
@@ -2907,11 +2913,10 @@ padding: .4em 1.75em;
    (RU) Кнопки закрытия рабочих областей. */
 	height: 40px;
 	width: 40px;
-	-cinnamon-close-overlap: 37px;
-	/* (RU) (дистанция от угла миниатюры рабочего стола до кнопки закрытия) */
+	-cinnamon-close-overlap: 37px; /* (RU) (дистанция от угла миниатюры рабочего стола до кнопки закрытия) */
 	
 	background-image: url("workspace-close.svg");
-	-st-background-image-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+	-st-background-image-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
 	
 	transition-duration: 450;
 }
@@ -2938,19 +2943,27 @@ padding: .4em 1.75em;
 	border-radius: 0px 14px 0px 14px;
 	padding: 6px 18px 4px 18px;
 	
-	border: 1.5px solid rgb(172, 205, 138);
+	/*border: 1.5px solid rgb(172, 205, 138);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(172, 205, 138, 0.1);
+	background-gradient-start: rgba(172, 205, 138, 0.4);
 	background-gradient-end:  rgba(194, 221, 167, 0.9);
-	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
-	color: black;
+	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.8);
+	color: black;*/
+	/*border: 1px solid rgb(22, 22, 22);*/
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(22, 22, 22, 0.8);
+	background-gradient-end:  rgba(22, 22, 22, 0.8);
+	/*box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.8);*/
+	color: rgb(230, 230, 230);
+	padding: 12px 36px 11px 36px;
+	text-shadow: -1px 1px 3px rgba(0, 0, 0, 0);
 }
 
 
 
 .workspace-thumbnails {
 /* (RU) Окошки (миниатюры) предпросмотра рабочих областей (столов) */
-	spacing: 34px;
+	spacing: 40px;
 	/*лучше всего 14 (как в стандартной или 34*/
 }
 
@@ -2965,7 +2978,7 @@ padding: .4em 1.75em;
 .expo-workspace-thumbnail-frame#active {
 /* (RU) Рамка вокруг активной миниатюры рабочего стола.
     */
-	border: 2px solid rgb(22, 22, 22);
+	border: 1px solid rgb(172, 205, 138);
 }
 
 
@@ -2983,16 +2996,18 @@ padding: .4em 1.75em;
 /* (RU) Названия (подписи) к окошкам предпросмотра рабочих областей в режиме обзора рабочих областей. */
 	font-weight: bold;
 	caret-size: 1px;
-	padding: 3px 8px 2px 9px;
-	height: 18px;
+	padding: 5px 10px 4px 11px;
+	height: 20px;
 	border-radius: 0px 6px 0px 6px;
 	
 	color: rgb(230,230,230);
 	selected-color: rgb(60,59,55);
 	caret-color: rgb(230,230,230);
-	background: rgba(46, 45, 42, 0.7);
-	border: 1px solid rgb(22, 22, 22);
-	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+	
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(0, 0, 0, 0.6);
+	background-gradient-end:  rgba(0, 0, 0, 0.6);
+	border: 1px solid transparent;
 	
 	transition-duration: 450;
 }
@@ -3000,10 +3015,11 @@ padding: .4em 1.75em;
 	color: rgb(230,230,230);
 }
 .expo-workspaces-name-entry#selected {
-	border: 1px solid rgb(172, 205, 138);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(172, 205, 138, 0.2);
-	background-gradient-end:  rgba(194, 221, 167, 1);
+	background-gradient-start: rgba(172, 205, 138, 0.5);
+	background-gradient-end:  rgba(194, 221, 167, 0.9);
+	box-shadow: inset 0 0 0px 1px rgb(172, 205, 138);
+	
 	color: black;
 }
 
@@ -3011,45 +3027,31 @@ padding: .4em 1.75em;
 
 .workspace-add-button {
 /* (RU) Кнопка добавления рабочего стола. */
-	border-radius: 40px 0px 0px 40px;
-	height: 220px;
-	width: 38px;
+	border-radius: 6px 0px 0px 6px;
+	height: 90px;
+	width: 59px;
 	
-	background-color:  rgba(46 ,45, 42, 0.6);
-	border-left: 1px solid rgb(22, 22, 22);
-	border-top: 1px solid rgb(22, 22, 22);
-	border-right: 0px solid rgb(22, 22, 22);
-	border-bottom: 1px solid rgb(22, 22, 22);
-	box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+	background-color:  rgba(0 ,0, 0, 0.6);
+	box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.4);
 	background-image: url('add-workspace.svg');
 	
-	transition-duration: 450;
+	transition-duration: 250;
 }
 .workspace-add-button:hover {
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(194, 221, 167, 0.0);
-	background-gradient-end:  rgba(172, 205, 138, 0.7);
-	border-left: 1px solid rgb(172, 205, 138);
-	border-top: 1px solid rgb(172, 205, 138);
-	border-right: 0px solid rgb(172, 205, 138);
-	border-bottom: 1px solid rgb(172, 205, 138);
-	box-shadow: 0px 0px 5px 3px rgb(172, 205, 138);
-	background-image: url();
+	background-color:  rgba(172, 205, 138, 0.3);
+	box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.6);
+	background-image: url('add-workspace-bigger.svg');
+	border: 1px solid rgb(172, 205, 138);
 	
 	transition-duration: 250;
 }
 .workspace-add-button:active {
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(172, 205, 138, 0.2);
-	background-gradient-end:  rgba(194, 221, 167, 0.8);
-	border-left: 1px solid rgb(194, 221, 167);
-	border-top: 1px solid rgb(194, 221, 167);
-	border-right: 0px solid rgb(194, 221, 167);
-	border-bottom: 1px solid rgb(194, 221, 167);
-	box-shadow: 0px 0px 5px 3px rgb(194, 221, 167);
-	background-image: url();
+	background-color:  rgba(194, 221, 167, 0.45);
+	box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.7);
+	background-image: url('add-workspace-lighter.svg');
+	border: 1px solid rgb(194, 221, 167);
 	
-	transition-duration: 150;
+	transition-duration: 100;
 }
 
 
@@ -3062,11 +3064,11 @@ padding: .4em 1.75em;
 	
 	background-image: url("trash.svg");
 	-st-background-image-shadow: 0px 0px 4px 3px rgb(172, 205, 138);
-	background-color: rgba(46, 45, 42, 0.4);
-	border: 1px solid rgb(22, 22, 22);
-	color: rgb(230,230,230);
+	background-color: rgba(172, 205, 138, 0.3);
 	box-shadow: 0px 0px 3px 7.5px rgba(0, 0, 0, 0.5);
-	/* тут 7.5 соответствует 1 в случае, если активирован -st-background-image-shadow, если нет - тени слишком много и лучше поставить 1. */
+	/* (RU) тут 7.5 соответствует 1 в случае, если активирован -st-background-image-shadow, если нет - тени слишком много и лучше поставить 1. */
+	border: 1px solid rgb(172, 205, 138);
+	color: rgb(230,230,230);
 }
 
 
@@ -3086,8 +3088,8 @@ padding: .4em 1.75em;
 	background-image: url("window-close.svg");
 	-cinnamon-close-overlap: 24px; 
 	/* (RU) ^ дистанция от угла окна до кнопки закрытия окна */
-	/* (RU) ^ distance from window corner to window close button */
-	-st-background-image-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+	/* (EN) ^ distance from window corner to window close button */
+	-st-background-image-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
 	
 	transition-duration: 50;
 }
@@ -3121,17 +3123,22 @@ padding: .4em 1.75em;
 .window-caption {
 /* (RU) Названия (подписи) к окнам в режиме обзора. */
 	border-radius: 0px 6px 0px 6px;
-	padding: 4px 8px -2px 9px;
+	padding: 6px 10px 1px 11px;
 	font-weight: bold;
 	height: 20px;
 	spacing: 25px;
 	-cinnamon-caption-spacing: 6px;
 	
-	background: rgba(46, 45, 42, 0.6);
-	border: 1px solid rgb(22, 22, 22);
+	/*background: rgba(46, 45, 42, 0.6);
+	border: 1px solid rgb(22, 22, 22);*/
+	
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(0, 0, 0, 0.6);
+	background-gradient-end:  rgba(0, 0, 0, 0.6);
+	border: 1px solid transparent;
 	
 	color: rgb(230,230,230);
-	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+	/*box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);*/
 	
 	transition-duration: 450;
 }
@@ -3140,10 +3147,16 @@ padding: .4em 1.75em;
 /* (RU) Название (подпись) к текущему (активному) окну. */
 	font-weight: bold;
 	
-	border: 1px solid rgb(172, 205, 138);
+	/*border: 1px solid rgb(172, 205, 138);
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(172, 205, 138, 0.2);
-	background-gradient-end:  rgba(194, 221, 167, 1);
+	background-gradient-end:  rgba(194, 221, 167, 1);*/
+	
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(172, 205, 138, 0.5);
+	background-gradient-end:  rgba(194, 221, 167, 0.9);
+	box-shadow: inset 0 0 0px 1px rgb(172, 205, 138);
+	
 	color: black;
 }
 
