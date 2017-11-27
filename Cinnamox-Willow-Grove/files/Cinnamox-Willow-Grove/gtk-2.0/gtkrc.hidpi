@@ -127,7 +127,7 @@ style "murrine-default" {
 		colorize_scrollbar = FALSE
 		comboboxstyle = 0 # 0 = normal combobox, 1 = colorized combobox below arrow
 		contrast = 0.8 # overal contrast with borders
-		focusstyle = 0 # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
+		focusstyle = 3 # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
 		glazestyle = 0 # 0 = flat highlight, 1 = curved highlight, 2 = concave, 3 = top curved highlight, 4 = beryl highlight
 		glowstyle = 0 # 0 = glow on top, 1 = glow on bottom, 2 = glow on top and bottom, 3 = glow on middle vertically, 4 = glow on middle horizontally, 5 = glow on all sides
 		glow_shade = 1.0 # amount of glow
@@ -562,15 +562,15 @@ style "xfdesktop-icon-view" {
        XfdesktopIconView::shadow-y-offset = 1
        XfdesktopIconView::selected-shadow-x-offset = 0
        XfdesktopIconView::selected-shadow-y-offset = 1
-       XfdesktopIconView::shadow-color = "#000000"
-       XfdesktopIconView::selected-shadow-color = "#000000"
+       XfdesktopIconView::shadow-color = @fg_color
+       XfdesktopIconView::selected-shadow-color = @fg_color
        XfdesktopIconView::shadow-blur-radius = 2
        XfdesktopIconView::cell-spacing = 2
        XfdesktopIconView::cell-padding = 6
        XfdesktopIconView::cell-text-width-proportion = 1.9
 
-       fg[NORMAL] = @selected_fg_color
-       fg[ACTIVE] = @selected_fg_color
+       fg[NORMAL] = @bg_color
+       fg[ACTIVE] = @bg_color
 
 }
 
