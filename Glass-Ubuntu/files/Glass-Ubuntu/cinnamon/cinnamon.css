@@ -196,7 +196,7 @@ StScrollBar StButton#vhandle:hover {
 /* (RU) Активный пункт всплывающего меню (на него наведена мышь).
 */
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(245, 130, 84, 0.3);
+	background-gradient-start: rgba(245, 130, 84, 0.1);
 	background-gradient-end:  rgba(234, 112, 63, 0.6);
 	box-shadow: inset 0.4px 0.4px 1px 0.5px rgba(255, 255, 255, 0.8);
 	
@@ -755,13 +755,13 @@ StScrollBar StButton#vhandle:hover {
 /* (RU) Название месяца и года, пишется между кнопками перелистывания месяцев и годов. */
 	font-size: 11pt;
 	font-weight: bold;
-	padding-top: 0.45em;
+	padding-top: 10px;
 	padding-bottom: 0.3em;
 	text-align: center;
 }
 .calendar-day-heading {
 /* (RU) Названия дней недели (Пнд, Вто, ...). */
-	padding-top: 0.8em;
+	padding-top: 10px;
 	font-size: 9pt;
 	font-weight: bold;
 }
@@ -779,8 +779,8 @@ StScrollBar StButton#vhandle:hover {
 /* (RU) Клетка (база) с одним днем месяца, в ней пишется число этого дня. Именно клетка (база), а не кнопка. */
 	/*font-size: 9pt;*/ /* (RU) отвечает за размер шрифта не только в кнопках дней месяца (чисел), но подобное есть и в .calendar-day . */
 	text-align: center;
-	width: 34px;
-	height: 24px;
+	width: 38px;
+	height: 28px;
 	max-height: 2.4em;
 	padding: 5px 0px 5px 0px;
 }
@@ -788,7 +788,7 @@ StScrollBar StButton#vhandle:hover {
 .calendar-day {
 /* (RU) Кнопки с днями (числами) месяца, располагаются над (поверх, ближе к пользователю клетками (базами). */
 /* (EN) Hack used in lieu of border-collapse - see calendar.js . */
-	font-size: 11pt;
+	font-size: 11.5pt;
 	font-weight: 550;
 	/* (RU) если не добавить фон градиентом, тень box-shadow будет иметь острые углы,
 	если не добавить фон вообще - не будет и тени вообще. */
@@ -827,7 +827,7 @@ StScrollBar StButton#vhandle:hover {
 	/* (RU) зеленая обводка сделана не рамкой а тенью потому,
 	что рамка уже есть. */
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(234, 112, 63, 0.3);
+	background-gradient-start: rgba(234, 112, 63, 0.25);
 	background-gradient-end:  rgba(245, 130, 84, 0.8);
 	border: 1px solid rgb(234, 112, 63);
 	/* (RU) border-radius родителя в пункте .calendar-day . */
@@ -853,10 +853,11 @@ StScrollBar StButton#vhandle:hover {
 
 .calendar-change-month-back,
 .calendar-change-month-forward:rtl {
-	width: 32px;  /* (RU) На размер картинки не влияет, только виджета */
-	height: 32px;
-	border-radius: 4px;
+	width: 36px;  /* (RU) На размер картинки не влияет, только виджета */
+	height: 36px;
+	border-radius: 4px 0px 4px 0px;
 	
+	border: 1px solid transparent;
 	background-image: url("calendar-arrow-left.svg");
 	
 	transition-duration: 550;
@@ -868,22 +869,25 @@ StScrollBar StButton#vhandle:hover {
 	которая задавалась изображением. А при использовании в качестве подсветки сплошного прозрачног цвета, стрелка,
 	заданная изображением, отображается. */
 	background-image: url("calendar-arrow-left-hover.svg");
-	box-shadow: 0 0 3px 0 rgb(234, 112, 63);
+	border: 1px solid rgb(234, 112, 63);
+	box-shadow: 0 0 3px 1px rgb(234, 112, 63);
 }
 
 .calendar-change-month-back:active {
 	background-image: url("calendar-arrow-left-active.svg");
-	box-shadow: 0 0 6px 0 rgb(245, 130, 84);
+	border: 1px solid rgb(245, 130, 84);
+	box-shadow: 0 0 6px 1px rgb(245, 130, 84);
 	
 	transition-duration: 100;
 }
 
 .calendar-change-month-forward,
 .calendar-change-month-back:rtl {
-	width: 32px;
-	height: 32px;
-	border-radius: 4px;
+	width: 36px;  /* (RU) На размер картинки не влияет, только виджета */
+	height: 36px;
+	border-radius: 0px 4px 0px 4px;
 	
+	border: 1px solid transparent;
 	background-image: url("calendar-arrow-right.svg");
 	
 	transition-duration: 550;
@@ -894,11 +898,12 @@ StScrollBar StButton#vhandle:hover {
 	которая задавалась изображением. А при использовании в качестве подсветки сплошного прозрачног цвета,
 	стрелка, заданная изображением, отображается. */
 	background-image: url("calendar-arrow-right-hover.svg");
-	box-shadow: 0 0 3px 0 rgb(234, 112, 63);
+	border: 1px solid rgb(234, 112, 63);
+	box-shadow: 0 0 3px 1px rgb(234, 112, 63);
 }
 .calendar-change-month-forward:active {
 	background-image: url("calendar-arrow-right-active.svg");
-	box-shadow: 0 0 6px 0 rgb(245, 130, 84);
+	box-shadow: 0 0 6px 1px rgb(245, 130, 84);
 	
 	transition-duration: 100;
 }
@@ -1792,8 +1797,8 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 	border-radius: 0px 8px 0px 8px;
 	
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(245, 130, 84, 0.3);
-	background-gradient-end:  rgba(234, 112, 63, 0.6);
+	background-gradient-start: rgba(245, 130, 84, 0.2);
+	background-gradient-end:  rgba(234, 112, 63, 0.7);
 	box-shadow: inset 0.4px 0.4px 1px 0.5px rgba(255, 255, 255, 0.8);
 	
 	transition-duration: 150;
@@ -1850,8 +1855,8 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 	border-radius: 8px 0px 8px 0px;
 	
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(245, 130, 84, 0.3);
-	background-gradient-end:  rgba(234, 112, 63, 0.6);
+	background-gradient-start: rgba(245, 130, 84, 0.2);
+	background-gradient-end:  rgba(234, 112, 63, 0.7);
 	box-shadow: inset 0.4px 0.4px 1px 0.5px rgba(255, 255, 255, 0.8);
 	
 	transition-duration: 150;
@@ -2010,7 +2015,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 	
 	color: white;
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(234, 112, 63, 0.15);
+	background-gradient-start: rgba(234, 112, 63, 0.1);
 	background-gradient-end:  rgba(245, 130, 84, 0.7);
 	box-shadow: inset 0 0 0 1px rgb(234, 112, 63);
 }
@@ -3015,10 +3020,15 @@ padding: .4em 1.75em;
 	color: rgb(230,230,230);
 }
 .expo-workspaces-name-entry#selected {
-	background-gradient-direction: vertical;
+	/*background-gradient-direction: vertical;
 	background-gradient-start: rgba(234, 112, 63, 0.5);
 	background-gradient-end:  rgba(245, 130, 84, 0.9);
+	box-shadow: inset 0 0 0px 1px rgb(234, 112, 63);*/
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(245, 130, 84, 0.45);
+	background-gradient-end:  rgba(234, 112, 63, 0.9);
 	box-shadow: inset 0 0 0px 1px rgb(234, 112, 63);
+	/*box-shadow: inset 0.4px 0.4px 1px 0.5px rgba(255, 255, 255, 0.7);*/
 	
 	color: black;
 }
@@ -3038,8 +3048,8 @@ padding: .4em 1.75em;
 	transition-duration: 250;
 }
 .workspace-add-button:hover {
-	background-color:  rgba(234, 112, 63, 0.3);
-	box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.6);
+	background-color:  rgba(234, 112, 63, 0.35);
+	/*box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.6);*/
 	background-image: url('add-workspace-bigger.svg');
 	border: 1px solid rgb(234, 112, 63);
 	
@@ -3047,7 +3057,7 @@ padding: .4em 1.75em;
 }
 .workspace-add-button:active {
 	background-color:  rgba(245, 130, 84, 0.45);
-	box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.7);
+	/*box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.7);*/
 	background-image: url('add-workspace-lighter.svg');
 	border: 1px solid rgb(245, 130, 84);
 	
@@ -3152,9 +3162,13 @@ padding: .4em 1.75em;
 	background-gradient-start: rgba(234, 112, 63, 0.2);
 	background-gradient-end:  rgba(245, 130, 84, 1);*/
 	
-	background-gradient-direction: vertical;
+	/*background-gradient-direction: vertical;
 	background-gradient-start: rgba(234, 112, 63, 0.5);
 	background-gradient-end:  rgba(245, 130, 84, 0.9);
+	box-shadow: inset 0 0 0px 1px rgb(234, 112, 63);*/
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(245, 130, 84, 0.45);
+	background-gradient-end:  rgba(234, 112, 63, 0.9);
 	box-shadow: inset 0 0 0px 1px rgb(234, 112, 63);
 	
 	color: black;
