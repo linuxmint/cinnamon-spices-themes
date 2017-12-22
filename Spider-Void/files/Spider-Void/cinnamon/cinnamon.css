@@ -1,0 +1,2325 @@
+/* ###################################################################
+ * Spider 
+ * ###################################################################*/
+stage {
+/*   font-family: Xirod, Ubuntu, Droid Sans, Trebuchet MS, Liberation Sans; */
+   font-family: xirod;
+   font-size: 8pt;
+   color: green;
+}
+.cinnamon-link {
+    color: #00FF00;
+    text-decoration: underline;
+}
+.cinnamon-link:hover {
+    color: #00FF00;
+}
+.label-shadow {
+    color: rgba(0,0,0,30.5);
+}
+StScrollBar {
+    padding: 0px;
+}
+StScrollView.vfade {
+    -st-vfade-offset: 68px;
+}
+StScrollView StScrollBar {
+    min-width: 7px;
+    min-height: 6px;
+}
+
+StScrollBar StBin#trough {
+    background-gradient-direction: horizontal;
+    background-gradient-start: #666666;
+    background-gradient-end: #3C3C3C;
+    border: 2px solid rgba(0,0,0,10.6);
+    border-radius: 0px 6px 0px 6px;
+    box-shadow: inset 0px 0px 4px rgba(0,10,0,0.3);  
+}
+StScrollBar StButton#vhandle {
+    background-image: url("scroll-vhandle.svg");
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(94,255,67,1);
+    background-gradient-end: rgba(72,205,38,0);
+    border-radius: 0px 6px 0px 6px;
+    border: 2px solid rgba(0,221,0,0.6);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    transition-duration: 350;
+}
+StScrollBar StButton#hhandle {
+    background-image: url("scroll-hhandle.svg");
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(194,221,167,1);
+    background-gradient-end: rgba(172,205,138,0);
+    border-radius: 0px 6px 0px 6px;
+    border: 0.5px solid rgba(194,221,167,0.6);
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    transition-duration: 350;
+}
+StScrollBar StButton#hhandle:hover,
+StScrollBar StButton#vhandle:hover {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,130,0,1);
+    background-gradient-end: rgba(0,0,0,1);
+    transition-duration: 350;
+}
+#Tooltip {
+    border-radius:  6px;
+    padding: 2px 12px;
+    background-gradient-end: rgba(40,40,40,0.67);
+    background-gradient-start: rgba(27,27,27,0.67);
+    background-gradient-direction: vertical;
+    color: #00ff00;
+    font-size: 8.5pt;
+    font-weight: normal;    
+    text-align: center;
+box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.4);
+}
+/* ===================================================================
+ * Shared button properties 
+ * ===================================================================*/
+.notification-button, .notification-icon-button,
+.modal-dialog-button {
+    color: white;
+    border: 1px solid #8b8b8b;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255, 255, 255, 0.2);
+    background-gradient-end: rgba(255, 255, 255, 0);
+}
+.notification-button:hover,
+.notification-icon-button:hover, .modal-dialog-button:hover {
+    background-gradient-start: rgba(255, 255, 255, 0.3);
+    background-gradient-end: rgba(255, 255, 255, 0.1);
+}
+.notification-button:focus,
+.notification-icon-button:focus,
+.modal-dialog-button:focus {
+    border: 2px solid #a5a5a5;
+}
+.notification-button:active, .notification-icon-button:active,
+.modal-dialog-button:active, .modal-dialog-button:pressed {
+    background-gradient-start: rgba(255, 255, 255, 0);
+    background-gradient-end: rgba(255, 255, 255, 0.2);
+}
+/* ===================================================================
+ *  * PopupMenu (popupMenu.js) 
+ * ===================================================================*/
+
+.popup-menu-boxpointer {
+    border-image:url("background.svg");
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+}
+.popup-menu {
+    color: green;
+    font-size: 9pt;
+    min-width: 100px;
+    border-image:url("background.svg");
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+}
+.menu {
+    color: green;
+    font-size: 9pt;
+    min-width: 150px;
+    border-image:url("background.svg");
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+}
+
+.popup-sub-menu .popup-menu-item:ltr {
+    padding-right: 0em;
+}
+.popup-sub-menu .popup-menu-item:rtl {
+    padding-left: 0em;
+} 
+.popup-sub-menu StScrollBar {
+    padding: 4px;
+}
+.popup-sub-menu StScrollBar StBin#trough {
+    border-width: 0px;
+}
+.popup-sub-menu StScrollBar StBin#vhandle {
+    background-color: rgba(41,41,41,1);
+    border-width: 0px;
+}
+.popup-combo-menu {
+    color: #00ff00;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(52,52,52,0.95);
+    background-gradient-end: rgba(44,44,44,0.95);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding:  0em;
+    font-size: 9pt;
+    border-radius: 2px;
+}
+
+
+/* The remaining popup-menu sizing is all done in ems, so that if you
+ * override .popup-menu.font-size, everything else will scale with it.
+ */
+.popup-menu-content {
+    padding: 0.8em 0em;
+
+}
+.popup-menu-item {
+    padding: .5em 1.75em;
+    spacing: 1em;
+    border: 1px solid transparent;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+}
+.popup-menu-item:active {
+    border-radius: 0px 15px 0px 15px;
+    box-shadow: 0px 1px 3px 2px rgba(50,50,50,0.29);
+    background-gradient-start: rgba(0,130,0,1);
+    background-gradient-end: rgba(0,0,0,1);
+    background-gradient-direction: vertical;
+    color: #fff;   
+}
+.popup-submenu-menu-item:open {
+    background-gradient-direction: vertical; 
+    background-gradient-start: rgba(0,130,0,1);
+    background-gradient-end:  rgba(0,0,0,1);
+    border-radius: 0px 15px 0px 15px;
+}
+.popup-menu-item:insensitive {
+    color: #9f9f9f;
+}
+.popup-image-menu-item {
+}
+.popup-combobox-item {
+    spacing: 1em;
+}
+.popup-separator-menu-item {
+    background-color: rgb(17,17,17);
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.15);    
+    -margin-horizontal: 14px;
+    height: 1px;
+    -gradient-height: 2px;
+    -gradient-start: rgba(51,51,51,1);
+    -gradient-end: #555555;
+}
+.popup-alternating-menu-item:alternate {
+    font-weight: bold;
+}
+.popup-slider-menu-item {
+    height: 1em;
+    min-width: 15em;
+    -slider-background-color: #fff;
+    -slider-border-color: #00ff00;
+    -slider-active-background-color: rgb(94,221,67);
+    -slider-active-border-color: #fff;
+    -slider-height: 0.1em;
+    -slider-border-width: 2px;
+    -slider-handle-radius: 0.5em;
+}
+.popup-device-menu-item {
+    spacing: .5em;
+}
+.popup-inactive-menu-item {
+    font-weight: normal;
+    color: #999;
+}
+.popup-subtitle-menu-item {
+    font-weight: bold;
+}
+.popup-menu-icon {
+    icon-size: 1.14em;
+}
+/* Switches (to be used in menus) */
+.toggle-switch {
+    width: 48px;
+    height: 20px;
+}
+
+.toggle-switch-us {
+    background-image: url("toggle-off.svg");
+}
+
+.toggle-switch-intl {
+    background-image: url("toggle-off.svg");
+}
+
+.toggle-switch-us:checked {
+    background-image: url("toggle-on.svg");
+}
+
+.toggle-switch-intl:checked {
+    background-image: url("toggle-on.svg");
+}
+
+.nm-menu-item-icons {
+    spacing: .5em;
+}
+
+
+
+/* ===================================================================
+ * Panel (panel.js)
+ * ===================================================================*/
+#panel {
+    background-color: transparent;
+    font-weight: normal;
+    color: #00FF00;
+    font-size: 8pt;
+    height: 30px;
+}
+#panel:highlight {
+    background-color: #aa5555;
+}
+.panel-dummy {
+    background-color: rgba(50, 50, 50, 0.4);
+}
+.panel-dummy:entered {
+    background-color: rgba(255, 35, 35, 0.4);
+}
+#panelLeft {
+    background-gradient-start: rgba(0,244,0,.4);
+    background-gradient-end: rgba(0,0,0,1);
+    background-gradient-direction: vertical;
+    -natural-hpadding: 2px;
+    -minimum-hpadding: 2px;
+    border-radius: 0px 15px 0px 15px;
+    box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.71);
+}
+ #panelRight {
+    background-gradient-start: rgba(0,244,0,.4);
+    background-gradient-end: rgba(0,0,0,1);
+    background-gradient-direction: vertical;
+    background-gradient-direction: vertical;
+    border-radius: 0px 15px 0px 15px;
+    -natural-hpadding: 2px;
+    -minimum-hpadding: 2px;
+    box-shadow: 0px 2px 3px 1px rgba(0,0,0,0.71);
+}
+#panelCenter {
+    background-color: transparent;
+    background-image: url("center.svg");
+}
+#panelCenter.vertical {
+    background-color: transparent;
+    background-image: url("centerv.svg");
+}
+ #panelLeft:ltr {
+    padding-left: 0px;
+}
+
+#panelLeft:rtl {
+    padding-left: 0px;
+}
+
+#panelRight:ltr {
+    padding-right: 0px;
+    spacing: 0px;
+}
+
+#panelRight:rtl {
+    padding-right: 0px;
+    spacing: 0px;
+}
+
+.panelLeft {
+    spacing: 4px;
+}
+.panelCenter {
+    spacing: 4px;
+    background-color: transparent;
+    background-image: url("center.svg");
+}
+.panelRight {
+    spacing: 4px;
+}
+.panelLeft:dnd {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255,0,0,0.05);
+    background-gradient-end: rgba(255,0,0,0.2);
+}
+.panelCenter:dnd {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,255,0,0.05);
+    background-gradient-end: rgba(0,255,0,0.2);
+}
+.panelRight:dnd {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,0,255,0.05);
+    background-gradient-end: rgba(0,0,255,0.2);
+}
+.panelLeft:ltr {
+    padding-right: 4px;
+}
+.panelLeft:rtl {
+    padding-left: 4px;
+}
+.panelRight:ltr {
+    padding-left: 0px;
+    spacing: 0px;
+}
+.panelRight:rtl {
+    padding-right: 0px;
+    spacing: 0px;
+}
+.panelLeft.vertical {
+    padding: 0px;
+    spacing: 0px;
+}
+.panelLeft.vertical:ltr {
+}
+.panelLeft.vertical:rtl {
+}
+.panelRight.vertical {
+    padding: 0px;
+    spacing: 0px;
+}
+.panelRight.vertical:ltr {
+}
+.panelRight.vertical:rtl {
+}
+.panelCenter.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    background-image: url("centerv.svg");
+}
+.panelCenter.vertical:ltr {
+}
+.panelCenter.vertical:rtl {
+}
+.panelLeft.vertical:dnd {
+}
+.panelCenter.vertical:dnd {
+}
+.panelRight.vertical:dnd {
+}
+.panel-top {
+}
+.panel-bottom {
+}
+.panel-left {
+}
+.panel-right {
+}
+.panel-status-button {
+    border: 0px solid #8b8b8b;
+    -natural-hpadding: 3px;
+    -minimum-hpadding: 3px;
+    font-weight: bold;
+    color: #ccc;
+    height: 22px;
+}
+.panel-status-button,
+.panel-button {
+    -natural-hpadding: 5px;
+    -minimum-hpadding: 5px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition-duration: 350; 
+}
+
+.panel-status-button:hover,
+.panel-button:hover {
+    background-gradient-start: rgba(194,221,167,0);
+    background-gradient-end: rgba(172,205,138,1);
+    background-gradient-direction: vertical;
+    border-radius: 0px;
+    color:  #222;
+    box-shadow: inset 0px -1px 0px 0px rgba(255,255,255,0.3);
+    transition-duration: 350;
+}
+
+.system-status-icon {
+    icon-size: 1.3em;
+}
+
+#panelLeft:dnd {
+    background: #000;
+}
+
+#panelCenter:dnd {
+    background: #222;
+}
+
+#panelRight:dnd {
+    background: #111;
+}
+
+/* ===================================================================
+ * Overview 
+ * ===================================================================*/
+#overview {
+    spacing: 14px;
+    background-color: rgba(0,0,0,.2);
+ 
+}
+.window-caption {
+    spacing: 25px;
+    font-weight: bold;
+}
+
+.window-caption#selected {
+    background-color: #545454;
+    color: #525252;
+    font-weight: bold;
+}
+
+.workspace-controls {
+    visible-height: 32px; /* Amount visible before hovering */
+}
+.workspace-thumbnails-background {
+ 
+    border-radius: 0px 15px 15px 15px;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255,255,255,.97);
+    background-gradient-end: rgba(150,150,150,.9);
+    padding: 8px;
+}
+.workspace-thumbnails-background:rtl {
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    border-radius:  0px;
+}
+.workspace-thumbnails {
+    spacing: 14px;
+}
+.workspace-add-button {
+    background-image: url("add-workspace.svg");
+    height: 32px;
+    width: 28px;
+    -st-background-image-shadow: 0px 2px 4px rgba(0,0,0,0.7);
+    transition-duration: 150;
+}
+.workspace-add-button:hover {
+    background-image: url("add-workspace-hover.svg");
+    transition-duration: 333;
+}
+
+.workspace-close-button {
+    background-image: url("window-close.svg");
+    height: 24px;
+    width: 27px;
+    -cinnamon-close-overlap: 32px;
+    transition-duration: 350;
+    -st-background-image-shadow: 0px 2px 4px rgba(0,0,0,0.9);
+}
+.workspace-close-button:hover {
+    background-image: url("window-close-hover.svg");
+    height: 24px;
+    width: 27px;
+}
+.workspace-thumbnail-indicator {
+    outline: 2px solid white;
+    border: 1px solid #888;
+}
+.window-caption {
+    background-color: #222;
+    border: 1px solid #111;
+    spacing: 25px;
+    border-radius: 0px 15px 0px 15px;
+    color: #fff;
+    font-weight: bold;
+    padding: 2px 8px;
+    box-shadow: inset 0px 2px 4px rgba(0,0,0,0.6);
+    transition-duration: 350;
+    -cinnamon-caption-spacing: 4px;
+}
+.window-close {
+    background-image: url("window-close.svg");
+    height: 30px;
+    width: 30px;
+    -cinnamon-close-overlap: 27px;
+    transition-duration: 350;
+    -st-background-image-shadow: 0px 2px 4px rgba(0,0,0,0.7);
+}
+.window-close:hover {
+    background-image: url("window-close-hover.svg");
+    height: 34px;
+    width: 34px;
+}
+.window-close:rtl {
+    -st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.window-close-area {
+    background-image: url("trash-icon.svg");
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #999;
+    border-bottom: 0px;
+    border-radius: 8px;
+    height: 120px;
+    width: 400px;
+}
+
+.icon-grid {
+    spacing: 36px;
+    -cinnamon-grid-item-size: 118px;
+}
+.icon-grid .overview-icon {
+    icon-size: 96px;
+}
+.overview-icon {
+    border-radius: 0px;
+    padding: 3px;
+    border: 1px rgba(0,0,0,0);
+    font-size: 7.5pt;
+    color: white;
+    transition-duration: 100;
+    text-align: center;
+}
+
+.expo-background {
+    background-gradient-start:  rgba(0,0,0,0.2);
+    background-gradient-end: rgba(0,0,0,0.2);
+    background-gradient-direction: vertical;
+}
+
+/* ===================================================================
+ * Looking Glass 
+ * ===================================================================*/
+
+#LookingGlassDialog
+{
+    background-color: rgba(0,0,0,0.8);
+    spacing: 3px;
+    padding: 4px;
+    border: 1px solid rgb(22,22,22);
+    border-radius: 0px 0px 0px 0px;
+    color: rgb(230,230,230);
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.4);
+}
+
+#LookingGlassDialog > #Toolbar
+{
+    background-gradient-direction: horizontal; 
+    background-gradient-start: #2e2e2e;
+    background-gradient-end: #3c3b37;
+    box-shadow: inset 0px 0px 4px rgba(0,0,0,0.4);
+    border: 1px solid rgb(0,0,0);
+    border-radius: 0px 0px 0px 0px;
+    height: 28px;
+}
+
+#LookingGlassDialog .labels {
+    spacing: 4px;
+}
+
+#LookingGlassDialog .notebook-tab {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,0,0,0);
+    background-gradient-end: rgba(0,0,0,0);
+    border-radius: 0px 0px 0px 0px;
+    box-shadow: inset 0px 0px 1px 1px rgba(220,220,220,0.6);
+    padding: 2px;
+    transition-duration: 150;
+}
+
+#LookingGlassDialog .notebook-tab:hover {
+    background-gradient-direction: vertical; 
+    background-gradient-start: rgba(220,220,220,0);
+    background-gradient-end:  rgba(120,120,120,1);
+    box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+    transition-duration: 150;
+}
+
+#LookingGlassDialog .notebook-tab:selected {
+    background-gradient-direction: vertical; 
+    background-gradient-start: rgba(220,220,220,0);
+    background-gradient-end:  rgba(120,120,120,1);
+    box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+    color: rgb(255,255,255);
+    padding: 2px;
+}
+
+#LookingGlassDialog .lg-inspector-title {
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+
+.lg-dialog StLabel
+{
+  color: rgb(230,230,230);
+}
+
+.lg-dialog StEntry
+{
+  color: rgb(230,230,230);
+  selection-background-color: rgb(234,234,234);
+  selected-color: black;
+}
+
+.lg-obj-inspector-title
+{
+    color: rgb(230,230,230);
+    spacing: 4px;
+}
+
+.lg-obj-inspector-button
+{
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,0,0,0);
+    background-gradient-end: rgba(0,0,0,0);
+    border-radius: 0px 0px 0px 0px;
+    box-shadow: inset 0px 0px 1px 1px rgba(220,220,220,0.6);
+    padding: 4px;
+    transition-duration: 150;
+}
+
+.lg-obj-inspector-button:hover
+{
+background-gradient-direction: vertical; 
+background-gradient-start: rgba(194,221,167,0);
+background-gradient-end:  rgba(172,205,138,1);
+box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+transition-duration: 150;
+}
+
+.lg-obj-inspector-button:active
+{
+background-gradient-direction: vertical; 
+background-gradient-start: rgba(172,205,138,0);
+background-gradient-end:  rgba(194,221,167,1);
+box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+transition-duration: 150;
+}
+
+.lg-dialog .cinnamon-link
+{
+ color: rgb(230,230,230);
+font-weight: bold;
+transition-duration: 150;
+}
+
+.lg-dialog .cinnamon-link:hover
+{
+background-gradient-direction: vertical; 
+background-gradient-start: rgba(194,221,167,0);
+background-gradient-end:  rgba(172,205,138,1);
+box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+  border-radius: 0px 0px 0px 0px;
+}
+
+.lg-dialog .cinnamon-link:active
+{
+background-gradient-direction: vertical; 
+background-gradient-start: rgba(172,205,138,0);
+background-gradient-end:  rgba(194,221,167,1);
+box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3);
+  border-radius: 0px 0px 0px 0px;
+}
+
+#LookingGlassDialog StBoxLayout#EvalBox
+{
+  padding: 4px;
+  spacing: 4px;
+}
+
+#LookingGlassDialog StBoxLayout#ResultsArea
+{
+  spacing: 4px;
+}
+
+#lookingGlassExtensions {
+    padding: 4px;
+}
+
+.lg-extension-list {
+    padding: 4px;
+    spacing: 6px;
+}
+
+.lg-extension {
+    border: 1px solid #6f6f6f;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.lg-extension-name {
+    font-weight: bold;
+}
+
+.lg-extension-meta {
+    spacing: 6px;
+}
+
+#LookingGlassPropertyInspector {
+    background-gradient-direction: horizontal; 
+    background-gradient-start: rgb(46,46,46);
+    background-gradient-end: rgb(60,59,55);
+    border: 1px solid black;
+    border-radius: 0px 0px 0px 0px;
+    padding: 6px;
+    color: rgb(230,230,230);
+}
+
+/* ===================================================================
+ * ViewSelector 
+ * ===================================================================*/
+#viewSelector {
+    spacing: 1em;
+    font-size: 12pt;
+}
+#viewSelectorTabBar {
+    padding: 1em;
+}
+.view-tab-title {
+    color: #888a85;
+    font-weight: bold;
+    padding: 0px 0.75em;
+    height: 1.5em;
+}
+.view-tab-title:hover {
+    color: #bbb;
+}
+.view-tab-title:selected {
+    color: #000000;
+    background-color: #c2c7cd;
+    border-radius: 0.25em;
+}
+
+/* ===================================================================
+ * Date applet 
+ * ===================================================================*/
+
+.calendar {
+    padding: .4em 1.75em .8em 1.75em;
+    spacing-rows: 0;
+    spacing-columns: 0;
+}
+
+.datemenu-date-label {
+    padding: .5em 0em 1em 0em;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(70,70,70);
+}
+
+.calendar-month-label {
+    padding-bottom: 3px;
+    padding-top: 3px;
+    font-weight: bold;
+    color: rgb(70,70,70);
+}
+
+.calendar-change-month-back,
+.calendar-change-month-forward:rtl {
+    height: 20px;
+    width: 20px;
+    transition-duration: 200;
+    border: 1px rgba(0,0,0,0);
+    background-image: url("control-assets/calendar-arrow-left.svg");
+}
+
+.calendar-change-month-back:hover {
+    transition-duration: 150;
+    background-image: url("control-assets/calendar-arrow-left-hover.svg");
+}
+
+.calendar-change-month-forward,
+.calendar-change-month-back:rtl {
+    height: 20px;
+    width: 20px;
+    transition-duration: 200;
+    border: 1px rgba(0,0,0,0);
+    background-image: url("control-assets/calendar-arrow-right.svg");
+}
+
+.calendar-change-month-forward:hover {
+    transition-duration: 150;
+    background-image: url("control-assets/calendar-arrow-right-hover.svg");
+}
+
+.calendar-day-base {
+    font-size: 9pt;
+    text-align: center;
+    width: 2.4em;
+    height: 2.4em;
+}
+
+.calendar-day-base:active {
+    background: #accd8a;
+    box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+.calendar-day-heading {
+    font-size: 9pt;
+    color: #323232;
+    padding-top: 2em;
+}
+
+.calendar-week-number {
+    color: rgba(0,0,0,0.5);
+    font-size: 9pt;
+}
+
+.calendar-day {
+    border: 1px rgba(0,0,0,0.2);
+    color: rgba(0,0,0,0.7);
+    border-top-width: 0;
+    border-left-width: 0;
+    padding-left: 1px;
+    padding-top: 1px;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.calendar-day-top {
+    border-top-width: 1px;
+}
+
+.calendar-day-left {
+    border-left-width: 1px;
+}
+
+.calendar-work-day {
+}
+
+.calendar-nonwork-day {
+    background-color: rgba(128, 128, 128, .1);
+}
+
+.calendar-today {
+    color: #54a4e9;
+    font-weight: bold;
+}
+
+.calendar-other-month-day {
+    color: rgba(50,50,50,0.3);
+    box-shadow: inset 0px 2px 3px 0px rgba(0,0,0,0.1);
+    background-color: rgba(50,50,50,0.1);
+}
+
+.calendar {
+padding: .4em 1.75em;
+spacing-rows: 0px;
+spacing-columns: 0px;
+}
+
+.datemenu-date-label {
+    padding: .4em 1.75em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.calendar-month-label {
+    font-size: 8.5pt;
+    font-weight: bold;
+    padding-bottom: 3px;
+    padding-top: 2px;
+    text-align: center;
+}
+
+.calendar-change-month-back,
+.calendar-change-month-forward:rtl {
+    width: 20px;
+    height: 20px;
+    background-image: url("calendar-arrow-left.svg");
+    border-radius: 4px;
+    transition-duration: 150;
+}
+
+.calendar-change-month-back:hover {
+    background-color: rgba(172,172,172,0.6);
+    box-shadow: inset 0px 1px 1px rgba(255,255,255,0.7);
+    border-radius: 2px;
+}
+
+.calendar-change-month-forward,
+.calendar-change-month-back:rtl {
+    width: 20px;
+    height: 20px;
+    background-image: url("calendar-arrow-right.svg");
+    border-radius: 4px;
+    transition-duration: 150;
+}
+
+.calendar-change-month-forward:hover {
+    background-color: rgba(172,172,172,0.6);
+    box-shadow: inset 0px 1px 1px rgba(255,255,255,0.7);
+    border-radius: 2px;
+}
+
+.calendar-day-base {
+    font-size: 7.5pt;
+    text-align: center;
+    width: 2.4em;
+    max-height: 2.4em;
+    padding: 5px 0px 5px 0px; 
+}
+
+.calendar-day-heading {
+    padding-top: 1em;
+    font-weight: bold;
+}
+
+.calendar-week-number {
+    padding-left: 0px;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+
+/* Hack used in lieu of border-collapse - see calendar.js */
+.calendar-day {
+    border-top-width: 0;
+    border-left-width: 0;
+    background: #000000;
+}
+.calendar-day-top {
+    border-top-width: 1px;
+}
+.calendar-day-left {
+    border-left-width: 1px;
+}
+
+.calendar-work-day {
+    border-radius: 4px;
+    border: 1px solid #4f4f4f;
+}
+
+.calendar-nonwork-day {
+    border-radius: 4px;
+    border: 1px solid #999999;
+}
+
+.calendar-today {
+    color: #00FF00;
+    font-weight: bold;
+    background-gradient-direction: vertical; 
+    background-gradient-start: rgba(255,255,255,0);
+    background-gradient-end:  rgba(190,190,190,.7);
+    box-shadow: inset 0px 1px 1px rgba(255,255,255,0.2);
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.calendar-other-month-day {
+    background: #4f4f4f;
+    color: #141414;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+
+/* ===================================================================
+ * Notifications
+ * ===================================================================*/
+#notification {
+color: rgb(230,230,230);
+box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.4);
+border: 1px solid rgb(22,22,22);
+border-radius: 0px 12px 0px 12px;
+background-gradient-direction: vertical;
+background-gradient-start: rgba(0,130,0,1);
+background-gradient-end: rgba(0,0,0,1);
+padding: 8px;
+spacing-rows: 10px;
+spacing-columns: 10px;
+margin-from-right-edge-of-screen: 20px;
+width: 30em;
+}
+
+#notification.multi-line-notification {
+padding-bottom: 8px;
+}
+
+/* We use row-span = 2 for the image cell, which prevents its height preferences to be
+taken into account during allocation, so its height ends up being limited by the height
+of the content in the other rows. To avoid showing a stretched image, we set the minimum
+height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
+.notification-with-image {
+min-height: 159px;
+}
+
+#notification-scrollview {
+max-height: 10em;
+}
+#notification-scrollview > .top-shadow, #notification-scrollview > .bottom-shadow {
+height: 1em;
+}
+#notification-scrollview:ltr > StScrollBar {
+padding-left: 6px;
+}
+#notification-scrollview:rtl > StScrollBar {
+padding-right: 6px;
+}
+#notification-body {
+spacing: 5px;
+}
+#notification-actions {
+spacing: 10px;
+}
+/* ===================================================================
+ * Alt Tab
+ * ===================================================================*/
+#altTabPopup {
+padding: 16px;
+spacing: 16px;
+}
+
+.switcher-list {
+border: 1px solid rgb(22,22,22);
+border-radius: 0px 24px 0px 24px;
+background-gradient-direction: vertical; 
+background-gradient-start: rgba(60,59,55,0.6);
+background-gradient-end:  rgba(60,59,55,0.6);
+box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.4);
+padding: 20px;
+}
+
+.switcher-list-item-container {
+spacing: 8px;
+}
+
+.switcher-list .item-box {
+color: rgb(230,230,230);
+padding: 8px;
+border-radius: 16px;
+border: 1px solid transparent;
+transition-duration: 50;
+}
+
+.switcher-list .item-box:outlined {
+padding: 8px;
+}
+
+.switcher-list .item-box:selected {
+color: rgba(22,22,22,0.9);
+background-gradient-direction: vertical; 
+background-gradient-start: rgba(194,221,167,0);
+background-gradient-end:  rgba(172,205,138,1);
+box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
+border-radius: 16px;
+}
+
+.switcher-list .thumbnail-box {
+padding: 2px;
+spacing: 4px;
+}
+
+.switcher-list .thumbnail {
+    width:  256px;
+}
+
+.ripple-box {
+    width: 600px;
+    height: 600px;
+    background-image: url("corner-ripple.svg");
+}
+
+.ripple-box:rtl {
+    background-image: url("corner-ripple.svg");
+}
+
+/* ===================================================================
+ * Modal dialogs
+ * ===================================================================*/
+.modal-dialog {
+font-weight: bold;
+border: 1px solid rgb(22,22,22);
+background-gradient-direction: vertical; 
+background-gradient-start: rgba(60,60,60,0.8);
+background-gradient-end:  rgba(60,60,60,0.8);
+box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.4);
+border-radius: 0px 12px 0px 12px;
+padding: 30px 35px;
+}
+
+.modal-dialog-button-box {
+spacing: 21px;
+padding-top: 30px;
+}
+
+.modal-dialog-button {
+background-gradient-direction: horizontal; 
+background-gradient-start: rgba(46,46,46,0.8);
+background-gradient-end: rgba(60,60,60,0.8);
+box-shadow: inset 0px 0px 1px 1px rgba(194,221,167,0.6);
+border-radius: 0px 6px 0px 6px;
+font-weight: normal;
+padding: 8px 5px;
+min-width: 105px;
+transition-duration: 250;
+}
+
+.modal-dialog-button:hover,
+.modal-dialog-button:focus {
+background-gradient-direction: vertical; 
+background-gradient-start: rgba(167,221,167,0);
+background-gradient-end:  rgba(138,205,138,1);
+box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
+}
+
+.modal-dialog-button:active,
+.modal-dialog-button:pressed {
+background-gradient-direction: vertical; 
+background-gradient-start: rgba(138,205,138,0);
+background-gradient-end:  rgba(167,221,167,1);
+box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
+color: rgb(255,255,255);
+}
+
+.modal-dialog-button:disabled {
+border: 1px solid rgba(22,22,22,0.1);
+box-shadow: inset 0px 0px 0px rgba(255,255,255,0.0);
+}
+/* ===================================================================
+ * Run dialog
+ * ===================================================================*/
+
+.run-dialog-label {
+    font-weight: bold;
+    padding-bottom: 14px;
+    font-size: 9pt;
+    color: white;
+}
+
+.run-dialog-error-label {
+    font-weight: bold;
+    font-size: 9pt;
+    color: white;
+}
+
+.run-dialog-error-box {
+padding-top: 15px;
+spacing: 5px;
+}
+
+.run-dialog-entry {
+border-radius: 0px 6px 0px 6px;
+    color: rgba(0,0,0,0.9);
+    border: 1px solid rgb(172,205,138);
+    background-gradient-direction: vertical; 
+    background-gradient-start: rgba(138,205,138,0);
+    background-gradient-end:  rgba(167,221,167,1);
+    selected-color: rgb(230,230,230);
+    caret-color: rgb(60,59,55);
+    font-weight: normal;
+    padding: 4px;
+    padding-bottom: 3px;
+    width: 23em;
+}
+
+.run-dialog {
+    border: 1px solid rgba(22,22,22,1);
+    background-gradient-direction: vertical; 
+    background-gradient-start: rgba(60,60,60,0.8);
+    background-gradient-end:  rgba(30,30,30,0.8);
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.4);
+    border-radius: 0px 12px 0px 12px;
+    padding-right: 21px;
+    padding-left: 21px;
+    padding-bottom: 20px;
+    padding-top: 15px;
+}
+
+.run-dialog > .modal-dialog-button-box {
+padding-top: 5px;
+}
+
+.run-dialog-completion-box {
+    padding-left: 15px;
+    font-size: 10px;
+}
+
+.lightbox {
+background-color: rgba(60,60,60,0.1);
+transition-duration: 450;
+}
+
+/* ===================================================================
+ * End session dialog
+ * ===================================================================*/
+.end-session-dialog {
+    spacing: 42px;
+}
+.end-session-dialog-subject {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 30px;
+}
+.end-session-dialog-subject:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
+}
+.end-session-dialog-description {
+    font-size: 10pt;
+    color: black;
+    padding-left: 17px;
+    width: 28em;
+}
+.end-session-dialog-description:rtl {
+    padding-right: 17px;
+}
+.end-session-dialog-logout-icon {
+    border: 1px solid rgba(2,2,2,0.93);
+    border-radius: 0px;
+    width: 32px;
+    height: 32px;
+}
+.end-session-dialog-shutdown-icon {
+    width: 32px;
+    height: 32px;
+}
+.end-session-dialog-app-list {
+    font-size: 8pt;
+    max-height: 200px;
+    padding-top: 42px;
+    padding-left: 49px;
+    padding-right: 32px;
+}
+.end-session-dialog-app-list:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+}
+.end-session-dialog-app-list-item {
+    color: #ccc;
+}
+.end-session-dialog-app-list-item:hover {
+    color: white;
+}
+.end-session-dialog-app-list-item:ltr {
+    padding-right: 1em;
+}
+.end-session-dialog-app-list-item:rtl {
+    padding-left: 1em;
+}
+.end-session-dialog-app-list-item-icon:ltr {
+    padding-right: 17px;
+}
+.end-session-dialog-app-list-item-icon:rtl {
+    padding-left: 17px;
+}
+.end-session-dialog-app-list-item-name {
+    font-size: 10pt;
+}
+.end-session-dialog-app-list-item-description {
+    font-size: 8pt;
+    color: #444444;
+}
+/* CinnamonMountOperation Dialogs */
+.cinnamon-mount-operation-icon {
+    icon-size: 48px;
+}
+.mount-password-reask {
+    color: yellow;
+}
+.show-processes-dialog,
+.mount-question-dialog {
+    spacing: 24px;
+}
+.show-processes-dialog-subject,
+.mount-question-dialog-subject {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #666666;
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 6px;
+}
+.show-processes-dialog-subject:rtl,
+.mount-question-dialog-subject:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
+}
+.show-processes-dialog-description,
+.mount-question-dialog-description {
+    font-size: 10pt;
+    color: white;
+    padding-left: 17px;
+    width: 28em;
+}
+.show-processes-dialog-description:rtl,
+.mount-question-dialog-description:rtl {
+    padding-right: 17px;
+}
+.show-processes-dialog-app-list {
+    font-size: 10pt;
+    max-height: 200px;
+    padding-top: 24px;
+    padding-left: 49px;
+    padding-right: 32px;
+}
+.show-processes-dialog-app-list:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+}
+.show-processes-dialog-app-list-item {
+    color: #ccc;
+}
+.show-processes-dialog-app-list-item:hover {
+    color: white;
+}
+.show-processes-dialog-app-list-item:ltr {
+    padding-right: 1em;
+}
+.show-processes-dialog-app-list-item:rtl {
+    padding-left: 1em;
+}
+.show-processes-dialog-app-list-item-icon:ltr {
+    padding-right: 17px;
+}
+.show-processes-dialog-app-list-item-icon:rtl {
+    padding-left: 17px;
+}
+.show-processes-dialog-app-list-item-name {
+    font-size: 10pt;
+}
+/* ===================================================================
+ * Policykit authentication dialog
+ * ===================================================================*/
+.polkit-dialog {
+/* this is the width of the entire modal popup */
+width: 500px;
+}
+
+.polkit-dialog-main-layout {
+spacing: 24px;
+padding: 10px;
+}
+
+.polkit-dialog-message-layout {
+spacing: 16px;
+}
+
+.polkit-dialog-headline {
+font-size: 10pt;
+font-weight: bold;
+}
+
+.polkit-dialog-description {
+font-weight: normal;
+}
+
+.polkit-dialog-user-layout {
+padding-left: 10px;
+spacing: 10px;
+}
+
+.polkit-dialog-user-layout:rtl {
+padding-left: 0px;
+padding-right: 10px;
+}
+
+.polkit-dialog-user-root-label {
+color: rgb(172,172,172);
+}
+
+.polkit-dialog-password-label:ltr {
+padding-top: 5px;
+padding-right: 0.5em;
+}
+
+.polkit-dialog-password-label:rtl {
+padding-left: 0.5em;
+}
+
+.polkit-dialog-password-entry {
+    border: 1px solid rgb(172,172,172);
+    background-gradient-direction: vertical; 
+    background-gradient-start: rgba(255,255,255,0);
+    background-gradient-end:  rgba(190,190,190,.7);
+    border-radius: 4px;
+    selected-color: rgb(227,227,227);
+    caret-color: rgb(60,59,55);
+    caret-size: 1px;
+    color: rgba(0,0,0,0.9);
+    width: 250px;
+    font-weight: normal;
+    padding: 4px;
+    padding-bottom: 3px;
+}
+
+.polkit-dialog-error-label {
+    font-weight: bold;
+    color: rgb(72,255,72);
+    padding-bottom: 8px;
+}
+
+.polkit-dialog-info-label {
+    padding-bottom: 8px;
+}
+
+/* intentionally left transparent to avoid dialog changing size */
+.polkit-dialog-null-label {
+    color: rgba(0,0,0,0);
+    padding-bottom: 8px;
+}
+
+.network-dialog-secret-table {
+spacing-rows: 15px;
+}
+/* ===================================================================
+ * Magnifier
+ * ===================================================================*/
+
+.magnifier-zoom-region {
+    border: 2px solid #f07746;
+}
+
+.magnifier-zoom-region.full-screen {
+    border-width: 0px;
+}
+/* ===================================================================
+ * On screen keyboard
+ * ===================================================================*/
+
+
+#keyboard {
+background: rgba(20,20,20,0.3);
+border: 1px solid rgb(22,22,22);
+border-radius: 8px 8px 0px 0px;
+box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.4);
+}
+
+.keyboard-layout {
+spacing: 10px;
+padding: 10px;
+}
+
+.keyboard-row {
+spacing: 15px;
+}
+
+.keyboard-key {
+    min-height: 30px;
+    min-width: 30px;
+    border-image: url('keyboard-key.svg') 4 4 4 4 stretch;
+    border-radius: 0px 8px 0px 8px;
+    box-shadow: inset 0px 0px 1px 1px rgba(194,194,194,0.8);
+    color: rgb(30,30,30);
+    transition-duration: 50;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.keyboard-key:grayed {
+color: #808080;
+    border-color: #808080;
+}
+
+.keyboard-key:checked,
+.keyboard-key:hover {
+border-image: url('keyboard key-hover.svg') 4 4 4 4 stretch;
+box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
+border: 0px solid transparent;
+}
+
+.keyboard-key:active {
+border-image: url('keyboard-key.svg') 4 4 4 4 stretch;
+box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
+color: rgba(55,255,55,1);
+}
+
+.keyboard-subkeys {
+color: #3c3b37;
+padding: 5px;
+-arrow-border-radius: 4px;
+-arrow-background-color: rgba(0,0,0,0.8);
+-arrow-border-width: 1px;
+-arrow-border-color: rgba(0,0,0,0.8);
+-arrow-base: 15px;
+-arrow-rise: 4px;
+-boxpointer-gap: 5px;
+}
+
+/* ###################################################################
+ * Cinnamon Specific Section 
+ * ###################################################################*/
+/* ===================================================================
+ * Menu (menu.js)
+ * ===================================================================*/
+/* Main menu title */
+
+.menu-favorites-box {
+    margin: auto;
+    padding: 10px;
+    border-radius: 0px;
+    background-color: rgba(0,0,0,0.0);
+    box-shadow: inset 0px 0px 4px rgba(0,0,0,0.0);
+}
+.menu-favorites-button {
+ 
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.menu-favorites-button:hover {
+    border-radius: 0px 15px 0px 15px;
+    background-gradient-start: rgba(0,255,0,1);
+    background-gradient-end: rgba(0,0,0,1);
+    background-gradient-direction: vertical;
+    color: #fff;    
+    box-shadow: 0px 2px 2px 0px rgba(0,255,0,1);
+    transition-duration: 350;
+}
+.menu-places-box {
+padding: 6px;
+}
+.menu-places-button {
+padding: 6px;
+}
+.menu-categories-box {
+padding: 6px 30px;
+}
+.menu-applications-box {
+padding: 10px 10px 0px 10px;
+}
+.menu-application-button {
+padding: 5px;
+ 
+}
+.menu-application-button:hover,
+.menu-application-button-selected {
+padding: 5px;
+    border-radius: 0px 15px 0px 15px;
+    background-gradient-start: rgba(0,70,0,1);
+    background-gradient-end: rgba(0,0,0,1);
+    background-gradient-direction: vertical;
+    color: #fff;    
+    box-shadow: 0px 2px 2px 0px rgba(0,255,0,1);
+transition-duration: 350;
+}
+.menu-application-button-label:ltr { 
+    padding-left: 5px;
+}
+.menu-application-button-label:rtl { 
+    padding-right: 5px;
+}
+.menu-category-button {
+    padding: 5px;
+}
+.menu-category-button-greyed {
+    padding: 5px;
+    color: #9C9C9C;
+}
+.menu-category-button-selected {
+    padding: 5px;
+    border-radius: 0px 15px 0px 15px;
+    background-gradient-start: rgba(0,155,0,1);
+    background-gradient-end: rgba(0,0,0,1);
+    background-gradient-direction: vertical;
+    color: #fff;    
+    box-shadow: 0px 2px 2px 0px rgba(0,255,0,1);
+transition-duration: 350;
+}
+
+.menu-category-button-label:ltr { 
+padding-left: 5px; 
+}
+
+.menu-category-button-label:rtl { 
+padding-right: 5px;      
+}
+
+.menu-category-button-label:first-child { 
+padding: 3px 5px;
+font-weight: bold;
+}
+
+.menu-selected-app-box {
+padding-right: 30px;
+padding-left: 28px;
+text-align: right;
+}
+
+.menu-selected-app-box:rtl {
+padding-top: 7px;
+height: 30px;
+}
+
+.menu-selected-app-title {
+font-weight: bold;
+}
+
+.menu-selected-app-description {
+max-width: 150px;
+font-size: 6pt;
+padding-bottom: .4em;
+}
+
+.menu-search-box:ltr {
+padding-left: 30px;
+}
+
+.menu-search-box:rtl {
+padding-right: 30px;
+}
+#menu-search-entry {
+padding: 5px 10px;
+border: 1px solid #fff; 
+background-gradient-direction: horizontal; 
+background-gradient-start: rgba(2,105,3,.10);
+background-gradient-end:  rgba(4,255,7,.20);
+background: #ddd;
+box-shadow: inset 0px 2px 3px 1px rgba(0,10,0,1);
+border-right: none;
+border-left: none;
+border-top: none;
+border-radius: 0px 15px 0px 15px;
+selected-color: #222;
+caret-color: #222;
+caret-size: 1px;
+width: 269px;
+color: #222;
+}
+
+.menu-search-entry-icon {
+icon-size: 1em;
+color: #444;
+}
+/* Context menu (at the moment only for favorites) */
+.menu-context-menu {
+}
+/* ===================================================================
+ * Window list (windowList.js)
+ * ===================================================================*/
+.window-list-box {
+    spacing: 4px;
+    padding-left: 10px;
+    padding-top: 1px;   
+}
+.window-list-box.vertical #appMenuIcon {
+    padding-top: 2px;
+}
+
+.window-list-box.vertical {
+    spacing: 1px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.window-list-item-label {
+    font-weight: normal;
+    width: 10em;
+    min-width: 5px;
+}
+
+.window-list-item-box {
+    border: 1px;
+    border-color: rgba(2,2,2,0.001);
+    color: #222;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(2,105,8,8,.5);
+    background-gradient-end: rgba(4,155,7,7,0.5);
+    border-radius: 0px 15px 0px 15px;
+    transition-duration: 350;
+}
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box:focus  {     
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(5,255,5,5,.5);
+    background-gradient-end: rgba(0,180,0,0,0.5);
+    box-shadow: inset 0px 0px 1px 1px rgba(4,5,2,0.1);
+    border-radius: 0px 15px 0px 15px;
+    color: #000000;
+    border: 1px;
+    border-color: rgba(2,18,2,0.5);
+    transition-duration: 350;
+}
+
+.window-list-item-box:hover  {     
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,130,0,0.5);
+    background-gradient-end: rgba(0,0,0,0.5);
+    color: #ffffff;
+    border-radius: 0px 15px 0px 15px;
+    transition-duration: 350;
+    border: 1px;
+    border-color: rgba(2,8,2,0.5);
+}
+
+.window-list-item-demands-attention {
+    background-gradient-start:  rgba(84,255,02,1);
+    background-gradient-end:  rgba(184,255,102,1);
+}
+
+/* ===================================================================
+ * Sound Applet (status/volume.js)
+ * ===================================================================*/
+
+.sound-player StButton {
+    width: 22px;
+    height: 13px;
+    padding: 5px;
+    color: #bbb;
+}
+
+.sound-player StButton:small {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    width: 16px;
+    height: 16px;
+    padding: 1px;
+    color: rgb(90, 90, 90);
+}
+
+.sound-player StButton StIcon {
+    icon-size: 1.5em;
+}
+
+.sound-player StButton:small StIcon {
+    icon-size: 1em;
+}
+
+.sound-player StButton:hover,
+.sound-player StButton:active {
+    color: #fff;
+}
+
+.sound-player StButton:small:hover {
+    color: rgb(70, 70, 70);
+    border-image: url("button-assets/button-hover.png") 4;
+}
+
+.sound-player StButton:small:active {
+    color: rgb(70, 70, 70);
+    border-image: url("button-assets/button-pressed.png") 4;
+}
+
+.sound-player .slider {
+    height: 0.5em;
+    -slider-height: 0.5em;
+    -slider-background-color: #7a7a7a;
+    -slider-border-color: rgba(0,0,0,0);
+    -slider-active-background-color: #accd8a;
+    -slider-active-border-color: rgba(0,0,0,0);
+    -slider-border-width: 0px;
+    -slider-handle-radius: 0px;
+}
+
+.sound-player StBoxLayout {
+    spacing: 0.5em;
+}
+
+.sound-player > StBoxLayout {
+    padding: 5px;
+}
+
+.sound-player-overlay {
+    width: 300px;
+    height: 70px;
+    padding: 15px;
+    spacing: 0.5em;
+    background: rgba(0,0,0,0.8);
+    color: #FFF;
+}
+
+.sound-player-overlay StBoxLayout {
+    padding-top: 2px;
+}
+
+.sound-player-generic-coverart {
+    background: rgba(0,0,0,0.2);
+}
+/* ===================================================================
+ * Workspace Switcher applet (workspaceSwitcher.js)
+ * ===================================================================*/
+ 
+#workspaceSwitcher {
+    spacing: 200px;
+}
+.panel-top .workspace-switcher,
+.panel-bottom .workspace-switcher {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.panel-left .workspace-switcher
+.panel-right .workspace-switcher {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.workspace-button {
+    width: 20px;
+    height: 6px;   
+    color: rgb(0,177,0);
+    border: 0px;
+    border-color: rgba(0,77,0,1);
+    padding: 3px;
+    padding-right: 1px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.workspace-button:outlined {
+    border-image: url("panel-assets/pressed.svg") 6;
+    padding: 3px;    
+    padding-right: 1px;
+    background: rgba(0,200,0,1);
+    color: #fff;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.workspace-button:hover {
+    border-image: url("panel-assets/hover-1.svg") 6; 
+    color: rgb(70,70,70);
+    border-color: rgba(0,200,0,1);
+    padding: 3px;
+    padding-right: 1px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.workspace-button:outlined:hover {
+    border-image: url("panel-assets/pressed.svg") 6;
+    padding: 3px;    
+    padding-right: 1px;
+    background: rgba(0,200,0,1);
+    color: #fff;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+/* Controls the style when using the "Visual representation" option */
+.workspace-graph {
+    padding: 3px 4px 3px 4px;
+    spacing: 4px;
+}
+
+.workspace-graph .workspace {
+    border: 1px solid #111;
+    background-gradient-direction: vertical;
+    background-gradient-start: #00ff00;
+    background-gradient-end: #000000;
+}
+
+.workspace-graph .workspace:active {
+    border: 1px solid #ccc;
+    background-gradient-direction: vertical;
+    background-gradient-start: #000000;
+    background-gradient-end: #00ff00;
+}
+
+.workspace-graph .workspace .windows {
+    -active-window-background: rgba(0, 140, 0, 1.0);
+    -active-window-border: rgba(0, 0, 0, 0.7);
+    -inactive-window-background: rgba(40, 140, 40, 1.0);
+    -inactive-window-border: rgba(0, 0, 0, 0.7);
+}
+
+.workspace-graph .workspace:active .windows {
+    -active-window-background: rgba(0, 205, 0, 1.0);
+    -active-window-border: rgba(0, 0, 0, 0.9);
+    -inactive-window-background: rgba(0, 170, 0, 1.0);
+    -inactive-window-border: rgba(0, 0, 0, 0.7);
+}
+/* ===================================================================
+ * Panel Launchers Applet (panelLaunchers.js)
+ * ===================================================================*/
+
+#panel-launchers-box {
+    padding-left: 0px;
+}
+
+.panel-launcher {
+    margin: 1px;
+    padding: 2px;
+}
+
+.panel-launcher:hover {
+    border-image: url("panel-assets/hover-1.png") 6;
+}
+
+.panel-launcher-add-dialog-content-box {
+    padding: 6px;
+    spacing: 20px;
+}
+
+.panel-launcher-add-dialog-content-box-left {
+    padding: 6px;
+    spacing: 20px;
+}
+
+.panel-launcher-add-dialog-content-box-right {
+    padding: 6px;
+    spacing: 10px;
+}
+
+.panel-launcher-add-dialog-entry {
+    padding: 4px 12px;
+    color: #2b2b2b;
+    border-image: url("misc-assets/entry.png") 6;
+    border-radius: 4px;
+    selected-color: #000000;
+    caret-color: #000000;
+    caret-size: 1px;
+    width: 250px;
+    height: 16px; 
+    transition-duration: 300;
+    selected-color: #fff;
+    selection-background-color: #accd8a;
+}
+
+.panel-launcher-add-dialog-entry:focus,
+.panel-launcher-add-dialog-entry:hover {
+    padding: 4px 12px;
+    color: #000000;
+    border-image: url("misc-assets/entry-focus.png") 6;
+    border-radius: 4px;
+    width: 250px;
+    height: 16px; 
+    selected-color: #fff;
+    caret-color: #000000;
+    caret-size: 1px;
+    selection-background-color: #accd8a;
+    transition-duration: 150;
+}
+/* ===================================================================
+ * Overview corner
+ * ===================================================================*/
+ 
+#overview-corner {
+    background-image: url("control-assets/overview.png");
+}
+
+#overview-corner:hover {    
+    background-image:  url("control-assets/overview-hover.png");
+}
+/* ===================================================================
+ * Applets (applet.js) 
+ * ===================================================================*/
+ 
+.applet-separator {
+    border-image: url("panel-assets/separator.svg") 4 5 0 2 stretch;
+    padding: 5px 4px;
+}
+
+.applet-separator-line {
+} 
+
+.applet-box {
+    font-weight: bold;
+    color: rgb(174,174,174);
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+}
+.applet-box:highlight {
+    background-color: #aa5555;
+}
+
+.applet-box:hover {
+    border-image: url("panel-assets/hover-1.svg") 6;
+}
+.applet-box.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.applet-box.vertical:hover {
+}
+
+.applet-box:active {
+}
+
+.applet-label {
+    font-weight: bold;
+    color: rgba(255,255,255,1);
+}
+
+.applet-label:hover {
+    font-weight: bold;
+}
+
+.applet-icon {
+    icon-size: 22px;
+}
+
+.applet-icon:hover,
+.applet-box:hover > .applet-icon {
+ }
+/* ===================================================================
+ * Workspace OSD
+ * ===================================================================*/
+
+.workspace-osd {
+    border-image: url("background-assets/bg-1.png") 6;
+    padding: 9px 15px;
+    color: rgb(70,70,70);
+    font-weight: bold;
+    font-size: 26pt;    
+}
+
+.expo-workspaces-name-entry {
+    border-image: url("misc-assets/expo-name-entry.png") 6;
+    padding: 8px 12px;
+    border-radius: 2px;
+    height: 15px;
+    color: rgba(255, 255, 255, .7);
+    text-align: center;
+    font-weight: bold;
+    selected-color: #fff;
+    caret-color: #fff;
+    caret-size: 1px;
+    selection-background-color: #accd8a;
+    transition-duration: 150;
+}
+
+.expo-workspaces-name-entry#selected {
+    color: rgba(255, 255, 255, 1);
+    transition-duration: 150;
+}
+
+.expo-workspaces-name-entry#selected:focus {
+    color: rgba(255, 255, 255, 1);
+    transition-duration: 150;
+}
+
+.expo-workspaces-name-entry:focus {
+    color: rgba(255, 255, 255, 1);
+    transition-duration: 150;
+}
+/* ===================================================================
+ * Notification Applet
+ * ===================================================================*/
+
+.notification-applet-padding {
+    padding: .5em 1em;
+}
+
+.notification-applet-container {
+    max-height: 100px;
+}
+
+/* Check Boxes */
+.check-box CinnamonGenericContainer {
+    spacing: .2em;
+    min-height: 18px;
+    padding-top: 2px;
+}
+
+.check-box StBin,
+.check-box:focus StBin {
+    width: 16px;
+    height: 16px;
+    background-image: url("control-assets/checkbox-unchecked.png");
+}
+
+.check-box:checked StBin,
+.check-box:focus:checked StBin {
+    background-image: url("control-assets/checkbox-checked.png");
+}
+
+.check-box StLabel {
+   font-weight: normal;
+}
+
+.radiobutton CinnamonGenericContainer {
+    spacing: .2em;
+    height: 18px;
+    padding-top: 2px;
+}
+
+.radiobutton StBin,
+.radiobutton:focus StBin {
+    width: 16px;
+    height: 16px;
+    background-image: url("control-assets/radio-unselected.png");
+}
+
+.radiobutton:checked StBin,
+.radiobutton:focus:checked StBin {
+    background-image: url("control-assets/radio-selected.png");
+}
+
+.radiobutton StLabel {
+    padding-top: 4px;
+    font-size: 0.9em;
+    box-shadow: none;
+}
+
+.flashspot {
+    background-color: white;
+}
+/* ===================================================================
+ * User Applet
+ * ===================================================================*/
+ 
+ 
+.user-icon {  
+    background-color: rgb(236,236,236);
+    border: 1px solid rgb(192,192,192);
+    border-radius: 4px;
+    padding: 0.2em;
+}
+
+.user-label {
+    color: rgb(70,70,70);
+    font-size: 16px;
+    margin: 6px;
+}
+
+ /* ===================================================================
+  * Desklets (desklet.js) 
+  * ===================================================================*/
+.desklet {        
+      color: #fff;    
+}
+  
+.desklet:highlight, .desklet:highlight-with-borders, .desklet:highlight-with-borders-and-header {
+     background-color: rgba(0,195,0,.4);
+}
+ 
+.desklet-with-borders {
+    border: 2px solid #a5a5a5;
+    background-color: rgba(0,195,0,.4);
+    color: #fff;
+    border-radius: 12px;
+}
+ 
+.desklet-with-borders-and-header {
+    border: 2px solid #a5a5a5;
+    background-color: rgba(0,195,0,.4);
+    color: #fff;
+    border-top: 1px;
+    border-radius-bottomleft: 12px;
+    border-radius-bottomright: 12px;
+ }
+ 
+.desklet-header { 
+    border-radius-topleft: 12px;
+    border-radius-topright: 12px;
+    font-size: 10.5pt;
+    border: 2px solid #a5a5a5;
+    border-bottom: 0px;
+    background-color: rgba(0,195,0,.4);
+    color: #fff;
+    padding: 6px;
+}
+ 
+.desklet-drag-placeholder { 
+    border: 2px solid #6daa00;
+    background-color: rgba(109,170, 0, 0.3);
+}
+
+/* ===================================================================
+ * About Dialog (applet.js and desklet.js)
+ * ===================================================================*/
+
+.about-content {
+    width: 300px;
+    height: 150px;
+    spacing: 8px;
+    padding-bottom: 16px;
+}
+
+.about-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.about-uuid {
+    font-size: .8em;
+}
+
+.about-icon {
+    padding-right: 20px;
+}
+
+.about-scrollBox {
+    border: solid 1px grey;
+    border-radius: 4px;
+}
+
+.about-scrollBox-innerBox {
+    padding: 1.2em;
+    spacing: 1.2em;
+}
+
+.about-description {
+    padding-top: 4px;
+}
+
+.about-version {
+    padding-left: 7px;
+}
+
+/* ===================================================================
+ * OSD Popups
+ * ===================================================================*/
+
+.info-osd {
+       font-size: 18pt;
+    background-color: rgba(0,195,0,.8);
+    padding: 12px;
+    color: rgb(70,70,70);
+    text-align: center;     
+}
+
+.osd-window {
+    background-color: rgba(0,195,0,.8);
+    color: rgb(70,70,70);
+    padding: 20px;
+    spacing: 1em;
+}
+
+.osd-window .level {
+    height: 0.7em;
+    border-radius: 0.3em;
+    background-color: rgba(70,70,70,0.8);
+}
+
+/* ===================================================================
+ * Snap/Tile Chrome
+ * ===================================================================*/
+
+.tile-preview,
+.tile-hud {
+    background-color: rgba(172,205,138,0.4);
+    border: 1px solid rgba(172,205,138,0.8);
+}
+
+.tile-preview.snap,
+.tile-hud.snap {
+    background-color: rgba(172,205,138,0.8);
+}
+
+.tile-hud:top {
+    border-top-width: 0px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.tile-hud:bottom {
+    border-bottom-width: 0px;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.tile-hud:left {
+    border-left-width: 0px;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.tile-hud:right {
+    border-right-width: 0px;
+    border-radius: 8px 0px 0px 8px;
+}
+
+.tile-hud:top-left {
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-radius: 0px 0px 8px 0px;
+}
+
+.tile-hud:top-right {
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-radius: 0px 0px 0px 8px;
+}
+
+.tile-hud:bottom-left {
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-radius: 0px 8px 0px 0px;
+}
+
+.tile-hud:bottom-right {
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-radius: 8px 0px 0px 0px;
+}

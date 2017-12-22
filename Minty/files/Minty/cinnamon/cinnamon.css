@@ -1,6 +1,6 @@
 /* ###################################################################
  * Section common with Gnome Shell
- * ... contains a few cinnamon specific styles (rare occurences) 
+ * ... contains a few cinnamon specific styles (rare occurences)
  * ###################################################################*/
 
 stage {
@@ -65,7 +65,7 @@ StScrollBar StButton#hhandle:hover {
 }
 
 /* ===================================================================
- * Shared button properties 
+ * Shared button properties
  * ===================================================================*/
 
 .notification-button,
@@ -124,7 +124,7 @@ StScrollBar StButton#hhandle:hover {
 }
 
 /* ===================================================================
- * PopupMenu (popupMenu.js) 
+ * PopupMenu (popupMenu.js)
  * ===================================================================*/
 
 .popup-menu-boxpointer {
@@ -139,6 +139,12 @@ StScrollBar StButton#hhandle:hover {
 
 .popup-menu {
 	min-width: 100px;
+}
+
+.menu {
+    border-radius: 3px;
+    background-color: rgba(0,0,0,0.85);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .popup-submenu-menu-item:open {
@@ -283,11 +289,16 @@ StScrollBar StButton#hhandle:hover {
 	font-size: 9pt;
 	font-weight: bold;
 	height: 25px;
+    width: 32px;
 }
 
 #panelLeft,
 #panelCenter {
 	spacing: 5px;
+}
+
+#panel:highlight {
+    background-color: #aa5555;
 }
 
 #panelLeft:dnd {
@@ -316,7 +327,7 @@ StScrollBar StButton#hhandle:hover {
 	padding-left: 4px;
 }
 
-#panelRight:ltr { 
+#panelRight:ltr {
 	padding-left: 0px;
 	spacing: 0px;
 }
@@ -394,7 +405,7 @@ StScrollBar StButton#hhandle:hover {
 	background-gradient-start: rgba(170,240,120,0.72);
 	background-gradient-end: rgba(135,210,69,0.85);
 	box-shadow: inset 0px 1px 3px 0px rgba(255,255,255,0.3);
-	border-radius: 0px;	
+	border-radius: 0px;
 }
 
 .panel-button:active > .system-status-icon,
@@ -414,7 +425,7 @@ StScrollBar StButton#hhandle:hover {
 }
 
 /* ===================================================================
- * Overview 
+ * Overview
  * ===================================================================*/
 
 #overview {
@@ -517,7 +528,7 @@ StScrollBar StButton#hhandle:hover {
 }
 
 /* ===================================================================
- * ViewSelector 
+ * ViewSelector
  * ===================================================================*/
 #viewSelector {
 	spacing: 1em;
@@ -546,7 +557,7 @@ StScrollBar StButton#hhandle:hover {
 }
 
 /* ===================================================================
- * Looking Glass 
+ * Looking Glass
  * ===================================================================*/
 
 #LookingGlassDialog {
@@ -663,7 +674,7 @@ StScrollBar StButton#hhandle:hover {
 }
 
 /* ===================================================================
- * Date applet 
+ * Date applet
  * ===================================================================*/
 
 .calendar {
@@ -1068,6 +1079,16 @@ StScrollBar StButton#hhandle:hover {
 .modal-dialog-button:focus {
 }
 
+.info-osd {
+    background-color: rgba(0,0,0,0.72);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 3px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
 /* ===================================================================
  * Run dialog
  * ===================================================================*/
@@ -1451,7 +1472,7 @@ StScrollBar StButton#hhandle:hover {
 }
 
 /* ###################################################################
- * Cinnamon Specific Section 
+ * Cinnamon Specific Section
  * ###################################################################*/
 
 /* ===================================================================
@@ -1529,11 +1550,11 @@ StScrollBar StButton#hhandle:hover {
 	border-radius: 3px;
 }
 
-.menu-application-button-label:ltr { 
+.menu-application-button-label:ltr {
 	padding-left: 5px;
 }
 
-.menu-application-button-label:rtl { 
+.menu-application-button-label:rtl {
 	padding-right: 5px;
 }
 
@@ -1567,11 +1588,11 @@ StScrollBar StButton#hhandle:hover {
 	transition-duration: 100;
 }
 
-.menu-category-button-label:ltr { 
+.menu-category-button-label:ltr {
 	padding-left: 5px;
 }
 
-.menu-category-button-label:rtl { 
+.menu-category-button-label:rtl {
 	padding-right: 5px;
 }
 
@@ -1649,6 +1670,12 @@ StScrollBar StButton#hhandle:hover {
 	padding: 0px;
 }
 
+.window-list-box.vertical {
+    spacing: 3px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .window-list-item-label {
 	font-weight: bold;
 	width: 15em;
@@ -1660,6 +1687,23 @@ StScrollBar StButton#hhandle:hover {
 	padding-right: 3px;
 	background-color: transparent;
 	transition-duration: 100;
+}
+
+.window-list-box.vertical #appMenuIcon {
+    padding-top: 2px;
+}
+
+.window-list-item-box.left,
+.window-list-item-box.right {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 1px;
+    background-color: transparent;
+    transition-duration: 100;
+}
+
+.window-list-item-box.left StBin {
+    padding-right: 0px;
 }
 
 .window-list-item-box:active,
@@ -1689,16 +1733,20 @@ StScrollBar StButton#hhandle:hover {
  * Sound Applet (status/volume.js)
  * ===================================================================*/
 
-.sound-button-container {
-	padding-right: 3px;
-	padding-left: 3px;
-}
-
-.sound-button {
+.sound-player StButton {
 	width: 21px;
 	height: 12px;
-	border-radius: 3px;
 	padding: 5px;
+}
+
+.sound-player StButton:small {
+    width: 16px;
+    height: 8px;
+    padding: 1px;
+}
+
+.sound-player StButton:small StIcon {
+    icon-size: 1em;
 }
 
 .sound-button:hover {
@@ -1708,60 +1756,43 @@ StScrollBar StButton#hhandle:hover {
 	box-shadow: inset 0px 1px 3px 0px rgba(255,255,255,0.3);
 }
 
-.sound-button StIcon {
+.sound-player StButton StIcon {
 	icon-size: 1.4em;
 }
 
-.sound-track-infos {
-	padding-right: 5px;
-	padding-left: 5px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+.sound-player-overlay {
+    width: 300px;
+    padding: 12px 16px;
+    spacing: 0.5em;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
 }
 
-.sound-track-info {
-	padding-bottom: 4px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-
-.sound-track-info StIcon {
-	icon-size: 1em;
-}
-
-.sound-track-info StLabel {
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-.sound-track-box {
-	padding-left: 15px;
-	padding-right: 15px;
-	max-width: 200px;
-}
-
-.sound-volume-menu-item {
-	padding: .3em 1.75em;
-}
-
-.sound-volume-menu-item StIcon {
-	icon-size: 1.14em;
-	padding-left: 8px;
-	padding-right: 8px;
-}
-
-.sound-playback-control {
-	padding-top: 5px;
-	padding-bottom: 10px;
+.sound-player .slider {
+    height: 0.5em;
+    -slider-height: 0.5em;
+    -slider-background-color: #3c3c3c;
+    -slider-border-color: rgba(0,0,0,0);
+    -slider-active-background-color: rgba(170,240,120,0.72);;
+    -slider-active-border-color: rgba(0,0,0,0);
+    -slider-border-width: 0px;
+    -slider-handle-radius: 0px;
 }
 
 /* ===================================================================
  * Workspace Switcher applet (workspaceSwitcher.js)
  * ===================================================================*/
 
-#workspaceSwitcher {
-	spacing: 0px;
-	padding: 0px;
+.panel-top .workspace-switcher,
+.panel-bottom .workspace-switcher {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.panel-left .workspace-switcher
+.panel-right .workspace-switcher {
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .workspace-button {
@@ -1785,6 +1816,34 @@ StScrollBar StButton#hhandle:hover {
 	background-gradient-start: rgba(170,240,120,0.72);
 	background-gradient-end: rgba(135,210,69,0.85);
 	box-shadow: inset 0px 1px 3px 0px rgba(255,255,255,0.3);
+}
+
+.workspace-graph {
+    padding: 3px;
+    spacing: 3px;
+}
+
+.workspace-graph .workspace {
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.workspace-graph .workspace:active {
+    border: 1px solid rgba(170,240,120,0.6);
+}
+
+.workspace-graph .workspace .windows {
+    -active-window-background: rgba(140, 140, 140, 1.0);
+    -active-window-border: rgba(0, 0, 0, 0.7);
+    -inactive-window-background: rgba(140, 140, 140, 1.0);
+    -inactive-window-border: rgba(0, 0, 0, 0.7);
+}
+
+.workspace-graph .workspace:active .windows {
+    -active-window-background: rgba(255, 255, 255, 0.5);
+    -active-window-border: rgba(0, 0, 0, 0.9);
+    -inactive-window-background: rgba(255, 255, 255, 0.25);
+    -inactive-window-border: rgba(0, 0, 0, 0.7);
 }
 
 /* ===================================================================
@@ -1860,7 +1919,7 @@ StScrollBar StButton#hhandle:hover {
 }
 
 /* ===================================================================
- * Applets (applet.js) 
+ * Applets (applet.js)
  * ===================================================================*/
 
 .applet-box {
@@ -1868,6 +1927,13 @@ StScrollBar StButton#hhandle:hover {
 	padding-right: 5px;
 	min-width: 1em;
 	transition-duration: 100;
+}
+
+.applet-box.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .applet-box:hover {
@@ -1878,8 +1944,8 @@ StScrollBar StButton#hhandle:hover {
 	border-radius: 0px;
 }
 
-.applet-label {	
-	font-weight: bold; 
+.applet-label {
+	font-weight: bold;
 }
 
 .applet-label:hover,
@@ -1893,6 +1959,51 @@ StScrollBar StButton#hhandle:hover {
 .applet-box:hover > .applet-icon {
 }
 
+.applet-box:highlight {
+    background-color: #aa5555;
+}
+
+/* ===================================================================
+ * Desklets (desklet.js)
+ * ===================================================================*/
+.desklet {
+    color: #fff;
+}
+
+.desklet:highlight, .desklet:highlight-with-borders, .desklet:highlight-with-borders-and-header {
+    background-color: #aa5555;
+}
+
+.desklet-with-borders {
+    border: 2px solid rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.72);
+    color: #fff;
+    border-radius: 4px;
+}
+
+.desklet-with-borders-and-header {
+    border: 2px solid rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.72);
+    color: #fff;
+    border-top: 1px;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.desklet-header {
+    border-radius: 4px 4px 0px 0px;
+    font-size: 10.5pt;
+    border: 2px solid rgba(0,0,0,0.9);
+    border-bottom: 0px;
+    background-color: rgba(0,0,0,0.72);
+    color: #fff;
+    padding: 6px;
+}
+
+.desklet-drag-placeholder {
+    background-color: rgba(135,210,69,0.3);
+    border: 2px solid rgba(170,240,120,0.5);
+}
+
 /* ===================================================================
  * Workspace OSD
  * ===================================================================*/
@@ -1901,7 +2012,7 @@ StScrollBar StButton#hhandle:hover {
 	color: #fff;
 	text-shadow: 0 2px 2px rgba(0,0,0,0.85);
 	font-weight: bold;
-	font-size: 48pt;	
+	font-size: 48pt;
 }
 
 .expo-workspaces-name-entry {
@@ -1917,7 +2028,7 @@ StScrollBar StButton#hhandle:hover {
 	caret-size: 1px;
 	width: 250px;
 	height: 15px;
-	text-align: center;	
+	text-align: center;
 }
 
 .expo-workspaces-name-entry#selected {
@@ -2001,4 +2112,75 @@ StScrollBar StButton#hhandle:hover {
    padding-top: 4px;
    font-size: 0.9em;
    box-shadow: none;
+}
+
+.osd-window {
+    background: rgba(0,0,0,0.72);
+    border: 2px solid rgba(0,0,0,0.9);
+    border-radius: 4px;
+    padding: 20px;
+    color: white;
+    spacing: 1em;
+}
+
+.osd-window .level {
+    height: 0.7em;
+    border-radius: 0.3em;
+    background-color: rgba(50, 50, 50, 1.0);
+}
+
+.tile-preview,
+.tile-hud {
+    background-color: rgba(135,210,69,0.3);
+    border: 2px solid rgba(170,240,120,0.5);
+}
+
+.tile-preview.snap,
+.tile-hud.snap {
+    background-color: rgba(170,240,120,0.2);
+    border: 2px solid rgba(135,210,69,0.5);
+}
+
+.tile-hud:top {
+    border-top-width: 0px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.tile-hud:bottom {
+    border-bottom-width: 0px;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.tile-hud:left {
+    border-left-width: 0px;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.tile-hud:right {
+    border-right-width: 0px;
+    border-radius: 8px 0px 0px 8px;
+}
+
+.tile-hud:top-left {
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-radius: 0px 0px 8px 0px;
+}
+
+.tile-hud:top-right {
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-radius: 0px 0px 0px 8px;
+}
+
+.tile-hud:bottom-left {
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-radius: 0px 8px 0px 0px;
+}
+
+.tile-hud:bottom-right {
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-radius: 8px 0px 0px 0px;
 }

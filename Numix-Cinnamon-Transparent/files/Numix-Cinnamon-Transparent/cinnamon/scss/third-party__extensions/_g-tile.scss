@@ -1,0 +1,127 @@
+/* ======================================
+ * ! G-tile
+ * ====================================== */
+
+.grid-panel {
+    border-image: url("img/containers/dark-bg.svg") 7;
+    width: 220px;
+    padding: 4px;
+    spacing: 0;
+}
+
+.grid-title {
+    padding: 4px;
+    font-size: $font-size-base;
+    font-weight: bold;
+    color: $text-primary;
+    text-align: center;
+}
+
+.table {
+    padding: 8px;
+    padding-top: 6px;
+
+    &-element {
+        border-image: url("img/misc/calendar-work-day.svg") 7;
+    }
+
+    &-element:hover,
+    &-element:activate {
+        border-image: url("img/misc/calendar-today.svg") 7;
+    }
+}
+
+
+.top-box {
+    padding: 8px;
+}
+
+.bottom-box {
+    padding: 0 8px;
+    spacing: 0;
+
+    &:last-child {
+    spacing: 0;
+        padding: 8px;
+        padding-top: 2px;
+    }
+}
+
+.settings-label {}
+
+.grid-preview {
+     background-color: rgba(0, 0, 0, 0);
+     border-color: rgba(0, 0, 0, 0);
+
+    &:activate {
+        background-color: rgba($accent-primary, .75);
+        border: 0;
+    }
+}
+
+.close-button {
+    background-image: url("img/controls/close-simple-active.svg");
+
+    &:hover { background-image: url("img/controls/close-simple-hover.svg"); }
+}
+
+/* buttons */
+.settings-button {
+    @include btn-linked-primary;
+
+    @include size(24px);
+    min-width: 48px;
+    border: 0;
+
+    &:hover, &:activate, &:activate:hover {
+        @include size(24px);
+        min-width: 48px;
+        border: 0;
+
+        .animation-icon {
+            background-image: url("img/misc/animation__active.svg");
+        }
+
+        .auto-close-icon {
+            background-image: url("img/controls/close-simple-hover.svg");
+        }
+
+        .action-main-list {
+            background-image: url("img/misc/auto-tile-1__active.svg");
+        }
+
+        .action-two-list {
+            background-image: url("img/misc/auto-tile-2__active.svg");
+        }
+
+    }
+}
+
+/* button-icons */
+.tiling-icon {
+    @include size(16px);
+}
+
+.animation-icon {
+    background-image: url("img/misc/animation.svg");
+    @include size(16px);
+}
+
+.auto-close-icon {
+    background-image: url("img/controls/close-simple-active.svg");
+    @include size(16px);
+}
+
+.action-main-list {
+    background-image: url("img/misc/auto-tile-1.svg");
+    @include size(16px);
+}
+
+.action-two-list {
+    background-image: url("img/misc/auto-tile-2.svg");
+    @include size(16px);
+}
+
+.action-scale {
+    @include size(16px);
+}
