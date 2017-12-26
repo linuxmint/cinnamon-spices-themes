@@ -79,6 +79,9 @@ background-image: url("switch-on.png");
 .popup-menu {
 border-image:url("panel1.png");
 }
+.menu {
+  border-image:url("panel1.png");
+}
 .popup-submenu-menu-item:open {
 background-color: rgba(255, 255, 255, 0.1);
 
@@ -170,6 +173,12 @@ box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.5);
 font-size: 9pt;
 height: 28px;
 }
+
+#panel:highlight {
+    background-color: #aa5555;
+    border-image: none;
+}
+
 #panelLeft, #panelCenter, #panelRight {
 spacing: 1px;
 }
@@ -202,6 +211,13 @@ transition-duration: 150;
 }
 .system-status-icon {
 icon-size: 1.20em;
+}
+.system-status-icon.warning {
+color: #e5e887;
+}
+
+.system-status-icon.error {
+color: #fb5858;
 }
 #panelLeft:dnd {
 background: #000;
@@ -690,6 +706,19 @@ padding: 6px 0px 5px 0px;
 .modal-dialog-button:disabled {
 color: #444;
 }
+/* Info OSD popup */
+.info-osd {
+    border-image:url("panel1.png");
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.5);
+    font-size: 9pt;
+    color: #ffffff;
+    font-size: 14pt;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
 /* ===================================================================
 * Run dialog
 * ===================================================================*/
@@ -1132,6 +1161,13 @@ color: #aaa;
 border: 1px solid transparent;
 min-width: 1em;
 transition-duration: 150;
+spacing: 3px;
+}
+.applet-box.vertical {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 .applet-box:hover {
 background-color: rgba(255, 255, 255, 0.1);
@@ -1344,4 +1380,21 @@ border-right: 1px;
 
 .radiobutton StLabel {
 padding-top: 4px;
+}
+
+.flashspot {
+   background-color: white;
+}
+/* Media keys OSD popup */
+.osd-window {
+    border-image:url("panel1.png");
+    padding: 20px;
+    color: white;
+    spacing: 1em;
+}
+
+.osd-window .level {
+    height: 0.7em;
+    border-radius: 0.3em;
+    background-color: rgba(190,190,190,0.2);
 }

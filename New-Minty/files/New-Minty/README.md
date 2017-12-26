@@ -1,63 +1,42 @@
-###New-Minty for cinnamon
+# New-Minty with joined menus for Cinnamon
 
----
+> This is a fork of the New-Minty theme with some variations.
 
-####Installation
+
+## Installation
 
 Move the `New-Minty` folder into your `~/.themes` directory.
 
----
 
-####Compatibility
+## Compatibility
 
-The latest version of this theme is on the master branch, and it supports cinnamon version `3.2`.
+The latest version of this theme is on the master branch, and it supports
+cinnamon version `3.2`.
 
 For older versions, check the available [releases](../../releases).
 
----
 
-####Development
+## Font
 
-This theme is written using the css preprocessor [sass](http://sass-lang.com/).
+The default font is `Liberation Sans` with `FreeSans` and `Roboto` fallbacks.
 
-You should use the provided `gulpfile.js` for improved workflow and speed!
+To change the font, edit the `cinnamon.css` file at selector `stage`
+(beginning of file).
 
----
 
-__In order to use gulp:__
+## Menu Icons
 
-* Install [nodejs](https://nodejs.org/) and [npm](https://www.npmjs.com/).
-    * If you want to contribute, make sure you run the nodejs version from the `.nvmrc` file! Use [Nvm!](https://github.com/creationix/nvm)
+Check out the `menu-icons` dir which contains a lot of cool menu icons. :yum:
 
-* Install [gulp](http://gulpjs.com/) globally:
-    ```sh
-    $ npm install --global gulp
-    ```
 
-* In the directory where the `gulpfile.js` file is, run:
-    ```sh
-    $ npm install
-    ```
+## Development
 
-* In the same dir, run the following to use gulp:
-    ```sh
-    $ gulp
-    ```
+The `watch` script will watch the chosen dirs for changes and
+recompile sass and reload the theme when a change occurs.
 
----
+ * **Script dependencies:**
+  * inotifywait
+  * sassc
 
-__Gulp will:__
-
-* __Make a symlink of the__ `New-Minty` __folder inside the__ `~/.themes` __dir.__
-
-    * It will create a `~/.themes` dir if it doesn't exist already.
-
-    * Even if you change the location of your working directory, running `gulp` will update the link.
-
-    * If you already have a folder/file named `New-Minty` in your `.themes` dir, it will be __deleted__.
-
-* __Compile sass__ whenever certain files change.
-    * Open `gulpfile.js` to see what files/folders are being watched.
-
-* __Autoreload the theme.__
-    * Under cinnamon, this will only work for changes in the (s)css files. When modifying images, you will have to restart cinnamon.
+> **NOTE:**  
+> The script creates a link to the `New-Minty` dir in `~/.themes`.
