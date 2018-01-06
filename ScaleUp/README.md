@@ -1,6 +1,6 @@
 # ScaleUp
 
-A monochrome theme scaled up.
+A monochrome theme scaled up. Uses standard Cinnamon scaled desktop font, further scaled up 30 percent
 
 
 ## Compatibility
@@ -11,4 +11,4 @@ cinnamon version `3.6`.
 
 ## Development
 
-Will be subject to further development, to remove fixed font sizes where possible so that scaling from the cinnamon settings/fonts will be used.
+Will be subject to further development.
