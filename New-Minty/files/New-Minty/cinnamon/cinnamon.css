@@ -345,8 +345,8 @@ StScrollBar StButton#hhandle:active {
 
 .popup-menu-arrow {
   icon-size: 13px;
-  width: 10px;
-  height: 10px;
+  width: 13px;
+  height: 13px;
   padding: 0;
 }
 
@@ -1148,9 +1148,9 @@ StScrollBar StButton#hhandle:active {
  * ! About Dialog
  * ====================================== */
 .about-content {
-  width: 550px;
-  height: 250px;
-  spacing: 12px;
+  min-width: 360px;
+  max-width: 550px;
+  spacing: 24px;
 }
 
 .about-content > *:first-child > * {
@@ -1163,6 +1163,14 @@ StScrollBar StButton#hhandle:active {
 
 .about-icon {
   color: #fff;
+}
+
+.about-icon:ltr {
+  padding-right: 24px;
+}
+
+.about-icon:rtl {
+  padding-left: 24px;
 }
 
 .about-title {
@@ -1348,6 +1356,7 @@ StScrollBar StButton#hhandle:active {
 .applet-box {
   padding: 0 6px;
   color: #fff;
+  spacing: 4px;
 }
 
 .applet-box.vertical {
@@ -2214,7 +2223,6 @@ StScrollBar StButton#hhandle:active {
  * ====================================== */
 /* Overrides the '.menu' selector */
 .weather-menu .popup-menu-content {
-  border-image: url("img/containers/popup.svg") 10;
   padding: 0px;
 }
 
