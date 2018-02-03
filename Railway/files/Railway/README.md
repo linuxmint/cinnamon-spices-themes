@@ -11,7 +11,7 @@ Run `make install` or move the `Railway` folder into your `~/.themes` folder.
 Download it from [here][spices] or search for "Railway" in your Cinnamon theme settings.
 
 ### Color customization
-To change the accent color of the theme you need to install it [from source][repo] in order to get the original code and scripts.
+To **change the color** of the theme you need to install it [from source][repo] in order to get the original code and scripts.
 Once you have it run `make color=COLOR`, where `COLOR` is the hexadecimal color without `#`. For example `make color=FF00FF`. Then run `make install`.
 
 ---
