@@ -327,13 +327,13 @@ StScrollBar StButton#hhandle:active {
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 6px;
   margin: 4px;
-  min-width: 100px;
 }
 
 .popup-menu-content {
   color: rgba(0, 0, 0, 0.75);
   border-image: url("img/containers/inner-bg.svg") 3;
   padding: 7px 1px;
+  min-width: 64px;
 }
 
 .popup-menu-icon {
@@ -378,18 +378,9 @@ StScrollBar StButton#hhandle:active {
 
 .popup-menu-arrow {
   icon-size: 13px;
-  width: 10px;
-  height: 10px;
-  padding: 0 4px 2px 0;
+  width: 13px;
+  height: 13px;
   color: rgba(0, 0, 0, 0.75);
-}
-
-.popup-submenu-menu-item:open {
-  background-color: transparent;
-}
-
-.popup-submenu-menu-item:open .popup-menu-arrow {
-  padding: 0 4px 2px 0;
 }
 
 .popup-separator-menu-item {
@@ -1362,6 +1353,7 @@ or .applet-icon,
 .applet-box {
   padding: 0 6px;
   color: white;
+  spacing: 4px;
 }
 
 .applet-box:hover {
@@ -1520,6 +1512,10 @@ or .applet-icon,
 
 .window-list-item-box:active, .window-list-item-box:checked, .window-list-item-box:focus {
   border-image: url("img/panel/window-list__active.svg") 8;
+}
+
+.window-list-item-box .progress {
+  border-image: url("img/panel/window-list__progress.svg") 8;
 }
 
 .window-list-item-demands-attention {
@@ -1876,7 +1872,6 @@ or .applet-icon,
 }
 
 .menu-places-box {
-  margin: auto;
   padding: 8px;
   border: 0 solid rgba(0, 0, 0, 0.75);
 }
