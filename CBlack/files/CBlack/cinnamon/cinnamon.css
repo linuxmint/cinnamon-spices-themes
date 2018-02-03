@@ -4,7 +4,7 @@
  * ###################################################################*/
 
  stage {
-    font-family: noto sans, sans, noto, open;
+    font-family: ubuntu, noto sans, sans, noto, open;
 }
 
 .cinnamon-link {
@@ -279,19 +279,19 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .toggle-switch-us {
-	background-image: url("light-assets/switch/switch-off.svg");
+	background-image: url("common-assets/switch/switch-off.svg");
 }
 
 .toggle-switch-us:checked {
-	background-image: url("light-assets/switch/switch-on.svg");
+	background-image: url("common-assets/switch/switch-on.svg");
 }
 
 .toggle-switch-intl {
-	background-image: url("common-assets/switch/switch-off-selected.svg");
+	background-image: url("common-assets/switch/switch-off.svg");
 }
 
 .toggle-switch-intl:checked {
-	background-image: url("common-assets/switch/switch-on-selected.svg");
+	background-image: url("common-assets/switch/switch-on.svg");
 }
 
 .nm-menu-item-icons {
@@ -540,10 +540,25 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .workspace-close-button {
-    background-image: url("common-assets/misc/close-window.svg");
-    height: 34px;
-    width: 34px;
+    background-image: url("common-assets/misc/close.svg");
+    background-size: 26px;
+    height: 26px;
+    width: 26px;
     -cinnamon-close-overlap: 20px;
+}
+
+.workspace-close-button:hover {
+  background-image: url("common-assets/misc/close-hover.svg");
+  background-size: 26px;
+  height: 26px;
+  width: 26px;
+}
+
+.workspace-close-button:active {
+  background-image: url("common-assets/misc/close-active.svg");
+  background-size: 26px;
+  height: 26px;
+  width: 26px;
 }
 
 .workspace-thumbnail-indicator {
@@ -560,11 +575,28 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .window-close {
-    background-image: url("common-assets/misc/close-window.svg");
-    height: 34px;
-    width: 34px;
-    -cinnamon-close-overlap: 20px;
+    background-image: url("common-assets/misc/close.svg");
+    background-size: 26px;
+    height: 26px;
+    width: 26px;
+    -cinnamon-close-overlap: 10px;
 }
+
+.window-close:hover {
+   background-image: url("common-assets/misc/close-hover.svg");
+   background-size: 26px;
+   height: 26px;
+   width: 26px;
+}
+
+.window-close:active {
+  background-image: url("common-assets/misc/close-active.svg");
+  background-size: 26px;
+  height: 26px;
+  width: 26px;
+}
+
+
 
 .window-close:rtl {
     -st-background-image-shadow: 2px 2px 6px rgba(0, 0, 0, 0);
@@ -1305,7 +1337,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     padding-left: 7px;
     padding-right: 7px;
     padding-bottom: 7px;
-    width: 200px;
 }
 
 .menu-application-button:highlighted {
@@ -1319,9 +1350,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     padding-right: 7px;
     padding-bottom: 5px;
     color: rgb(255, 255, 255);
-    border: 1px rgb(7, 83, 255);
-    border-radius: 20px;
-    /* background-color: rgb(7, 83, 255); */
+    background-color: rgb(7, 83, 255);
   }
 
 .menu-application-button-selected:highlighted {
@@ -1378,7 +1407,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     background-color: #969696;
     border-radius: 8px;
 }
-
 
 /* Name and description of the currently hovered item in the menu
  * This appears on the bottom right hand corner of the menu*/
@@ -1458,20 +1486,20 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .window-list-box {
     spacing: 0px;
-    padding-left: 1px;
+    padding-left: 0px;
     padding-top: 0px;
 }
 
 .window-list-box.vertical {
-    spacing: 1px;
+    spacing: 3px;
     padding-left: 0px;
     padding-right: 0px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
 .window-list-box.vertical #appMenuIcon {
-    padding-top: 3px;
+    padding-top: 0px;
 }
 
 .window-list-item-label {
@@ -1484,21 +1512,32 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     transition-duration: 100;
 }
 
-.window-list-item-box:active, .window-list-item-box:checked, .window-list-item-box:focus {
+ .panel-bottom .window-list-item-box:active, .panel-bottom .window-list-item-box:checked, .panel-bottom .window-list-item-box:focus {
     border-image: url("common-assets/panel/window-list-bottom.svg") 9 9 9 9;
-    /*text-shadow: black 0px 2px 2px*/
 }
 
-.panel-bottom .window-list-item-box:hover {
+.panel-bottom .window-list-item-box:hover{
     border-image: url("common-assets/panel/window-list-hover-bottom.svg") 9 9 9 9;
+}
+
+.panel-top .window-list-item-box:active, .panel-top .window-list-item-box:checked, .panel-top .window-list-item-box:focus {
+   border-image: url("common-assets/panel/window-list-top.svg") 9 9 9 9;
 }
 
 .panel-top .window-list-item-box:hover {
     border-image: url("common-assets/panel/window-list-hover-top.svg") 9 9 9 9;
 }
 
+.panel-left .window-list-item-box:active, .panel-left .window-list-item-box:checked, .panel-left .window-list-item-box:focus {
+   border-image: url("common-assets/panel/window-list-left.svg") 9 9 9 9;
+}
+
 .panel-left .window-list-item-box:hover {
     border-image: url("common-assets/panel/window-list-hover-left.svg") 9 9 9 9;
+}
+
+.panel-right .window-list-item-box:active, .panel-right .window-list-item-box:checked, .panel-right .window-list-item-box:focus {
+   border-image: url("common-assets/panel/window-list-right.svg") 9 9 9 9;
 }
 
 .panel-right .window-list-item-box:hover{
@@ -1511,7 +1550,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .window-list-item-box .progress {
-    background-color: rgb(98, 218, 0);
+    background-color: rgba(7, 83, 255,.3);
 }
 
 /* ===================================================================
@@ -1600,14 +1639,14 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 /* Controls the styling when using the "Simple buttons" option */
 .panel-top .workspace-switcher,
 .panel-bottom .workspace-switcher {
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .panel-left .workspace-switcher
 .panel-right .workspace-switcher {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .workspace-button {
@@ -1615,8 +1654,8 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     height: 10px;
     background-color: rgb(20, 20, 20);
     color: white;
-    border: 1px;
-    border-color: white;
+    /* border: 1px; */
+    /* border-color: white; */
     padding: 2px;
     transition-duration: 300;
 }
@@ -1634,8 +1673,8 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 /* Controls the style when using the "Visual representation" option */
 
 .workspace-graph {
-    padding: 5px;
-    spacing: 5px;
+    padding: 0px;
+    spacing: 0px;
 }
 
 .workspace-graph .workspace {
@@ -2003,19 +2042,19 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
  }
 
 .panel-bottom #panelLeft .applet-box:first-child:hover {
-    border-image: url("common-assets/panel/button-menu-hover-bottom.svg") 9 9 9 9;
+    border-image: url("common-assets/menu/button-menu-hover-bottom.svg") 9 9 9 9;
  }
 
 .panel-top #panelLeft .applet-box:first-child:hover {
-    border-image: url("common-assets/panel/button-menu-hover-top.svg") 9 9 9 9;
+    border-image: url("common-assets/menu/button-menu-hover-top.svg") 9 9 9 9;
  }
 
 .panel-left #panelLeft .applet-box:first-child:hover {
-    border-image: url("common-assets/panel/button-menu-hover-left.svg") 9 9 9 9;
+    border-image: url("common-assets/menu/button-menu-hover-left.svg") 9 9 9 9;
  }
 
 .panel-right #panelLeft .applet-box:first-child:hover {
-    border-image: url("common-assets/panel/button-menu-hover-right.svg") 9 9 9 9;
+    border-image: url("common-assets/menu/button-menu-hover-right.svg") 9 9 9 9;
  }
 
  #panelLeft .applet-box:first-child:active {

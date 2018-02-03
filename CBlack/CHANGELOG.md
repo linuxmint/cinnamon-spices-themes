@@ -1,3 +1,11 @@
+### Update 0.10
+
+* The selection style of the menu was changed.
+* Improved the close button, now it's the same as the Arc theme.
+* The borders of the workspace of the panel will be erased.
+* Improved the selection of a program for different panel positions.
+* The theme is cleaned leaving only the images used.
+
 ### Update 0.8.1
 
 * Removed the white border from the Favorites part of the menu
