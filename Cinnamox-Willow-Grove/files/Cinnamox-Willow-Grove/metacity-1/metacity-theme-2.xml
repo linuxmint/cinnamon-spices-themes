@@ -2,22 +2,23 @@
 <metacity_theme>
 <info>
 	<name>oomox-Cinnamox-Willow-Grove</name>
-	<author>Satyajit Sahoo</author>
+	<author>smurphos</author>
 	<copyright>GPL-3.0+</copyright>
-	<date>11 December 2013</date>
-	<description>Numix Metacity Theme</description>
+	<date>2018</date>
+	<description>Cinnamox Metacity Theme</description>
 </info>
 
 <!-- ::: CONSTANTS ::: -->
-<constant name="C_titlebar" value="#444c3d" />
-<constant name="C_border_focused" value="#e6f2da" />
-<constant name="C_border_unfocused" value="#444c3d" />
+<constant name="C_titlebar_focused" value="#444c3d" />
+<constant name="C_titlebar_unfocused" value="blend/#6f7f5f/#444c3d/0.1" />
+<constant name="C_border_focused" value="#444c3d" />
+<constant name="C_border_unfocused" value="#4f5947" />
 <constant name="C_title_focused" value="#e6f2da" />
-<constant name="C_title_unfocused" value="#8c9683" />
+<constant name="C_title_unfocused" value="#bdc8b2" />
 <constant name="C_icons_focused" value="#e6f2da" />
 <constant name="C_icons_focused_prelight" value="gtk:bg[SELECTED])" />
 <constant name="C_icons_focused_pressed" value="shade/gtk:bg[SELECTED]/0.8" />
-<constant name="C_icons_unfocused" value="#8c9683" />
+<constant name="C_icons_unfocused" value="#bdc8b2" />
 <constant name="C_icons_unfocused_prelight" value="gtk:bg[SELECTED])" />
 <constant name="C_icons_unfocused_pressed" value="shade/gtk:bg[SELECTED]/0.8" />
 
@@ -102,15 +103,15 @@
 
 <!-- ::: WINDOW DECORATIONS ::: -->
 <draw_ops name="entire_background_focused">
-	<rectangle color="C_titlebar" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="C_titlebar_focused" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="entire_background_unfocused">
-	<include name="entire_background_focused" />
+	<rectangle color="C_titlebar_unfocused" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="titlebar_fill_focused">
-	<rectangle color="C_titlebar" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="C_titlebar_focused" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="titlebar_fill_attached_focused">
@@ -118,7 +119,7 @@
 </draw_ops>
 
 <draw_ops name="titlebar_fill_unfocused">
-	<rectangle color="C_titlebar" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="C_titlebar_unfocused" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="titlebar_focused">

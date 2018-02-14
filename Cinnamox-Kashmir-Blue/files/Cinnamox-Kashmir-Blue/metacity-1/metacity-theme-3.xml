@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-	<name>Numix</name>
-	<author>Satyajit Sahoo</author>
+	<name>oomox-Cinnamox-Kashmir-Blue</name>
+	<author>smurphos</author>
 	<copyright>GPL-3.0+</copyright>
-	<date>11 December 2013</date>
-	<description>Numix Mutter Theme</description>
+	<date>2018</date>
+	<description>Cinnamox Metacity Theme</description>
 </info>
 
 <!-- ::: CONSTANTS ::: -->
-<constant name="C_titlebar" value="gtk:custom(wm_bg,#444444)" />
+<constant name="C_titlebar_focused" value="gtk:custom(wm_bg_focused,#444444)" />
+<constant name="C_titlebar_unfocused" value="gtk:custom(wm_bg_unfocused,#444444)" />
 <constant name="C_border_focused" value="gtk:custom(wm_border_focused,#484848)" />
 <constant name="C_border_unfocused" value="gtk:custom(wm_border_unfocused,#393939)" />
 <constant name="C_title_focused" value="gtk:custom(wm_title_focused,#eeeeee)" />
@@ -114,15 +115,15 @@
 
 <!-- ::: WINDOW DECORATIONS ::: -->
 <draw_ops name="entire_background_focused">
-	<rectangle color="C_titlebar" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="C_titlebar_focused" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="entire_background_unfocused">
-	<include name="entire_background_focused" />
+	<rectangle color="C_titlebar_unfocused" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="titlebar_fill_focused">
-	<rectangle color="C_titlebar" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="C_titlebar_focused" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="titlebar_fill_attached_focused">
@@ -130,7 +131,7 @@
 </draw_ops>
 
 <draw_ops name="titlebar_fill_unfocused">
-	<rectangle color="C_titlebar" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="C_titlebar_unfocused" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="titlebar_focused">

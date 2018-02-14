@@ -1,7 +1,7 @@
 # Oomox GTK Theme (Numix Fork)
 
 gtk-color-scheme =
-"base_color:#3b444c\nbg_color:#434e5a\ntooltip_bg_color:#434e5a\nselected_bg_color:#286665\ntext_color:#d8e5f2\nfg_color:#d8e5f2\ntooltip_fg_color:#d8e5f2\nselected_fg_color:#d8e5f2\nmenubar_bg_color:#2b3137\nmenubar_fg_color:#d8e5f2\ntoolbar_bg_color:#434e5a\ntoolbar_fg_color:#d8e5f2\nmenu_bg_color:#2b3137\nmenu_fg_color:#d8e5f2\npanel_bg_color:#434e5a\npanel_fg_color:#d8e5f2\nlink_color:#286665\nbtn_bg_color:#3b444c\nbtn_fg_color:#d8e5f2\ntitlebar_bg_color:#2b3137\ntitlebar_fg_color:#d8e5f2\nprimary_caret_color:#d8e5f2\nsecondary_caret_color:#d8e5f2\n"
+"base_color:#3b444c\nbg_color:#434e5a\ntooltip_bg_color:#434e5a\nselected_bg_color:#3d80cc\ntext_color:#d8e5f2\nfg_color:#d8e5f2\ntooltip_fg_color:#d8e5f2\nselected_fg_color:#000000\nmenubar_bg_color:#1c2126\nmenubar_fg_color:#d8e5f2\ntoolbar_bg_color:#434e5a\ntoolbar_fg_color:#d8e5f2\nmenu_bg_color:#1c2126\nmenu_fg_color:#d8e5f2\npanel_bg_color:#434e5a\npanel_fg_color:#d8e5f2\nlink_color:#3d80cc\nbtn_bg_color:#3b444c\nbtn_fg_color:#d8e5f2\ntitlebar_bg_color:#1c2126\ntitlebar_fg_color:#d8e5f2\nprimary_caret_color:#d8e5f2\nsecondary_caret_color:#d8e5f2\n"
 # Default Style
 
 style "murrine-default" {
@@ -15,6 +15,9 @@ style "murrine-default" {
 	GtkButton::child-displacement-y = 0
 
 	GtkButton::default-border = { 0, 0, 0, 0 }
+    #GtkButton::inner-border        = { 2, 2, 1, 1 }
+    GtkButton::focus-line-width    = 1
+    #GtkButton::focus-padding       = -4
 
 	GtkButtonBox::child-min-height = 26
 
@@ -103,7 +106,7 @@ style "murrine-default" {
 	fg[PRELIGHT] = @fg_color
 	fg[SELECTED] = @selected_fg_color
 	fg[ACTIVE] = @fg_color
-	fg[INSENSITIVE] = mix (0.5, @bg_color, @fg_color)
+	fg[INSENSITIVE] = mix (0.25, @bg_color, @fg_color)
 
 	bg[NORMAL] = @bg_color
 	bg[PRELIGHT] = shade (1.02, @bg_color)
@@ -190,22 +193,24 @@ style "clearlooks-notebook" = "clearlooks-notebook-bg" {
 
 style "murrine-button"  = "murrine-wider" {
 	bg[NORMAL] = @btn_bg_color
-	bg[PRELIGHT] = shade (1.10, @btn_bg_color)
-	bg[SELECTED] = shade (0.7, @btn_bg_color)
-	bg[ACTIVE] = shade (0.95, @btn_bg_color)
+	bg[PRELIGHT] = shade (1.10, @selected_bg_color)
+	bg[SELECTED] = mix (0.5, @selected_bg_color, @bg_color)
+	bg[ACTIVE] = shade (0.95, @selected_bg_color)
 	bg[INSENSITIVE] = shade (0.75, @btn_bg_color)
+    #xthickness = 4
+    #ythickness = 4
 
 	engine "murrine" {
-		border_colors = { mix(0.2, @btn_fg_color, @btn_bg_color), mix(0.2, @btn_fg_color, @btn_bg_color) }
+		border_colors = { mix(0.25, @btn_fg_color, @btn_bg_color), mix(0.25, @btn_fg_color, @btn_bg_color) }
 		roundness = 10
 	}
 }
 
 style "murrine-buttonlabel" {
 	fg[NORMAL] = @btn_fg_color
-	fg[PRELIGHT] = @btn_fg_color
-	fg[SELECTED] = @btn_fg_color
-	fg[ACTIVE] = @btn_fg_color
+	fg[PRELIGHT] = @selected_fg_color
+	fg[SELECTED] = @selected_fg_color
+	fg[ACTIVE] = @selected_fg_color
 	fg[INSENSITIVE] = @btn_fg_color
 
 	engine "murrine" {
@@ -235,28 +240,31 @@ style "murrine-overlay-scrollbar" {
 }
 
 style "murrine-scale" = "murrine-thin" {
-	bg[NORMAL] = @bg_color
-	bg[ACTIVE] = @bg_color
+	bg[NORMAL] = @btn_bg_color
+	bg[ACTIVE] = mix(0.2, @fg_color, @bg_color)
 	bg[SELECTED] = @selected_bg_color
-	bg[INSENSITIVE] = shade (0.95, @bg_color)
+	bg[INSENSITIVE] = mix(0.95, @bg_color, @btn_bg_color)
 
 	engine "murrine" {
-		roundness = 8
+        roundness = 8
+		#roundness = 10
 		gradient_shades = { 1.08, 1.08, 1.08, 1.08 }
-		border_shades = { 1.0, 1.0 }
-		trough_shades = { 1.08, 1.08 }
-		trough_border_shades = { 0.8, 0.8 }
+		#border_shades = { 0.5, 0.5 }
+		border_colors = { mix(0.25, @btn_fg_color, @btn_bg_color), mix(0.25, @btn_fg_color, @btn_bg_color) }
+        #trough_shades = { 1.08, 1.08 }
+        trough_border_shades = { 0.8, 0.8 }
 	}
 }
 
 style "murrine-progressbar" = "murrine-thin" {
 	bg[NORMAL] = @bg_color
-	bg[ACTIVE] = shade (1.08, @bg_color)
+	bg[ACTIVE] = mix(0.08, @bg_color, @base_color)
 
 	fg[PRELIGHT] = @selected_fg_color
 
 	engine "murrine" {
-		roundness = 2
+		#roundness = 2
+		roundness = 10
 		border_shades = { 1.2, 1.2 }
 		trough_border_shades = { 0.8, 0.8 }
 	}
@@ -327,12 +335,13 @@ style "clearlooks-radiocheck" = "murrine-default" {
 }
 
 style "clearlooks-base-radiocheck" = "clearlooks-radiocheck" {
-	bg[PRELIGHT] = @base_color
+	bg[PRELIGHT] = @bg_color
 }
 
 style "murrine-entry" = "murrine-wider" {
 	engine "murrine" {
-		border_shades = { 1.15, 1.15 }
+		#border_shades = { 1.15, 1.15 }
+        border_colors = { mix(0.22, @text_color, @base_color), mix(0.22, @text_color, @base_color) }
 		roundness = 10
 	}
 }
