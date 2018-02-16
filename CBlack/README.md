@@ -1,7 +1,3 @@
-My first issue that I share, hope you like.
+Theme based on the original cinnamon with Arc
 
-Installation
-- Download and unzip .themes
-
-* For GTK2 theme or GTK3 I recommend Arc (part of my theme is based between Arc and official theme of Cinnamon)
-* To recommend ARC icons with Numix-Circle.
+* Recommendation to use Arc theme with Arc icons with Moka.
