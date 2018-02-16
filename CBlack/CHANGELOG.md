@@ -1,3 +1,9 @@
+### Update 1.0
+
+* Limpio el tema, eliminando imagenes que no se utilizaran.
+* Se quita el color rojo de algunas partes del tema.
+* Integrado con Cinnamon 3.6
+
 ### Update 0.8.1
 
 * Removed the white border from the Favorites part of the menu
