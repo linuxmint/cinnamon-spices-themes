@@ -24,6 +24,8 @@ A spice can contain many files, but it should have the following file structure:
 
 - UUID/
 - UUID/info.json
+# CSS changes introduced in Cinnamon 3.4
+
 - UUID/icon.png
 - UUID/screenshot.png
 - UUID/README.md
@@ -121,6 +123,10 @@ in your home directory. If your screen reverts to the default Cinnamon theme the
 
 Please check that your theme works correctly with a panel on any of the four sides of the screen.  This is the most common fault in submitted themes. If you have CSS that needs to work differently on different sides of the screen then .panel-top .panel-bottom .panel-left and .panel-right can be combined with other CSS - there are some examples in the default theme.
 
+# Scaling
+
+You may wish to size elements of the theme in ems so that they can scale if the default font size is increased and/or the font-scaling setting is used.
+
 # CSS changes introduced in Cinnamon 3.4
 
 in a dark panel theme:
@@ -162,6 +168,10 @@ There is now a basic facility to theme the systray. It's marked as 'important' s
 # CSS changes introduced in Cinnamon 3.6
 
 The 'progress' class has been added to window-list-item-box so that progress on long-running tasks can be shown
+
+# CSS changes introduced in Cinnamon 3.8
+
+The 'window-list-preview' has been introduced so that the preview window shown by hovering over the window list can be separately themed.  Previously the theming for the alt-tab switcher was used for both.  No alterations are needed to the alt-tab switcher theming.  If no specific theming is added for the window-list-preview then the theming from the default theme will be used.
 
 # Git basics
 
