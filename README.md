@@ -24,8 +24,6 @@ A spice can contain many files, but it should have the following file structure:
 
 - UUID/
 - UUID/info.json
-# CSS changes introduced in Cinnamon 3.4
-
 - UUID/icon.png
 - UUID/screenshot.png
 - UUID/README.md
