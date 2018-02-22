@@ -1,7 +1,7 @@
 # [Railway Cinnamon theme][repo]
 > For those who like _Doors 8_ style, in spite of everything
 
-[![](screenshot.png)][repo]
+[![](screenshots/screenshot.png)][repo]
 
 ## Installation
 #### From source
