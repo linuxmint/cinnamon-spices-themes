@@ -98,6 +98,8 @@ font-size: 8pt;
     background-gradient-end: #e8e8e8;
     background-gradient-direction: vertical;
     border-radius: 6px;
+    border: 1px rgba(0,0,255,0.2) solid;
+    margin: 2px;
 }
 .menu {
     color: #333;
@@ -106,6 +108,8 @@ font-size: 8pt;
     background-gradient-direction: vertical;
     border-radius: 6px;
     box-shadow: 0 0 12px 1px rgba(0,0,0,0.6);
+    border: 1px rgba(0,0,255,0.2) solid;
+    margin: 2px;
 }
 .panel-menu {
 }
@@ -298,6 +302,12 @@ font-size: 10pt;
 }
 .system-status-icon {
 icon-size: 16px;
+}
+.system-status-icon.warning {
+    color: #e1da1a;
+}
+.system-status-icon.error {
+    color: #d54444;
 }
 /* ===================================================================
 * Overview
@@ -1035,6 +1045,18 @@ border-width: 0px;
     text-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
     border-image: url("panel-menu-hover.png") 12 12 0 0;
 }
+.window-list-preview {
+    border-bottom: 1px solid #555;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(250,250,250,.98);
+    background-gradient-end: rgba(200,200,200,.93);
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
+    border-radius: 6px 6px 6px 6px;
+    border: 1px rgba(0,0,255,0.2) solid;
+    color: #000;
+    text-shadow: white 0px 0px 2px;
+    padding: 10px 15px 15px 15px;
+}
 /* ===================================================================
 * Sound Applet (status/volume.js)
 * ===================================================================*/
@@ -1228,6 +1250,7 @@ padding-left: 0px;
     transition-duration: 150;
     padding-left: 5px;
     padding-right: 5px;
+    spacing: 3px;
 }
 .applet-box:highlight {
     background-color: #aa5555;
