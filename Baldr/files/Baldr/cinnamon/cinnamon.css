@@ -931,6 +931,11 @@ height: 23px;
 .window-list-box {
 spacing: 0px;
 }
+.window-list-box.vertical {
+    spacing: 3px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
 .window-list-item-label {
 width: 15em;
 min-width: 5px;
@@ -944,6 +949,14 @@ padding-left: 5px;
 padding-right: 5px;
 transition-duration: 150;
 }
+.window-list-item-box.left,
+.window-list-item-box.right {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 1px;
+    transition-duration: 150;
+}
+
 .window-list-item-box:active,
 .window-list-item-box:checked,
 .window-list-item-box:focus  {
@@ -951,6 +964,17 @@ border-image: url("active-windowlist.svg") 4 4 4 4 stretch;
 }
 .window-list-item-demands-attention {
 border-image: url("active-windowlist.svg") 4 4 4 4 stretch;
+}
+.window-list-preview {
+    border-bottom: 1px solid #555;
+    background-gradient-direction: vertical;
+    background-gradient-start: #f7f7f7;
+    background-gradient-end: #ebebeb;
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid rgba(0,0,0,0.2);
+    color: #000;
+    text-shadow: white 0px 0px 2px;
+    padding: 10px 15px 15px 15px;
 }
 /* ===================================================================
 * Sound Applet (status/volume.js)
@@ -1072,6 +1096,18 @@ font-weight: bold;
 color: #666;
 text-shadow: #eee 0px 1px 1px;
 min-width: 1em;
+}
+.applet-box.vertical {
+spacing: 3px;
+transition-duration: 150;
+font-weight: bold;
+color: #666;
+text-shadow: #eee 0px 1px 1px;
+min-width: 1em;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 .applet-box:hover {
 border-image: url("active-windowlist.svg") 4 4 4 4 stretch;
