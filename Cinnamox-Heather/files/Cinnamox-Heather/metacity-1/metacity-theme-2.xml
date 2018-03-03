@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-	<name>oomox-Cinnamox-Heather</name>
-	<author>smurphos</author>
+	<name>Cinnamox-Heather</name>
+	<author>Satyajit Sahoo and tweaked by smurphos</author>
 	<copyright>GPL-3.0+</copyright>
 	<date>2018</date>
 	<description>Cinnamox Metacity Theme</description>
@@ -10,15 +10,15 @@
 
 <!-- ::: CONSTANTS ::: -->
 <constant name="C_titlebar_focused" value="#72a0bf" />
-<constant name="C_titlebar_unfocused" value="blend/#b7c4cc/#72a0bf/0.1" />
+<constant name="C_titlebar_unfocused" value="#b7c4cc" />
 <constant name="C_border_focused" value="#72a0bf" />
 <constant name="C_border_unfocused" value="#99b0bf" />
 <constant name="C_title_focused" value="#0c1419" />
-<constant name="C_title_unfocused" value="#253742" />
+<constant name="C_title_unfocused" value="blend/#0c1419/#b7c4cc/0.4" />
 <constant name="C_icons_focused" value="#0c1419" />
 <constant name="C_icons_focused_prelight" value="gtk:bg[SELECTED])" />
 <constant name="C_icons_focused_pressed" value="shade/gtk:bg[SELECTED]/0.8" />
-<constant name="C_icons_unfocused" value="#253742" />
+<constant name="C_icons_unfocused" value="blend/#0c1419/#b7c4cc/0.4" />
 <constant name="C_icons_unfocused_prelight" value="gtk:bg[SELECTED])" />
 <constant name="C_icons_unfocused_pressed" value="shade/gtk:bg[SELECTED]/0.8" />
 
@@ -111,27 +111,43 @@
 </draw_ops>
 
 <draw_ops name="titlebar_fill_focused">
-	<rectangle color="C_titlebar_focused" x="0" y="0" width="width" height="height" filled="true" />
-</draw_ops>
-
-<draw_ops name="titlebar_fill_attached_focused">
 	<include name="entire_background_focused" />
 </draw_ops>
 
 <draw_ops name="titlebar_fill_unfocused">
-	<rectangle color="C_titlebar_unfocused" x="0" y="0" width="width" height="height" filled="true" />
+	<include name="entire_background_unfocused" />
+</draw_ops>
+
+<draw_ops name="titlebar_fill_attached_focused">
+	<include name="titlebar_fill_focused" />
+</draw_ops>
+
+<draw_ops name="titlebar_fill_attached_unfocused">
+	<include name="titlebar_fill_unfocused" />
 </draw_ops>
 
 <draw_ops name="titlebar_focused">
 	<include name="titlebar_fill_focused" />
 </draw_ops>
 
+<draw_ops name="titlebar_unfocused">
+	<include name="titlebar_fill_unfocused" />
+</draw_ops>
+
 <draw_ops name="titlebar_attached_focused"> <!-- titlebar for attached and modal dialogs -->
 	<include name="titlebar_fill_attached_focused" />
 </draw_ops>
 
+<draw_ops name="titlebar_attached_unfocused"> <!-- titlebar for attached and modal dialogs -->
+	<include name="titlebar_fill_attached_unfocused" />
+</draw_ops>
+
 <draw_ops name="rounded_titlebar_focused">
 	<include name="titlebar_fill_focused" />
+</draw_ops>
+
+<draw_ops name="rounded_titlebar_unfocused">
+	<include name="titlebar_fill_unfocused" />
 </draw_ops>
 
 <draw_ops name="border_focused">

@@ -1,3 +1,7 @@
+/*$dark_shadow: #000;*/
+/*$light_shadow: #fff;*/
+/*$dark_shadow: #000;*/
+/*$light_shadow: #fff;*/
 /* dark color scheme */
 @define-color dark_bg_color #444c3d;
 @define-color dark_fg_color #e6f2da;
@@ -27,9 +31,10 @@
 @define-color warning_color #ff0000;
 @define-color error_color #ff0000;
 /* widget colors */
-@define-color titlebar_bg_color @dark_bg_color;
-@define-color titlebar_bg_uf_color mix(#6f7f5f,#444c3d,0.6);
-@define-color titlebar_fg_color @dark_fg_color;
+@define-color titlebar_bg_focused @dark_bg_color;
+@define-color titlebar_bg_unfocused @theme_bg_color;
+@define-color titlebar_fg_focused @dark_fg_color;
+@define-color titlebar_fg_unfocused mix(#e6f2da,#6f7f5f,0.4);
 @define-color menubar_bg_color @dark_bg_color;
 @define-color menubar_fg_color @dark_fg_color;
 @define-color toolbar_bg_color @theme_bg_color;
@@ -47,15 +52,15 @@
 @define-color lightdm_fg_color #e6f2da;
 /* window manager colors */
 @define-color wm_bg_focused #444c3d;
-@define-color wm_bg_unfocused mix(#6f7f5f,#444c3d,0.1);
+@define-color wm_bg_unfocused #6f7f5f;
 @define-color wm_border_focused #444c3d;
 @define-color wm_border_unfocused #4f5947;
-@define-color wm_title_focused mix(#e6f2da,#444c3d,0.1);
-@define-color wm_title_unfocused mix(#e6f2da,#444c3d,0.4);
-@define-color wm_icons_focused mix(#e6f2da,#444c3d,0.1);
+@define-color wm_title_focused #e6f2da;
+@define-color wm_title_unfocused mix(#e6f2da,#6f7f5f,0.4);
+@define-color wm_icons_focused #e6f2da;
 @define-color wm_icons_focused_prelight #6ccc3d;
 @define-color wm_icons_focused_pressed #55a82c;
-@define-color wm_icons_unfocused mix(#e6f2da,#444c3d,0.4);
+@define-color wm_icons_unfocused mix(#e6f2da,#6f7f5f,0.4);
 @define-color wm_icons_unfocused_prelight #6ccc3d;
 @define-color wm_icons_unfocused_pressed #55a82c;
 /**************
@@ -136,7 +141,7 @@ GtkLabel:insensitive {
 **********/
 .button, .button.default, .toolbar .button, .header-bar .button, .suggested-action.button, .selection-mode.header-bar .button.suggested-action, .selection-mode.toolbar .button.suggested-action, .destructive-action.button, .selection-mode.header-bar .button, .selection-mode.toolbar .button, .info .button, .warning .button, .question .button, .error .button, GtkPopover .button, GtkModelButton.button, GtkModelButton.button:backdrop, .app-notification .button, .app-notification.frame .button, .osd.button, .osd .button,
 #XfceNotifyWindow.button,
-#XfceNotifyWindow .button, NemoPathbarButton {
+#XfceNotifyWindow .button, column-header, NemoPathbarButton {
   padding: 4px 6px;
   border-width: 1px;
   border-style: solid;
@@ -147,11 +152,11 @@ GtkLabel:insensitive {
   -GtkWidget-focus-line-width: 0; }
   .button:focus, .selection-mode.header-bar .button:focus, .selection-mode.toolbar .button:focus, GtkModelButton.button:focus:backdrop, .app-notification.frame .button:focus,
   #XfceNotifyWindow.button:focus,
-  #XfceNotifyWindow .button:focus, NemoPathbarButton:focus, .button:hover, .selection-mode.header-bar .button:hover, .selection-mode.toolbar .button:hover, GtkModelButton.button:hover:backdrop, .app-notification.frame .button:hover,
+  #XfceNotifyWindow .button:focus, column-header:focus, NemoPathbarButton:focus, .button:hover, .selection-mode.header-bar .button:hover, .selection-mode.toolbar .button:hover, GtkModelButton.button:hover:backdrop, .app-notification.frame .button:hover,
   #XfceNotifyWindow.button:hover,
-  #XfceNotifyWindow .button:hover, NemoPathbarButton:hover, .button:active, .selection-mode.header-bar .button:active, .selection-mode.toolbar .button:active, GtkModelButton.button:active:backdrop, .app-notification.frame .button:active,
+  #XfceNotifyWindow .button:hover, column-header:hover, NemoPathbarButton:hover, .button:active, .selection-mode.header-bar .button:active, .selection-mode.toolbar .button:active, GtkModelButton.button:active:backdrop, .app-notification.frame .button:active,
   #XfceNotifyWindow.button:active,
-  #XfceNotifyWindow .button:active, NemoPathbarButton:active {
+  #XfceNotifyWindow .button:active, column-header:active, NemoPathbarButton:active {
     transition: none; }
 
 .linked > GtkComboBox > .button:dir(ltr) {
@@ -818,11 +823,11 @@ GtkComboBox .separator {
   background-color: #444c3d;
   background-image: linear-gradient(to bottom, #555f4c, #33392e);
   border-radius: 10px 10px 0 0;
-  color: mix(#e6f2da,#444c3d,0.1); }
+  color: #e6f2da; }
   .titlebar:backdrop {
-    background-color: mix(#6f7f5f,#444c3d,0.6);
-    background-image: linear-gradient(to bottom, shade(mix(#6f7f5f,#444c3d,0.6),1.25), shade(mix(#6f7f5f,#444c3d,0.6),0.75));
-    color: mix(#e6f2da,#444c3d,0.6);
+    background-color: #6f7f5f;
+    background-image: linear-gradient(to bottom, #8b9c7a, #535f47);
+    color: mix(#e6f2da,#6f7f5f,0.4);
     text-shadow: none; }
   .titlebar.default-decoration {
     border: 0;
@@ -836,7 +841,7 @@ GtkComboBox .separator {
     border: 0;
     background-image: none;
     background-color: transparent;
-    color: mix(#e6f2da,#444c3d,0.1);
+    color: #e6f2da;
     box-shadow: none; }
     .titlebar .titlebutton:hover, .titlebar .titlebutton:hover:focus {
       background-image: none;
@@ -850,7 +855,7 @@ GtkComboBox .separator {
       box-shadow: none; }
     .titlebar .titlebutton:backdrop {
       background: none;
-      color: mix(#e6f2da,#444c3d,0.6);
+      color: mix(#e6f2da,#6f7f5f,0.4);
       icon-shadow: none; }
 
 /**************
@@ -1843,7 +1848,7 @@ GtkTreeMenu .menuitem {
   margin: 4px;
   padding: 4px;
   border: 0;
-  border-radius: 0;
+  border-radius: 10px;
   background-color: transparent;
   background-image: none;
   -GtkMenuItem-arrow-scaling: .5; }
@@ -3611,16 +3616,12 @@ column-header .button, column-header .button:active {
   border-radius: 0; }
 
 column-header .button, column-header .button:active, column-header .button:focus, column-header .button:active:focus {
-  border-color: #475040;
-  border-bottom-color: #3f4739;
-  background-color: #4d5645;
-  background-image: none; }
+  border-color: #647256;
+  border-bottom-color: #59664c; }
 
 column-header .button:hover, column-header .button:active:hover, column-header .button:hover:focus, column-header .button:active:hover:focus {
-  border-color: #475040;
-  border-bottom-color: #3f4739;
-  background-color: #4e5846;
-  background-image: none; }
+  border-color: #647256;
+  border-bottom-color: #59664c; }
 
 column-header .button:last-child .button {
   border-width: 0 0 1px; }
@@ -4125,17 +4126,17 @@ UnityDecoration {
     border-radius: 2px 2px 0 0;
     padding: 1px 8px 0 8px;
     background-color: #444c3d;
-    color: mix(#e6f2da,#444c3d,0.1);
+    color: #e6f2da;
     text-shadow: none; }
     UnityDecoration.top:backdrop {
-      border: 1px solid mix(#30352b,#e6f2da,0.12);
+      border: 1px solid mix(#4e5943,mix(#e6f2da,#6f7f5f,0.4),0.12);
       border-bottom: 0;
-      background-color: #444c3d;
-      color: mix(#e6f2da,#444c3d,0.4); }
+      background-color: #6f7f5f;
+      color: mix(#e6f2da,#6f7f5f,0.4); }
   UnityDecoration.left, UnityDecoration.right, UnityDecoration.bottom {
     background-color: mix(#30352b,#e6f2da,0.21); }
     UnityDecoration.left:backdrop, UnityDecoration.right:backdrop, UnityDecoration.bottom:backdrop {
-      background-color: mix(#30352b,#e6f2da,0.12); }
+      background-color: mix(#4e5943,mix(#e6f2da,#6f7f5f,0.4),0.12); }
 
 UnityPanelWidget, .unity-panel {
   border: 0; }
