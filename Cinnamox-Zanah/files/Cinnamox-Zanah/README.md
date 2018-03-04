@@ -1,10 +1,10 @@
 ## Cinnamox-Zanah
 
-Cinnamox-Zanah features a pale blue colour scheme and dark text. Cinnamon, Metacity, GTK2, GTK3.18 and GTK3.22 themes are included along with a script to adjust the transparency of the Cinnamon theme.
+Cinnamox-Zanah features a pale blue colour scheme and dark text. Cinnamon, Metacity, GTK2, GTK3.18 and GTK3.20+ themes are included along with a script to adjust the transparency of the Cinnamon theme.
 
 ## Credits
 
-Cinnamon theme crafted by smurphos. Build tools are at [cinnamox_theme_master](https://github.com/smurphos/cinnamox_theme_master).
+Cinnamon theme crafted by smurphos. Build tools are at [Cinnamox_theme_master](https://github.com/smurphos/cinnamox_theme_master).
 
 GTK2, GTK3 and Metacity1 themes built with [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) a fork of [Oomox-gtk-theme](https://github.com/actionless/oomox-gtk-theme).
 
@@ -14,7 +14,9 @@ Icons in screenshots are from [Vibrancy Colours](http://www.ravefinity.com/p/vib
 
 ## Installation
 
-Install via Cinnamon's Themes module in Cinnamon settings or download from Cinnamon Spices and unzip into your `~/.themes` directory.
+Install via Cinnamon's Themes module in Cinnamon settings or download from [Cinnamon Spices](https://cinnamon-spices.linuxmint.com/themes) and unzip into your `~/.themes` directory.
+
+The themes are also available via [openDesktop.org](https://www.opendesktop.org/member/491875/) or [my Github repository](https://github.com/smurphos/cinnamox_themes/releases).
 
 Select the Cinnamox theme as your Desktop, Controls and Window Borders in the Cinnamon Themes module.
 
@@ -24,6 +26,8 @@ To allow the GTK2, GTK3 and Metacity1 themes to apply to GUI apps running as roo
 
 ## Tweaking
 
+### Cinnamon Theme Transparency
+
 The theme includes an interactive bash script that allows end users to adjust the transparency of the Cinnamon Theme. The default is no transparency.
 
 To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
@@ -31,6 +35,24 @@ To access the tool open a terminal window (Ctrl-Alt-T) and use the following com
 `chmod +x ~/.themes/Cinnamox-Zanah/cinnamon/cinnamox_transparency.sh && ~/.themes/Cinnamox-Zanah/cinnamon/cinnamox_transparency.sh`
 
 If you are not happy with the end result simply run `~/.themes/Cinnamox-Zanah/cinnamon/cinnamox_transparency.sh` again to chose another option including the default.
+
+### GTK2 HIDPI support
+
+If you need HIDPI Support in GTK2 the theme includes a HIDPI version of the gtkrc theme file and a helper script to toggle between the regular and HIDPI version.
+
+To run the script open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
+
+`chmod +x ~/.themes/Cinnamox-Zanah/gtk-2.0/cinnamox_toggle_GTK2_HIDPI.sh && ~/.themes/Cinnamox-Zanah/gtk-2.0/cinnamox_toggle_GTK2_HIDPI.sh`
+
+After the first run you can toggle between the two using `~/.themes/Cinnamox-Zanah/gtk-2.0/cinnamox_toggle_GTK2_HIDPI.sh`
+
+### qt5ct support
+
+If you need support for qt5ct configuration the theme includes a premade qt5ct.conf file and a helper script to install it to the correct location `~/.config/qt5ct/colors`
+
+To run the script open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
+
+`chmod +x ~/.themes/Cinnamox-Zanah/qt5ct/cinnamox_enable_qt5ct.sh && ~/.themes/Cinnamox-Zanah/qt5ct/cinnamox_enable_qt5ct.sh`
 
 ## Compatibility
 

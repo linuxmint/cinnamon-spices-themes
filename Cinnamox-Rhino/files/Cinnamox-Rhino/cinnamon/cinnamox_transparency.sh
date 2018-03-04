@@ -34,7 +34,7 @@ elif grep -q "Transparency: High" cinnamon.css && grep -q "$HIGHTRANSLIGHTBG" ci
 	CURRENT="Transparency: High";LIGHTBGC=$HIGHTRANSLIGHTBG; DARKBGC=$HIGHTRANSDARKBG;
 	VARIANT=("Transparency: None" "Transparency: Low" "Transparency: Medium" "Quit");
 else
-	echo "Cannot confirm the current transparency of Cinnamox-Rhino. Something is wrong.";
+	echo "Cannot confirm the current transparency of $THEMENAME. Something is wrong.";
 	echo "";
 	read -p "Press enter to exit script.";
 	exit 1;
