@@ -56,14 +56,21 @@ To run the script open a terminal window (Ctrl-Alt-T) and use the following comm
 
 ## Compatibility
 
-This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x` & `3.6.x`
+This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x` & `3.8.x`
 
 The GTK3 themes require GTK `3.18.x`, `3.20.x` or `3.22.x`
 
-The GTK2 theme requires the package `gtk2-engines-murrine` to be installed. This is a default package in Linux Mint.
+The GTK2 theme requires the package `gtk2-engines-murrine` or `gtk-engine-murrine` to be installed. The former is a default package in Linux Mint.
 
-Built & tested on Linux Mint `18.2` & `18.3` 64bit with Cinnamon `3.4.x`, `3.6.x` & Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x`
+Tested on Linux Mint `18.2` & `18.3` 64bit with Cinnamon `3.4.x`, `3.6.x`, Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x` and Ubuntu `17.10` with Cinnamon nightly builds.
 
 ## Changelog & Previous Releases
 
 See [my Github repository](https://github.com/smurphos/cinnamox_themes/releases)
+
+## Additional Screenshots
+
+![Cinnamox-Heather](https://github.com/smurphos/cinnamox_themes/raw/master/Screenshots/Heather-menu.png "Cinnamox-Heather")
+![Cinnamox-Heather](https://github.com/smurphos/cinnamox_themes/raw/master/Screenshots/Heather-calendar.png "Cinnamox-Heather")
+![Cinnamox-Heather](https://github.com/smurphos/cinnamox_themes/raw/master/Screenshots/Heather-GTK.png  "Cinnamox-Heather")
+![Cinnamox-Heather](https://github.com/smurphos/cinnamox_themes/raw/master/Screenshots/Heather-trans.png  "Cinnamox-Heather")
