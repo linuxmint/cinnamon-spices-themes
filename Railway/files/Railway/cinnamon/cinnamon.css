@@ -972,7 +972,7 @@ StScrollBar StButton#hhandle:active {
   border-image: url("img/containers/tile-bg.svg") 10;
   color: rgba(255, 255, 255, 0.65);
   padding: 1px;
-  font-size: 110%;
+  font-size: 100%;
 }
 
 #uiGroup > #altTabPopup .switcher-list .item-box {
@@ -1064,7 +1064,6 @@ StScrollBar StButton#hhandle:active {
   color: rgba(0, 0, 0, 0.75);
   font-weight: normal;
   padding: .8em 2em;
-  font-size: 100%;
 }
 
 .modal-dialog-button StIcon {
@@ -1152,8 +1151,7 @@ StScrollBar StButton#hhandle:active {
 
 .run-dialog-completion-box {
   border-image: url("img/containers/inner-bg.svg") 3;
-  font-size: 92%;
-  padding: 1em .7em 0;
+  padding: 7px;
   color: rgba(0, 0, 0, 0.75);
 }
 
@@ -1187,18 +1185,16 @@ StScrollBar StButton#hhandle:active {
 }
 
 .about-uuid {
-  font-size: 92%;
   color: rgba(0, 0, 0, 0.5);
   padding-left: 16px;
 }
 
 .about-description {
-  padding-left: 16px;
+  /*!*/
 }
 
 .about-version {
   padding: 8px;
-  font-size: 92%;
   font-weight: bold;
   color: #0e7eff;
 }
@@ -1399,7 +1395,6 @@ or .applet-icon,
 
 .datemenu-date-label {
   padding: .7em 1.3em .4em;
-  font-size: 92%;
   text-align: center;
   color: #0e7eff;
 }
@@ -1412,7 +1407,6 @@ or .applet-icon,
 
 .calendar-month-label {
   padding-top: 2px;
-  font-size: 92%;
   color: rgba(0, 0, 0, 0.75);
   padding: .5em;
 }
@@ -1447,7 +1441,6 @@ or .applet-icon,
 }
 
 .calendar-day-base {
-  font-size: 92%;
   padding: 1px 0 0 1px;
   width: 2.4em;
   height: 1.6em;
@@ -1475,7 +1468,6 @@ or .applet-icon,
 
 .calendar-week-number {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 92%;
 }
 
 /* ======================================
@@ -1530,6 +1522,7 @@ or .applet-icon,
 }
 
 /*
+ * [DEPRECATED]
  * The window list thumbnail shares a class
  * with the alt-tab switcher, but it is
  * the direct child of the top container.
@@ -1537,21 +1530,14 @@ or .applet-icon,
  * Hopefully a 'switcher-list' doesn't appear
  * anywhere else as the direct child of '#uiGroup'.
  */
-#uiGroup > .switcher-list {
+#uiGroup > .switcher-list,
+.window-list-preview {
   background-color: rgba(74, 133, 198, 0.95);
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 6px;
   color: white;
-  font-size: 92%;
-  font-weight: normal;
-}
-
-#uiGroup > .switcher-list > StBoxLayout {
-  spacing: .4em;
-}
-
-#uiGroup > .switcher-list > StBoxLayout > StBoxLayout {
-  spacing: .4em;
+  padding: 7px;
+  spacing: 4px;
 }
 
 /* ======================================
@@ -2031,20 +2017,11 @@ or .applet-icon,
 #LookingGlassDialog {
   border-image: url("img/containers/tile-bg.svg") 10;
   padding: 1.4em;
-  spacing: .4em;
+  spacing: .7em;
   color: white;
+  font-size: 92%;
   text-align: center;
-}
-
-#LookingGlassDialog StLabel:first-child {
   font-weight: normal;
-  font-size: 92%;
-}
-
-#LookingGlassDialog StLabel:last-child {
-  padding-top: .4em;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 92%;
 }
 
 /* ======================================
@@ -2119,7 +2096,6 @@ or .applet-icon,
 }
 
 .weather-current-databox {
-  font-size: 92%;
   spacing: .3em;
 }
 
@@ -2138,7 +2114,6 @@ or .applet-icon,
 
 .weather-current-astronomy {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 92%;
 }
 
 .forecast {
@@ -2159,7 +2134,6 @@ or .applet-icon,
 
 .weather-forecast-databox > *:last-child {
   color: rgba(0, 0, 0, 0.75);
-  font-size: 92%;
   font-weight: bold;
 }
 
@@ -2293,7 +2267,6 @@ or .applet-icon,
   border-image: none;
   border-width: 0;
   text-shadow: 0 0 transparent;
-  font-size: 92%;
   font-weight: normal;
   padding: 16px;
 }
@@ -2314,7 +2287,6 @@ or .applet-icon,
   border-image: none;
   padding: 5px;
   border-color: transparent;
-  font-size: 92%;
   padding-top: 8px;
   padding-bottom: 8px;
   font-weight: normal;
@@ -2747,21 +2719,26 @@ or .applet-icon,
 
 .thumbnail-box .window-close {
   background-image: url("img/controls/close-simple.svg");
-  background-size: 100%;
+  background-size: 16px;
   width: 16px;
   height: 16px;
 }
 
-.thumbnail-box .thumbnail-label {
+.thumbnail-box .thumbnail {
+  margin: 4px;
+}
+
+.thumbnail-box .thumbnail-label, .thumbnail-box .thumbnail-label-no-icon {
   color: white;
   font-weight: normal;
-  padding: 2px 2px 0;
+  padding: 4px 0 0 4px;
 }
 
 .thumbnail-box .thumbnail-icon {
   width: 16px;
   height: 16px;
-  padding: 0 4px 4px;
+  padding: 4px;
+  padding-bottom: 0;
 }
 
 /* NumLabel */
@@ -2770,8 +2747,6 @@ or .applet-icon,
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   padding: 2px;
   font-size: 110%;
-  width: 110%;
-  height: 110%;
   font-weight: normal;
 }
 
@@ -3081,6 +3056,7 @@ or .applet-icon,
   width: 220px;
   spacing: 0;
   border-radius: 0;
+  font-size: 92%;
 }
 
 .grid-panel > * {
@@ -3088,7 +3064,7 @@ or .applet-icon,
 }
 
 .grid-title {
-  font-size: 92%;
+  font-size: 100%;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.75);
   text-align: center;
