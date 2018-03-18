@@ -4,9 +4,13 @@ Cinnamox-Willow-Grove features a soothing green colour scheme and light text. Ci
 
 ## Credits
 
-Cinnamon theme crafted by smurphos. Build tools are at [Cinnamox_theme_master](https://github.com/smurphos/cinnamox_theme_master).
+Build tools are at [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme).
 
-GTK2, GTK3 and Metacity1 themes built with [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) a fork of [Oomox-gtk-theme](https://github.com/actionless/oomox-gtk-theme).
+[Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) is a fork of [Oomox-gtk-theme](https://github.com/actionless/oomox-gtk-theme).
+
+The Cinnamon themes in both [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) & [Oomox-gtk-theme](https://github.com/actionless/oomox-gtk-theme) are authored by [@smurphos](https://github.com/smurphos).
+
+GTK2, GTK3, GTK3.20 and Metacity themes in both [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) & [Oomox-gtk-theme](https://github.com/actionless/oomox-gtk-theme) are authored by [@Actionless and others](https://github.com/smurphos/cinnamox-gtk-theme/blob/master/CREDITS) with contributions from [@smurphos](https://github.com/smurphos)
 
 Menu in screenshots is the excellent [CinnVIIStarkMenu](https://cinnamon-spices.linuxmint.com/applets/view/281).
 
@@ -63,6 +67,20 @@ The GTK3 themes require GTK `3.18.x`, `3.20.x` or `3.22.x`
 The GTK2 theme requires the package `gtk2-engines-murrine` or `gtk-engine-murrine` to be installed. The former is a default package in Linux Mint.
 
 Tested on Linux Mint `18.2` & `18.3` 64bit with Cinnamon `3.4.x`, `3.6.x`, Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x` and Ubuntu `17.10` with Cinnamon nightly builds.
+
+### Firefox fix
+
+If you have problems seeing text on input fields in Firefox with any particular theme this problem can be solved by adding a userContent.css file to your Firefox default profile including the line `input, textarea { color: #222; background: #eee; }`
+
+The theme includes a helper script that creates the userContent.css file with this content in the correct location. To access the tool open a terminal window and use the following command to make the script executable and launch it.
+
+`chmod +x ~/.themes/Cinnamox-Willow-Grove/cinnamox_firefox_fix.sh && ~/.themes/Cinnamox-Willow-Grove/cinnamon/cinnamox_firefox_fix.sh`
+
+## Make your own theme using Cinnamox / Oomox
+
+The repository at [Cinnamox_theme_master](https://github.com/smurphos/cinnamox_theme_master) includes instructions to utilise the tools provided to make your own unique Cinnamox based theme.
+
+The [Oomox app](https://github.com/actionless/oomox) is a GUI app to design and build themes using the [Oomox-gtk-theme](https://github.com/actionless/oomox-gtk-theme). From [version 1.60+](https://github.com/actionless/oomox/releases/) this app included a Cinnamon theme based on Cinnamox and has an option to export a Cinnamon theme. 
 
 ## Changelog & Previous Releases
 

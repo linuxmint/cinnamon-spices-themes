@@ -759,26 +759,22 @@ entry, menuitem entry, popover.background entry, .osd entry,
   entry:disabled, popover.background entry:disabled,
   #XfceNotifyWindow entry:disabled, #login_window entry:disabled {
     box-shadow: none; }
-  entry progress, popover.background entry progress, .osd entry progress,
-  #XfceNotifyWindow entry progress, #login_window entry progress {
+  entry progress, popover.background entry progress, .osd entry progress, #XfceNotifyWindow entry progress, #login_window entry progress {
     background-color: #386b8c;
     background-image: linear-gradient(to bottom, #4686af, #2a5069);
     border-width: 0;
     border-radius: 10px;
     color: #ffffff; }
-  entry image.left,
-  #XfceNotifyWindow entry image.left, #login_window entry image.left {
+  entry image.left, #XfceNotifyWindow entry image.left, #login_window entry image.left {
     padding-right: 4px; }
-  entry image.right,
-  #XfceNotifyWindow entry image.right, #login_window entry image.right {
+  entry image.right, #XfceNotifyWindow entry image.right, #login_window entry image.right {
     padding-left: 4px; }
   entry.warning, popover.background entry.warning,
   #XfceNotifyWindow entry.warning, #login_window entry.warning {
     color: #ffffff;
     border-color: #929044;
     background-color: mix(#99b0bf,#b2b059,0.6); }
-    entry.warning image,
-    #XfceNotifyWindow entry.warning image, #login_window entry.warning image {
+    entry.warning image, #XfceNotifyWindow entry.warning image, #login_window entry.warning image {
       color: #ffffff; }
     entry.warning:focus,
     #XfceNotifyWindow entry.warning:focus, #login_window entry.warning:focus {
@@ -786,8 +782,7 @@ entry, menuitem entry, popover.background entry, .osd entry,
       border-color: mix(#386b8c,#b2b059,0.3);
       background-color: #b2b059;
       box-shadow: none; }
-    entry.warning selection,
-    #XfceNotifyWindow entry.warning selection, #login_window entry.warning selection {
+    entry.warning selection, #XfceNotifyWindow entry.warning selection, #login_window entry.warning selection {
       background-color: #ffffff;
       color: #b2b059; }
   entry.error, popover.background entry.error,
@@ -795,8 +790,7 @@ entry, menuitem entry, popover.background entry, .osd entry,
     color: #ffffff;
     border-color: #924444;
     background-color: mix(#99b0bf,#b25959,0.6); }
-    entry.error image,
-    #XfceNotifyWindow entry.error image, #login_window entry.error image {
+    entry.error image, #XfceNotifyWindow entry.error image, #login_window entry.error image {
       color: #ffffff; }
     entry.error:focus,
     #XfceNotifyWindow entry.error:focus, #login_window entry.error:focus {
@@ -804,8 +798,7 @@ entry, menuitem entry, popover.background entry, .osd entry,
       border-color: mix(#386b8c,#b25959,0.3);
       background-color: #b25959;
       box-shadow: none; }
-    entry.error selection,
-    #XfceNotifyWindow entry.error selection, #login_window entry.error selection {
+    entry.error selection, #XfceNotifyWindow entry.error selection, #login_window entry.error selection {
       background-color: #ffffff;
       color: #b25959; }
   entry.search-missing, popover.background entry.search-missing,
@@ -813,8 +806,7 @@ entry, menuitem entry, popover.background entry, .osd entry,
     color: #ffffff;
     border-color: #924444;
     background-color: mix(#99b0bf,#b25959,0.6); }
-    entry.search-missing image,
-    #XfceNotifyWindow entry.search-missing image, #login_window entry.search-missing image {
+    entry.search-missing image, #XfceNotifyWindow entry.search-missing image, #login_window entry.search-missing image {
       color: #ffffff; }
     entry.search-missing:focus,
     #XfceNotifyWindow entry.search-missing:focus, #login_window entry.search-missing:focus {
@@ -822,8 +814,7 @@ entry, menuitem entry, popover.background entry, .osd entry,
       border-color: mix(#386b8c,#b25959,0.3);
       background-color: #b25959;
       box-shadow: none; }
-    entry.search-missing selection,
-    #XfceNotifyWindow entry.search-missing selection, #login_window entry.search-missing selection {
+    entry.search-missing selection, #XfceNotifyWindow entry.search-missing selection, #login_window entry.search-missing selection {
       background-color: #ffffff;
       color: #b25959; }
 
@@ -877,7 +868,10 @@ toolbar {
 headerbar {
   border-width: 0 0 1px;
   border-style: solid; }
-  headerbar entry, headerbar spinbutton, headerbar separator, headerbar button {
+  headerbar entry,
+  headerbar spinbutton,
+  headerbar separator,
+  headerbar button {
     margin-top: 7px;
     margin-bottom: 7px; }
   headerbar switch {
@@ -1753,97 +1747,81 @@ searchbar,
     border-color: rgba(204, 204, 204, 0.22); }
   .linked:not(.vertical) > .suggested-action:not(:last-child):not(:only-child), headerbar.selection-mode .linked:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child),
   .titlebar:not(headerbar).selection-mode .linked:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child),
-  .linked:not(.vertical) > :not(:last-child):not(:only-child) .suggested-action, headerbar.selection-mode
-  .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action,
-  .titlebar:not(headerbar).selection-mode
-  .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action,
-  stackswitcher:not(.vertical) > .suggested-action:not(:last-child):not(:only-child), headerbar.selection-mode
-  stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child),
-  .titlebar:not(headerbar).selection-mode
-  stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child) {
+  .linked:not(.vertical) > :not(:last-child):not(:only-child) .suggested-action,
+  headerbar.selection-mode .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action,
+  .titlebar:not(headerbar).selection-mode .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action,
+  stackswitcher:not(.vertical) > .suggested-action:not(:last-child):not(:only-child),
+  headerbar.selection-mode stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child),
+  .titlebar:not(headerbar).selection-mode stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child) {
     border-right-style: none; }
     .linked:not(.vertical) > .suggested-action:not(:last-child):not(:only-child):hover, headerbar.selection-mode .linked:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):hover,
     .titlebar:not(headerbar).selection-mode .linked:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):hover,
-    .linked:not(.vertical) > :not(:last-child):not(:only-child) .suggested-action:hover, headerbar.selection-mode
-    .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action:hover,
-    .titlebar:not(headerbar).selection-mode
-    .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action:hover,
-    stackswitcher:not(.vertical) > .suggested-action:not(:last-child):not(:only-child):hover, headerbar.selection-mode
-    stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):hover,
-    .titlebar:not(headerbar).selection-mode
-    stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):hover {
+    .linked:not(.vertical) > :not(:last-child):not(:only-child) .suggested-action:hover,
+    headerbar.selection-mode .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action:hover,
+    .titlebar:not(headerbar).selection-mode .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action:hover,
+    stackswitcher:not(.vertical) > .suggested-action:not(:last-child):not(:only-child):hover,
+    headerbar.selection-mode stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):hover,
+    .titlebar:not(headerbar).selection-mode stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):hover {
       border-color: mix(#386b8c,rgba(255, 255, 255, 0.3),0.3);
       border-right-style: none;
       box-shadow: inset-1px 0 0 mix(#386b8c,rgba(255, 255, 255, 0.3),0.3); }
   .linked:not(.vertical) > .suggested-action:not(:last-child):not(:only-child):checked, headerbar.selection-mode .linked:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):checked,
   .titlebar:not(headerbar).selection-mode .linked:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):checked,
-  .linked:not(.vertical) > :not(:last-child):not(:only-child) .suggested-action:checked, headerbar.selection-mode
-  .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action:checked,
-  .titlebar:not(headerbar).selection-mode
-  .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action:checked,
-  stackswitcher:not(.vertical) > .suggested-action:not(:last-child):not(:only-child):checked, headerbar.selection-mode
-  stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):checked,
-  .titlebar:not(headerbar).selection-mode
-  stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):checked {
+  .linked:not(.vertical) > :not(:last-child):not(:only-child) .suggested-action:checked,
+  headerbar.selection-mode .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action:checked,
+  .titlebar:not(headerbar).selection-mode .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action:checked,
+  stackswitcher:not(.vertical) > .suggested-action:not(:last-child):not(:only-child):checked,
+  headerbar.selection-mode stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):checked,
+  .titlebar:not(headerbar).selection-mode stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):checked {
     border-right-style: none; }
     .linked:not(.vertical) > .suggested-action:not(:last-child):not(:only-child):checked:hover, headerbar.selection-mode .linked:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):checked:hover,
     .titlebar:not(headerbar).selection-mode .linked:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):checked:hover,
-    .linked:not(.vertical) > :not(:last-child):not(:only-child) .suggested-action:checked:hover, headerbar.selection-mode
-    .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action:checked:hover,
-    .titlebar:not(headerbar).selection-mode
-    .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action:checked:hover,
-    stackswitcher:not(.vertical) > .suggested-action:not(:last-child):not(:only-child):checked:hover, headerbar.selection-mode
-    stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):checked:hover,
-    .titlebar:not(headerbar).selection-mode
-    stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):checked:hover {
+    .linked:not(.vertical) > :not(:last-child):not(:only-child) .suggested-action:checked:hover,
+    headerbar.selection-mode .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action:checked:hover,
+    .titlebar:not(headerbar).selection-mode .linked:not(.vertical) > :not(:last-child):not(:only-child) button.suggested-action:checked:hover,
+    stackswitcher:not(.vertical) > .suggested-action:not(:last-child):not(:only-child):checked:hover,
+    headerbar.selection-mode stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):checked:hover,
+    .titlebar:not(headerbar).selection-mode stackswitcher:not(.vertical) > button.suggested-action:not(:last-child):not(:only-child):checked:hover {
       border-color: mix(#386b8c,rgba(56, 107, 140, 0.3),0.3);
       border-right-style: none;
       box-shadow: inset-1px 0 0 mix(#386b8c,rgba(56, 107, 140, 0.3),0.3); }
   .linked.vertical > .suggested-action:not(:last-child):not(:only-child), headerbar.selection-mode .linked.vertical > button.suggested-action:not(:last-child):not(:only-child),
   .titlebar:not(headerbar).selection-mode .linked.vertical > button.suggested-action:not(:last-child):not(:only-child),
-  .linked.vertical > :not(:last-child):not(:only-child) .suggested-action, headerbar.selection-mode
-  .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action,
-  .titlebar:not(headerbar).selection-mode
-  .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action,
-  stackswitcher.vertical > .suggested-action:not(:last-child):not(:only-child), headerbar.selection-mode
-  stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child),
-  .titlebar:not(headerbar).selection-mode
-  stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child) {
+  .linked.vertical > :not(:last-child):not(:only-child) .suggested-action,
+  headerbar.selection-mode .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action,
+  .titlebar:not(headerbar).selection-mode .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action,
+  stackswitcher.vertical > .suggested-action:not(:last-child):not(:only-child),
+  headerbar.selection-mode stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child),
+  .titlebar:not(headerbar).selection-mode stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child) {
     border-bottom-style: none; }
     .linked.vertical > .suggested-action:not(:last-child):not(:only-child):hover, headerbar.selection-mode .linked.vertical > button.suggested-action:not(:last-child):not(:only-child):hover,
     .titlebar:not(headerbar).selection-mode .linked.vertical > button.suggested-action:not(:last-child):not(:only-child):hover,
-    .linked.vertical > :not(:last-child):not(:only-child) .suggested-action:hover, headerbar.selection-mode
-    .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action:hover,
-    .titlebar:not(headerbar).selection-mode
-    .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action:hover,
-    stackswitcher.vertical > .suggested-action:not(:last-child):not(:only-child):hover, headerbar.selection-mode
-    stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child):hover,
-    .titlebar:not(headerbar).selection-mode
-    stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child):hover {
+    .linked.vertical > :not(:last-child):not(:only-child) .suggested-action:hover,
+    headerbar.selection-mode .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action:hover,
+    .titlebar:not(headerbar).selection-mode .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action:hover,
+    stackswitcher.vertical > .suggested-action:not(:last-child):not(:only-child):hover,
+    headerbar.selection-mode stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child):hover,
+    .titlebar:not(headerbar).selection-mode stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child):hover {
       border-color: mix(#386b8c,rgba(255, 255, 255, 0.3),0.3);
       border-bottom-style: none;
       box-shadow: inset 0 -1px mix(#386b8c,rgba(255, 255, 255, 0.3),0.3); }
   .linked.vertical > .suggested-action:not(:last-child):not(:only-child):checked, headerbar.selection-mode .linked.vertical > button.suggested-action:not(:last-child):not(:only-child):checked,
   .titlebar:not(headerbar).selection-mode .linked.vertical > button.suggested-action:not(:last-child):not(:only-child):checked,
-  .linked.vertical > :not(:last-child):not(:only-child) .suggested-action:checked, headerbar.selection-mode
-  .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action:checked,
-  .titlebar:not(headerbar).selection-mode
-  .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action:checked,
-  stackswitcher.vertical > .suggested-action:not(:last-child):not(:only-child):checked, headerbar.selection-mode
-  stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child):checked,
-  .titlebar:not(headerbar).selection-mode
-  stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child):checked {
+  .linked.vertical > :not(:last-child):not(:only-child) .suggested-action:checked,
+  headerbar.selection-mode .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action:checked,
+  .titlebar:not(headerbar).selection-mode .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action:checked,
+  stackswitcher.vertical > .suggested-action:not(:last-child):not(:only-child):checked,
+  headerbar.selection-mode stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child):checked,
+  .titlebar:not(headerbar).selection-mode stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child):checked {
     border-bottom-style: none; }
     .linked.vertical > .suggested-action:not(:last-child):not(:only-child):checked:hover, headerbar.selection-mode .linked.vertical > button.suggested-action:not(:last-child):not(:only-child):checked:hover,
     .titlebar:not(headerbar).selection-mode .linked.vertical > button.suggested-action:not(:last-child):not(:only-child):checked:hover,
-    .linked.vertical > :not(:last-child):not(:only-child) .suggested-action:checked:hover, headerbar.selection-mode
-    .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action:checked:hover,
-    .titlebar:not(headerbar).selection-mode
-    .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action:checked:hover,
-    stackswitcher.vertical > .suggested-action:not(:last-child):not(:only-child):checked:hover, headerbar.selection-mode
-    stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child):checked:hover,
-    .titlebar:not(headerbar).selection-mode
-    stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child):checked:hover {
+    .linked.vertical > :not(:last-child):not(:only-child) .suggested-action:checked:hover,
+    headerbar.selection-mode .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action:checked:hover,
+    .titlebar:not(headerbar).selection-mode .linked.vertical > :not(:last-child):not(:only-child) button.suggested-action:checked:hover,
+    stackswitcher.vertical > .suggested-action:not(:last-child):not(:only-child):checked:hover,
+    headerbar.selection-mode stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child):checked:hover,
+    .titlebar:not(headerbar).selection-mode stackswitcher.vertical > button.suggested-action:not(:last-child):not(:only-child):checked:hover {
       border-color: mix(#386b8c,rgba(56, 107, 140, 0.3),0.3);
       border-bottom-style: none;
       box-shadow: inset 0 -1px mix(#386b8c,rgba(56, 107, 140, 0.3),0.3); }
@@ -1978,13 +1956,11 @@ searchbar,
     .suggested-action:active:disabled :disabled, .suggested-action:checked:disabled :disabled, .suggested-action.flat:active:disabled :disabled, .suggested-action.flat:checked:disabled :disabled {
       color: rgba(255, 255, 255, 0.85); }
   .suggested-action.separator, headerbar.selection-mode button.separator.suggested-action,
-  .titlebar:not(headerbar).selection-mode button.separator.suggested-action, .suggested-action .separator, headerbar.selection-mode button.suggested-action .separator,
-  .titlebar:not(headerbar).selection-mode button.suggested-action .separator {
+  .titlebar:not(headerbar).selection-mode button.separator.suggested-action, .suggested-action .separator, headerbar.selection-mode button.suggested-action .separator, .titlebar:not(headerbar).selection-mode button.suggested-action .separator {
     border: 1px solid currentColor;
     color: rgba(89, 178, 93, 0.9); }
     .suggested-action.separator:disabled,
-    .titlebar:not(headerbar).selection-mode button.separator.suggested-action:disabled, .suggested-action .separator:disabled,
-    .titlebar:not(headerbar).selection-mode button.suggested-action .separator:disabled {
+    .titlebar:not(headerbar).selection-mode button.separator.suggested-action:disabled, .suggested-action .separator:disabled, .titlebar:not(headerbar).selection-mode button.suggested-action .separator:disabled {
       color: rgba(89, 178, 93, 0.85); }
 
 .destructive-action {
@@ -2997,9 +2973,7 @@ headerbar.selection-mode,
       -gtk-icon-shadow: none; }
   headerbar.selection-mode .dim-label, headerbar.selection-mode label.separator, .selection-menu headerbar.selection-mode .dim-label, .selection-menu headerbar.selection-mode label.separator,
   .titlebar:not(headerbar).selection-mode .dim-label,
-  .titlebar:not(headerbar).selection-mode label.separator, .selection-menu
-  .titlebar:not(headerbar).selection-mode .dim-label, .selection-menu
-  .titlebar:not(headerbar).selection-mode label.separator {
+  .titlebar:not(headerbar).selection-mode label.separator, .selection-menu .titlebar:not(headerbar).selection-mode .dim-label, .selection-menu .titlebar:not(headerbar).selection-mode label.separator {
     color: #274b62; }
 
 /**********
@@ -3903,26 +3877,22 @@ entry, menuitem entry, popover.background entry, .osd entry,
   entry:disabled, popover.background entry:disabled,
   #XfceNotifyWindow entry:disabled, #login_window entry:disabled {
     box-shadow: none; }
-  entry progress, popover.background entry progress, .osd entry progress,
-  #XfceNotifyWindow entry progress, #login_window entry progress {
+  entry progress, popover.background entry progress, .osd entry progress, #XfceNotifyWindow entry progress, #login_window entry progress {
     background-color: #386b8c;
     background-image: linear-gradient(to bottom, #4686af, #2a5069);
     border-width: 0;
     border-radius: 10px;
     color: #ffffff; }
-  entry image.left,
-  #XfceNotifyWindow entry image.left, #login_window entry image.left {
+  entry image.left, #XfceNotifyWindow entry image.left, #login_window entry image.left {
     padding-right: 4px; }
-  entry image.right,
-  #XfceNotifyWindow entry image.right, #login_window entry image.right {
+  entry image.right, #XfceNotifyWindow entry image.right, #login_window entry image.right {
     padding-left: 4px; }
   entry.warning, popover.background entry.warning,
   #XfceNotifyWindow entry.warning, #login_window entry.warning {
     color: #ffffff;
     border-color: #929044;
     background-color: mix(#99b0bf,#b2b059,0.6); }
-    entry.warning image,
-    #XfceNotifyWindow entry.warning image, #login_window entry.warning image {
+    entry.warning image, #XfceNotifyWindow entry.warning image, #login_window entry.warning image {
       color: #ffffff; }
     entry.warning:focus,
     #XfceNotifyWindow entry.warning:focus, #login_window entry.warning:focus {
@@ -3930,8 +3900,7 @@ entry, menuitem entry, popover.background entry, .osd entry,
       border-color: mix(#386b8c,#b2b059,0.3);
       background-color: #b2b059;
       box-shadow: none; }
-    entry.warning selection,
-    #XfceNotifyWindow entry.warning selection, #login_window entry.warning selection {
+    entry.warning selection, #XfceNotifyWindow entry.warning selection, #login_window entry.warning selection {
       background-color: #ffffff;
       color: #b2b059; }
   entry.error, popover.background entry.error,
@@ -3939,8 +3908,7 @@ entry, menuitem entry, popover.background entry, .osd entry,
     color: #ffffff;
     border-color: #924444;
     background-color: mix(#99b0bf,#b25959,0.6); }
-    entry.error image,
-    #XfceNotifyWindow entry.error image, #login_window entry.error image {
+    entry.error image, #XfceNotifyWindow entry.error image, #login_window entry.error image {
       color: #ffffff; }
     entry.error:focus,
     #XfceNotifyWindow entry.error:focus, #login_window entry.error:focus {
@@ -3948,8 +3916,7 @@ entry, menuitem entry, popover.background entry, .osd entry,
       border-color: mix(#386b8c,#b25959,0.3);
       background-color: #b25959;
       box-shadow: none; }
-    entry.error selection,
-    #XfceNotifyWindow entry.error selection, #login_window entry.error selection {
+    entry.error selection, #XfceNotifyWindow entry.error selection, #login_window entry.error selection {
       background-color: #ffffff;
       color: #b25959; }
   entry.search-missing, popover.background entry.search-missing,
@@ -3957,8 +3924,7 @@ entry, menuitem entry, popover.background entry, .osd entry,
     color: #ffffff;
     border-color: #924444;
     background-color: mix(#99b0bf,#b25959,0.6); }
-    entry.search-missing image,
-    #XfceNotifyWindow entry.search-missing image, #login_window entry.search-missing image {
+    entry.search-missing image, #XfceNotifyWindow entry.search-missing image, #login_window entry.search-missing image {
       color: #ffffff; }
     entry.search-missing:focus,
     #XfceNotifyWindow entry.search-missing:focus, #login_window entry.search-missing:focus {
@@ -3966,8 +3932,7 @@ entry, menuitem entry, popover.background entry, .osd entry,
       border-color: mix(#386b8c,#b25959,0.3);
       background-color: #b25959;
       box-shadow: none; }
-    entry.search-missing selection,
-    #XfceNotifyWindow entry.search-missing selection, #login_window entry.search-missing selection {
+    entry.search-missing selection, #XfceNotifyWindow entry.search-missing selection, #login_window entry.search-missing selection {
       background-color: #ffffff;
       color: #b25959; }
 
@@ -4859,8 +4824,7 @@ stackswitcher button.circular, stackswitcher button.nautilus-circular-button.ima
 /*******************
  ! Selected Items  *
 ********************/
-entry selection, menuitem entry selection, popover.background entry selection, .osd entry selection,
-#XfceNotifyWindow entry selection, #login_window entry selection, calendar:selected, row:selected, flowbox flowboxchild:selected, modelbutton.flat:active, modelbutton.flat:active arrow, modelbutton.flat:selected, modelbutton.flat:selected arrow,
+entry selection, menuitem entry selection, popover.background entry selection, .osd entry selection, #XfceNotifyWindow entry selection, #login_window entry selection, calendar:selected, row:selected, flowbox flowboxchild:selected, modelbutton.flat:active, modelbutton.flat:active arrow, modelbutton.flat:selected, modelbutton.flat:selected arrow,
 menuitem.button.flat:active,
 menuitem.button.flat:active arrow,
 menuitem.button.flat:selected,
@@ -4870,8 +4834,7 @@ textview text:selected, .view text selection:focus, iconview text selection:focu
 textview text selection:focus,
 textview text selection, treeview.view:selected:focus, treeview.view:selected, .cs-category-view:selected:focus, .cs-category-view:selected, .cs-category-view .view:selected:focus, .cs-category-view iconview:selected:focus, .cs-category-view .view:selected, .cs-category-view iconview:selected, .nemo-window .sidebar .nemo-places-sidebar .view:selected:focus, .nemo-window .sidebar .nemo-places-sidebar iconview:selected:focus, .nemo-window .sidebar .nemo-places-sidebar .view:selected, .nemo-window .sidebar .nemo-places-sidebar iconview:selected, .background:not(.csd):not(.solid-csd) > box.vertical > notebook.frame > stack > scrolledwindow > viewport > box.vertical > frame > box.vertical iconview.view:selected:focus, .background:not(.csd):not(.solid-csd) > box.vertical > notebook.frame > stack > scrolledwindow > viewport > box.vertical > frame > box.vertical iconview:selected:focus, .background:not(.csd):not(.solid-csd) > box.vertical > notebook.frame > stack > scrolledwindow > viewport > box.vertical > frame > box.vertical iconview.view:selected, .background:not(.csd):not(.solid-csd) > box.vertical > notebook.frame > stack > scrolledwindow > viewport > box.vertical > frame > box.vertical iconview:selected {
   background-color: #386b8c; }
-  row:selected label, label:selected, entry selection, menuitem entry selection, popover.background entry selection, .osd entry selection,
-  #XfceNotifyWindow entry selection, #login_window entry selection, calendar:selected, row:selected, flowbox flowboxchild:selected, modelbutton.flat:active, modelbutton.flat:active arrow, modelbutton.flat:selected, modelbutton.flat:selected arrow,
+  row:selected label, label:selected, entry selection, menuitem entry selection, popover.background entry selection, .osd entry selection, #XfceNotifyWindow entry selection, #login_window entry selection, calendar:selected, row:selected, flowbox flowboxchild:selected, modelbutton.flat:active, modelbutton.flat:active arrow, modelbutton.flat:selected, modelbutton.flat:selected arrow,
   menuitem.button.flat:active,
   menuitem.button.flat:active arrow,
   menuitem.button.flat:selected,
@@ -4882,8 +4845,7 @@ textview text selection, treeview.view:selected:focus, treeview.view:selected, .
   textview text selection, treeview.view:selected:focus, treeview.view:selected, .cs-category-view:selected:focus, .cs-category-view:selected, .cs-category-view .view:selected:focus, .cs-category-view iconview:selected:focus, .cs-category-view .view:selected, .cs-category-view iconview:selected, .nemo-window .sidebar .nemo-places-sidebar .view:selected:focus, .nemo-window .sidebar .nemo-places-sidebar iconview:selected:focus, .nemo-window .sidebar .nemo-places-sidebar .view:selected, .nemo-window .sidebar .nemo-places-sidebar iconview:selected, .background:not(.csd):not(.solid-csd) > box.vertical > notebook.frame > stack > scrolledwindow > viewport > box.vertical > frame > box.vertical iconview.view:selected:focus, .background:not(.csd):not(.solid-csd) > box.vertical > notebook.frame > stack > scrolledwindow > viewport > box.vertical > frame > box.vertical iconview:selected:focus, .background:not(.csd):not(.solid-csd) > box.vertical > notebook.frame > stack > scrolledwindow > viewport > box.vertical > frame > box.vertical iconview.view:selected, .background:not(.csd):not(.solid-csd) > box.vertical > notebook.frame > stack > scrolledwindow > viewport > box.vertical > frame > box.vertical iconview:selected {
     color: #ffffff;
     outline-color: rgba(255, 255, 255, 0.3); }
-    row:selected label:disabled, label:disabled:selected, label:disabled selection, entry selection:disabled,
-    #XfceNotifyWindow entry selection:disabled, #login_window entry selection:disabled, calendar:disabled:selected, row:disabled:selected, flowbox flowboxchild:disabled:selected, modelbutton.flat:disabled:active, modelbutton.flat:active arrow:disabled, modelbutton.flat:disabled:selected, modelbutton.flat:selected arrow:disabled,
+    row:selected label:disabled, label:disabled:selected, label:disabled selection, entry selection:disabled, #XfceNotifyWindow entry selection:disabled, #login_window entry selection:disabled, calendar:disabled:selected, row:disabled:selected, flowbox flowboxchild:disabled:selected, modelbutton.flat:disabled:active, modelbutton.flat:active arrow:disabled, modelbutton.flat:disabled:selected, modelbutton.flat:selected arrow:disabled,
     menuitem.button.flat:disabled:active,
     menuitem.button.flat:active arrow:disabled,
     menuitem.button.flat:disabled:selected,
@@ -4892,8 +4854,7 @@ textview text selection, treeview.view:selected:focus, treeview.view:selected, .
     textview text:disabled:selected, iconview text selection:disabled:focus, .view text selection:disabled, iconview text selection:disabled,
     textview text selection:disabled, .cs-category-view:disabled:selected, .cs-category-view iconview:disabled:selected:focus, .cs-category-view iconview:disabled:selected, .nemo-window .sidebar .nemo-places-sidebar iconview:disabled:selected:focus, .nemo-window .sidebar .nemo-places-sidebar .view:disabled:selected, .nemo-window .sidebar .nemo-places-sidebar iconview:disabled:selected, .background:not(.csd):not(.solid-csd) > box.vertical > notebook.frame > stack > scrolledwindow > viewport > box.vertical > frame > box.vertical iconview:disabled:selected:focus, .background:not(.csd):not(.solid-csd) > box.vertical > notebook.frame > stack > scrolledwindow > viewport > box.vertical > frame > box.vertical iconview:disabled:selected {
       color: mix(#ffffff,#386b8c,0.5); }
-    row:selected label:backdrop, label:backdrop:selected, label:backdrop selection, entry selection:backdrop,
-    #XfceNotifyWindow entry selection:backdrop, #login_window entry selection:backdrop, calendar:backdrop:selected, row:backdrop:selected, flowbox flowboxchild:backdrop:selected, modelbutton.flat:backdrop:active, modelbutton.flat:active arrow:backdrop, modelbutton.flat:backdrop:selected, modelbutton.flat:selected arrow:backdrop,
+    row:selected label:backdrop, label:backdrop:selected, label:backdrop selection, entry selection:backdrop, #XfceNotifyWindow entry selection:backdrop, #login_window entry selection:backdrop, calendar:backdrop:selected, row:backdrop:selected, flowbox flowboxchild:backdrop:selected, modelbutton.flat:backdrop:active, modelbutton.flat:active arrow:backdrop, modelbutton.flat:backdrop:selected, modelbutton.flat:selected arrow:backdrop,
     menuitem.button.flat:backdrop:active,
     menuitem.button.flat:active arrow:backdrop,
     menuitem.button.flat:backdrop:selected,
@@ -4903,8 +4864,7 @@ textview text selection, treeview.view:selected:focus, treeview.view:selected, .
     textview text selection:backdrop, .cs-category-view:backdrop:selected, .cs-category-view iconview:backdrop:selected:focus, .cs-category-view iconview:backdrop:selected, .nemo-window .sidebar .nemo-places-sidebar iconview:backdrop:selected:focus, .nemo-window .sidebar .nemo-places-sidebar .view:backdrop:selected, .nemo-window .sidebar .nemo-places-sidebar iconview:backdrop:selected, .background:not(.csd):not(.solid-csd) > box.vertical > notebook.frame > stack > scrolledwindow > viewport > box.vertical > frame > box.vertical iconview:backdrop:selected:focus, .background:not(.csd):not(.solid-csd) > box.vertical > notebook.frame > stack > scrolledwindow > viewport > box.vertical > frame > box.vertical iconview:backdrop:selected {
       background-color: #386b8c;
       color: mix(#386b8c,#ffffff,0.66); }
-      row:selected label:backdrop:disabled, label:backdrop:disabled:selected, label:disabled selection:backdrop, label:backdrop selection:disabled, entry selection:backdrop:disabled,
-      #XfceNotifyWindow entry selection:backdrop:disabled, #login_window entry selection:backdrop:disabled, calendar:backdrop:disabled:selected, row:backdrop:disabled:selected, flowbox flowboxchild:backdrop:disabled:selected, modelbutton.flat:backdrop:disabled:active, modelbutton.flat:active arrow:backdrop:disabled, modelbutton.flat:backdrop:disabled:selected, modelbutton.flat:selected arrow:backdrop:disabled,
+      row:selected label:backdrop:disabled, label:backdrop:disabled:selected, label:disabled selection:backdrop, label:backdrop selection:disabled, entry selection:backdrop:disabled, #XfceNotifyWindow entry selection:backdrop:disabled, #login_window entry selection:backdrop:disabled, calendar:backdrop:disabled:selected, row:backdrop:disabled:selected, flowbox flowboxchild:backdrop:disabled:selected, modelbutton.flat:backdrop:disabled:active, modelbutton.flat:active arrow:backdrop:disabled, modelbutton.flat:backdrop:disabled:selected, modelbutton.flat:selected arrow:backdrop:disabled,
       menuitem.button.flat:backdrop:disabled:active,
       menuitem.button.flat:active arrow:backdrop:disabled,
       menuitem.button.flat:backdrop:disabled:selected,
