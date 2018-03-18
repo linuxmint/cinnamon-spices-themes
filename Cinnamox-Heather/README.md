@@ -4,7 +4,7 @@ Cinnamox-Heather features a pale blue colour scheme and dark text. Cinnamon, Met
 
 ## Credits
 
-Build tools are at [Cinnamox_theme_master](https://github.com/smurphos/cinnamox_theme_master).
+Build tools are at [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme).
 
 [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) is a fork of [Oomox-gtk-theme](https://github.com/actionless/oomox-gtk-theme).
 
