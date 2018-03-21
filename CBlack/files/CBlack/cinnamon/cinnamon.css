@@ -4,7 +4,7 @@
  * ###################################################################*/
 
  stage {
-    font-family: ubuntu, noto sans, sans, noto, open;
+    font-family: cantarell, ubuntu, noto sans, sans, noto, open;
 }
 
 .cinnamon-link {
@@ -52,7 +52,7 @@ StScrollBar StButton#hhandle {
 }
 
 StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
-    background-color: crimson;
+    background-color: rgba(7, 83, 255, 0.80);
 }
 
 .separator {
@@ -79,8 +79,8 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     border: 0px solid rgba(212, 185, 67, 0);
     border-radius: 0px;
     padding: 4px 12px;
-    background-gradient-end: rgba(20, 20, 20, 1);
-    background-gradient-start: rgba(20, 20, 20, 1);
+    background-gradient-end: rgba(20, 20, 20, 0.95);
+    background-gradient-start: rgba(20, 20, 20, 0.95);
     background-gradient-direction: vertical;
     color: white;
     font-size: 9pt;
@@ -101,15 +101,15 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .notification-button:hover, .notification-icon-button:hover, .modal-dialog-button:hover, .sound-player-overlay StButton:hover {
-    background-color: crimson;
+    background-color: rgba(7, 83, 255,0.80);
 }
 
 .notificatio-button:focus, .notification-icon-button:focus, .modal-dialog-button:focus, .sound-player-overlay StButton:focus {
-    border: 0px solid #8b8b8b;
+    border: 0px solid rgba(7, 83, 255,0.80);
 }
 
 .notification-button:active, .notification-icon-button:active, .modal-dialog-button:active, .modal-dialog-button:pressed, .sound-player-overlay StButton:active {
-    background-color: crimson;
+    background-color: rgba(7, 83, 255,0.80);
 }
 
 
@@ -131,21 +131,45 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .popup-menu {
     color: #ffffff;
-    font-size: 8pt;
+    font-size: 9pt;
     min-width: 150px;
-    background-color: rgba(20, 20, 20,0.90);
-    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.60);
+    background-color: rgba(20, 20, 20, 0.80);
+    box-shadow: 0px 0px 4px 2px rgba(0,0,0, 0.60);
 }
 
 .menu {
-    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.60);
-    border-radius: 0px;
-    background-color: rgba(20, 20, 20,0.90);
-    border-width: 0px;
+    box-shadow: 0px 0px 4px 2px rgba(20, 20, 20, 0.6);
+    border-radius: 10px;
+    background-color: rgba(20, 20, 20, 0.85);
+    border-width: 0em;
     border-color: #ffffff;
     color: #ffffff;
-    font-size: 8pt;
+    font-size: 9pt;
     min-width: 150px;
+}
+
+.menu.bottom {
+    margin-left: 0.5em;
+    margin-bottom: 0.8em;
+    margin-right: 0.5em;
+}
+
+.menu.top {
+    margin-left: 0.5em;
+    margin-top: 0.8em;
+    margin-right: 0.5em;
+}
+
+.menu.left {
+    margin-top: 0.5em;
+    margin-left: 0.8em;
+    margin-bottom: 0.5em;
+}
+
+.menu.right {
+    margin-top: 0.5em;
+    margin-right: 0.8em;
+    margin-bottom: 0.5em;
 }
 
 .popup-menu-arrow {
@@ -219,10 +243,10 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .popup-separator-menu-item {
     -gradient-height: 0px;
-    -gradient-start: rgba(85, 85, 85, 1);
-    -gradient-end: #555555;
-    -margin-horizontal: 0em;
-    height: 0em;
+    -gradient-start: rgba(85, 85, 85, 0);
+    -gradient-end: rgba(85, 85, 85, 0);
+    -margin-horizontal: 1em;
+    height: 1em;
 }
 
 .popup-alternating-menu-item:alternate {
@@ -305,7 +329,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 #panel {
     color: #ffffff;
-    background-color: rgba(20, 20, 20, 0.95);
+    background-color: rgba(20, 20, 20, 1);
     box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.40);
     font-size: 8pt;
     font-weight: normal;
@@ -596,8 +620,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
   height: 26px;
   width: 26px;
 }
-
-
 
 .window-close:rtl {
     -st-background-image-shadow: 2px 2px 6px rgba(0, 0, 0, 0);
@@ -966,7 +988,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .switcher-list .item-box:selected {
-    background-color: red;
+    background-color: rgba(7, 83, 255, 0.6);
 }
 
 .switcher-list {
@@ -1277,17 +1299,18 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 /* Main menu title */
 
 .menu-favorites-box {
-    padding: 10px;
+    padding: 5px;
     border: 0px solid #666;
+    background-color: rgba(30, 30, 30, 0.8);
     border-radius: 8px;
     transition-duration: 300;
 }
 
 .menu-favorites-button {
-    padding-top: 0px;
-    padding-left: 2px;
-    padding-right: 0px;
-    padding-bottom: 0px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
     border: 0px rgba(7, 83, 255, 0);
     border-left: 2px;
 
@@ -1328,8 +1351,8 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .menu-applications-outer-box {
     padding-top: 10px;
-    padding-left: 0px;
-    padding-right: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 0px;
 }
 
@@ -1432,11 +1455,11 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .menu-selected-app-description {
-    max-width: 150px;
+    max-width: 100px;
 }
 
 .menu-search-box:ltr {
-    padding-left: 65px;
+    padding-left: 30px;
 }
 
 .menu-search-box:rtl {
@@ -1444,13 +1467,13 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 #menu-search-entry {
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
     color: white;
     selected-color: black;
     caret-color: white;
     caret-size: 1px;
-    width: 250px;
+    width: 210px;
     height: 25px;
     transition-duration: 300;
     box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.6);
@@ -1466,7 +1489,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 #menu-search-entry:focus {
-    font-size: 12px;
+    font-size: 1em;
     color: #fbfbfb;
     transition-duration: 300;
 }
@@ -1651,18 +1674,15 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .workspace-button {
-    width: 20px;
-    height: 10px;
-    background-color: rgb(20, 20, 20);
+    width: 1.5em;
+    background-color: rgba(20, 20, 20, 0.60);
     color: white;
     /* border: 1px; */
     /* border-color: white; */
-    padding: 2px;
     transition-duration: 300;
 }
 
 .workspace-button:outlined {
-    padding: 1px;
     background-gradient-direction: vertical;
 	  background-gradient-start: rgb(7, 83, 255);
 	  background-gradient-end: rgb(7, 83, 255);
@@ -1820,7 +1840,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
  * ===================================================================*/
 
 .applet-separator {
-    padding: 5px 3px;
+    padding: 0px 0px;
 }
 
 .applet-separator-line {
@@ -1834,9 +1854,8 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .applet-box {
-    padding-left: 3px;
-    padding-right: 3px;
-    spacing: 3px;
+    padding-left: .3em;
+    padding-right: .3em;
     color: #ccc;
     text-shadow: black 0px 0px 2px;
     transition-duration: 300;
@@ -1844,7 +1863,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .panel-top .applet-box,
 .panel-bottom .applet-box {
-    spacing: 3px;
+    spacing: .2em;
 }
 
 .applet-box:checked,
@@ -2032,17 +2051,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 /*This option works only applica to any applet that is in the left corner*/
 
- #panelLeft .applet-box:first-child {
-     /*background-color: crimson;
-     color: #fff;
-     font-weight: bold;*/
- }
-
- #panelLeft .applet-box:first-child .applet-label {
-    padding-right: 5px;
- }
-
-.panel-bottom #panelLeft .applet-box:first-child:hover {
+.panel-bottom .applet-box:first-child:hover {
     border-image: url("common-assets/menu/button-menu-hover-bottom.svg") 9 9 9 9;
  }
 
@@ -2058,7 +2067,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     border-image: url("common-assets/menu/button-menu-hover-right.svg") 9 9 9 9;
  }
 
- #panelLeft .applet-box:first-child:active {
+.applet-box:first-child:active {
     background-color: rgba(7, 83, 255, 1);
  }
 
