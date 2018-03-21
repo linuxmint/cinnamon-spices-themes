@@ -199,11 +199,26 @@ style "murrine-button"  = "murrine-wider" {
 	bg[INSENSITIVE] = shade (0.75, @btn_bg_color)
     #xthickness = 4
     #ythickness = 4
+    
+	fg[NORMAL] = @btn_fg_color
+	fg[PRELIGHT] = @selected_fg_color
+	fg[SELECTED] = @selected_fg_color
+	fg[ACTIVE] = @selected_fg_color
+	fg[INSENSITIVE] = @btn_fg_color
 
 	engine "murrine" {
 		border_colors = { mix(0.25, @btn_fg_color, @btn_bg_color), mix(0.25, @btn_fg_color, @btn_bg_color) }
 		roundness = 10
+		gradient_shades = { 1.25, 1.0, 1.0, .75 }
 	}
+}
+
+style "murrine-combobox" = "murrine-button" {
+	text[NORMAL] = @btn_fg_color
+	text[PRELIGHT] = @selected_fg_color
+	text[SELECTED] = @selected_fg_color
+	text[ACTIVE] = @selected_fg_color
+	text[INSENSITIVE] = @btn_fg_color
 }
 
 style "murrine-buttonlabel" {
@@ -223,7 +238,7 @@ style "murrine-scrollbar" {
 	bg[ACTIVE] = @selected_bg_color
 
 	engine "murrine" {
-		roundness = 0
+		roundness = 10
 		contrast = 0.0
 		border_shades = { 0.9, 0.9 }
 		trough_shades = { 0.97, 0.97 }
@@ -272,10 +287,11 @@ style "murrine-progressbar" = "murrine-thin" {
 
 style "murrine-treeview-header" = "murrine-button" {
 	fg[NORMAL] = @fg_color
-	fg[PRELIGHT] = @fg_color
-	fg[SELECTED] = @fg_color
-	fg[ACTIVE] = @fg_color
+	fg[PRELIGHT] = @selected_fg_color
+	fg[SELECTED] = @selected_fg_color
+	fg[ACTIVE] = @selected_fg_color
 	fg[INSENSITIVE] = mix(0.20, @bg_color, @fg_color)
+	
   	engine "murrine" {
 		roundness = 0
 	}
@@ -306,7 +322,7 @@ style "murrine-tooltips" {
 
 	engine "murrine" {
 		textstyle = 0
-		roundness = 2
+		roundness = 10
 		rgba = FALSE
 	}
 }
@@ -324,7 +340,7 @@ style "clearlooks-radiocheck" = "murrine-default" {
 	text[PRELIGHT] = @accent_bg_color
 
 	engine "clearlooks" {
-		radius = 4.0
+		radius = 10.0
 	}
 }
 
@@ -680,7 +696,7 @@ widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkV
 
 style "chromium-toolbar-button" {
 	engine "murrine" {
-		roundness = 2
+		roundness = 10
 		textstyle = 0
 	}
 }
@@ -742,6 +758,7 @@ widget_class "*<GtkProgressBar>" style "murrine-progressbar"
 
 widget_class "*<GtkComboBoxEntry>*" style "murrine-comboboxentry"
 widget_class "*<GtkCombo>*" style "murrine-comboboxentry"
+widget_class "*<GtkComboBox>*" style "murrine-combobox"
 
 widget_class "*<GtkMenu>*" style "murrine-menu"
 widget_class "*<GtkMenuItem>*" style "murrine-menu-item"
