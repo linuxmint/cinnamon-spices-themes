@@ -1,8 +1,17 @@
+### Update 1.1
+
+* Panel is not transparent.
+* menu now they are transparent 0.80 and with margins 0.3 em on the sides and 0.5em of the criminal without touching the panel.
+* Changed the browsing of the search engine in the Menu so it is better integrated with the third party applets menu.
+* The favorites area of the menu is now darker.
+* The menus are rounded at the corners.
+* The applets now joined together with 1em space.
+
 ### Update 1.0
 
-* Limpio el tema, eliminando imagenes que no se utilizaran.
-* Se quita el color rojo de algunas partes del tema.
-* Integrado con Cinnamon 3.6
+* Clean the theme, deleting images that will not be used.
+* The red color of some parts of the theme is removed.
+* Integrated with Cinnamon 3.6
 
 ### Update 0.8.1
 
