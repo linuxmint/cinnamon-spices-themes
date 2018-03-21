@@ -7,6 +7,10 @@ gtk-color-scheme =
 style "murrine-default" {
 	GtkArrow::arrow-scaling= 0.6
 
+	GtkWidget::cursor_color = @primary_caret_color
+	GtkWidget::secondary_cursor_color = @secondary_caret_color
+	GtkWidget::cursor_aspect_ratio = 0.05
+
 	GtkButton::child-displacement-x = 0
 	GtkButton::child-displacement-y = 0
 
@@ -190,17 +194,32 @@ style "clearlooks-notebook" = "clearlooks-notebook-bg" {
 
 style "murrine-button"  = "murrine-wider" {
 	bg[NORMAL] = @btn_bg_color
-	bg[PRELIGHT] = shade (1.04, @selected_bg_color)
+	bg[PRELIGHT] = shade (1.10, @selected_bg_color)
 	bg[SELECTED] = mix (0.5, @selected_bg_color, @bg_color)
 	bg[ACTIVE] = shade (0.95, @selected_bg_color)
 	bg[INSENSITIVE] = shade (0.75, @btn_bg_color)
-    xthickness = 8
-    ythickness = 8
+    #xthickness = 8
+    #ythickness = 8
+    
+	fg[NORMAL] = @btn_fg_color
+	fg[PRELIGHT] = @selected_fg_color
+	fg[SELECTED] = @selected_fg_color
+	fg[ACTIVE] = @selected_fg_color
+	fg[INSENSITIVE] = @btn_fg_color
 
 	engine "murrine" {
 		border_colors = { mix(0.25, @btn_fg_color, @btn_bg_color), mix(0.25, @btn_fg_color, @btn_bg_color) }
 		roundness = 20
+		gradient_shades = { 1.25, 1.0, 1.0, .75 }
 	}
+}
+
+style "murrine-combobox" = "murrine-button" {
+	text[NORMAL] = @btn_fg_color
+	text[PRELIGHT] = @selected_fg_color
+	text[SELECTED] = @selected_fg_color
+	text[ACTIVE] = @selected_fg_color
+	text[INSENSITIVE] = @btn_fg_color
 }
 
 style "murrine-buttonlabel" {
@@ -268,10 +287,11 @@ style "murrine-progressbar" = "murrine-thin" {
 
 style "murrine-treeview-header" = "murrine-button" {
 	fg[NORMAL] = @fg_color
-	fg[PRELIGHT] = @fg_color
-	fg[SELECTED] = @fg_color
-	fg[ACTIVE] = @fg_color
+	fg[PRELIGHT] = @selected_fg_color
+	fg[SELECTED] = @selected_fg_color
+	fg[ACTIVE] = @selected_fg_color
 	fg[INSENSITIVE] = mix(0.20, @bg_color, @fg_color)
+	
   	engine "murrine" {
 		roundness = 0
 	}
@@ -738,6 +758,7 @@ widget_class "*<GtkProgressBar>" style "murrine-progressbar"
 
 widget_class "*<GtkComboBoxEntry>*" style "murrine-comboboxentry"
 widget_class "*<GtkCombo>*" style "murrine-comboboxentry"
+widget_class "*<GtkComboBox>*" style "murrine-combobox"
 
 widget_class "*<GtkMenu>*" style "murrine-menu"
 widget_class "*<GtkMenuItem>*" style "murrine-menu-item"
