@@ -1,9 +1,20 @@
-/* Menu style
- * common: like any other popup menus
- * default: a more stylized menu
+/*
+ * Railway theme for Cinnamon
+ * Copyright (C) 2018 German Franco <dev.germanfr@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-/* Main theme color */
-/* Whether to have opaque or traslucent menus */
 /* ======================================
  * ! Font
  * ====================================== */
@@ -80,27 +91,6 @@ StScrollBar StButton#hhandle:active {
   border-image: url("img/controls/scroll-handle-hover.svg") 4;
 }
 
-/*
-@mixin classic-scrollbar {
-	StScrollBar {
-		background-color: #F0F0F0;
-		min-width: 12px;
-		padding: 0;
-
-		StButton#vhandle,
-		StButton#hhandle {
-			border-image: url("img/controls/scroll-handle-menu.svg") 4;
-
-			&:hover, &:focus, &:active {
-				border-image: url("img/controls/scroll-handle-menu-hover.svg") 4;
-			}
-		}
-	}
-
-	StScrollView.vfade StScrollBar,
-	StScrollView.hfade StScrollBar { padding: 0; }
-}
-*/
 /* ======================================
  * ! Entries
  * ====================================== */
@@ -672,13 +662,11 @@ StScrollBar StButton#hhandle:active {
 
 #notification CinnamonGenericContainer * {
   font-weight: normal;
-  font-size: 92%;
   color: rgba(255, 255, 255, 0.65);
   /* Notification title */
 }
 
 #notification CinnamonGenericContainer *:first-child {
-  font-size: 92%;
   padding-top: .3em;
   color: white;
 }
@@ -688,9 +676,12 @@ StScrollBar StButton#hhandle:active {
   color: white;
 }
 
+#notification StIcon {
+  color: white;
+}
+
 #notification-body {
   font-weight: normal;
-  font-size: 92%;
 }
 
 #notification-actions {
@@ -1744,7 +1735,6 @@ or .applet-icon,
   height: 24px;
   padding: 0 3px;
   color: rgba(255, 255, 255, 0.65);
-  /* &:outlined:hover {} */
 }
 
 .workspace-button:hover {
@@ -1857,6 +1847,7 @@ or .applet-icon,
 
 .menu-favorites-button {
   padding: 10px 12px;
+  color: white;
 }
 
 .menu-favorites-button:hover {
@@ -1864,17 +1855,8 @@ or .applet-icon,
   color: white;
 }
 
-.menu-places-box {
-  padding: 8px;
-  border: 0 solid rgba(0, 0, 0, 0.75);
-}
-
-.menu-places-button {
-  padding: 10px;
-}
-
 .menu-categories-box {
-  padding: 11px;
+  padding: 8px;
   border-image: url("img/containers/menu-categories.svg") 8;
 }
 
@@ -2117,29 +2099,37 @@ or .applet-icon,
 }
 
 .forecast {
-  padding: .8em;
+  padding: 1.6em;
   border-image: url("img/containers/menu-search__bottom.svg") 3;
 }
 
+.weather-forecast-box {
+  spacing: .8em;
+  padding-right: 2.4em;
+}
+
+.weather-forecast-box:last-child {
+  padding-right: 0;
+}
+
 .weather-forecast-icon {
-  padding: .8em;
+  padding: 0;
   color: rgba(0, 0, 0, 0.75);
 }
 
 .weather-forecast-databox {
-  padding: .8em 2.4em 0 .8em;
+  padding: 0;
   spacing: .3em;
-  /* temperature */
-}
-
-.weather-forecast-databox > *:last-child {
-  color: rgba(0, 0, 0, 0.75);
-  font-weight: bold;
 }
 
 .weather-forecast-day {
   color: rgba(0, 0, 0, 0.75);
   font-size: 110%;
+  font-weight: bold;
+}
+
+.weather-forecast-temperature {
+  color: rgba(0, 0, 0, 0.75);
   font-weight: bold;
 }
 
