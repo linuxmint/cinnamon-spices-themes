@@ -1,7 +1,9 @@
 #!/bin/bash
 #Description: Helper file to move Cinnamox-Zanah.conf to /$HOME/.config/qt5ct/colors folder
 THEMENAME=Cinnamox-Zanah;
+DIRECTORY="/home/$USER/.themes/$THEMENAME/qt5ct/";
 QTDIR="$HOME/.config/qt5ct/colors";
+cd "$DIRECTORY";
 if [ ! -f "$PWD/$THEMENAME.conf" ]; then
 	echo "Something is wrong. Cannot find $PWD/$THEMENAME.conf"
     echo "";
