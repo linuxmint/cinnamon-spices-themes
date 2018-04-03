@@ -1,6 +1,8 @@
 #!/bin/bash
 #Description: Helper script to toggle GTK2 HIDPI Support
-THEMENAME=Cinnamox-Rhino
+THEMENAME=Cinnamox-Rhino;
+DIRECTORY="/home/$USER/.themes/$THEMENAME/gtk-2.0/";
+cd "$DIRECTORY";
 if [ ! -f "$PWD/gtkrc" ]; then
 	echo "Something is wrong. Cannot find $PWD/gtkrc"
     echo "";

@@ -678,6 +678,11 @@ combobox arrow {
 combobox box button, combobox box entry {
   padding: 4px 6px; }
 
+combobox menu menuitem {
+  padding: 4px 6px; }
+  combobox menu menuitem cellview {
+    min-height: 22px; }
+
 /*********
  ! Entry *
 **********/
@@ -3947,8 +3952,8 @@ menubar, .menubar {
   background-image: none;
   color: #0c1419; }
   menubar > menuitem, .menubar > menuitem {
-    min-height: 16px;
-    padding: 6px 10px;
+    min-height: 18px;
+    padding: 6px 8px;
     border: 1px solid transparent;
     border-radius: 10px;
     background-color: transparent;
@@ -4004,9 +4009,9 @@ menu,
   menu menuitem,
   .menu menuitem,
   .context-menu menuitem {
-    min-height: 16px;
+    min-height: 18px;
     min-width: 40px;
-    padding: 4px;
+    padding: 6px;
     border-radius: 10px; }
     menu menuitem:active, menu menuitem:hover,
     .menu menuitem:active,
@@ -4017,6 +4022,12 @@ menu,
       background-color: #386b8c;
       background-image: none;
       color: #ffffff; }
+      menu menuitem:active accelerator, menu menuitem:hover accelerator,
+      .menu menuitem:active accelerator,
+      .menu menuitem:hover accelerator,
+      .context-menu menuitem:active accelerator,
+      .context-menu menuitem:hover accelerator {
+        color: rgba(255, 255, 255, 0.6); }
     menu menuitem *:active, menu menuitem *:hover,
     .menu menuitem *:active,
     .menu menuitem *:hover,
@@ -4451,7 +4462,7 @@ popover.background {
 
 modelbutton.flat,
 menuitem.button.flat {
-  padding: 4px 6px;
+  padding: 6px;
   outline-color: transparent;
   transition: none; }
   modelbutton.flat:hover,
