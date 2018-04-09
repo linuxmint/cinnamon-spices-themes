@@ -1,0 +1,114 @@
+/* ======================================
+ * ! App menu applet
+ * ====================================== */
+
+.menu-background {
+}
+
+.menu-favorites-box {
+    border-image: url("img/containers/dark-bg.svg") 3;
+    padding: 0.5em;
+}
+
+.menu-favorites-button {
+    padding: 8px 10px;
+
+    &:hover {
+        border-image: url("img/containers/hover.svg") 9;
+        color: $text-active;
+    }
+}
+
+.menu-places-box {
+    margin: auto;
+    padding: 8px;
+    border: 0 solid $text-primary;
+}
+
+.menu-places-button {
+    padding: 10px;
+}
+
+.menu-categories-box {
+    padding: 10px 30px;
+    font-weight: bold;
+}
+
+.menu-category-button {
+    padding: .6em;
+    font-weight: bold;
+
+    &-greyed {
+        padding: .6em;
+        color: $text-disabled;
+        font-weight: bold;
+    }
+
+    &-selected {
+        padding: .6em;
+        border-image: url("img/containers/hover.svg") 7;
+        font-weight: bold;
+        color: $text-active;
+    }
+
+    &-label:ltr { padding-left: 5px; }
+
+    &-label:rtl { padding-right: 5px; }
+
+    &-button:hover {}
+}
+
+.menu-applications-inner-box,
+.menu-applications-outer-box {
+    padding: 8px;
+    padding-bottom: 0;
+}
+
+.menu-application-button {
+    padding: .6em;
+
+    &-selected {
+        padding: .6em;
+        border-image: url("img/containers/hover.svg") 7;
+        color: $text-active;
+    }
+
+    &:highlighted {
+        border-image: url("img/misc/bar__right.svg") 10;
+        font-weight: bold;
+    }
+
+    &-selected:highlighted {
+        border-image: url("img/containers/hover.svg") 7;
+        color: $text-active;
+    }
+
+    &-label:ltr { padding-left: 5px; }
+
+    &-label:rtl { padding-right: 5px; }
+}
+
+.menu-selected-app-box {
+    padding-right: 30px;
+    padding-left: 30px;
+    text-align: right;
+    height: 1.2em;
+}
+
+.menu-selected-app-title {
+    font-weight: bold;
+}
+
+.menu-selected-app-description {
+    max-width: 150px;
+}
+
+.menu-search-box {
+    padding-left: 30px;
+}
+
+/* The right click menu */
+.menu-applications-inner-box StScrollView {
+    border-image: url("img/containers/dark-bg.svg") 7;
+    padding: 1px;
+}

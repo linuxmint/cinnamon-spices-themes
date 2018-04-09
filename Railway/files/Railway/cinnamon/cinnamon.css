@@ -1,0 +1,3425 @@
+/*
+ * Railway theme for Cinnamon
+ * Copyright (C) 2018 German Franco <dev.germanfr@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+/* ======================================
+ * ! Font
+ * ====================================== */
+stage {
+  font-family: sans-serif;
+  font-size: 92%;
+}
+
+.cinnamon-link {
+  color: #0e7eff;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.cinnamon-link:hover {
+  color: #0e7eff;
+  text-decoration: underline;
+}
+
+.label-shadow {
+  color: transparent !important;
+}
+
+/* ======================================
+ * ! Tooltips
+ * ====================================== */
+#Tooltip {
+  border-image: url("img/containers/tooltip.svg") 10;
+  padding: 8px 12px;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 92%;
+  font-weight: normal;
+  text-align: center;
+  spacing: .3em;
+}
+
+/* ======================================
+ * ! Scrollbars
+ * ====================================== */
+StScrollView.vfade {
+  -st-vfade-offset: 0 !important;
+}
+
+StScrollView.hfade {
+  -st-hfade-offset: 0 !important;
+}
+
+StScrollBar {
+  padding: 0;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+StScrollView.vfade StScrollBar,
+StScrollView.hfade StScrollBar {
+  padding: 0;
+}
+
+StScrollBar StBin#trough {
+  background-color: transparent;
+}
+
+StScrollBar StButton#vhandle,
+StScrollBar StButton#hhandle {
+  border-image: url("img/controls/scroll-handle.svg") 4;
+  border: 0 solid !important;
+  margin: 0 !important;
+}
+
+StScrollBar StButton#vhandle:hover, StScrollBar StButton#vhandle:focus, StScrollBar StButton#vhandle:active,
+StScrollBar StButton#hhandle:hover,
+StScrollBar StButton#hhandle:focus,
+StScrollBar StButton#hhandle:active {
+  border-image: url("img/controls/scroll-handle-hover.svg") 4;
+}
+
+/* ======================================
+ * ! Entries
+ * ====================================== */
+.menu StEntry,
+.modal-dialog StEntry,
+#notification StEntry {
+  border-image: url("img/controls/entry.svg") 10;
+  color: rgba(0, 0, 0, 0.5);
+  padding: .3em .7em;
+  width: 220px;
+  height: 2em;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+.menu StEntry:focus, .menu StEntry:active, .menu StEntry:pressed, .menu StEntry .expo-workspaces-name-entry,
+.modal-dialog StEntry:focus,
+.modal-dialog StEntry:active,
+.modal-dialog StEntry:pressed,
+.modal-dialog StEntry .expo-workspaces-name-entry,
+#notification StEntry:focus,
+#notification StEntry:active,
+#notification StEntry:pressed,
+#notification StEntry .expo-workspaces-name-entry {
+  color: rgba(0, 0, 0, 0.75);
+  caret-color: rgba(0, 0, 0, 0.75);
+  caret-size: 1px;
+  selected-color: white;
+  selection-background-color: #599be7;
+}
+
+.menu StEntry StIcon,
+.modal-dialog StEntry StIcon,
+#notification StEntry StIcon {
+  color: rgba(0, 0, 0, 0.5);
+  icon-size: 16px;
+}
+
+.menu StEntry:focus > StIcon,
+.menu StEntry:active > StIcon,
+.menu StEntry:pressed > StIcon,
+.modal-dialog StEntry:focus > StIcon,
+.modal-dialog StEntry:active > StIcon,
+.modal-dialog StEntry:pressed > StIcon,
+#notification StEntry:focus > StIcon,
+#notification StEntry:active > StIcon,
+#notification StEntry:pressed > StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* ======================================
+ * ! Switchers
+ * ====================================== */
+.toggle-switch, .toggle-switch-us, .toggle-switch-intl {
+  width: 30px;
+  height: 15px;
+  background-image: url("img/controls/switch-off.svg");
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch:checked, .toggle-switch-us:checked, .toggle-switch-intl:checked {
+  background-image: url("img/controls/switch-on.svg");
+  background-color: #06b025;
+}
+
+/* ======================================
+ * ! Checkboxes + Radio buttons
+ * ====================================== */
+.check-box CinnamonGenericContainer {
+  spacing: .2em;
+  min-height: 17px;
+}
+
+.check-box StBin {
+  width: 17px;
+  height: 17px;
+  background-image: url("img/controls/check-box.svg");
+}
+
+.check-box:focus StBin {
+  background-image: url("img/controls/check-box-focused.svg");
+}
+
+.check-box:checked StBin {
+  background-image: url("img/controls/check-box-checked.svg");
+}
+
+.check-box:focus:checked {
+  background-image: url("img/controls/check-box-checked-focused.svg");
+}
+
+.radiobutton CinnamonGenericContainer {
+  spacing: .2em;
+  min-height: 17px;
+}
+
+.radiobutton StBin {
+  width: 17px;
+  height: 17px;
+  background-image: url("img/controls/radiobutton.svg");
+}
+
+.radiobutton:focus StBin {
+  background-image: url("img/controls/radiobutton-focused.svg");
+}
+
+.radiobutton:checked StBin {
+  background-image: url("img/controls/radiobutton-checked.svg");
+}
+
+.radiobutton:focus:checked {
+  background-image: url("img/controls/radiobutton-checked-focused.svg");
+}
+
+/* ======================================
+ * ! Button (global selector)
+ * ====================================== */
+.button {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: normal;
+  padding: .8em 2em;
+}
+
+.button StIcon {
+  icon-size: 16px !important;
+}
+
+.button StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.button:hover {
+  border-image: url("img/buttons/button-primary__s--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.button:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.button:active, .button:pressed, .button:activate, .button:checked, .button:selected {
+  border-image: url("img/buttons/button-primary__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.button:active StIcon, .button:pressed StIcon, .button:activate StIcon, .button:checked StIcon, .button:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.button:focus {
+  border-image: url("img/buttons/button-selected__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.button:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.button:focus:hover {
+  border-image: url("img/buttons/button-selected__s--hover.svg") 10;
+}
+
+.button:focus:active, .button:focus:pressed, .button:focus:activate, .button:focus:checked, .button:focus:selected {
+  border-image: url("img/buttons/button-selected__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.button:focus:active StIcon, .button:focus:pressed StIcon, .button:focus:activate StIcon, .button:focus:checked StIcon, .button:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.button:grayed, .button:disabled, .button:insensitive, .button:focus:grayed, .button:focus:disabled, .button:focus:insensitive {
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.button:grayed StIcon, .button:disabled StIcon, .button:insensitive StIcon, .button:focus:grayed StIcon, .button:focus:disabled StIcon, .button:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================
+ * ! Slider
+ * ====================================== */
+.slider, .popup-slider-menu-item {
+  height: 6px;
+  min-width: 15em;
+  -slider-height: 6px;
+  -slider-background-color: rgba(0, 0, 0, 0.2);
+  -slider-active-background-color: #06b025;
+  -slider-border-color: transparent;
+  -slider-active-border-color: transparent;
+  -slider-border-width: -3px;
+  -slider-handle-radius: 2px;
+  -slider-radius: 0px;
+  color: transparent;
+}
+
+/* ======================================
+ * ! Popup menus separators
+ * ====================================== */
+.separator {
+  -gradient-height: 1px;
+  -gradient-start: transparent;
+  -gradient-end: transparent;
+  -margin-horizontal: 0;
+  background-image: url("img/misc/separator.svg");
+  background-repeat: repeat;
+  height: 13px;
+}
+
+/* ======================================
+ * ! Popup Menus
+ * ====================================== */
+.menu {
+  background-color: rgba(74, 133, 198, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  margin: 4px;
+}
+
+.popup-menu-content {
+  color: rgba(0, 0, 0, 0.75);
+  border-image: url("img/containers/inner-bg.svg") 3;
+  padding: 7px 1px;
+  min-width: 64px;
+  font-size: 92%;
+}
+
+.popup-menu-icon {
+  icon-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-menu-item {
+  padding: .5em 1.4em;
+  spacing: .5em;
+}
+
+.popup-menu-item:active {
+  border-image: url("img/containers/hover-popup.svg") 10;
+}
+
+.popup-menu-item:insensitive {
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.popup-menu-item:insensitive .popup-menu-icon, .popup-menu-item:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.popup-menu-item-dot {
+  color: #06b025;
+}
+
+.popup-sub-menu {
+  border-image: url("img/containers/popup-submenu.svg") 9;
+  box-shadow: none;
+  background-gradient-direction: none;
+  padding: 9px 0;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.popup-sub-menu .popup-menu-item:active {
+  border-image: url("img/containers/hover-popup.svg") 9;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.popup-menu-arrow {
+  icon-size: 13px;
+  width: 13px;
+  height: 13px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.popup-separator-menu-item {
+  -gradient-height: 1px;
+  -gradient-start: rgba(0, 0, 0, 0.2);
+  -gradient-end: rgba(0, 0, 0, 0.2);
+  -margin-horizontal: 0;
+  height: 1px;
+}
+
+/* Right click in scale (show all windows) */
+.popup-combo-menu {
+  border-image: url("img/containers/tile-bg.svg") 3;
+  padding: 3px;
+  color: white;
+}
+
+.popup-combo-menu .popup-menu-item:active {
+  border-image: url("img/containers/hover-transparent.svg") 3;
+}
+
+.popup-inactive-menu-item {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-subtitle-menu-item {
+  font-weight: bold;
+}
+
+/* used in power applet */
+.popup-device-menu-item {
+  spacing: .8em;
+}
+
+.popup-device-menu-item .popup-inactive-menu-item {
+  color: #0e7eff;
+}
+
+/* ======================================
+ * ! Panel
+ * ====================================== */
+.panel-top {
+  font-size: 92%;
+  width: 40px;
+  height: 32px;
+  background-color: rgba(74, 133, 198, 0.75);
+}
+
+.panel-top .panelLeft, .panel-top .panelCenter, .panel-top .panelRight {
+  border-image: url("img/panel/panel-top.svg") 3;
+}
+
+.panel-top:highlight .panelLeft, .panel-top:highlight .panelCenter, .panel-top:highlight .panelRight {
+  background-color: rgba(255, 190, 0, 0.5);
+}
+
+.panel-bottom {
+  font-size: 92%;
+  width: 40px;
+  height: 32px;
+  background-color: rgba(74, 133, 198, 0.75);
+}
+
+.panel-bottom .panelLeft, .panel-bottom .panelCenter, .panel-bottom .panelRight {
+  border-image: url("img/panel/panel-bottom.svg") 3;
+}
+
+.panel-bottom:highlight .panelLeft, .panel-bottom:highlight .panelCenter, .panel-bottom:highlight .panelRight {
+  background-color: rgba(255, 190, 0, 0.5);
+}
+
+.panel-left {
+  font-size: 92%;
+  width: 40px;
+  height: 32px;
+  background-color: rgba(74, 133, 198, 0.75);
+}
+
+.panel-left .panelLeft, .panel-left .panelCenter, .panel-left .panelRight {
+  border-image: url("img/panel/panel-left.svg") 3;
+}
+
+.panel-left:highlight .panelLeft, .panel-left:highlight .panelCenter, .panel-left:highlight .panelRight {
+  background-color: rgba(255, 190, 0, 0.5);
+}
+
+.panel-right {
+  font-size: 92%;
+  width: 40px;
+  height: 32px;
+  background-color: rgba(74, 133, 198, 0.75);
+}
+
+.panel-right .panelLeft, .panel-right .panelCenter, .panel-right .panelRight {
+  border-image: url("img/panel/panel-right.svg") 3;
+}
+
+.panel-right:highlight .panelLeft, .panel-right:highlight .panelCenter, .panel-right:highlight .panelRight {
+  background-color: rgba(255, 190, 0, 0.5);
+}
+
+/* Panel edit mode */
+.panelLeft:dnd,
+.panelRight:dnd {
+  border-image: none;
+  background-color: rgba(255, 190, 0, 0.5);
+}
+
+.panelCenter:dnd {
+  border-image: none;
+  background-color: rgba(237, 93, 93, 0.5);
+}
+
+.panel-dummy {
+  background-color: rgba(255, 190, 0, 0.75);
+}
+
+.panel-dummy:entered {
+  background-color: rgba(255, 190, 0, 0.9);
+}
+
+/* ======================================
+ * ! Expo view
+ * ====================================== */
+.expo-background {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.expo-workspace-thumbnail-frame {
+  border: 5px transparent;
+  border-image: url("img/expo_scale/workspace-shadow.svg") 10;
+}
+
+.expo-workspace-thumbnail-frame#active {
+  border: 5px transparent;
+  border-image: url("img/expo_scale/workspace-shadow.svg") 10;
+}
+
+.workspace-thumbnails {
+  spacing: 32px;
+}
+
+/* This shades the workspace thumbnails */
+.workspace-thumbnails .workspace-overview-background-shade {
+  background-color: transparent;
+}
+
+.expo-workspaces-name-entry {
+  border-image: url("img/controls/entry.svg") 6;
+  padding: 8px;
+  height: 16px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.workspace-close-button {
+  background-image: url("img/controls/close.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  -cinnamon-close-overlap: 24px;
+}
+
+.workspace-close-button:hover {
+  background-image: url("img/controls/close-hover.svg");
+}
+
+.workspace-add-button {
+  border-image: url("img/containers/tile-bg.svg") 6;
+  background-image: url("img/expo_scale/plus.svg");
+  background-size: 24px 24px;
+  height: 48px;
+  width: 48px;
+}
+
+.window-close-area {
+  border-image: url("img/containers/tile-bg.svg") 9;
+  background-image: url("img/expo_scale/trash.svg");
+  height: 64px;
+  width: 512px;
+}
+
+/* ======================================
+ * ! Windows overview
+ * ====================================== */
+/* The background for the scale view */
+.workspace-overview-background-shade {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.window-caption {
+  padding: 8px;
+  -cinnamon-caption-spacing: 10px;
+  color: white;
+  font-size: 92%;
+  font-weight: normal;
+}
+
+.window-close {
+  background-image: url("img/controls/close.svg");
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  -cinnamon-close-overlap: 24px;
+}
+
+.window-close:hover {
+  background-image: url("img/controls/close-hover.svg");
+}
+
+/* ======================================
+ * ! Desklets
+ * ====================================== */
+.desklet {
+  color: white;
+}
+
+.desklet-with-borders {
+  background-color: rgba(74, 133, 198, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  color: white;
+  text-shadow: none;
+}
+
+.desklet-with-borders-and-header {
+  background-color: rgba(74, 133, 198, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  border-top: none;
+  color: white;
+  text-shadow: none;
+}
+
+.desklet-header {
+  background-color: rgba(74, 133, 198, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  border-bottom: none;
+  color: white;
+  text-shadow: none;
+  padding-bottom: 0;
+  font-size: 138%;
+  font-weight: normal;
+}
+
+.desklet-drag-placeholder {
+  border-image: url("img/containers/hover.svg") 9;
+}
+
+/* ======================================
+ * ! Clock
+ * ====================================== */
+.clock-desklet-label {
+  font-weight: normal;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* ======================================
+ * ! Photoframe
+ * ====================================== */
+.photoframe-box {
+  background-color: rgba(74, 133, 198, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  border-radius: 0;
+}
+
+/* ======================================
+ * ! Notifications
+ * ====================================== */
+.url-highlighter {
+  link-color: #0e7eff;
+}
+
+#notification {
+  border-image: url("img/containers/tile-bg.svg") 10;
+  padding: 1.3em;
+  spacing-rows: .3em;
+  spacing-columns: 10px;
+  width: 34em;
+  margin-from-right-edge-of-screen: 0px;
+  font-size: 92%;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+#notification CinnamonGenericContainer * {
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.65);
+  /* Notification title */
+}
+
+#notification CinnamonGenericContainer *:first-child {
+  padding-top: .3em;
+  color: white;
+}
+
+#notification CinnamonGenericContainer *:last-child {
+  padding-top: .3em;
+  color: white;
+}
+
+#notification StIcon {
+  color: white;
+}
+
+#notification-body {
+  font-weight: normal;
+}
+
+#notification-actions {
+  spacing: .3em;
+}
+
+#notification.notification-with-image {
+  min-height: 164px;
+}
+
+.popup-menu-content #notification.notification-with-image {
+  min-height: 178px;
+}
+
+#notification.notification-with-image #notification-body {
+  padding: 0;
+}
+
+.notification-button,
+.notification-icon-button {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-tile__s.svg") 10;
+  color: white;
+  font-weight: bold;
+  padding: .8em;
+}
+
+.notification-button StIcon,
+.notification-icon-button StIcon {
+  icon-size: 16px !important;
+}
+
+.notification-button StIcon,
+.notification-icon-button StIcon {
+  color: white;
+}
+
+.notification-button:hover,
+.notification-icon-button:hover {
+  border-image: url("img/buttons/button-tile__s--hover.svg") 10;
+  color: white;
+}
+
+.notification-button:hover StIcon,
+.notification-icon-button:hover StIcon {
+  color: white;
+}
+
+.notification-button:active, .notification-button:pressed, .notification-button:activate, .notification-button:checked, .notification-button:selected,
+.notification-icon-button:active,
+.notification-icon-button:pressed,
+.notification-icon-button:activate,
+.notification-icon-button:checked,
+.notification-icon-button:selected {
+  border-image: url("img/buttons/button-tile__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.notification-button:active StIcon, .notification-button:pressed StIcon, .notification-button:activate StIcon, .notification-button:checked StIcon, .notification-button:selected StIcon,
+.notification-icon-button:active StIcon,
+.notification-icon-button:pressed StIcon,
+.notification-icon-button:activate StIcon,
+.notification-icon-button:checked StIcon,
+.notification-icon-button:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.notification-button:focus,
+.notification-icon-button:focus {
+  border-image: url("img/buttons/button-tile__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.notification-button:focus StIcon,
+.notification-icon-button:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.notification-button:focus:hover,
+.notification-icon-button:focus:hover {
+  border-image: url("img/buttons/button-tile__s--hover.svg") 10;
+}
+
+.notification-button:focus:active, .notification-button:focus:pressed, .notification-button:focus:activate, .notification-button:focus:checked, .notification-button:focus:selected,
+.notification-icon-button:focus:active,
+.notification-icon-button:focus:pressed,
+.notification-icon-button:focus:activate,
+.notification-icon-button:focus:checked,
+.notification-icon-button:focus:selected {
+  border-image: url("img/buttons/button-tile__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.notification-button:focus:active StIcon, .notification-button:focus:pressed StIcon, .notification-button:focus:activate StIcon, .notification-button:focus:checked StIcon, .notification-button:focus:selected StIcon,
+.notification-icon-button:focus:active StIcon,
+.notification-icon-button:focus:pressed StIcon,
+.notification-icon-button:focus:activate StIcon,
+.notification-icon-button:focus:checked StIcon,
+.notification-icon-button:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.notification-button:grayed, .notification-button:disabled, .notification-button:insensitive, .notification-button:focus:grayed, .notification-button:focus:disabled, .notification-button:focus:insensitive,
+.notification-icon-button:grayed,
+.notification-icon-button:disabled,
+.notification-icon-button:insensitive,
+.notification-icon-button:focus:grayed,
+.notification-icon-button:focus:disabled,
+.notification-icon-button:focus:insensitive {
+  border-image: url("img/buttons/button-tile__s.svg") 10;
+  color: white;
+}
+
+.notification-button:grayed StIcon, .notification-button:disabled StIcon, .notification-button:insensitive StIcon, .notification-button:focus:grayed StIcon, .notification-button:focus:disabled StIcon, .notification-button:focus:insensitive StIcon,
+.notification-icon-button:grayed StIcon,
+.notification-icon-button:disabled StIcon,
+.notification-icon-button:insensitive StIcon,
+.notification-icon-button:focus:grayed StIcon,
+.notification-icon-button:focus:disabled StIcon,
+.notification-icon-button:focus:insensitive StIcon {
+  color: white;
+}
+
+/* ======================================
+ * ! Notification applet
+ * ====================================== */
+#traycontainer {
+  max-height: 48em;
+}
+
+#traycontainer .notification-applet-padding {
+  padding: 6px;
+}
+
+#traycontainer #notification {
+  border-image: url("img/containers/inner-bg-dark.svg") 7;
+  padding: 8px;
+  font-size: 100%;
+}
+
+#traycontainer #notification, #traycontainer #notification * {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#traycontainer .notification-button,
+#traycontainer .notification-icon-button {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: normal;
+}
+
+#traycontainer .notification-button StIcon,
+#traycontainer .notification-icon-button StIcon {
+  icon-size: 16px !important;
+}
+
+#traycontainer .notification-button StIcon,
+#traycontainer .notification-icon-button StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#traycontainer .notification-button:hover,
+#traycontainer .notification-icon-button:hover {
+  border-image: url("img/buttons/button-primary__s--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#traycontainer .notification-button:hover StIcon,
+#traycontainer .notification-icon-button:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#traycontainer .notification-button:active, #traycontainer .notification-button:pressed, #traycontainer .notification-button:activate, #traycontainer .notification-button:checked, #traycontainer .notification-button:selected,
+#traycontainer .notification-icon-button:active,
+#traycontainer .notification-icon-button:pressed,
+#traycontainer .notification-icon-button:activate,
+#traycontainer .notification-icon-button:checked,
+#traycontainer .notification-icon-button:selected {
+  border-image: url("img/buttons/button-primary__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#traycontainer .notification-button:active StIcon, #traycontainer .notification-button:pressed StIcon, #traycontainer .notification-button:activate StIcon, #traycontainer .notification-button:checked StIcon, #traycontainer .notification-button:selected StIcon,
+#traycontainer .notification-icon-button:active StIcon,
+#traycontainer .notification-icon-button:pressed StIcon,
+#traycontainer .notification-icon-button:activate StIcon,
+#traycontainer .notification-icon-button:checked StIcon,
+#traycontainer .notification-icon-button:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#traycontainer .notification-button:focus,
+#traycontainer .notification-icon-button:focus {
+  border-image: url("img/buttons/button-selected__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#traycontainer .notification-button:focus StIcon,
+#traycontainer .notification-icon-button:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#traycontainer .notification-button:focus:hover,
+#traycontainer .notification-icon-button:focus:hover {
+  border-image: url("img/buttons/button-selected__s--hover.svg") 10;
+}
+
+#traycontainer .notification-button:focus:active, #traycontainer .notification-button:focus:pressed, #traycontainer .notification-button:focus:activate, #traycontainer .notification-button:focus:checked, #traycontainer .notification-button:focus:selected,
+#traycontainer .notification-icon-button:focus:active,
+#traycontainer .notification-icon-button:focus:pressed,
+#traycontainer .notification-icon-button:focus:activate,
+#traycontainer .notification-icon-button:focus:checked,
+#traycontainer .notification-icon-button:focus:selected {
+  border-image: url("img/buttons/button-selected__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#traycontainer .notification-button:focus:active StIcon, #traycontainer .notification-button:focus:pressed StIcon, #traycontainer .notification-button:focus:activate StIcon, #traycontainer .notification-button:focus:checked StIcon, #traycontainer .notification-button:focus:selected StIcon,
+#traycontainer .notification-icon-button:focus:active StIcon,
+#traycontainer .notification-icon-button:focus:pressed StIcon,
+#traycontainer .notification-icon-button:focus:activate StIcon,
+#traycontainer .notification-icon-button:focus:checked StIcon,
+#traycontainer .notification-icon-button:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#traycontainer .notification-button:grayed, #traycontainer .notification-button:disabled, #traycontainer .notification-button:insensitive, #traycontainer .notification-button:focus:grayed, #traycontainer .notification-button:focus:disabled, #traycontainer .notification-button:focus:insensitive,
+#traycontainer .notification-icon-button:grayed,
+#traycontainer .notification-icon-button:disabled,
+#traycontainer .notification-icon-button:insensitive,
+#traycontainer .notification-icon-button:focus:grayed,
+#traycontainer .notification-icon-button:focus:disabled,
+#traycontainer .notification-icon-button:focus:insensitive {
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+#traycontainer .notification-button:grayed StIcon, #traycontainer .notification-button:disabled StIcon, #traycontainer .notification-button:insensitive StIcon, #traycontainer .notification-button:focus:grayed StIcon, #traycontainer .notification-button:focus:disabled StIcon, #traycontainer .notification-button:focus:insensitive StIcon,
+#traycontainer .notification-icon-button:grayed StIcon,
+#traycontainer .notification-icon-button:disabled StIcon,
+#traycontainer .notification-icon-button:insensitive StIcon,
+#traycontainer .notification-icon-button:focus:grayed StIcon,
+#traycontainer .notification-icon-button:focus:disabled StIcon,
+#traycontainer .notification-icon-button:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================
+ * ! Alt Tab
+ * ====================================== */
+/*
+ * This styles the normal alt-tab popup
+ *
+ * See also window-list module for a similar selector
+ */
+#uiGroup > #altTabPopup {
+  padding: 0;
+  spacing: 4px;
+}
+
+#uiGroup > #altTabPopup .switcher-list {
+  border-image: url("img/containers/tile-bg.svg") 10;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 1px;
+  font-size: 100%;
+}
+
+#uiGroup > #altTabPopup .switcher-list .item-box {
+  padding: 10px;
+}
+
+#uiGroup > #altTabPopup .switcher-list .item-box:selected {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.35);
+  /* Popup thumbnail */
+}
+
+#uiGroup > #altTabPopup .switcher-list .item-box:selected:last-child {
+  background-color: transparent;
+}
+
+#uiGroup > #altTabPopup .switcher-list .item-box StLabel {
+  padding-top: .4em;
+}
+
+#uiGroup > #altTabPopup .switcher-arrow {
+  color: transparent;
+}
+
+/*
+ * This styles the window name box when alt-tab is
+ * in 'coverflow' or 'timeline' modes
+ */
+#uiGroup > StWidget > .switcher-list {
+  border-image: url("img/containers/tile-bg.svg") 10;
+  color: white;
+  font-weight: normal;
+}
+
+.switcher-list-item-container {
+  spacing: 0;
+}
+
+.thumbnail {
+  width: 256px;
+}
+
+/* ======================================
+ * ! Lightbox + flashspot
+ * ====================================== */
+/* The background shade when a dialog appears */
+.lightbox {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* Among other places, appears when adding an applet */
+.flashspot {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ======================================
+ * ! Modal dialogs
+ * ====================================== */
+.modal-dialog {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 92%;
+  background-color: rgba(74, 133, 198, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+}
+
+.modal-dialog > * {
+  border-image: url("img/containers/inner-bg__bottom.svg") 3;
+  padding: 17px;
+}
+
+.modal-dialog-button-box {
+  border-image: url("img/containers/modal-button-box.svg") 3;
+  spacing: 0;
+  padding: 11px;
+}
+
+.modal-dialog-button {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: normal;
+  padding: .8em 2em;
+}
+
+.modal-dialog-button StIcon {
+  icon-size: 16px !important;
+}
+
+.modal-dialog-button StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-dialog-button:hover {
+  border-image: url("img/buttons/button-primary__s--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-dialog-button:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-dialog-button:active, .modal-dialog-button:pressed, .modal-dialog-button:activate, .modal-dialog-button:checked, .modal-dialog-button:selected {
+  border-image: url("img/buttons/button-primary__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-dialog-button:active StIcon, .modal-dialog-button:pressed StIcon, .modal-dialog-button:activate StIcon, .modal-dialog-button:checked StIcon, .modal-dialog-button:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-dialog-button:focus {
+  border-image: url("img/buttons/button-selected__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-dialog-button:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-dialog-button:focus:hover {
+  border-image: url("img/buttons/button-selected__s--hover.svg") 10;
+}
+
+.modal-dialog-button:focus:active, .modal-dialog-button:focus:pressed, .modal-dialog-button:focus:activate, .modal-dialog-button:focus:checked, .modal-dialog-button:focus:selected {
+  border-image: url("img/buttons/button-selected__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-dialog-button:focus:active StIcon, .modal-dialog-button:focus:pressed StIcon, .modal-dialog-button:focus:activate StIcon, .modal-dialog-button:focus:checked StIcon, .modal-dialog-button:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-dialog-button:grayed, .modal-dialog-button:disabled, .modal-dialog-button:insensitive, .modal-dialog-button:focus:grayed, .modal-dialog-button:focus:disabled, .modal-dialog-button:focus:insensitive {
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-dialog-button:grayed StIcon, .modal-dialog-button:disabled StIcon, .modal-dialog-button:insensitive StIcon, .modal-dialog-button:focus:grayed StIcon, .modal-dialog-button:focus:disabled StIcon, .modal-dialog-button:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* ======================================
+ * ! Run dialog
+ * ====================================== */
+.run-dialog > * {
+  border-image: url("img/containers/inner-bg-dark.svg") 3;
+  spacing: 10px;
+  padding: 11px;
+}
+
+.run-dialog > .modal-dialog-button-box {
+  background-color: transparent;
+  border-image: none;
+  padding: 0;
+  height: 0;
+}
+
+.run-dialog-error-box {
+  padding: 0;
+  spacing: 6px;
+  color: #ff2c2c;
+}
+
+.run-dialog-error-icon {
+  color: #ff2c2c;
+}
+
+.run-dialog-completion-box {
+  border-image: url("img/containers/inner-bg.svg") 3;
+  padding: 7px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.run-dialog-label {
+  /*!*/
+}
+
+.run-dialog-entry {
+  /*!*/
+}
+
+/* ======================================
+ * ! About Dialog
+ * ====================================== */
+.about-content {
+  min-width: 360px;
+  max-width: 520px;
+  spacing: 16px;
+}
+
+.about-icon {
+  color: rgba(0, 0, 0, 0.75);
+  border-image: url("img/containers/inner-bg-dark.svg") 3;
+  padding: 7px;
+}
+
+.about-title {
+  font-size: 184%;
+  padding-left: 16px;
+  font-weight: normal;
+}
+
+.about-uuid {
+  color: rgba(0, 0, 0, 0.5);
+  padding-left: 16px;
+}
+
+.about-description {
+  /*!*/
+}
+
+.about-version {
+  padding: 8px;
+  font-weight: bold;
+  color: #0e7eff;
+}
+
+.about-scrollBox {
+  border-image: url("img/containers/inner-bg-dark.svg") 10;
+  padding: 1px;
+}
+
+.about-scrollBox-innerBox {
+  padding: 1.2em;
+  spacing: 1.2em;
+}
+
+#about-website:hover StLabel {
+  text-decoration: underline;
+}
+
+/* ======================================
+ * ! On-screen Keyboard
+ * ====================================== */
+#keyboard {
+  border-image: url("img/containers/sound-applet-overlay-bg.svg") 3;
+}
+
+.keyboard-layout {
+  spacing: 6px;
+  padding: 11px;
+}
+
+.keyboard-row {
+  spacing: 4px;
+}
+
+.keyboard-key {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: normal;
+  min-height: 30px;
+  min-width: 30px;
+  font-size: 138%;
+}
+
+.keyboard-key StIcon {
+  icon-size: 16px !important;
+}
+
+.keyboard-key StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.keyboard-key:hover {
+  border-image: url("img/buttons/button-primary__s--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.keyboard-key:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.keyboard-key:active, .keyboard-key:pressed, .keyboard-key:activate, .keyboard-key:checked, .keyboard-key:selected {
+  border-image: url("img/buttons/button-primary__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.keyboard-key:active StIcon, .keyboard-key:pressed StIcon, .keyboard-key:activate StIcon, .keyboard-key:checked StIcon, .keyboard-key:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.keyboard-key:focus {
+  border-image: url("img/buttons/button-selected__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.keyboard-key:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.keyboard-key:focus:hover {
+  border-image: url("img/buttons/button-selected__s--hover.svg") 10;
+}
+
+.keyboard-key:focus:active, .keyboard-key:focus:pressed, .keyboard-key:focus:activate, .keyboard-key:focus:checked, .keyboard-key:focus:selected {
+  border-image: url("img/buttons/button-selected__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.keyboard-key:focus:active StIcon, .keyboard-key:focus:pressed StIcon, .keyboard-key:focus:activate StIcon, .keyboard-key:focus:checked StIcon, .keyboard-key:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.keyboard-key:grayed, .keyboard-key:disabled, .keyboard-key:insensitive, .keyboard-key:focus:grayed, .keyboard-key:focus:disabled, .keyboard-key:focus:insensitive {
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.keyboard-key:grayed StIcon, .keyboard-key:disabled StIcon, .keyboard-key:insensitive StIcon, .keyboard-key:focus:grayed StIcon, .keyboard-key:focus:disabled StIcon, .keyboard-key:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* Appears when long-pressing certain keys */
+.keyboard-subkeys {
+  border-image: url("img/containers/tooltip.svg") 10;
+}
+
+or .applet-icon,
+.system-status-icon {
+  icon-size: 16px;
+  padding: 0;
+  spacing: 0;
+}
+
+/* This is pretty much only used by the keyboard applet */
+.panel-status-button {
+  color: white;
+  height: inherit;
+}
+
+.panel-top .panel-status-button, .panel-bottom .panel-status-button {
+  padding: 0 2px;
+}
+
+.panel-left .panel-status-button, .panel-right .panel-status-button {
+  height: 1.8em;
+}
+
+.applet-label {
+  color: white;
+}
+
+.panel-top .applet-separator, .panel-bottom .applet-separator {
+  padding: 0 7px;
+}
+
+.panel-left .applet-separator, .panel-right .applet-separator {
+  padding: 7px 0;
+}
+
+.applet-separator-line {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 1px;
+}
+
+.applet-separator-line-vertical {
+  border: 0 rgba(0, 0, 0, 0.2);
+  border-bottom-width: 1px;
+}
+
+.applet-box {
+  padding: 0 6px;
+  color: white;
+  spacing: 4px;
+}
+
+.applet-box:hover {
+  border-image: url("img/panel/applet__horizontal__hover.svg") 10;
+}
+
+.applet-box:checked {
+  border-image: url("img/panel/applet__horizontal__checked.svg") 10;
+}
+
+.applet-box.vertical {
+  padding: 6px 0;
+}
+
+.applet-box.vertical:hover {
+  border-image: url("img/panel/applet__vertical__hover.svg") 10;
+}
+
+.applet-box.vertical:checked {
+  border-image: url("img/panel/applet__vertical__checked.svg") 10;
+}
+
+/* ======================================
+ * ! Calendar
+ * ====================================== */
+.calendar-day {
+  /* ! */
+}
+
+.calendar-day-top {
+  /* ! */
+}
+
+.calendar-day-left {
+  /* ! */
+}
+
+.datemenu-date-label {
+  padding: .7em 1.3em .4em;
+  text-align: center;
+  color: #0e7eff;
+}
+
+.calendar {
+  padding: .8em 1.3em .6em;
+  spacing-rows: 0;
+  spacing-columns: 2px;
+}
+
+.calendar-month-label {
+  padding-top: 2px;
+  color: rgba(0, 0, 0, 0.75);
+  padding: .5em;
+}
+
+.calendar-change-month-back,
+.calendar-change-month-forward:rtl {
+  background-image: url("img/controls/calendar-arrow-left.svg");
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  padding: 0 .2em;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.calendar-change-month-back:hover,
+.calendar-change-month-forward:rtl:hover {
+  border-image: url("img/containers/hover.svg") 6;
+}
+
+.calendar-change-month-forward,
+.calendar-change-month-back:rtl {
+  background-image: url("img/controls/calendar-arrow-right.svg");
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  padding: 0 .2em;
+}
+
+.calendar-change-month-forward:hover,
+.calendar-change-month-back:rtl:hover {
+  border-image: url("img/containers/hover.svg") 6;
+}
+
+.calendar-day-base {
+  padding: 1px 0 0 1px;
+  width: 2.4em;
+  height: 1.6em;
+}
+
+.calendar-day-heading {
+  color: rgba(0, 0, 0, 0.75);
+  padding: 1.2em 0 0;
+  text-align: center;
+}
+
+.calendar-work-day,
+.calendar-nonwork-day {
+  border: none;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.calendar-today {
+  border-image: url("img/containers/hover.svg") 6;
+}
+
+.calendar-other-month-day {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.calendar-week-number {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* ======================================
+ * ! Window list
+ * ====================================== */
+.window-list-box {
+  spacing: 2px;
+  padding: 0;
+}
+
+.window-list-box .window-list-item-box {
+  padding: 0 4px 0 0;
+}
+
+.window-list-box #appMenuIcon {
+  padding: 0 0 0 8px;
+}
+
+.window-list-box.vertical .window-list-item-box {
+  padding: 0;
+}
+
+.window-list-box.vertical #appMenuIcon {
+  padding: 8px 0 0 0;
+}
+
+.window-list-item-box {
+  color: white;
+  border-image: url("img/panel/window-list.svg") 8;
+  text-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  background-gradient-direction: vertical;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  transition-duration: 200;
+}
+
+.window-list-item-box:hover, .window-list-item-box:hover:active, .window-list-item-box:hover:checked, .window-list-item-box:hover:focus {
+  background-gradient-end: rgba(255, 255, 255, 0.25);
+}
+
+.window-list-item-box:active, .window-list-item-box:checked, .window-list-item-box:focus {
+  border-image: url("img/panel/window-list__active.svg") 8;
+}
+
+.window-list-item-box .progress {
+  border-image: url("img/panel/window-list__progress.svg") 8;
+}
+
+.window-list-item-demands-attention {
+  border-image: url("img/panel/window-list__atention.svg") 8;
+}
+
+/*
+ * [DEPRECATED]
+ * The window list thumbnail shares a class
+ * with the alt-tab switcher, but it is
+ * the direct child of the top container.
+ *
+ * Hopefully a 'switcher-list' doesn't appear
+ * anywhere else as the direct child of '#uiGroup'.
+ */
+#uiGroup > .switcher-list,
+.window-list-preview {
+  background-color: rgba(74, 133, 198, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  color: white;
+  padding: 7px;
+  spacing: 4px;
+}
+
+/* ======================================
+ * ! Sound Applet
+ * ====================================== */
+.sound-player {
+  padding: 0;
+  /* sometimes disappears (in all themes) */
+}
+
+.sound-player > StBoxLayout:first-child {
+  padding: .4em 1.3em .6em;
+  spacing: .6em;
+  font-weight: normal;
+  font-size: 110%;
+}
+
+.sound-player > StBoxLayout:first-child StButton {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: normal;
+  width: 24px;
+  height: 24px;
+}
+
+.sound-player > StBoxLayout:first-child StButton StIcon {
+  icon-size: 16px !important;
+}
+
+.sound-player > StBoxLayout:first-child StButton StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player > StBoxLayout:first-child StButton:hover {
+  border-image: url("img/buttons/button-primary__s--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player > StBoxLayout:first-child StButton:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player > StBoxLayout:first-child StButton:active, .sound-player > StBoxLayout:first-child StButton:pressed, .sound-player > StBoxLayout:first-child StButton:activate, .sound-player > StBoxLayout:first-child StButton:checked, .sound-player > StBoxLayout:first-child StButton:selected {
+  border-image: url("img/buttons/button-primary__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player > StBoxLayout:first-child StButton:active StIcon, .sound-player > StBoxLayout:first-child StButton:pressed StIcon, .sound-player > StBoxLayout:first-child StButton:activate StIcon, .sound-player > StBoxLayout:first-child StButton:checked StIcon, .sound-player > StBoxLayout:first-child StButton:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player > StBoxLayout:first-child StButton:focus {
+  border-image: url("img/buttons/button-selected__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player > StBoxLayout:first-child StButton:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player > StBoxLayout:first-child StButton:focus:hover {
+  border-image: url("img/buttons/button-selected__s--hover.svg") 10;
+}
+
+.sound-player > StBoxLayout:first-child StButton:focus:active, .sound-player > StBoxLayout:first-child StButton:focus:pressed, .sound-player > StBoxLayout:first-child StButton:focus:activate, .sound-player > StBoxLayout:first-child StButton:focus:checked, .sound-player > StBoxLayout:first-child StButton:focus:selected {
+  border-image: url("img/buttons/button-selected__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player > StBoxLayout:first-child StButton:focus:active StIcon, .sound-player > StBoxLayout:first-child StButton:focus:pressed StIcon, .sound-player > StBoxLayout:first-child StButton:focus:activate StIcon, .sound-player > StBoxLayout:first-child StButton:focus:checked StIcon, .sound-player > StBoxLayout:first-child StButton:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player > StBoxLayout:first-child StButton:grayed, .sound-player > StBoxLayout:first-child StButton:disabled, .sound-player > StBoxLayout:first-child StButton:insensitive, .sound-player > StBoxLayout:first-child StButton:focus:grayed, .sound-player > StBoxLayout:first-child StButton:focus:disabled, .sound-player > StBoxLayout:first-child StButton:focus:insensitive {
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.sound-player > StBoxLayout:first-child StButton:grayed StIcon, .sound-player > StBoxLayout:first-child StButton:disabled StIcon, .sound-player > StBoxLayout:first-child StButton:insensitive StIcon, .sound-player > StBoxLayout:first-child StButton:focus:grayed StIcon, .sound-player > StBoxLayout:first-child StButton:focus:disabled StIcon, .sound-player > StBoxLayout:first-child StButton:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.sound-player-generic-coverart {
+  padding: 0 2px;
+  border-image: url("img/containers/popup-submenu.svg") 10;
+}
+
+.sound-player-overlay {
+  border-image: url("img/containers/sound-applet-overlay-bg.svg") 7;
+  padding: 1.3em;
+  spacing: .5em;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player-overlay StButton {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: normal;
+  padding: .8em;
+}
+
+.sound-player-overlay StButton StIcon {
+  icon-size: 16px !important;
+}
+
+.sound-player-overlay StButton StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player-overlay StButton:hover {
+  border-image: url("img/buttons/button-primary__s--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player-overlay StButton:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player-overlay StButton:active, .sound-player-overlay StButton:pressed, .sound-player-overlay StButton:activate, .sound-player-overlay StButton:checked, .sound-player-overlay StButton:selected {
+  border-image: url("img/buttons/button-primary__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player-overlay StButton:active StIcon, .sound-player-overlay StButton:pressed StIcon, .sound-player-overlay StButton:activate StIcon, .sound-player-overlay StButton:checked StIcon, .sound-player-overlay StButton:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player-overlay StButton:focus {
+  border-image: url("img/buttons/button-selected__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player-overlay StButton:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player-overlay StButton:focus:hover {
+  border-image: url("img/buttons/button-selected__s--hover.svg") 10;
+}
+
+.sound-player-overlay StButton:focus:active, .sound-player-overlay StButton:focus:pressed, .sound-player-overlay StButton:focus:activate, .sound-player-overlay StButton:focus:checked, .sound-player-overlay StButton:focus:selected {
+  border-image: url("img/buttons/button-selected__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player-overlay StButton:focus:active StIcon, .sound-player-overlay StButton:focus:pressed StIcon, .sound-player-overlay StButton:focus:activate StIcon, .sound-player-overlay StButton:focus:checked StIcon, .sound-player-overlay StButton:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.sound-player-overlay StButton:grayed, .sound-player-overlay StButton:disabled, .sound-player-overlay StButton:insensitive, .sound-player-overlay StButton:focus:grayed, .sound-player-overlay StButton:focus:disabled, .sound-player-overlay StButton:focus:insensitive {
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.sound-player-overlay StButton:grayed StIcon, .sound-player-overlay StButton:disabled StIcon, .sound-player-overlay StButton:insensitive StIcon, .sound-player-overlay StButton:focus:grayed StIcon, .sound-player-overlay StButton:focus:disabled StIcon, .sound-player-overlay StButton:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.sound-player-overlay StBoxLayout {
+  padding-top: .2em;
+  spacing: .4em;
+}
+
+.sound-player .slider, .sound-player .popup-slider-menu-item {
+  height: 6px;
+  -slider-background-color: #cccccc;
+  -slider-active-background-color: #06b025;
+  -slider-handle-radius: 0;
+  border-image: none;
+  border: 0 transparent;
+}
+
+/* ======================================
+ * ! Number-mode Workspace Switcher applet
+ * ====================================== */
+.workspace-switcher {
+  padding: 0 2px;
+}
+
+.workspace-switcher.vertical {
+  padding: 2px 0;
+}
+
+.workspace-button {
+  width: 24px;
+  height: 24px;
+  padding: 0 3px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.workspace-button:hover {
+  border-image: url("img/panel/applet__horizontal__hover.svg") 12;
+}
+
+.workspace-button:outlined {
+  color: white;
+  border-image: url("img/panel/applet__horizontal__checked.svg") 12;
+}
+
+.workspace-button.vertical:hover {
+  border-image: url("img/panel/applet__vertical__hover.svg") 12;
+}
+
+.workspace-button.vertical:outlined {
+  border-image: url("img/panel/applet__vertical__checked.svg") 12;
+}
+
+/* ======================================
+ * ! Visual-mode Workspace Switcher applet
+ * ====================================== */
+.workspace-graph {
+  padding: 0 6px;
+}
+
+.panel-left .workspace-graph, .panel-right .workspace-graph {
+  padding: 6px 0;
+}
+
+.workspace-graph .workspace {
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px rgba(0, 0, 0, 0.6);
+}
+
+.workspace-graph .workspace:active {
+  border-color: #000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.workspace-graph .workspace .windows {
+  -active-window-background: rgba(255, 255, 255, 0.8);
+  -active-window-border: rgba(0, 0, 0, 0.8);
+  -inactive-window-background: rgba(255, 255, 255, 0.4);
+  -inactive-window-border: rgba(0, 0, 0, 0.4);
+}
+
+/* ======================================
+ * ! Panel Launchers Applet
+ * ====================================== */
+.panel-launchers, .panel-launchers.vertical {
+  spacing: 0;
+  padding: 0 !important;
+}
+
+.launcher {
+  padding: 0 6px;
+}
+
+.vertical .launcher {
+  padding: 6px 0;
+}
+
+.launcher:hover {
+  border-image: url("img/panel/applet__horizontal__hover.svg") 12;
+}
+
+.vertical .launcher:hover {
+  border-image: url("img/panel/applet__vertical__hover.svg") 12;
+}
+
+/* ======================================
+ * ! User Applet
+ * ====================================== */
+.user-box {
+  padding: 0.4em 1.3em;
+  spacing: 10px;
+}
+
+.user-icon {
+  border-image: url("img/containers/inner-bg-dark.svg") 10;
+  padding: 4px;
+  width: 48px;
+  height: 48px;
+  border: 0 transparent;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.user-label {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 110%;
+}
+
+/* ======================================
+ * ! App menu applet
+ * ====================================== */
+.menu-background.menu {
+  margin: 0;
+}
+
+.menu-background.menu .popup-menu-content {
+  padding: 0;
+  border-image: none;
+}
+
+.menu-favorites-box {
+  padding: 0;
+}
+
+.menu-favorites-button {
+  padding: 10px 12px;
+  color: white;
+}
+
+.menu-favorites-button:hover {
+  border-image: url("img/containers/hover-transparent.svg") 8;
+  color: white;
+}
+
+.menu-categories-box {
+  padding: 8px;
+  border-image: url("img/containers/menu-categories.svg") 8;
+}
+
+.menu-category-button, .starkmenu-background .menu-favorites-box .menu-category-button-selected {
+  padding: .6em;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.menu-category-button-greyed {
+  padding: .6em;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.menu-category-button-selected {
+  padding: .6em;
+  border-image: url("img/containers/hover.svg") 7;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.menu-category-button-label:ltr {
+  padding-left: 5px;
+}
+
+.menu-category-button-label:rtl {
+  padding-right: 5px;
+}
+
+.menu-applications-outer-box {
+  spacing: 7px;
+}
+
+.menu-applications-outer-box .menu-applications-inner-box {
+  padding: 8px 0;
+}
+
+.menu-applications-outer-box .menu-applications-scrollbox {
+  padding: 0 1px 1px 0;
+  border-image: url("img/containers/menu-apps.svg") 8;
+}
+
+.menu-application-button {
+  padding: 8px 16px;
+}
+
+.menu-application-button-selected, .menu-application-button-selected:highlighted {
+  padding: 8px 16px;
+  border-image: url("img/containers/hover-popup.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.menu-application-button:highlighted {
+  border-image: url("img/containers/hover-popup__highlighted.svg") 10;
+}
+
+.menu-application-button-label:ltr {
+  padding-left: 5px;
+}
+
+.menu-application-button-label:rtl {
+  padding-right: 5px;
+}
+
+.menu-selected-app-box {
+  margin: 6px 6px 0;
+  text-align: right;
+}
+
+.menu-selected-app-title {
+  color: white;
+}
+
+.menu-selected-app-description {
+  max-width: 150px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.menu-search-box {
+  padding: 11px;
+  border-image: url("img/containers/menu-search.svg") 10;
+}
+
+/* The right click menu */
+.menu-applications-inner-box StScrollView {
+  border-image: url("img/containers/popup-submenu.svg") 10;
+  padding: 1em .2em;
+}
+
+/* ======================================
+ * ! Hot corner ripple
+ * ====================================== */
+.ripple-box {
+  width: 48px;
+  height: 48px;
+  background-image: url("img/misc/corner-ripple.svg");
+}
+
+/* ======================================
+ * ! OSD
+ * ====================================== */
+/* Appears when adding panels or snapping windows */
+.info-osd {
+  border-image: url("img/containers/tile-bg.svg") 10;
+  spacing: 0;
+  padding: .8em;
+  color: white;
+  text-align: center;
+  font-weight: normal;
+  font-size: 138%;
+}
+
+.osd-window {
+  border-image: url("img/containers/tile-bg.svg") 10;
+  padding: 16px 24px;
+  spacing: 1em;
+  color: white;
+}
+
+.osd-window .level {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 0;
+  border-radius: 0;
+  height: 8px;
+  color: white;
+}
+
+.osd-window .level-bar {
+  background-color: white;
+}
+
+/* Appears when switching workspaces */
+.workspace-osd {
+  border-image: url("img/containers/tile-bg.svg") 10;
+  padding: .8em;
+  font-weight: normal;
+  font-size: 184%;
+  color: white;
+}
+
+/* Appears when selecting with looking glass*/
+#LookingGlassDialog {
+  border-image: url("img/containers/tile-bg.svg") 10;
+  padding: 1.4em;
+  spacing: .7em;
+  color: white;
+  font-size: 92%;
+  text-align: center;
+  font-weight: normal;
+}
+
+/* ======================================
+ * ! Magnifier
+ * ====================================== */
+.magnifier-zoom-region {
+  border: 3px red;
+}
+
+.magnifier-zoom-region.full-screen {
+  border: none;
+}
+
+/* ======================================
+ * ! Tile Previews
+ * ====================================== */
+.tile-preview, .tile-hud {
+  border-image: url("img/containers/tile-preview.svg") 10;
+}
+
+.tile-preview.snap, .tile-hud.snap {
+  border-image: url("img/containers/snap-preview.svg") 10;
+}
+
+/* ======================================
+ * ! Weather applet
+ * ====================================== */
+/* Overrides the '.menu' selector */
+.weather-menu .popup-menu-content {
+  padding: 1px;
+}
+
+.weather-menu .popup-separator-menu-item {
+  background-image: none;
+  height: 0;
+}
+
+.weather-icon,
+.weather-icon-rtl {
+  padding: 10px;
+}
+
+.current {
+  padding: 16px;
+}
+
+.current * {
+  padding: 0;
+}
+
+.weather-current-location-link {
+  font-size: 138%;
+}
+
+.weather-current-location-link:selected, .weather-current-location-link:hover {
+  color: #0e7eff;
+  text-decoration: underline;
+}
+
+.weather-current-summarybox {
+  padding: 0 2.2em;
+  spacing: .1em;
+}
+
+.weather-current-summary {
+  font-size: 230%;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.weather-current-icon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.weather-current-databox {
+  spacing: .3em;
+}
+
+.weather-current-databox > * {
+  spacing: .3em;
+}
+
+.weather-current-databox-captions {
+  color: rgba(0, 0, 0, 0.5);
+  text-align: right;
+}
+
+.weather-current-databox-values {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.weather-current-astronomy {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.forecast {
+  padding: 1.6em;
+  border-image: url("img/containers/menu-search__bottom.svg") 3;
+}
+
+.weather-forecast-box {
+  spacing: .8em;
+  padding-right: 2.4em;
+}
+
+.weather-forecast-box:last-child {
+  padding-right: 0;
+}
+
+.weather-forecast-icon {
+  padding: 0;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.weather-forecast-databox {
+  padding: 0;
+  spacing: .3em;
+}
+
+.weather-forecast-day {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 110%;
+  font-weight: bold;
+}
+
+.weather-forecast-temperature {
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: bold;
+}
+
+/* ======================================
+ * ! Slingshot
+ * ====================================== */
+/* Use to override the '.popup-menu-content' selector */
+.slingshot {
+  padding: 0;
+}
+
+/* Separator */
+.slingshot .separator {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Entry */
+.slingshot .entry {
+  border-image: url("img/controls/entry.svg") 10;
+  color: rgba(0, 0, 0, 0.5);
+  padding: .3em .7em;
+  width: 220px;
+  height: 2em;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+.slingshot .entry:focus, .slingshot .entry:active, .slingshot .entry:pressed, .slingshot .entry .expo-workspaces-name-entry {
+  color: rgba(0, 0, 0, 0.75);
+  caret-color: rgba(0, 0, 0, 0.75);
+  caret-size: 1px;
+  selected-color: white;
+  selection-background-color: #599be7;
+}
+
+.slingshot .entry StIcon {
+  color: rgba(0, 0, 0, 0.5);
+  icon-size: 16px;
+}
+
+.slingshot .entry:focus > StIcon,
+.slingshot .entry:active > StIcon,
+.slingshot .entry:pressed > StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* Paginator */
+.slingshot .button {
+  box-shadow: none;
+  text-shadow: 0 0 transparent;
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: normal;
+  padding: .7em;
+}
+
+.slingshot .button StIcon {
+  icon-size: 16px !important;
+}
+
+.slingshot .button StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .button:hover {
+  border-image: url("img/buttons/button-primary__s--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .button:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .button:active, .slingshot .button:pressed, .slingshot .button:activate, .slingshot .button:checked, .slingshot .button:selected {
+  border-image: url("img/buttons/button-primary__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .button:active StIcon, .slingshot .button:pressed StIcon, .slingshot .button:activate StIcon, .slingshot .button:checked StIcon, .slingshot .button:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .button:focus {
+  border-image: url("img/buttons/button-selected__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .button:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .button:focus:hover {
+  border-image: url("img/buttons/button-selected__s--hover.svg") 10;
+}
+
+.slingshot .button:focus:active, .slingshot .button:focus:pressed, .slingshot .button:focus:activate, .slingshot .button:focus:checked, .slingshot .button:focus:selected {
+  border-image: url("img/buttons/button-selected__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .button:focus:active StIcon, .slingshot .button:focus:pressed StIcon, .slingshot .button:focus:activate StIcon, .slingshot .button:focus:checked StIcon, .slingshot .button:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .button:grayed, .slingshot .button:disabled, .slingshot .button:insensitive, .slingshot .button:focus:grayed, .slingshot .button:focus:disabled, .slingshot .button:focus:insensitive {
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.slingshot .button:grayed StIcon, .slingshot .button:disabled StIcon, .slingshot .button:insensitive StIcon, .slingshot .button:focus:grayed StIcon, .slingshot .button:focus:disabled StIcon, .slingshot .button:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* Applications */
+.slingshot .button.app {
+  border-image: none;
+  border-width: 0;
+  text-shadow: 0 0 transparent;
+  font-weight: normal;
+  padding: 16px;
+}
+
+.slingshot .button.app:hover, .slingshot .button.app:focus {
+  border-image: url("img/containers/hover.svg") 7;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* Categories */
+.slingshot .sidebar {
+  padding: 0 8px 0 18px;
+  spacing: 4px;
+}
+
+.slingshot .sidebar .button {
+  border-image: none;
+  padding: 5px;
+  border-color: transparent;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: normal;
+}
+
+.slingshot .sidebar .button:hover, .slingshot .sidebar .button:hover:active, .slingshot .sidebar .button:hover:checked {
+  border-image: url("img/containers/hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .sidebar .button:checked {
+  border-image: url("img/containers/hover-transparent.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* Linked buttons */
+.slingshot .linked .button {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__m.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: normal;
+  padding: .8em;
+}
+
+.slingshot .linked .button StIcon {
+  icon-size: 16px !important;
+}
+
+.slingshot .linked .button StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:hover {
+  border-image: url("img/buttons/button-primary__m--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:active, .slingshot .linked .button:pressed, .slingshot .linked .button:activate, .slingshot .linked .button:checked, .slingshot .linked .button:selected {
+  border-image: url("img/buttons/button-primary__m--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:active StIcon, .slingshot .linked .button:pressed StIcon, .slingshot .linked .button:activate StIcon, .slingshot .linked .button:checked StIcon, .slingshot .linked .button:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:focus {
+  border-image: url("img/buttons/button-primary__m.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:focus:hover {
+  border-image: url("img/buttons/button-primary__m--hover.svg") 10;
+}
+
+.slingshot .linked .button:focus:active, .slingshot .linked .button:focus:pressed, .slingshot .linked .button:focus:activate, .slingshot .linked .button:focus:checked, .slingshot .linked .button:focus:selected {
+  border-image: url("img/buttons/button-primary__m--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:focus:active StIcon, .slingshot .linked .button:focus:pressed StIcon, .slingshot .linked .button:focus:activate StIcon, .slingshot .linked .button:focus:checked StIcon, .slingshot .linked .button:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:grayed, .slingshot .linked .button:disabled, .slingshot .linked .button:insensitive, .slingshot .linked .button:focus:grayed, .slingshot .linked .button:focus:disabled, .slingshot .linked .button:focus:insensitive {
+  border-image: url("img/buttons/button-primary__m.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:grayed StIcon, .slingshot .linked .button:disabled StIcon, .slingshot .linked .button:insensitive StIcon, .slingshot .linked .button:focus:grayed StIcon, .slingshot .linked .button:focus:disabled StIcon, .slingshot .linked .button:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:first-child {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__f.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:first-child StIcon {
+  icon-size: 16px !important;
+}
+
+.slingshot .linked .button:first-child StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:first-child:hover {
+  border-image: url("img/buttons/button-primary__f--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:first-child:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:first-child:active, .slingshot .linked .button:first-child:pressed, .slingshot .linked .button:first-child:activate, .slingshot .linked .button:first-child:checked, .slingshot .linked .button:first-child:selected {
+  border-image: url("img/buttons/button-primary__f--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:first-child:active StIcon, .slingshot .linked .button:first-child:pressed StIcon, .slingshot .linked .button:first-child:activate StIcon, .slingshot .linked .button:first-child:checked StIcon, .slingshot .linked .button:first-child:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:first-child:focus {
+  border-image: url("img/buttons/button-primary__f.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:first-child:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:first-child:focus:hover {
+  border-image: url("img/buttons/button-primary__f--hover.svg") 10;
+}
+
+.slingshot .linked .button:first-child:focus:active, .slingshot .linked .button:first-child:focus:pressed, .slingshot .linked .button:first-child:focus:activate, .slingshot .linked .button:first-child:focus:checked, .slingshot .linked .button:first-child:focus:selected {
+  border-image: url("img/buttons/button-primary__f--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:first-child:focus:active StIcon, .slingshot .linked .button:first-child:focus:pressed StIcon, .slingshot .linked .button:first-child:focus:activate StIcon, .slingshot .linked .button:first-child:focus:checked StIcon, .slingshot .linked .button:first-child:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:first-child:grayed, .slingshot .linked .button:first-child:disabled, .slingshot .linked .button:first-child:insensitive, .slingshot .linked .button:first-child:focus:grayed, .slingshot .linked .button:first-child:focus:disabled, .slingshot .linked .button:first-child:focus:insensitive {
+  border-image: url("img/buttons/button-primary__f.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:first-child:grayed StIcon, .slingshot .linked .button:first-child:disabled StIcon, .slingshot .linked .button:first-child:insensitive StIcon, .slingshot .linked .button:first-child:focus:grayed StIcon, .slingshot .linked .button:first-child:focus:disabled StIcon, .slingshot .linked .button:first-child:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__l.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child StIcon {
+  icon-size: 16px !important;
+}
+
+.slingshot .linked .button:last-child StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:hover {
+  border-image: url("img/buttons/button-primary__l--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:active, .slingshot .linked .button:last-child:pressed, .slingshot .linked .button:last-child:activate, .slingshot .linked .button:last-child:checked, .slingshot .linked .button:last-child:selected {
+  border-image: url("img/buttons/button-primary__l--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:active StIcon, .slingshot .linked .button:last-child:pressed StIcon, .slingshot .linked .button:last-child:activate StIcon, .slingshot .linked .button:last-child:checked StIcon, .slingshot .linked .button:last-child:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:focus {
+  border-image: url("img/buttons/button-primary__l.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:focus:hover {
+  border-image: url("img/buttons/button-primary__l--hover.svg") 10;
+}
+
+.slingshot .linked .button:last-child:focus:active, .slingshot .linked .button:last-child:focus:pressed, .slingshot .linked .button:last-child:focus:activate, .slingshot .linked .button:last-child:focus:checked, .slingshot .linked .button:last-child:focus:selected {
+  border-image: url("img/buttons/button-primary__l--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:focus:active StIcon, .slingshot .linked .button:last-child:focus:pressed StIcon, .slingshot .linked .button:last-child:focus:activate StIcon, .slingshot .linked .button:last-child:focus:checked StIcon, .slingshot .linked .button:last-child:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:grayed, .slingshot .linked .button:last-child:disabled, .slingshot .linked .button:last-child:insensitive, .slingshot .linked .button:last-child:focus:grayed, .slingshot .linked .button:last-child:focus:disabled, .slingshot .linked .button:last-child:focus:insensitive {
+  border-image: url("img/buttons/button-primary__l.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:grayed StIcon, .slingshot .linked .button:last-child:disabled StIcon, .slingshot .linked .button:last-child:insensitive StIcon, .slingshot .linked .button:last-child:focus:grayed StIcon, .slingshot .linked .button:last-child:focus:disabled StIcon, .slingshot .linked .button:last-child:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:first-child {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:first-child StIcon {
+  icon-size: 16px !important;
+}
+
+.slingshot .linked .button:last-child:first-child StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:first-child:hover {
+  border-image: url("img/buttons/button-primary__s--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:first-child:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:first-child:active, .slingshot .linked .button:last-child:first-child:pressed, .slingshot .linked .button:last-child:first-child:activate, .slingshot .linked .button:last-child:first-child:checked, .slingshot .linked .button:last-child:first-child:selected {
+  border-image: url("img/buttons/button-primary__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:first-child:active StIcon, .slingshot .linked .button:last-child:first-child:pressed StIcon, .slingshot .linked .button:last-child:first-child:activate StIcon, .slingshot .linked .button:last-child:first-child:checked StIcon, .slingshot .linked .button:last-child:first-child:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:first-child:focus {
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:first-child:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:first-child:focus:hover {
+  border-image: url("img/buttons/button-primary__s--hover.svg") 10;
+}
+
+.slingshot .linked .button:last-child:first-child:focus:active, .slingshot .linked .button:last-child:first-child:focus:pressed, .slingshot .linked .button:last-child:first-child:focus:activate, .slingshot .linked .button:last-child:first-child:focus:checked, .slingshot .linked .button:last-child:first-child:focus:selected {
+  border-image: url("img/buttons/button-primary__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:first-child:focus:active StIcon, .slingshot .linked .button:last-child:first-child:focus:pressed StIcon, .slingshot .linked .button:last-child:first-child:focus:activate StIcon, .slingshot .linked .button:last-child:first-child:focus:checked StIcon, .slingshot .linked .button:last-child:first-child:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:first-child:grayed, .slingshot .linked .button:last-child:first-child:disabled, .slingshot .linked .button:last-child:first-child:insensitive, .slingshot .linked .button:last-child:first-child:focus:grayed, .slingshot .linked .button:last-child:first-child:focus:disabled, .slingshot .linked .button:last-child:first-child:focus:insensitive {
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slingshot .linked .button:last-child:first-child:grayed StIcon, .slingshot .linked .button:last-child:first-child:disabled StIcon, .slingshot .linked .button:last-child:first-child:insensitive StIcon, .slingshot .linked .button:last-child:first-child:focus:grayed StIcon, .slingshot .linked .button:last-child:first-child:focus:disabled StIcon, .slingshot .linked .button:last-child:first-child:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* ======================================
+ * ! Xcenter
+ * ====================================== */
+.xCenter-menu .popup-menu-content {
+  max-height: 32em;
+}
+
+/* ======================================
+ * ! Stopwatch
+ * ====================================== */
+.stopwatch-ready,
+.stopwatch-running,
+.stopwatch-paused,
+.stopwatch-day-exceeded,
+.stopwatch-running-day-exceeded,
+.stopwatch-paused-day-exceeded {
+  background-color: transparent;
+  padding: 0 8px;
+}
+
+.panel-top .stopwatch-ready:hover,
+.panel-top .stopwatch-paused:hover, .panel-bottom .stopwatch-ready:hover,
+.panel-bottom .stopwatch-paused:hover {
+  border-image: url("img/panel/applet__horizontal__hover.svg") 12;
+}
+
+.panel-top .stopwatch-running,
+.panel-top .stopwatch-running:hover, .panel-bottom .stopwatch-running,
+.panel-bottom .stopwatch-running:hover {
+  border-image: url("img/panel/applet__horizontal__checked.svg") 4;
+}
+
+.stopwatch-ready * {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.stopwatch-ready:hover * {
+  color: white;
+}
+
+/* ======================================
+ * ! Desktop Capture applet
+ * ====================================== */
+/* Display of preview image in notifications */
+.screenshot-thumbnail {
+  border-image: url("img/containers/inner-bg-dark.svg") 7;
+  padding: 8px;
+}
+
+.screenshot-thumbnail-hover {
+  border-image: url("img/containers/hover.svg") 7;
+}
+
+/* Window capture mode */
+.capture-outline-background {
+  border-image: url("img/containers/tile-preview.svg") 7;
+}
+
+.capture-outline-frame {
+  border: 0;
+  border-radius: 0;
+}
+
+/* App icon (window capture mode) */
+.overlay-icon {
+  padding: 10px;
+  border: 0;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 0 transparent;
+  icon-shadow: transparent 0 0 0;
+}
+
+.overlay-label-title, .overlay-label-size {
+  color: rgba(0, 0, 0, 0.75);
+  text-shadow: 0 0 16px 4px #fff;
+  font-weight: normal;
+  font-size: 110%;
+}
+
+.capture-countdown-timer {
+  border-image: url("img/containers/tile-bg.svg") 7;
+  font-weight: normal;
+  text-align: center;
+  color: white;
+}
+
+/* Desktop overlay */
+.cover {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* Instructions dialog */
+.instructions-container {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.instructions-label-header {
+  text-align: center;
+  font-size: 184%;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 transparent;
+}
+
+.instructions-label-text {
+  color: white;
+  text-align: center;
+  font-size: 138%;
+  text-shadow: 0 0 transparent;
+}
+
+.menuitem-detail {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.menu .switcher-list {
+  padding: 0;
+}
+
+.thumbnail-box {
+  padding: 0;
+}
+
+.thumbnail-box:hover {
+  border-image: url("img/containers/hover-transparent.svg") 3;
+}
+
+.thumbnail-box .window-close {
+  background-image: url("img/controls/close-simple.svg");
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.thumbnail-box .thumbnail {
+  margin: 4px;
+}
+
+.thumbnail-box .thumbnail-label, .thumbnail-box .thumbnail-label-no-icon {
+  color: white;
+  font-weight: normal;
+  padding: 4px 0 0 4px;
+}
+
+.thumbnail-box .thumbnail-icon {
+  width: 16px;
+  height: 16px;
+  padding: 4px;
+  padding-bottom: 0;
+}
+
+/* NumLabel */
+.window-icon-list-numlabel {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  padding: 2px;
+  font-size: 110%;
+  font-weight: normal;
+}
+
+/* ======================================
+ * ! Stark menu applet
+ * ====================================== */
+.starkmenu-background {
+  background-color: rgba(74, 133, 198, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  margin: 0;
+}
+
+.starkmenu-background .popup-menu-content {
+  border-image: none;
+  padding: 0;
+}
+
+.starkmenu-background .hover-box {
+  padding: 0 0 8px;
+}
+
+.starkmenu-background .hover-box .hover-icon, .starkmenu-background .hover-box .hover-user-icon {
+  padding: 4px;
+}
+
+.starkmenu-background .hover-box .hover-user-icon {
+  border-image: url("img/containers/inner-bg.svg") 8;
+}
+
+.starkmenu-background .hover-box .starkmenu-user-label {
+  padding: 0 8px;
+}
+
+.starkmenu-background .menu-applications-outer-box {
+  spacing: 0;
+}
+
+.starkmenu-background .menu-applications-scrollbox {
+  border-image: none;
+  padding: 0px;
+}
+
+.starkmenu-background .menu-categories-box {
+  border-image: none;
+}
+
+.starkmenu-background .menu-favorites-box {
+  padding: 1px;
+  border-image: url("img/containers/inner-bg.svg") 8;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.starkmenu-background .menu-favorites-box .menu-favorites-button {
+  color: rgba(0, 0, 0, 0.75);
+  padding: 8px 16px;
+}
+
+.starkmenu-background .menu-favorites-box .menu-favorites-button:hover {
+  border-image: url("img/containers/hover-popup.svg") 10;
+}
+
+.starkmenu-background .menu-favorites-box .menu-category-button, .starkmenu-background .menu-favorites-box .menu-category-button-selected {
+  padding: 8px 16px;
+  spacing: 0px;
+}
+
+.starkmenu-background .menu-favorites-box .menu-category-button-selected {
+  border-image: url("img/containers/hover-popup.svg") 10;
+}
+
+.starkmenu-background .menu-favorites-box .menu-category-button-greyed {
+  padding: 8px 16px;
+}
+
+.starkmenu-background .menu-favorites-box .menu-category-button:last-child, .starkmenu-background .menu-favorites-box .menu-category-button-selected:last-child {
+  padding: 8px;
+}
+
+.starkmenu-background .menu-favorites-box .menu-category-button:last-child > StIcon, .starkmenu-background .menu-favorites-box .menu-category-button-selected:last-child > StIcon {
+  padding: 0 8px;
+}
+
+.starkmenu-background .menu-favorites-box .menu-context-menu {
+  border-image: url("img/containers/popup-submenu.svg") 10;
+  padding: 1em .2em;
+}
+
+.starkmenu-background .right-buttons-box {
+  padding-left: 6px;
+  color: white;
+}
+
+.starkmenu-background .right-buttons-box .menu-category-button, .starkmenu-background .right-buttons-box .menu-favorites-box .menu-category-button-selected, .starkmenu-background .menu-favorites-box .right-buttons-box .menu-category-button-selected {
+  color: white;
+}
+
+.starkmenu-background .right-buttons-box .menu-category-button-selected, .starkmenu-background .right-buttons-box .menu-category-button:hover, .starkmenu-background .right-buttons-box .menu-favorites-box .menu-category-button-selected:hover, .starkmenu-background .menu-favorites-box .right-buttons-box .menu-category-button-selected:hover {
+  color: white;
+  border-image: url("img/containers/hover-transparent.svg") 10;
+}
+
+.starkmenu-background .right-buttons-box .popup-separator-menu-item {
+  -gradient-height: 1px;
+  height: 1px;
+  padding: 2px;
+}
+
+.starkmenu-background .right-buttons-box .starkhover-box .popup-menu-item {
+  color: white;
+}
+
+.starkmenu-background .right-buttons-box .starkhover-box .popup-menu-item:active {
+  border-image: url("img/containers/hover-transparent.svg") 3;
+}
+
+.starkmenu-search-box {
+  border-image: url("img/containers/menu-search__bottom.svg") 8;
+  padding: 11px 10px 10px;
+}
+
+.starkmenu-quit-horizontal-button,
+.starkmenu-quit-horizontal-button-selected {
+  padding: 0;
+}
+
+.starkmenu-logout-horizontal-button,
+.starkmenu-logout-horizontal-button-selected {
+  padding: 0;
+}
+
+.starkmenu-lockscreen-horizontal-button,
+.starkmenu-lockscreen-horizontal-button-selected {
+  padding: 0;
+}
+
+/* ======================================
+ * ! Calculator
+ * ====================================== */
+.calc-mainBox {
+  padding: 0;
+  spacing: 6px;
+}
+
+.calc-displayArea {
+  padding: 0;
+}
+
+.calc-displayWindow {
+  border-image: url("img/containers/inner-bg.svg") 7;
+  padding: 4px 8px 1.5em;
+}
+
+.calc-displayWindow-rpn {
+  border-image: url("img/containers/inner-bg.svg") 7;
+  padding: 8px;
+  padding-top: 4px;
+}
+
+.calc-displayText-primary {
+  font-size: 230%;
+  color: rgba(0, 0, 0, 0.75);
+  text-align: right;
+}
+
+.calc-displayText-secondary {
+  font-size: 92%;
+  color: rgba(0, 0, 0, 0.75);
+  text-align: right;
+  padding-bottom: 8px;
+}
+
+.calc-displayText-operation {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.calc-displayText-status {
+  font-size: 92%;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.calc-displayText-rpn {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 92%;
+}
+
+.calc-stackArea {
+  height: 6em;
+  padding-top: .8em;
+  padding-bottom: 0;
+}
+
+.calc-navigation-box {
+  padding: 0 0 0 8px;
+  width: 16px;
+  border: none;
+}
+
+.calc-navigation-icon {
+  color: rgba(0, 0, 0, 0.75);
+  icon-size: 16px;
+}
+
+.calc-navigation-button {
+  border: none;
+}
+
+.calc-navigation-button:hover .calc-navigation-icon {
+  color: #06b025;
+}
+
+.calc-button {
+  margin: 0px;
+  padding: 0px;
+  border: 0;
+  border-image: url("img/containers/hover-transparent.svg") 9;
+}
+
+.calc-button-padding {
+  padding: 0px;
+}
+
+.calc-button StIcon {
+  color: white;
+}
+
+/* ======================================
+ * ! Reddit reader
+ * ====================================== */
+.reddit-reader {
+  background-color: rgba(74, 133, 198, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.reddit-reader StScrollView {
+  border-image: url("img/containers/inner-bg__top.svg") 3;
+  padding: 0 1px 1px;
+}
+
+/* Title */
+.reddit-title-bar {
+  border-image: url("img/containers/menu-search.svg") 3;
+  padding: 10px;
+  font-size: 110%;
+  font-weight: normal;
+}
+
+.reddit-title-bar .reddit-header-icon {
+  padding: 0 8px;
+  icon-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.reddit-title-bar .reddit-title {
+  font-size: 184%;
+}
+
+.reddit-title-bar .reddit-subtitle {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 110%;
+}
+
+/* Posts */
+.reddit-posts-box {
+  padding: 0 4px;
+}
+
+.reddit-post {
+  border-image: url("img/containers/inner-bg-dark.svg") 9;
+  padding: 8px;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 92%;
+  font-weight: normal;
+}
+
+.reddit-post:hover {
+  color: #0e7eff;
+}
+
+.reddit-info-box {
+  border-image: url("img/containers/inner-bg__top.svg") 9;
+  padding: 8px;
+  font-size: 92%;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* ======================================
+ * ! Xkcd
+ * ====================================== */
+.xkcd-box {
+  padding: 0px;
+  border: 0 transparent;
+  box-shadow: none;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* ======================================
+ * ! G-tile
+ * ====================================== */
+.grid-panel {
+  background-color: rgba(74, 133, 198, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  width: 220px;
+  spacing: 0;
+  border-radius: 0;
+  font-size: 92%;
+}
+
+.grid-panel > * {
+  border-image: url("img/containers/inner-bg__middle.svg") 3;
+}
+
+.grid-title {
+  font-size: 100%;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+.table {
+  padding: 0 11px;
+}
+
+.table-element {
+  margin: 2px;
+  border-image: url("img/containers/inner-bg-dark.svg") 10;
+}
+
+.table-element:hover, .table-element:activate {
+  border-image: url("img/containers/hover.svg") 7;
+}
+
+.top-box {
+  padding: 11px;
+  padding-bottom: 8px;
+  border-image: url("img/containers/inner-bg__bottom.svg") 3;
+}
+
+.bottom-box {
+  padding: 8px 11px 10px;
+}
+
+.bottom-box:last-child {
+  padding: 11px;
+  border-image: url("img/containers/modal-button-box.svg") 3;
+}
+
+.close-button {
+  background-image: url("img/controls/close-simple.svg");
+}
+
+.close-button:hover {
+  background-image: url("img/controls/close-simple-hover.svg");
+}
+
+/* buttons */
+.settings-button {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__m.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: normal;
+}
+
+.settings-button StIcon {
+  icon-size: 16px !important;
+}
+
+.settings-button StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:hover {
+  border-image: url("img/buttons/button-primary__m--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:active, .settings-button:pressed, .settings-button:activate, .settings-button:checked, .settings-button:selected {
+  border-image: url("img/buttons/button-primary__m--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:active StIcon, .settings-button:pressed StIcon, .settings-button:activate StIcon, .settings-button:checked StIcon, .settings-button:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:focus {
+  border-image: url("img/buttons/button-primary__m.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:focus:hover {
+  border-image: url("img/buttons/button-primary__m--hover.svg") 10;
+}
+
+.settings-button:focus:active, .settings-button:focus:pressed, .settings-button:focus:activate, .settings-button:focus:checked, .settings-button:focus:selected {
+  border-image: url("img/buttons/button-primary__m--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:focus:active StIcon, .settings-button:focus:pressed StIcon, .settings-button:focus:activate StIcon, .settings-button:focus:checked StIcon, .settings-button:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:grayed, .settings-button:disabled, .settings-button:insensitive, .settings-button:focus:grayed, .settings-button:focus:disabled, .settings-button:focus:insensitive {
+  border-image: url("img/buttons/button-primary__m.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:grayed StIcon, .settings-button:disabled StIcon, .settings-button:insensitive StIcon, .settings-button:focus:grayed StIcon, .settings-button:focus:disabled StIcon, .settings-button:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:first-child {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__f.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:first-child StIcon {
+  icon-size: 16px !important;
+}
+
+.settings-button:first-child StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:first-child:hover {
+  border-image: url("img/buttons/button-primary__f--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:first-child:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:first-child:active, .settings-button:first-child:pressed, .settings-button:first-child:activate, .settings-button:first-child:checked, .settings-button:first-child:selected {
+  border-image: url("img/buttons/button-primary__f--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:first-child:active StIcon, .settings-button:first-child:pressed StIcon, .settings-button:first-child:activate StIcon, .settings-button:first-child:checked StIcon, .settings-button:first-child:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:first-child:focus {
+  border-image: url("img/buttons/button-primary__f.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:first-child:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:first-child:focus:hover {
+  border-image: url("img/buttons/button-primary__f--hover.svg") 10;
+}
+
+.settings-button:first-child:focus:active, .settings-button:first-child:focus:pressed, .settings-button:first-child:focus:activate, .settings-button:first-child:focus:checked, .settings-button:first-child:focus:selected {
+  border-image: url("img/buttons/button-primary__f--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:first-child:focus:active StIcon, .settings-button:first-child:focus:pressed StIcon, .settings-button:first-child:focus:activate StIcon, .settings-button:first-child:focus:checked StIcon, .settings-button:first-child:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:first-child:grayed, .settings-button:first-child:disabled, .settings-button:first-child:insensitive, .settings-button:first-child:focus:grayed, .settings-button:first-child:focus:disabled, .settings-button:first-child:focus:insensitive {
+  border-image: url("img/buttons/button-primary__f.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:first-child:grayed StIcon, .settings-button:first-child:disabled StIcon, .settings-button:first-child:insensitive StIcon, .settings-button:first-child:focus:grayed StIcon, .settings-button:first-child:focus:disabled StIcon, .settings-button:first-child:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__l.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child StIcon {
+  icon-size: 16px !important;
+}
+
+.settings-button:last-child StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:hover {
+  border-image: url("img/buttons/button-primary__l--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:active, .settings-button:last-child:pressed, .settings-button:last-child:activate, .settings-button:last-child:checked, .settings-button:last-child:selected {
+  border-image: url("img/buttons/button-primary__l--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:active StIcon, .settings-button:last-child:pressed StIcon, .settings-button:last-child:activate StIcon, .settings-button:last-child:checked StIcon, .settings-button:last-child:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:focus {
+  border-image: url("img/buttons/button-primary__l.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:focus:hover {
+  border-image: url("img/buttons/button-primary__l--hover.svg") 10;
+}
+
+.settings-button:last-child:focus:active, .settings-button:last-child:focus:pressed, .settings-button:last-child:focus:activate, .settings-button:last-child:focus:checked, .settings-button:last-child:focus:selected {
+  border-image: url("img/buttons/button-primary__l--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:focus:active StIcon, .settings-button:last-child:focus:pressed StIcon, .settings-button:last-child:focus:activate StIcon, .settings-button:last-child:focus:checked StIcon, .settings-button:last-child:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:grayed, .settings-button:last-child:disabled, .settings-button:last-child:insensitive, .settings-button:last-child:focus:grayed, .settings-button:last-child:focus:disabled, .settings-button:last-child:focus:insensitive {
+  border-image: url("img/buttons/button-primary__l.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:grayed StIcon, .settings-button:last-child:disabled StIcon, .settings-button:last-child:insensitive StIcon, .settings-button:last-child:focus:grayed StIcon, .settings-button:last-child:focus:disabled StIcon, .settings-button:last-child:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:first-child {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-size: 100%;
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:first-child StIcon {
+  icon-size: 16px !important;
+}
+
+.settings-button:last-child:first-child StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:first-child:hover {
+  border-image: url("img/buttons/button-primary__s--hover.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:first-child:hover StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:first-child:active, .settings-button:last-child:first-child:pressed, .settings-button:last-child:first-child:activate, .settings-button:last-child:first-child:checked, .settings-button:last-child:first-child:selected {
+  border-image: url("img/buttons/button-primary__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:first-child:active StIcon, .settings-button:last-child:first-child:pressed StIcon, .settings-button:last-child:first-child:activate StIcon, .settings-button:last-child:first-child:checked StIcon, .settings-button:last-child:first-child:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:first-child:focus {
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:first-child:focus StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:first-child:focus:hover {
+  border-image: url("img/buttons/button-primary__s--hover.svg") 10;
+}
+
+.settings-button:last-child:first-child:focus:active, .settings-button:last-child:first-child:focus:pressed, .settings-button:last-child:first-child:focus:activate, .settings-button:last-child:first-child:focus:checked, .settings-button:last-child:first-child:focus:selected {
+  border-image: url("img/buttons/button-primary__s--pressed.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:first-child:focus:active StIcon, .settings-button:last-child:first-child:focus:pressed StIcon, .settings-button:last-child:first-child:focus:activate StIcon, .settings-button:last-child:first-child:focus:checked StIcon, .settings-button:last-child:first-child:focus:selected StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:first-child:grayed, .settings-button:last-child:first-child:disabled, .settings-button:last-child:first-child:insensitive, .settings-button:last-child:first-child:focus:grayed, .settings-button:last-child:first-child:focus:disabled, .settings-button:last-child:first-child:focus:insensitive {
+  border-image: url("img/buttons/button-primary__s.svg") 10;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button:last-child:first-child:grayed StIcon, .settings-button:last-child:first-child:disabled StIcon, .settings-button:last-child:first-child:insensitive StIcon, .settings-button:last-child:first-child:focus:grayed StIcon, .settings-button:last-child:first-child:focus:disabled StIcon, .settings-button:last-child:first-child:focus:insensitive StIcon {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.settings-button, .settings-button:hover, .settings-button:activate, .settings-button:activate:hover {
+  width: 24px;
+  height: 24px;
+  min-width: 48px;
+  border: 0;
+}
+
+/* button-icons */
+.tiling-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.animation-icon {
+  background-image: url("img/misc/animation.svg");
+  width: 16px;
+  height: 16px;
+}
+
+.auto-close-icon {
+  background-image: url("img/controls/close-simple-hover.svg");
+  width: 16px;
+  height: 16px;
+}
+
+.action-main-list {
+  background-image: url("img/misc/auto-tile-1.svg");
+  width: 16px;
+  height: 16px;
+}
+
+.action-two-list {
+  background-image: url("img/misc/auto-tile-2.svg");
+  width: 16px;
+  height: 16px;
+}
+
+.action-scale {
+  width: 16px;
+  height: 16px;
+}

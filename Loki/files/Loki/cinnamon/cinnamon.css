@@ -85,7 +85,18 @@ border: 1px solid #303030;
 box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
 border-right: none;
 border-left: none;
-border-bottom: none; 
+border-bottom: none;
+padding-left: 5px;
+padding-right: 5px;
+border-radius: 1px;
+}
+.menu {
+background: #202020;
+border: 1px solid #303030;
+box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+border-right: none;
+border-left: none;
+border-bottom: none;
 padding-left: 5px;
 padding-right: 5px;
 border-radius: 1px;
@@ -193,6 +204,9 @@ box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
 font-size: 9pt;
 height: 28px;
 }
+#panel:highlight {
+    background-color: #aa5555;
+}
 #panelLeft, #panelCenter, #panelRight {
 spacing: 0px;
 }
@@ -225,6 +239,13 @@ transition-duration: 150;
 }
 .system-status-icon {
 icon-size: 1.20em;
+}
+.system-status-icon.warning {
+color: #e5e887;
+}
+
+.system-status-icon.error {
+color: #fb5858;
 }
 #panelLeft:dnd {
 background: #000;
@@ -654,6 +675,22 @@ padding: 6px 0px 5px 0px;
 .modal-dialog-button:disabled {
 color: #444;
 }
+.info-osd {
+  background: #202020;
+  border: 1px solid #303030;
+  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  font-size: 14pt;
+  border-radius: 1px;
+  color: #ddd;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+}
 /* ===================================================================
 * Run dialog
 * ===================================================================*/
@@ -958,23 +995,54 @@ color: #444;
 .window-list-box {
 spacing: 1px;
 }
+
 .window-list-item-label {
 font-weight: bold;
 min-width: 5px;
 width: 150px;
 color: #aaa;
 }
+
 .window-list-item-box {
 padding-left: 5px;
 padding-right: 5px;
 transition-duration: 150;
 }
+
+.panel-right .window-list-item-box, .panel-left.window-list-item-box {
+padding-left: 0px;
+padding-right: 0px;
+transition-duration: 150;
+}
+
 .window-list-item-box:active,
 .window-list-item-box:checked,
 .window-list-item-box:focus,
 .window-list-item-demands-attention  {  
-border-image: url("window-list.svg") 9 9 9 9 stretch;
+ border-image: url("window-list.svg") 9 9 9 9 stretch;
 transition-duration: 150;
+}
+.panel-right .window-list-item-box:active,
+.panel-right .window-list-item-box:checked,
+.panel-right .window-list-item-box:focus,
+.panel-right .window-list-item-demands-attention,
+.panel-left .window-list-item-box:active,
+.panel-left .window-list-item-box:checked,
+.panel-left .window-list-item-box:focus,
+.panel-left .window-list-item-demands-attention  {  
+ border-image: url("window-list.svg") 9 9 9 9 stretch;
+padding-left: 0px;
+padding-right: 0px;
+transition-duration: 150;
+}
+.window-list-preview {
+background: #202020;
+border: 1px solid #303030;
+box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+padding: 10px 15px 15px 15px;
+border-radius: 1px;
+font-weight: bold;
+spacing: 4px;
 }
 /* ===================================================================
 * Sound Applet (status/volume.js)
@@ -1104,6 +1172,13 @@ color: #aaa;
 border: 1px solid transparent;
 min-width: 1em;
 transition-duration: 150;
+spacing: 3px;
+}
+.applet-box.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 .applet-box:hover {
 border-image: url("applet-box.svg") 9 9 9 9 stretch;
@@ -1353,4 +1428,24 @@ font-weight: bold;
 }
 .weather-config {
 padding-right: 10px;
+}
+/* ==== */
+.flashspot {
+  background-color: #fff;
+}
+.osd-window {
+  background: #202020;
+  border: 1px solid #303030;
+  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 1px;
+  padding: 20px;
+  color: #fff;
+  spacing: 1em;
+}
+.osd-window .level {
+  height: 0.7em;
+  background-color: rgba(190,190,190,0.2);
 }

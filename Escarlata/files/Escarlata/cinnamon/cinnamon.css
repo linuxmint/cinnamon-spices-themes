@@ -1,14 +1,10 @@
-*
-{
-	font-family:"Times New Roman";
-	font-size:16px;
-}
 /* ###################################################################
  * Section common with Gnome Shell
  * ... contains a few cinnamon specific styles (rare occurences) 
  * ###################################################################*/
 stage {
-	font-family: sans, sans-serif;
+	font-family:"Times New Roman";
+	font-size:16px;
 }
 .cinnamon-link {
 	color: #0000ff;
@@ -101,10 +97,15 @@ StScrollBar StButton#vhandle:hover {
 	-arrow-base: 24px;
 	-arrow-rise: 11px;
 }
-.popup-menu {
+
+.popup-menu, .menu {
 	color: #ffffff;
 	font-size: 9.5pt;
 	min-width: 100px;
+    border-radius: 8px;
+    background-color: rgba(80,0,0,0.9);
+    border-width: 2px;
+    border-color: #a5a5a5;
 }
 .popup-submenu-menu-item:open {
 	background-color: #4c4c4c;
@@ -226,44 +227,63 @@ StScrollBar StButton#vhandle:hover {
 	font-weight: normal;
 	height: 25px;
 }
-#panelLeft {
-	spacing: 4px;
+#panel:highlight {
+    background-color: #556caa;
 }
-#panelCenter {
-	spacing: 4px;
+.panelLeft, .panelCenter {
+    spacing: 4px;
 }
-#panelLeft:dnd {
+.panelLeft.vertical, .panelCenter.vertical {
+    padding: 0px;
+}
+.panelLeft:dnd {
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(255,0,0,0.05);
 	background-gradient-end: rgba(255,0,0,0.2);
 }
-#panelCenter:dnd {
+.panelCenter:dnd {
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(0,255,0,0.05);
 	background-gradient-end: rgba(0,255,0,0.2);
 }
-#panelRight:dnd {
+.panelRight:dnd {
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(0,0,255,0.05);
 	background-gradient-end: rgba(0,0,255,0.2);
 }
-#panelLeft:ltr {
-	padding-right: 4px;
+.panelLeft:ltr {
+    padding-right: 4px;
 }
-#panelLeft:rtl {
-	padding-left: 4px;
+.panelLeft:rtl {
+    padding-left: 4px;
 }
-#panelRight:ltr { 
-	padding-left: 0px;
-	spacing: 0px;
+.panelLeft.vertical:ltr {
+    padding: 0px;
 }
-#panelRight:rtl {
-	padding-right: 0px;
-	spacing: 0px;
+.panelLeft.vertical:rtl {
+    padding: 0px;
+}
+.panelRight:ltr {
+    padding-left: 4px;
+}
+.panelRight:rtl {
+    padding-right: 4px;
+}
+.panelRight.vertical:ltr {
+    padding: 0px;
+}
+.panelRight.vertical:rtl {
+    padding: 0px;
 }
 .panel-top {
 }
 .panel-bottom {
+}
+.panel-dummy {
+    background-color: rgba(50, 50, 50, 0.4);
+}
+.panel-dummy:entered {
+    background-color: rgba(255, 35, 35, 0.4);
 }
 .panel-status-button {
 	border: 0px solid #8b2bb;
@@ -282,7 +302,12 @@ StScrollBar StButton#vhandle:hover {
 	spacing: 0px;
 	margin: 0px;
 }
-
+.system-status-icon.warning {
+    color: #e1da1a;
+}
+.system-status-icon.error {
+    color: #d54444;
+}
 .panel-corner {
 	-panel-corner-radius: 0px;
 	-panel-corner-background-color: black;
@@ -1029,7 +1054,6 @@ StScrollBar StButton#vhandle:hover {
 /* Main menu title */
 
 .menu-favorites-box {
-	margin: auto;
 	padding: 10px;
 	border: 1px solid #666;
 	border-radius: 8px;
@@ -1053,7 +1077,6 @@ StScrollBar StButton#vhandle:hover {
 	border-radius: 4px;
 }
 .menu-places-box {
-	margin: auto;
 	padding: 10px;
 	border: 0px solid #666;
 }
@@ -1207,6 +1230,17 @@ StScrollBar StButton#vhandle:hover {
 	padding-left: 10px;
 	padding-top: 1px;
 }
+.window-list-box.vertical #appMenuIcon {
+    padding-top: 2px;
+}
+
+.window-list-box.vertical {
+    spacing: 3px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
 .window-list-item-label {
 	font-weight: bold;
 	width: 15em;
@@ -1221,6 +1255,17 @@ StScrollBar StButton#vhandle:hover {
 	border-radius: 2px 2px 0px 0px;
 	padding-left: 5px;
 	padding-right: 5px;
+	transition-duration: 100;
+}
+.panel-left .window-list-item-box, .panel-right .window-list-item-box {
+	color: rgba(255,255,255,1.0);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.05);
+	background-gradient-end: rgba(255,255,255,0.2);
+	box-shadow: inset 0px 0px 1px 1px rgba(170,170,170,0.5);
+	border-radius: 2px 2px 0px 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 	transition-duration: 100;
 }
 .window-list-item-box:active,
@@ -1239,6 +1284,16 @@ StScrollBar StButton#vhandle:hover {
 .window-list-item-demands-attention {
 	background-gradient-start: rgba(255,52,52,0.5);
 	background-gradient-end: rgba(255,144,144,0.5);
+}
+.window-list-preview {
+	color: #ffffff;
+	font-size: 9.5pt;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: rgba(80,0,0,0.9);
+    border-width: 2px;
+    border-color: #a5a5a5;
+    padding: 10px 12px 12px 12px;
 }
 /* ===================================================================
  * Sound Applet (status/volume.js)
@@ -1415,9 +1470,16 @@ StScrollBar StButton#vhandle:hover {
 .applet-box {
 	padding-left: 3px;
 	padding-right: 3px;
+	spacing: 3px;
 	color: #ccc;
 	text-shadow: black 0px 0px 2px;
 	transition-duration: 300;
+}
+.applet-box.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 .applet-box:hover {
 	color: #fff;
@@ -1439,6 +1501,9 @@ StScrollBar StButton#vhandle:hover {
 .applet-box:hover > .applet-icon {
 	color: #fff;
 	icon-shadow: white 0px 0px 3px;
+}
+.applet-box:highlight {
+     background-color: #aa5555;
 }
 
 /* ===================================================================
@@ -1481,6 +1546,9 @@ StScrollBar StButton#vhandle:hover {
 .desklet-drag-placeholder { 
     border: 2px solid #6daa00;
     background-color: rgba(109,170, 0, 0.3);
+}
+.desklet:highlight, .desklet:highlight-with-borders, .desklet:highlight-with-borders-and-header {
+     background-color: #aa5555;
 }
 /* ===================================================================
  * Clock Desklet (desklet.js) 
@@ -1625,4 +1693,58 @@ StScrollBar StButton#vhandle:hover {
     padding-bottom: 20px;
     padding-top: 20px;
     text-align: center;
+}
+/* Media keys OSD popup */
+.osd-window {
+	color: #ffffff;
+    font-size: 1em;
+	min-width: 100px;
+    border-radius: 8px;
+    background-color: rgba(80,0,0,0.9);
+    border-width: 2px;
+    border-color: #a5a5a5;
+    padding: 20px;
+    spacing: 1em;
+}
+
+.osd-window .level {
+    height: 0.7em;
+    border-radius: 0.3em;
+    background-color: rgba(80,0,0,0.9);
+}
+/* Info OSD popup */
+.info-osd {
+	color: #ffffff;
+    font-size: 2em;
+	min-width: 100px;
+    border-radius: 8px;
+    background-color: rgba(80,0,0,0.9);
+    border-width: 2px;
+    border-color: #a5a5a5;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+/* ===================================================================
+ * Workspace Switcher applet (workspaceSwitcher.js)
+ * ===================================================================*/
+/* Controls the styling when using the "Simple buttons" option */
+.panel-top .workspace-switcher,
+.panel-bottom .workspace-switcher {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.panel-left .workspace-switcher
+.panel-right .workspace-switcher {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+/* Controls the style when using the "Visual representation" option */
+.workspace-graph {
+    padding: 3px;
+    spacing: 3px;
 }

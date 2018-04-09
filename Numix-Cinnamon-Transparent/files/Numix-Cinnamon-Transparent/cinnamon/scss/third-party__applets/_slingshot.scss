@@ -1,0 +1,135 @@
+/* ======================================
+ * ! Slingshot
+ * ====================================== */
+
+/* Use to override the '.popup-menu-content' selector */
+.slingshot {
+    padding: 0;
+}
+
+/* Separator */
+.slingshot .separator {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* Entry */
+.slingshot .entry {
+    background-gradient-direction: none;
+    background-gradient-start: transparent;
+    background-gradient-end: transparent;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+
+    &:focus {
+        background-gradient-direction: none;
+        background-gradient-start: transparent;
+        background-gradient-end: transparent;
+        background-color: rgba(0, 0, 0, 0);
+        border: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    @include entry($height: 2.3em);
+}
+
+/* Paginator */
+.slingshot .button {
+    background-gradient-direction: none;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0 rgba(#000, 0);
+    box-shadow: none;
+    border-radius: 0;
+    text-shadow: 0 0 rgba(#000, 0);
+    font-size: $font-size-base;
+    color: $text-secondary;
+
+    &:hover, &:active, &:checked, &:hover:checked, &:hover:active {
+        background-gradient-direction: none;
+        border: 0 rgba(#000, 0);
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    @include btn-primary;
+    padding: .7em;
+}
+
+/* Applications */
+.slingshot .button.app {
+    border-image: none;
+    border-width: 0;
+    text-shadow: 0 0 rgba(#000, 0);
+    font-size: $font-size-base;
+    font-weight: normal;
+    padding: 0;
+
+    &:hover, &:focus {
+        border-image: url("img/containers/hover.svg") 7;
+        background-color: rgba(0, 0, 0, 0);
+        color: $text-primary;
+    }
+}
+
+/* Categories */
+.slingshot .sidebar {
+    padding-left: 8px;
+    padding-right: 3px;
+
+    .button {
+        border-image: none;
+        padding: 5px;
+        border-radius: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 0;
+        border-color: rgba(0, 0, 0, 0);
+        font-size: $font-size-base;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-weight: normal;
+
+        &:hover {
+            border-image: url("img/containers/hover.svg") 7;
+            border-color: rgba(0, 0, 0, 0);
+            background-color: rgba(0, 0, 0, 0);
+            box-shadow: none;
+            color: $text-primary;
+        }
+
+        &:active,
+        &:hover:active {
+            background-color: rgba(0, 0, 0, 0);
+            border-color: rgba(0, 0, 0, 0);
+            box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+            color: $text-primary;
+        }
+
+        &:checked {
+            border-image: url("img/misc/bar__right.svg") 7;
+            border-color: rgba(0, 0, 0, 0);
+            background-color: rgba(0, 0, 0, 0);
+            box-shadow: none;
+            color: $text-primary;
+            font-weight: bold;
+        }
+
+        &:hover:checked {
+            border-image: url("img/containers/hover.svg") 7;
+            color: $text-primary;
+        }
+    }
+}
+
+/* Linked buttons */
+.slingshot .linked .button {
+    @include btn-linked-primary;
+    padding: .8em;
+}
+
+.slingshot .linked .button:active:last-child,
+.slingshot .linked .button:active:hover:last-child,
+.slingshot .linked .button:insensitive:last-child {
+    border-right-width: 0px;
+}

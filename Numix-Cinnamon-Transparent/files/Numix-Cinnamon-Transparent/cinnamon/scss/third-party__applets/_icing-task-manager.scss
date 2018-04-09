@@ -1,0 +1,103 @@
+/* Use to add extra border around thumbnail or adjust the distance from the panel.  can be used for aero effect */
+.thumbnail-popup-content {
+    padding: 0;
+}
+
+/* Padding can only be set between 1px and 10px other wise it will default to 5px */
+.thumbnail-row {
+    padding: 2px;
+    border-image: url("img/containers/tooltip.svg") 7;
+    background: none;
+}
+
+/* the padding can only be set between 2px and 10px other wise it will default to 10; border-width is fixed :( */
+.thumbnail-row .thumbnail-box {
+    padding: 10px;
+}
+
+.thumbnail-row .thumbnail-box:outlined {
+    border-image: url("img/containers/hover.svg") 7;
+    color: $text-active;
+}
+
+.thumbnail-row .thumbnail-box:selected {
+    border-image: url("img/containers/hover.svg") 7;
+    color: $text-active;
+
+}
+
+/* the pseudo are not being overidden so I can't do a hover. that will need to be added to themes */
+.thumbnail-row .thumbnail-alerts {
+    border-image: url("img/containers/hover.svg") 7;
+    color: $text-active;
+}
+
+.thumbnail-icon {
+    @include size(16px);
+}
+
+.thumbnail-label {
+    color: $text-primary;
+    font-weight: bold;
+}
+
+/*  Careful with the calculation of background position or you will have to much dead space.*/
+.thumbnail-close {
+    background-image: url("img/controls/close-simple-active.svg");
+    background-size: 24px;
+    background-position: 0 -6px;
+    @include size(16px);
+}
+
+/*AppMenu*/
+.pin-item {
+    background-image: url("pin-item.png");
+    background-size: 16px 16px;
+    @include size(16px);
+}
+
+.unpin-item {
+    background-image: url("unpin-item.png");
+    background-size: 16px 16px;
+    @include size(16px);
+}
+
+/*App List Padding is set in the the applet settings
+use to override window-list-item-box */
+.app-list-item-box {
+    font-weight: bold;
+    z-index: -9;
+
+    @each $pos in top, bottom, left, right {
+        .panel-#{$pos} &:focus {
+            border-image: url("img/panel/window-list__#{$pos}__active__hover.svg") 4;
+        }
+    }
+
+    .app-button-label {
+        padding-left: 4px;
+        color: $text-secondary;
+    }
+
+    &:hover .app-button-label, &:focus .app-button-label {
+        color: $text-primary;
+    }
+}
+
+/* use to override panel-launcher */
+.app-is-favorite {}
+
+/* NumLabel */
+.window-icon-list-numlabel {
+    z-index: 99;
+    color: $text-link;
+    text-shadow: 1px 1px 1px rgba(#000, .8);
+    @include size($font-size-lg);
+    padding: 1px 0 0 1px;
+    font-size: $font-size-lg;
+    font-weight: bold;
+}
+
+/* Non grouped container */
+.window-icon-list-buttonbox { spacing: 2px; }
+

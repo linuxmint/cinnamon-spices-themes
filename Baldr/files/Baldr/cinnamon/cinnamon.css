@@ -54,6 +54,44 @@ border-image: url("checkbox.svg") 4 4 4 4 stretch;
 /* ===================================================================
 * PopupMenu (popupMenu.js)
 * ===================================================================*/
+
+menu {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.menu.top {
+    border-radius: 0 0 4px 4px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-gradient-direction: vertical;
+    background-gradient-start: #f7f7f7;
+    background-gradient-end: #ebebeb;
+}
+
+.menu.bottom {
+    border-radius: 4px 4px 0 0;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-gradient-direction: vertical;
+    background-gradient-start: #ebebeb;
+    background-gradient-end: #f7f7f7;
+}
+
+.menu.left {
+    border-radius: 0 4px 4px 0;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-gradient-direction: horizontal;
+    background-gradient-start: #f7f7f7;
+    background-gradient-end: #ebebeb;
+}
+
+.menu.right {
+    border-radius: 4px 0 0 4px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-gradient-direction: horizontal;
+    background-gradient-start: #ebebeb;
+    background-gradient-end: #f7f7f7;
+}
+
 .popup-menu-boxpointer {
 -boxpointer-gap: 10px;
 -arrow-border-radius: 0px;
@@ -63,6 +101,7 @@ border-image: url("checkbox.svg") 4 4 4 4 stretch;
 -arrow-base: 64px;
 -arrow-rise: 0px;
 }
+
 .popup-menu {
 border-radius: 4px;
 background-gradient-direction: vertical;
@@ -73,6 +112,7 @@ border: 1px solid rgba(0,0,0,0.1);
 padding-left: 2px;
 padding-right: 2px;
 }
+
 .popup-sub-menu StScrollBar {
 padding: 4px;
 }
@@ -154,13 +194,48 @@ spacing: .5em;
 * Panel (panel.js)
 * ===================================================================*/
 #panel {
-background-gradient-direction: vertical;
-background-gradient-start: #fff;
-background-gradient-end: #ccc;
-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.5);
-font-size: 9pt;
-height: 26px;
+    font-size: 9pt;
+    height: 26px;
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.5);
 }
+
+#panel:highlight {
+    background-color: #aa5555;
+}
+
+.panel-bottom {
+    background-gradient-direction: vertical;
+    background-gradient-start: #fff;
+    background-gradient-end: #ccc;
+    font-size: 9pt;
+    height: 26px;
+}
+
+.panel-top {
+    background-gradient-direction: vertical;
+    background-gradient-start: #ccc;
+    background-gradient-end: #fff;
+    font-size: 9pt;
+    height: 26px;
+}
+
+.panel-left {
+    background-gradient-direction: horizontal;
+    background-gradient-start: #ccc;
+    background-gradient-end: #fff;
+    font-size: 9pt;
+    height: 26px;
+}
+
+.panel-right {
+    background-gradient-direction: horizontal;
+    background-gradient-start: #fff;
+    background-gradient-end: #ccc;
+    font-size: 9pt;
+    height: 26px;
+}
+
+
 #panelLeft, #panelCenter, #panelRight {
 spacing: 0px;
 }
@@ -194,6 +269,13 @@ icon-size: 16px;
 .system-status-icon {
 icon-size: 1.14em;
 icon-shadow: #eee 0px 1px 1px;
+}
+.system-status-icon.warning {
+    color: #d2aa1e;
+}
+
+.system-status-icon.error {
+    color: #d54444;
 }
 #panelLeft:dnd {
 background: #bbb;
@@ -849,6 +931,11 @@ height: 23px;
 .window-list-box {
 spacing: 0px;
 }
+.window-list-box.vertical {
+    spacing: 3px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
 .window-list-item-label {
 width: 15em;
 min-width: 5px;
@@ -862,6 +949,14 @@ padding-left: 5px;
 padding-right: 5px;
 transition-duration: 150;
 }
+.window-list-item-box.left,
+.window-list-item-box.right {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 1px;
+    transition-duration: 150;
+}
+
 .window-list-item-box:active,
 .window-list-item-box:checked,
 .window-list-item-box:focus  {
@@ -870,88 +965,95 @@ border-image: url("active-windowlist.svg") 4 4 4 4 stretch;
 .window-list-item-demands-attention {
 border-image: url("active-windowlist.svg") 4 4 4 4 stretch;
 }
+.window-list-preview {
+    border-bottom: 1px solid #555;
+    background-gradient-direction: vertical;
+    background-gradient-start: #f7f7f7;
+    background-gradient-end: #ebebeb;
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid rgba(0,0,0,0.2);
+    color: #000;
+    text-shadow: white 0px 0px 2px;
+    padding: 10px 15px 15px 15px;
+}
 /* ===================================================================
 * Sound Applet (status/volume.js)
 * ===================================================================*/
-.sound-button-container {
-padding-right: 2px;
-padding-left: 2px;
+.sound-player StButton {
+    width: 22px;
+    height: 13px;
+    padding: 5px;
+    color: #bbb;
 }
-.sound-button {
-color: #666;
-border-radius: 4px;
-background-gradient-direction: vertical;
-background-gradient-start: #fff;
-background-gradient-end: #ccc;
-box-shadow: 0px 2px 3px 1px rgba(0,0,0,0.2);
-border: 1px solid rgba(0,0,0,0.05);
-padding: 7px;
-transition-duration: 150;
+
+.sound-player StButton:small {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    width: 16px;
+    height: 16px;
+    padding: 1px;
+    color: rgb(90, 90, 90);
 }
-.sound-button:hover {
-background-gradient-direction: vertical;
-background-gradient-start: #fff;
-background-gradient-end: #ddd;
-transition-duration: 150;
+
+.sound-player StButton StIcon {
+    icon-size: 1.5em;
 }
-.sound-button:active,
-.sound-button:pressed {
-background-gradient-direction: vertical;
-background-gradient-start: #f2f2f2;
-background-gradient-end: #d2d2d2;
-box-shadow: inset 0px 1px 4px rgba(0,0,0,0.4);
-border: 1px solid rgba(0,0,0,0.05);
-transition-duration: 0;
+
+.sound-player StButton:small StIcon {
+    icon-size: 1em;
 }
-.sound-button StIcon {
-icon-size: 1.4em;
+
+.sound-player StButton:hover,
+.sound-player StButton:active {
+    color: #fff;
 }
-.sound-track-infos {
-padding-left: 5px;
-padding-right: 5px;
-padding-top: 5px;
-padding-bottom: 5px;
+
+.sound-player StButton:small:hover {
+    color: rgb(70, 70, 70);
+    border-image: url("button-assets/button-hover.png") 4;
 }
-.sound-track-info {
-padding-top: 2px;
-padding-bottom: 2px;
+
+.sound-player StButton:small:active {
+    color: rgb(70, 70, 70);
+    border-image: url("button-assets/button-pressed.png") 4;
 }
-.sound-track-info StIcon {
-icon-size: 1em;
+
+.sound-player .slider {
+    height: 0.5em;
+    -slider-height: 0.5em;
+    -slider-background-color: #7a7a7a;
+    -slider-border-color: rgba(0, 0, 0, 0);
+    -slider-active-background-color: #accd8a;
+    -slider-active-border-color: rgba(0, 0, 0, 0);
+    -slider-border-width: 0px;
+    -slider-handle-radius: 0px;
 }
-.sound-track-info StLabel {
-padding-left: 5px;
-padding-right: 5px;
+
+.sound-player StBoxLayout {
+    spacing: 0.5em;
 }
-.sound-track-box {
-padding-left: 15px;
-padding-right: 15px;
-max-width: 220px;
+
+.sound-player > StBoxLayout {
+    padding: 5px;
 }
-.sound-seek-box {
-padding-left: 20px;
+
+.sound-player-overlay {
+    width: 300px;
+    height: 70px;
+    padding: 15px;
+    spacing: 0.5em;
+    background: rgba(0, 0, 0, 0.8);
+    color: #FFF;
 }
-.sound-seek-box StLabel {
-padding-top: 2px;
+
+.sound-player-overlay StBoxLayout {
+    padding-top: 2px;
 }
-.sound-seek-box StIcon {
-icon-size: 1em;
+
+.sound-player-generic-coverart {
+    background: rgba(0, 0, 0, 0.2);
 }
-.sound-seek-slider {
-width: 140px;   
-}
-.sound-volume-menu-item {
-padding: .4em 1.75em;
-}
-.sound-volume-menu-item StIcon {
-icon-size: 1em;
-padding-left: 4px;
-padding-right: 4px;
-}
-.sound-playback-control {
-padding-top: 5px;
-padding-bottom: 10px;
-}
+
 /* ===================================================================
 * Workspace Switcher applet (workspaceSwitcher.js)
 * ===================================================================*/
@@ -988,11 +1090,24 @@ transition-duration: 150;
 .applet-box {
 padding-left: 4px;
 padding-right: 4px;
+spacing: 3px;
 transition-duration: 150;
 font-weight: bold;
 color: #666;
 text-shadow: #eee 0px 1px 1px;
 min-width: 1em;
+}
+.applet-box.vertical {
+spacing: 3px;
+transition-duration: 150;
+font-weight: bold;
+color: #666;
+text-shadow: #eee 0px 1px 1px;
+min-width: 1em;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 .applet-box:hover {
 border-image: url("active-windowlist.svg") 4 4 4 4 stretch;
@@ -1005,6 +1120,9 @@ border-radius: 1px;
 box-shadow: #eee 0px 1px 1px;
 width: 2px;
 background: #666;
+}
+.applet-label {
+    color: #666;
 }
 /* ===================================================================
 * Workspace OSD
@@ -1147,4 +1265,89 @@ padding-top: 3px;
 }
 .flashspot {
 background-color: white;
+}
+
+/* ===================================================================
+ * User Applet
+ * ===================================================================*/
+.user-icon {
+    background-color: rgb(236, 236, 236);
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 4px;
+    padding: 0.2em;
+}
+
+.user-label {
+    color: rgb(70, 70, 70);
+    font-size: 16px;
+    margin: 6px;
+}
+
+/* ===================================================================
+ * About Dialog (applet.js and desklet.js)
+ * ===================================================================*/
+.about-content {
+    width: 300px;
+    height: 150px;
+    spacing: 8px;
+    padding-bottom: 16px;
+}
+
+.about-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.about-uuid {
+    font-size: .8em;
+}
+
+.about-icon {
+    padding-right: 20px;
+}
+
+.about-scrollBox {
+    border: solid 1px grey;
+    border-radius: 4px;
+}
+
+.about-scrollBox-innerBox {
+    padding: 1.2em;
+    spacing: 1.2em;
+}
+
+.about-description {
+    padding-top: 4px;
+}
+
+.about-version {
+    padding-left: 7px;
+}
+
+/* ===================================================================
+ * OSD Popups
+ * ===================================================================*/
+.info-osd {
+    font-size: 18pt;
+    padding: 12px;
+    color: rgb(70, 70, 70);
+    text-align: center;
+}
+
+.osd-window {
+    border-radius: 4px;
+    background-gradient-direction: vertical;
+    background-gradient-start: #fff;
+    background-gradient-end: #ccc;
+    box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 20px;
+    color: rgb(70, 70, 70);
+    spacing: 1em;
+}
+
+.osd-window .level {
+    height: 0.7em;
+    border-radius: 0.3em;
+    background-color: rgba(70, 70, 70, 0.4);
 }

@@ -1,0 +1,36 @@
+/* ======================================
+ * ! On-screen Keyboard
+ * ====================================== */
+
+#keyboard {
+    border-image: url("img/panel/panel-bottom.svg") 7;
+}
+
+.keyboard-layout {
+    spacing: 5px;
+    padding: 8px;
+}
+
+.keyboard-row {
+    spacing: 5px;
+}
+
+.keyboard-key {
+    @include btn-primary;
+    min-height: 30px;
+    min-width: 30px;
+    font-size: $font-size-xl;
+}
+
+/* Appears when long-pressing certain keys */
+.keyboard-subkeys {
+    -arrow-border-radius: 0;
+    -arrow-background-color: rgba(#000, 0);
+    -arrow-border-color: rgba(#000, 0);
+    -arrow-border-width: 0;
+    -arrow-base: 12px;
+    -arrow-rise: 6px;
+    -boxpointer-gap: 0;
+
+    border-image: url("img/containers/dark-bg.svg") 7;
+}

@@ -1,0 +1,132 @@
+/* ======================================
+ * ! Timepp applet
+ * ====================================== */
+@each $pos in top, bottom, left, right {
+    .panel-#{$pos} .timepp-panel-box .applet-box.on {
+        border-image: url("img/panel/window-list__#{$pos}__active.svg") 4;
+        StLabel, StIcon { color: $text-primary; }
+
+        &:hover, &:checked {
+            border-image: url("img/panel/window-list__#{$pos}__active__hover.svg") 4;
+        }
+    }
+
+    .panel-#{$pos} .timepp-panel-box .applet-box {
+        border-image: none;
+
+        &:hover, &:checked {
+            border-image: url("img/panel/applet__#{$pos}__hover.svg") 4;
+            StLabel, StIcon { color: $text-primary; }
+        }
+    }
+}
+
+.timepp-panel-box .applet-box.todo-panel-item {
+    &.done StLabel,
+    &.done StIcon { color: $accent-success; }
+}
+
+.timepp-menu {
+    .numpicker {
+        border-image: none;
+        spacing: 0;
+        padding: 0;
+
+        &-counter {
+            border-image: url("img/containers/light-bg__first__horiz.svg") 10;
+            padding: 0 .7em;
+        }
+
+        &-arrow-box {
+            border-image: url("img/containers/light-bg__last__horiz.svg") 10;
+            padding: .2em .3em;
+        }
+
+        &-arrow:hover StIcon,
+        &-arrow:focus StIcon { color: $text-link; }
+    }
+
+    .settings-icon:focus, .settings-icon:hover {
+        color: $text-link;
+    }
+
+    .timer-section {
+        .timer-header { min-height: 18px; }
+    }
+
+    .stopwatch-section {
+    }
+
+    .pomo-section {
+        .settings-item:first-child {
+            color: $text-danger;
+            font-weight: bold;
+        }
+    }
+
+    .alarm-section {
+        .alarm-item {
+            border-image: url("img/containers/light-bg-marked-green.svg") 10;
+            max-width: 220px;
+            padding: .8em .8em .8em 1.2em;
+        }
+
+        .day {
+            @include btn-linked-primary;
+            padding: 1em 0;
+
+            &:focus { outline: 0; }
+        }
+    }
+
+    .todo-section {
+        context-color: $text-success;
+        project-color: $text-info;
+        link-color:    $text-link;
+
+        .delete-complete-tasks-label,
+        .no-todo-file-msg { color: $text-danger; }
+
+        .loading-msg      { color: $text-info; }
+        .due-date-label   { color: $text-danger; }
+
+        .date-label,
+        .task-item.completed .due-date-label { color: $text-secondary; }
+
+        .tracker-pause-icon, .filter-icon.active { color: $text-warning; }
+
+        .header {
+            StButton:hover, StButton:focus { color: $text-link; }
+        }
+
+        .task-item {
+            border-image: url("img/containers/light-bg-marked-grey.svg") 10;
+
+            &.completed { border-image: url("img/containers/light-bg.svg") 10; }
+
+            &.A {
+                .priority-label { color: $text-link; }
+                border-image: url("img/containers/light-bg-marked-orange.svg") 10;
+            }
+
+            &.B {
+                .priority-label { color: $text-warning; }
+                border-image: url("img/containers/light-bg-marked-yellow.svg") 10;
+            }
+
+            &.C {
+                .priority-label { color: $text-info; }
+                border-image: url("img/containers/light-bg-marked-blue.svg") 10;
+            }
+
+            &.D {
+                .priority-label { color: $text-success; }
+                border-image: url("img/containers/light-bg-marked-green.svg") 10;
+            }
+
+            &.hidden {
+                border-image: url("img/containers/dark-bg.svg") 10;
+            }
+        }
+    }
+}
