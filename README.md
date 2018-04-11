@@ -53,6 +53,8 @@ For instance, icons, desktop backgrounds or MDM themes should not be included in
 
 Arguably, gnome-shell, Xfce and Unity themes aren't relevant to Cinnamon users either, at least not within the Cinnamon desktop environment.
 
+Embedded .zip files, .tar files or any other archive files can't be accepted. Straightforward graphics files, css or other files that can be inspected visually, please.  No binaries other than graphic image files.  Scripts that link externally can't be accepted for security reasons.  
+
 # Rights and responsibility of the author
 
 The author is in charge of the development of the spice.
@@ -99,6 +101,8 @@ The Cinnamon team is also entitled to do so. Common reasons are lack of maintena
 New spices can be added by Pull Request.
 
 The Cinnamon team can accept or reject the addition and should give justification in the PR comments section.
+
+One theme per Pull Request is preferred, as it makes reviewing easier.  Combining colour variations in one Pull Request is OK.
 
 # Reporting Bugs
 
