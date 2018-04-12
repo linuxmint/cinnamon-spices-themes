@@ -285,7 +285,7 @@ StScrollBar StButton#hhandle:active {
  * ! Slider
  * ====================================== */
 .slider, .popup-slider-menu-item {
-  height: 6px;
+  height: 12px;
   min-width: 15em;
   -slider-height: 6px;
   -slider-background-color: rgba(0, 0, 0, 0.2);
@@ -1307,20 +1307,6 @@ or .applet-icon,
   spacing: 0;
 }
 
-/* This is pretty much only used by the keyboard applet */
-.panel-status-button {
-  color: white;
-  height: inherit;
-}
-
-.panel-top .panel-status-button, .panel-bottom .panel-status-button {
-  padding: 0 2px;
-}
-
-.panel-left .panel-status-button, .panel-right .panel-status-button {
-  height: 1.8em;
-}
-
 .applet-label {
   color: white;
 }
@@ -1367,6 +1353,10 @@ or .applet-icon,
 
 .applet-box.vertical:checked {
   border-image: url("img/panel/applet__vertical__checked.svg") 10;
+}
+
+.applet-box .applet-icon {
+  icon-shadow: 0 0 transparent;
 }
 
 /* ======================================
@@ -1540,8 +1530,8 @@ or .applet-icon,
 }
 
 .sound-player > StBoxLayout:first-child {
-  padding: .4em 1.3em .6em;
-  spacing: .6em;
+  padding: 2px 8px 8px;
+  spacing: 8px;
   font-weight: normal;
   font-size: 110%;
 }
@@ -1708,6 +1698,7 @@ or .applet-icon,
 .sound-player-overlay StBoxLayout {
   padding-top: .2em;
   spacing: .4em;
+  max-width: 250px;
 }
 
 .sound-player .slider, .sound-player .popup-slider-menu-item {
@@ -2041,11 +2032,6 @@ or .applet-icon,
   height: 0;
 }
 
-.weather-icon,
-.weather-icon-rtl {
-  padding: 10px;
-}
-
 .current {
   padding: 16px;
 }
@@ -2064,13 +2050,14 @@ or .applet-icon,
 }
 
 .weather-current-summarybox {
-  padding: 0 2.2em;
+  padding: 0 2em;
   spacing: .1em;
 }
 
 .weather-current-summary {
   font-size: 230%;
   color: rgba(0, 0, 0, 0.75);
+  text-align: center;
 }
 
 .weather-current-icon {
@@ -3422,4 +3409,61 @@ or .applet-icon,
 .action-scale {
   width: 16px;
   height: 16px;
+}
+
+/* ======================================
+ * ! Transparent panels
+ * ====================================== */
+.panel-transparent,
+.panel-transparent-with-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+.panel-transparent .system-status-icon,
+.panel-transparent-with-shadow .system-status-icon {
+  icon-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.panel-transparent .window-list-item-box,
+.panel-transparent-with-shadow .window-list-item-box {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+.panel-transparent #panelLeft, .panel-transparent #panelCenter, .panel-transparent #panelRight,
+.panel-transparent-with-shadow #panelLeft,
+.panel-transparent-with-shadow #panelCenter,
+.panel-transparent-with-shadow #panelRight {
+  border-image: none;
+}
+
+.panel-transparent {
+  background: transparent;
+}
+
+.panel-transparent-with-shadow.panel-top {
+  background-gradient-direction: vertical;
+  background-gradient-start: rgba(0, 0, 0, 0.4);
+  background-gradient-end: transparent;
+}
+
+.panel-transparent-with-shadow.panel-bottom {
+  background-gradient-direction: vertical;
+  background-gradient-start: transparent;
+  background-gradient-end: rgba(0, 0, 0, 0.4);
+}
+
+.panel-transparent-with-shadow.panel-left {
+  background-gradient-direction: horizontal;
+  background-gradient-start: rgba(0, 0, 0, 0.4);
+  background-gradient-end: transparent;
+}
+
+.panel-transparent-with-shadow.panel-right {
+  background-gradient-direction: horizontal;
+  background-gradient-start: transparent;
+  background-gradient-end: rgba(0, 0, 0, 0.4);
+}
+
+.panel-semi-transparent {
+  /* Do nothing, theme is already semi-transparent */
 }
