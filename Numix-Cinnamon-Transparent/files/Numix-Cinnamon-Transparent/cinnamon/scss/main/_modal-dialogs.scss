@@ -1,0 +1,131 @@
+/* ======================================
+ * ! Lightbox + flashspot
+ * ====================================== */
+
+/* The background shade when a dialog appears */
+.lightbox { background-color: rgba(#000, .65); }
+
+
+/* Among other places, appears when adding an applet */
+.flashspot { background-color: rgba(#fff, .6); }
+
+
+/* ======================================
+ * ! Modal dialogs
+ * ====================================== */
+
+.modal-dialog {
+    border-radius: 0;
+    padding: 0;
+    color: $text-primary;
+    border-image: url("img/containers/dark-bg.svg") 9;
+
+    > * {
+        padding: 24px;
+        border-radius: 0;
+    }
+
+    &-button-box {
+        border-image: url("img/containers/modal-button-box.svg") 8;
+        spacing: 0;
+        padding: 8px;
+    }
+}
+
+.modal-dialog-button {
+    @include btn-primary;
+    @include btn-width(wide);
+}
+
+/* ======================================
+ * ! Run dialog
+ * ====================================== */
+
+.run-dialog {
+
+    > * {
+        border-image: url("img/containers/dark-bg.svg") 7;
+        padding: 3px;
+    }
+
+    > .modal-dialog-button-box {
+        background-color: rgba(0, 0, 0, 0);
+        border-image: none;
+        box-shadow: none;
+        padding: 0;
+        height: 0;
+    }
+
+    &-error-box {
+        padding: 12px 4px 6px 4px;
+        spacing: 1em;
+        color: $text-danger;
+        font-weight: bold;
+
+        StIcon {
+            @include size(16px);
+            color: $accent-danger;
+        }
+    }
+
+    &-completion-box {
+        border-image: url("img/containers/dark-bg.svg") 10;
+        padding: 4px;
+        font-size: $font-size-lg;
+        padding: 1em .7em;
+        color: $text-primary;
+    }
+
+    &-label { font-size: 0; }
+
+    &-entry {/*!*/}
+}
+/* ======================================
+ * ! About Dialog
+ * ====================================== */
+
+.about-content {
+    width: 550px;
+    height: 250px;
+    spacing: 12px;
+
+    > *:first-child > *     { spacing: .2em; }
+    > *:first-child > * > * { spacing: .7em; }
+}
+
+.about-icon { color: $text-primary; }
+
+.about-title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.about-uuid {
+    font-size: $font-size-base;
+    color: $text-secondary;
+}
+
+.about-description {}
+
+.about-version {
+    border-image: url("img/containers/light-bg.svg") 10;
+    padding: 6px;
+    font-size: $font-size-base;
+    font-weight: bold;
+    color: $text-info;
+}
+
+.about-scrollBox {
+    border-image: url("img/containers/dark-bg.svg") 10;
+    padding: 4px;
+    padding-right: 0;
+
+    &-innerBox {
+        padding: 1.2em;
+        spacing: 1.2em;
+    }
+}
+
+#about-website:hover StLabel {
+    text-decoration: underline;
+}

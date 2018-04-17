@@ -4,6 +4,7 @@
  * ###################################################################*/
 stage {
     font-family: sans, sans-serif;
+    font-size: 1.11em;
 }
 .cinnamon-link {
     color: #0000ff;
@@ -74,7 +75,7 @@ StScrollBar StButton#vhandle:hover {
     background-gradient-start: rgba(254,245,198,0.9);
     background-gradient-direction: vertical;
     color: #000000;
-    font-size: 8.5pt;
+    font-size: 0.85em;
     font-weight: normal;
     text-align: center;
 }
@@ -124,7 +125,7 @@ StScrollBar StButton#vhandle:hover {
 }
 .popup-menu {
     color: #ffffff;
-    font-size: 9.5pt;
+    font-size: 1.05em;
     min-width: 100px;
 }
 .menu {
@@ -132,12 +133,14 @@ StScrollBar StButton#vhandle:hover {
     background-color: rgba(80,80,80,0.9);
 /*    border-image: url("checkbox-off-focus.svg") 3; */
     color: #ffffff;
-    font-size: 9.5pt;
+    font-size: 1.05em;
+/*    text-shadow: 1px 1px 1px #000000; do not use, creates weird doubled up category effect */
     min-width: 100px;
     background-image: url('pcopymenu.jpg');
-    background-size: 100% 100%;
-    border: 1px solid #a5a5a5;
+    background-size: cover;
+    border: 1px solid rgba(0,0,0,1);
     box-shadow: 0 0 12px 1px rgba(0,0,0,0.75);
+    margin: 5px;
 }
 .popup-menu-arrow {
     icon-size: 1.14em;
@@ -170,7 +173,7 @@ StScrollBar StButton#vhandle:hover {
     background-color: rgba(0,0,0,0.9);
     padding: 1em 0em;
     color: #ffffff;
-    font-size: 10.5pt;
+    font-size: 1.05em;
     border: 1px solid #5f5f5f;
     border-radius: 9px;
 }
@@ -186,6 +189,7 @@ StScrollBar StButton#vhandle:hover {
 }
 .popup-menu-item:active {
 border-image: url("date-label.svg") 0 0 2 2 stretch;
+text-shadow: 1px 1px 1px #000000;
 }
 .popup-menu-item:insensitive {
     color: #9f9f9f;
@@ -228,7 +232,7 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
     font-weight: bold;
 }
 .popup-menu-icon {
-    icon-size: 1.14em;
+    icon-size: 1.10em;
 }
 /* Switches (to be used in menus) */
 .toggle-switch {
@@ -260,13 +264,12 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
 #panel {
     color: #ffffff;
     background-color: #555555;
-    font-size: 8.5pt;
+    font-size: 0.85em;
     font-weight: normal;
-    height: 26px;
-    width: 32px;
 }
 #panel:highlight {
     background-color: #aa5555;
+    border-image: none;
 }
 .panel-dummy {
     background-color: rgba(50, 50, 50, 0.4);
@@ -330,23 +333,28 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
 }
 .panel-top {
     border-image: url('pcopyhoriz.jpg');
+    height: 2.5em;
 }
 .panel-bottom {
     border-image: url('pcopyhoriz.jpg');
+    height: 2.5em;
 }
 .panel-left {
     border-image: url('pcopyvert.jpg');
+    width: 2.5em;
 }
 .panel-right {
     border-image: url('pcopyvert.jpg');
+    width: 2.5em;
 }
 .panel-status-button {
     border: 0px solid #8b8b8b;
-    -natural-hpadding: 3px;
-    -minimum-hpadding: 3px;
+    -natural-hpadding: 0px;
+    -minimum-hpadding: 0px;
     font-weight: bold;
-    color: #ccc;
-    height: 22px;
+    color: white;
+    height: 27px;
+    icon-size: 1.4em;
 }
 .panel-status-button:hover {
     border-image: url("window-active1.svg") 2 2 0 0;
@@ -356,6 +364,13 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
     padding-right: 0px;
     spacing: 0px;
     margin: 0px;
+}
+.system-status-icon.warning {
+color: #e5e887;
+}
+
+.system-status-icon.error {
+color: #fb5858;
 }
 
 .panel-corner {
@@ -410,7 +425,7 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
     background-image: url("dot.svg");
 }
 .system-status-icon {
-    icon-size: 1.14em;
+    icon-size: 1.5em;
 }
 /* ===================================================================
  * Overview
@@ -485,7 +500,7 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
     background: rgba(85,85,85,0.8);
     border: 1px solid rgba(128,128,128,0.40);
     border-radius: 4px;
-    font-size: 9pt;
+    font-size: 0.9em;
     padding: 2px 8px;
     -cinnamon-caption-spacing: 4px;
 }
@@ -514,7 +529,7 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
     border-radius: 4px;
     padding: 3px;
     border: 1px rgba(0,0,0,0);
-    font-size: 7.5pt;
+    font-size: 0.75em;
     color: white;
     transition-duration: 50;
     text-align: center;
@@ -561,7 +576,7 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
 }
 .calendar-month-label {
     color: #cccccc;
-    font-size: 7.5pt;
+    font-size: 0.75em;
     padding-bottom: 8px;
     padding-top: 8px;
     font-weight: bold;
@@ -600,12 +615,12 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
 .datemenu-date-label {
 border-image: url("date-label.svg") 0 0 2 2 stretch;
     padding: .4em 1.75em;
-    font-size: 10.5pt;
+    font-size: 1.05em;
     color: #cccccc;
     font-weight: bold;
 }
 .calendar-day-base {
-    font-size: 7.5pt;
+    font-size: 0.75em;
     text-align: center;
     width: 2.4em;
     height: 2.4em;
@@ -673,7 +688,7 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
  * Notifications
  * ===================================================================*/
 #notification {
-    font-size: 8.5pt;
+    font-size: 0.85em;
     border-radius: 4px 4px 4px 4px;
     border: 2px solid #a5a5a5;
     background-gradient-direction: vertical;
@@ -769,11 +784,11 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
     border: 1px solid #a5a5a5;
     border-radius: 4px;
     padding: 20px;
-    font-size: 9pt;
+    font-size: 0.9em;
     color: white;
     text-shadow: black 0px 0px 2px;
-        background-image: url('pcopymenu.jpg');
-    background-size: 100% 100%;
+    background-image: url('pcopymenu.jpg');
+    background-size: cover;
     box-shadow: 0 0 12px 1px rgba(0,0,0,0.75);
 }
 .switcher-list-item-container {
@@ -844,7 +859,7 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
  * Modal dialogs
  * ===================================================================*/
 .modal-dialog {
-    font-size: 12pt;
+    font-size: 1.22em;
     border-radius: 24px;
     background-color: rgba(85, 85, 85, 0.9);
     border: 2px solid #868686;
@@ -859,7 +874,7 @@ border-image: url("date-label.svg") 0 0 2 2 stretch;
 }
 .modal-dialog-button {
     border-radius: 18px;
-    font-size: 11pt;
+    font-size: 1.1em;
     color: white;
     margin-left: 10px;
     margin-right: 10px;
@@ -884,7 +899,7 @@ border-image: url("button-focus.svg") 3;
 
 /* Info OSD popup */
 .info-osd {
-    font-size: 16pt;
+    font-size: 1.6em;
     border-radius: 4px;
     background-color: rgba(85, 85, 85, 0.9);
     border: 2px solid #868686;
@@ -895,7 +910,8 @@ border-image: url("button-focus.svg") 3;
     padding-top: 20px;
     text-align: center;
     background-image: url('pcopymenu.jpg');
-    border: 1px solid #a5a5a5;
+    background-size: cover;
+    border: 1px solid rgba(0,0,0,1);
     box-shadow: 0 0 12px 1px rgba(0,0,0,0.75);
 }
 
@@ -903,11 +919,11 @@ border-image: url("button-focus.svg") 3;
  * Run dialog
  * ===================================================================*/
 .run-dialog-label {
-    font-size: 9pt;
+    font-size: 0.9em;
     color: white;
 }
 .run-dialog-error-label {
-    font-size: 9pt;
+    font-size: 0.9em;
     color: white;
 }
 .run-dialog-error-box {
@@ -916,11 +932,10 @@ border-image: url("button-focus.svg") 3;
 }
 .run-dialog-completion-box {
     padding-left: 15px;
-    font-size: 10px;
 }
 .run-dialog-entry {
     border-image: url("entry-run.svg") 8 0 0 0;
-    font-size: 10.5pt;
+    font-size: 1.05em;
     font-weight: bold;
     width: 23em;
     color: white;
@@ -952,7 +967,7 @@ border-image: url("button-focus.svg") 3;
 }
 .show-processes-dialog-subject,
 .mount-question-dialog-subject {
-    font-size: 12pt;
+    font-size: 1.2em;
     font-weight: bold;
     color: #666666;
     padding-top: 10px;
@@ -966,7 +981,6 @@ border-image: url("button-focus.svg") 3;
 }
 .show-processes-dialog-description,
 .mount-question-dialog-description {
-    font-size: 10pt;
     color: white;
     padding-left: 17px;
     width: 28em;
@@ -976,7 +990,6 @@ border-image: url("button-focus.svg") 3;
     padding-right: 17px;
 }
 .show-processes-dialog-app-list {
-    font-size: 10pt;
     max-height: 200px;
     padding-top: 24px;
     padding-left: 49px;
@@ -1005,7 +1018,6 @@ border-image: url("button-focus.svg") 3;
     padding-left: 17px;
 }
 .show-processes-dialog-app-list-item-name {
-    font-size: 10pt;
 }
 /* ===================================================================
  * Magnifier
@@ -1041,7 +1053,7 @@ border-image: url("button-focus.svg") 3;
     background-gradient-start: rgba(255,245,245,0.4);
     background-gradient-end: rgba(105,105,105,0.1);
     background-gradient-direction: vertical;
-    font-size: 14pt;
+    font-size: 1.4em;
     font-weight: bold;
     border-radius: 10px;
     border: 2px solid #a0a0a0;
@@ -1082,7 +1094,6 @@ border-image: url("button-focus.svg") 3;
 /* Main menu title */
 
 .menu-favorites-box {
-    margin: auto;
     padding: 10px;
     border: 1px solid black;
     border-radius: 4px;
@@ -1093,10 +1104,10 @@ border-image: url("button-focus.svg") 3;
          /*   border-image: url("checkbox-off-focus.svg") 3; */
 }
 .menu-favorites-button {
-    padding-top: 10px;
+    padding-top: 4px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 4px;
 }
 .menu-favorites-button:hover {
     color: white;
@@ -1108,7 +1119,6 @@ border-image: url("button-focus.svg") 3;
     border-image: url("fav.svg") 9;
 }
 .menu-places-box {
-    margin: auto;
     padding: 10px;
     border: 0px solid #666;
 }
@@ -1146,7 +1156,7 @@ border-image: url("button-focus.svg") 3;
     /* This style is used in menu application buttons for applications which were newly installed */
     font-weight: bold;
 }
-.menu-application-button-selected, 
+.menu-application-button-selected,
 .menu-application-button:hover {
     padding-top: 7px;
     padding-left: 7px;
@@ -1159,6 +1169,7 @@ border-image: url("button-focus.svg") 3;
     box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.06);
     border-radius: 4px;
     border-image: url("checkbox-off-focus.svg") 3;
+    text-shadow: 0px 1px 1px #000000;
 }
 .menu-application-button-selected:highlighted {
     /* This style is used in menu application buttons for applications which were newly installed */
@@ -1196,6 +1207,7 @@ border-image: url("button-focus.svg") 3;
     box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.06);
     border-radius: 4px;
     border-image: url("checkbox-off-focus.svg") 3;
+/*    text-shadow: 0px 1px 1px #000000;  do not use it, it causes weird overlapping of different category applications */
 }
 .menu-category-button-label:ltr {
     padding-left: 5px;
@@ -1215,6 +1227,7 @@ border-image: url("button-focus.svg") 3;
     padding-left: 28px;
     text-align: right;
     height: 30px;
+    text-shadow: 0px 1px 1px #000000;
 }
 
 .menu-selected-app-box:rtl {
@@ -1299,14 +1312,30 @@ border-image: url("button-focus.svg") 3;
     background-gradient-start: rgba(226,226,226,0.5);
     background-gradient-end: rgba(122,122,122,0.5);
     border-radius: 2px 2px 0px 0px;
+    text-shadow: 1px 1px 1px #00ff00;
 }
 .window-list-item-box:hover {
     border-radius: 2px 2px 0px 0px;
-        border-image: url("window-active1.svg") 2 2 0 0 stretch;
+    border-image: url("window-active1.svg") 2 2 0 0 stretch;
+    text-shadow: 1px 1px 1px #000000;
 }
 .window-list-item-demands-attention {
     background-gradient-start: rgba(255,52,52,0.5);
     background-gradient-end: rgba(255,144,144,0.5);
+}
+
+.window-list-preview {
+padding: 10px 15px 15px 15px;
+font-weight: bold;
+color: white;
+text-shadow: black 0px 0px 2px;
+border: 1px solid rgba(0,125,255,1);
+border-radius: 3px;
+/* border-image: url("checkbox-off-focus.svg") 3; if this is on the background goes transparent :-( */
+background-image: url('pcopymenu.jpg');
+background-size: cover;
+background-color: rgba(0,0,0,0.75);
+transition-duration: 150;
 }
 /* ===================================================================
  * Sound Applet (sound@cinnamon.org)
@@ -1574,11 +1603,13 @@ border-image: url("button-focus.svg") 3;
     color: #ccc;
     text-shadow: black 0px 0px 2px;
     transition-duration: 0;
+    spacing: 3px;
 }
 .applet-box:checked,
 .applet-box:hover {
     color: #fff;
     border-image: url("window-active1.svg") 2 2 0 0;
+    text-shadow: 1px 1px 1px #000000;
 }
 .applet-box.vertical {
     padding-left: 0px;
@@ -1604,7 +1635,7 @@ border-image: url("button-focus.svg") 3;
 }
 .applet-icon {
     color: #ccc;
-    icon-size: 22px;
+    icon-size: 1.5em;
 }
 .applet-box:checked .applet-icon,
 .applet-box:hover .applet-icon {
@@ -1618,8 +1649,7 @@ border-image: url("button-focus.svg") 3;
  * ===================================================================*/
 .desklet {
     color: #fff;
-    border-image: url("desklet-header.svg") 3 3 3 3;
-    background-image: url('pcopymenu.jpg');
+    border-radius: 4px;
 }
 
 .desklet:highlight, .desklet:highlight-with-borders, .desklet:highlight-with-borders-and-header {
@@ -1627,44 +1657,48 @@ border-image: url("button-focus.svg") 3;
 }
 
 .desklet-with-borders {
-    border: 2px solid #a5a5a5;
+    border: 1px solid #a5a5a5;
     background-color: rgba(80, 80, 80, 0.8);
     color: #fff;
-    border-radius-bottomleft: 12px;
-    border-radius-bottomright: 12px;
-    border-radius-topleft: 12px;
-    border-radius-topright: 12px;
-    border-image: url("desklet-header.svg") 3 3 3 3;
-    background-image: url('pcopymenu.jpg');
+    border-radius-bottomleft: 4px;
+    border-radius-bottomright: 4px;
+    border-radius-topleft: 4px;
+    border-radius-topright: 4px;
+    background-image: url('pcopyvert.jpg');
+    background-size: contain;
+    background-repeat: repeat;
 }
 
 .desklet-with-borders-and-header {
-    border: 2px solid #a5a5a5;
+    border: 1px solid #a5a5a5;
     background-color: rgba(80, 80, 80, 0.8);
     color: #fff;
     border-top: 1px;
-    border-radius-bottomleft: 12px;
-    border-radius-bottomright: 12px;
-    border-image: url("desklet-header.svg") 3 3 3 3;
-    background-image: url('pcopymenu.jpg');
+    border-radius-bottomleft: 4px;
+    border-radius-bottomright: 4px;
+    background-image: url('pcopyvert.jpg');
+    background-size: contain;
+    border-image: url("date-label.svg") 3 3 3 3;
 }
 
 .desklet-header {
-    border-radius-topleft: 12px;
-    border-radius-topright: 12px;
-    font-size: 10.5pt;
-    border: 2px solid #a5a5a5;
+    border-radius-topleft: 4px;
+    border-radius-topright: 4px;
+    font-size: 1.05em;
+    border: 1px solid #a5a5a5;
     border-bottom: 0px;
     background-color: rgba(80, 80, 80, 0.8);
     color: #fff;
     padding: 6px;
-    border-image: url("desklet-header.svg") 3 3 3 3;
-    background-image: url('pcopymenu.jpg');
+    background-image: url('pcopyvert.jpg');
+    background-size: contain;
+    border-image: url("date-label.svg") 3 3 3 3;
 }
 
 .desklet-drag-placeholder {
     border: 2px solid #6daa00;
     background-color: rgba(109,170, 0, 0.3);
+    border-radius: 4px;
 }
 /* ===================================================================
  * About Dialog (applet.js and desklet.js)
@@ -1722,7 +1756,7 @@ border-image: url("button-focus.svg") 3;
     color: #ffffff;
     text-shadow: black 5px 5px 5px;
     font-weight: bold;
-    font-size: 48pt;
+    font-size: 4.8em;
 }
 
 .expo-workspaces-name-entry {
@@ -1828,9 +1862,10 @@ border-image: url("button-focus.svg") 3;
     padding: 20px;
     color: white;
     spacing: 1em;
-    border: 1px solid #a5a5a5;
+    border: 1px solid rgba(0,0,0,1);
     box-shadow: 0 0 12px 1px rgba(0,0,0,0.75);
     background-image: url('pcopymenu.jpg');
+    background-size: cover;
 }
 
 .osd-window .level {
@@ -1893,4 +1928,12 @@ border-image: url("button-focus.svg") 3;
     border-bottom-width: 0px;
     border-right-width: 0px;
     border-radius: 8px 0px 0px 0px;
+}
+
+.systray {
+    spacing: 5px;
+}
+.systray:hover {
+    color: #fff;
+    border-image: url("window-active1.svg") 2 2 0 0;
 }

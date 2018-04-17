@@ -1,0 +1,124 @@
+/* ======================================
+ * ! Desktop Capture applet
+ * ====================================== */
+
+/* Panel icon */
+StBoxLayout.applet-box.desktop-capture StBin {
+    min-width: 22px;
+}
+
+/* Display of preview image in notifications */
+.screenshot-thumbnail {
+    border-image: url("img/buttons/button-primary__s.svg") 7;
+    border: 0;
+    padding: 7px;
+
+    &-hover {
+        border-image: url("img/buttons/button-primary__s--hover.svg") 7;
+    }
+}
+
+/* Window capture mode */
+.capture-outline-background {
+    background-color: rgba($accent-primary, .8);
+}
+
+.capture-outline-frame {
+    border: 0;
+    border-radius: 0;
+
+    &.desktop {
+        border: none;
+    }
+}
+
+.overlay-icon-box {}
+
+/* App icon (window capture mode) */
+.overlay-icon {
+    padding: 5px;
+    border: 0;
+    @include size(32px);
+    box-shadow: 0 0 transparent;
+    icon-shadow: white 0 0 0;
+}
+
+.overlay-label-title {
+    padding-top: 5px;
+    color: $text-primary;
+    text-shadow: 0 0 0 transparent;
+    font-weight: bold;
+    text-align: center;
+}
+
+.overlay-label-size {
+    color: $text-primary;
+    text-shadow: 0 0 0 transparent;
+    text-align: center;
+    vertical-align: top;
+    font-family: $font-family;
+    font-size: $font-size-lg;
+    font-weight: bold;
+    clear: both;
+}
+
+.capture-countdown-timer {
+    border-image: url("img/containers/popup.svg") 7;
+    @include size($font-size-xxxl);
+    font-size: $font-size-xxxl;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    color: $text-primary;
+}
+
+/* Dashed border in area selection */
+.border-h, .border-v {
+    border-image: none;
+    background-color: #000;
+}
+
+.handle {
+    border: 1px solid #000;
+    background-color: rgba(#fff, .7);
+}
+
+.capture-area-selection {
+    background-color: rgba(#000, 0);
+    border: 1px solid #000;
+}
+
+/* Desktop overlay */
+.shadow-container {}
+
+.cover {
+    background-color: rgba(#000, .65);
+}
+
+/* Instructions dialog */
+.instructions-container {
+    border-image: url("img/containers/popup.svg") 7;
+}
+
+.instructions-label-header {
+    text-align: center;
+    font-size: $font-size-xxl;
+    font-weight: bold;
+    color: $text-primary;
+    text-shadow: 0 0 transparent;
+}
+
+.instructions-label-text {
+    color: $text-primary;
+    text-align: center;
+    font-size: $font-size-xl;
+    text-shadow: 0 0 transparent;
+}
+
+.menuitem-detail {
+    color: $text-secondary;
+
+    .popup-menu-item:active & {
+        color: $text-secondary;
+    }
+}

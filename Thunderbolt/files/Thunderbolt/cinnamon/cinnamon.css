@@ -341,7 +341,15 @@ StScrollBar StButton#vhandle:hover
 
 .popup-menu-item {
     padding: .4em 1.75em;
-	spacing: 1em;
+    spacing: 1em;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: inset  0px 1px 1px transparent;
+    color: #fff;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 22px;
+    padding-right: 22px;
 }
 
 .popup-menu-item:active {
@@ -352,10 +360,7 @@ StScrollBar StButton#vhandle:hover
     border-radius: 3px;
     box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
     color: #fff;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 22px;
-    padding-right: 22px;
+
 }
 
 .popup-menu-item:insensitive {
@@ -585,6 +590,15 @@ StScrollBar StButton#vhandle:hover
     spacing: 0px;
     margin: 0px;
 }
+
+.system-status-icon.warning {
+    color: #e5e887;
+}
+
+.system-status-icon.error {
+    color: #fb5858;
+}
+
 /* Items in the bottom panel are shifted down by 1px.
    This fixes it. */
 /*.panel-bottom .system-status-icon,
@@ -1897,6 +1911,14 @@ StScrollBar StButton#vhandle:hover
     background-gradient-end: rgba(255, 144, 144, 0);
 }
 
+.window-list-item-box .progress {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255,255,255,0.6);
+    background-gradient-end: rgba(255,255,255,0.3);
+    border-radius: 3px;
+	box-shadow: inset 0px 1px 1px rgba(255,255,255,0.1);
+    border: 1px solid #222;
+}
 
 /* ===================================================================
  * Sound Applet (sound@cinnamon.org)
@@ -2504,4 +2526,14 @@ StScrollBar StButton#vhandle:hover
     border-bottom-width: 0px;
     border-right-width: 0px;
     border-radius: 4px 0px 0px 0px;
+}
+/* ===================================================================
+ * Systray Applet
+ *
+ * .systray is for theming to be applied to the systray as a whole
+ * .applet-box is used for indicators (not tray icons) within the systray
+ * tray icons are not themed
+ * ===================================================================*/
+.systray {
+    spacing: 5px;
 }

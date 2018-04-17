@@ -1,0 +1,30 @@
+/* ======================================
+ * ! Checkboxes + Radio buttons
+ * ====================================== */
+
+@each $v in check-box, radiobutton {
+    .#{$v} {
+        CinnamonGenericContainer {
+            spacing: .2em;
+            min-height: 16px;
+        }
+
+        StBin {
+            width: 16px;
+            height: 16px;
+            background-image: url("img/controls/#{$v}.svg");
+        }
+
+        &:focus StBin {
+            background-image: url("img/controls/#{$v}-focused.svg");
+        }
+
+        &:checked StBin {
+            background-image: url("img/controls/#{$v}-checked.svg");
+        }
+
+        &:focus:checked StBin {
+            background-image: url("img/controls/#{$v}-checked-focused.svg");
+        }
+    }
+}

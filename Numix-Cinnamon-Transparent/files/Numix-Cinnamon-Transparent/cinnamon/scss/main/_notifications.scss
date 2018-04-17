@@ -1,0 +1,93 @@
+/* ======================================
+ * ! Notifications
+ * ====================================== */
+
+.url-highlighter { link-color: $text-link; }
+
+#notification {
+    padding: 1.3em;
+    spacing-rows: .3em;
+    spacing-columns: 10px;
+    width: 34em;
+    margin-from-right-edge-of-screen: 6px;
+    font-weight: bold;
+    font-size: $font-size-base;
+    color: $text-primary;
+    background: rgba($text-primary-invert, 0.8);
+    border-radius: 1px;
+
+    CinnamonGenericContainer * {
+        font-weight: normal;
+        font-size: $font-size-base;
+        color: $text-secondary;
+
+        &:first-child {
+            font-weight: bold;
+            font-size: $font-size-base;
+            padding-top: .3em;
+            color: $text-primary;
+        }
+
+        &:last-child {
+            padding-top: .3em;
+            color: $text-primary;
+        }
+    }
+
+    &-body {
+        font-weight: normal;
+        font-size: $font-size-base;
+        padding-top: .6em;
+    }
+
+    &-actions {
+        spacing: .3em;
+    }
+
+    // min-height hack to prevent image stretching
+    &.notification-with-image {
+        min-height: 164px;
+
+        .popup-menu-content & {
+            min-height: 178px;
+        }
+
+        #notification-body {
+            padding: 0;
+        }
+    }
+}
+
+.notification-button,
+.notification-icon-button {
+    @include btn-primary;
+}
+
+.notification-button      { @include btn-width(wide); }
+.notification-icon-button { @include btn-width(small); }
+
+
+/* ======================================
+ * ! Notification applet
+ * ====================================== */
+
+#traycontainer {
+    padding: .4em .5em;
+
+    StScrollBar { padding: .4em 0 .4em .3em; }
+
+    .notification-applet-padding { padding: .4em 0; }
+
+    #notification {
+        border-image: url("img/containers/light-bg-marked-orange.svg") 7;
+        padding: .8em .8em .8em 1em;
+
+        &.multi-line-notification {
+            border-image: url("img/containers/light-bg-marked-blue.svg") 7;
+        }
+
+        &.notification-with-image {
+            border-image: url("img/containers/light-bg-marked-green.svg") 7;
+        }
+    }
+}

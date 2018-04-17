@@ -459,7 +459,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel {
     background: rgb(38, 50, 56);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.23);
 
     font-weight: bold;
     /* sets the height of horizontal panels */
@@ -1860,6 +1860,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
     color: rgb(207, 216, 220);
     text-shadow: none;
     transition-duration: 100ms;
+    spacing: 3px;
 }
 
 .applet-box StLabel {
@@ -1877,7 +1878,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .applet-box.vertical StLabel {
     padding-top: 0;
-    width: 34px;
+    min-width: 0px;
+    max-width: 34px;
 }
 
 .applet-box:hover, .applet-box:checked {
