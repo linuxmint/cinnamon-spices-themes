@@ -1,23 +1,26 @@
 # [Adara Cinnamon theme][repo]
 > Just a neutral theme
 
-[![](screenshot.png)][repo]
+[![](Adara/screenshot.png)![](Adara%20Dark/screenshot.png)][repo]
 
 ## Installation
+### Cinnamon Settings (recommended)
+Go to `Settings > Themes` and search for "Adara".
+
 #### From source
-Run `make install` or move the `Adara` folder into your `~/.themes` folder.
+Clone [this repository][repo] and run `make install` or `make install-dark`.
 
 #### Cinnamon Spices
-Download it from [here][spices] or search for "Adara" in your Cinnamon theme settings.
+Go [here][spices] and download the theme. Then extract the content into your `~/.theme` folder.
 
 ---
 ## Developing
-Run `./utils.sh --watch` to automatically compile and reload the theme. It will create a link in `~/.themes`.
+Run `./utils.sh watch` to automatically compile and reload the theme. It will create a link in `~/.themes`.
 
 _It's important to run utils.sh from its containing directory._
 
 ### Contributing
-Contributions are accepted via GitHub pull requests [here][repo]. Please, if you modify any image resource, run `./utils.sh --simplify` before creating a commit.
+Contributions are accepted via GitHub pull requests [here][repo]. Please, if you modify any image resource, run `./utils.sh simplify` before creating a commit.
 
 **IMPORTANT**: Never edit CSS files directly. They are overriden at build.
 
