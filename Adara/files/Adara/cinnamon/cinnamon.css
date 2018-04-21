@@ -81,20 +81,22 @@ StScrollBar {
 }
 
 StScrollBar StBin#trough {
-  background: transparent;
   border-image: url("img/controls/scroll-trough.svg") 6;
 }
 
 StScrollBar StButton#vhandle,
 StScrollBar StButton#hhandle {
-  border-image: url("img/controls/scroll-handle.svg") 6;
+  background: #ffffff;
+  border: 1px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
 }
 
 StScrollBar StButton#vhandle:hover, StScrollBar StButton#vhandle:focus, StScrollBar StButton#vhandle:active,
 StScrollBar StButton#hhandle:hover,
 StScrollBar StButton#hhandle:focus,
 StScrollBar StButton#hhandle:active {
-  border-image: url("img/controls/scroll-handle-hover.svg") 4;
+  background: #f0f0f0;
+  border: 1px rgba(0, 0, 0, 0.15);
 }
 
 /* ======================================
@@ -164,7 +166,7 @@ StEntry:pressed > StIcon,
   height: 16px;
   background-image: url("img/controls/switch.svg");
   background-position: 0px 0px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(68, 68, 68, 0.35);
   border-radius: 8px;
 }
 
@@ -326,7 +328,7 @@ StEntry:pressed > StIcon,
   border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: #fafafa;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-  margin: 8px;
+  margin: 6px;
 }
 
 .popup-menu-content {
@@ -377,6 +379,7 @@ StEntry:pressed > StIcon,
   background-color: #f0f0f0;
   border-right-width: 0;
   border-left-width: 0;
+  border-radius: 0;
   padding: 2px 0;
 }
 
@@ -751,6 +754,7 @@ StEntry:pressed > StIcon,
 
 .calendar-today {
   background-color: rgba(51, 153, 204, 0.25);
+  border-color: #c8c8c8;
   font-weight: bold;
 }
 
@@ -1027,7 +1031,7 @@ StEntry:pressed > StIcon,
 
 .sound-player .slider, .sound-player .popup-slider-menu-item {
   height: .45em;
-  -slider-background-color: #cccccc;
+  -slider-background-color: #c8c8c8;
   -slider-active-background-color: #444;
   -slider-handle-radius: 0;
   border-image: none;
@@ -1214,7 +1218,7 @@ StEntry:pressed > StIcon,
 }
 
 .menu-applications-outer-box .menu-applications-inner-box {
-  padding: 0 8px;
+  margin: 0 8px;
 }
 
 .menu-applications-outer-box .menu-applications-scrollbox {
