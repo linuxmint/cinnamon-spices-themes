@@ -1,8 +1,17 @@
+### Update 1.1
+* Added license.
+* Changed the search engine style for a better adaptation with unofficial menu applets.
+* The menus are no longer glued to the panel, now they float and with round corners.
+* The width of the menus is widened.
+* Removed transparency from the panel, if you want transparency there is an extension called transparent panels.
+* Round borders were added to notification.
+* Modified the spaces of each applet used in the panel.
+
 ### Update 1.0
 
-* Limpio el tema, eliminando imagenes que no se utilizaran.
-* Se quita el color rojo de algunas partes del tema.
-* Integrado con Cinnamon 3.6
+* Clean the theme, eliminating images that will not be used.
+* The red color of some parts of the theme is removed.
+* Integrated with Cinnamon 3.6
 
 ### Update 0.8.1
 

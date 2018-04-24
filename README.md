@@ -66,6 +66,8 @@ Authors can modify their spice under the following conditions:
 
 Authors are able to accept or refuse changes from other people which modify the features or the look of their spice.
 
+Authors are responsible for ensuring their spice is maintained to reflect changes to the underlying Cinnamon software, to ensure continued error free operation, and full coverage of themed functions within Cinnamon. If you don't maintain your spice then you agree that someone else may do so.
+
 # Pull requests from authors and workflow
 
 To modify a spice, developers create a Pull Request.
@@ -84,7 +86,7 @@ If everything is fine, the PR is merged, the website is updated and users can se
 
 In addition to the checks specified above, if the pull requests comes from somebody else than the author, the reviewer will need to check the nature of the changes.
 
-If the changes represent a bug fix, the PR can be merged.
+If the changes represent a bug fix or necessary maintenance, the PR can be merged.
 
 If the changes represent a change in functionality, or in look and feel, or if their implementation could be questioned and/or discussed, the reviewer should leave the PR open and ask the author to review it.
 
