@@ -147,12 +147,13 @@ StScrollBar StButton#hhandle:active {
 .toggle-switch, .toggle-switch-us, .toggle-switch-intl {
   width: 30px;
   height: 15px;
-  background-image: url("img/controls/switch-off.svg");
+  background-image: url("img/controls/switch.svg");
   background-color: rgba(0, 0, 0, 0.2);
+  background-position: 0px 0px;
 }
 
 .toggle-switch:checked, .toggle-switch-us:checked, .toggle-switch-intl:checked {
-  background-image: url("img/controls/switch-on.svg");
+  background-position: 15px 0px;
   background-color: #06b025;
 }
 
@@ -1300,7 +1301,14 @@ StScrollBar StButton#hhandle:active {
   border-image: url("img/containers/tooltip.svg") 10;
 }
 
-or .applet-icon,
+/* ======================================
+ * ! Applets
+ * ====================================== */
+/*
+ * Fullcolor icons have the 'applet-icon' class.
+ * Symbolic icons have the 'system-status-icon' class.
+ */
+.applet-icon,
 .system-status-icon {
   icon-size: 16px;
   padding: 0;
@@ -1457,14 +1465,16 @@ or .applet-icon,
 .window-list-box {
   spacing: 2px;
   padding: 0;
+  /* Workaround until Cinnamon 3.6, to be replaced by padding and spacing.
+	   window-list-box paddings didn't work, now they do */
 }
 
 .window-list-box .window-list-item-box {
-  padding: 0 4px 0 0;
+  padding: 0 6px 0 0;
 }
 
 .window-list-box #appMenuIcon {
-  padding: 0 0 0 8px;
+  padding: 0 6px;
 }
 
 .window-list-box.vertical .window-list-item-box {
@@ -1472,14 +1482,13 @@ or .applet-icon,
 }
 
 .window-list-box.vertical #appMenuIcon {
-  padding: 8px 0 0 0;
+  padding: 6px 0;
 }
 
 .window-list-item-box {
   color: white;
   border-image: url("img/panel/window-list.svg") 8;
   text-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2);
-  padding: 0;
   background-gradient-direction: vertical;
   background-gradient-start: transparent;
   background-gradient-end: transparent;
@@ -1717,15 +1726,19 @@ or .applet-icon,
   padding: 0 2px;
 }
 
-.workspace-switcher.vertical {
+.vertical .workspace-switcher {
   padding: 2px 0;
 }
 
 .workspace-button {
-  width: 24px;
-  height: 24px;
-  padding: 0 3px;
   color: rgba(255, 255, 255, 0.65);
+  padding: 0 6px;
+  min-width: 1.5em;
+}
+
+.workspace-button.vertical {
+  padding: 6px 0px;
+  min-height: 1.5em;
 }
 
 .workspace-button:hover {
@@ -1749,21 +1762,21 @@ or .applet-icon,
  * ! Visual-mode Workspace Switcher applet
  * ====================================== */
 .workspace-graph {
-  padding: 0 6px;
+  padding: 0 3px;
 }
 
-.panel-left .workspace-graph, .panel-right .workspace-graph {
-  padding: 6px 0;
+.vertical .workspace-graph {
+  padding: 3px 0;
 }
 
 .workspace-graph .workspace {
-  background-color: rgba(0, 0, 0, 0.25);
-  border: 1px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px rgba(255, 255, 255, 0.25);
 }
 
 .workspace-graph .workspace:active {
-  border-color: #000;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.25);
+  border-color: white;
 }
 
 .workspace-graph .workspace .windows {
@@ -1795,6 +1808,11 @@ or .applet-icon,
 
 .vertical .launcher:hover {
   border-image: url("img/panel/applet__vertical__hover.svg") 12;
+}
+
+.launcher .applet-box {
+  /* 1px padding bug */
+  padding: 0;
 }
 
 /* ======================================
