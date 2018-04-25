@@ -1,7 +1,7 @@
 # [Adara Cinnamon theme][repo]
 > Just a neutral theme
 
-[![](Adara/screenshot.png)![](Adara%20Dark/screenshot.png)][repo]
+[![](Adara/screenshot.png)![](Adara-Dark/screenshot.png)][repo]
 
 ## Installation
 ### Cinnamon Settings (recommended)

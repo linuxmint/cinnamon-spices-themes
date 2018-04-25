@@ -334,7 +334,7 @@ StEntry:pressed > StIcon,
 .popup-menu-content {
   color: rgba(0, 0, 0, 0.7);
   padding: 2px 0;
-  min-width: 8em;
+  min-width: 11em;
   font-size: 100%;
 }
 
@@ -433,10 +433,26 @@ StEntry:pressed > StIcon,
   border-bottom-width: 1px;
   border-color: rgba(0, 0, 0, 0.2);
   /* When panel settings is open */
+  /* Panel edit mode */
 }
 
 .panel-top:highlight .panelLeft, .panel-top:highlight .panelCenter, .panel-top:highlight .panelRight {
-  background-color: rgba(255, 204, 0, 0.5);
+  background-gradient-direction: vertical;
+  background-gradient-start: transparent;
+  background-gradient-end: rgba(255, 204, 0, 0.25);
+}
+
+.panel-top .panelLeft:dnd,
+.panel-top .panelRight:dnd {
+  background-gradient-direction: vertical;
+  background-gradient-start: transparent;
+  background-gradient-end: rgba(255, 204, 0, 0.25);
+}
+
+.panel-top .panelCenter:dnd {
+  background-gradient-direction: vertical;
+  background-gradient-start: transparent;
+  background-gradient-end: rgba(51, 153, 204, 0.25);
 }
 
 .panel-bottom {
@@ -447,10 +463,26 @@ StEntry:pressed > StIcon,
   border-top-width: 1px;
   border-color: rgba(0, 0, 0, 0.2);
   /* When panel settings is open */
+  /* Panel edit mode */
 }
 
 .panel-bottom:highlight .panelLeft, .panel-bottom:highlight .panelCenter, .panel-bottom:highlight .panelRight {
-  background-color: rgba(255, 204, 0, 0.5);
+  background-gradient-direction: vertical;
+  background-gradient-start: rgba(255, 204, 0, 0.25);
+  background-gradient-end: transparent;
+}
+
+.panel-bottom .panelLeft:dnd,
+.panel-bottom .panelRight:dnd {
+  background-gradient-direction: vertical;
+  background-gradient-start: rgba(255, 204, 0, 0.25);
+  background-gradient-end: transparent;
+}
+
+.panel-bottom .panelCenter:dnd {
+  background-gradient-direction: vertical;
+  background-gradient-start: rgba(51, 153, 204, 0.25);
+  background-gradient-end: transparent;
 }
 
 .panel-left {
@@ -461,10 +493,26 @@ StEntry:pressed > StIcon,
   border-right-width: 1px;
   border-color: rgba(0, 0, 0, 0.2);
   /* When panel settings is open */
+  /* Panel edit mode */
 }
 
 .panel-left:highlight .panelLeft, .panel-left:highlight .panelCenter, .panel-left:highlight .panelRight {
-  background-color: rgba(255, 204, 0, 0.5);
+  background-gradient-direction: horizontal;
+  background-gradient-start: transparent;
+  background-gradient-end: rgba(255, 204, 0, 0.25);
+}
+
+.panel-left .panelLeft:dnd,
+.panel-left .panelRight:dnd {
+  background-gradient-direction: horizontal;
+  background-gradient-start: transparent;
+  background-gradient-end: rgba(255, 204, 0, 0.25);
+}
+
+.panel-left .panelCenter:dnd {
+  background-gradient-direction: horizontal;
+  background-gradient-start: transparent;
+  background-gradient-end: rgba(51, 153, 204, 0.25);
 }
 
 .panel-right {
@@ -475,32 +523,38 @@ StEntry:pressed > StIcon,
   border-left-width: 1px;
   border-color: rgba(0, 0, 0, 0.2);
   /* When panel settings is open */
+  /* Panel edit mode */
 }
 
 .panel-right:highlight .panelLeft, .panel-right:highlight .panelCenter, .panel-right:highlight .panelRight {
-  background-color: rgba(255, 204, 0, 0.5);
+  background-gradient-direction: horizontal;
+  background-gradient-start: rgba(255, 204, 0, 0.25);
+  background-gradient-end: transparent;
+}
+
+.panel-right .panelLeft:dnd,
+.panel-right .panelRight:dnd {
+  background-gradient-direction: horizontal;
+  background-gradient-start: rgba(255, 204, 0, 0.25);
+  background-gradient-end: transparent;
+}
+
+.panel-right .panelCenter:dnd {
+  background-gradient-direction: horizontal;
+  background-gradient-start: rgba(51, 153, 204, 0.25);
+  background-gradient-end: transparent;
 }
 
 .panelLeft, .panelCenter, .panelRight {
   spacing: 0;
 }
 
-/* Panel edit mode */
-.panelLeft:dnd,
-.panelRight:dnd {
+.panel-dummy {
   background-color: rgba(255, 204, 0, 0.5);
 }
 
-.panelCenter:dnd {
-  background-color: rgba(255, 51, 51, 0.5);
-}
-
-.panel-dummy {
-  background-color: rgba(255, 204, 0, 0.75);
-}
-
 .panel-dummy:entered {
-  background-color: rgba(255, 204, 0, 0.9);
+  background-color: rgba(51, 204, 51, 0.75);
 }
 
 /* ======================================
@@ -629,22 +683,22 @@ StEntry:pressed > StIcon,
   padding: 6px 0;
 }
 
-.panel-top .applet-box:hover, .panel-top .applet-box:checked {
+.panel-top .applet-box:hover, .panel-top .applet-box:checked, .panel-top .applet-box:highlight {
   border-top-width: 1px;
   padding-bottom: 1px;
 }
 
-.panel-bottom .applet-box:hover, .panel-bottom .applet-box:checked {
+.panel-bottom .applet-box:hover, .panel-bottom .applet-box:checked, .panel-bottom .applet-box:highlight {
   border-bottom-width: 1px;
   padding-top: 1px;
 }
 
-.panel-left .applet-box:hover, .panel-left .applet-box:checked {
+.panel-left .applet-box:hover, .panel-left .applet-box:checked, .panel-left .applet-box:highlight {
   border-left-width: 1px;
   padding-right: 1px;
 }
 
-.panel-right .applet-box:hover, .panel-right .applet-box:checked {
+.panel-right .applet-box:hover, .panel-right .applet-box:checked, .panel-right .applet-box:highlight {
   border-right-width: 1px;
   padding-left: 1px;
 }
@@ -659,6 +713,11 @@ StEntry:pressed > StIcon,
 
 .applet-box:checked {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.applet-box:highlight {
+  border-color: #ffcc00;
+  background-color: rgba(255, 204, 0, 0.1);
 }
 
 /* ======================================
@@ -858,10 +917,10 @@ StEntry:pressed > StIcon,
 
 .sound-player > StBoxLayout:first-child {
   padding: 6px;
+  padding-top: 4px;
   spacing: 6px;
   font-weight: normal;
   font-size: 110%;
-  margin: 0 2px 2px;
 }
 
 .sound-player > StBoxLayout:first-child StButton {
@@ -945,7 +1004,7 @@ StEntry:pressed > StIcon,
 .sound-player-overlay {
   border-top: 1px rgba(0, 0, 0, 0.2);
   background-color: #fafafa;
-  padding: 10px 16px;
+  padding: 16px;
   spacing: 8px;
   color: rgba(0, 0, 0, 0.7);
 }
@@ -954,6 +1013,11 @@ StEntry:pressed > StIcon,
   spacing: 6px;
   /* Cover width is hardcoded to 300px */
   max-width: 266px;
+}
+
+.sound-player-overlay StBoxLayout:last-child {
+  /* Controls box */
+  padding-top: 2px;
 }
 
 .sound-player-overlay StButton {
@@ -1045,21 +1109,25 @@ StEntry:pressed > StIcon,
   padding: 0 2px;
 }
 
-.workspace-switcher.vertical {
+.vertical .workspace-switcher {
   padding: 2px 0;
 }
 
 .workspace-button {
-  width: 24px;
-  height: 24px;
   color: rgba(255, 255, 255, 0.6);
   border-color: transparent;
-  padding: 1px 2px;
+  padding: 1px 10px;
   /* vpadding not working fine */
 }
 
 .workspace-button.vertical {
-  padding: 0px 1px;
+  padding: 6px 1px;
+}
+
+.workspace-button StLabel {
+  /* Fix for Cinnamon < 3.8 (2018) */
+  min-width: .6em;
+  text-align: center;
 }
 
 .panel-top .workspace-button {
@@ -1098,25 +1166,25 @@ StEntry:pressed > StIcon,
   padding: 0 6px;
 }
 
-.panel-left .workspace-graph, .panel-right .workspace-graph {
+.vertical .workspace-graph {
   padding: 6px 0;
 }
 
 .workspace-graph .workspace {
   background-color: rgba(255, 255, 255, 0.1);
-  border: 1px #000;
+  border: 1px black;
 }
 
 .workspace-graph .workspace:active {
-  border-color: #444;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: white;
 }
 
 .workspace-graph .workspace .windows {
-  -active-window-background: rgba(238, 238, 238, 0.9);
-  -active-window-border: rgba(0, 0, 0, 0.25);
-  -inactive-window-background: rgba(204, 204, 204, 0.25);
-  -inactive-window-border: rgba(0, 0, 0, 0.2);
+  -active-window-background: rgba(238, 238, 238, 0.75);
+  -active-window-border: #000;
+  -inactive-window-background: rgba(127, 127, 127, 0.5);
+  -inactive-window-border: rgba(0, 0, 0, 0.75);
 }
 
 /* ======================================
@@ -1160,14 +1228,19 @@ StEntry:pressed > StIcon,
   border-color: rgba(255, 255, 255, 0.85);
 }
 
+.panel-launchers .launcher .icon-box {
+  /* 1px padding bug */
+  padding: 0;
+}
+
 /* ======================================
  * ! User Applet
  * ====================================== */
 .user-box {
   padding: 8px;
-  padding-bottom: 6px;
+  padding-top: 6px;
+  padding-bottom: 2px;
   spacing: 6px;
-  margin: 0 2px;
 }
 
 .user-icon {
@@ -1186,7 +1259,7 @@ StEntry:pressed > StIcon,
 /* ======================================
  * ! App menu applet
  * ====================================== */
-.menu-background.menu {
+.menu-background.menu .popup-menu-content {
   padding: 8px;
 }
 
@@ -1261,7 +1334,7 @@ StEntry:pressed > StIcon,
 }
 
 .menu-selected-app-box {
-  margin: 8px 8px 2px;
+  margin: 8px 6px 2px;
   text-align: right;
 }
 
@@ -1777,7 +1850,7 @@ StEntry:pressed > StIcon,
  */
 #uiGroup > #altTabPopup {
   padding: 0;
-  spacing: 2px;
+  spacing: 6px;
 }
 
 #uiGroup > #altTabPopup .switcher-list {
@@ -1792,7 +1865,7 @@ StEntry:pressed > StIcon,
 }
 
 #uiGroup > #altTabPopup .switcher-list .item-box {
-  padding: .5em;
+  padding: 6px;
 }
 
 #uiGroup > #altTabPopup .switcher-list .item-box:selected {
@@ -1803,8 +1876,8 @@ StEntry:pressed > StIcon,
 }
 
 #uiGroup > #altTabPopup .switcher-list .item-box:selected:last-child {
-  border-image: none;
-  border: none;
+  padding: 6px;
+  background: none;
   color: rgba(0, 0, 0, 0.7);
 }
 
@@ -1826,7 +1899,6 @@ StEntry:pressed > StIcon,
   border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: #fafafa;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-  color: rgba(0, 0, 0, 0.7);
   font-weight: normal;
 }
 
@@ -1839,15 +1911,16 @@ StEntry:pressed > StIcon,
   border: 1px solid rgba(0, 0, 0, 0.15);
   background-color: #f0f0f0;
   border-radius: 0;
+  spacing: 6px;
 }
 
 .keyboard-layout {
-  spacing: .45em;
-  padding: 8px;
+  spacing: 6px;
+  padding: 10px;
 }
 
 .keyboard-row {
-  spacing: .45em;
+  spacing: 6px;
 }
 
 .keyboard-key {
