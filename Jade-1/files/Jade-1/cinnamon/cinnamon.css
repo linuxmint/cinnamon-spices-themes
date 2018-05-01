@@ -1,7 +1,31 @@
-/* ###################################################################
- * Section common with Gnome Shell
- * ... contains a few cinnamon specific styles (rare occurences)
- * ###################################################################*/
+/* ***********************************************************************  
+                               J A D E   1
+               
+                            v3.0 (30.04.2018)
+ 
+  ------------------------------------------------------------------------
+  Mixed light-dark gtk theme with green color accents developed for 
+  Linux Mint based upon Obsidian 2.
+ 
+  Code available at Github:
+  https://github.com/madmaxms/theme-jade-1
+ 
+ ------------------------------------------------------------------------
+
+  This program is free software: you can whiteistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version. 
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+************************************************************************** */
 stage {
     font-family: Noto Sans, sans-serif;
 }
@@ -136,7 +160,7 @@ StScrollBar StButton#vhandle:hover
     /*border: 1px solid rgba(120, 120, 120, 1);*/
     border: 1px solid rgba(50, 50, 50, 1);
     border-radius: 4px;
-    background-color: rgba(43, 43, 43, 0.95);
+    background-color: rgba(43, 43, 43, 0.91);
     color: #fff;
     font-size: 9.5pt;
     min-width: 100px;
@@ -278,17 +302,17 @@ StScrollBar StButton#vhandle:hover
 }
 
 .toggle-switch-us {
-    background-image: url("toggle-off-us.svg");
+    background-image: url("switch-off.svg");
 }
 .toggle-switch-us:checked {
-    background-image: url("toggle-on-us.svg");
+    background-image: url("switch-on.svg");
 }
 
 .toggle-switch-intl {
-    background-image: url("toggle-off-intl.svg");
+    background-image: url("switch-off.svg");
 }
 .toggle-switch-intl:checked {
-    background-image: url("toggle-on-intl.svg");
+    background-image: url("switch-on.svg");
 }
 
 .nm-menu-item-icons {
@@ -951,14 +975,12 @@ StScrollBar StButton#vhandle:hover
 }
 
 .switcher-list {
-    background-gradient-direction: vertical;
-    background-gradient-start: rgba(70,70,70,1);
-    background-gradient-end: rgba(50,50,50,1);
-    border-radius: 8px;
+    background-color: rgba(30,30,30,0.85);
+    border-radius: 4px;
     padding: 20px;
     font-size: 9pt;
     color: white;
-    box-shadow: 0px 0px 12px 6px rgba(0,0,0,1);
+    box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.5);
 }
 
 .switcher-list-item-container {
@@ -998,9 +1020,9 @@ StScrollBar StButton#vhandle:hover
 
 .switcher-list .item-box:selected {
     background-gradient-direction: vertical;
-    background-gradient-start: rgba(90,90,90,1);
-    background-gradient-end: rgba(70,70,70,1);
-    border: 1px solid rgba(120,120,120,1);
+    background-gradient-start: rgba(90,90,90,0.5);
+    background-gradient-end: rgba(40,40,40,0.5);
+    border: 1px solid rgba(130,130,130,1);
 }
 
 .switcher-list .thumbnail-box {
@@ -1530,30 +1552,38 @@ StScrollBar StButton#vhandle:hover
 
 /* Main menu title */
 .menu-favorites-box {
-    margin: auto;
+    margin: 0px;
     padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
     padding-bottom: 10px;
-    border: 1px solid rgba(90,90,90,1);
+    border: 1px solid rgba(100,100,100,1);
     border-radius: 4px;
-    background-color: #363636;
+    background-color: rgba(10,10,10,0.3);
 }
 .menu-favorites-button {
     padding-top: 10px;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 10px;
-    /*border: 1px solid rgba(0,0,0,0);*/
-    border-radius: 3px;
+    border-radius: 4px;
+    border:0px;
+    margin: 0px 2px 0px 2px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
 }
 
 .menu-favorites-button:hover {
     background-gradient-direction: vertical;
-    background-gradient-start: rgba(0,140,100,1);
-    background-gradient-end: rgba(0,90,65,1);
-    /*background-color: rgba(50,150,120,1);*/
-    box-shadow: inset 0px 0px 1px 1px rgba(24,180,150,1);
+    background-gradient-start: rgba(180,180,180,0.3);
+    background-gradient-end: rgba(180,180,180,0.3);
+    border-radius: 4px;
+    border-right: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border:0px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    
 }
 
 .menu-places-box {
@@ -1589,6 +1619,7 @@ StScrollBar StButton#vhandle:hover
     padding-right: 7px;
     padding-bottom: 7px;
     max-width: 10px;
+    border: 1px solid transparent;
 }
 
 .menu-application-button:highlighted {
@@ -1603,10 +1634,10 @@ StScrollBar StButton#vhandle:hover
     padding-bottom: 7px;
     color: white;
     background-gradient-direction: vertical;
-    background-gradient-start: rgba(0,140,100,1);
-    background-gradient-end: rgba(0,90,65,1);
-    box-shadow: inset 0px 0px 1px 1px rgba(24,180,150,1);
-    border-radius: 3px;
+    background-gradient-start: rgba(110,120,130,0.5);
+    background-gradient-end: rgba(40,50,60,0.5);
+    border-radius: 4px;
+    border: 1px solid #90959A;
 }
 
 .menu-application-button-selected:highlighted {
@@ -1627,6 +1658,7 @@ StScrollBar StButton#vhandle:hover
     padding-left: 7px;
     padding-right: 7px;
     padding-bottom: 7px;
+    border: 1px solid transparent;
 }
 
 .menu-category-button-greyed {
@@ -1645,10 +1677,10 @@ StScrollBar StButton#vhandle:hover
     padding-bottom: 7px;
     color: white;
     background-gradient-direction: vertical;
-    background-gradient-start: rgba(0,140,100,1);
-    background-gradient-end: rgba(0,90,65,1);
-    box-shadow: inset 0px 0px 1px 1px rgba(24,180,150,1);
-    border-radius: 2px;
+    background-gradient-start: rgba(110,120,130,0.5);
+    background-gradient-end: rgba(40,50,60,0.5);
+    border-radius: 4px;
+    border: 1px solid #90959A;
 }
 
 .menu-category-button-label:ltr {
@@ -1684,7 +1716,7 @@ StScrollBar StButton#vhandle:hover
 }
 
 #menu-search-entry {
-    padding: 4px 12px;
+    padding: 5px 12px;
     border-radius: 4px;
     color: rgb(228, 228, 228);
     border: 1px solid rgba(100,100,100,1);
@@ -1694,7 +1726,7 @@ StScrollBar StButton#vhandle:hover
     selected-color: black;
     caret-color: rgb(228, 228, 228);
     caret-size: 1px;
-    width: 250px;
+    width: 400px;
     transition-duration: 300;
 }
 
@@ -2060,6 +2092,7 @@ StScrollBar StButton#vhandle:hover
 .applet-box:checked,
 .applet-box:hover {
     color: #fff;
+    background-color: #009B6F;
 }
 
 .applet-box:highlight {
@@ -2075,7 +2108,6 @@ StScrollBar StButton#vhandle:hover
 .applet-box:checked .applet-label,
 .applet-box:hover .applet-label {
     color: #fff;
-    text-shadow: white 0px 0px 5px;
 }
 .applet-icon {
     color: #ccc;
@@ -2086,7 +2118,6 @@ StScrollBar StButton#vhandle:hover
 .applet-box:hover .applet-icon,
 .applet-box:checked .applet-icon {
     color: #fff;
-    icon-shadow: white 0px 0px 3px;
 }
 
 /* ===================================================================
