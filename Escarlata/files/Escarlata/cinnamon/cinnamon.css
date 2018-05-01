@@ -1257,11 +1257,16 @@ StScrollBar StButton#vhandle:hover {
 	padding-right: 5px;
 	transition-duration: 100;
 }
-.window-list-item-box.vertical {
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-left: 1px;
-    margin-right: 1px;
+.panel-left .window-list-item-box, .panel-right .window-list-item-box {
+	color: rgba(255,255,255,1.0);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.05);
+	background-gradient-end: rgba(255,255,255,0.2);
+	box-shadow: inset 0px 0px 1px 1px rgba(170,170,170,0.5);
+	border-radius: 2px 2px 0px 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	transition-duration: 100;
 }
 .window-list-item-box:active,
 .window-list-item-box:checked,
@@ -1279,6 +1284,16 @@ StScrollBar StButton#vhandle:hover {
 .window-list-item-demands-attention {
 	background-gradient-start: rgba(255,52,52,0.5);
 	background-gradient-end: rgba(255,144,144,0.5);
+}
+.window-list-preview {
+	color: #ffffff;
+	font-size: 9.5pt;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: rgba(80,0,0,0.9);
+    border-width: 2px;
+    border-color: #a5a5a5;
+    padding: 10px 12px 12px 12px;
 }
 /* ===================================================================
  * Sound Applet (status/volume.js)

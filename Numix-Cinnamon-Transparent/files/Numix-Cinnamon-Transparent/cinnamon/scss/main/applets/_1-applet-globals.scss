@@ -1,0 +1,67 @@
+/* ======================================
+ * ! Applets
+ * ====================================== */
+
+/*
+ * Fullcolor icons have the 'applet-icon' class.
+ * Symbolic icons have the 'system-status-icon' class.
+ */
+.applet-icon,
+.system-status-icon {
+    icon-size: 16px;
+    padding: 0;
+    spacing: 0;
+}
+
+/* This is pretty much only used by the keyboard applet */
+.panel-status-button {
+    color: $text-primary;
+    font-weight: bold;
+
+    .panel-top &, .panel-bottom & { padding: 0 2px; }
+
+    // prevents a bug when using custom icon scaling in horiz panels
+    height: inherit;
+
+    // prevents a bug when using custom icon scaling in vert panels
+    .panel-left &, .panel-right & { height: 1.8em; }
+}
+
+.applet-label {
+    font-weight: bold;
+}
+
+.applet-separator {
+    .panel-top &, .panel-bottom & { padding: 0 7px; }
+
+    .panel-left &, .panel-right & { padding: 7px 0; }
+
+    &-line {
+        background-color: rgba(#000, .30);
+        width: 1px;
+    }
+
+    &-line-vertical {
+        border: 0 rgba(#000, .65);
+        border-bottom-width: 1px;
+    }
+}
+
+.applet-box {
+    padding: 0 2px;
+    color: $text-primary;
+
+    &.vertical { padding: 2px 0; }
+}
+
+@each $pos in top, bottom, left, right {
+    .panel-#{$pos} .applet-box {
+        &:hover {
+            border-image: url("img/containers/dark-bg.svg") 4;
+        }
+
+         &:checked {
+            color: $text-active;
+        }
+    }
+}
