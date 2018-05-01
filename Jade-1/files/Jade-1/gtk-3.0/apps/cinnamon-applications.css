@@ -1,4 +1,4 @@
-@define-color nemo_sidebar_bg #414141;
+@define-color nemo_sidebar_bg #3e4243;
 @define-color nemo_sidebar_fg #fff;
 @define-color nemo_sidebar_selected_fg #fff;
 
@@ -15,17 +15,19 @@ NemoWindow .sidebar .view {
     color: @nemo_sidebar_fg;
     text-shadow: none;
     icon-shadow: none;
+    padding: 2px;
+}
+
+NemoWindow .sidebar .view:hover {
+    background-color: rgba(150,150,150,0.1);
 }
 
 NemoWindow .sidebar .view:selected {
     border-color: @nemo_sidebar_bg;
     color: @nemo_sidebar_selected_fg;
+    background-color: #1c8952;
     text-shadow: 1px 1px alpha(black, 0.2);
-    icon-sha dow: 1px 1px alpha(black, 0.2);
-}
-
-NemoWindow.background > GtkGrid > GtkPaned > .pane-separator {
-    background-color: @nemo_sidebar_bg;
+    icon-shadow: 1px 1px alpha(black, 0.2);
 }
 
 NemoWindow .sidebar .expander:selected {
@@ -51,7 +53,7 @@ NemoWindow .sidebar .scrollbar {
 }
 
 NemoWindow .sidebar .scrollbar.overlay-indicator:not(.dragging):not(.hovering) .slider {
-    background-color: @nemo_sidebar_bg;
+    background-color: @theme_bg_color;
 }
 
 NemoWindow .sidebar .frame {
