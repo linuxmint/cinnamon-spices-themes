@@ -1,0 +1,43 @@
+// workspace-switcher@cinnamon.org
+
+// "Simple buttons" mode
+.workspace-switcher
+	padding-left: 3px
+	padding-right: 3px
+
+.workspace-button
+	width: 20px
+	height: 12px
+	color: $text
+	padding: 2px
+	transition-duration: 300
+
+	&:outlined
+		border-radius: 1px
+		background-color: $text
+		color: $medium
+
+
+// "Visual representation" mode
+.workspace-graph
+	padding-left: 3px
+	padding-right: 3px
+
+
+	.workspace
+		background: #404040
+
+		.windows
+			-active-window-background: rgba(140, 140, 140, 1.0)
+			-active-window-border: rgba(0, 0, 0, 0.7)
+			-inactive-window-background: rgba(140, 140, 140, 1.0)
+			-inactive-window-border: rgba(0, 0, 0, 0.7)
+
+		&:active
+			background: #505050
+
+			.windows
+				-active-window-background: #d0d0d0
+				-active-window-border: #000
+				-inactive-window-background: rgba(140, 140, 140, 1.0)
+				-inactive-window-border: rgba(0, 0, 0, 0.7)

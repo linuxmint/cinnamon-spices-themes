@@ -1,0 +1,286 @@
+ // popupMenu.js
+
+@require "colors.styl"
+
+ /* .popup-menu-boxpointer and .popup-menu are kept for compatibility
+	with cinnamon version under 3.2. Use .menu in version 3.2 and above */
+
+.popup-menu-boxpointer
+	-arrow-border-radius: 4px
+	-arrow-background-color: $dark
+	-arrow-border-width: 1px
+	-arrow-border-color: $light
+	-arrow-base: 20px
+	-arrow-rise: 8px
+
+.popup-menu
+	color: #ffffff
+	font-size: 9.5pt
+	min-width: 100px
+
+.menu
+	border-radius: 2px
+	background-color: $dark
+	color: #ffffff
+	font-size: 9.5pt
+	min-width: 100px
+
+.popup-menu-arrow
+	icon-size: 1.14em
+
+.popup-submenu-menu-item:open
+	background-color: $dark
+
+.popup-sub-menu
+	background-color: $light
+	box-shadow: 0 0 4px $dark inset
+
+	.popup-menu-item
+		&:ltr
+			padding-right: 1.75em
+
+		&:rtl
+			padding-left: 1.75em
+
+.popup-combo-menu
+	background-color: rgba(0,0,0,0.9)
+	padding: 1em 0em
+	color: #ffffff
+	font-size: 10.5pt
+	border: 1px solid #5f5f5f
+	border-radius: 4px
+
+/* The remaining popup-menu sizing is all done in ems, so that if you
+ * override .popup-menu.font-size, everything else will scale with it.
+ */
+.popup-menu-content
+	padding: 1em 0em
+
+.popup-menu-item
+	padding: .4em 1em
+	spacing: 1em
+
+	&:active
+		background-color: $light
+
+	&:insensitive
+		color: #9f9f9f
+
+.popup-combobox-item
+	spacing: 1em
+
+.popup-separator-menu-item /* From Flatty 1.1 http://cinnamon-spices.linuxmint.com/themes/view/142 */
+	height: 1px
+	width: 1em
+	border: 0px solid rgba(230,230,230,0.1)
+	border-bottom-width: 1px
+	box-shadow: inset 0px 1px 2px rgba(0,0,0,0.2)
+
+	&:alternate
+		font-weight: bold
+
+.popup-slider-menu-item
+	height: 1em
+	min-width: 15em
+	-slider-height: 0.3em
+	-slider-background-color: #666666
+	-slider-border-color: #666
+	-slider-active-background-color: #CCCCCC
+	-slider-active-border-color: #ccc
+	-slider-border-width: 1px
+	-slider-handle-radius: 0.5em
+
+.popup-device-menu-item
+	spacing: .5em
+
+.popup-inactive-menu-item
+	font-weight: normal
+	color: #999
+
+.popup-subtitle-menu-item
+	font-weight: bold
+
+.popup-menu-icon
+	icon-size: 1.1em
+
+/* Switches (to be used in menus) */
+.toggle-switch
+	width: 20px
+	height: 20px
+
+.toggle-switch-us, .toggle-switch-intl
+	background-image: url("toggle-off.svg")
+
+	&:checked
+		background-image: url("toggle-on.svg")
+
+
+.nm-menu-item-icons
+	spacing: .5em
+
+
+
+// menu.js
+/* Main menu title */
+
+.menu-favorites-box
+	padding: 10px
+	border-radius: 3px
+	background: #383838
+
+.menu-favorites-button
+	padding-top: 10px
+	padding-left: 10px
+	padding-right: 10px
+	padding-bottom: 10px
+
+	&:hover
+		border-radius: 3px
+		background: #282828
+
+.menu-places-box
+	padding: 10px
+	border: 0px solid #666
+
+.menu-places-button
+	padding-top: 10px
+	padding-left: 10px
+	padding-right: 10px
+	padding-bottom: 10px
+
+.menu-categories-box
+	padding-top: 10px
+	padding-left: 30px
+	padding-right: 30px
+	padding-bottom: 10px
+
+.menu-applications-inner-box
+	padding-top: 10px
+	padding-left: 10px
+	padding-right: 10px
+	padding-bottom: 0px
+
+.menu-applications-outer-box
+	padding-top: 10px
+	padding-left: 10px
+	padding-right: 10px
+	padding-bottom: 0px
+
+.menu-application-button
+	padding-top: 7px
+	padding-left: 7px
+	padding-right: 7px
+	padding-bottom: 7px
+
+	&:highlighted
+		// This style is used in menu application buttons for applications which were newly installed
+		font-weight: bold
+
+.menu-application-button-selected
+	padding-top: 7px
+	padding-left: 7px
+	padding-right: 7px
+	padding-bottom: 7px
+	color: white
+	background: $light
+	border-radius: 3px
+
+	&:highlighted
+		// This style is used in menu application buttons for applications which were newly installed
+		font-weight: bold
+
+.menu-application-button-label
+	&:ltr
+		padding-left: 5px
+
+	&:rtl
+		padding-right: 5px
+
+.menu-category-button
+	padding-top: 7px
+	padding-left: 7px
+	padding-right: 7px
+	padding-bottom: 7px
+
+.menu-category-button-greyed
+	padding-top: 7px
+	padding-left: 7px
+	padding-right: 7px
+	padding-bottom: 7px
+	color: #9C9C9C
+	font-style: italic
+
+.menu-category-button-selected
+	padding-top: 7px
+	padding-left: 7px
+	padding-right: 7px
+	padding-bottom: 7px
+	color: white
+	background: $light
+	border-radius: 3px
+
+.menu-category-button-label
+	&:ltr
+		padding-left: 5px
+	&:rtl
+		padding-right: 5px
+
+
+.menu-category-button-button:hover
+	background-color: #969696
+	border-radius: 8px
+
+/* Name and description of the currently hovered item in the menu
+ * This appears on the bottom right hand corner of the menu*/
+.menu-selected-app-box
+	padding-right: 30px
+	padding-left: 28px
+	text-align: right
+	height: 30px
+
+	&:rtl
+		padding-top: 10px
+		height: 30px
+
+
+.menu-selected-app-title
+	font-weight: bold
+
+.menu-selected-app-description
+	max-width: 150px
+
+.menu-search-box
+	&:ltr
+		padding-left: 30px
+
+	&:rtl
+		padding-right: 30px
+
+#menu-search-entry
+	padding: 5px
+	border-radius: 2px
+	color: rgb(128, 128, 128)
+	background: #eaeaea
+	box-shadow: 0 0 3px black inset
+	selected-color: black
+	caret-color: rgb(128, 128, 128)
+	caret-size: 1px
+	width: 250px
+	height: 15px
+	transition-duration: 300
+
+	&:hover
+		transition-duration: 300
+
+	&:focus
+		color: rgb(64, 64, 64)
+		font-weight: bold
+		transition-duration: 0
+
+.menu-search-entry-icon
+	icon-size: 1.2em
+	color: #8d8f8a
+
+/* Context menu (at the moment only for favorites) */
+.menu-context-menu
+	background-color: $medium

@@ -394,7 +394,8 @@ StScrollBar StButton#hhandle:hover {
   padding: 8px;
   spacing: 16px;
 }
-.switcher-list {
+.switcher-list,
+.window-list-preview {
   background: #222;
   border: 1px #444 solid;
   border-radius: 3px;
@@ -1221,6 +1222,11 @@ StScrollBar StButton#hhandle:hover {
   background-gradient-end: #606060;
   border-bottom: none;
 }
+.window-list-box .window-list-item-box:active .progress,
+.window-list-box .window-list-item-box:checked .progress,
+.window-list-box .window-list-item-box:focus .progress {
+  box-shadow: 0 0 3px #141414 inset;
+}
 .window-list-box .window-list-item-box:hover {
   background-gradient-start: #454545;
   background-gradient-end: #303030;
@@ -1228,6 +1234,10 @@ StScrollBar StButton#hhandle:hover {
   color: #e8e8e8;
   border-color: #4b4b4b;
   border-bottom: 0px;
+}
+.window-list-box .window-list-item-box .progress {
+  background-color: #02738e;
+  border-radius: 0 0 3px 3px;
 }
 .window-list-item-label {
   font-weight: bold;
