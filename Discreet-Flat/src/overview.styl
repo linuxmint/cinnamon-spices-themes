@@ -1,0 +1,113 @@
+@require "colors.styl"
+
+#overview
+	spacing: 12px
+
+.window-caption
+	color: white
+	border-radius: 2px
+	spacing: 25px
+	background-color: #383838
+	border: 1px solid #666
+
+
+	#selected
+		background-color: $dark
+		border: 1px solid #505050
+
+
+.workspace-controls
+	visible-height: 32px /* Amount visible before hovering */
+
+.workspace-thumbnails-background
+	border: 1px solid rgba(128, 128, 128, 0.4)
+	border-right: 0px
+	border-radius: 9px 9px 0px 0px
+	background-color: rgba(0, 0, 0, 0.5)
+	padding: 8px
+
+	&:rtl
+		border-right: 1px
+		border-left: 0px
+		border-radius: 9px 9px 0px 0px
+
+.workspace-thumbnails
+	spacing: 14px
+
+.workspace-add-button
+	background-image: url("add-workspace.png")
+	height: 200px
+	width: 35px
+	transition-duration: 100
+
+	&:hover
+		background-image: url("add-workspace-hover.png")
+		transition-duration: 50
+
+
+.workspace-close-button
+	background-image: url("close-window.svg")
+	height: 32px
+	width: 32px
+	-cinnamon-close-overlap: 17px
+
+
+.workspace-thumbnail-indicator
+	outline: 2px solid white
+	border: 1px solid #888
+
+.window-caption
+	background: $dark
+	border: 1px solid #333
+	border-radius: 2px
+	font-size: 9pt
+	padding: 2px 8px
+	-cinnamon-caption-spacing: 4px
+
+.window-close
+	background-image: url("close-window.svg")
+	height: 28px
+	width: 28px
+	-cinnamon-close-overlap: 17px
+
+	&:rtl
+		-st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5)
+
+
+.window-close-area
+	background-image: url("trash-icon.png")
+	background-size: 100px
+	background-color: #888
+	border: 1px solid $dark
+	border-bottom-width: 0px
+	border-radius: 6px 6px 0px 0px
+	height: 120px
+	width: 400px
+
+
+.overview-icon
+	border-radius: 4px
+	padding: 3px
+	border: 1px rgba(0,0,0,0)
+	font-size: 7.5pt
+	color: white
+	transition-duration: 100
+	text-align: center
+
+
+.expo-background
+	background-color: rgba(0,0,0,0.5)
+
+
+.workspace-overview-background-shade
+	background-color: rgba(0,0,0,0.2)
+
+
+.expo-workspace-thumbnail-frame
+	border: 1px, rgba(64,64,64,0.9)
+	background-color: rgba(64,64,64,0.9)
+
+
+	#active
+		border: 2px, rgba(32,32,32,0.9)
+		background-color: rgba(32,32,32,0.9)

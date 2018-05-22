@@ -1,0 +1,116 @@
+@require "colors.styl"
+
+.notification-applet-padding
+	padding: .5em 1em
+
+
+.notification-applet-container
+	max-height: 100px
+
+
+/* Check Boxes */
+.check-box
+	CinnamonGenericContainer
+		spacing: .2em
+
+
+	StBin, &:focus StBin
+		width: 16px
+		height: 16px
+		background-image: url("checkbox-off.svg")
+
+
+	&:checked StBin, &:focus:checked StBin
+		background-image: url("checkbox.svg")
+
+
+	StLabel
+		font-weight: normal
+
+
+.radiobutton
+	CinnamonGenericContainer
+		spacing: .2em
+		height: 18px
+		padding-top: 2px
+
+
+	StBin, &:focus StBin
+		width: 16px
+		height: 16px
+		background-image: url("radiobutton-off.svg")
+		border-radius: 15px
+
+	&:checked StBin, &:focus:checked StBin
+		background-image: url("radiobutton.svg")
+
+
+	StLabel
+		padding-top: 4px
+		font-size: 0.9em
+		box-shadow: none
+
+
+.flashspot
+	background-color: white
+
+
+/* Media keys OSD popup */
+.osd-window
+	background: $dark
+	border: 1px solid $light
+	border-radius: 4px
+	padding: 20px
+	color: white
+	spacing: 1em
+
+	.level
+		height: 0.7em
+		background-color: rgba(190,190,190,0.2)
+
+
+.tile-preview, .tile-hud
+	background-color: rgba(0, 0, 0, 0.6)
+	border: 1px solid rgba(0, 0, 0, 0.8)
+
+	.snap
+		background-color: rgba(0, 0, 0, 0.4)
+		border: 1px solid rgba(0, 0, 0, 0.6)
+
+
+.tile-hud
+	&:top
+		border-top-width: 0px
+		border-radius: 0px 0px 5px 5px
+
+	&:bottom
+		border-bottom-width: 0px
+		border-radius: 5px 5px 0px 0px
+
+	&:left
+		border-left-width: 0px
+		border-radius: 0px 5px 5px 0px
+
+	&:right
+		border-right-width: 0px
+		border-radius: 5px 0px 0px 5px
+
+	&:top-left
+		border-top-width: 0px
+		border-left-width: 0px
+		border-radius: 0px 0px 5px 0px
+
+	&:top-right
+		border-top-width: 0px
+		border-right-width: 0px
+		border-radius: 0px 0px 0px 5px
+
+	&:bottom-left
+		border-bottom-width: 0px
+		border-left-width: 0px
+		border-radius: 0px 5px 0px 0px
+
+	&:bottom-right
+		border-bottom-width: 0px
+		border-right-width: 0px
+		border-radius: 5px 0px 0px 0px

@@ -1,0 +1,63 @@
+// windowList.js
+
+@require "../colors.styl"
+
+bg-grad($color)
+	background-gradient-start: lighten($color, 10%)
+	background-gradient-end: $color
+
+.window-list-box
+	spacing: 2px
+	padding-left: 10px
+	padding-top: 1px
+
+	.window-list-item-box
+		background-gradient-direction: horizontal
+		bg-grad($dark)
+		border-radius: 0 0 0 5px
+		border: 0px solid #484848
+		border-left-width: 1px
+		transition-duration: 100
+		color: $text
+
+		&:active, &:checked, &:focus
+			bg-grad(#505050)
+			box-shadow: 0 0 3px #141414 inset
+			border: 0 solid black
+			padding-left: 1px
+			border-radius: 0 0 3px 3px
+
+			&:hover
+				bg-grad(#606060)
+				border-bottom: none
+
+			.progress
+				box-shadow: 0 0 3px #141414 inset
+
+		&:hover
+			bg-grad(#303030)
+			border-radius: 0 0 0 3px
+			color: #e8e8e8
+			border-color: #4b4b4b
+			border-bottom: 0px
+
+		.progress
+			background-color: $accent
+			border-radius: 0 0 3px 3px
+
+	//.vertical .window-list-item-box
+	// TODO
+
+
+.window-list-item-label
+	font-weight: bold
+	width: 15em
+	min-width: 5px
+
+.panel-top, .panel-bottom, .panel-left, .panel-right
+	.window-list-item-demands-attention
+		bg-grad($accent-light)
+		color: $dark
+
+		&:hover
+			bg-grad($accent)

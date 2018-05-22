@@ -1,0 +1,56 @@
+// applet.js
+@require "menu.styl"
+@require "sound.styl"
+@require "workspace_switcher.styl"
+@require "panel_launcher.styl"
+@require "notifications.styl"
+@require "window_list.styl"
+@require "on-screen_keyboard.styl"
+@require "calendar.styl"
+
+
+// common to all applets
+
+.applet-separator
+	padding: 5px 4px
+
+.applet-separator-line
+	width: 1px
+	background: #555
+
+.applet-separator-line-vertical
+	border: 0px solid rgba(255,255,255,0.5)
+	border-bottom-width: 2px
+
+.applet-box
+	padding-left: 3px
+	padding-right: 3px
+	spacing: 3px
+	color: $text
+	transition-duration: 100
+
+	&:hover
+		color: #fff
+		background-color: #555
+		border-radius: 1px
+
+		> .applet-label
+			color: #fff
+			text-shadow: white 0px 0px 5px
+
+	.vertical
+		padding-left: 0px
+		padding-right: 0px
+		padding-top: 3px
+		padding-bottom: 3px
+
+	&:highlight
+		background-color: #aa5555
+
+.applet-label
+	font-weight: bold
+	color: $text
+
+.applet-icon
+	color: $text
+	icon-size: 22px
