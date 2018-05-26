@@ -113,29 +113,11 @@ StScrollBar StButton#hhandle:hover {
 .panelRight .vertical {
   padding: 0px;
 }
-.panelLeft:ltr {
-  padding-right: 4px;
-}
-.panelLeft:rtl {
-  padding-left: 4px;
-}
 .panelLeft:dnd {
   background-color: #a80707;
 }
-.panelCenter .vertical {
-  padding-left: 0px;
-  padding-right: 0px;
-}
 .panelCenter:dnd {
   background-color: #07b407;
-}
-.panelRight:ltr {
-  padding-left: 0px;
-  spacing: 0px;
-}
-.panelRight:rtl {
-  padding-right: 0px;
-  spacing: 0px;
 }
 .panelRight:dnd {
   background-color: #0707c4;
@@ -1190,72 +1172,129 @@ StScrollBar StButton#hhandle:hover {
   border-right-width: 0px;
   border-radius: 5px 0px 0px 0px;
 }
-.window-list-box {
-  spacing: 2px;
+.panel-top .window-list-box .window-list-item-box {
+  border-radius: 0 0 0 5px;
+}
+.panel-top .window-list-box .window-list-item-box:active,
+.panel-top .window-list-box .window-list-item-box:checked,
+.panel-top .window-list-box .window-list-item-box:focus,
+.panel-top .window-list-box .window-list-item-box:hover {
+  border-radius: 0 0 0 3px;
+}
+.panel-bottom .window-list-box .window-list-item-box {
+  border-radius: 5px 0 0 0;
+}
+.panel-bottom .window-list-box .window-list-item-box:active,
+.panel-bottom .window-list-box .window-list-item-box:checked,
+.panel-bottom .window-list-box .window-list-item-box:focus,
+.panel-bottom .window-list-box .window-list-item-box:hover {
+  border-radius: 3px 0 0 0;
+}
+.panel-top .window-list-box,
+.panel-bottom .window-list-box {
   padding-left: 10px;
   padding-top: 1px;
 }
-.window-list-box .window-list-item-box {
+.panel-top .window-list-box .window-list-item-box,
+.panel-bottom .window-list-box .window-list-item-box {
+  padding-left: 1px;
   background-gradient-direction: horizontal;
   background-gradient-start: #383838;
   background-gradient-end: #222;
-  border-radius: 0 0 0 5px;
   border: 0px solid #484848;
   border-left-width: 1px;
+}
+.panel-top .window-list-box .window-list-item-box:active,
+.panel-bottom .window-list-box .window-list-item-box:active,
+.panel-top .window-list-box .window-list-item-box:checked,
+.panel-bottom .window-list-box .window-list-item-box:checked,
+.panel-top .window-list-box .window-list-item-box:focus,
+.panel-bottom .window-list-box .window-list-item-box:focus {
+  background-gradient-start: #626262;
+  background-gradient-end: #505050;
+  border: 0 solid #000;
+  padding-left: 2px;
+}
+.panel-top .window-list-box .window-list-item-box:active:hover,
+.panel-bottom .window-list-box .window-list-item-box:active:hover,
+.panel-top .window-list-box .window-list-item-box:checked:hover,
+.panel-bottom .window-list-box .window-list-item-box:checked:hover,
+.panel-top .window-list-box .window-list-item-box:focus:hover,
+.panel-bottom .window-list-box .window-list-item-box:focus:hover {
+  background-gradient-start: #707070;
+  background-gradient-end: #606060;
+  border-bottom: none;
+}
+.panel-top .window-list-box .window-list-item-box:hover,
+.panel-bottom .window-list-box .window-list-item-box:hover {
+  background-gradient-start: #454545;
+  background-gradient-end: #303030;
+  color: #e8e8e8;
+  border-color: #4b4b4b;
+  border-bottom: 0px;
+}
+.panel-top .window-list-box .window-list-item-box .progress,
+.panel-bottom .window-list-box .window-list-item-box .progress {
+  border-radius: 0 0 3px 3px;
+}
+.panel-left .window-list-box,
+.panel-right .window-list-box {
+  border: 0px solid #303030;
+  border-top-width: 1px;
+}
+.panel-left .window-list-box .window-list-item-box,
+.panel-right .window-list-box .window-list-item-box {
+  background-color: #222;
+}
+.panel-left .window-list-box .window-list-item-box:active,
+.panel-right .window-list-box .window-list-item-box:active,
+.panel-left .window-list-box .window-list-item-box:checked,
+.panel-right .window-list-box .window-list-item-box:checked,
+.panel-left .window-list-box .window-list-item-box:focus,
+.panel-right .window-list-box .window-list-item-box:focus {
+  background-color: #505050;
+}
+.panel-left .window-list-box .window-list-item-box:active:hover,
+.panel-right .window-list-box .window-list-item-box:active:hover,
+.panel-left .window-list-box .window-list-item-box:checked:hover,
+.panel-right .window-list-box .window-list-item-box:checked:hover,
+.panel-left .window-list-box .window-list-item-box:focus:hover,
+.panel-right .window-list-box .window-list-item-box:focus:hover {
+  background-color: #606060;
+}
+.panel-left .window-list-box .window-list-item-box:hover,
+.panel-right .window-list-box .window-list-item-box:hover {
+  background-color: #303030;
+  color: #e8e8e8;
+}
+.window-list-box .window-list-item-box {
   transition-duration: 100;
   color: #d0d0d0;
 }
 .window-list-box .window-list-item-box:active,
 .window-list-box .window-list-item-box:checked,
 .window-list-box .window-list-item-box:focus {
-  background-gradient-start: #626262;
-  background-gradient-end: #505050;
   box-shadow: 0 0 3px #141414 inset;
-  border: 0 solid #000;
-  padding-left: 1px;
-  border-radius: 0 0 3px 3px;
-}
-.window-list-box .window-list-item-box:active:hover,
-.window-list-box .window-list-item-box:checked:hover,
-.window-list-box .window-list-item-box:focus:hover {
-  background-gradient-start: #707070;
-  background-gradient-end: #606060;
-  border-bottom: none;
 }
 .window-list-box .window-list-item-box:active .progress,
 .window-list-box .window-list-item-box:checked .progress,
 .window-list-box .window-list-item-box:focus .progress {
   box-shadow: 0 0 3px #141414 inset;
 }
-.window-list-box .window-list-item-box:hover {
-  background-gradient-start: #454545;
-  background-gradient-end: #303030;
-  border-radius: 0 0 0 3px;
-  color: #e8e8e8;
-  border-color: #4b4b4b;
-  border-bottom: 0px;
-}
 .window-list-box .window-list-item-box .progress {
   background-color: #02738e;
-  border-radius: 0 0 3px 3px;
 }
 .window-list-item-label {
   font-weight: bold;
   width: 15em;
   min-width: 5px;
 }
-.panel-top .window-list-item-demands-attention,
-.panel-bottom .window-list-item-demands-attention,
-.panel-left .window-list-item-demands-attention,
-.panel-right .window-list-item-demands-attention {
+.window-list-item-demands-attention {
   background-gradient-start: #03b8e3;
   background-gradient-end: #039fc4;
   color: #222;
 }
-.panel-top .window-list-item-demands-attention:hover,
-.panel-bottom .window-list-item-demands-attention:hover,
-.panel-left .window-list-item-demands-attention:hover,
-.panel-right .window-list-item-demands-attention:hover {
+.window-list-item-demands-attention:hover {
   background-gradient-start: #0390b2;
   background-gradient-end: #02738e;
 }

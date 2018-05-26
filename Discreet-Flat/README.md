@@ -1,3 +1,5 @@
+# Discreet Flat
+
 Discreet Flat is a dark Cinnamon theme. It aims to get the best out of flat design without harming usability.
 
 I want to create the theme that fits me perfectly, maybe it will fit you too? If not, let me know why!
@@ -11,6 +13,10 @@ $ stylus src/cinnamon.styl -o files/Discreet-Flat/cinnamon
 ```
 
 ## Changelog
+
+### 1.1.5 - 26/05/2018
+
+- Add support for having the taskbar at the bottom, left and right
 
 ### 1.1.4 - 22/05/2018
 
