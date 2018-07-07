@@ -1,3 +1,21 @@
+### Update 1.4
+* Changing the style of the calendar
+* Modified the folder list panel (gtk)
+* Change the individual transparency of panels
+* Modified the list style of cinnamon programs
+* Modified the search engine of the cinnamon theme
+
+### Update 1.3
+* I adapted the theme of cinnamon 3.8
+* The Arc theme with personal variations was added by default
+* The transparency of the menus was removed
+* Edges were added to the menus and panel just like the Arc theme
+* The default font is Noto but it supports ubuntu and cantarell
+* The list of open programs was modified with a more comfortable style
+* The size of the horizontal and vertical panels was modified
+* The notification was modified with a clearer style
+* It will clean svg files that has no utility
+
 ### Update 1.1
 * Added license.
 * Changed the search engine style for a better adaptation with unofficial menu applets.
