@@ -1634,6 +1634,7 @@ StScrollBar StButton#hhandle:active {
 }
 
 /*
+ * [DEPRECATED] Cinnamon < 3.8
  * The window list thumbnail shares a class
  * with the alt-tab switcher, but it is
  * the direct child of the top container.
@@ -1655,6 +1656,19 @@ StScrollBar StButton#hhandle:active {
 
 #uiGroup > .switcher-list > StBoxLayout > StBoxLayout {
   spacing: .4em;
+}
+
+.window-list-preview {
+  border-image: url("img/containers/popup.svg") 7;
+  padding: 6px;
+  spacing: 4px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.window-list-preview StLabel {
+  padding: .25em;
 }
 
 /* ======================================
