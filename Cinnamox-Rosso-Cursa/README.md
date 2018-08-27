@@ -6,15 +6,17 @@ Cinnamox-Rosso-Cursa features an exciting red colour scheme and light text. Cinn
 
 Build tools are at [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme).
 
-[Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) is a fork of [Oomox-gtk-theme](https://github.com/actionless/oomox-gtk-theme).
+[Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) is a fork of [Oomox-gtk-theme](https://github.com/themix-project/oomox-gtk-theme).
 
-The Cinnamon themes in both [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) & [Oomox-gtk-theme](https://github.com/actionless/oomox-gtk-theme) are authored by [@smurphos](https://github.com/smurphos).
+The Cinnamon themes in both [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) & [Oomox-gtk-theme](https://github.com/themix-project/oomox-gtk-theme) are authored by [@smurphos](https://github.com/smurphos).
 
-GTK2, GTK3, GTK3.20 and Metacity themes in both [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) & [Oomox-gtk-theme](https://github.com/actionless/oomox-gtk-theme) are authored by [@Actionless and others](https://github.com/smurphos/cinnamox-gtk-theme/blob/master/CREDITS) with contributions from [@smurphos](https://github.com/smurphos)
+GTK2, GTK3, GTK3.20 and Metacity themes in both [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) & [Oomox-gtk-theme](https://github.com/themix-project/oomox-gtk-theme) are authored by [@actionless and contributors](https://github.com/themix-project/oomox-gtk-theme/graphs/contributors).
 
 Menu in screenshots is the excellent [CinnVIIStarkMenu](https://cinnamon-spices.linuxmint.com/applets/view/281).
 
 Icons in screenshots are from [Vibrancy Colours](http://www.ravefinity.com/p/vibrancy-colors-gtk-icon-theme.html).
+
+[Licensed under GPL-3.0](https://github.com/smurphos/cinnamox-gtk-theme/blob/master/LICENSE)
 
 ## Installation
 
@@ -62,17 +64,19 @@ To run the script open a terminal window (Ctrl-Alt-T) and use the following comm
 
 This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x` & `3.8.x`
 
-The GTK3 themes require GTK `3.18.x`, `3.20.x` or `3.22.x`
+The GTK3 themes require GTK `3.18.x` or `3.22.x`
 
 The GTK2 theme requires the package `gtk2-engines-murrine` or `gtk-engine-murrine` to be installed. The former is a default package in Linux Mint.
 
-Tested on Linux Mint `18.2` & `18.3` 64bit with Cinnamon `3.4.x`, `3.6.x`, Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x` and Ubuntu `17.10` with Cinnamon nightly builds.
+Tested on Linux Mint `18.2`, `18.3` & `19` 64bit with Cinnamon `3.4.x`, `3.6.x` & `3.8.x`; Also tested ion Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x` & `3.8.x`.
 
 ### Firefox fix
 
-If you have problems seeing text on input fields in Firefox with any particular theme this problem can be solved by adding a userContent.css file to your Firefox default profile including the line `input, textarea { color: #222; background: #eee; }`
+If you have problems seeing text on input fields in Firefox with any particular theme this problem can be solved by adding a `~/.mozilla/firefox/********.default/user.js` file to your Firefox default profile including the line `user_pref("widget.content.gtk-theme-override", "Adwaita");` and restarting Firefox.
 
-The theme includes a helper script that creates the userContent.css file with this content in the correct location. To access the tool open a terminal window and use the following command to make the script executable and launch it.
+This forces firefox to use the GTK default Adwaita theme for rendering all website content.
+
+The theme includes a helper script that creates the file with this content in the correct location. To access the tool open a terminal window and use the following command to make the script executable and launch it.
 
 `chmod +x ~/.themes/Cinnamox-Rosso-Cursa/cinnamox_firefox_fix.sh && ~/.themes/Cinnamox-Rosso-Cursa/cinnamon/cinnamox_firefox_fix.sh`
 
@@ -80,7 +84,7 @@ The theme includes a helper script that creates the userContent.css file with th
 
 The repository at [Cinnamox_theme_master](https://github.com/smurphos/cinnamox_theme_master) includes instructions to utilise the tools provided to make your own unique Cinnamox based theme.
 
-The [Oomox app](https://github.com/actionless/oomox) is a GUI app to design and build themes using the [Oomox-gtk-theme](https://github.com/actionless/oomox-gtk-theme). From [version 1.60+](https://github.com/actionless/oomox/releases/) this app included a Cinnamon theme based on Cinnamox and has an option to export a Cinnamon theme. 
+The [Oomox app](https://github.com/themix-project/oomox) is a GUI app to design and build themes using the [Oomox-gtk-theme](https://github.com/themix-project/oomox-gtk-theme). From [version 1.60+](https://github.com/themix-project/oomox/releases) this app included a Cinnamon theme based on Cinnamox and has an option to export a Cinnamon theme. 
 
 ## Changelog & Previous Releases
 
