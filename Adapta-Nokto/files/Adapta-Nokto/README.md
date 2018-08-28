@@ -12,12 +12,14 @@ This is a build of [Tista's](https://github.com/tista500) [Adapta theme](https:/
 
 [Fork for this build](https://github.com/smurphos/adapta-gtk-theme)
 
-This build is based on [Adapta version 3.93.0](https://github.com/adapta-project/adapta-gtk-theme/releases/tag/3.93.0.262) with the following modifications.
+This build is based on [Adapta version 3.94.0.132](https://github.com/adapta-project/adapta-gtk-theme/releases/tag/3.94.0.132) with the following modifications.
 
-* Intention to retain support for GTK 3.18 after 26/4/18
+* Retain support for GTK 3.18
 * Stylesheets distributed in deobfuscated .css format
-* Build includes Cinnamon, GTK 2.0, 3.18, 3.20, 3.22 & Metacity-1 themes only
-* GTK3.18, 3.20. 3.22 - Added support for different colored backgrounds in Nemo dual pane view
+* Build includes Cinnamon, GTK 2.0, 3.18, 3.22 & Metacity-1 themes only
+* GTK3.18 & 3.22 - Added support for different colored backgrounds in Nemo dual pane view
+* GTK3.18 & 3.22 - Cleaned out irrelevant third party styling related to non-Cinnamon desktop enviroments.
+* firefox_fix.sh script included to fix issues with firefox and dark themes
 
 ## License
 
@@ -50,15 +52,17 @@ To allow the GTK2, GTK3 and Metacity1 themes to apply to GUI apps running as roo
 
 This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x` & `3.8.x`
 
-The GTK3 themes require GTK `3.18.x`, `3.20.x` or `3.22.x`
+The GTK3 themes require GTK `3.18.x` or `3.22.x`
 
-Tested on Linux Mint `18.2` & `18.3` 64bit with Cinnamon `3.4.x`, `3.6.x`, Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x` and Ubuntu `17.10` with Cinnamon nightly builds.
+Tested on Linux Mint `18.2`, `18.3` & `19` 64bit with Cinnamon `3.4.x`, `3.6.x`, and `3.8.x`.
 
 ### Firefox fix
 
-If you have problems seeing text on input fields in Firefox with any particular theme this problem can be solved by adding a userContent.css file to your Firefox default profile including the line `input, textarea { color: #222; background: #eee; }`
+If you have problems seeing text on input fields in Firefox with any particular theme this problem can be solved by adding a `~/.mozilla/firefox/********.default/user.js` file to your Firefox default profile including the line `user_pref("widget.content.gtk-theme-override", "Adwaita");` and restarting Firefox.
 
-The theme includes a helper script that creates the userContent.css file with this content in the correct location. To access the tool open a terminal window and use the following command to make the script executable and launch it.
+This forces firefox to use the GTK default Adwaita theme for rendering all website content.
+
+The theme includes a helper script that creates the file with this content in the correct location. To access the tool open a terminal window and use the following command to make the script executable and launch it.
 
 `chmod +x ~/.themes/Adapta-Nokto/firefox_fix.sh && ~/.themes/Adapta-Nokto/cinnamon/firefox_fix.sh`
 
