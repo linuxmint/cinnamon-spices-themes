@@ -64,6 +64,6 @@ This forces firefox to use the GTK default Adwaita theme for rendering all websi
 
 The theme includes a helper script that creates the file with this content in the correct location. To access the tool open a terminal window and use the following command to make the script executable and launch it.
 
-`chmod +x ~/.themes/Adapta-Nokto/firefox_fix.sh && ~/.themes/Adapta-Nokto/cinnamon/firefox_fix.sh`
+`chmod +x ~/.themes/Adapta-Nokto/firefox_fix.sh && ~/.themes/Adapta-Nokto/firefox_fix.sh`
 
 
