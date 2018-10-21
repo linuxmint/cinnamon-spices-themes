@@ -344,9 +344,9 @@ StEntry:pressed > StIcon,
 }
 
 .popup-menu-arrow {
-  icon-size: 1em;
-  width: 1em;
-  height: 1em;
+  icon-size: 1.05em;
+  width: 1.05em;
+  height: 1.05em;
   color: rgba(0, 0, 0, 0.7);
 }
 
@@ -384,12 +384,19 @@ StEntry:pressed > StIcon,
 }
 
 .popup-separator-menu-item {
-  -gradient-height: 1px;
-  -gradient-start: rgba(0, 0, 0, 0.2);
-  -gradient-end: rgba(0, 0, 0, 0.2);
-  -margin-horizontal: 0;
   height: 1px;
   padding: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 6px 10px;
+}
+
+.popup-menu-item > .popup-separator-menu-item {
+  /* Cinnamon < 4.0 */
+  margin: 0;
+  -gradient-height: 1px;
+  -gradient-start: transparent;
+  -gradient-end: transparent;
+  -margin-horizontal: 0;
 }
 
 /* Right click in scale (show all windows) */
@@ -429,9 +436,9 @@ StEntry:pressed > StIcon,
   font-size: 100%;
   width: 43px;
   height: 33px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
   border-bottom-width: 1px;
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.25);
   /* When panel settings is open */
   /* Panel edit mode */
 }
@@ -459,9 +466,9 @@ StEntry:pressed > StIcon,
   font-size: 100%;
   width: 43px;
   height: 33px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
   border-top-width: 1px;
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.25);
   /* When panel settings is open */
   /* Panel edit mode */
 }
@@ -489,9 +496,9 @@ StEntry:pressed > StIcon,
   font-size: 100%;
   width: 43px;
   height: 33px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
   border-right-width: 1px;
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.25);
   /* When panel settings is open */
   /* Panel edit mode */
 }
@@ -519,9 +526,9 @@ StEntry:pressed > StIcon,
   font-size: 100%;
   width: 43px;
   height: 33px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
   border-left-width: 1px;
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.25);
   /* When panel settings is open */
   /* Panel edit mode */
 }
@@ -546,7 +553,16 @@ StEntry:pressed > StIcon,
 }
 
 .panelLeft, .panelCenter, .panelRight {
-  spacing: 0;
+  spacing: 1px;
+}
+
+/* Simulate panel spacing */
+.panelCenter {
+  padding: 0 1px;
+}
+
+.panelCenter.vertical {
+  padding: 1px 0;
 }
 
 .panel-dummy {
@@ -560,7 +576,7 @@ StEntry:pressed > StIcon,
 /* ======================================
  * ! Expo view
  * ====================================== */
-.expo-background, .workspace-overview-background-shade {
+.expo-background {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -624,16 +640,45 @@ StEntry:pressed > StIcon,
  * ! Windows overview
  * ====================================== */
 /* The background for the scale view */
+.workspace-overview-background-shade {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.window-border {
+  border: 4px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
 .window-caption {
-  -cinnamon-caption-spacing: 12px;
+  -cinnamon-caption-spacing: -16px;
   color: rgba(255, 255, 255, 0.85);
   font-size: 100%;
   font-weight: normal;
-  max-width: 16em;
+  max-width: 24em;
+  spacing: 8px;
+  padding: 8px;
+  border-radius: 2px;
+  color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #fafafa;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.window-close {
+  -cinnamon-close-overlap: 11px;
 }
 
 .window-iconbox {
-  /* ! */
+  /* Cinnamon < 4.0 */
+  /* Compensate negative caption spacing overlap */
+  padding-right: 26px;
+}
+
+.overview-empty-placeholder {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 200%;
 }
 
 /* ======================================
@@ -830,11 +875,7 @@ StEntry:pressed > StIcon,
  * ====================================== */
 .window-list-box {
   spacing: 2px;
-  padding: 0 2px;
-}
-
-.window-list-box.vertical {
-  padding: 2px 0;
+  padding: 0;
 }
 
 .window-list-item-box {
@@ -1106,11 +1147,7 @@ StEntry:pressed > StIcon,
  * ! Number-mode Workspace Switcher applet
  * ====================================== */
 .workspace-switcher {
-  padding: 0 2px;
-}
-
-.vertical .workspace-switcher {
-  padding: 2px 0;
+  padding: 0px;
 }
 
 .workspace-button {
@@ -1163,11 +1200,11 @@ StEntry:pressed > StIcon,
  * ! Visual-mode Workspace Switcher applet
  * ====================================== */
 .workspace-graph {
-  padding: 0 6px;
+  padding: 0 2px;
 }
 
 .vertical .workspace-graph {
-  padding: 6px 0;
+  padding: 2px 0;
 }
 
 .workspace-graph .workspace {
@@ -1290,37 +1327,40 @@ StEntry:pressed > StIcon,
   spacing: 8px;
 }
 
-.menu-applications-outer-box .menu-applications-inner-box {
+.menu-applications-inner-box {
   margin: 0 8px;
 }
 
-.menu-applications-outer-box .menu-applications-scrollbox {
+.menu-applications-scrollbox {
   padding: 0;
 }
 
 .menu-application-button,
 .menu-category-button {
   padding: 6px;
-  spacing: 8px;
+  spacing: 6px;
 }
 
-.menu-application-button-selected, .menu-application-button-selected:highlighted,
+.menu-application-button:hover, .menu-application-button-selected, .menu-application-button-selected:highlighted,
+.menu-category-button:hover,
 .menu-category-button-selected,
 .menu-category-button-selected:highlighted {
   padding: 6px;
-  spacing: 8px;
+  spacing: 6px;
   color: rgba(0, 0, 0, 0.7);
   background-color: rgba(0, 0, 0, 0.15);
   border-radius: 2px;
 }
 
-.menu-application-button-selected StIcon, .menu-application-button-selected:highlighted StIcon,
+.menu-application-button:hover StIcon, .menu-application-button-selected StIcon, .menu-application-button-selected:highlighted StIcon,
+.menu-category-button:hover StIcon,
 .menu-category-button-selected StIcon,
 .menu-category-button-selected:highlighted StIcon {
   color: rgba(0, 0, 0, 0.7);
 }
 
-.menu-application-button-selected:highlighted, .menu-application-button:highlighted,
+.menu-application-button:hover:highlighted, .menu-application-button-selected:highlighted, .menu-application-button:highlighted,
+.menu-category-button:hover:highlighted,
 .menu-category-button-selected:highlighted,
 .menu-category-button:highlighted {
   font-weight: bold;
@@ -1329,8 +1369,27 @@ StEntry:pressed > StIcon,
 .menu-application-button-greyed,
 .menu-category-button-greyed {
   padding: 6px;
-  spacing: 8px;
+  spacing: 6px;
   color: rgba(0, 0, 0, 0.25);
+}
+
+.menu-application-button-label,
+.menu-category-button-label {
+  padding: 0;
+}
+
+.menu-application-button-label:first-child:last-child,
+.menu-category-button-label:first-child:last-child {
+  /* "All applications" button */
+  border: 0px rgba(68, 68, 68, 0.5);
+  border-left-width: 2px;
+  padding: 2px 6px;
+}
+
+.menu-application-button-label:first-child:last-child:rtl,
+.menu-category-button-label:first-child:last-child:rtl {
+  border-left-width: 0px;
+  border-right-width: 2px;
 }
 
 .menu-selected-app-box {
@@ -2094,8 +2153,9 @@ StEntry:pressed > StIcon,
 }
 
 .weather-menu .popup-separator-menu-item {
-  background-image: none;
+  background: transparent;
   height: 0;
+  margin: 0;
 }
 
 .current {
@@ -2138,16 +2198,14 @@ StEntry:pressed > StIcon,
   padding: 0;
 }
 
-.weather-current-databox > * {
-  spacing: 2px;
-}
-
 .weather-current-databox-captions {
+  spacing: 2px;
   color: rgba(0, 0, 0, 0.6);
   text-align: right;
 }
 
 .weather-current-databox-values {
+  spacing: 2px;
   color: rgba(0, 0, 0, 0.7);
 }
 
@@ -2811,21 +2869,8 @@ StEntry:pressed > StIcon,
   background-color: #f0f0f0;
 }
 
-.starkmenu-background .menu-favorites-box .popup-separator-menu-item {
-  padding: 6px 0;
-  margin: 0;
-}
-
 .starkmenu-background .right-buttons-box {
   padding: 0;
-}
-
-.starkmenu-background .right-buttons-box .popup-separator-menu-item {
-  padding: 6px 0;
-}
-
-.starkmenu-background .right-buttons-box .starkhover-box .popup-menu-item {
-  /*!*/
 }
 
 .starkmenu-search-box {
