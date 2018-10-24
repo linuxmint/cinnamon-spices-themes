@@ -651,17 +651,24 @@ StScrollBar StButton#hhandle:active {
   background-color: rgba(0, 0, 0, 0.65);
 }
 
+.window-border {
+  border: 3px #8abf5c;
+  box-shadow: 0 0 0 1px #8abf5c inset;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
 .window-caption {
   border-image: url("img/expo_scale/expo-bg__dark.svg") 6;
   color: #fff;
   font-size: 12px;
   font-weight: bold;
-  padding: 6px 8px;
-  spacing: 25px;
-  -cinnamon-caption-spacing: 10px;
+  padding: .75em;
+  spacing: .75em;
+  -cinnamon-caption-spacing: 8px;
 }
 
-.window-caption#selected {
+.window-caption#selected, .window-caption:focus {
   border-image: url("img/expo_scale/expo-bg__active.svg") 6;
   color: #fff;
 }
@@ -671,7 +678,7 @@ StScrollBar StButton#hhandle:active {
   background-size: 41px;
   width: 41px;
   height: 41px;
-  -cinnamon-close-overlap: 24px;
+  -cinnamon-close-overlap: 20px;
 }
 
 .window-close:hover {
@@ -680,6 +687,11 @@ StScrollBar StButton#hhandle:active {
 
 .window-close:active {
   background-image: url("img/controls/close-pressed.svg");
+}
+
+.overview-empty-placeholder {
+  color: #fff;
+  font-size: 24px;
 }
 
 /* ======================================
