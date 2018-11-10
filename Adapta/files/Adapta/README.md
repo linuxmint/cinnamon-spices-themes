@@ -1,6 +1,6 @@
 ## Adapta
 
-A light theme based on Material Design Guidelines. Cinnamon, Metacity, GTK2, GTK3.18 and GTK3.20+ themes are included.
+A light theme based on Material Design Guidelines. Cinnamon, Metacity, GTK2, GTK3.18 and GTK3.22+ themes are included.
 
 ## Credits
 
@@ -12,7 +12,7 @@ This is a build of [Tista's](https://github.com/tista500) [Adapta theme](https:/
 
 [Fork for this build](https://github.com/smurphos/adapta-gtk-theme)
 
-This build is based on [Adapta version 3.94.0.132](https://github.com/adapta-project/adapta-gtk-theme/releases/tag/3.94.0.132) with the following modifications.
+This build is based on [Adapta version 3.95.0.11](https://github.com/adapta-project/adapta-gtk-theme/releases/tag/3.95.0.11) with the following modifications.
 
 * Retain support for GTK 3.18
 * Stylesheets distributed in deobfuscated .css format
@@ -20,6 +20,9 @@ This build is based on [Adapta version 3.94.0.132](https://github.com/adapta-pro
 * GTK3.18 & 3.22 - Added support for different colored backgrounds in Nemo dual pane view
 * GTK3.18 & 3.22 - Cleaned out irrelevant third party styling related to non-Cinnamon desktop enviroments.
 * firefox_fix.sh script included to fix issues with firefox and dark themes
+* Cinnamon - fixed workspace-switcher applet on vertical panels
+* Cinnamon - fixes to menu theming for Cinnamon 4.0 stock menu and Cinnamenu compatibility
+* Cinnamon - added Grouped Window Applet theming by @jaszhix 
 
 ## License
 
@@ -35,10 +38,10 @@ Wallpaper in screenshots is from [Adapta Backgrounds](https://github.com/adapta-
 
 There are 4 variants of this theme available.
 
-* Adapta - light version of theme - recommended for users on GTK 3.20+ systems with 1080p screen resolution or greater
-* Adapta-Nokto - dark version of theme - recommended for users on GTK 3.20+ systems with 1080p screen resolution or greater
-* Adapta-Eta - light compact version of theme - recommended for users on GTK 3.18 systems or GTK3.20+ systems with screen resolution < 1080p
-* Adapta-Nokto-Eta - dark compact version of theme - recommended for users on GTK 3.18 systems or GTK3.20+ systems with screen resolution < 1080p
+* Adapta - light version of theme - recommended for users on GTK 3.22+ systems with 1080p screen resolution or greater
+* Adapta-Nokto - dark version of theme - recommended for users on GTK 3.22+ systems with 1080p screen resolution or greater
+* Adapta-Eta - light compact version of theme - recommended for users on GTK 3.18 systems or GTK3.22+ systems with screen resolution < 1080p
+* Adapta-Nokto-Eta - dark compact version of theme - recommended for users on GTK 3.18 systems or GTK3.22+ systems with screen resolution < 1080p
 
 Install via Cinnamon's Themes module in Cinnamon settings or download from [Cinnamon Spices](https://cinnamon-spices.linuxmint.com/themes) and unzip into your `~/.themes` directory.
 
@@ -50,11 +53,11 @@ To allow the GTK2, GTK3 and Metacity1 themes to apply to GUI apps running as roo
 
 ## Compatibility
 
-This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x` & `3.8.x`
+This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x` & `4.0`
 
-The GTK3 themes require GTK `3.18.x` or `3.22.x`
+The GTK3 themes require GTK `3.18.x` or `3.2x`
 
-Tested on Linux Mint `18.2`, `18.3` & `19` 64bit with Cinnamon `3.4.x`, `3.6.x`, and `3.8.x`.
+Tested on Linux Mint `18.2`, `18.3` & `19` 64bit with Cinnamon `3.4.x`, `3.6.x`, and `3.8.x`. Also tested on Manjaro with Cinnamon `4.0`
 
 ### Firefox fix
 
@@ -64,6 +67,6 @@ This forces firefox to use the GTK default Adwaita theme for rendering all websi
 
 The theme includes a helper script that creates the file with this content in the correct location. To access the tool open a terminal window and use the following command to make the script executable and launch it.
 
-`chmod +x ~/.themes/Adapta/firefox_fix.sh && ~/.themes/Adapta/cinnamon/firefox_fix.sh`
+`chmod +x ~/.themes/Adapta/firefox_fix.sh && ~/.themes/Adapta/firefox_fix.sh`
 
 
