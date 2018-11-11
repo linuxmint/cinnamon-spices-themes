@@ -53,7 +53,7 @@ For instance, icons, desktop backgrounds or MDM themes should not be included in
 
 Arguably, gnome-shell, Xfce and Unity themes aren't relevant to Cinnamon users either, at least not within the Cinnamon desktop environment.
 
-Embedded .zip files, .tar files or any other archive files can't be accepted. Straightforward graphics files, css or other files that can be inspected visually, please.  No binaries other than graphic image files.  Scripts that link externally can't be accepted for security reasons.  
+Embedded .zip files, .tar files or any other archive files can't be accepted. Straightforward graphics files, css or other files that can be inspected visually, please.  No binaries other than graphic image files.  Scripts that link externally can't be accepted for security reasons.
 
 # Rights and responsibility of the author
 
@@ -177,6 +177,15 @@ The 'progress' class has been added to window-list-item-box so that progress on 
 
 The 'window-list-preview' has been introduced so that the preview window shown by hovering over the window list can be separately themed.  Previously the theming for the alt-tab switcher was used for both.  No alterations are needed to the alt-tab switcher theming.  If no specific theming is added for the window-list-preview then the theming from the default theme will be used.
 
+# CSS changes introduced in Cinnamon 4.0
+
+It is worth referring to the history of the default theme:
+
+https://github.com/linuxmint/Cinnamon/commits/master/data/theme/cinnamon.css
+
+There are quite a few minor CSS changes and cleanups early 2018.  Cinnamon 3.8.8 was tagged 17th July, and the Cinnamon 4.0 changes follow that.
+The main changes are the introduction of the grouped window list applet and the associated different CSS from the window list applet. There are also changes to do with the movement of the system applets in the menu into their own box. However there are some wide-ranging panel icon scaling changes introduced in Cinnamon 4.0, so you may well want to review your theme more generally, as your margin/padding may want changes.
+
 # Git basics
 
 If you are used to creating a theme as a zip file and hosting it somewhere like deviantart you might want a few pointers as to how to use git. It is not hard at all for simple use, but the huge complexity of what it can do can be offputting if you browse around and find your head hurting from articles dealing with complex cases.  For what you are going to need to do it doesn't have to be complicated
@@ -229,5 +238,4 @@ git branch wb2
 git checkout wb2
 ```
 Hope this helps get you going. We look forward to seeing your themes !
-
 
