@@ -61,7 +61,7 @@
   background-gradient-start: #4a8cb7;
   background-gradient-end: #2c546e; }
 
-.desklet-with-borders, .desklet-with-borders-and-header, .desklet-header, .photoframe-box, .menu, .popup-combo-menu, .menu-favorites-box, .menu-applications-inner-box, .menu-applications-outer-box, .panel-left, .panel-right .window-list-item-box, .window-list-preview, #notification, .modal-dialog {
+.desklet-with-borders, .desklet-with-borders-and-header, .desklet-header, .photoframe-box, .menu, .popup-combo-menu, .menu-favorites-box, .menu-applications-inner-box, .menu-applications-outer-box, .panel-left, .panel-right .window-list-item-box, .window-list-preview, .grouped-window-list-thumbnail-menu, #notification, .modal-dialog {
   background-gradient-direction: horizontal;
   background-gradient-start: #5d89a8;
   background-gradient-end: #cddbe4; }
@@ -450,6 +450,13 @@ StScrollView StScrollBar {
   icon-size: 1em;
   color: #0c1419; }
 
+.menu-top-box {
+  spacing: 10px; }
+
+.menu-systembuttons-box {
+  padding-bottom: 12px;
+  padding-top: 12px; }
+
 #panel {
   color: #0c1419;
   height: 2.5em;
@@ -497,6 +504,13 @@ StScrollView StScrollBar {
 .panel-top {
   border-bottom: 1px solid;
   border-color: #516370; }
+  .panel-top .grouped-window-list-item-box:active {
+    box-shadow: 0 -2px 0 0 #0c1419 inset; }
+  .panel-top .grouped-window-list-item-box:hover, .panel-top .grouped-window-list-item-box:focus, .panel-top .grouped-window-list-item-box:active:hover, .panel-top .grouped-window-list-item-box:active:focus, .panel-top .grouped-window-list-item-box:active:focus:hover {
+    box-shadow: 0 -2px 0 0 #417292 inset;
+    color: #386b8c; }
+  .panel-top .grouped-window-list-item-box:focus, .panel-top .grouped-window-list-item-box:active:focus, .panel-top .grouped-window-list-item-box:active:focus:hover {
+    font-weight: bold; }
   .panel-top .workspace-switcher, .panel-top .workspace-graph {
     padding: 1px 3px; }
   .panel-top .applet-box {
@@ -510,6 +524,13 @@ StScrollView StScrollBar {
 .panel-bottom {
   border-top: 1px solid;
   border-color: #516370; }
+  .panel-bottom .grouped-window-list-item-box:active {
+    box-shadow: 0 2px 0 0 #0c1419 inset; }
+  .panel-bottom .grouped-window-list-item-box:hover, .panel-bottom .grouped-window-list-item-box:focus, .panel-bottom .grouped-window-list-item-box:active:hover, .panel-bottom .grouped-window-list-item-box:active:focus, .panel-bottom .grouped-window-list-item-box:active:focus:hover {
+    box-shadow: 0 2px 0 0 #417292 inset;
+    color: #386b8c; }
+  .panel-bottom .grouped-window-list-item-box:focus, .panel-bottom .grouped-window-list-item-box:active:focus, .panel-bottom .grouped-window-list-item-box:active:focus:hover {
+    font-weight: bold; }
   .panel-bottom .workspace-switcher, .panel-bottom .workspace-graph {
     padding: 1px 3px; }
   .panel-bottom .applet-box {
@@ -523,6 +544,13 @@ StScrollView StScrollBar {
 .panel-left {
   border-right: 1px solid;
   border-color: #516370; }
+  .panel-left .grouped-window-list-item-box:active {
+    box-shadow: -2px 0 0 0 #0c1419 inset; }
+  .panel-left .grouped-window-list-item-box:hover, .panel-left .grouped-window-list-item-box:focus, .panel-left .grouped-window-list-item-box:active:hover, .panel-left .grouped-window-list-item-box:active:focus, .panel-left .grouped-window-list-item-box:active:focus:hover {
+    box-shadow: -2px 0 0 0 #417292 inset;
+    color: #386b8c; }
+  .panel-left .grouped-window-list-item-box:focus, .panel-left .grouped-window-list-item-box:active:focus, .panel-left .grouped-window-list-item-box:active:focus:hover {
+    font-weight: bold; }
   .panel-left .workspace-switcher, .panel-left .workspace-graph {
     padding: 3px 1px; }
   .panel-left .applet-box {
@@ -536,6 +564,13 @@ StScrollView StScrollBar {
 .panel-right {
   border-left: 1px solid;
   border-color: #516370; }
+  .panel-right .grouped-window-list-item-box:active {
+    box-shadow: 2px 0 0 0 #0c1419 inset; }
+  .panel-right .grouped-window-list-item-box:hover, .panel-right .grouped-window-list-item-box:focus, .panel-right .grouped-window-list-item-box:active:hover, .panel-right .grouped-window-list-item-box:active:focus, .panel-right .grouped-window-list-item-box:active:focus:hover {
+    box-shadow: 2px 0 0 0 #417292 inset;
+    color: #386b8c; }
+  .panel-right .grouped-window-list-item-box:focus, .panel-right .grouped-window-list-item-box:active:focus, .panel-right .grouped-window-list-item-box:active:focus:hover {
+    font-weight: bold; }
   .panel-right .workspace-switcher, .panel-right .workspace-graph {
     padding: 3px 1px; }
   .panel-right .applet-box {
@@ -651,6 +686,57 @@ StScrollView StScrollBar {
   spacing: 1em;
   color: #0c1419; }
 
+.grouped-window-list-number-label {
+  z-index: 99;
+  font-size: 0.8em; }
+
+.grouped-window-list-button-label {
+  padding-left: 3px; }
+
+.grouped-window-list-thumbnail-alert {
+  background: #b2b059; }
+
+.grouped-window-list-item-box {
+  spacing: 1em;
+  background-color: rgba(0, 0, 0, 0.01); }
+
+.grouped-window-list-item-demands-attention {
+  background-color: #70bcff;
+  color: #ffffff; }
+
+.grouped-window-list-item-box .progress {
+  background-color: #59b25d;
+  color: #ffffff; }
+
+.grouped-window-list-thumbnail-menu {
+  border-radius: 10px;
+  padding: 10px 15px;
+  spacing: 1em;
+  color: #0c1419; }
+
+.grouped-window-list-thumbnail-menu .item-box {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(12, 20, 25, 0.32); }
+
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+  border: 1px solid #417292; }
+
+.grouped-window-list-thumbnail-menu .item-box:selected {
+  background: #386b8c;
+  border: 1px solid #417292; }
+
+.grouped-window-list-thumbnail-menu .thumbnail-box {
+  padding: 2px;
+  spacing: 4px; }
+
+.grouped-window-list-thumbnail-menu .thumbnail {
+  width: 256px; }
+
+.grouped-window-list-thumbnail-menu .separator {
+  width: 1px;
+  background: #386b8c; }
+
 .sound-player StButton {
   min-width: 2em;
   min-height: 2em;
@@ -693,6 +779,8 @@ StScrollView StScrollBar {
   border: 1px solid rgba(12, 20, 25, 0.32);
   margin: 2px;
   transition-duration: 150; }
+  .workspace-button.vertical {
+    height: 1.5em; }
   .workspace-button:outlined {
     background-color: #386b8c;
     color: #ffffff;
