@@ -220,6 +220,7 @@ StScrollBar StButton#vhandle:hover {
     box-shadow: inset 1px 0px 0px 0px rgba(217,217,217,0.9);
     border: 1px solid rgba(127,127,127,1);
     border-radius: 7px 7px 7px 7px;
+    box-shadow: inset 1px 0px 0px 0px rgba(0,255,0,1);
     font-weight: normal;
 }
 .popup-menu-item:insensitive {
@@ -471,9 +472,7 @@ color: #fb5858;
 .panel-corner:focus {
     -panel-corner-inner-border-color: rgba(255,255,255,0.8);
 }
-#appMenu {
-    spacing: 4px;
-}
+
 .panel-button #appMenuIcon {
     app-icon-bottom-clip: 1px;
 }
@@ -1234,12 +1233,12 @@ color: #fb5858;
     background-gradient-start: rgba(20,20,20,1);
     background-gradient-end: rgba(120,120,120,1);
     background-gradient-direction: horizontal;
-    box-shadow: inset 1px 0px 0px 0px rgba(217,217,217,0.9);
+    box-shadow: inset 1px 0px 0px 0px rgba(0,255,0,1);
     border: 1px solid rgba(127,127,127,1);
     border-radius: 7px 7px 7px 7px;
     font-weight: normal;
     color: #ffffff;
-    text-shadow: 0px 2px 2px #000000;
+    text-shadow: 0px 1px 1px #000000;
 }
 .menu-application-button-selected:highlighted {
     /* This style is used in menu application buttons for applications which were newly installed */
@@ -1286,9 +1285,10 @@ color: #fb5858;
     background-gradient-start: rgba(20,20,20,1);
     background-gradient-end: rgba(120,120,120,1);
     background-gradient-direction: horizontal;
-    box-shadow: inset 1px 0px 0px 0px rgba(217,217,217,0.9);
+    box-shadow: inset 1px 0px 0px 0px rgba(0,255,0,1);
     border: 1px solid rgba(127,127,127,1);
     border-radius: 7px 7px 7px 7px;
+    text-shadow: 0px 1px 1px #000000
 }
 .menu-category-button-label:ltr {
     padding-left: 5px;
@@ -1296,10 +1296,7 @@ color: #fb5858;
 .menu-category-button-label:rtl {
     padding-right: 5px;
 }
-.menu-category-button-button:hover {
-    border-radius: 14px 14px 14px 14px;
-    color: #D9D9D9;
-}
+
 /* Name and description of the currently hovered item in the menu
  * This appears on the bottom right hand corner of the menu*/
 .menu-selected-app-box {
@@ -1372,7 +1369,7 @@ color: #fb5858;
     background-gradient-end: rgba(20,20,20,1);
     background-gradient-start: rgba(120,120,120,1);
     background-gradient-direction: horizontal;
-    font-weight: bold;
+    font-weight: normal;
     color: #D9D9D9;
 }
 /* ===================================================================
@@ -1483,6 +1480,13 @@ color: #fb5858;
 .grouped-window-list-number-label {
     z-index: 99;
     text-shadow: black 1px 0px 2px;
+    font-size: 10px;
+    color:#fff;
+    padding: 0;
+}
+.grouped-window-list-badge {
+    border-radius: 256px;
+    background-color: #000000;
 }
 .grouped-window-list-button-label {
     padding-left: 4px;
@@ -1516,7 +1520,7 @@ color: #fb5858;
 
 .grouped-window-list-item-box:checked,
 .grouped-window-list-item-box:focus {
-    background-gradient-start: rgba(160,160,160,4);
+    background-gradient-start: rgba(160,160,160,1);
 	background-gradient-end: rgba(60,60,60,1);
     background-gradient-direction: horizontal;
     box-shadow: inset 1px 0px 0px 0px rgba(217,217,217,0.9);
@@ -1570,31 +1574,27 @@ color: #fb5858;
 }
 
 .grouped-window-list-thumbnail-menu {
-    background-gradient-start: rgba(20,20,20,1);
-    background-gradient-end: rgba(120,120,120,1);
-    background-gradient-direction: horizontal;
-    border-radius: 14px 14px 14px 14px;
-    padding: 10px 15px 15px 15px;
-    font-size: 1em;
-    color: #ffffff;
-    border: 1px solid rgba(27,27,27,1);
-    box-shadow: inset 1px 0px 0px 0px rgba(217,217,217,0.9);
-    spacing: 4px;
+    font-size: 0.8em;
 }
-.grouped-window-list-thumbnail-menu .thumbnail-box {
-    padding: 8px;
-    border-radius: 8px;
+.grouped-window-list-thumbnail-menu .item-box {
+    padding: 24px;
+    border-radius: 24px;
 }
-.grouped-window-list-thumbnail-menu .thumbnail-box:outlined {
+.grouped-window-list-thumbnail-menu .item-box:outlined {
     padding: 6px;
     border: 1px solid rgba(27,27,27,1);
     box-shadow: inset 1px 0px 0px 0px rgba(217,217,217,0.9);
 }
-.grouped-window-list-thumbnail-menu .thumbnail-box:selected {
-    background: rgba(255,255,255,0.33);
+.grouped-window-list-thumbnail-menu .item-box:selected {
+	background-gradient-start: rgba(20,20,20,1);
+	background-gradient-end: rgba(90,90,90,1);
+    background-gradient-direction: horizontal;
+/*    border: 1px solid rgba(0,255,0,1); */
+    box-shadow: inset 1px 0px 0px 0px rgba(0,255,0,1);
 }
 
 .grouped-window-list-thumbnail-menu .thumbnail {
+    padding: 6px;
     width: 256px;
 }
 .grouped-window-list-thumbnail-menu .separator {
@@ -1812,57 +1812,6 @@ color: #fb5858;
     box-shadow: inset 1px 0px 0px 0px rgba(217,217,217,0.9);
     color: #000000;
     transition-duration: 0;
-}
-
-.panel-launcher-add-dialog-content-box {
-    padding: 6px;
-    spacing: 20px;
-}
-
-.panel-launcher-add-dialog-content-box-left {
-    padding: 6px;
-    spacing: 20px;
-}
-
-.panel-launcher-add-dialog-content-box-right {
-    padding: 6px;
-    spacing: 10px;
-}
-
-.panel-launcher-add-dialog-entry {
-    padding: 5px;
-    border-radius: 14px 14px 14px 14px;
-    color: rgb(50, 50, 50);
-    border: 0px transparent #D9D9D9;
-    background-gradient-start: rgba(20,20,20,1);
-	background-gradient-end: rgba(120,120,120,1);
-    background-gradient-direction: horizontal;
-    box-shadow: none;
-    selected-color: black;
-    caret-color: rgb(128, 128, 128);
-    caret-size: 1px;
-    width: 250px;
-    transition-duration: 0;
-}
-
-.panel-launcher-add-dialog-entry:focus,
-.panel-launcher-add-dialog-entry:hover {
-    border: 2px solid rgb(136,138,133);
-    background-gradient-start: rgb(200,200,200);
-    background-gradient-end: white;
-    background-gradient-direction: vertical;
-}
-
-.panel-launcher-add-dialog-entry:hover {
-    transition-duration: 0;
-}
-
-.panel-launcher-add-dialog-entry:focus {
-    border: 0px transparent #D9D9D9;
-    border-radius: 14px 14px 14px 14px;
-    background-gradient-start: rgba(20,20,20,1);
-	background-gradient-end: rgba(120,120,120,1);
-    background-gradient-direction: horizontal;
 }
 
 /* ===================================================================
