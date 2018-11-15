@@ -98,6 +98,8 @@ Authors are entitled to remove their spice.
 
 The Cinnamon team is also entitled to do so. Common reasons are lack of maintenance, critical bugs, if the features are similar to a more popular spice, or lack of use within the community as evidenced by a low rating on the spices website.
 
+The number of spice themes will be regularly pruned in number, to give users a manageable and varied set of themes to choose from. Guideline is around 4 pages worth on the spices site, so if your theme has settled into the last quartile or so in popularity and does not have compelling and distinctive features please don't be surprised should this happen. It's not personal, and is for the benefit of the wider community of users.
+
 # Additions
 
 New spices can be added by Pull Request.
