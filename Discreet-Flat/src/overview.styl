@@ -10,12 +10,6 @@
 	background-color: #383838
 	border: 1px solid #666
 
-
-	#selected
-		background-color: $dark
-		border: 1px solid #505050
-
-
 .workspace-controls
 	visible-height: 32px /* Amount visible before hovering */
 
@@ -58,7 +52,7 @@
 
 .window-caption
 	background: $dark
-	border: 1px solid #333
+	border: 1px solid $light
 	border-radius: 2px
 	font-size: 9pt
 	padding: 2px 8px
@@ -68,11 +62,10 @@
 	background-image: url("close-window.svg")
 	height: 28px
 	width: 28px
-	-cinnamon-close-overlap: 17px
+	-cinnamon-close-overlap: 13px
 
-	&:rtl
-		-st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5)
-
+	&:hover
+		background-image: url("close-window-hover.svg")
 
 .window-close-area
 	background-image: url("trash-icon.png")
@@ -94,6 +87,9 @@
 	transition-duration: 100
 	text-align: center
 
+.overview-empty-placeholder
+	color: #ffffff
+	font-size: 2em
 
 .expo-background
 	background-color: rgba(0,0,0,0.5)

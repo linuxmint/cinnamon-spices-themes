@@ -14,6 +14,12 @@ $ stylus src/cinnamon.styl -o files/Discreet-Flat/cinnamon
 
 ## Changelog
 
+### 1.2.0 - 22/11/2018
+
+- Updated for Cinnamon 4.0
+- Backported fixes
+- Color adjustments
+
 ### 1.1.5 - 26/05/2018
 
 - Add support for having the taskbar at the bottom, left and right
