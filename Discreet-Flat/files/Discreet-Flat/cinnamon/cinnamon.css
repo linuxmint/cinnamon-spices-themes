@@ -194,10 +194,6 @@ StScrollBar StButton#hhandle:hover {
   background-color: #383838;
   border: 1px solid #666;
 }
-.window-caption #selected {
-  background-color: #222;
-  border: 1px solid #505050;
-}
 .workspace-controls {
   visible-height: 32px /* Amount visible before hovering */;
 }
@@ -248,10 +244,10 @@ StScrollBar StButton#hhandle:hover {
   background-image: url("close-window.svg");
   height: 28px;
   width: 28px;
-  -cinnamon-close-overlap: 17px;
+  -cinnamon-close-overlap: 13px;
 }
-.window-close:rtl {
-  -st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+.window-close:hover {
+  background-image: url("close-window-hover.svg");
 }
 .window-close-area {
   background-image: url("trash-icon.png");
@@ -271,6 +267,10 @@ StScrollBar StButton#hhandle:hover {
   color: #fff;
   transition-duration: 100;
   text-align: center;
+}
+.overview-empty-placeholder {
+  color: #fff;
+  font-size: 2em;
 }
 .expo-background {
   background-color: rgba(0,0,0,0.5);
@@ -741,29 +741,16 @@ StScrollBar StButton#hhandle:hover {
   spacing: 0.5em;
 }
 .menu-favorites-box {
-  padding: 10px;
+  padding: 0.8em;
   border-radius: 3px;
   background: #383838;
 }
 .menu-favorites-button {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
+  padding: 0.8em;
 }
 .menu-favorites-button:hover {
   border-radius: 3px;
   background: #282828;
-}
-.menu-places-box {
-  padding: 10px;
-  border: 0px solid #666;
-}
-.menu-places-button {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
 }
 .menu-categories-box {
   padding-top: 10px;
@@ -824,6 +811,9 @@ StScrollBar StButton#hhandle:hover {
   color: #9c9c9c;
   font-style: italic;
 }
+.menu-category-button-greyed StIcon {
+  opacity: 0.5;
+}
 .menu-category-button-selected {
   padding-top: 7px;
   padding-left: 7px;
@@ -858,6 +848,9 @@ StScrollBar StButton#hhandle:hover {
 }
 .menu-selected-app-description {
   max-width: 150px;
+}
+.menu-top-box {
+  spacing: 10px;
 }
 .menu-search-box:ltr {
   padding-left: 30px;
@@ -1209,7 +1202,9 @@ StScrollBar StButton#hhandle:hover {
 .panel-top .window-list-box .window-list-item-box:checked,
 .panel-bottom .window-list-box .window-list-item-box:checked,
 .panel-top .window-list-box .window-list-item-box:focus,
-.panel-bottom .window-list-box .window-list-item-box:focus {
+.panel-bottom .window-list-box .window-list-item-box:focus,
+.panel-top .window-list-box .window-list-item-box:running,
+.panel-bottom .window-list-box .window-list-item-box:running {
   background-gradient-start: #626262;
   background-gradient-end: #505050;
   border: 0 solid #000;
@@ -1220,7 +1215,9 @@ StScrollBar StButton#hhandle:hover {
 .panel-top .window-list-box .window-list-item-box:checked:hover,
 .panel-bottom .window-list-box .window-list-item-box:checked:hover,
 .panel-top .window-list-box .window-list-item-box:focus:hover,
-.panel-bottom .window-list-box .window-list-item-box:focus:hover {
+.panel-bottom .window-list-box .window-list-item-box:focus:hover,
+.panel-top .window-list-box .window-list-item-box:running:hover,
+.panel-bottom .window-list-box .window-list-item-box:running:hover {
   background-gradient-start: #707070;
   background-gradient-end: #606060;
   border-bottom: none;
@@ -1251,7 +1248,9 @@ StScrollBar StButton#hhandle:hover {
 .panel-left .window-list-box .window-list-item-box:checked,
 .panel-right .window-list-box .window-list-item-box:checked,
 .panel-left .window-list-box .window-list-item-box:focus,
-.panel-right .window-list-box .window-list-item-box:focus {
+.panel-right .window-list-box .window-list-item-box:focus,
+.panel-left .window-list-box .window-list-item-box:running,
+.panel-right .window-list-box .window-list-item-box:running {
   background-color: #505050;
 }
 .panel-left .window-list-box .window-list-item-box:active:hover,
@@ -1259,7 +1258,9 @@ StScrollBar StButton#hhandle:hover {
 .panel-left .window-list-box .window-list-item-box:checked:hover,
 .panel-right .window-list-box .window-list-item-box:checked:hover,
 .panel-left .window-list-box .window-list-item-box:focus:hover,
-.panel-right .window-list-box .window-list-item-box:focus:hover {
+.panel-right .window-list-box .window-list-item-box:focus:hover,
+.panel-left .window-list-box .window-list-item-box:running:hover,
+.panel-right .window-list-box .window-list-item-box:running:hover {
   background-color: #606060;
 }
 .panel-left .window-list-box .window-list-item-box:hover,
@@ -1273,12 +1274,14 @@ StScrollBar StButton#hhandle:hover {
 }
 .window-list-box .window-list-item-box:active,
 .window-list-box .window-list-item-box:checked,
-.window-list-box .window-list-item-box:focus {
+.window-list-box .window-list-item-box:focus,
+.window-list-box .window-list-item-box:running {
   box-shadow: 0 0 3px #141414 inset;
 }
 .window-list-box .window-list-item-box:active .progress,
 .window-list-box .window-list-item-box:checked .progress,
-.window-list-box .window-list-item-box:focus .progress {
+.window-list-box .window-list-item-box:focus .progress,
+.window-list-box .window-list-item-box:running .progress {
   box-shadow: 0 0 3px #141414 inset;
 }
 .window-list-box .window-list-item-box .progress {
