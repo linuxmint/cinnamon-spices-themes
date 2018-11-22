@@ -80,14 +80,52 @@ bg-grad($color)
 		.progress
 			background-color: $accent
 
-.window-list-item-label
-	font-weight: bold
-	width: 15em
-	min-width: 5px
-
-.window-list-item-demands-attention
+.window-list-item-demands-attention, .grouped-window-list-item-demands-attention
 	bg-grad($accent-light)
 	color: $dark
 
 	&:hover
 		bg-grad($accent)
+
+
+// Grouped window list (grouped-window-list@cinnamon.org)
+
+.grouped-window-list-thumbnail-label
+	padding-left: 4px
+
+.grouped-window-list-number-label
+	z-index: 99
+	font-size: 10px
+	color: white
+	padding: 0
+
+.grouped-window-list-badge
+	border-radius: 256px
+	background-color: black
+
+.grouped-window-list-button-label
+	padding-left: 4px
+
+.grouped-window-list-item-box
+	color: $text
+	box-shadow: inset 0px 0px 1px 1px rgba(170,170,170,0);
+	transition-duration: 100;
+	border-radius: 2px
+	border: 1px solid transparent
+	spacing: 0.5em;
+
+	&.top, &.bottom
+		padding: 0 0.5em;
+
+	&:hover
+		background-color: $light
+
+	&:active:focus
+		bg-grad($light)
+		border: 1px solid $light
+
+		&:hover
+			bg-grad($lighter)
+
+	.progress
+		background-color: $accent !important
