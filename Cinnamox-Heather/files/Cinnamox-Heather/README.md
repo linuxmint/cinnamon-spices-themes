@@ -12,9 +12,9 @@ The Cinnamon themes in both [Cinnamox-gtk-theme](https://github.com/smurphos/cin
 
 GTK2, GTK3, GTK3.20 and Metacity themes in both [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) & [Oomox-gtk-theme](https://github.com/themix-project/oomox-gtk-theme) are authored by [@actionless and contributors](https://github.com/themix-project/oomox-gtk-theme/graphs/contributors).
 
-Menu in screenshots is the excellent [CinnVIIStarkMenu](https://cinnamon-spices.linuxmint.com/applets/view/281).
+Menu in screenshots is the excellent [Cinnamenu](https://cinnamon-spices.linuxmint.com/applets/view/282).
 
-Icons in screenshots are from [Vibrancy Colours](http://www.ravefinity.com/p/vibrancy-colors-gtk-icon-theme.html).
+Icons in screenshots are from [ePapirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/tree/master/ePapirus).
 
 [Licensed under GPL-3.0](https://github.com/smurphos/cinnamox-gtk-theme/blob/master/LICENSE)
 
@@ -41,6 +41,18 @@ To access the tool open a terminal window (Ctrl-Alt-T) and use the following com
 `chmod +x ~/.themes/Cinnamox-Heather/cinnamon/cinnamox_transparency.sh && ~/.themes/Cinnamox-Heather/cinnamon/cinnamox_transparency.sh`
 
 If you are not happy with the end result simply run `~/.themes/Cinnamox-Heather/cinnamon/cinnamox_transparency.sh` again to chose another option including the default.
+
+### Cinnamon Theme Panel Styling
+
+The themes from the 25/11/18 release onwards have a new default styling for the window-list, panel and (in Cinnamon 4) grouped window list applet.
+
+If you prefer the old styling a helper script is included to facilitate a switch to the old styling.
+
+To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
+
+`chmod +x ~/.themes/Cinnamox-Heather/cinnamon/cinnamox_toggle_cinnamon.sh && ~/.themes/Cinnamox-Heather/cinnamon/cinnamox_toggle_cinnamon.sh`
+
+To revert to the new styling simply run `~/.themes/Cinnamox-Heather/cinnamon/cinnamox_toggle_cinnamon.sh` again.
 
 ### GTK2 HIDPI support
 

@@ -12,14 +12,16 @@ if [ ! -f "$PWD/gtkrc" ]; then
 fi
 if [ ! -f "gtkrc.nohidpi" ]; then
     cp gtkrc gtkrc.nohidpi && cp -f gtkrc.hidpi gtkrc && echo "Enabled HIDPI in GTK2. Reloading $THEMENAME.";
-    gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y";
+    gsettings reset org.cinnamon.desktop.interface gtk-theme;
 	gsettings set org.cinnamon.desktop.interface gtk-theme "$THEMENAME";
 else
 	cp -f gtkrc.nohidpi gtkrc && rm gtkrc.nohidpi && echo "Disabled HIDPI in GTK2. Reloading $THEMENAME.";
-	gsettings set org.cinnamon.desktop.interface gtk-theme "Mint-Y";
+	gsettings reset org.cinnamon.desktop.interface gtk-theme;
 	gsettings set org.cinnamon.desktop.interface gtk-theme "$THEMENAME";
 fi
+if [ -t 1 ]; then
     echo "";
     read -p "Press enter to exit the script.";
-    cd;
-    exit;
+fi
+cd;
+exit;

@@ -1,4 +1,7 @@
 #!/bin/bash
+if [ ! -t 1 ]; then
+    exit
+fi
 THEMENAME="Cinnamox-Heather";
 DIRECTORY="/home/$USER/.themes/$THEMENAME/cinnamon/";
 LIGHTBG="#cddbe4";
@@ -23,7 +26,6 @@ fi
 if grep -q "Transparency: None" cinnamon.css && grep -q "$LIGHTBG" cinnamon.css; then
 	CURRENT="Transparency: None"; LIGHTBGC=$LIGHTBG; DARKBGC=$DARKBG;
 	VARIANT=("Transparency: Low" "Transparency: Medium" "Transparency: High" "Quit");
-	cp cinnamon.css cinnamon_original.css;
 elif grep -q "Transparency: Low" cinnamon.css && grep -q "$LOWTRANSLIGHTBG" cinnamon.css; then
 	CURRENT="Transparency: Low"; LIGHTBGC=$LOWTRANSLIGHTBG; DARKBGC=$LOWTRANSDARKBG; 
 	VARIANT=("Transparency: None" "Transparency: Medium" "Transparency: High" "Quit");
@@ -62,7 +64,6 @@ do
     esac
     break
 done
-cp cinnamon.css cinnamon_last.css;
 sed -i "s|$LIGHTBGC|$LIGHTBGN|g" cinnamon.css;
 sed -i "s|$DARKBGC|$DARKBGN|g" cinnamon.css;
 sed -i "s|$CURRENT|$CHOICE|g" cinnamon.css;
@@ -71,7 +72,7 @@ echo "Theme updated.";
 echo "";
 if which gsettings > /dev/null; then
 	echo "Activating $THEMENAME - $CHOICE.";
-	gsettings set org.cinnamon.theme name 'cinnamon';
+	gsettings reset org.cinnamon.theme name;
 	gsettings set org.cinnamon.theme name "$THEMENAME";
 else
 	echo"If $THEMENAME is already active then press Ctrl-Alt-Esc to reload cinnamon and the theme. If $THEMENAME is not active go to the Themes App and set $THEMENAME as your desktop theme.";
