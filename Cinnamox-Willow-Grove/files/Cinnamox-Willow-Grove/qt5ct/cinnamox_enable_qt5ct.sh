@@ -5,9 +5,11 @@ DIRECTORY="/home/$USER/.themes/$THEMENAME/qt5ct/";
 QTDIR="$HOME/.config/qt5ct/colors";
 cd "$DIRECTORY";
 if [ ! -f "$PWD/$THEMENAME.conf" ]; then
-	echo "Something is wrong. Cannot find $PWD/$THEMENAME.conf"
-    echo "";
-    read -p "Press enter to exit the script.";
+    if [ -t 1 ]; then
+	    echo "Something is wrong. Cannot find $PWD/$THEMENAME.conf"
+        echo "";
+        read -p "Press enter to exit the script.";
+    fi
     cd;
     exit 1;
 fi
@@ -16,7 +18,9 @@ if [ ! -d "$QTDIR" ]; then
 fi
 echo "Copying $PWD/$THEMENAME.conf to $QTDIR/$THEMENAME.conf"
 cp "$PWD/$THEMENAME.conf" "$QTDIR/$THEMENAME.conf";
-echo "";
-read -p "Press enter to exit the script.";
+if [ -t 1 ]; then
+    echo "";
+    read -p "Press enter to exit the script.";
+fi
 cd;
 exit;

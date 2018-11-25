@@ -20,6 +20,8 @@ if find "$HOME"/.mozilla/firefox/ -maxdepth 1 -type d -name '*.default' | head -
 else
     echo "could not locate your .default firefox profile"
 fi
-echo ""
-read -rp "Press enter to exit the script."
+if [ -t 1 ]; then
+    echo "";
+    read -p "Press enter to exit the script.";
+fi
 exit
