@@ -888,7 +888,12 @@ border-width: 0px;
     padding: 10px;
 }
 .menu-favorites-button:hover {
-    padding: 10px 6px 10px 14px;
+    background-gradient-start: #5990e1;
+    background-gradient-end: #3478db;
+    background-gradient-direction: vertical;
+    color: rgba(255,255,255,0.9);
+    border-color: #3374D4;
+    border-radius: 6px;
 }
 .menu-help-button {
     padding-top: 2px;
@@ -918,12 +923,12 @@ border-width: 0px;
     padding-bottom: 0px;
 }
 .menu-application-button {
-    height: 36px;
+    min-height: 36px;
     padding: 0px 7px;
 }
 .menu-application-button:hover,
 .menu-application-button-selected {
-    height: 36px;
+    min-height: 36px;
     padding: 0px 7px;
     background-gradient-start: #5990e1;
     background-gradient-end: #3478db;
@@ -939,16 +944,16 @@ border-width: 0px;
     padding-right: 5px;
 }
 .menu-category-button {
-    height: 36px;
+    min-height: 36px;
     padding: 0px 7px;
 }
 .menu-category-button-greyed {
-    height: 36px;
+    min-height: 36px;
     padding: 0px 7px;
     color: #aaa;
 }
 .menu-category-button-selected {
-    height: 36px;
+    min-height: 36px;
     padding: 0px 7px;
     background-gradient-start: #5990e1;
     background-gradient-end: #3478db;
@@ -1000,6 +1005,7 @@ border-width: 0px;
     icon-size: 1em;
     color: #333;
 }
+
 /* ===================================================================
 * Window list (windowList.js)
 * ===================================================================*/
@@ -1056,6 +1062,109 @@ border-width: 0px;
     color: #000;
     text-shadow: white 0px 0px 2px;
     padding: 10px 15px 15px 15px;
+}
+
+/* ===================================================================
+ * Grouped window list (windowList.js)
+ * ===================================================================*/
+.grouped-window-list-thumbnail-label {
+    padding-left: 4px;
+}
+.grouped-window-list-number-label {
+    z-index: 99;
+    text-shadow: black 1px 0px 2px;
+    font-size: 10px;
+    color:#fff;
+    padding: 0;
+}
+.grouped-window-list-badge {
+    border-radius: 256px;
+    background-color: #000000;
+}
+.grouped-window-list-button-label {
+    padding-left: 4px;
+}
+.grouped-window-list-thumbnail-alert {
+    background: rgba(255,52,52,0.3);
+}
+.grouped-window-list-item-box {
+    padding: 0px;
+}
+.grouped-window-list-item-box:active {
+    color: white;
+    text-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
+    border-image: url("panel-menu-active.png") 12 12 0 0;
+}
+
+.grouped-window-list-item-box:checked,
+.grouped-window-list-item-box:focus {
+    color: white;
+    text-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
+    border-image: url("panel-menu-active.png") 12 12 0 0;
+}
+
+.grouped-window-list-item-box:hover {
+    color: white;
+    text-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
+    border-image: url("panel-menu-hover.png") 12 12 0 0;
+}
+
+.grouped-window-list-item-demands-attention {
+    color: white;
+    text-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
+    border-image: url("panel-menu-hover.png") 12 12 0 0;
+}
+
+.grouped-window-list-item-demands-attention:hover {
+    color: white;
+    text-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
+    border-image: url("panel-menu-hover.png") 12 12 0 0;
+}
+
+.grouped-window-list-item-box .progress {
+    background-color: rgba(255,255,0,1);
+    box-shadow: none;
+    border: 1px solid rgba(255,255,0,1);
+    border-radius: 7px 7px 7px 7px;
+    font-weight: bold;
+    color: #000;
+    text-shadow: 1px 1px 1px #00ff00;
+}
+
+.grouped-window-list-thumbnail-menu {
+    font-size: 0.8em;
+    border-bottom: 1px solid #555;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(250,250,250,.98);
+    background-gradient-end: rgba(200,200,200,.93);
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
+    border-radius: 6px 6px 6px 6px;
+    border: 1px rgba(0,0,255,0.2) solid;
+    color: #000;
+    text-shadow: white 0px 0px 2px;
+    padding: 10px 15px 15px 15px;
+}
+.grouped-window-list-thumbnail-menu .item-box {
+}
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+}
+.grouped-window-list-thumbnail-menu .item-box:selected {
+    padding: 0px 7px;
+    background-gradient-start: #5990e1;
+    background-gradient-end: #3478db;
+    background-gradient-direction: vertical;
+    color: rgba(255,255,255,0.9);
+    border-color: #3374D4;
+    border-radius: 6px;
+}
+
+.grouped-window-list-thumbnail-menu .thumbnail {
+    padding: 6px;
+    width: 256px;
+}
+.grouped-window-list-thumbnail-menu .separator {
+    width: 1px;
+    background: rgba(255,255,255,0.33);
 }
 /* ===================================================================
 * Sound Applet (status/volume.js)
