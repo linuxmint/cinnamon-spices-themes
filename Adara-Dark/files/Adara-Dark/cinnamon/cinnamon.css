@@ -35,6 +35,12 @@ stage {
   text-decoration: underline;
 }
 
+StIcon {
+  warning-color: #ebbc00;
+  error-color: #ff2525;
+  success-color: #1481b8;
+}
+
 /* ======================================
  * ! Tooltips
  * ====================================== */
@@ -757,12 +763,12 @@ StEntry:pressed > StIcon,
 }
 
 .applet-box:checked {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .applet-box:highlight {
   border-color: #ffcc00;
-  background-color: rgba(255, 204, 0, 0.1);
+  background-color: rgba(255, 204, 0, 0.15);
 }
 
 /* ======================================
@@ -915,7 +921,7 @@ StEntry:pressed > StIcon,
 }
 
 .window-list-item-box:active, .window-list-item-box:checked, .window-list-item-box:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .window-list-item-box .progress {
@@ -924,7 +930,7 @@ StEntry:pressed > StIcon,
 
 .window-list-item-demands-attention,
 .window-list-item-demands-attention:hover {
-  background-color: rgba(255, 204, 0, 0.1);
+  background-color: rgba(255, 204, 0, 0.15);
   border-color: #ffcc00;
 }
 
@@ -946,6 +952,114 @@ StEntry:pressed > StIcon,
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   padding: 8px;
   spacing: 8px;
+}
+
+/* ======================================
+ * ! Grouped window list
+ * ====================================== */
+.grouped-window-list-thumbnail-menu {
+  spacing: 2px;
+}
+
+.grouped-window-list-thumbnail-menu .item-box {
+  padding: 2px;
+  spacing: 6px;
+  /* Currently focused window */
+}
+
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.grouped-window-list-thumbnail-menu .item-box:hover {
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.grouped-window-list-thumbnail-menu .window-close {
+  background-image: url("img/controls/close-simple.svg");
+}
+
+.grouped-window-list-thumbnail-menu .window-close:hover {
+  background-image: url("img/controls/close-simple-hover.svg");
+}
+
+.grouped-window-list-thumbnail-label {
+  /* Compensate width (fixed) of the window close button to the right */
+  margin-left: 22px;
+}
+
+.grouped-window-list-button-label {
+  padding: 0;
+}
+
+.grouped-window-list-item-box {
+  color: rgba(255, 255, 255, 0.85);
+  spacing: 4px;
+  border-color: transparent;
+  padding: 1px 6px;
+  /*
+		 * :hover - mouse is over
+		 * :active - application is running
+		 * :closed - application is not running
+		 * :focus - current application
+		 * :checked - when the context menu is open
+		 */
+}
+
+.vertical .grouped-window-list-item-box {
+  padding: 6px 1px;
+}
+
+.grouped-window-list-item-box.top {
+  border-top-width: 1px;
+  padding-top: 0px;
+}
+
+.grouped-window-list-item-box.bottom {
+  border-bottom-width: 1px;
+  padding-bottom: 0px;
+}
+
+.grouped-window-list-item-box.left {
+  border-left-width: 1px;
+  padding-left: 0px;
+}
+
+.grouped-window-list-item-box.right {
+  border-right-width: 1px;
+  padding-right: 0px;
+}
+
+.grouped-window-list-item-box:hover, .grouped-window-list-item-box:active, .grouped-window-list-item-box:checked, .grouped-window-list-item-box:focus {
+  border-color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.grouped-window-list-item-box:focus, .grouped-window-list-item-box:active:hover, .grouped-window-list-item-box:checked {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.grouped-window-list-item-box:closed {
+  /* ! */
+}
+
+.grouped-window-list-badge {
+  background: rgba(255, 255, 255, 0.85);
+  color: #111;
+  box-shadow: 0 0 2px #000;
+  border-radius: 2px;
+  font-weight: bold;
+  margin-top: 2px;
+  padding-top: 1px;
+  /* Adjust vertically uncentered text */
+}
+
+.grouped-window-list-number-label {
+  background: transparent;
+  /* Add this to cancel default styles */
 }
 
 /* ======================================
@@ -1193,7 +1307,7 @@ StEntry:pressed > StIcon,
 }
 
 .workspace-button:outlined {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* ======================================
@@ -1371,6 +1485,11 @@ StEntry:pressed > StIcon,
   padding: 6px;
   spacing: 6px;
   color: rgba(255, 255, 255, 0.25);
+}
+
+.menu-application-button-greyed StIcon,
+.menu-category-button-greyed StIcon {
+  opacity: 0.2;
 }
 
 .menu-application-button-label,
@@ -1602,11 +1721,11 @@ StEntry:pressed > StIcon,
 .run-dialog-error-box {
   padding: 0;
   spacing: 8px;
-  color: #ff1414;
+  color: #ff2525;
 }
 
 .run-dialog-error-icon {
-  color: #ff1414;
+  color: #ff2525;
 }
 
 .run-dialog-completion-box {
@@ -2682,12 +2801,12 @@ StEntry:pressed > StIcon,
 }
 
 .stopwatch-paused {
-  background-color: rgba(255, 204, 0, 0.1);
+  background-color: rgba(255, 204, 0, 0.15);
   border-color: #ffcc00;
 }
 
 .stopwatch-running {
-  background-color: rgba(51, 204, 51, 0.1);
+  background-color: rgba(51, 204, 51, 0.15);
   border-color: #33cc33;
 }
 
@@ -2774,6 +2893,9 @@ StEntry:pressed > StIcon,
   color: rgba(255, 255, 255, 0.75);
 }
 
+/* ======================================
+ * ! Icing task manager
+ * ====================================== */
 .menu .switcher-list {
   padding: 0;
 }
@@ -3502,7 +3624,7 @@ StEntry:pressed > StIcon,
 }
 
 .auto-close-icon {
-  background-image: url("img/controls/close-simple-hover.svg");
+  background-image: url("img/controls/close-simple.svg");
   width: 16px;
   height: 16px;
 }
