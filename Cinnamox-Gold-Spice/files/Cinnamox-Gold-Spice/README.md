@@ -80,7 +80,7 @@ The GTK3 themes require GTK `3.18.x` or `3.20.x`+
 
 The GTK2 theme requires the package `gtk2-engines-murrine` or `gtk-engine-murrine` to be installed. The former is a default package in Linux Mint.
 
-Tested on Linux Mint `18.2`, `18.3` & `19` 64bit with Cinnamon `3.4.x`, `3.6.x` & `3.8.x`; Also tested ion Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x`, `3.8.x` & `4.0.x`
+Tested on Linux Mint `18.2`, `18.3` & `19` 64bit with Cinnamon `3.4.x`, `3.6.x` & `3.8.x`; Also tested on Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x`, `3.8.x` & `4.0.x`
 
 ### Firefox fix
 
