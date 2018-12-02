@@ -816,6 +816,100 @@ border-radius: 3px;
 background-color: rgba(0,0,0,0.75);
 transition-duration: 150;
 }
+
+/* ===================================================================
+ * Grouped window list (windowList.js)
+ * ===================================================================*/
+.grouped-window-list-thumbnail-label {
+    padding-left: 4px;
+}
+.grouped-window-list-number-label {
+    z-index: 99;
+    text-shadow: black 1px 0px 2px;
+    font-size: 10px;
+    color:#fff;
+    padding: 0;
+}
+.grouped-window-list-badge {
+    border-radius: 256px;
+    background-color: #000000;
+}
+.grouped-window-list-button-label {
+    padding-left: 4px;
+}
+.grouped-window-list-thumbnail-alert {
+    background: rgba(255,52,52,0.3);
+}
+.grouped-window-list-item-box {
+    padding: 0px;
+}
+.grouped-window-list-item-box:active {
+border-image: url("window-active.svg") 2 2 0 0 stretch;
+transition-duration: 250;
+}
+
+.grouped-window-list-item-box:checked,
+.grouped-window-list-item-box:focus {
+border-image: url("window-active.svg") 2 2 0 0 stretch;
+transition-duration: 250;
+}
+
+.grouped-window-list-item-box:hover {
+/* border-image: url("window-active.svg") 2 2 0 0 stretch; */
+border-image: url("checkbox-off-focus.svg") 1 1 1 1 stretch;
+transition-duration: 0;
+}
+.grouped-window-list-item-box:active:hover,
+.grouped-window-list-item-box:checked:hover,
+.grouped-window-list-item-box:focus:hover {
+/* border-image: url("window-active.svg") 2 2 0 0 stretch; */
+border-image: url("checkbox-off-focus.svg") 1 1 1 1 stretch;
+transition-duration: 0;
+}
+.grouped-window-list-item-demands-attention {
+background-gradient-start: #bada55;
+background-gradient-end: #45883b;
+background-gradient-direction: vertical;
+transition-duration: 250;
+}
+
+.grouped-window-list-item-demands-attention:hover {
+    color: white;
+    text-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
+}
+
+.grouped-window-list-item-box .progress {
+    background-color: rgba(255,255,0,1);
+    box-shadow: none;
+    border: 1px solid rgba(255,255,0,1);
+    font-weight: bold;
+    color: #000;
+    text-shadow: 1px 1px 1px #00ff00;
+}
+
+.grouped-window-list-thumbnail-menu {
+}
+.grouped-window-list-thumbnail-menu .item-box {
+    padding: 6px;
+}
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+    padding: 6px;
+    border: 1px solid rgba(102,102,102,1);
+}
+.grouped-window-list-thumbnail-menu .item-box:selected {
+padding: 0px 7px;
+border-image: url("checkbox-off-focus.svg") 3;
+}
+
+.grouped-window-list-thumbnail-menu .thumbnail {
+    padding: 6px;
+    width: 256px;
+}
+.grouped-window-list-thumbnail-menu .separator {
+    width: 1px;
+    background: rgba(255,255,255,0.33);
+}
+
 /* ===================================================================
 * Sound Applet (status/volume.js)
 * ===================================================================*/
