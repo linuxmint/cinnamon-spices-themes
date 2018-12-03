@@ -296,6 +296,7 @@ StScrollBar StButton#hhandle:active {
 .menu {
   padding: 0;
   min-width: 100px;
+  color: #fff;
   background-color: rgba(20, 20, 20, 0.96);
   border: 1px solid #000000;
 }
@@ -334,7 +335,6 @@ StScrollBar StButton#hhandle:active {
 
 .popup-menu-content {
   padding: .5em 0;
-  color: #fff;
   max-height: 70em;
 }
 
@@ -1697,6 +1697,162 @@ StScrollBar StButton#hhandle:active {
 
 .window-list-preview StLabel {
   padding: .25em;
+}
+
+/* ======================================
+ * ! Grouped window list
+ * ====================================== */
+.grouped-window-list-thumbnail-menu .item-box {
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: bold;
+  padding: 4px;
+  spacing: .75em;
+  /* Currently focused window */
+}
+
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+  color: #fff;
+  border-image: url("img/containers/light-bg.svg") 8;
+}
+
+.grouped-window-list-thumbnail-menu .item-box:hover {
+  color: #fff;
+  border-image: url("img/containers/hover.svg") 8;
+}
+
+.grouped-window-list-thumbnail-menu .window-close {
+  background-image: url("img/controls/close-simple.svg");
+}
+
+.grouped-window-list-thumbnail-menu .window-close:hover {
+  background-image: url("img/controls/close-simple-hover.svg");
+}
+
+.grouped-window-list-thumbnail-label {
+  /* Compensate width (fixed) of the window close button to the right */
+  margin-left: 22px;
+}
+
+.grouped-window-list-item-box {
+  color: #fff;
+  font-weight: bold;
+  padding: 0 6px;
+  spacing: 4px;
+  /*
+         * :hover - mouse is over
+         * :active - application is running
+         * :closed - application is not running
+         * :focus - current application
+         * :checked - when the context menu is open
+         */
+}
+
+.grouped-window-list-item-box.vertical {
+  padding: 6px 0;
+}
+
+.grouped-window-list-item-box.top:hover {
+  border-image: url("img/panel/applet__top__hover.svg") 4;
+}
+
+.grouped-window-list-item-box.top:active, .grouped-window-list-item-box.top:checked {
+  border-image: url("img/panel/window-list__top__active.svg") 4;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.grouped-window-list-item-box.top:active:hover, .grouped-window-list-item-box.top:checked:hover {
+  border-image: url("img/panel/window-list__top__active__hover.svg") 4;
+}
+
+.grouped-window-list-item-box.top:focus, .grouped-window-list-item-box.top:focus:hover {
+  border-image: url("img/panel/applet__top__checked.svg") 4;
+  color: #fff;
+}
+
+.grouped-window-list-item-box.top:closed {
+  /* ! */
+}
+
+.grouped-window-list-item-box.bottom:hover {
+  border-image: url("img/panel/applet__bottom__hover.svg") 4;
+}
+
+.grouped-window-list-item-box.bottom:active, .grouped-window-list-item-box.bottom:checked {
+  border-image: url("img/panel/window-list__bottom__active.svg") 4;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.grouped-window-list-item-box.bottom:active:hover, .grouped-window-list-item-box.bottom:checked:hover {
+  border-image: url("img/panel/window-list__bottom__active__hover.svg") 4;
+}
+
+.grouped-window-list-item-box.bottom:focus, .grouped-window-list-item-box.bottom:focus:hover {
+  border-image: url("img/panel/applet__bottom__checked.svg") 4;
+  color: #fff;
+}
+
+.grouped-window-list-item-box.bottom:closed {
+  /* ! */
+}
+
+.grouped-window-list-item-box.left:hover {
+  border-image: url("img/panel/applet__left__hover.svg") 4;
+}
+
+.grouped-window-list-item-box.left:active, .grouped-window-list-item-box.left:checked {
+  border-image: url("img/panel/window-list__left__active.svg") 4;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.grouped-window-list-item-box.left:active:hover, .grouped-window-list-item-box.left:checked:hover {
+  border-image: url("img/panel/window-list__left__active__hover.svg") 4;
+}
+
+.grouped-window-list-item-box.left:focus, .grouped-window-list-item-box.left:focus:hover {
+  border-image: url("img/panel/applet__left__checked.svg") 4;
+  color: #fff;
+}
+
+.grouped-window-list-item-box.left:closed {
+  /* ! */
+}
+
+.grouped-window-list-item-box.right:hover {
+  border-image: url("img/panel/applet__right__hover.svg") 4;
+}
+
+.grouped-window-list-item-box.right:active, .grouped-window-list-item-box.right:checked {
+  border-image: url("img/panel/window-list__right__active.svg") 4;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.grouped-window-list-item-box.right:active:hover, .grouped-window-list-item-box.right:checked:hover {
+  border-image: url("img/panel/window-list__right__active__hover.svg") 4;
+}
+
+.grouped-window-list-item-box.right:focus, .grouped-window-list-item-box.right:focus:hover {
+  border-image: url("img/panel/applet__right__checked.svg") 4;
+  color: #fff;
+}
+
+.grouped-window-list-item-box.right:closed {
+  /* ! */
+}
+
+.grouped-window-list-button-label {
+  padding: 0;
+}
+
+.grouped-window-list-badge {
+  border-image: url("img/containers/badge.svg") 4;
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: bold;
+  border-top: 1px transparent;
+}
+
+.grouped-window-list-number-label {
+  background: transparent;
+  /* Add this to cancel default styles */
 }
 
 /* ======================================
