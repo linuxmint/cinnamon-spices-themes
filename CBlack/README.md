@@ -5,7 +5,7 @@
 
 ## Extra
 
-* Includes the theme Arc for gtk / gtk + with personal modifications.
+* Includes the theme Linux-Mint for gtk / gtk + with personal modifications.
 
 ### Change the transparency of the panels, for this you must look for the following code
 ```

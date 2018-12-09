@@ -4,13 +4,12 @@
  * ###################################################################*/
 
  stage {
-    font-family:  noto, cantarell, ubuntu, noto sans, sans, open, sans-serif;
+    font-family: noto, cantarell, ubuntu, noto sans, sans, open, sans-serif;
     font-size: 9pt;
 }
 
 .cinnamon-link {
     color: #0000ff;
-    text-decoration: underline;
 }
 
 .cinnamon-link:hover {
@@ -22,16 +21,20 @@
 }
 
 StScrollBar {
-  padding: 0px;
+  padding: 8px;
 }
 
 StScrollView.vfade {
   -st-vfade-offset: 68px;
 }
 
+StScrollView.hfade {
+  -st-vfade-offset: 68px;
+}
+
 StScrollView StScrollBar {
-  min-width: 10px;
-  min-height: 10px;
+  min-width: 5px;
+  min-height: 5px;
 }
 
 StScrollBar StBin#trough {
@@ -40,26 +43,22 @@ StScrollBar StBin#trough {
   border-radius: 0px;
 }
 
-StScrollBar StButton#vhandle {
-  background-color: rgba(45, 45, 45, 1);
-  border: 1px solid rgba(80, 80, 80, 1);
-  border-radius: 0px;
-}
-
+StScrollBar StButton#vhandle,
 StScrollBar StButton#hhandle {
-  background-color: rgba(45, 45, 45, 1);
-  border: 1px solid rgba(80, 80, 80, 1);
-  border-radius: 0px;
+  background-color: rgba(80, 80, 80, 1);
+  border: 0px solid rgba(80, 80, 80, 1);
+  border-radius: 8px;
 }
 
 StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
-  background-color: rgba(65, 65, 65, 1);
+  background-color: rgba(34, 113, 179, 1);
+  border: 0px solid rgba(34, 113, 179, 1);
 }
 
 .separator {
   -gradient-height: 2px;
-  -gradient-start: rgba(85, 85, 85, 1);
-  -gradient-end: rgba(85, 85, 85, 1);
+  -gradient-start: rgba(41, 41, 41, 1);
+  -gradient-end: rgba(41, 41, 41, 1);
   -margin-horizontal: 1.5em;
   height: 1em;
 }
@@ -77,10 +76,10 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 #Tooltip {
-  border: 1px solid rgba(45, 45, 45, 1);
-  padding: 4px 12px;
-  background-color: rgba(20, 20, 20, 1);
   color: white;
+  background-color: rgba(47, 47, 47, 1);
+  border: 1px solid rgba(70, 70, 70, 1);
+  padding: 4px 12px;
   font-weight: normal;
   text-align: center;
 }
@@ -117,7 +116,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     border: 1px solid rgba(80, 80, 80, 1);
 }
 
-
 /* ===================================================================
  * PopupMenu (popupMenu.js)
  * ===================================================================*/
@@ -136,19 +134,16 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .popup-menu {
   color: white;
-  border-width: 1px;
-  border-color: rgba(45, 45, 45, 1);
+  background-color: rgba(47, 47, 47, 1);
+  border: solid 1px rgba(70, 70, 70, 1);
   min-width: 150px;
-  background-color: rgba(20, 20, 20, 1);
-  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.6);
 }
 
 .menu {
-  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.6);
-  border-radius: 0px;
-  background-color: rgba(20, 20, 20, 1);
-  border: 1px rgba(45, 45, 45, 1);
   color: white;
+  border-radius: 0px;
+  background-color: rgba(47, 47, 47, 1);
+  border: solid 1px rgba(70, 70, 70, 1);
   min-width: 150px;
 }
 
@@ -185,7 +180,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .popup-sub-menu {
-  background-color: rgba(45, 45, 45, 1);
+  background-color: rgb(55, 55, 55);
 }
 
 .popup-sub-menu .popup-menu-item:ltr {
@@ -205,15 +200,14 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .popup-sub-menu StScrollBar StBin#vhandle {
-  background-color: #4c4c4c;
   border-width: 0px;
 }
 
 .popup-combo-menu {
-  background-color: rgba(20, 20, 20, 1);
-  padding: 1em 0em;
   color: white;
-  border: 1px solid #5f5f5f;
+  background-color: rgb(47, 47, 47);
+  border: 1px solid rgb(70, 70, 70);
+  padding: 1em 0em;
   border-radius: 9px;
 }
 
@@ -226,17 +220,17 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .popup-menu-item {
-  padding: .4em 2em;
+  padding: .4em 1.75em;
   spacing: .5em;
 }
 
 .popup-menu-item:active {
-  background-color: rgb(49, 111, 255);
+  background-color: rgba(34, 113, 179, 1);
   color: white;
 }
 
 .popup-menu-item:insensitive {
-  background-color: rgb(49, 111, 255);
+  background-color: rgba(34, 113, 179, 1);
   color: white;
 }
 
@@ -247,11 +241,11 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .popup-separator-menu-item {
-  -gradient-height: 0px;
-  -gradient-start: rgba(85, 85, 85, 0);
-  -gradient-end: rgba(85, 85, 85, 0);
-  -margin-horizontal: 1em;
-  height: 1em;
+  -gradient-height: 1px;
+  -gradient-start: rgba(70, 70, 70, 1);
+  -gradient-end: rgba(70, 70, 70, 1);
+  -margin-horizontal: 0em;
+  height: 0.1em;
 }
 
 .popup-alternating-menu-item:alternate {
@@ -264,7 +258,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
   -slider-height: 0.1em;
   -slider-background-color: #444;
   -slider-border-color: rgba(0,0,0,.02);
-  -slider-active-background-color: rgb(49, 111, 255);
+  -slider-active-background-color: rgba(34, 113, 179, 1);
   -slider-active-border-color: rgba(0,0,0,.02);
   -slider-border-width: 1px;
   -slider-handle-radius: 0.5em;
@@ -287,8 +281,8 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .popup-inactive-menu-item {
+  color: grey;
   font-weight: normal;
-  color: #999;
 }
 
 .popup-subtitle-menu-item {
@@ -326,33 +320,35 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
   spacing: .5em;
 }
 
-
 /* ===================================================================
  * Panel (panel.js)
  * ===================================================================*/
 
 #panel {
   color: #ccc;
-  /* background-color: rgba(20, 20, 20, 1); */
   font-weight: normal;
   height: 32px;
   width: 32px;
 }
 
 .panel-left {
-  background-color: rgba(20, 20, 20, 0.8);
+  background-color: rgba(47, 47, 47, 1);
+  box-shadow: 1px 0 rgba(70, 70, 70, 1);
 }
 
 .panel-right {
-  background-color: rgba(20, 20, 20, 0.8);
+  background-color: rgba(47, 47, 47, 0.8);
+  box-shadow: -1px 0 rgba(70, 70, 70, 1);
 }
 
 .panel-top {
-  background-color: rgba(20, 20, 20, 1);
+  background-color: rgba(47, 47, 47, 1);
+  box-shadow: 0 1px rgba(70, 70, 70, 1);
 }
 
 .panel-bottom {
-  background-color: rgba(20, 20, 20, 1);
+  background-color: rgba(47, 47, 47, 1);
+  box-shadow: 0 -1px rgba(70, 70, 70, 1);
 }
 
 #panel:highlight {
@@ -360,7 +356,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .panel-dummy {
-  background-color: rgba(50, 50, 50, 0.4);
+  background-color: rgba(47, 47, 47, 0.4);
 }
 
 .panel-dummy:entered {
@@ -434,31 +430,11 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .panelRight.vertical:dnd {}
 
-.panel-top {
-  border: 0px solid rgba(45, 45, 45, 1);
-  border-bottom: 1px;
-}
-
-.panel-bottom {
-  border: 0px solid rgba(45, 45, 45, 1);
-  border-top: 1px;
-}
-
-.panel-left {
-  border: 0px solid rgba(45, 45, 45, 1);
-  border-right: 1px;
-}
-
-.panel-right {
-  border: 0px solid rgba(45, 45, 45, 1);
-  border-left: 1px;
-}
-
 .panel-status-button {
+  color: #ccc;
   -natural-hpadding: 3px;
   -minimum-hpadding: 3px;
   font-weight: bold;
-  color: #ccc;
   height: 22px;
 }
 
@@ -483,11 +459,11 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .panel-corner {
   -panel-corner-radius: 0px;
-  -panel-corner-background-color: rgba(20, 20, 20, 1);
+  -panel-corner-background-color: rgba(47, 47, 47, 1);
   -panel-corner-inner-border-width: 0px;
   -panel-corner-inner-border-color: transparent;
   -panel-corner-outer-border-width: 0px;
-  -panel-corner-outer-border-color: rgba(80, 80, 80, 1);
+  -panel-corner-outer-border-color: rgba(70, 70, 70, 1);
 }
 
 .panel-corner:active, .panel-corner:overview, .panel-corner:focus {
@@ -507,10 +483,10 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .panel-button {
+  color: #ccc;
   -natural-hpadding: 6px;
   -minimum-hpadding: 3px;
   font-weight: normal;
-  color: #ccc;
   transition-duration: 100;
 }
 
@@ -544,26 +520,13 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
   spacing: 12px;
 }
 
-.window-caption {
-  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.10);
-  background-color: rgba(30, 30, 30, 0.8);
-  border: 1px solid rgba(80, 80, 80, 1);
-  color: white;
-  spacing: 25px;
-}
-
-.window-caption#selected {
-  color: white;
-  background-color: rgb(49, 111, 255);
-  spacing: 25px;
-}
-
 .workspace-controls {
   visible-height: 32px; /* Amount visible before hovering */
 }
 
+
 .workspace-thumbnails-background {
-  border: 0px solid rgb(49, 111, 255);
+  border: 0px solid rgba(34, 113, 179, 1);
   border-right: 0px;
   border-radius: 9px 9px 0px 0px;
   background-color: rgba(0, 0, 0, 0);
@@ -595,24 +558,9 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .workspace-close-button {
   background-image: url("common-assets/misc/close.svg");
-  background-size: 26px;
-  height: 26px;
-  width: 26px;
+  height: 34px;
+  width: 34px;
   -cinnamon-close-overlap: 20px;
-}
-
-.workspace-close-button:hover {
-background-image: url("common-assets/misc/close-hover.svg");
-background-size: 26px;
-height: 26px;
-width: 26px;
-}
-
-.workspace-close-button:active {
-background-image: url("common-assets/misc/close-active.svg");
-background-size: 26px;
-height: 26px;
-width: 26px;
 }
 
 .workspace-thumbnail-indicator {
@@ -621,43 +569,45 @@ width: 26px;
 }
 
 .window-caption {
-  background-color: rgba(20, 20, 20, 0.8);
-  font-size: 8pt;
-  font-weight: bold;
-  padding: 6px 8px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 2px solid rgba(34, 113, 179, 1);
+  color: rgba(47, 47, 47, 1);
+  padding: .5em;
+  spacing: .5em;
+  font-size: 10pt;
+  min-width: 10em;
+  max-width: 20em;
   -cinnamon-caption-spacing: 8px;
+}
+
+.window-caption:focus {
+  color: white;
+  font-weight: bold;
+  background-color: rgba(34, 113, 179, 1);
+}
+
+.window-border {
+  border: 2px rgba(34, 113, 179, 1);
+  background-color: rgba(255, 255, 255, 0.05);
+  /* Cover rounded corners and some bad adjustment gaps */
+  box-shadow: 0 0 0 1px rgba(34, 113, 179, 1) inset;
 }
 
 .window-close {
   background-image: url("common-assets/misc/close.svg");
-  background-size: 26px;
-  height: 26px;
-  width: 26px;
-  -cinnamon-close-overlap: 10px;
+  height: 28px;
+  width: 28px;
+  -cinnamon-close-overlap: 13px;
 }
 
 .window-close:hover {
   background-image: url("common-assets/misc/close-hover.svg");
-  background-size: 26px;
-  height: 26px;
-  width: 26px;
-}
-
-.window-close:active {
-  background-image: url("common-assets/misc/close-active.svg");
-  background-size: 26px;
-  height: 26px;
-  width: 26px;
-}
-
-.window-close:rtl {
-  -st-background-image-shadow: 2px 2px 6px rgba(0, 0, 0, 0);
 }
 
 .window-close-area {
   background-image: url("common-assets/misc/trash-icon.png");
   background-size: 100px;
-  background-color: rgb(49, 111, 255);
+  background-color: rgba(34, 113, 179, 1);
   border: 0px solid white;
   border-bottom-width: 0px;
   border-radius: 20px 20px 0px 0px;
@@ -675,8 +625,16 @@ width: 26px;
   text-align: center;
 }
 
+.overview-empty-placeholder {
+  color: white;
+  text-shadow: black 5px 5px 5px;
+  font-weight: bold;
+  font-size: 48pt;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
 .expo-background {
-  background-color: rgba(20, 20, 20, 1);
+  background-color: rgba(47, 47, 47, 1);
 }
 
 .workspace-overview-background-shade {
@@ -689,8 +647,8 @@ width: 26px;
 }
 
 .expo-workspace-thumbnail-frame#active {
-  border: 1px solid rgb(49, 111, 255);
-  background-color: rgb(49, 111, 255);
+  border: 1px solid rgba(34, 113, 179, 1);
+  background-color: rgba(34, 113, 179, 1);
 }
 
 
@@ -699,7 +657,7 @@ width: 26px;
  * ===================================================================*/
 
 #LookingGlassDialog {
-    background-color: rgba(20, 20, 20, 0.85);
+    background-color: rgba(47, 47, 47, 0.85);
     spacing: 4px;
     padding: 4px;
     border: 2px solid grey;
@@ -717,14 +675,13 @@ width: 26px;
 .calendar {
   padding: .4em 1.75em;
   spacing-rows: 0px;
-  spacing-columns: 0px;
+  spacing-columns: 5px;
 }
 
 .calendar-month-label {
-  color: #ccc;
+  color: white;
   font-size: 10pt;
-  padding-bottom: 8px;
-  padding-top: 8px;
+  padding: 8px 0;
   font-weight: bold;
 }
 
@@ -768,36 +725,30 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
 .datemenu-date-label {
   padding: .4em 1.75em;
-  font-size: 10.5pt;
-  /*color: #ccc;*/
+  font-size: 12pt;
   font-weight: bold;
 }
 
 .calendar-day-base {
-  font-size: 8.5pt;
+  font-size: 9pt;
   text-align: center;
   width: 3em;
-  height: 2em; 
+  height: 2em;
 }
 
 .calendar-day-base:hover {
-  background-color: #fff;
-  /*color: white;*/
+  color: #fff;
 }
 
 .calendar-day-base:active {
-  /*background-color: rgb(49, 111, 255); */
-  border: 1px solid rgba(80, 80, 80, 1);
   font-weight: bold;
 }
 
 .calendar-day-heading {
-  /*color: white;*/
-  padding-top: 1em;
+  padding-top: 0.5em;
 }
 
 .calendar-week-number {
-  /*color: white;*/
   font-weight: bold;
 }
 
@@ -815,9 +766,9 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 .calendar-day-left:ltr {
   border-left-width: 0px;
 }
-  
+
 .calendar-day:rtl {
-  border: 0px solid #333333; 
+  border: 0px solid #333333;
   border-top-width: 0px;
   border-right-width: 0px;
 }
@@ -834,17 +785,16 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .calendar-nonwork-day {
-  background-color: rgba(30, 30, 30, 1);
+  background-color: rgba(47, 47, 47, 1);
 }
 
 .calendar-today {
   font-weight: bold;
-  background-color: rgba(80, 80, 80, 1);
+  background-color: rgba(34, 113, 179, 1);
 }
 
 .calendar-other-month-day {
-  color: #333;
-  background-color: rgba(20, 20, 20, 1);
+  color: #505050;
 }
 
 .calendar-day-with-events {
@@ -859,9 +809,8 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
 #notification {
   font-size: 9pt;
-  border: 1px solid rgba(45, 45, 45, 1);
-  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.60);
-  background-color: rgba(20, 20, 20, 1);
+  border: 1px solid rgba(70, 70, 70, 1);
+  background-color: rgba(47, 47, 47, 1);
   border-radius: 0px;
   padding: 8px 8px 8px 8px;
   spacing-rows: 10px;
@@ -870,7 +819,6 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
   width: 35em;
   color: white;
 }
-
 
 #notification .multi-line-notification {
   padding-bottom: 8px;
@@ -934,28 +882,20 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 #notification StEntry {
-  padding: 4px;
-  border-radius: 4px;
-  color: #a8a8a8;
-  selected-color: black;
-  border: 1px solid rgba(245, 245, 245, 0.2);
-  background-gradient-direction: vertical;
-  background-gradient-start: rgb(200, 200, 200);
-  background-gradient-end: white;
+  padding: 0 5px;
+  font-size: 10pt;
+  color: rgba(47, 47, 47, 1);
+  border: 0px solid rgba(34, 113, 179, 1);
   transition-duration: 300;
-  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.6);
-  caret-color: white;
+  background-color: rgba(255, 255, 255, 1);
+  selection-background-color: rgba(34, 113, 179, 1);
+  selected-color: white;
   caret-size: 1px;
 }
 
 #notification StEntry:focus {
-  border: 1px solid #8b8b8b;
-  color: #333333;
-  background-gradient-direction: vertical;
-  background-gradient-start: rgb(200, 200, 200);
-  background-gradient-end: white;
-  caret-color: #545454;
-  selection-background-color: #808080;
+  border-color: rgba(34, 113, 179, 1);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 /* ===================================================================
@@ -968,15 +908,13 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 #altTabPopup .switcher-list .item-box:selected  {
-  background-color: rgba(50, 50, 50, 0.8);
+  background-color: rgba(34, 113, 179, 1);
 }
 
 .switcher-list {
-  background: rgba(20, 20, 20, 1);
-  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.6);
-	border: 1px solid rgba(45, 45, 45, 1);
-	border-radius: 0px;
-	padding: 0px;
+  background: rgba(47, 47, 47, 1);
+	border: 1px solid rgba(70, 70, 70, 1);
+	border-radius: 4px;
 	font-size: 9pt;
   color: white;
   text-shadow: black 0px 0px 2px;
@@ -988,7 +926,7 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
 .thumbnail-scroll-gradient-left {
   background-gradient-direction: horizontal;
-  background-gradient-start: rgba(51, 51, 51, 1.0);
+  background-gradient-start: rgba(51, 51, 51, 1);
   background-gradient-end: rgba(51, 51, 51, 0);
   border-radius: 24px;
   border-radius-topright: 0px;
@@ -999,7 +937,7 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 .thumbnail-scroll-gradient-right {
   background-gradient-direction: horizontal;
   background-gradient-start: rgba(51, 51, 51, 0);
-  background-gradient-end: rgba(51, 51, 51, 1.0);
+  background-gradient-end: rgba(51, 51, 51, 1);
   border-radius: 24px;
   border-radius-topleft: 0px;
   border-radius-bottomleft: 0px;
@@ -1013,11 +951,11 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
 .switcher-list .item-box:outlined {
   padding: 6px;
-  border: 1px solid rgba(85, 85, 85, 1);
+  border: 1px solid rgba(41, 41, 41, 1);
 }
 
 .switcher-list .item-box:selected {
-  background-color: rgba(49, 111, 255, 1);
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .switcher-list {
@@ -1055,7 +993,7 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .switcher-preview-backdrop {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(255, 255, 255, 0.33);
 }
 
 
@@ -1065,15 +1003,10 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
 .modal-dialog {
     font-size: 12pt;
-    border-radius: 0px;
-    background-color: rgba(20, 20, 20, 1);
-    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.60);
-    border: 1px solid rgba(45, 45, 45, 1);
-    color: #fff;
-    padding-right: 42px;
-    padding-left: 42px;
-    padding-bottom: 30px;
-    padding-top: 30px;
+    background-color: rgba(47, 47, 47, 1);
+    border: 1px solid rgba(70, 70, 70, 1);
+    color: white;
+    padding: 30px 42px;
 }
 
 .modal-dialog-button-box {
@@ -1081,16 +1014,14 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .modal-dialog-button {
-    border-radius: 0px;
     font-size: 11pt;
     color: white;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px;
     padding: 4px 32px 5px;
 }
 
 .modal-dialog-button:disabled {
-    color: rgb(60, 60, 60);
+    color: rgba(150, 150, 150);
 }
 
 .modal-dialog-button:focus {
@@ -1101,14 +1032,10 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 .info-osd {
     font-size: 18pt;
     border-radius: 0px;
-    background-color: rgba(20, 20, 20, 1);
-    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.60);
-    border: 1px solid rgba(45, 45, 45, 1);
-    color: #fff;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    background-color: rgba(47, 47, 47, 1);
+    border: 1px solid rgba(70, 70, 70, 1);
+    color: white;
+    padding: 20px;
     text-align: center;
 }
 
@@ -1117,7 +1044,7 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
  * ===================================================================*/
 
 .run-dialog-label {
-  font-size: 10pt;
+  font-size: 0pt;
   color: #ccc;
   font-weight: bold;
   padding-bottom: 5px;
@@ -1139,16 +1066,20 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .run-dialog-entry {
+  padding-left: 5px;
   font-size: 10pt;
-  width: 270px;
-  height: 30px;
-  color: #ccc;
-  padding-left: 7px;
-  background-color: rgba(30, 30, 30, 0.8);
-  border: 1px solid rgba(80, 80, 80, 1);
-  selection-background-color: rgb(49, 111, 255);
+  min-width: 250px;
+  min-height: 25px;
+  border: solid 0px;
+  color: rgba(47, 47, 47, 1);
+  selection-background-color: rgba(34, 113, 179, 1);
   selected-color: white;
-  border-radius: 0px;
+  caret-size: 1px;
+}
+
+.run-dialog-entry {
+  border-color: rgba(34, 113, 179, 1);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .run-dialog {
@@ -1157,13 +1088,12 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
   padding-left: 21px;
   padding-bottom: 15px;
   padding-top: 15px;
-  background-color: rgba(20, 20, 20, 1);
-  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.60);
-  border: 1px solid rgba(45, 45, 45, 1);
+  background-color: #383838;
+  border: 1px solid rgba(41, 41, 41, 1);
 }
 
 .lightbox {
-  background-color: rgba(20, 20, 20, 0.4);
+  background-color: rgba(47, 47, 47, 0.5);
 }
 
 /* CinnamonMountOperation Dialogs */
@@ -1262,7 +1192,7 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
  * ===================================================================*/
 
 #keyboard {
-    background-color: rgba(20, 20, 20, 1);
+    background-color: rgba(47, 47, 47, 1);
 }
 
 .keyboard-layout {
@@ -1287,16 +1217,16 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
 .keyboard-key:grayed {
     color: #808080;
-    border-color:rgb(49, 111, 255)
+    border-color:rgba(34, 113, 179, 1)
 }
 
 .keyboard-key:checked, .keyboard-key:hover {
-    background: rgb(49, 111, 255);
+    background: rgba(34, 113, 179, 1);
     border: 0px solid white;
 }
 
 .keyboard-key:active {
-    background: rgb(49, 111, 255);
+    background: rgba(34, 113, 179, 1);
 }
 
 .keyboard-subkeys {
@@ -1320,68 +1250,52 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
  /* Main menu title */
  /* menu-background allows the menu applet to be themed separately from other applet menus */
 .menu-background {
-  background-color: rgba(20, 20, 20, 1);
+  background-color: rgba(47, 47, 47, 1);
 }
+
+.menu-top-box {
+  spacing: 10px;
+}
+
+.menu-systembuttons-box {}
 
 /* Main menu title */
 .menu-favorites-box {
-  padding: 1px;
-  background-color: rgba(30, 30, 30, 0.8);
-  border: 1px rgba(80, 80, 80, 1);
-  border-radius: 0px;
+  padding: 5px;
+  border: 1px solid rgba(70, 70, 70, 1);
+  background-color: rgba(60, 60, 60, 1);
   transition-duration: 300;
 }
 
 .menu-favorites-button {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
+  padding: 0.5em 0.5em;
 }
 
 .menu-favorites-button:hover {
-  color: white;
-  background-color: rgba(50, 50, 50, .8);
+  color:rgba(34, 113, 179, 1);
+  background-color: rgba(100, 100, 100, 0.40);
 }
 
 .menu-places-box {
-  padding: 5px;
+  padding: 10px;
   border: 0px solid #666;
 }
 
 .menu-places-button {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 
 .menu-categories-box {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 0px;
-  padding-bottom: 10px;
+  padding: 10px 10px 10px 15px;
 }
 
-.menu-applications-inner-box {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 0px;
-}
-
+.menu-applications-inner-box,
 .menu-applications-outer-box {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  }
+  padding: 5px 5px 0 10px;
+}
 
 .menu-application-button {
-  padding-top: 5px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 5px;
+  padding: 7px;
 }
 
 .menu-application-button:highlighted {
@@ -1390,12 +1304,13 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .menu-application-button-selected {
-  padding-top: 5px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 5px;
+  padding: 7px;
   color: white;
-  background-color: rgb(49, 111, 255);
+  background-color: rgba(34, 113, 179, 1);
+}
+
+.menu-application-button-selected:highlighted {
+  font-weight: bold;
 }
 
 .menu-application-button-selected:highlighted {
@@ -1412,31 +1327,26 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .menu-category-button {
-  padding-top: 7px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 7px;
+  padding: 7px;
   border: 0px solid rgba(0, 0, 0, 0);
   border-left: 2px;
 }
 
 .menu-category-button-greyed {
-  padding-top: 7px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 7px;
+  padding: 7px;
   color: white;
   border: 0px solid rgba(0, 0, 0, 0);
   border-left: 2px;
 }
 
+.menu-category-button-greyed StIcon {
+	opacity: 0.5;
+}
+
 .menu-category-button-selected {
-  padding-top: 7px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 7px;
+  padding: 7px;
   color: white;
-  border: 0px solid rgb(49, 111, 255);
+  border: 0px solid rgba(34, 113, 179, 1);
   border-left: 2px;
 }
 
@@ -1474,45 +1384,44 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .menu-selected-app-description {
-  max-width: 100px;
+  max-width: 150px;
 }
 
 .menu-search-box:ltr {
-  padding-left: 30px;
+  padding-left: 15px;
 }
 
 .menu-search-box:rtl {
-  padding-right: 30px;
+  padding-right: 15px;
 }
 
 #menu-search-entry {
-  padding-right: 5px;
-  padding-left: 5px;
-  color: white;
-  selection-background-color: rgb(49, 111, 255);
-  selected-color: white;
-  caret-color: white;
-  caret-size: 1px;
-  width: 270px;
-  height: 28px;
+  padding: 0 5px;
+  font-size: 10pt;
+  min-width: 250px;
+  min-height: 25px;
+  border: 0px solid;
+  color: rgba(47, 47, 47, 1);
   transition-duration: 300;
-  font-size: 1em;
+  selection-background-color: rgba(34, 113, 179, 1);
+  selected-color: white;
+  caret-size: 1px;
 }
 
-#menu-search-entry:focus, #menu-search-entry:hover,
-#menu-search-entry:checked, #menu-search-entry:active {
-  background-color: rgba(80, 80, 80, 0.8);
-  border-radius: 2px;
-  transition-duration: 300;
+#menu-search-entry:focus,
+#menu-search-entry:hover {
+  border-color: rgba(34, 113, 179, 1);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .menu-search-entry-icon {
   icon-size: 1.2em;
-  color: white;
+  color:rgba(47, 47, 47, 1);
 }
 
 /* Context menu (at the moment only for favorites) */
 .menu-context-menu {}
+
 
 /* ===================================================================
  * Window list (windowList.js)
@@ -1550,40 +1459,85 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
   spacing: 5px;
 }
 
-/*List panel bottom*/
-.panel-bottom .window-list-item-box:active, .panel-bottom .window-list-item-box:checked, .panel-bottom .window-list-item-box:focus {
-  border-image: url("common-assets/panel/window-list-bottom.svg") 9 9 9 9;
+.window-list-item-box.top StLabel,
+.window-list-item-box.bottom StLabel {
+  padding-left: 2px;
 }
 
-.panel-bottom .window-list-item-box:hover{
-  border-image: url("common-assets/panel/window-list-hover-bottom.svg") 9 9 9 9;
+/* List bottom */
+.window-list-item-box.bottom {
+  border-bottom-width: 2px;
 }
 
-/*List panel top*/
-.panel-top .window-list-item-box:active, .panel-top .window-list-item-box:checked, .panel-top .window-list-item-box:focus {
-  border-image: url("common-assets/panel/window-list-top.svg") 9 9 9 9;
+.window-list-item-box.bottom:hover {
+  border-color: rgba(34, 113, 179, 1);
 }
 
-.panel-top .window-list-item-box:hover {
-  border-image: url("common-assets/panel/window-list-hover-top.svg") 9 9 9 9;
+.window-list-item-box.bottom:checked,
+.window-list-item-box.bottom:focus {
+  background-color: rgba(200, 200, 200, 0.1);
+  border-color: rgba(34, 113, 179, 1);
 }
 
-/*List panel left*/
-.panel-left .window-list-item-box:active, .panel-left .window-list-item-box:checked, .panel-left .window-list-item-box:focus {
-  border-image: url("common-assets/panel/window-list-left.svg")9 9 9 9;
+.window-list-item-box.bottom:outlined {
+  border-color: rgba(34, 113, 179, 1);
 }
 
-.panel-left .window-list-item-box:hover {
-  border-image: url("common-assets/panel/window-list-hover-left.svg") 9 9 9 9;
+/* List top */
+.window-list-item-box.top {
+  border-top-width: 2px;
 }
 
-/*List panel right*/
-.panel-right .window-list-item-box:active, .panel-right .window-list-item-box:checked, .panel-right .window-list-item-box:focus {
-  border-image: url("common-assets/panel/window-list-right.svg") 9 9 9 9;
+.window-list-item-box.top:hover {
+  border-color: rgba(34, 113, 179, 1);
 }
 
-.panel-right .window-list-item-box:hover{
-  border-image: url("common-assets/panel/window-list-hover-right.svg") 9 9 9 9;
+.window-list-item-box.top:checked,
+.window-list-item-box.top:focus {
+  background-color: rgba(200, 200, 200, 0.1);
+  border-color: rgba(34, 113, 179, 1);
+}
+
+.window-list-item-box.top:outlined {
+  border-color: rgba(34, 113, 179, 1);
+}
+
+/*List left*/
+.window-list-item-left.left {
+  border-left-width: 2px;
+}
+
+.window-list-item-box.left:hover {
+  border-color: rgba(34, 113, 179, 1);
+}
+
+.window-list-item-box.left:checked,
+.window-list-item-box.left:focus {
+  background-color: rgba(200, 200, 200, 0.1);
+  border-color: rgba(34, 113, 179, 1);
+}
+
+.window-list-item-box.left:outlined {
+  border-color: rgba(34, 113, 179, 1);
+}
+
+/*List right*/
+.window-list-item-box.right {
+  border-right-width: 2px;
+}
+
+.window-list-item-box.right:hover {
+  border-color: rgba(34, 113, 179, 1);
+}
+
+.window-list-item-box.right:checked,
+.window-list-item-box.right:focus {
+  background-color: rgba(200, 200, 200, 0.1);
+  border-color: rgba(34, 113, 179, 1);
+}
+
+.window-list-item-box.right:outlined {
+  border-color: rgba(34, 113, 179, 1);
 }
 
 .window-list-item-demands-attention {
@@ -1596,15 +1550,199 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .window-list-preview {
-  background: rgba(20, 20, 20, 1);
-  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.60);
-  border: 1px solid rgba(45, 45, 45, 1);
+  background: rgba(47, 47, 47, 1);
+  box-shadow: 0px 0px 4px 2px rgba(20, 20, 20, 0.60);
+  border: 1px solid rgba(41, 41, 41, 1);
   border-radius: 0px;
   font-size: 9pt;
   color: white;
   text-shadow: black 0px 0px 2px;
   padding: 8px;
   spacing: 4px;
+}
+
+/* ===================================================================
+ * Grouped window list (grouped-window-list@cinnamon.org)
+ * ===================================================================*/
+
+.grouped-window-list-thumbnail-label {
+  padding-left: 4px;
+}
+
+.grouped-window-list-number-label {
+  z-index: 99;
+  color: white;
+}
+
+.grouped-window-list-badge {
+  border-radius: 256px;
+  background-color: rgb(100, 100, 100);
+  box-shadow: inset 0px 0px 0px 1px rgba(100, 100, 100, 1);
+}
+
+.grouped-window-list-button-label {
+  padding-left: 4px;
+}
+
+.grouped-window-list-thumbnail-alert {
+  background: rgba(255,52,52,0.3);
+}
+
+.grouped-window-list-item-box {
+  color: white;
+  padding: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition-duration: 100;
+  spacing: 0.5em;
+}
+
+.grouped-window-list-item-box.top {
+  border-radius: 0px 0px 2px 2px;
+}
+
+.grouped-window-list-item-box.left {
+  border-radius: 0px 2px 2px 0px;
+}
+
+.grouped-window-list-item-box.right {
+  border-radius: 2px 0px 0px 2px;
+}
+
+.grouped-window-list-item-box.top,
+.grouped-window-list-item-box.bottom {
+  padding: 0 0.5em;
+}
+
+.grouped-window-list-item-box.top StLabel,
+.grouped-window-list-item-box.bottom StLabel {
+  padding-left: 2px;
+}
+
+/* List bottom */
+.grouped-window-list-item-box.bottom {
+  border-bottom-width: 2px;
+}
+
+.grouped-window-list-item-box.bottom:hover,
+.grouped-window-list-item-box.bottom:focus:hover,
+.grouped-window-list-item-box.bottom:checked,
+.grouped-window-list-item-box.bottom:active:focus {
+  background-color: rgba(200, 200, 200, 0.1);
+  border-color: rgba(34, 113, 179, 1);
+ }
+
+ .grouped-window-list-item-box.bottom:active {
+  border-color: rgba(34, 113, 179, 1);
+ }
+
+/* List top */
+.grouped-window-list-item-box.top {
+  border-top-width: 2px;
+}
+
+.grouped-window-list-item-box.top:hover,
+.grouped-window-list-item-box.top:focus:hover,
+.grouped-window-list-item-box.top:checked,
+.grouped-window-list-item-box.top:active:focus {
+  background-color: rgba(200, 200, 200, 0.1);
+  border-color: rgba(34, 113, 179, 1);
+ }
+
+ .grouped-window-list-item-box.top:active {
+  border-color: rgba(34, 113, 179, 1);
+ }
+
+/* List left */
+.grouped-window-list-item-box.left {
+  border-left-width: 2px;
+}
+
+.grouped-window-list-item-box.left:hover,
+.grouped-window-list-item-box.left:focus:hover,
+.grouped-window-list-item-box.left:checked,
+.grouped-window-list-item-box.left:active:focus {
+  background-color: rgba(200, 200, 200, 0.1);
+  border-color: rgba(34, 113, 179, 1);
+ }
+
+ .grouped-window-list-item-box.left:active {
+  border-color: rgba(34, 113, 179, 1);
+ }
+
+/* List right */
+.grouped-window-list-item-box.right {
+  border-right-width: 2px;
+}
+
+.grouped-window-list-item-box.right:hover,
+.grouped-window-list-item-box.right:focus:hover,
+.grouped-window-list-item-box.right:checked,
+.grouped-window-list-item-box.right:active:focus {
+  background-color: rgba(200, 200, 200, 0.1);
+  border-color: rgba(34, 113, 179, 1);
+ }
+
+ .grouped-window-list-item-box.right:active {
+  border-color: rgba(34, 113, 179, 1);
+ }
+
+.grouped-window-list-item-demands-attention {
+  background-gradient-direction: vertical;
+  background-gradient-start: #F04A50;
+  background-gradient-end: #F04A50;
+}
+
+.grouped-window-list-item-box .progress {
+  background-color: rgba(49, 111, 255, .4);
+}
+
+.panel-top .grouped-window-list-item-box .progress {
+  border-radius: 0px 0px 2px 2px;
+}
+
+.panel-left .grouped-window-list-item-box .progress {
+  border-radius: 0px 2px 2px 0px;
+}
+
+.panel-right .grouped-window-list-item-box .progress {
+  border-radius: 2px 0px 0px 2px;
+}
+
+.grouped-window-list-thumbnail-menu {
+  background: rgba(47, 47, 47, 1);
+  border: 1px solid rgba(41, 41, 41, 1);
+  border-radius: 0px;
+  font-size: 9pt;
+  color: white;
+  text-shadow: black 0px 0px 2px;
+  padding: 8px;
+  spacing: 4px;
+}
+
+.grouped-window-list-thumbnail-menu .item-box {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  spacing: 4px;
+}
+
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+  padding: 6px;
+  border: 1px solid rgba(34, 113, 179, 1);
+}
+
+.grouped-window-list-thumbnail-menu .item-box:selected {
+  background: rgba(70, 70, 70, 1);
+}
+
+.grouped-window-list-thumbnail-menu .thumbnail {
+  width: 256px;
+}
+
+.grouped-window-list-thumbnail-menu .separator {
+  width: 1px;
+  background: rgba(255,255,255,0.2);
 }
 
 /* ===================================================================
@@ -1616,8 +1754,8 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
   height: 20px;
   padding: 0px;
   color: white;
-  background-color: rgba(20, 20, 20, 1);
-  border: 1px rgba(80, 80, 80, 1);
+  background-color: #404040;
+  border: 1px #292929;
   border-radius: 0;
 }
 
@@ -1639,7 +1777,8 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
 .sound-player StButton:hover, .sound-player StButton:active {
   color: white;
-  background-color: rgba(50, 50, 50, 1);
+  background-color: rgba(34, 113, 179, 1);
+  border: 1px rgba(34, 113, 179, 1);
 }
 
 .sound-player .slider {
@@ -1647,7 +1786,7 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
   -slider-height: 0.5em;
   -slider-background-color: #3c3c3c;
   -slider-border-color: rgba(0, 0, 0, 0);
-  -slider-active-background-color: rgba(49, 111, 255, 1);
+  -slider-active-background-color: rgba(34, 113, 179, 1);
   -slider-active-border-color: rgba(0, 0, 0, 0);
   -slider-border-width: 0px;
   -slider-handle-radius: 0px;
@@ -1665,7 +1804,7 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
   width: 300px;
   padding: 12px 16px;
   spacing: 0.5em;
-  background-color: rgba(20, 20, 20, 0.6);
+  background-color: rgba(47, 47, 47, 0.6);
   color: #ffffff;
 }
 
@@ -1702,15 +1841,15 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .workspace-button {
-  border: 1px rgba(80, 80, 80, 1);
+  border: 1px rgba(70, 70, 70, 1);
   color: white;
   padding: 0 8px;
   transition-duration: 300;
 }
 
 .workspace-button:outlined {
-  border: 1px rgba(80, 80, 80, 1);
-  background-color: rgba(50, 50, 50, 1);
+  border-color: rgba(34, 113, 179, 1);
+  background-color: rgba(34, 113, 179, 1);
   color: white;
 }
 
@@ -1721,13 +1860,13 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .workspace-graph .workspace {
-  background-color: rgba(30, 30, 30, 0.8);
-  border: 1px rgba(80, 80, 80, 1);
+  background-color: rgba(47, 47, 47, 1);
+  border: 1px solid rgba(70, 70, 70, 1);
 }
 
 .workspace-graph .workspace:active {
   border: 1px rgba(80, 80, 80, 1);
-  background-color: rgba(50, 50, 50, 0.8);
+  background-color: rgba(47, 47, 47, 1);
 }
 
 .workspace-graph .workspace .windows {
@@ -1760,6 +1899,13 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
   transition-duration: 300;
 }
 
+.panel-launchers .launcher {
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  transition-duration: 200;
+}
+
 .panel-launchers .launcher .icon-box {
   padding: 0 .1em;
 }
@@ -1768,26 +1914,9 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
   padding: .1em 0;
 }
 
-.panel-bottom .panel-launchers .launcher:hover {
-  /* background-color: rgba(204, 204, 204, 0.1); */
-  border-bottom-width: 4px;
+.panel-launchers .launcher:hover {
+  background-color: rgba(34, 113, 179, 1);
 }
-
-.panel-top .panel-launchers .launcher:hover {
-  /* background-color: rgba(204, 204, 204, 0.1); */
-  border-top-width: 4px;
-}
-
-.panel-left .panel-launchers .launcher:hover {
-  /* background-color: rgba(204, 204, 204, 0.1); */
-  border-left-width: 4px;
-}
-
-.panel-righ .panel-launchers .launcher:hover {
-  /* background-color: rgba(204, 204, 204, 0.1); */
-  border-right-width: 4px;
-}
-
 
 .panel-launcher-add-dialog-content-box-left {
   padding: 6px;
@@ -1800,26 +1929,22 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .panel-launcher-add-dialog-entry {
-  padding: 5px;
-  border-radius: 4px;
-  color: rgb(128, 128, 128);
-  border: 2px solid rgba(245, 245, 245, 0.2);
-  background-gradient-start: rgba(5, 5, 6, 0.1);
-  background-gradient-end: rgba(254, 254, 254, 0.1);
-  background-gradient-direction: vertical;
-  selected-color: black;
-  caret-color: rgb(128, 128, 128);
-  caret-size: 1px;
-  width: 250px;
+  padding: 0 5px;
+  font-size: 10pt;
+  min-width: 250px;
+  min-height: 25px;
+  color: rgba(47, 47, 47, 1);
+  border: 0px solid;
   transition-duration: 300;
-  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.6);
+  selection-background-color: rgba(34, 113, 179, 1);
+  selected-color: white;
+  caret-size: 1px;
 }
 
-.panel-launcher-add-dialog-entry:focus, .panel-launcher-add-dialog-entry:hover {
-  border: 2px solid rgb(136, 138, 133);
-  background-gradient-start: rgb(200, 200, 200);
-  background-gradient-end: #fff;
-  background-gradient-direction: vertical;
+.panel-launcher-add-dialog-entry:focus,
+.panel-launcher-add-dialog-entry:hover {
+  border-color: rgba(34, 113, 179, 1);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .panel-launcher-add-dialog-entry:hover {
@@ -1827,8 +1952,7 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .panel-launcher-add-dialog-entry:focus {
-  color: rgb(64, 64, 64);
-  font-weight: bold;
+  color: rgba(47, 47, 47, 1);
   transition-duration: 0;
 }
 
@@ -1885,10 +2009,7 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 }
 
 .applet-box.vertical {
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding: 3px 0;
 }
 
 .applet-box.vertical:hover {}
@@ -1918,18 +2039,18 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
 .applet-icon {
   color: #ccc;
-  icon-size: 1.45em;
+  icon-size: 22px;
 }
 
 .applet-box:checked .applet-icon,
 .applet-box:hover .applet-icon {
-  icon-shadow: white 0px 0px 3px;
+  color: #fff;
+  /* icon-shadow: white 0px 0px 3px; */
 }
 
 .applet-box.vertical:hover .applet-icon {
-  icon-shadow: white 0px 0px 3px;
+  /* icon-shadow: white 0px 0px 3px; */
 }
-
 
 /* ===================================================================
  * Desklets (desklet.js)
@@ -1945,7 +2066,7 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
 .desklet-with-borders {
   border: 0px solid #a5a5a5;
-  background-color: rgba(20, 20, 20, 0.8);
+  background-color: rgba(47, 47, 47, 0.8);
   color: #fff;
   border-radius-bottomleft: 12px;
   border-radius-bottomright: 12px;
@@ -1955,7 +2076,7 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
 .desklet-with-borders-and-header {
   border: 0px solid #a5a5a5;
-  background-color: rgba(20, 20, 20, 0.8);
+  background-color: rgba(47, 47, 47, 0.8);
   color: #fff;
   border-top: 1px;
   border-radius-bottomleft: 12px;
@@ -1968,7 +2089,7 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
   font-size: 10.5pt;
   border: 0px solid #a5a5a5;
   border-bottom: 0px;
-  background-color: rgba(20, 20, 20, 0.8);
+  background-color: rgba(47, 47, 47, 0.8);
   color: #fff;
   padding: 6px;
 }
@@ -2035,35 +2156,30 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
   text-shadow: black 5px 5px 5px;
   font-weight: bold;
   font-size: 48pt;
-  background-color: rgba(20, 20, 20, 0);
-  border: 1px solid rgba(45, 45, 45, 0);
   box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.6);
-  padding: 30px;
 }
 
 .expo-workspaces-name-entry {
-  padding: 5px;
-  color: #fff;
+  padding: 10px 5px;
+  font-size: 10pt;
   font-weight: bold;
-  background-color: rgba(45, 45, 45, 1);
-  border: 1px solid rgba(80, 80, 80, 1);
-  selected-color: rgba(49, 111, 255, 1);
-  caret-color: white;
-  caret-size: 1px;
   width: 250px;
-  height: 20px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 0px solid rgba(34, 113, 179, 1);
+  selection-background-color: rgba(34, 113, 179, 1);
+  selected-color: white;
+  caret-size: 1px;
+
 }
 
 .expo-workspaces-name-entry#selected {
-  background-color: rgba(49, 111, 255, 1);
-  border: 1px solid rgba(49, 111, 255, 1);
-  font-weight: bold;
+  background-color: rgba(34, 113, 179, 1);
   color: white;
 }
 
 .expo-workspaces-name-entry:focus {
-  color: rgb(255, 255, 255);
-  font-weight: bold;
+  color: rgba(47, 47, 47, 1);
   transition-duration: 300;
 }
 
@@ -2134,9 +2250,9 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 /* Media keys OSD popup */
 
 .osd-window {
-  background: rgba(20, 20, 20, 1);
-  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.60);
-  border: 1px solid rgba(45, 45, 45, 1);
+  background: rgba(47, 47, 47, 1);
+  box-shadow: 0px 0px 4px 2px rgba(20, 20, 20, 0.60);
+  border: 1px solid rgba(41, 41, 41, 1);
   border-radius: 0px;
   padding: 20px;
   color: white;
@@ -2156,18 +2272,18 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
 .tile-preview,
 .tile-hud {
-  background-color: rgba(85, 85, 85, 0.5);
+  background-color: rgba(41, 41, 41, 0.5);
   border: 2px solid rgba(134, 134, 134, 0.8);
 }
 
 .tile-preview, .tile-hud {
-  background-color: rgba(85, 85, 85, 0.5);
+  background-color: rgba(41, 41, 41, 0.5);
   border: 2px solid rgba(134, 134, 134, 0.8);
 }
 
 .tile-preview.snap, .tile-hud.snap {
   background-color: rgba(134, 134, 170, 0.5);
-  border: 2px solid rgba(85, 85, 85, 0.8);
+  border: 2px solid rgba(41, 41, 41, 0.8);
 }
 
 .tile-hud:top {
@@ -2222,5 +2338,5 @@ background-image: url("common-assets/misc/calendar-arrow-left.svg");
 * tray icons are not themed
 * ===================================================================*/
 .systray {
-  spacing: 3px;
+  spacing: 5px;
 }

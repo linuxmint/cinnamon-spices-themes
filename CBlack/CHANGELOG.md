@@ -1,3 +1,10 @@
+### Upadate 1.6
+* Compatible with cinnamon 4.
+* Added the new menu icon.
+* Added the new theme based on Linux Mint.
+* Each component now has white borders.
+* The use of images was removed to represent the selection of each component of the menu.
+
 ### Update 1.4
 * Changing the style of the calendar
 * Modified the folder list panel (gtk)
