@@ -1,0 +1,98 @@
+// panel.js
+
+@require "colors.styl"
+
+#panel
+	color: #ffffff
+	background-color: $dark
+	font-size: 8.5pt
+	font-weight: bold
+	height: 25px
+	width: 32px
+
+	&:highlight
+		background-color: red
+
+.panel-dummy
+	background-color: rgba(50, 50, 50, 0.4)
+
+	&:entered
+		background-color: rgba(255, 35, 35, 0.4)
+
+.panelLeft, .panelCenter, .panelRight
+	spacing: 3px
+
+.panelLeft, .panelRight
+	.vertical
+		padding: 0px
+
+$blendFactor = 0.8
+
+.panelLeft:dnd
+	background-color: blend(rgba($red, $blendFactor), $dark)
+
+.panelCenter:dnd
+		background-color: blend(rgba($green, $blendFactor), $dark)
+
+.panelRight:dnd
+		background-color: blend(rgba($blue, $blendFactor), $dark)
+
+.panel-status-button
+	border: 0px solid #8b8b8b
+	-natural-hpadding: 3px
+	-minimum-hpadding: 3px
+	font-weight: bold
+	color: #ccc
+	height: 22px
+
+	&:hover
+		color: white
+
+.system-status-icon
+	padding-left: 0px
+	padding-right: 0px
+	spacing: 0px
+	margin: 0px
+	icon-size: 1.15em
+
+	.warning
+		color: #e1da1a
+
+	.error
+		color: #d54444
+
+
+.panel-corner
+	-panel-corner-radius: 0px
+	-panel-corner-background-color: black
+	-panel-corner-inner-border-width: 2px
+	-panel-corner-inner-border-color: transparent
+	-panel-corner-outer-border-width: 1px
+	-panel-corner-outer-border-color: #536272
+
+	&:active, &:overview, &:focus
+		-panel-corner-inner-border-color: rgba(255,255,255,0.8)
+
+#appMenu
+	spacing: 4px
+
+.panel-button
+	-natural-hpadding: 6px
+	-minimum-hpadding: 2px
+	font-weight: bold
+	color: #ccc
+	transition-duration: 100
+
+	#appMenuIcon
+		app-icon-bottom-clip: 1px
+
+	&:active, &:checked, &:focus
+		#appMenuIcon
+			app-icon-bottom-clip: 2px
+
+	&:hover
+		color: white
+		text-shadow: black 0px 2px 2px
+
+.panel-menu
+	-boxpointer-gap: 4px

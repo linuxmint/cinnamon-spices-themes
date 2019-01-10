@@ -1,0 +1,82 @@
+@require "colors.styl"
+
+#notification
+	font-size: 8.5pt
+	border-radius: 1px
+	border: 1px solid $light
+	background-color: #3d3d3d
+	padding: 8px 8px 8px 8px
+	spacing-rows: 10px
+	spacing-columns: 10px
+	margin-from-right-edge-of-screen: 20px
+	width: 34em
+	color: white
+	font-weight: normal
+	box-shadow: 0.5px 0.5px 4px #080808
+
+	.multi-line-notification
+		padding-bottom: 8px
+		color: white
+
+/* We use row-span = 2 for the image cell, which prevents its height preferences to be
+	taken into account during allocation, so its height ends up being limited by the height
+	of the content in the other rows. To avoid showing a stretched image, we set the minimum
+	height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
+.notification-with-image
+	min-height: 159px
+	color: white
+
+#notification-scrollview
+	max-height: 10em
+
+	> .top-shadow, > .bottom-shadow
+		height: 1em
+
+	&:ltr > StScrollBar
+		padding-left: 6px
+
+	&:rtl > StScrollBar
+		padding-right: 6px
+
+#notification-body
+	spacing: 5px
+
+#notification-actions
+	spacing: 10px
+
+.notification-button
+	border-radius: 3px
+	padding: 4px 8px 5px
+
+.notification-icon-button
+	border-radius: 5px
+	padding: 5px
+
+	&:focus
+		padding: 4px
+
+	> StIcon
+		icon-size: 36px
+
+#notification StEntry
+	padding: 4px
+	border-radius: 4px
+	color: #a8a8a8
+	selected-color: black
+	border: 1px solid rgba(245,245,245,0.2)
+	background-gradient-direction: vertical
+	background-gradient-start: rgb(200,200,200)
+	background-gradient-end: white
+	transition-duration: 300
+	box-shadow: inset 0px 2px 4px rgba(0,0,0,0.6)
+	caret-color: #a8a8a8
+	caret-size: 1px
+
+	&:focus
+		border: 1px solid #8b8b8b
+		color: #333
+		background-gradient-direction: vertical
+		background-gradient-start: rgb(200,200,200)
+		background-gradient-end: white
+		caret-color: #545454
+		selection-background-color: #808080

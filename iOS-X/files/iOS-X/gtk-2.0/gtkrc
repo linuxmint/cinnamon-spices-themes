@@ -1,0 +1,245 @@
+# These are the defined colors for the theme, you can change them in GNOME's appearance preferences.
+
+gtk_color_scheme = "bg_color:#FAFAFA\nselected_bg_color:#456BF7\nbase_color:#fafafa" # Background, base.
+gtk_color_scheme = "fg_color:#212121\nselected_fg_color:#FAFAFA\ntext_color:#212121" # Foreground, text.
+gtk_color_scheme = "tooltip_bg_color:#C9CCEE\ntooltip_fg_color:#000" # Tooltips.
+gtk_color_scheme = "link_color:#08c" # Hyperlinks
+
+## Misc ##
+
+#gtk-icon-sizes = "gtk-button=16,16" # This makes button icons smaller.
+#gtk-button-images = 0 # Enables icons in buttons
+gtk-auto-mnemonics = 1 # Disables ugly lines under menu items
+
+## Default Style ##
+
+style "default" {
+    
+}
+
+## Widget Styles ##
+
+style "tooltips"
+{
+    xthickness = 3
+    ythickness = 3
+    
+    bg[NORMAL] = @tooltip_bg_color
+    fg[NORMAL] = @tooltip_fg_color
+    bg[SELECTED] = @tooltip_bg_color
+    
+    engine "murrine" 
+    {
+        roundness = 4
+    }
+}
+
+style "xfwm-tabwin"
+{
+	Xfwm4TabwinWidget::border-width = 1
+        Xfwm4TabwinWidget::border-alpha = 0.9
+	Xfwm4TabwinWidget::icon-size = 64
+	Xfwm4TabwinWidget::listview-icon-size = 16
+        Xfwm4TabwinWidget::preview-size = 512
+        Xfwm4TabwinWidget::alpha = 0.8
+        Xfwm4TabwinWidget::border-radius = 10
+
+	bg[NORMAL]	= shade (0.15, @bg_color)
+	bg[ACTIVE]	= shade (0.65, @selected_bg_color)
+	bg[PRELIGHT]	= shade (0.85, @selected_bg_color)
+	bg[SELECTED]	= shade (0.45, @bg_color)
+	
+	fg[NORMAL]	= shade (0.8, @base_color)
+	fg[ACTIVE]	= @base_color
+	fg[PRELIGHT]	= @base_color
+	
+	engine "murrine" {
+		roundness	    = 6
+		contrast            = 0.8
+		highlight_shade     = 1.00
+		lightborder_shade   = 1.0
+		gradient_shades     = {1.0,1.2,1.2,1.4}
+		border_shades       = { 1.5, 1.5 }
+		reliefstyle         = 0
+		shadow_shades	    = { 1.3, 1.7 }
+		textstyle = 1
+		text_shade = 0.25
+	}
+}
+
+style "xfwm-tabwin-button"
+{
+	font_name = "bold"
+}
+
+style "xfsm-logout"
+{
+	bg[NORMAL]      = @bg_color
+	bg[SELECTED]	= @selected_bg_color # Highlighting selection
+	fg[NORMAL]      = @fg_color
+	
+	engine "murrine" {
+		border_shades       = { 1.1, 0.98 }      # gradient to draw on border
+		contrast            = 0.8
+		focusstyle	    = 3
+		glowstyle           = 4                 # 0,1,2,3,4
+		gradient_shades     = {1.12,1.10,1.1,1.02}
+		highlight_shade     = 1.0
+		roundness	    = 3
+	}
+}
+
+## Import external style files ##
+
+include "styles/bars.rc"
+include "styles/buttons.rc"
+include "styles/check-radio.rc"
+include "styles/entry.rc"
+include "styles/frames.rc"
+include "styles/handlebox.rc"
+include "styles/label-icon.rc"
+include "styles/menus.rc"
+include "styles/notebook.rc"
+include "styles/scrolled-window.rc"
+include "styles/separators.rc"
+include "styles/sliders.rc"
+include "styles/views.rc"
+
+## Apply the styles to the appropriate widgets ##
+
+class "GtkWidget" style "default"
+class "GtkScrollbar" style "scrollbar"
+class "GtkButton" style "button"
+class "GtkEntry" style "entry"
+class "GtkOldEditable" style "entry"
+class "GtkSpinButton" style "spinbutton"
+class "GtkNotebook" style "notebook"
+class "GtkRange" style "scale"
+class "GtkProgressBar" style "progressbar"
+class "GtkScrolledWindow" style "scrolled-window"
+class "GtkFrame" style "frame"
+
+widget_class "*<GtkNotebook>*<GtkEventBox>" style "notebook"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>" style "notebook-fill"
+widget_class "*<GtkNotebook>*<GtkLayout>" style "notebook"
+widget_class "*<GtkNotebook>*<GtkViewport>" style "notebook"
+widget_class "*<GtkNotebook>*<GtkLabel>" style "notebook"
+
+widget_class "*<GtkStatusbar>*" style "statusbar"
+
+class "GtkTreeView" style "treeview"
+class "GtkToolbar" style "toolbar"
+
+widget_class "*<GtkCheckButton>*" style "check"
+widget_class "*<GtkRadioButton>*" style "check"
+
+widget_class "*<GtkMenuBar>*" style "menubar"
+widget_class "*<GtkMenu>*" style "menu"
+widget_class "*<GtkMenuItem>*" style "menu-item"
+widget_class "*<GtkSeparatorMenuItem>*" style "menu-item-separator"
+widget_class "*<GtkMenuBar>*<GtkMenuItem>*" style "menubar-menuitem"
+
+widget_class "*<GtkComboBox>" style "button"
+
+widget_class "*HandleBox" style "handlebox"
+
+widget_class "*GtkIconView" style "iconview"
+
+widget_class "*<GtkTreeView>*<GtkButton>*" style "treeview-header"
+
+widget_class "*<GtkFileChooserDefault>*<GtkToolbar>" style "inline-toolbar"
+widget_class "*<GtkFileChooserDefault>*<GtkToolbar>*<GtkButton>" style:highest "tool-button"
+
+widget_class "*<GtkNotebook>*<GtkToolbar>" style "notebook-toolbar"
+widget_class "*<GtkNotebook>*<GtkScrolledWindow>*<GtkViewport>"  style "notebook-fill"
+
+widget_class "*<GtkNotebook>*" style "notebook-close"
+
+widget_class "*GtkToolbar*GtkButton" style "tool-button"
+
+widget_class "*<GtkStatusbar>.<GtkFrame>" style:highest "statusbar-frame-fix"
+
+widget_class "*GtkSeparator" style "separator"
+widget_class "*GtkHSeparator" style "separator"
+widget_class "*GtkVSeparator" style "separator"
+widget_class "*GtkSeparatorToolItem" style "toolbar-separator"
+widget_class "*<GtkComboBox>*<GtkSeparator>" style "combobox-separator"
+
+widget "gtk-tooltip*" style "tooltips"
+
+widget "xfwm4-tabwin*"			style "xfwm-tabwin"
+widget "xfwm4-tabwin*GtkButton*"		style "xfwm-tabwin-button"
+widget_class "*XfsmLogoutDialog*"	style "xfsm-logout"
+
+# Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
+# Note that the work around assumes that the combobox is _not_ in
+# appears-as-list mode.
+# Similar hack also in the menuitem style.
+# This style does not affect GtkComboBoxEntry, it does have an effect
+# on comboboxes in appears-as-list mode though.
+style "combobox-text-color-workaround"
+{
+    text[NORMAL] = @fg_color
+    text[PRELIGHT] = @fg_color
+    text[SELECTED] = @selected_fg_color
+    text[ACTIVE] = @fg_color
+    text[INSENSITIVE] = darker (@bg_color)
+}
+widget_class "*.<GtkComboBox>.<GtkCellView>" style "combobox-text-color-workaround"
+
+style "menuitem-text-is-fg-color-workaround"
+{
+    text[NORMAL] = @fg_color
+    text[PRELIGHT] = @selected_fg_color
+    text[SELECTED] = @selected_fg_color
+    text[ACTIVE] = @fg_color
+    text[INSENSITIVE] = darker (@bg_color)
+}
+
+widget "*.gtk-combobox-popup-menu.*" style "menuitem-text-is-fg-color-workaround"
+
+# Work around the usage of GtkLabel inside GtkListItems to display text.
+# This breaks because the label is shown on a background that is based on the
+# base color set.
+style "fg-is-text-color-workaround"
+{
+    fg[NORMAL] = @text_color
+    fg[PRELIGHT] = @text_color
+    fg[ACTIVE] = @selected_fg_color
+    fg[SELECTED] = @selected_fg_color
+    fg[INSENSITIVE] = darker (@bg_color)
+}
+
+widget_class "*<GtkListItem>*" style "fg-is-text-color-workaround"
+widget_class "*<GtkCList>" style "fg-is-text-color-workaround"
+
+widget_class "*<GtkImage>*" style "text"
+widget_class "*.<GtkLabel>" style:highest "text"
+widget_class "*.<GtkMenuItem>.*" style:highest "text"
+widget_class "*<GtkMenuBar>*<GtkLabel>*" style:highest "inset-text"
+widget_class "*<GtkToolbar>*<GtkButton>*<GtkLabel>*" style:highest "inset-text"
+widget_class "*<GtkToolbar>*<GtkLabel>*" style:highest "inset-text"
+#widget_class "*<GtkButton>*<GtkLabel>*" style:highest "text"
+#widget_class "*<GtkButton>*<GtkImage>*" style:highest "text"
+
+# Application Styles
+
+include "styles/chrome.rc"
+include "styles/file-manager.rc"
+include "styles/inkscape.rc"
+include "styles/mintmenu.rc"
+include "styles/panel.rc"
+include "styles/synaptic.rc"
+include "styles/terminal.rc"
+include "styles/text-editor.rc"
+
+style "myfont" {
+    font_name = "HelveticaNeue"
+}
+widget_class "*" style "myfont"
+gtk-font-name = "HelveticaNeue"
+# Icon theme
+gtk-icon-theme-name = "Tango"
+
+# Toolbar style
+gtk-toolbar-style = GTK_TOOLBAR_ICONS

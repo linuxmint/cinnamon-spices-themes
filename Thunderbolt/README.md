@@ -7,4 +7,5 @@ This theme is based mainly on the artwork and colors of the Atolm Gnome Sehell t
     * Cinnamon 2.8 / Linux Mint 17.3
     * Cinnamon 3.0 / Linux Mint 18
     * Cinnamon 3.2 / Linux Mint 18.1
-    
+    * Cinnamon 3.4 / Linux Mint 18.2
+    * Cinnamon 3.6 / Linux Mint 18.3

@@ -1,0 +1,217 @@
+@define-color nemo_sidebar_bg #3e4243;
+@define-color nemo_sidebar_fg #fff;
+@define-color nemo_sidebar_selected_fg #fff;
+
+/********
+ * Nemo *
+ ********/
+
+/* sidebar */
+
+NemoWindow .sidebar .view,
+.nemo-window .sidebar {
+    -GtkWidget-focus-padding: 0;
+    -GtkTreeView-vertical-separator: 0;
+    background-color: @nemo_sidebar_bg;
+    color: @nemo_sidebar_fg;
+    text-shadow: none;
+    icon-shadow: none;
+}
+
+.nemo-window .sidebar {
+  color: #ffffff; }
+  .nemo-window .sidebar .view, .nemo-window .sidebar iconview, .nemo-window .sidebar row {
+    background-color: transparent;
+    color: #ffffff; }
+    .nemo-window .sidebar .view.cell:selected, .nemo-window .sidebar iconview.cell:selected, .nemo-window .sidebar row.cell:selected,
+    .nemo-window .sidebar .view.cell:selected:hover, .nemo-window .sidebar iconview.cell:selected:hover, .nemo-window .sidebar row.cell:selected:hover {
+      background-color: #009966;
+      color: #ffffff; }
+    .nemo-window .sidebar .view.cell:hover, .nemo-window .sidebar iconview.cell:hover, .nemo-window .sidebar row.cell:hover {
+      background-color: #464a4b;
+      color: #ffffff; }
+    .nemo-window .sidebar .view.expander, .nemo-window .sidebar iconview.expander, .nemo-window .sidebar row.expander {
+      color: rgba(123, 129, 141, 0.975); }
+      .nemo-window .sidebar .view.expander:hover, .nemo-window .sidebar iconview.expander:hover, .nemo-window .sidebar row.expander:hover {
+        color: #ffffff; }
+  .nemo-window .sidebar separator {
+    background-color: transparent; }
+
+.nemo-window .nemo-places-sidebar.frame {
+  border-width: 0; }
+
+.nemo-window notebook {
+  background-color: #e6e6e6; }
+
+.nemo-window .nemo-window-pane widget.entry {
+  border: 1px solid #c9c9c9;
+  border-radius: 3px;
+  color: #232323;
+  background-color: #e6e6e6; }
+
+.nemo-window .nemo-window-pane widget.entry:selected {
+  background-color: #229966;
+  color: #f7f7f7;
+}
+
+.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button {
+  color: rgba(207, 218, 231, 0.8);
+  border-color: rgba(21, 23, 28, 0.37);
+  background-color: rgba(95, 105, 127, 0.37); }
+  .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:not(:last-child):not(:only-child) {
+    margin: 0 0 1px 0; }
+  .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:hover {
+    background-color: rgba(134, 144, 165, 0.37); }
+  .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:active, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:checked {
+    color: #ffffff;
+    border-color: transparent;
+    background-color: #5294e2; }
+  .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:disabled {
+    color: rgba(207, 218, 231, 0.4); }
+
+.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button + button {
+  border-left-style: none; }
+
+.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:hover:not(:checked):not(:active):not(:only-child):hover {
+  box-shadow: inset 1px 0 rgba(21, 23, 28, 0.37), inset -1px 0 rgba(21, 23, 28, 0.37); }
+
+.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:hover:not(:checked):not(:active):not(:only-child):first-child:hover {
+  box-shadow: inset -1px 0 rgba(21, 23, 28, 0.37); }
+
+.nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:hover:not(:checked):not(:active):not(:only-child):last-child:hover {
+  box-shadow: inset 1px 0 rgba(21, 23, 28, 0.37); }
+
+
+NemoWindow .sidebar .view:selected {
+    border-color: @nemo_sidebar_bg;
+    color: @nemo_sidebar_selected_fg;
+    background-color: #009966;
+    text-shadow: 1px 1px alpha(black, 0.2);
+    icon-shadow: 1px 1px alpha(black, 0.2);
+}
+
+NemoWindow .sidebar .expander:selected {
+    border-color: @nemo_sidebar_selected_fg;
+    color: @nemo_sidebar_selected_fg;
+}
+
+NemoPlacesTreeView {
+    -NemoPlacesTreeView-disk-full-bg-color: shade(@theme_base_color, 0.85);
+    -NemoPlacesTreeView-disk-full-fg-color: shade(@theme_selected_bg_color, 0.9);
+    -NemoPlacesTreeView-disk-full-bar-width: 2px;
+    -NemoPlacesTreeView-disk-full-bar-radius: 1px;
+    -NemoPlacesTreeView-disk-full-bottom-padding: 2px;
+}
+
+NemoPlacesTreeView:selected {
+    -NemoPlacesTreeView-disk-full-bg-color: shade(@theme_selected_fg_color, 1.1);
+    -NemoPlacesTreeView-disk-full-fg-color: @theme_selected_bg_color;
+}
+
+NemoWindow .sidebar .scrollbar {
+    -GtkRange-slider-width: 10;
+}
+
+NemoWindow .sidebar .scrollbar.overlay-indicator:not(.dragging):not(.hovering) .slider {
+    background-color: @theme_bg_color;
+}
+
+NemoWindow .sidebar .frame {
+    border: none;
+}
+
+NemoWindow > GtkGrid > .pane-separator {
+    background-color: transparent;
+}
+
+.nemo-canvas-item {
+    border-radius: 3px;
+}
+
+.nemo-desktop.nemo-canvas-item {
+    color: @desktop_item_fg;
+    text-shadow: 1px 1px @desktop_item_text_shadow;
+}
+
+.nemo-desktop.nemo-canvas-item:selected {
+    background-color: alpha(@theme_selected_bg_color, 0.8);
+    background-image: none;
+    color: @theme_selected_fg_color;
+    text-shadow: none;
+}
+
+/* notebook */
+
+NemoView.frame,
+NemoNotebook.notebook {
+    border: solid;
+    border-width: 1px 0 0 1px;
+    border-color: shade(@theme_bg_color, 0.8);
+}
+
+NemoNotebook.notebook tab,
+NemoNotebook.notebook tab:active {
+    padding: 2px;
+}
+
+/* inactive pane */
+
+.nemo-inactive-pane .view {
+    background-color: shade(@theme_base_color, 0.93);
+    color: shade(@theme_fg_color, 1.2);
+}
+
+.nemo-inactive-pane .view:selected,
+.nemo-inactive-pane .nautilus-canvas-item:selected {
+    background-color: alpha(@theme_selected_bg_color, 0.85);
+    color: @theme_selected_fg_color;
+}
+
+/* small buttons on the nemo status bar */
+
+NemoWindow .toolbar .button.image-button {
+    padding: 0 5px;
+}
+
+NemoWindow .toolbar GtkStatusbar {
+}
+
+/* the fix above for the statusbar buttons also affects the primary toolbar so we need to reset the
+    padding for those buttons */
+
+NemoWindow .primary-toolbar.toolbar .button.image-button {
+    padding: 0 7px;
+}
+
+NemoWindow .primary-toolbar.toolbar .entry {
+    padding: 3px;
+}
+
+/*********************
+ * Cinnamon Settings *
+ *********************/
+
+.section-bg {
+    background-color: @notebook_bg;
+    box-shadow: inset 0 3px white,
+                inset -2px 0 @border,
+                inset 0 -2px @border,
+                inset 0 2px shade(@border, 1.15),
+                inset 2px 0 @border,
+                inset -1px 0 shade(@theme_bg_color, 0.93),
+                inset 1px 0 shade(@theme_bg_color, 0.93),
+                inset 0 1px @theme_bg_color,
+                inset 0 -1px shade(@theme_bg_color, 0.85);
+}
+
+.cs-header {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                            @toolbar_bg_a,
+                            @toolbar_bg_b);
+}
+
+.cs-category-view,
+.cs-category-view .view {
+    background-color: transparent;
+}

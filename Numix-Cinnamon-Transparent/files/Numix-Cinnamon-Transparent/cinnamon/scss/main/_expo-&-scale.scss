@@ -1,0 +1,123 @@
+/* ======================================
+ * ! Expo view
+ * ====================================== */
+
+.expo-background {
+    background: #333;
+    background-repeat: repeat;
+}
+
+.expo-workspace-thumbnail-frame {
+    border: 5px rgba(0, 0, 0, 0);
+    border-image: url("img/expo_scale/workspace-shadow.svg") 10;
+
+    &#active {
+        border: 5px rgba(0, 0, 0, 0);
+        border-image: url("img/expo_scale/workspace-shadow.svg") 10;
+    }
+}
+
+.workspace-thumbnails {
+    spacing: 23px;
+}
+
+/* This shades the workspace thumbnails */
+.workspace-thumbnails .workspace-overview-background-shade {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.expo-workspaces-name-entry {
+    border-image: url("img/expo_scale/expo-bg__dark.svg") 6;
+    height: 14px;
+    padding: 10px 12px;
+    text-align: center;
+    font-weight: bold;
+    color: $text-primary;
+
+    &#selected {
+        border-image: url("img/expo_scale/expo-bg__active.svg") 6;
+        color: $text-active;
+    }
+
+    &:focus,
+    &#selected:focus {
+        border-image: url("img/expo_scale/expo-bg__light.svg") 7;
+        caret-color: $text-primary;
+        selection-background-color: $accent-primary;
+    }
+}
+
+.workspace-close-button {
+    background-image: url("img/controls/close.svg");
+    background-size: 34px;
+    @include size(34px);
+    -cinnamon-close-overlap: 18px;
+
+    &:hover {
+        background-image: url("img/controls/close-hover.svg");
+    }
+
+    &:active {
+        background-image: url("img/controls/close-pressed.svg");
+    }
+}
+
+.workspace-add-button {
+    border-image: url("img/expo_scale/add-workspace-bg.svg") 6;
+    background-image: url("img/expo_scale/plus.svg");
+    background-size: 25px 24px;
+    height: 200px;
+    width: 35px;
+
+    &:hover {
+        border-image: url("img/expo_scale/add-workspace-bg.svg") 6;
+    background-image: url("img/expo_scale/plus-hover.svg");
+    }
+}
+
+.window-close-area {
+    border-image: url("img/expo_scale/workspace-close-area-bg.svg") 9;
+    background-image: url("img/expo_scale/trash.svg");
+    height: 100px;
+    width: 350px;
+}
+/* ======================================
+ * ! Windows overview
+ * ====================================== */
+
+/* The background for the scale view */
+.workspace-overview-background-shade {
+    background-color: rgba(#000, .65);
+}
+
+.window-caption {
+    border-image: url("img/expo_scale/expo-bg__dark.svg") 6;
+    color: $text-primary;
+    font-size: $font-size-base;
+    font-weight: bold;
+    padding: 6px 8px;
+    spacing: 25px;
+    -cinnamon-caption-spacing: 10px;
+
+    &#selected {
+        border-image: url("img/expo_scale/expo-bg__active.svg") 6;
+        color: $text-active;
+    }
+}
+
+.window-close {
+    background-image: url("img/controls/close.svg");
+    background-size: 41px;
+    @include size(41px);
+    -cinnamon-close-overlap: 24px;
+
+    &:hover {
+        background-image: url("img/controls/close-hover.svg");
+    }
+
+    &:active {
+        background-image: url("img/controls/close-pressed.svg");
+    }
+}
+
+.window-iconbox {}

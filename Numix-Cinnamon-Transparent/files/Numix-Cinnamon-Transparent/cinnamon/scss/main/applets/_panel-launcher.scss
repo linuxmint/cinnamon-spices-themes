@@ -1,0 +1,17 @@
+/* ======================================
+ * ! Panel Launchers Applet
+ * ====================================== */
+
+.panel-launchers { spacing: 0; }
+
+.launcher {
+    padding: 0 1px;
+
+    .vertical & { padding: 1px 0; }
+}
+
+@each $pos in top, bottom, left, right {
+    .panel-#{$pos} .launcher:hover {
+        border-image: url("img/containers/dark-bg.svg") 4;
+    }
+}

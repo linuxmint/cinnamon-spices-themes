@@ -138,6 +138,8 @@ StScrollBar StButton#vhandle:hover
         border-left: 1px;
         border-right: 1px;
 	    border-bottom: 1px;
+	-gradient-start: rgba(23,23,23,1);
+	-gradient-end: rgba(23,23,23,1);
 }
 .menu {
     color: #fff;
@@ -276,6 +278,10 @@ background-color: none;
     height: 40px;
 }
 
+#panel:highlight {
+background-color: #aa5555;
+}
+
 #panelLeft, #panelCenter {
     spacing: 4px;
 }
@@ -324,11 +330,13 @@ background-color: none;
 
 .panel-status-button,
 .panel-button {
--natural-hpadding: 5px;
--minimum-hpadding: 5px;
-font-weight: bold;
-border: 1px solid transparent;
-transition-duration: 150; 
+    -natural-hpadding: 5px;
+    -minimum-hpadding: 5px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition-duration: 150;
+    height: 29px;
+    icon-size: 1em;
 }
 
 .panel-status-button:hover,
@@ -352,8 +360,14 @@ transition-duration: 150;
 	padding-right: 0px;	
 	spacing: 0px;
 	margin: 0px;
+	icon-size: 1.14em;
 }
-
+.system-status-icon.warning {
+color: #e5e887;
+}
+.system-status-icon.error {
+color: #fb5858;
+}
 #appMenu {
     spacing: 4px;
 }
@@ -400,10 +414,6 @@ transition-duration: 150;
 
 .popup-menu-item-dot {
 
-}
-
-.system-status-icon {
-    icon-size: 1.14em;
 }
 
 /* ===================================================================
@@ -1545,7 +1555,6 @@ border-radius: 1px;
 /* Main menu title */
 
 .menu-favorites-box {  
-    margin: auto;
     padding: 0.5em;
 }
 .menu-favorites-button {
@@ -1564,7 +1573,6 @@ border-radius: 1px;
 }
 
 .menu-places-box {  
-  margin: auto;
   padding: 10px;
   border: 0px solid #666;  
 }
@@ -1760,6 +1768,128 @@ icon-size: 1em;
 	background-color: rgba(200,56,56,1);
  	color: #fff;
 }
+
+/* ===================================================================
+ * Grouped window list (grouped-window-list@cinnamon.org)
+ * ===================================================================*/
+
+.grouped-window-list-thumbnail-label {
+    padding-left: 4px;
+}
+.grouped-window-list-number-label {
+    z-index: 99;
+    text-shadow: black 1px 0px 2px;
+    font-size: 10px;
+    color:#fff;
+    padding: 0;
+}
+.grouped-window-list-badge {
+    border-radius: 256px;
+    background-color: #000000;
+}
+.grouped-window-list-button-label {
+    padding-left: 4px;
+}
+.grouped-window-list-thumbnail-alert {
+    background: rgba(255,52,52,0.3);
+}
+
+.grouped-window-list-item-box {
+     	color: #969696;
+         font-weight: bold;
+   	background-color: rgba(23,23,23,0.01);
+        border-radius: 0px;
+	transition-duration: 0;
+}
+.grouped-window-list-item-box.top {
+    border-radius: 0px 0px 2px 2px;
+}
+.grouped-window-list-item-box.left {
+    border-radius: 0px 2px 2px 0px;
+}
+.grouped-window-list-item-box.right {
+    border-radius: 2px 0px 0px 2px;
+}
+.grouped-window-list-item-box.top,
+.grouped-window-list-item-box.bottom {
+    padding: 0 0.5em;
+}
+
+.grouped-window-list-item-box:checked {
+    	background-color: rgba(200,56,56,1);
+        border-radius: 0px;
+	color: #fff;
+        font-weight: bold;
+	transition-duration: 250;
+}
+
+.grouped-window-list-item-box:focus,
+.grouped-window-list-item-box:active:focus {
+    	background-color: rgba(200,56,56,1);
+        border-radius: 0px;
+	color: #fff;
+        font-weight: bold;
+	transition-duration: 250; 
+}
+
+.grouped-window-list-item-box:hover {
+ background-color: rgba(23,23,23,0.02);
+        border-radius: 0px;
+	color: #fff;
+}
+
+.grouped-window-list-item-box:active { 
+     	color: #969696;
+         font-weight: bold;
+   	background-color: rgba(23,23,23,0.01);
+        border-radius: 0px;
+	transition-duration: 0;
+}
+
+.grouped-window-list-item-demands-attention {
+	background-color: rgba(200,56,56,1);
+ 	color: #fff;
+}
+
+.grouped-window-list-item-box .progress {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255,255,255,0.6);
+    background-gradient-end: rgba(255,255,255,0.3);
+    border-radius: 2px 2px 0px 0px;
+    box-shadow: inset 0px 0px 1px 1px rgba(170,170,170,0.5);
+}
+.panel-top .grouped-window-list-item-box .progress {
+    border-radius: 0px 0px 2px 2px;
+}
+.panel-left .grouped-window-list-item-box .progress {
+    border-radius: 0px 2px 2px 0px;
+}
+.panel-right .grouped-window-list-item-box .progress {
+    border-radius: 2px 0px 0px 2px;
+}
+
+.grouped-window-list-thumbnail-menu {
+}
+.grouped-window-list-thumbnail-menu .item-box {
+    padding: 10px;
+    border-radius: 8px;
+    spacing: 4px;
+}
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+    padding: 6px;
+    border: 2px solid rgba(165, 165, 165, 0.7)
+}
+.grouped-window-list-thumbnail-menu .item-box:selected {
+    background: rgba(255,255,255,0.33);
+}
+.grouped-window-list-thumbnail-menu .thumbnail {
+    width: 256px;
+}
+.grouped-window-list-thumbnail-menu .separator {
+    width: 1px;
+    background: rgba(255,255,255,0.33);
+}
+
 
 /* ===================================================================
  * Sound Applet (status/volume.js)
@@ -1959,6 +2089,7 @@ padding-bottom: 10px;
 	 padding-left: 6px;
     	padding-right: 6px;
 	transition-duration: 300;
+	spacing: 3px;
 }
 .applet-box:hover {
    	background-color: rgba(25,25,25,0.1);

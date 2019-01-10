@@ -1,0 +1,84 @@
+// calendar@cinnamon.org
+
+@require "colors.styl"
+
+.calendar
+	padding: .4em 1.75em
+	spacing-rows: 0.7em
+	spacing-columns: 0.7em
+
+.calendar-month-label
+	color: #cccccc
+	font-size: 1em
+	padding-bottom: 8px
+	padding-top: 8px
+	font-weight: bold
+
+.calendar-change-month-back, .calendar-change-month-forward
+	width: 18px
+	height: 12px
+	border-radius: 2px
+
+.calendar-change-month-back
+	background-image: url("calendar-arrow-left.svg")
+
+	&:rtl
+		background-image: url("calendar-arrow-right.svg")
+
+	&:hover
+		background-image: url("calendar-arrow-left-hover.svg")
+
+.calendar-change-month-forward
+	background-image: url("calendar-arrow-right.svg")
+
+	&:rtl
+		background-image: url("calendar-arrow-left.svg")
+
+	&:hover
+		background-image: url("calendar-arrow-right-hover.svg")
+
+
+.datemenu-date-label
+	padding: .4em 1.75em
+	font-size: 1.1em
+	text-align: center
+	color: #e0e0e0
+	font-weight: bold
+
+.calendar-day-base
+	font-size: 0.9em
+	text-align: center
+	width: 2.5em
+	height: 2.5em
+
+.calendar-day-heading
+	color: #d0d0d0
+	font-weight: bold
+	padding-top: 0.5em
+	/* there is yet no way to vertical-align, sadly */
+
+.calendar-week-number
+	color: #d0d0d0
+	font-weight: bold
+
+.calendar-work-day
+	color: #d0d0d0
+	font-weight: bold
+
+.calendar-nonwork-day
+	color: #c0c0c0
+	font-weight: normal
+
+.calendar-today
+	background: #d0d0d0
+	color: $dark
+	border-radius: 1.5em
+	font-weight: bold
+
+.calendar-other-month-day
+	color: #666
+	font-weight: normal
+
+.calendar-day-with-events
+	font-weight: bold
+	color: white

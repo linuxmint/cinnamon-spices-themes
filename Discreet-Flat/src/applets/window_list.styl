@@ -1,0 +1,129 @@
+// windowList.js
+
+@require "../colors.styl"
+
+bg-grad($color)
+	background-gradient-start: lighten($color, 10%)
+	background-gradient-end: $color
+
+.panel-top .window-list-box .window-list-item-box
+	border-radius: 0 0 0 5px
+
+	&:active, &:checked, &:focus, &:hover
+		border-radius: 0 0 0 3px
+
+.panel-bottom .window-list-box .window-list-item-box
+	border-radius: 5px 0 0 0
+
+	&:active, &:checked, &:focus, &:hover
+		border-radius: 3px 0 0 0
+
+.panel-top, .panel-bottom // horizontal
+	.window-list-box
+		padding-left: 10px
+		padding-top: 1px
+
+		.window-list-item-box
+			padding-left: 1px;
+			background-gradient-direction: horizontal
+			bg-grad($dark)
+			border: 0px solid #484848
+			border-left-width: 1px
+
+			&:active, &:checked, &:focus, &:running
+				bg-grad(#505050)
+				border: 0 solid black
+				padding-left: 2px
+
+				&:hover
+					bg-grad(#606060)
+					border-bottom: none
+
+			&:hover
+				bg-grad(#303030)
+				color: #e8e8e8
+				border-color: #4b4b4b
+				border-bottom: 0px
+
+			.progress
+				border-radius: 0 0 3px 3px
+
+.panel-left, .panel-right // vertical
+	.window-list-box
+		border: 0px solid #303030
+		border-top-width: 1px
+
+		.window-list-item-box
+			background-color: $dark
+
+			&:active, &:checked, &:focus, &:running
+				background-color: #505050
+
+				&:hover
+					background-color: #606060
+
+			&:hover
+				background-color: #303030
+				color: #e8e8e8
+
+.window-list-box
+	.window-list-item-box
+		transition-duration: 100
+
+		&:active, &:checked, &:focus, &:running
+			box-shadow: 0 0 3px #141414 inset
+
+			.progress
+				box-shadow: 0 0 3px #141414 inset
+
+		.progress
+			background-color: $accent
+
+.window-list-item-demands-attention, .grouped-window-list-item-demands-attention
+	bg-grad($accent-light)
+	color: $dark
+
+	&:hover
+		bg-grad($accent)
+
+
+// Grouped window list (grouped-window-list@cinnamon.org)
+
+.grouped-window-list-thumbnail-label
+	padding-left: 4px
+
+.grouped-window-list-number-label
+	z-index: 99
+	font-size: 10px
+	color: white
+	padding: 0
+
+.grouped-window-list-badge
+	border-radius: 256px
+	background-color: black
+
+.grouped-window-list-button-label
+	padding-left: 4px
+
+.grouped-window-list-item-box
+	box-shadow: inset 0px 0px 1px 1px rgba(170,170,170,0);
+	transition-duration: 100;
+	border-radius: 2px
+	border: 1px solid transparent
+	spacing: 0.5em;
+
+	&.top, &.bottom
+		padding: 0 0.5em;
+
+	&:hover
+		background-color: $light
+
+	&:active:focus
+		bg-grad($light)
+		border: 1px solid $light
+
+		&:hover
+			bg-grad($lighter)
+
+	.progress
+		background-color: $accent !important
