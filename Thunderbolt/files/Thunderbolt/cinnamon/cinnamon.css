@@ -145,7 +145,10 @@ StScrollBar StButton#vhandle:hover
    ! Tooltips
    ===================================================================*/
 #Tooltip {
-	background-color: rgba(122,122,122,1.0);
+	background-gradient-direction: vertical; 
+	background-gradient-start: rgba(196,196,196,1.0);
+	background-gradient-end: rgba(122,122,122,1.0);
+	background-color: rgba(196,196,196,1.0);
     border: 1px solid #222;
     border-radius: 3px;
 	box-shadow: 0px 1px 8px 4px rgba(0,0,0,0.4);
@@ -220,7 +223,8 @@ StScrollBar StButton#vhandle:hover
 }
 .popup-menu {
 	color: #ffffff;
-	font-size: 10pt;	
+	font-size: 10pt;
+	
 	/*padding-top: 0.6em;
 	padding-bottom: 0.6em;
 	padding-left: .2em;
@@ -236,7 +240,8 @@ StScrollBar StButton#vhandle:hover
 
 .menu {
     color: #ffffff;
-	font-size: 10pt;	    
+	   font-size: 10pt;
+	    
 	/*padding-top: 0.6em;
 	padding-bottom: 0.6em;
 	padding-left: .2em;
@@ -257,6 +262,7 @@ StScrollBar StButton#vhandle:hover
 .popup-menu-content {
 	color: #ffffff;
 	font-size: 10pt;
+	
 	padding-top: 0.6em;
 	padding-bottom: 0.6em;
 	padding-left: .2em;
@@ -335,7 +341,15 @@ StScrollBar StButton#vhandle:hover
 
 .popup-menu-item {
     padding: .4em 1.75em;
-	spacing: 1em;
+    spacing: 1em;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: inset  0px 1px 1px transparent;
+    color: #fff;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 22px;
+    padding-right: 22px;
 }
 
 .popup-menu-item:active {
@@ -346,10 +360,7 @@ StScrollBar StButton#vhandle:hover
     border-radius: 3px;
     box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
     color: #fff;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 22px;
-    padding-right: 22px;
+
 }
 
 .popup-menu-item:insensitive {
@@ -441,10 +452,16 @@ StScrollBar StButton#vhandle:hover
 
 #panel {
     color: #ffffff;
+	/*background-gradient-direction: vertical; 
+    background-gradient-start: #3C3C3C;
+    background-gradient-end: #3C3C3C;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+    border: 1px solid rgba(22,22,22,0.8);*/
 	font-size: 9pt;
 	font-weight: normal;
 	height: 32px;
 	width: 32px;
+	/*padding-right: 0px;*/
 }
 
 #panel:highlight {
@@ -460,8 +477,7 @@ StScrollBar StButton#vhandle:hover
     background-color: rgba(120,120,120,0.7);
 }
 
-#panelLeft, 
-#panelCenter {
+#panelLeft, #panelCenter {
     spacing: 4px;
 }
 
@@ -527,25 +543,45 @@ StScrollBar StButton#vhandle:hover
     padding-left: 0px;
 }
 
+
 .panel-top,
 .panel-bottom {
-    /*background-gradient-direction: vertical;
+    background-gradient-direction: vertical;
     background-gradient-start: #3C3C3C;
-    background-gradient-end: #3C3C3C;*/
-    /*background-color: #455061;*/
-    background-color: #3C3C3C;
-    /*border: 1px solid rgba(22,22,22,0.8);*/
-    /*box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5);*/
+    background-gradient-end: #3C3C3C;
+    border: 1px solid rgba(22,22,22,0.8);
+    /*box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.5);*/
 }
 
 .panel-left,
 .panel-right {
-    /*background-gradient-direction: horizontal;
+    background-gradient-direction: horizontal;
     background-gradient-start: #3C3C3C;
-    background-gradient-end: #3C3C3C;*/
-    background-color: #3C3C3C;
-    /*border: 1px solid rgba(22,22,22,0.8);*/
-    /*box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5);*/
+    background-gradient-end: #3C3C3C;
+    border: 1px solid rgba(22,22,22,0.8);
+    /*box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.5);*/
+}
+
+/* This styles the systray items */
+.panel-status-button {
+    border: 0px solid #8b8b8b;
+    -natural-hpadding: 3px;
+    -minimum-hpadding: 3px;
+    font-weight: bold;
+    color: #ccc;
+    height: 22px;
+
+}
+
+.panel-status-button:hover {
+    color: white;
+}
+
+.panel-status-button:active {
+    color: white;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(30,30,30,1);
+    background-gradient-end: rgba(50,50,50,1);
 }
 
 .system-status-icon {
@@ -561,6 +597,68 @@ StScrollBar StButton#vhandle:hover
 
 .system-status-icon.error {
     color: #fb5858;
+}
+
+/* Items in the bottom panel are shifted down by 1px.
+   This fixes it. */
+/*.panel-bottom .system-status-icon,
+.panel-bottom #appMenuIcon {
+  	padding-top: 1px;
+}*/
+.panel-corner {
+    -panel-corner-radius: 0px;
+	-panel-corner-background-color: black;
+	-panel-corner-inner-border-width: 2px;
+	-panel-corner-inner-border-color: transparent;
+	-panel-corner-outer-border-width: 1px;
+	-panel-corner-outer-border-color: #536272;
+}
+
+.panel-corner:active,
+.panel-corner:overview,
+.panel-corner:focus {
+    -panel-corner-inner-border-color: rgba(255, 255, 255, 0.8);
+}
+
+#appMenu {
+    spacing: 4px;
+}
+
+.panel-button #appMenuIcon {
+    app-icon-bottom-clip: 1px;
+}
+
+.panel-button:active #appMenuIcon,
+.panel-button:checked #appMenuIcon,
+.panel-button:focus #appMenuIcon {
+    app-icon-bottom-clip: 2px;
+}
+
+.panel-button {
+    -natural-hpadding: 6px;
+    -minimum-hpadding: 2px;
+    font-weight: bold;
+    color: #ccc;
+    transition-duration: 100;
+}
+
+.panel-button:hover {
+    color: white;
+    text-shadow: black 0px 2px 2px;
+}
+
+.panel-button:active,
+.panel-button:overview,
+.panel-button:focus {}
+
+.panel-button:active>.system-status-icon,
+.panel-button:checked>.system-status-icon,
+.panel-button:focus>.system-status-icon {
+    icon-shadow: black 0px 2px 2px;
+}
+
+.panel-menu {
+    -boxpointer-gap: 4px
 }
 
 .popup-menu-item-dot {}
@@ -715,16 +813,12 @@ StScrollBar StButton#vhandle:hover
 	border-radius: 4px;
 	border: 5px transparent;
 	border-image: url("workspace-shadow.svg") 6;
-    border-radius: 3px;
-	box-shadow: 0px 1px 8px 4px rgba(0,0,0,0.4);
 }
 
 .expo-workspace-thumbnail-frame#active {
 	border-radius: 4px;
 	border: 5px transparent;
 	border-image: url("workspace-shadow.svg") 6;
-    border-radius: 3px;
-	box-shadow: 0px 1px 8px 4px rgba(0,0,0,0.4);
 }
 .workspace-thumbnails {
   	spacing: 26px;
@@ -897,7 +991,38 @@ StScrollBar StButton#vhandle:hover
 	text-decoration: underline;
 }
 
+/* Hack used in lieu of border-collapse - see calendar.js */
+/*
+.calendar-day:ltr {
+    border: 0px solid #333333;
+    color: #cccccc;
+    border-top-width: 0;
+    border-left-width: 0;
+}
 
+.calendar-day-top:ltr {
+    border-top-width: 0px;
+}
+
+.calendar-day-left:ltr {
+    border-left-width: 0px;
+}
+
+.calendar-day:rtl {
+    border: 0px solid #333333;
+    color: #cccccc;
+    border-top-width: 0;
+    border-right-width: 0;
+}
+
+.calendar-day-top:rtl {
+    border-top-width: 1px;
+}
+
+.calendar-day-left:rtl {
+    border-right-width: 1px;
+}
+*/
 .calendar-work-day {
 	box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
 	background-color: rgba(114,113,113,1.0);
@@ -1451,19 +1576,20 @@ StScrollBar StButton#vhandle:hover
 
 
 /* Main menu title */
-/* menu-background allows the menu applet to be themed separately from other applet menus */
-.menu-background {
-
-}
 
 .menu-favorites-box {
+    margin: auto;
 	padding: 10px;
+	border-radius: 0px;
+    border: 0px;
+	border: 2px; 
+    border-color: rgba(82,82,82,1.0);
+	background-color: transparent;
+    /*box-shadow: 0px 1px 8px 4px rgba(0,0,0,0.8);*/
     box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
 	background-color: rgba(114,113,113,1.0);
     border: 1px solid #222;
     border-radius: 4px;
-	padding-top: 20px;
-	padding-bottom: 20px;
 }
 
 .menu-favorites-button {
@@ -1484,28 +1610,43 @@ StScrollBar StButton#vhandle:hover
 	border-radius: 4px;
 }
 
+/* Places */
+.menu-places-box {
+	margin: auto;
+	padding: 10px;
+	border: 0px solid #222;
+}
+.menu-places-button {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
 /* Categories */
 .menu-categories-box {
-	padding-top: 5px;
+	padding-top: 10px;
 	padding-left: 5px;
 	padding-right: 5px;
-	padding-bottom: 5px;
+	padding-bottom: 10px;
+    padding-top: 0.6em;
+	padding-bottom: 0.6em;
 	box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
 	background-color: rgba(82,82,82,1.0);
     border: 1px solid #222;
     border-radius: 4px;
+	min-width: 175px;
+
 }
 /* Applications */
 .menu-applications-inner-box {
-    padding-top: 5px;
+    padding-top: 10px;
     padding-left: 5px;
     padding-right: 5px;
-    padding-bottom: 5px;
-    box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
-	background-color: rgba(114,113,113,1.0);
-    border: 1px solid #222;
-    border-left: 0px solid #222;
-    border-radius: 4px;
+    padding-bottom: 10px;
+	border-radius: 0px;
+    border: 0px;
+	border: 1px transparent;
+
 }
 
 .menu-applications-outer-box {
@@ -1516,13 +1657,13 @@ StScrollBar StButton#vhandle:hover
 	spacing: 10px;
 	border: 1px transparent;
 }
+.menu-applications-box {
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+	border: 1px transparent;
 
-/* The right click menu */
-.menu-applications-inner-box StScrollView {
-    box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
-	background-color: rgba(163,162,162,1.0);
-    border: 1px solid #222;
-    border-radius: 4px;
 }
 
 .menu-application-button {
@@ -1532,6 +1673,7 @@ StScrollBar StButton#vhandle:hover
     padding-bottom: 7px;
 	border: 1px transparent;
 	max-width: 10px;
+
 }
 
 .menu-application-button:highlighted {
@@ -1580,7 +1722,6 @@ StScrollBar StButton#vhandle:hover
     padding-right: 7px;
     padding-bottom: 7px;
     color: #fbfbfb;
-	border: 1px transparent;
 }
 
 .menu-category-button-selected {
@@ -1605,6 +1746,12 @@ StScrollBar StButton#vhandle:hover
     padding-right: 5px;
 }
 
+.menu-category-button-button:hover {
+    background-color: #969696;
+    border-radius: 8px;
+}
+
+
 /* Name and description of the currently hovered item in the menu
  * This appears on the bottom right hand corner of the menu*/
 
@@ -1614,15 +1761,15 @@ StScrollBar StButton#vhandle:hover
 	text-align: right;
     height: 35px;
 	color: #fbfbfb;
-	margin: 10px;
 	border: 1px transparent;
+	margin: 10px;
 }
-/*
+
 .menu-selected-app-box:rtl {
     padding-top: 10px;
     height: 35px;
 }
-*/
+
 .menu-selected-app-title {
     font-weight: bold;
 }
@@ -1630,7 +1777,7 @@ StScrollBar StButton#vhandle:hover
 .menu-selected-app-description {
     max-width: 150px;
 }
-/*
+
 .menu-search-box:ltr {
     padding-left: 0px;
 	padding-right: 0px;
@@ -1639,13 +1786,13 @@ StScrollBar StButton#vhandle:hover
 .menu-search-box:rtl {
     padding-right: 0px;
 }
-*/
 .menu-search-box {
-	padding-bottom: 10px;
+	padding: 10px;
 	box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
 	background-color: transparent;
+	border: 0px solid #222;
 	border-radius: 4px;
-	border: 1px transparent;
+	border: 0px transparent;
 
 }
 
@@ -1657,17 +1804,16 @@ StScrollBar StButton#vhandle:hover
     selected-color: black;
     caret-color: white;
     caret-size: 2px;
-    /*min-width: 175px;
-    height: 20px;*/
+    min-width: 175px;
+    height: 20px;
     transition-duration: 300;
     box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
 	border: 1px solid #222;
-    width: 250px;
 }
 
 #menu-search-entry:focus, 
 #menu-search-entry:hover {
-	/*padding: 5px;*/
+	padding: 5px;
 	border-radius: 4px;
 	border: 1px solid #222;
 	box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
@@ -1678,7 +1824,7 @@ StScrollBar StButton#vhandle:hover
 }
 
 #menu-search-entry:focus {
-    /*font-size: 10pt;*/
+    font-size: 10pt;
     color: black;
     transition-duration: 300;
 }
@@ -1691,19 +1837,28 @@ StScrollBar StButton#vhandle:hover
 /* Context menu (styles application context menu) */
 
 .menu-context-menu {
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	padding-left: .2em;
+	padding-right: .2em;	
+	box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
+	background-color: rgba(114,113,113,1.0);
+    border: 1px solid #222;
+    border-radius: 4px;
 }
 
 /* ===================================================================
-   ! Window list applet (window-list@cinnamon.org/applet.js)
+   ! Window list (windowList.js)
    ===================================================================*/
 
 .window-list-box {
-    spacing: 3px;
+    spacing: 1px;
+    padding-left: 10px;
     padding-top: 1px;
 }
 
 .window-list-box.vertical {
-    spacing: 4px;
+    spacing: 3px;
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 10px;
@@ -1711,7 +1866,13 @@ StScrollBar StButton#vhandle:hover
 }
 
 .window-list-box.vertical #appMenuIcon {
-    /*padding-top: 3px;*/
+    padding-top: 3px;
+}
+
+.window-list-item-label {
+    font-weight: bold;
+    width: 15em;
+    min-width: 5px;
 }
 
 .window-list-item-box {
@@ -1722,34 +1883,7 @@ StScrollBar StButton#vhandle:hover
     border: 1px solid #222;
     border-radius: 3px;
     box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
-	padding: 1px;
-    padding-left: 5px;
-    padding-right: 5px;
-    transition-duration: 100;
-    spacing: 0.5em;
-}
-
-.window-list-item-box.top {
-    border-radius: 3px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.window-list-item-box.left {
-    border-radius: 3px;
-    padding-left: 0;
-    padding-right: 2px;
-}
-
-.window-list-item-box.right {
-    border-radius: 3px;
-    padding-left: 2px;
-    padding-right: 0;
-}
-
-.window-list-item-box.top,
-.window-list-item-box.bottom {
-    padding: 0 0.5em;
+	transition-duration: 100;
 }
 
 .window-list-item-box:active, 
@@ -1777,20 +1911,6 @@ StScrollBar StButton#vhandle:hover
     background-gradient-end: rgba(255, 144, 144, 0);
 }
 
-.window-list-preview {
-    color: #fff;
-    background-gradient-direction: vertical; 
-    background-gradient-start: #47586e;
-    background-gradient-end: #3e4247;
-background-color: rgba(82,82,82,1.0);
-    border: 1px solid #222;
-    border-radius: 4px;
-    box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);
-	padding: 6px 12px 12px 12px;
-    transition-duration: 100;
-    spacing: 0.5em;
-}
-
 .window-list-item-box .progress {
     background-gradient-direction: vertical;
     background-gradient-start: rgba(255,255,255,0.6);
@@ -1801,151 +1921,7 @@ background-color: rgba(82,82,82,1.0);
 }
 
 /* ===================================================================
- * Grouped window list (grouped-window-list@cinnamon.org)
- * ===================================================================*/
-.grouped-window-list-thumbnail-label {
-    padding-left: 4px;
-}
-.grouped-window-list-number-label {
-    z-index: 99;
-    color:#fff;
-}
-.grouped-window-list-badge {
-    border-radius: 256px;
-    background-color: #3C3C3C;
-    /*box-shadow: inset 0px 0px 0px 1px rgba(100, 100, 100, 0.5);*/
-}
-.grouped-window-list-button-label {
-    padding-left: 4px;
-}
-.grouped-window-list-thumbnail-alert {
-    background: rgba(255,52,52,0.3);
-}
-.grouped-window-list-item-box {
-    color: #fff;
-    background-color: rgba(163,162,162,0);
-    border: 1px solid transparent;
-    border-radius: 3px;
-    /*box-shadow: inset 1px 1px 1px rgba(255,255,255,0);
-    box-shadow: inset 0px 0px 0px 1px rgba(80, 80, 80, 0);*/
-    transition-duration: 100;
-    spacing: 0.5em;
-}
-.grouped-window-list-item-box.top {
-    border-radius: 3px;
-}
-.grouped-window-list-item-box.left {
-    border-radius: 3px;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-
-}
-.grouped-window-list-item-box.right {
-    border-radius: 3px;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-}
-.grouped-window-list-item-box.top,
-.grouped-window-list-item-box.bottom {
-    padding: 0 0.5em;
-}
-.grouped-window-list-item-box:active {
-	background-color: rgba(114,113,113,1.0);
-    border-radius: 3px;
-	/*box-shadow: inset 0px 1px 1px rgba(255,255,255,0.1);*/
-    border: 1px solid #222;
-}
-.grouped-window-list-item-box:checked,
-.grouped-window-list-item-box:focus {
-	background-color: rgba(196,196,196,1.0);
-    border: 1px solid #222;
-    border-radius: 3px;
-    /*box-shadow: inset 0px 1px 1px rgba(255,255,255,0.1);*/
-}
-
-.grouped-window-list-item-box:hover {
-    /*border-image: url("panel-button-highlight-wide-round3.svg");*/
-    background-color: rgba(196,196,196,0.9);
-    border: 1px solid #222;
-    border-radius: 3px;
-    /*box-shadow: inset 1px 1px 1px rgba(34,34,34,1);*/
-}
-.grouped-window-list-item-demands-attention {
-    background-gradient-start: rgba(255, 52, 52, 0);
-    background-gradient-end: rgba(255, 144, 144, 0);
-}
-
-.grouped-window-list-preview {
-    font-size: 9.5pt;
-    color: #fff;
-    background-color: rgba(82,82,82,1.0);
-    border: 1px solid #222;
-    border-radius: 4px;
-    /*box-shadow: inset  0px 1px 1px rgba(255,255,255,0.1);*/
-	padding: 6px 12px 12px 12px;
-    /*transition-duration: 100;*/
-    spacing: 0.5em;
-}
-
-.grouped-window-list-item-box .progress {
-    background-gradient-direction: vertical;
-    background-gradient-start: rgba(255,255,255,0.6);
-    background-gradient-end: rgba(255,255,255,0.3);
-    border-radius: 3px;
-	box-shadow: inset 0px 1px 1px rgba(255,255,255,0.1);
-    border: 1px solid #222;
-}
-.panel-top .grouped-window-list-item-box .progress {
-    border-radius: 3px;
-}
-.panel-left .grouped-window-list-item-box .progress {
-    border-radius: 3px;
-}
-.panel-right .grouped-window-list-item-box .progress {
-    border-radius: 3px;
-}
-.grouped-window-list-thumbnail-menu {
-    spacing: 4px;
-    background-gradient-direction: horizontal;
-    background-gradient-start: #3C3C3C;
-    background-gradient-end: #3C3C3C;
-    border: 1px; 
-    border-color: rgba(22, 22, 22, 0.9);
-    box-shadow: 0px 1px 8px 4px rgba(0,0,0,0.4);
-    border-radius: 4px;
-    padding: 20px;
-	font-size: 9.5pt;
-	color: white;
-	text-shadow: black 0px 0px 2px;
-}
-.grouped-window-list-thumbnail-menu .item-box {
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    spacing: 10px;
-    margin: 0.5em;
-}
-.grouped-window-list-thumbnail-menu .item-box:outlined {
-    padding: 10px;
-	background-color: rgba(82,82,82,1.0);
-    border: 1px solid #222;
-    border-radius: 4px;
-}
-.grouped-window-list-thumbnail-menu .item-box:selected {
-    background-color: rgba(114,113,113,1.0);
-    border: 1px solid #222;
-    border-radius: 4px;
-}
-.grouped-window-list-thumbnail-menu .thumbnail {
-    width: 256px;
-}
-.grouped-window-list-thumbnail-menu .separator {
-    width: 1px;
-    background: rgba(255,255,255,0.33);
-}
-
-/* ===================================================================
- * Sound applet (sound@cinnamon.org/applet.js)
+ * Sound Applet (sound@cinnamon.org)
  * ===================================================================*/
 
 .sound-player StButton {
@@ -2265,12 +2241,6 @@ background-color: rgba(82,82,82,1.0);
 	border: 1px solid transparent;
 }
 
-.panel-top .applet-box,
-.panel-bottom .applet-box {
-    spacing: 3px;
-}
-
-.applet-box:checked,
 .applet-box:hover {
     color: #fff;
 }
@@ -2291,24 +2261,20 @@ background-color: rgba(82,82,82,1.0);
 .applet-label {
     font-weight: bold;
     color: #ccc;
-    font-size: 1.15em;/*this styles the applet text size*/
 }
 
-.applet-box:checked > .applet-label,
-.applet-box:hover > .applet-label {
+.applet-box:hover>.applet-label {
     color: #fff;
     text-shadow: white 0px 0px 5px;
 }
 
-.applet-box.vertical:hover>.applet-label {
-}
+.applet-box.vertical:hover>.applet-label {}
 
 .applet-icon {
     color: #ccc;
     icon-size: 22px;
 }
 
-.applet-box:checked .applet-icon,
 .applet-box:hover .applet-icon {
     color: #fff;
     icon-shadow: white 0px 0px 3px;
@@ -2500,24 +2466,23 @@ background-color: rgba(82,82,82,1.0);
  * ===================================================================*/
 .tile-preview,
 .tile-hud {
-	/*background-gradient-direction: vertical; 
+	background-gradient-direction: vertical; 
 	background-gradient-start: rgba(95,95,95,0.7);
-	background-gradient-end: rgba(95,95,95,0.7);*/
-    background-color: rgba(95,95,95,0.7);
+	background-gradient-end: rgba(95,95,95,0.7);
     border: 1px; 
     border-color: rgba(22, 22, 22, 0.9);
-    /*box-shadow: 0px 1px 8px 4px rgba(0,0,0,0.4);*/
+    box-shadow: 0px 1px 8px 4px rgba(0,0,0,0.4);
 }
 
 .tile-preview.snap,
 .tile-hud.snap {
-	/*background-gradient-direction: vertical; 
+	background-gradient-direction: vertical; 
 	background-gradient-start: rgba(128,128,128,0.7);
-	background-gradient-end: rgba(128,128,128,0.7);*/
-    background-color: rgba(128,128,128,0.7);
+	background-gradient-end: rgba(128,128,128,0.7);
     border: 1px; 
     border-color: rgba(22, 22, 22, 0.9);
-    /*box-shadow: 0px 1px 8px 4px rgba(0,0,0,0.4);*/
+    box-shadow: 0px 1px 8px 4px rgba(0,0,0,0.4);
+
 }
 
 .tile-hud:top {
