@@ -1,0 +1,771 @@
+# *********************************************************************** 
+#                              J A D E   1
+#             
+#                           v2.0 (30.09.2017)
+#
+# ------------------------------------------------------------------------
+# Mixed light-dark gtk theme with green color accents developed for 
+# Linux Mint based upon Obsidian 2.
+#
+# Code available at Github:
+# https://github.com/madmaxms/theme-jade-1
+#
+# ------------------------------------------------------------------------
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+# *************************************************************************
+gtk_color_scheme = "base_color:#ffffff\nfg_color:#333333\ntooltip_fg_color:#EDEDED\nselected_bg_color:#24b069\nselected_fg_color:#ffffff\ntext_color:#1A1A1A\nbg_color:#D6D6D6\ntooltip_bg_color:#010204\nmenu_fg_color:#EEEEEE\nmenu_bg_color:#FEFEFE\nfocus_color:#00a060"
+
+gtk-icon-sizes = "gtk-button=16,16:\ngtk-dnd=16,16:\npanel=16,16:\ngtk-small-toolbar=16,16:\ngtk-large-toolbar=24,24:"
+
+gtk-button-images = 0
+gtk-auto-mnemonics = 1
+gtk-menu-popup-delay = 100
+
+style "murrine-default" {
+ GtkButton::child-displacement-x = 1
+ GtkButton::child-displacement-y = 1
+ GtkButton::default-border = { 0, 0, 0, 0 }
+ GtkCheckButton::indicator-size = 15
+ 
+ GtkWidget::new-tooltip-style = 1
+ GtkWidget::focus-line-width = 1
+ GtkWidget::focus-padding = 0 # Keeping this at 0 prevents the Firefox tabs from jumping a few pixels when you create a new tab. Set the value locally if needed.
+
+ GtkImage::x-ayatana-indicator-dynamic = 1
+
+ GtkScrollbar::has-backward-stepper = 0 
+ GtkScrollbar::has-forward-stepper = 0
+ GtkScrollbar::min-slider-length = 31
+ GtkScrollbar::slider-width = 9
+ GtkScrollbar::trough-border = 2
+ GtkScrollbar::activate-slider = 0
+
+ GtkScrolledWindow::scrollbar-spacing = 0
+ GtkScrolledWindow::scrollbars-within-bevel = 1
+
+ GtkPaned::handle-size = 3
+
+ GtkRange::trough-border = 0
+ GtkRange::slider-width = 15
+ GtkRange::stepper-size = 0
+ GtkRange::stepper_spacing = 0
+ GtkRange::trough-under-steppers = 0
+
+ GtkScale::slider-length = 15
+ GtkScale::slider-width = 15
+
+ GtkMenuBar::internal-padding = 0
+ GtkExpander::expander-size = 12
+ GtkToolbar::internal-padding = 0
+ GtkTreeView::expander-size = 12
+ GtkTreeView::indent-expanders = 1
+ GtkTreeView::vertical-separator = 1
+ GtkNotebook::tab-overlap = -1
+
+ GtkMenu::horizontal-padding = 0
+ GtkMenu::vertical-padding = 2
+
+ WnckTasklist::fade-overlay-rect = 0
+ # The following line hints to gecko (and possibly other appliations)
+ # that the entry should be drawn transparently on the canvas.
+ # Without this, gecko will fill in the background of the entry.
+ GtkEntry::honors-transparent-bg-hint = 1
+ GtkEntry::state-hint = 0
+ GtkEntry::progress-border = { 2, 2, 2, 2 }
+
+ GtkProgressBar::min-horizontal-bar-height = 20
+ GtkProgressBar::min-vertical-bar-width = 20
+ 
+ #GtkToolbar::shadow-type = GTK_SHADOW_NONE # Makes toolbars flat and unified.
+ #GtkMenuBar::shadow-type = GTK_SHADOW_NONE # Makes menus flat and unified.
+ GtkMenuBar::window-dragging = 1
+
+ # The little ugly gripper at the bottom right needs to go. Loss of usability for the
+ # sake of a more good-looking theme. You can remove this if you don't use Ubuntu 11.04.
+ GtkWindow::resize-grip-height = 0
+ GtkWindow::resize-grip-width = 0
+
+ xthickness = 1
+ ythickness = 1
+
+ fg[NORMAL]    = @fg_color
+ fg[PRELIGHT]   = @fg_color
+ fg[SELECTED]   = @selected_fg_color
+ fg[ACTIVE]    = @fg_color
+ fg[INSENSITIVE]  = "#333333"
+
+ bg[NORMAL]    = @bg_color
+ bg[PRELIGHT]   = shade (1.02, @bg_color)
+ bg[SELECTED]   = @selected_bg_color
+ bg[INSENSITIVE]  = @bg_color
+ bg[ACTIVE]    = shade (.9, @bg_color)
+
+ base[NORMAL]   = @base_color
+ base[PRELIGHT]  = shade (.95, @bg_color)
+ base[ACTIVE]   = shade (.9, @selected_bg_color)
+ base[SELECTED]  = @selected_bg_color
+ base[INSENSITIVE] = @bg_color
+
+ text[NORMAL]   = @text_color
+ text[PRELIGHT]  = @text_color
+ text[ACTIVE]   = @selected_fg_color
+ text[SELECTED]  = @selected_fg_color
+ text[INSENSITIVE] = darker (@bg_color)
+
+ engine "murrine" {
+  animation      = FALSE
+  arrowstyle     = 1   # Arrows
+  colorize_scrollbar = FALSE
+  comboboxstyle    = 2   # not colored combobox below the arrow
+  contrast      = .85  # .8 for less contrast, more than 1.0 for more
+                 # contrast on borders
+  expanderstyle    = 2   # buttons with plus and minus
+  focusstyle     = 1   # colored rectangle touching the borders
+  glazestyle     = 0   # 0 = flat highlight, 1 = curved highlight,
+                 # 2 = concave style, 3 = top curved highlight,
+                 # 4 = beryl highlight
+  gradient_shades    = { 1.01, 1.0, 1.0, .99 }
+  handlestyle        = 0   # three simple lines
+  highlight_shade    = 1.0  # set highlight amount for buttons or widgets
+  lightborder_shade  = 1.2  # sets lightborder amount for buttons or widgets
+  lightborderstyle   = 1   # 0 = lightborder on top side, 1 = lightborder
+                          # on all sides
+  listviewheaderstyle = 0   # 0 = flat, 1 = glassy, 2 = raised
+  listviewstyle       = 1   # 0 = nothing, 1 = dotted
+  menubaritemstyle    = 1   # 0 = menuitem look, 1 = button look
+  menubarstyle        = 0   # 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
+  menuitemstyle       = 0   # 0 = flat, 1 = glassy, 2 = striped
+  menustyle           = 0   # 0 = no vertical menu stripe, 1 = display
+                 # vertical menu stripe
+  progressbarstyle  = 0   # 0 = flat, 1 = stripped, 2 = blocks
+  reliefstyle       = 0   # 0 = flat, 1 = inset, 2 = shadow, 3 = shadow with gradient, 4 = stronger shadow with gradient
+  rgba              = FALSE # FALSE = disabled, TRUE = enabled
+  roundness         = 1   # 0 = squared, 1 = old default, more will
+                 # increase roundness
+  scrollbarstyle   = 0   # 0 = nothing, 1 = circles, 2 = handles,
+                         # 3 = diagonal stripes, 4 = diagonal stripes
+                         #     and handles, 
+                         # 5 = horizontal stripes,
+                         # 6 = horizontal stripes and handles
+  separatorstyle   = 0   # smooth separator
+  sliderstyle      = 0   # 0 = nothing added, 1 = handles
+  stepperstyle     = 1   # 0 = standard, 1 = integrated stepper handles,
+                         # 2 = unknown
+  toolbarstyle     = 0   # 0 = flat, 1 = glassy, 2 = gradient
+ }
+}
+
+style "murrine-nogap" {
+ xthickness  = 0
+ ythickness  = 0
+}
+
+style "murrine-wide" {
+ xthickness  = 2
+ ythickness  = 2
+}
+
+style "murrine-wider" {
+ xthickness  = 3
+ ythickness  = 3
+}
+
+
+# Buttons
+style "murrine-button" = "murrine-wider" {
+ xthickness = 3
+ ythickness = 3
+	
+ bg[NORMAL]        = shade (1.04, @bg_color)
+ bg[PRELIGHT]      = shade (1.06, @bg_color)
+ bg[ACTIVE]        = shade (0.85, @bg_color)
+
+ engine "murrine" {
+ gradient_shades = {1.15, .99, .99, .81}
+    contrast    = .82
+ }
+
+}
+
+style "murrine-entry" = "murrine-wider" {
+ xthickness = 3
+ ythickness = 3
+ 
+ bg[SELECTED] = mix (1.0, "#009b58", "#00844b")
+ fg[SELECTED] = @text_color
+
+ engine "murrine" {
+  border_shades = { 1.0, 1.0 }
+  contrast   = .7
+ }
+}
+
+style "murrine-notebook-bg" = "murrine-wider" {
+ bg[NORMAL]  = @bg_color
+ bg[ACTIVE]  = shade (.95, @bg_color)
+}
+
+style "murrine-notebook" = "murrine-notebook-bg" {
+}
+
+style "murrine-panel" {
+}
+
+# Menubar
+style "murrine-menubar" {
+}
+
+style "murrine-menubar-menuitem" = "murrine-wider" {
+  
+  fg[PRELIGHT]  = "#FFFFFF"
+  text[PRELIGHT] = @fg_color
+  bg[PRELIGHT]  = "#24b069"
+  bg[SELECTED]  = "#24b069"
+  
+
+ engine "murrine" {
+  contrast = .0
+ }
+}
+
+# Menu
+style "murrine-menu" = "murrine-nogap" {
+ bg[NORMAL] = "#393f3f" # menu background
+ fg[PRELIGHT] = "#FFFFFF"
+ text[ACTIVE] = "#FFFFFF"
+ GtkMenuItem::arrow-scaling = .5 # small arrow
+
+ engine "murrine" {
+  border_shades = { 1.0, 1.0 }
+  contrast   = .7
+  roundness = 0 # Radius of the menu items (inside menus)
+ }
+}
+
+style "murrine-menu-item" {
+ 
+    fg[NORMAL]          = @menu_fg_color
+    text[NORMAL]        = @menu_fg_color
+    text[PRELIGHT]      = @selected_fg_color
+    text[SELECTED]      = @selected_fg_color
+    text[ACTIVE]        = @menu_fg_color
+    fg[INSENSITIVE]     = "#6f6f6f"
+    text[INSENSITIVE]   = "#6f6f6f"
+
+    xthickness  = 3
+    ythickness  = 5
+}
+
+style "murrine-menuitem-separator" = "murrine-wide" {
+ engine "murrine" {
+  contrast  = 3.0
+ }
+}
+
+# Treeview
+style "murrine-treeview" {
+ bg[NORMAL] = @bg_color
+
+ engine "murrine" {
+  contrast = .6
+  roundness = 1 # The radius for progress bars insied treeview.
+ }
+}
+
+# Based on the default style so that the colors from the button
+# style are overriden again.
+style "murrine-treeview-header" = "murrine-wider" {
+ bg[NORMAL] = @bg_color
+}
+
+style "murrine-frame-title" {
+ fg[NORMAL] = lighter (@fg_color)
+}
+
+# Tooltip
+style "murrine-tooltips" = "murrine-wider" {
+bg[NORMAL] = @tooltip_bg_color
+fg[NORMAL] = @tooltip_fg_color
+bg[SELECTED] = @tooltip_bg_color
+}
+
+# Progressbar
+style "murrine-progressbar" = "murrine-nogap" {
+
+ fg[PRELIGHT] = @selected_fg_color
+
+ engine "murrine" {
+  # Explicitly set the radius, for progress
+  # bars inside menuitems
+  roundness = 1
+  gradient_shades = { 1.1, 1.0, 1.0, .95 }
+  trough_border_shades = { .98, 1.1 }
+ }
+}
+
+style "murrine-statusbar" = "murrine-wider" {
+}
+
+style "murrine-comboboxentry" = "murrine-wider" {
+}
+
+style "murrine-spinbutton" {
+}
+
+# Slider
+style "murrine-scale" {
+  GtkRange::slider-width = 15
+  GtkScale::slider-length = 15
+  bg[NORMAL] = @bg_color
+  bg[ACTIVE] = shade (.95, @bg_color)
+
+ engine "murrine" {
+  roundness = 15
+  gradient_shades = {1.5, 1.1, 1.1, .9}
+  trough_border_shades = { 1.7, 2.2 }
+  contrast = 1.5
+ }
+}
+
+# Scrollbar
+style "murrine-scrollbar" = "murrine-wider" {
+ bg[NORMAL] = shade (.65, @bg_color)
+ bg[PRELIGHT] = @selected_bg_color
+ bg[ACTIVE] = @selected_bg_color
+
+ engine "murrine" {
+ trough_shades = {0.85, 0.85}
+ border_shades = { 1.38, 1.38 }
+ contrast = .0
+ roundness = 3
+ }
+}
+
+style "murrine-hscale" {
+}
+
+style "murrine-vscale" {
+}
+
+# Check buttons pixmap style
+style "checkbutton" {
+ engine "pixmap" {
+ image {
+ function = CHECK
+ recolorable = TRUE
+ state = NORMAL
+ shadow = OUT
+ overlay_file = "pixmap/checkbox-unchecked-normal.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = CHECK
+ recolorable = TRUE
+ state = PRELIGHT
+ shadow = OUT
+ overlay_file = "pixmap/checkbox-unchecked-normal.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = CHECK
+ recolorable = TRUE
+ state = ACTIVE
+ shadow = OUT
+ overlay_file = "pixmap/checkbox-unchecked-normal.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = CHECK
+ recolorable = TRUE
+ state = INSENSITIVE
+ shadow = OUT
+ overlay_file = "pixmap/checkbox-unchecked-insensitive.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = CHECK
+ recolorable = TRUE
+ state = NORMAL
+ shadow = IN
+ overlay_file = "pixmap/checkbox-checked-normal.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = CHECK
+ recolorable = TRUE
+ state = PRELIGHT
+ shadow = IN
+ overlay_file = "pixmap/checkbox-checked-normal.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = CHECK
+ recolorable = TRUE
+ state = ACTIVE
+ shadow = IN
+ overlay_file = "pixmap/checkbox-checked-normal.png"
+ overlay_stretch = FALSE
+ }
+
+
+ image {
+ function = CHECK
+ recolorable = TRUE
+ state = INSENSITIVE
+ shadow = IN
+ overlay_file = "pixmap/checkbox-checked-insensitive.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = FLAT_BOX
+ recolorable = TRUE
+ stretch = TRUE
+ file = "pixmap/null.png"
+ border = {2, 2, 2, 2}
+ }
+
+#Fix buttons
+ image
+ {
+ function = FOCUS
+ recolorable = TRUE
+ file = "pixmap/button-focus.svg"
+ border = { 9, 9, 6, 9}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ recolorable = TRUE
+ detail = "buttondefault"
+ file = "pixmap/null.png"
+ border = { 0, 0, 0, 0}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ state = NORMAL
+ recolorable = TRUE
+ file = "pixmap/button-normal.svg"
+ border ={ 9, 9, 6, 9}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ recolorable = TRUE
+ state = PRELIGHT
+ shadow = OUT
+ file = "pixmap/button-prelight.svg"
+ border = { 9, 9, 6, 9}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ recolorable = TRUE
+ state = PRELIGHT
+ shadow = IN
+ file = "pixmap/button-pressed-prelight.svg"
+ border = { 9, 9, 7, 9}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ state = INSENSITIVE
+ shadow = OUT
+ file = "pixmap/button-inactive.svg"
+ border = { 9, 9, 6, 9}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ state = INSENSITIVE
+ shadow = IN
+ file = "pixmap/button-inactive.svg"
+ border = { 9, 9, 6, 9}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ state = ACTIVE
+ file = "pixmap/button-pressed.svg"
+ border = { 9, 9, 7, 9}
+ stretch = TRUE
+ }
+
+ }
+}
+
+style "radiobutton" {
+ engine "pixmap" {
+ image {
+ function = OPTION
+ recolorable = TRUE
+ state = NORMAL
+ shadow = OUT
+ overlay_file = "pixmap/radio-unchecked-active.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = OPTION
+ recolorable = TRUE
+ state = PRELIGHT
+ shadow = OUT
+ overlay_file = "pixmap/radio-unchecked-active.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = OPTION
+ recolorable = TRUE
+ state = ACTIVE
+ shadow = OUT
+ overlay_file = "pixmap/radio-unchecked-active.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = OPTION
+ recolorable = TRUE
+ state = INSENSITIVE
+ shadow = OUT
+ overlay_file = "pixmap/radio-unchecked-insensitive.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = OPTION
+ recolorable = TRUE
+ state = NORMAL
+ shadow = IN
+ overlay_file = "pixmap/radio-checked-normal.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = OPTION
+ recolorable = TRUE
+ state = PRELIGHT
+ shadow = IN
+ overlay_file = "pixmap/radio-checked-normal.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = OPTION
+ recolorable = TRUE
+ state = ACTIVE
+ shadow = IN
+ overlay_file = "pixmap/radio-checked-normal.png"
+ overlay_stretch = FALSE
+ }
+
+
+ image {
+ function = OPTION
+ recolorable = TRUE
+ state = INSENSITIVE
+ shadow = IN
+ overlay_file = "pixmap/radio-checked-insensitive.png"
+ overlay_stretch = FALSE
+ }
+
+ image {
+ function = FLAT_BOX
+ recolorable = TRUE
+ stretch = TRUE
+ file = "pixmap/null.png"
+ border = {2, 2, 2, 2}
+ }
+
+#Fix buttons
+ image
+ {
+ function = FOCUS
+ recolorable = TRUE
+ file = "pixmap/button-focus.svg"
+ border = { 9, 9, 6, 9}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ recolorable = TRUE
+ detail = "buttondefault"
+ file = "pixmap/null.png"
+ border = { 0, 0, 0, 0}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ state = NORMAL
+ recolorable = TRUE
+ file = "pixmap/button-normal.svg"
+ border ={ 9, 9, 6, 9}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ recolorable = TRUE
+ state = PRELIGHT
+ shadow = OUT
+ file = "pixmap/button-prelight.svg"
+ border = { 9, 9, 6, 9}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ recolorable = TRUE
+ state = PRELIGHT
+ shadow = IN
+ file = "pixmap/button-pressed-prelight.svg"
+ border = { 9, 9, 7, 9}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ state = INSENSITIVE
+ shadow = OUT
+ file = "pixmap/button-inactive.svg"
+ border = { 9, 9, 6, 9}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ state = INSENSITIVE
+ shadow = IN
+ file = "pixmap/button-inactive.svg"
+ border = { 9, 9, 6, 9}
+ stretch = TRUE
+ }
+ image
+ {
+ function = BOX
+ state = ACTIVE
+ file = "pixmap/button-pressed.svg"
+ border = { 9, 9, 7, 9}
+ stretch = TRUE
+ }
+ }
+}
+
+style "murrine-radiobutton" = "murrine-wider" {
+ ythickness  = 4
+ bg[PRELIGHT] = @selected_bg_color
+ bg[ACTIVE] = @selected_bg_color
+ bg[SELECTED] = @bg_color
+
+ engine "murrine" {
+ gradient_shades = {1.05, .99, .99, .91}
+    contrast    = .72
+ }
+
+}
+
+# Matches
+class "GtkWidget"               style "murrine-default"
+class "GtkToolbar"               style "murrine-default"
+class "GtkRange"                style "murrine-wide"
+class "GtkFrame"                style "murrine-wide"
+class "GtkSeparator"              style "murrine-wide"
+class "GtkEntry"                style "murrine-entry"
+class "GtkSpinButton"             style "murrine-spinbutton"
+class "GtkScale"                style "murrine-scale"
+class "GtkVScale"               style "murrine-vscale"
+class "GtkHScale"               style "murrine-hscale"
+class "GtkScrollbar"              style "murrine-scrollbar"
+class "GtkVScrollbar"             style "murrine-scrollbar"
+class "GtkHScrollbar"             style "murrine-scrollbar"
+widget "*PanelWidget*"             style "murrine-panel"
+widget "*PanelApplet*"             style "murrine-panel"
+widget "*fast-user-switch*"          style "murrine-panel"
+class "PanelApp*"               style "murrine-panel"
+class "PanelToplevel*"            style "murrine-panel"
+widget_class "*<GtkNotebook>*<GtkEventBox>"  style "murrine-notebook-bg"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>" style "murrine-notebook-bg"
+widget_class "*<GtkNotebook>*<GtkLayout>"   style "murrine-notebook-bg"
+widget_class "*<GtkButton>"          style "murrine-button"
+widget_class "*<GtkNotebook>"         style "murrine-notebook"
+widget_class "*<GtkStatusbar>*"        style : highest "murrine-statusbar"
+widget_class "*<GtkComboBoxEntry>*"      style "murrine-comboboxentry"
+widget_class "*<GtkCombo>*"          style "murrine-comboboxentry"
+widget_class "*<GtkMenu>*"           style "murrine-menu"
+widget_class "*<GtkMenuItem>*"         style "murrine-menu-item"
+widget_class "*<GtkSeparatorMenuItem>*"    style "murrine-menuitem-separator"
+widget_class "*<GtkMenuBar>*"         style "murrine-menubar"
+widget_class "*<GtkMenuBar>*<GtkMenuItem>*"  style "murrine-menubar-menuitem"
+widget_class "*.<GtkFrame>.<GtkLabel>"     style "murrine-frame-title"
+widget_class "*.<GtkTreeView>*"        style "murrine-treeview"
+widget_class "*<GtkProgressBar>"        style "murrine-progressbar"
+widget_class "*<GtkCheckButton>*"       style:highest "checkbutton"
+widget_class "*<GtkRadioButton>*"       style:highest "radiobutton"
+widget_class "*.<GtkTreeView>.<GtkButton>"   style "murrine-treeview-header"
+widget_class "*.<GtkCTree>.<GtkButton>"    style "murrine-treeview-header"
+widget_class "*.<GtkList>.<GtkButton>"     style "murrine-treeview-header"
+widget_class "*.<GtkCList>.<GtkButton>"    style "murrine-treeview-header"
+widget "gtk-tooltip*"             style "murrine-tooltips"
+
+# XFCE desktop icon text looks weird when murrine textstyle is on.
+style "xfdesktop-icon-view" { engine "murrine" { textstyle = 0 }}
+widget_class "*XfdesktopIconView*" style "xfdesktop-icon-view"
+
+# Invisible toolbar separator
+style "murrine-toolseparator" {
+	xthickness = 0
+  	ythickness = 0
+
+	engine "pixmap" {
+		image {
+			function	= BOX
+			file		= "pixmap/null.png"
+			border		= { 2, 2, 2, 2 }
+			stretch		= TRUE
+    		}
+ 	}
+}
+class "GtkSeparatorToolItem" style "murrine-toolseparator"
+
+# Various performance fixes if murrine textstyle is on by default in the theme.
+style "performance-fix" {engine "murrine" {textstyle = 0}}
+widget_class "*gtkmm__GtkWindow*"	style "performance-fix" # Inkscape
+widget_class "*GimpDisplayShell*"	style "performance-fix" # Gimp
+widget_class "*GimpToolbox*"		style "performance-fix"
+widget_class "*GimpMenuDock*"		style "performance-fix"
+widget "*OOoFixed*"			        style "performance-fix" # Openoffice/Libreoffice
+widget_class "*MozContainer*"		style "performance-fix" # Firefox (Not sure if this one does anything though.)
+
+### EXTERNAL FILES ###
+include "xfce.rc"
+include "menubar.rc"
+include "chrome.rc"

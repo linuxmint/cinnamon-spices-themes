@@ -1,4 +1,5 @@
 /* ###################################################################
+ * ** updated for Cinnamon 3.2  **
  * Section common with Gnome Shell
  * ... contains a few cinnamon specific styles (rare occurences) 
  * ###################################################################*/
@@ -152,26 +153,36 @@ StScrollBar StButton#vhandle:hover
  * PopupMenu (popupMenu.js) 
  * ===================================================================*/
 
-.popup-menu-boxpointer {
-    -arrow-border-radius: 6px 6px 6px 6px;
-/*    -arrow-background-color: #2374DB; 
-    -arrow-border-width: 2px;
-    -arrow-border-color: #1854C2; 
-    -arrow-base: 0px;
-    -arrow-rise: 0px;
-    -boxpointer-gap: 0px; */
-    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
+.popup-menu-boxpointer {}
 
-}
-
-.popup-menu {
+.popup-menu, .menu {
 	color: white;
 	min-width: 100px;
 	padding-left: 5px;
 	padding-right: 5px;
-	border-image: url('menu-blue.png') 12;
-	border-radius: 6px;
+	border-image: url('menu-blue.png') 100;
 }
+
+  .menu.top {
+    border-radius: 0 0px 6px 6px;
+	border-top: 0px;
+}
+  .menu.bottom {
+    border-radius: 6px 6px 0 0px; 
+	border-bottom: 0px;
+}
+
+  .menu.left {
+    border-radius: 0 6px 6px 0px;
+    border-left: 0px;
+}
+  .menu.right {
+    border-radius: 6px 0px 0 6px;
+	border-right: 0px;
+}
+  .menu-arrow {
+    icon-size: 24px; }
+
 
 .popup-menu StEntry {
 	padding: 4px 12px;
@@ -235,7 +246,6 @@ StScrollBar StButton#vhandle:hover
 .popup-combo-menu {
     background-color: rgb(22,225,225);
     padding: 1em 0.1em;
-    /*color: rgb(70,70,70);*/
     color: white;
     border: 1px solid rgba(40,40,40,0.4);
     border-radius: 4px;
@@ -306,7 +316,6 @@ StScrollBar StButton#vhandle:hover
 
 .popup-subtitle-menu-item {
 	font-weight: bold;
-/*	color: rgb(70,70,70);*/
 	color: white;
 }
 
@@ -326,10 +335,15 @@ StScrollBar StButton#vhandle:hover
     color: #000;
     font-size: 9pt;
     height: 28px;
-    padding: 0px;
-	border-image: url('panel.png') 80 0 0 0;
+    width: 48px;
+	background-gradient-start: #2660dd;
+	background-gradient-end: #4993e6;
+	background-gradient-direction: horizontal;
 }
-
+#panel:highlight {
+background-color: #aa5555;
+border-image: none;
+}
 #panelLeft, #panelCenter {
     spacing: 1px;
 }
@@ -363,28 +377,28 @@ StScrollBar StButton#vhandle:hover
 }
 
 #panelLeft:ltr {
-    padding-right: 4px;
+    padding-right: 0px;
 }
 
 #panelLeft:rtl {
-    padding-left: 4px;
+    padding-left: 0px;
 }
 
 #panelRight:ltr {
-    padding-left: 5px;
-    spacing: 0px;
+    padding-left: 0px;
 }
 
 #panelRight:rtl {
-    padding-right: 5px;
-    spacing: 0px;
+    padding-right: 0px;
 }
 
-.panel-top {
+.panel-top {	border-image: url('panel.png') 80 0 0 0;
 }
 
-.panel-bottom {
+.panel-bottom {	border-image: url('panel.png') 80 0 0 0;
 }
+.panel-left: {}
+.panel-right: {}
 
 .panel-status-button {
     border: 0px solid rgba(0,0,0,0);
@@ -1802,10 +1816,14 @@ StScrollBar StButton#vhandle:hover
  
 .window-list-box {
     spacing: 0px;
-    padding-top: 2px;
-    padding-bottom: 2px;
 }
-
+.window-list-box.vertical {
+    spacing: 1px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px; }
+    
 .window-list-item-label {
     width: 15em;
     min-width: 5px;
@@ -1814,9 +1832,6 @@ StScrollBar StButton#vhandle:hover
 .window-list-item-box {
 	font-weight: normal; 
 	color: white;
-    padding-top: 1px;
-	padding-left: 4px;
-	padding-right: 4px;
 	border-image: url("hover-xp3.png") 6;
 }
 
@@ -1841,6 +1856,11 @@ StScrollBar StButton#vhandle:hover
 .window-list-item-demands-attention {
      border-image: url("attention.png") 6;
 }
+.window-list-preview {
+	color: white;
+    padding: 8px 12px 12px 12px;
+	border-image: url('menu-blue.png') 100;
+}
 /* ===================================================================
  * Sound Applet (status/volume.js)
  * ===================================================================*/
@@ -1849,23 +1869,32 @@ StScrollBar StButton#vhandle:hover
     padding-right: 3px;
     padding-left: 3px;
 }
+.sound-player-overlay {
+    width: 300px;
+    padding: 12px 16px;
+    spacing: 0.5em;
+    background-color: rgba(0,0,0,0.7);
+    color: #ffffff;
+    border-top: 0;
+}
 
-.sound-button {
-    width: 22px;
+.sound-player StButton{
+    color: white;
+    width: 30px;
     height: 22px;
     padding: 5px;
     border-image: url("hover-xp3.png") 4;
 }
 
-.sound-button:hover {
+.sound-player StButton:hover{
     border-image: url("hover-xp1-a.png") 4;
 }
 
-.sound-button:active {
+.sound-player StButton:active {
     border-image: url("pressed-xp.png") 4;
 }
 
-.sound-button StIcon {
+.sound-player StButton StIcon {
     icon-size: 1.4em;
 }
 
@@ -1908,8 +1937,15 @@ StScrollBar StButton#vhandle:hover
    icon-size: 1em;
 }
 
-.sound-seek-slider {
-   width: 140px;
+.sound-player .slider {
+    height: 0.5em;
+    -slider-height: 0.5em;
+    -slider-background-color: rgba(0,0,0,0.7);
+    -slider-border-color: rgba(0,0,0,0);
+    -slider-active-background-color: rgba(145,255,27,0.6);
+    -slider-active-border-color: rgba(0,0,0,0);
+    -slider-border-width: 0px;
+    -slider-handle-radius: 0px;
 } 
 
 .sound-volume-menu-item {
@@ -1927,6 +1963,10 @@ StScrollBar StButton#vhandle:hover
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.sound-player-generic-coverart {
+    background: rgba(0,0,0,0);
 }
 /* ===================================================================
  * Workspace Switcher applet (workspaceSwitcher.js)
@@ -1981,19 +2021,26 @@ StScrollBar StButton#vhandle:hover
  * Panel Launchers Applet (panelLaunchers.js)
  * ===================================================================*/
 
-#panel-launchers-box {
-    padding-top: 2px;
-    padding-bottom: 2px;
+#panel-launchers-box, .panel-launchers{
+    spacing: 1px;
 }
 
-.panel-launcher {
+.panel-launchers.vertical {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    spacing: 3px;
+}
+
+.launcher {
     margin: 0px;
     padding: 2px;
     padding-left: 4px;
     padding-right: 4px;
 }
 
-.panel-launcher:hover {
+.panel-launcher:hover, .panel-launchers .launcher:hover {
     border-image: url("hover-xp1-a.png") 6;
 }
 
@@ -2068,6 +2115,13 @@ StScrollBar StButton#vhandle:hover
     padding-left: 4px;
     padding-right: 4px;
     padding-top: 1px;
+}
+
+.applet-box.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .applet-box:hover {
@@ -2229,7 +2283,7 @@ StScrollBar StButton#vhandle:hover
  * Snap/Tile OSD Popup
  * ===================================================================*/
 
-.snap-osd {
+.snap-osd, .osd-window, .info-osd {
    	font-size: 18pt;
     border-image: url("bg-1.png") 6;
     padding: 8px 8px 8px 8px;

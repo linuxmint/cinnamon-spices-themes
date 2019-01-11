@@ -1,0 +1,90 @@
+/* ======================================
+ * ! Sticky Notes desklet
+ * ====================================== */
+
+#sticky-scrollview StScrollBar {
+    padding: 0;
+    padding-left: 2px;
+}
+
+.sticky-button {
+    @include size(24px);
+
+    &-selected {
+        border-image: none;
+        height: 24px;
+        width: 24px;
+    }
+
+    &-selected * { color: $accent-primary; }
+
+    &-box {
+        padding: 0;
+        height: 24px;
+    }
+}
+
+.sticky-main-box-staples {
+    border-image: url("img/containers/dark-bg.svg") 7;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0;
+    text-shadow: none;
+    min-width: 210px;
+    padding: 4px 10px;
+    padding-top: 0;
+    font-weight: bold;
+    color: $text-primary;
+}
+
+.sticky-main-box-none {
+    border-image: url("img/containers/dark-bg.svg") 7;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0;
+    text-shadow: none;
+    min-width: 210px;
+    padding: 4px 10px;
+    padding-top: 0;
+    font-weight: bold;
+    color: $text-primary;
+}
+
+.sticky-top-box {
+    font-weight: bold;
+    color: $text-primary;
+}
+
+.sticky-bottom-box {
+    font-weight: bold;
+    color: $text-primary;
+}
+
+.sticky-title-label {
+    padding: 0 4px 0 4px;
+    max-width: 100px;
+    text-align: center;
+}
+
+.sticky-information-label {
+    padding: 0 4px 0 4px;
+}
+
+.sticky-text-box {
+    @include entry($height: null, $width: null);
+
+    &, &:active {
+        background-gradient-direction: none;
+        border: 0;
+        border-width: 0;
+        box-shadow: 0 0 rgba(0, 0, 0, 0);
+        border-radius: 0;
+        padding: 6px;
+    }
+}
+
+#sticky-note-entry {
+    color: $text-primary;
+    selected-color: $text-primary;
+    caret-color: $text-primary;
+    caret-size: 1px;
+    selection-background-color: $accent-primary;
+}

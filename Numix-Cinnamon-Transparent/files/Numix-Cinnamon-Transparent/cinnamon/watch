@@ -1,0 +1,37 @@
+#!/usr/bin/env zsh
+
+local theme="Numix-Cinnamon-Transparent"
+local theme_dir="${HOME}/.themes"
+local sass_cmd="$(which sassc)"
+local sass_input="scss/cinnamon.scss"
+local sass_output="cinnamon.css"
+local sass_style="expanded"
+local -a watch_dirs=("img" "scss")
+
+compile_sass () {
+  "$sass_cmd" -t "$sass_style" "$sass_input" > "$sass_output"
+}
+
+restart_theme () {
+  gsettings set org.cinnamon.theme name "$theme"
+}
+
+symlink_theme () {
+  mkdir -p "$theme_dir"
+  rm -rf "$theme_dir/$theme"
+  ln -rfs "../../$theme" "$theme_dir"
+}
+
+
+# ======================================
+#  Watch loop
+# ======================================
+symlink_theme
+
+while true; 
+  compile_sass
+  restart_theme
+
+  # test
+  inotifywait --format "%e %w%f" -qre modify "${watch_dirs[@]}"
+do; done

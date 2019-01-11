@@ -1,0 +1,72 @@
+/* ###################################################################
+ * Section common with Gnome Shell
+ * ... contains a few cinnamon specific styles (rare occurrences) 
+ * ###################################################################*/
+
+@require "colors.styl"
+
+stage
+	font-family: "Droid Sans", "Open Sans", sans, sans-serif
+
+.cinnamon-link
+	color: #0000ff
+	text-decoration: underline
+
+	&:hover
+		color: #0000e0
+
+.label-shadow
+	color: rgba(0,0,0,0.5)
+
+
+StScrollView
+	.vfade
+		-st-vfade-offset: 68px
+
+	StScrollBar
+		min-width: 12px
+		min-height: 16px
+
+
+StScrollBar
+	padding: 0px
+
+	StBin#trough
+		background-color: darken($dark, 25%)
+		border: 1px solid $light
+		border-radius: 4px
+
+	StButton#vhandle,
+	StButton#hhandle
+		background-color: $light
+		border-radius: 4px
+
+		&:hover
+			background-color: #383838
+
+.separator
+	-gradient-height: 2px
+	-gradient-start: rgba(85,85,85,1)
+	-gradient-end: #555555
+	-margin-horizontal: 1.5em
+	height: 1em
+
+.slider
+	height: 1em
+	min-width: 15em
+	-slider-height: 0.3em
+	-slider-background-color: #666666
+	-slider-border-color: #555555
+	-slider-active-background-color: #CCCCCC
+	-slider-active-border-color: #DDDDDD
+	-slider-border-width: 1px
+	-slider-handle-radius: 0.5em
+
+#Tooltip
+	background-color: $dark
+	color: white
+	font-size: 8.5pt
+	font-weight: normal
+	padding: 2px 12px
+	border-radius: 1px
+	box-shadow: 1px 1px 2px $light

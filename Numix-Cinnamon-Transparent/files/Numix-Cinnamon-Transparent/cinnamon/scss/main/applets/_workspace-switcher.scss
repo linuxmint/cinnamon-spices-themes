@@ -1,0 +1,61 @@
+/* ======================================
+ * ! Number-mode Workspace Switcher applet
+ * ====================================== */
+
+.workspace-switcher {
+    padding: 0;
+
+    .panel-left &, .panel-right & { padding: 0; }
+}
+
+.workspace-button {
+    @include size(20px, 10px);
+    padding: 0 1px;
+    color: $text-secondary;
+    font-weight: bold;
+}
+
+@each $pos in top, bottom, left, right {
+    .panel-#{$pos} .workspace-button {
+        &:outlined {
+            border-image: url("img/panel/window-list__#{$pos}__active.svg") 4;
+            color: $text-primary;
+        }
+
+        &:hover {
+            border-image: url("img/panel/applet__#{$pos}__hover.svg") 4;
+            color: $text-primary;
+        }
+
+        &:outlined:hover {
+            border-image: url("img/panel/window-list__#{$pos}__active__hover.svg") 4;
+            color: $text-primary;
+        }
+    }
+}
+
+/* ======================================
+ * ! Visual-mode Workspace Switcher applet
+ * ====================================== */
+
+.workspace-graph {
+    padding: 0 5px;
+
+    .panel-left &, .panel-right & { padding: 5px 0; }
+}
+
+@each $pos in top, bottom, left, right {
+    .panel-#{$pos} .workspace {
+        background-color: #333;
+        border: 1px #222;
+
+        &:active { border: 1px $accent-primary; }
+
+        .windows {
+            -active-window-background: #525252;
+            -active-window-border: #222;
+            -inactive-window-background: #525252;
+            -inactive-window-border: #222;
+        }
+    }
+}
