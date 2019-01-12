@@ -24,6 +24,9 @@ This build is based on [Adapta version 3.95.0.11](https://github.com/adapta-proj
 * Cinnamon - fixed to menu theming for Cinnamenu compatibility
 * Cinnamon - Cinnamon 4.0 Grouped Window Applet theming by @jaszhix & @smurphos
 * Cinnamon - support for Cinnamon 4.0 windows overview theming
+* Cinnamon - fixed keyboard applet on vertical panels
+* Cinnamon - fixed off-centre media-key osd
+* Cinnamon - added spacing to menu-favorites-box to distinguish scrollbox from system-buttons
 
 ## License
 
@@ -64,7 +67,7 @@ Tested on Linux Mint `18.2`, `18.3` & `19` 64bit with Cinnamon `3.4.x`, `3.6.x`,
 
 If you have problems seeing text on input fields in Firefox with any particular theme this problem can be solved by adding a `~/.mozilla/firefox/********.default/user.js` file to your Firefox default profile including the line `user_pref("widget.content.gtk-theme-override", "Adwaita");` and restarting Firefox.
 
-This forces firefox to use the GTK default Adwaita theme for rendering all website content.
+This forces Firefox to use the GTK default Adwaita theme for rendering all website content.
 
 The theme includes a helper script that creates the file with this content in the correct location. To access the tool open a terminal window and use the following command to make the script executable and launch it.
 
