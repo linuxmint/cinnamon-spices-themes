@@ -241,3 +241,6 @@ git checkout wb2
 ```
 Hope this helps get you going. We look forward to seeing your themes !
 
+# Slow effects
+
+Note that text-shadow and blur radius in box-shadow (especially with a large blur radius) are both effects that slow performance.  Use them sparingly, and avoid using them on theme elements that are intended to show repeatedly in quick succession.
