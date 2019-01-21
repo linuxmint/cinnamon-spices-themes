@@ -9,19 +9,16 @@ Last supported version: 3.4.3`
 `Extract {Glass-Theme-Name} folder (which contains 'cinnamon' folder) from archive into either /usr/share/themes/ (as root) or ~/.themes/ (recommended).`
 
 **Other Glass themes:**
-- On Github: https://github.com/vlad1777d/Cinnamon_Glass_Themes
-- Glass Mint: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Mint
+- On Bitbucket: ssh://hg@bitbucket.org/vlad1777d/cinnamon-glass-themes
+
 - Glass Mint Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Mint-Classic
-- Glass Ubuntu: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Ubuntu
-- Glass Ubuntu Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Ubuntu-Classic
-- Glass Fedora: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Fedora
-- Glass Fedora Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Fedora-Classic
-- Glass Lemon: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Lemon
 - Glass Lemon Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Lemon-Classic
-- Glass Glaucous: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Glaucous
 - Glass Glaucous Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Glaucous-Classic
-- Glass Wheezy: https://github.com/vlad1777d/Cinnamon_Glass_Themes/tree/master/Glass-Wheezy
-- Glass Wheezy Classic: https://github.com/vlad1777d/Cinnamon_Glass_Themes/tree/master/Glass-Wheezy-Classic
+
+Totally there are:
+Glass Mint,  Glass Mint Classic,  Glas Ubuntu,  Glass Ubuntu Classic,
+Glass Wheezy,  Glass Wheezy Classic,  Glass Fedora,  Glass Fedora Classic,
+Glass Lemon,  Glass Lemon Classic,  Glass Glaucous,  Glass Glaucous Classic.
 
 **Contacts:**
 - My webpage: https://vlad1777d.github.io/
