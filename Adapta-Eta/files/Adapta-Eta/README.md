@@ -27,6 +27,7 @@ This build is based on [Adapta version 3.95.0.11](https://github.com/adapta-proj
 * Cinnamon - fixed keyboard applet on vertical panels
 * Cinnamon - fixed off-centre media-key osd
 * Cinnamon - added spacing to menu-favorites-box to distinguish scrollbox from system-buttons
+* GTK 3.22 - Add a minimum height to headerbars.
 
 ## License
 
