@@ -238,7 +238,7 @@
 
 stage {
   font-family: roboto, Noto Sans, sans, sans-serif;
-  font-size: 1em; }
+  font-size: 10pt; }
 
 .cinnamon-link {
   color: #f2c1a9;
@@ -396,12 +396,12 @@ StScrollView StScrollBar {
   padding: 0.8em; }
 
 .menu-applications-inner-box {
-  padding: 0.8em;
+  padding: 8px;
   border-radius: 10px;
   border: 1px solid rgba(242, 226, 218, 0.22); }
 
 .menu-applications-outer-box {
-  padding: 0.8em;
+  padding: 8px;
   border: 1px solid rgba(242, 226, 218, 0.22);
   border-radius: 10px; }
 
@@ -425,14 +425,16 @@ StScrollView StScrollBar {
   color: #000000; }
 
 .menu-selected-app-box {
-  padding: 2px 8px;
+  padding: 0 8px;
+  margin-bottom: 0.9em;
   text-align: right; }
   .menu-selected-app-box:rtl {
     text-align: left; }
 
 .menu-selected-app-title {
   font-weight: bold;
-  font-size: 0.8em; }
+  font-size: 0.9em;
+  margin-top: 6px; }
 
 .menu-selected-app-description {
   max-width: 150px;
@@ -546,13 +548,16 @@ StScrollView StScrollBar {
 .panel-left {
   box-shadow: -1px 0 0 0 #bb9c8e inset; }
   .panel-left .window-list-item-box {
+    padding: 2px 0;
     margin-right: 1px; }
-  .panel-left .grouped-window-list-item-box:active, .panel-left .grouped-window-list-item-box:checked {
-    box-shadow: 2px 0 0 0 #f2e2da inset; }
-  .panel-left .grouped-window-list-item-box:hover {
-    box-shadow: 2px 0 0 0 #cf4805 inset; }
-  .panel-left .grouped-window-list-item-box:focus {
-    box-shadow: 4px 0 0 0 #cf4805 inset; }
+  .panel-left .grouped-window-list-item-box {
+    padding: 2px 0; }
+    .panel-left .grouped-window-list-item-box:active, .panel-left .grouped-window-list-item-box:checked {
+      box-shadow: 2px 0 0 0 #f2e2da inset; }
+    .panel-left .grouped-window-list-item-box:hover {
+      box-shadow: 2px 0 0 0 #cf4805 inset; }
+    .panel-left .grouped-window-list-item-box:focus {
+      box-shadow: 4px 0 0 0 #cf4805 inset; }
   .panel-left .workspace-switcher, .panel-left .workspace-graph {
     padding: 3px 1px; }
   .panel-left .panel-launchers .launcher:hover {
@@ -563,13 +568,16 @@ StScrollView StScrollBar {
 .panel-right {
   box-shadow: 1px 0 0 0 #bb9c8e inset; }
   .panel-right .window-list-item-box {
+    padding: 2px 0;
     margin-left: 1px; }
-  .panel-right .grouped-window-list-item-box:active, .panel-right .grouped-window-list-item-box:checked {
-    box-shadow: -2px 0 0 0 #f2e2da inset; }
-  .panel-right .grouped-window-list-item-box:hover {
-    box-shadow: -2px 0 0 0 #cf4805 inset; }
-  .panel-right .grouped-window-list-item-box:focus {
-    box-shadow: -4px 0 0 0 #cf4805 inset; }
+  .panel-right .grouped-window-list-item-box {
+    padding: 2px 0; }
+    .panel-right .grouped-window-list-item-box:active, .panel-right .grouped-window-list-item-box:checked {
+      box-shadow: -2px 0 0 0 #f2e2da inset; }
+    .panel-right .grouped-window-list-item-box:hover {
+      box-shadow: -2px 0 0 0 #cf4805 inset; }
+    .panel-right .grouped-window-list-item-box:focus {
+      box-shadow: -4px 0 0 0 #cf4805 inset; }
   .panel-right .workspace-switcher, .panel-right .workspace-graph {
     padding: 3px 1px; }
   .panel-right .panel-launchers .launcher:hover {
@@ -689,7 +697,7 @@ StScrollView StScrollBar {
   color: #f2e2da; }
 
 .grouped-window-list-thumbnail-label {
-  padding-left: 3px; }
+  padding-left: 4px; }
 
 .grouped-window-list-number-label {
   z-index: 99;
@@ -723,7 +731,7 @@ StScrollView StScrollBar {
 
 .grouped-window-list-thumbnail-menu {
   border-radius: 10px;
-  padding: 10px 15px;
+  padding: 2px;
   spacing: 3px;
   color: #f2e2da; }
   .grouped-window-list-thumbnail-menu .item-box {
@@ -733,13 +741,15 @@ StScrollView StScrollBar {
     .grouped-window-list-thumbnail-menu .item-box:outlined {
       border: 1px solid #cf4805; }
     .grouped-window-list-thumbnail-menu .item-box:selected {
-      background: #e54c00;
-      border: 1px solid #cf4805; }
+      background-color: #e54c00;
+      border: 1px solid #cf4805;
+      color: #000000; }
   .grouped-window-list-thumbnail-menu .thumbnail-box {
     padding: 2px;
     spacing: 3px; }
   .grouped-window-list-thumbnail-menu .thumbnail {
-    width: 256px; }
+    width: 256px;
+    padding-top: 4px; }
   .grouped-window-list-thumbnail-menu .separator {
     width: 1px;
     background: #e54c00; }

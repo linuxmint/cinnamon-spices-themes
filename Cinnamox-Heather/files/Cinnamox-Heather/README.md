@@ -42,6 +42,8 @@ To access the tool open a terminal window (Ctrl-Alt-T) and use the following com
 
 If you are not happy with the end result simply run `~/.themes/Cinnamox-Heather/cinnamon/cinnamox_transparency.sh` again to chose another option including the default.
 
+If you would like to control transparency of application windows then please check out my [opacify windows script](https://github.com/smurphos/nemo_actions_and_cinnamon_scripts#opacify-windows)
+
 ### Cinnamon Theme Panel Styling
 
 The themes from the 25/11/18 release onwards have a new default styling for the window-list, panel and (in Cinnamon 4) grouped window list applet.
@@ -80,7 +82,7 @@ The GTK3 themes require GTK `3.18.x` or `3.20.x`+
 
 The GTK2 theme requires the package `gtk2-engines-murrine` or `gtk-engine-murrine` to be installed. The former is a default package in Linux Mint.
 
-Tested on Linux Mint `18.2`, `18.3` & `19` 64bit with Cinnamon `3.4.x`, `3.6.x` & `3.8.x`; Also tested on Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x`, `3.8.x` & `4.0.x`
+Tested on Linux Mint `18.2`, `18.3`, `19`, & `19.1`  64bit with Cinnamon `3.4.x`, `3.6.x`, `3.8.x` & `4.0.x`; Also tested on Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x`, `3.8.x` & `4.0.x`
 
 ### Firefox fix
 
@@ -94,7 +96,7 @@ The theme includes a helper script that creates the file with this content in th
 
 ## Make your own theme using Cinnamox / Oomox
 
-The repository at [Cinnamox_theme_master](https://github.com/smurphos/cinnamox_theme_master) includes instructions to utilise the tools provided to make your own unique Cinnamox based theme.
+The repository at [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) includes instructions to utilise the tools provided to make your own unique Cinnamox based theme.
 
 The [Oomox app](https://github.com/themix-project/oomox) is a GUI app to design and build themes using the [Oomox-gtk-theme](https://github.com/themix-project/oomox-gtk-theme). From [version 1.60+](https://github.com/themix-project/oomox/releases) this app included a Cinnamon theme based on Cinnamox and has an option to export a Cinnamon theme. 
 
