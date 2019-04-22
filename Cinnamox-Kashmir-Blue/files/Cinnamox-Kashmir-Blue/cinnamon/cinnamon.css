@@ -171,7 +171,7 @@
 
 stage {
   font-family: roboto, Noto Sans, sans, sans-serif;
-  font-size: 1em; }
+  font-size: 10pt; }
 
 .cinnamon-link {
   color: #a9d9f2;
@@ -329,12 +329,12 @@ StScrollView StScrollBar {
   padding: 0.8em; }
 
 .menu-applications-inner-box {
-  padding: 0.8em;
+  padding: 8px;
   border-radius: 10px;
   border: 1px solid rgba(218, 234, 242, 0.22); }
 
 .menu-applications-outer-box {
-  padding: 0.8em;
+  padding: 8px;
   border: 1px solid rgba(218, 234, 242, 0.22);
   border-radius: 10px; }
 
@@ -358,14 +358,16 @@ StScrollView StScrollBar {
   color: #000000; }
 
 .menu-selected-app-box {
-  padding: 2px 8px;
+  padding: 0 8px;
+  margin-bottom: 0.9em;
   text-align: right; }
   .menu-selected-app-box:rtl {
     text-align: left; }
 
 .menu-selected-app-title {
   font-weight: bold;
-  font-size: 0.8em; }
+  font-size: 0.9em;
+  margin-top: 6px; }
 
 .menu-selected-app-description {
   max-width: 150px;
@@ -489,17 +491,20 @@ StScrollView StScrollBar {
 .panel-left {
   box-shadow: -1px 0 0 0 #9caeb7 inset; }
   .panel-left .window-list-item-box {
+    padding: 2px 0;
     box-shadow: 1px 0 1px 1px rgba(218, 234, 242, 0.22) inset; }
     .panel-left .window-list-item-box:hover, .panel-left .window-list-item-box:checked {
       box-shadow: 1px 0 1px 1px #28a18f inset; }
     .panel-left .window-list-item-box:active, .panel-left .window-list-item-box:focus, .panel-left .window-list-item-box:running {
       box-shadow: 2px 0 1px 1px #28a18f inset; }
-  .panel-left .grouped-window-list-item-box:active, .panel-left .grouped-window-list-item-box:checked {
-    box-shadow: 1px 0 1px 1px rgba(218, 234, 242, 0.22) inset; }
-  .panel-left .grouped-window-list-item-box:hover {
-    box-shadow: 1px 0 1px 1px #28a18f inset; }
-  .panel-left .grouped-window-list-item-box:focus, .panel-left .grouped-window-list-item-box:focus:hover {
-    box-shadow: 2px 0 1px 1px #28a18f inset; }
+  .panel-left .grouped-window-list-item-box {
+    padding: 3px 0; }
+    .panel-left .grouped-window-list-item-box:active, .panel-left .grouped-window-list-item-box:checked {
+      box-shadow: 1px 0 1px 1px rgba(218, 234, 242, 0.22) inset; }
+    .panel-left .grouped-window-list-item-box:hover {
+      box-shadow: 1px 0 1px 1px #28a18f inset; }
+    .panel-left .grouped-window-list-item-box:focus, .panel-left .grouped-window-list-item-box:focus:hover {
+      box-shadow: 2px 0 1px 1px #28a18f inset; }
   .panel-left .workspace-switcher, .panel-left .workspace-graph {
     padding: 3px 1px; }
   .panel-left .panel-launchers .launcher:hover {
@@ -510,17 +515,20 @@ StScrollView StScrollBar {
 .panel-right {
   box-shadow: 1px 0 0 0 #9caeb7 inset; }
   .panel-right .window-list-item-box {
+    padding: 2px 0;
     box-shadow: -1px 0 1px 1px rgba(218, 234, 242, 0.22) inset; }
     .panel-right .window-list-item-box:hover, .panel-right .window-list-item-box:checked {
       box-shadow: -1px 0 1px 1px #28a18f inset; }
     .panel-right .window-list-item-box:active, .panel-right .window-list-item-box:focus, .panel-right .window-list-item-box:running {
       box-shadow: -2px 0 1px 1px #28a18f inset; }
-  .panel-right .grouped-window-list-item-box:active, .panel-right .grouped-window-list-item-box:checked {
-    box-shadow: -1px 0 1px 1px rgba(218, 234, 242, 0.22) inset; }
-  .panel-right .grouped-window-list-item-box:hover {
-    box-shadow: -1px 0 1px 1px #28a18f inset; }
-  .panel-right .grouped-window-list-item-box:focus, .panel-right .grouped-window-list-item-box:focus:hover {
-    box-shadow: -2px 0 1px 1px #28a18f inset; }
+  .panel-right .grouped-window-list-item-box {
+    padding: 3px 0; }
+    .panel-right .grouped-window-list-item-box:active, .panel-right .grouped-window-list-item-box:checked {
+      box-shadow: -1px 0 1px 1px rgba(218, 234, 242, 0.22) inset; }
+    .panel-right .grouped-window-list-item-box:hover {
+      box-shadow: -1px 0 1px 1px #28a18f inset; }
+    .panel-right .grouped-window-list-item-box:focus, .panel-right .grouped-window-list-item-box:focus:hover {
+      box-shadow: -2px 0 1px 1px #28a18f inset; }
   .panel-right .workspace-switcher, .panel-right .workspace-graph {
     padding: 3px 1px; }
   .panel-right .panel-launchers .launcher:hover {
@@ -600,12 +608,12 @@ StScrollView StScrollBar {
 
 .window-list-box {
   spacing: 3px;
-  padding: 1px 3px;
+  padding: 0 3px;
   font-size: 0.9em;
   border-radius: 10px; }
   .window-list-box.vertical {
     spacing: 3px;
-    padding: 3px 1px; }
+    padding: 2px 0; }
   .window-list-box:highlight {
     background-color: rgba(35, 178, 154, 0.2); }
 
@@ -638,7 +646,7 @@ StScrollView StScrollBar {
   color: #daeaf2; }
 
 .grouped-window-list-thumbnail-label {
-  padding-left: 3px; }
+  padding-left: 4px; }
 
 .grouped-window-list-number-label {
   z-index: 99;
@@ -678,7 +686,7 @@ StScrollView StScrollBar {
 
 .grouped-window-list-thumbnail-menu {
   border-radius: 10px;
-  padding: 10px 15px;
+  padding: 2px;
   spacing: 3px;
   color: #daeaf2; }
   .grouped-window-list-thumbnail-menu .item-box {
@@ -688,13 +696,15 @@ StScrollView StScrollBar {
     .grouped-window-list-thumbnail-menu .item-box:outlined {
       border: 1px solid #28a18f; }
     .grouped-window-list-thumbnail-menu .item-box:selected {
-      background: #23b29a;
-      border: 1px solid #28a18f; }
+      background-color: #23b29a;
+      border: 1px solid #28a18f;
+      color: #000000; }
   .grouped-window-list-thumbnail-menu .thumbnail-box {
     padding: 2px;
     spacing: 3px; }
   .grouped-window-list-thumbnail-menu .thumbnail {
-    width: 256px; }
+    width: 256px;
+    padding-top: 4px; }
   .grouped-window-list-thumbnail-menu .separator {
     width: 1px;
     background: #23b29a; }
