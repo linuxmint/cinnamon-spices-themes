@@ -20,6 +20,7 @@ Just copy the file `~/.themes/CBlue/cinnamon/userChrome.css` and paste it into `
 
 ## Versions
 
+* 1.4: update: hover color, visual lock indicator Num/Shift, desklets decorations supported.
 * 1.3: slight modification of the panel and transparency.
 * 1.2: some corrections and improvements + Firefox extra.
 * 1.1: fixed a bug: list of grouped window applets for the left/right panels.
