@@ -116,7 +116,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
  * PopupMenu (popupMenu.js)
  * ===================================================================*/
 
-
 /* .popup-menu-boxpointer and .popup-menu are kept for compatibility
     with cinnamon version under 3.2. Use .menu in version 3.2 and above */
 
@@ -191,7 +190,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 /* The remaining popup-menu sizing is all done in ems, so that if you
  * override .popup-menu.font-size, everything else will scale with it.*/
-
 .popup-menu-content {
     padding: 1em 0em;
 }
@@ -232,9 +230,9 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     min-width: 15em;
     -slider-height: 0.5em;
     -slider-background-color: #444;
-    -slider-border-color: rgba(0,0,0,.02);
+    -slider-border-color: rgba(0, 0, 0, 0.2);
     -slider-active-background-color: rgb(82, 148, 226);
-    -slider-active-border-color: rgba(0,0,0,.02);
+    -slider-active-border-color: rgba(0, 0, 0, 0.2);
     -slider-border-width: 1px;
     -slider-handle-radius: 0.5em;
 }
@@ -244,9 +242,9 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     min-width: 15em;
     -slider-height: 0.5em;
     -slider-background-color: #444;
-    -slider-border-color: rgba(0,0,0,.02);
+    -slider-border-color: rgba(0, 0, 0, 0.2);
     -slider-active-background-color: #5a65bd;
-    -slider-active-border-color: rgba(0,0,0,.02);
+    -slider-active-border-color: rgba(0, 0, 0, 0.2);
     -slider-border-width: 1px;
     -slider-handle-radius: 0.5em;
 }
@@ -269,7 +267,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 /* Switches (to be used in menus) */
-
 .toggle-switch {
     width: 50px;
     height: 20px;
@@ -318,7 +315,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .panel-dummy:entered {
-    background-color: rgba(90,101,189, 1);
+    background-color: rgba(90, 101, 189, 1);
 }
 
 .panelLeft {
@@ -342,13 +339,13 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 .panelCenter:dnd {
     background-gradient-direction: vertical;
     background-gradient-start: rgba(0, 255, 0, 0.05);
-    background-gradient-end: rgba(0, 255, 0, 0.2);
+    background-gradient-end: rgba(0, 255, 0, 0.3);
 }
 
 .panelRight:dnd {
     background-gradient-direction: vertical;
     background-gradient-start: rgba(0, 0, 255, 0.05);
-    background-gradient-end: rgba(0, 0, 255, 0.2);
+    background-gradient-end: rgba(0, 0, 255, 0.3);
 }
 
 .panelLeft:ltr {
@@ -466,6 +463,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .popup-menu-item-dot {
+    color: #5a65bd;
 }
 
 .system-status-icon {
@@ -562,7 +560,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 .window-border {
     border: 2px rgba(82, 148, 226, 1);
     background-color: rgba(255, 255, 255, 0.1); /* active */
-    /* Cover rounded corners and some bad adjustment gaps */
+/* Cover rounded corners and some bad adjustment gaps */
     box-shadow: 0 0 0 1px rgba(82, 148, 226, 1) inset;
 }
 
@@ -592,7 +590,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 .overview-icon {
     border-radius: 4px;
     padding: 3px;
-    border: 1px rgba(0, 0, 0, 0);
+    border: 0px rgba(0, 0, 0, 0);
     font-size: 7.5pt;
     color: white;
     transition-duration: 100;
@@ -624,26 +622,24 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     background-color: rgba(82, 148, 226, 1);
 }
 
-
 /* ===================================================================
  * Looking Glass
  * ===================================================================*/
 
 #LookingGlassDialog {
     background-color: rgba(20, 20, 20, 0.75);
-    spacing: 4px;
-    padding: 4px;
+    spacing: 3px;
+    padding: 3px;
     border: 0px solid grey;
     border-radius: 0px;
     color: #CCCCCC;
 }
 
-
 /* ===================================================================
  * Date applet
  * ===================================================================*/
- /*calendar-background allows the date applet calendar to be themed separately from other applet menus*/
- .calendar-background {}
+/*calendar-background allows the date applet calendar to be themed separately from other applet menus*/
+.calendar-background {}
 
 .calendar {
     padding: .4em 1.75em;
@@ -656,8 +652,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     padding: 8px 0;
     font-weight: bold;
 }
-.calendar-change-month-back,
-.calendar-change-month-forward {
+.calendar-change-month-back, .calendar-change-month-forward {
     width: 16px;
     height: 16px;
 }
@@ -779,7 +774,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     color: #f7f7f7;
 }
 
-
 /* ===================================================================
  * Notifications
  * ===================================================================*/
@@ -806,7 +800,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
    taken into account during allocation, so its height ends up being limited by the height
    of the content in the other rows. To avoid showing a stretched image, we set the minimum
    height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
-
 .notification-with-image {
     min-height: 159px;
     color: white;
@@ -889,7 +882,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 #altTabPopup .switcher-list .item-box:selected {
-    background-color: rgb(82, 148, 226);
+    background-color: rgba(82, 148, 226, 1);
 }
 
 .switcher-list {
@@ -947,12 +940,11 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .switcher-list .thumbnail {
     width: 256px;
-
 }
 
 .switcher-list .separator {
     width: 1px;
-    background: rgba(255, 255, 255, 0.33);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .ripple-box {
@@ -976,9 +968,8 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .switcher-preview-backdrop {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
 }
-
 
 /* ===================================================================
  * Modal dialogs
@@ -1199,7 +1190,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .keyboard-key:checked, .keyboard-key:hover {
-    background: rgb(90,101,189);
+    background: rgb(90, 101, 189);
     border: 0px solid white;
 }
 
@@ -1225,7 +1216,8 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 /* ===================================================================
  * Menu (menu.js)
  * ===================================================================*/
-  /* Main menu title 
+ 
+/* Main menu title 
 menu-background allows the menu applet to be themed separately from other applet menus */
 .menu-background {
     background-color: rgba(20, 20, 20, 0.75);
@@ -1249,7 +1241,6 @@ menu-background allows the menu applet to be themed separately from other applet
     padding: 0px 0px 2px 2px;
     border: 0px rgba(82, 148, 226, 0);
     border-left: 2px;
-
 }
 
 .menu-favorites-button:hover {
@@ -1343,7 +1334,6 @@ menu-background allows the menu applet to be themed separately from other applet
 
 /* Name and description of the currently hovered item in the menu
  * This appears on the bottom right hand corner of the menu*/
-
 .menu-selected-app-box {
     padding: 7px 30px 7px 28px;
     text-align: right;
@@ -1409,6 +1399,7 @@ menu-background allows the menu applet to be themed separately from other applet
 /* ===================================================================
  * Window list (windowList.js)
  * ===================================================================*/
+ 
 .window-list-box {
     spacing: 0px;
     padding-left: 7px;
@@ -1432,11 +1423,15 @@ menu-background allows the menu applet to be themed separately from other applet
 }
 
 .window-list-item-box {
-    color: rgba(255, 255, 255, 0.75);
+    color: #ccc;
     transition-duration: 100;
 }
 
- .panel-bottom .window-list-item-box:active, .panel-bottom .window-list-item-box:checked, .panel-bottom .window-list-item-box:focus {
+.window-list-item-box:hover {
+    color: white;
+}
+
+.panel-bottom .window-list-item-box:active, .panel-bottom .window-list-item-box:checked, .panel-bottom .window-list-item-box:focus {
     border-image: url("common-assets/panel/window-list-bottom.svg") 9 9 9 9;
 }
 
@@ -1485,7 +1480,7 @@ menu-background allows the menu applet to be themed separately from other applet
     font-size: 9pt;
     color: white;
     padding: 8px;
-    spacing: 4px;
+    spacing: 3px;
 }
 
 /* ===================================================================
@@ -1532,13 +1527,11 @@ menu-background allows the menu applet to be themed separately from other applet
     border-radius: 2px 0px 0px 2px;
 }
 
-.grouped-window-list-item-box.top,
-.grouped-window-list-item-box.bottom {
+.grouped-window-list-item-box.top, .grouped-window-list-item-box.bottom {
     padding: 0 0.5em;
 }
 
-.grouped-window-list-item-box.top StLabel,
-.grouped-window-list-item-box.bottom StLabel {
+.grouped-window-list-item-box.top StLabel, .grouped-window-list-item-box.bottom StLabel {
     padding-left: 2px;
 }
 
@@ -1547,15 +1540,13 @@ menu-background allows the menu applet to be themed separately from other applet
     border-bottom-width: 2px;
 }
 
-.grouped-window-list-item-box.bottom:hover,
-.grouped-window-list-item-box.bottom:focus:hover,
-.grouped-window-list-item-box.bottom:checked,
-.grouped-window-list-item-box.bottom:active:focus {
+.grouped-window-list-item-box.bottom:hover, .grouped-window-list-item-box.bottom:focus:hover,
+.grouped-window-list-item-box.bottom:checked, .grouped-window-list-item-box.bottom:active:focus {
     background-color: rgba(20, 20, 20, 0.75);
     border-color: rgb(82, 148, 226);
 }
 
- .grouped-window-list-item-box.bottom:active {
+.grouped-window-list-item-box.bottom:active {
     border-color: rgb(82, 148, 226);
 }
 
@@ -1564,15 +1555,13 @@ menu-background allows the menu applet to be themed separately from other applet
     border-top-width: 2px;
 }
 
-.grouped-window-list-item-box.top:hover,
-.grouped-window-list-item-box.top:focus:hover,
-.grouped-window-list-item-box.top:checked,
-.grouped-window-list-item-box.top:active:focus {
+.grouped-window-list-item-box.top:hover, .grouped-window-list-item-box.top:focus:hover,
+.grouped-window-list-item-box.top:checked, .grouped-window-list-item-box.top:active:focus {
     background-color: rgba(20, 20, 20, 0.75);
     border-color: rgb(82, 148, 226);
 }
 
- .grouped-window-list-item-box.top:active {
+.grouped-window-list-item-box.top:active {
     border-color: rgb(82, 148, 226);
 }
 
@@ -1581,15 +1570,13 @@ menu-background allows the menu applet to be themed separately from other applet
     border-left-width: 2px;
 }
 
-.grouped-window-list-item-box.left:hover,
-.grouped-window-list-item-box.left:focus:hover,
-.grouped-window-list-item-box.left:checked,
-.grouped-window-list-item-box.left:active:focus {
+.grouped-window-list-item-box.left:hover, .grouped-window-list-item-box.left:focus:hover,
+.grouped-window-list-item-box.left:checked, .grouped-window-list-item-box.left:active:focus {
     background-color: rgba(20, 20, 20, 0.75);
     border-color: rgb(82, 148, 226);
 }
 
- .grouped-window-list-item-box.left:active {
+.grouped-window-list-item-box.left:active {
     border-color: rgb(82, 148, 226);
 }
 
@@ -1598,15 +1585,13 @@ menu-background allows the menu applet to be themed separately from other applet
     border-right-width: 2px;
 }
 
-.grouped-window-list-item-box.right:hover,
-.grouped-window-list-item-box.right:focus:hover,
-.grouped-window-list-item-box.right:checked,
-.grouped-window-list-item-box.right:active:focus {
+.grouped-window-list-item-box.right:hover, .grouped-window-list-item-box.right:focus:hover,
+.grouped-window-list-item-box.right:checked, .grouped-window-list-item-box.right:active:focus {
     background-color: rgba(20, 20, 20, 0.75);
     border-color: rgb(82, 148, 226);
 }
 
- .grouped-window-list-item-box.right:active {
+.grouped-window-list-item-box.right:active {
     border-color: rgb(82, 148, 226);
 }
 
@@ -1638,14 +1623,14 @@ menu-background allows the menu applet to be themed separately from other applet
     font-size: 9pt;
     color: white;
     padding: 8px;
-    spacing: 4px;
+    spacing: 3px;
 }
 
 .grouped-window-list-thumbnail-menu .item-box {
     padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0);
+    border: 0px solid rgba(0, 0, 0, 0);
     border-radius: 0px;
-    spacing: 4px;
+    spacing: 3px;
 }
 
 .grouped-window-list-thumbnail-menu .item-box:outlined {
@@ -1663,7 +1648,7 @@ menu-background allows the menu applet to be themed separately from other applet
 
 .grouped-window-list-thumbnail-menu .separator {
     width: 1px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* ===================================================================
@@ -1697,7 +1682,7 @@ menu-background allows the menu applet to be themed separately from other applet
 
 .sound-player StButton:hover, .sound-player StButton:active {
     color: #fff;
-    background-color: rgb(90,101,189);
+    background-color: rgb(90, 101, 189);
 }
 
 .sound-player .slider {
@@ -1750,14 +1735,12 @@ menu-background allows the menu applet to be themed separately from other applet
  * ===================================================================*/
 
 /* Controls the styling when using the "Simple buttons" option */
-.panel-top .workspace-switcher,
-.panel-bottom .workspace-switcher {
+.panel-top .workspace-switcher, .panel-bottom .workspace-switcher {
     padding-left: 3px;
     padding-right: 3px;
 }
 
-.panel-left .workspace-switcher
-.panel-right .workspace-switcher {
+.panel-left .workspace-switcher, .panel-right .workspace-switcher {
     padding-top: 3px;
     padding-bottom: 3px;
 }
@@ -1902,6 +1885,57 @@ menu-background allows the menu applet to be themed separately from other applet
 }
 
 /* ===================================================================
+ * Weather Applet
+ * ===================================================================*/
+
+.weather-menu {
+    width: 1950px;
+}
+
+.weather-current-location-link {
+    text-decoration: underline;
+}
+
+.weather-current-location-link:hover {
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(0, 0, 0, 0);
+    background-gradient-end: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    color: #5a65bd;
+}
+
+.weather-current-databox-captions {
+    padding-left: 48px;
+}
+
+.weather-current-astronomy {
+    font-size: 10pt;
+}
+
+.weather-forecast-day {
+    font-size: 10pt;
+    color: #5294e2;
+}
+
+/* ===================================================================
+ * BAMS Applet
+ * ===================================================================*/
+
+.bam-normal, .bam-discharging, .bam-alert, .bam-alert-discharging, .bam-limit-exceeded, .bam-limit-exceeded2 {
+    padding: 1px;
+    border-radius: 0px;
+}
+
+/* ===================================================================
+ * User Applet
+ * ===================================================================*/
+
+.user-icon {
+    border-radius: 0px;
+    border: 2px solid #5294e2;
+}
+
+/* ===================================================================
  * Overview corner
  * ===================================================================*/
 
@@ -1938,13 +1972,11 @@ menu-background allows the menu applet to be themed separately from other applet
     transition-duration: 300;
 }
 
-.panel-top .applet-box,
-.panel-bottom .applet-box {
+.panel-top .applet-box, .panel-bottom .applet-box {
     spacing: 3px;
 }
 
-.applet-box:checked,
-.applet-box:hover {
+.applet-box:checked, .applet-box:hover {
     color: #fff;
 }
 
@@ -1963,13 +1995,11 @@ menu-background allows the menu applet to be themed separately from other applet
     color: #ccc;
 }
 
-.applet-box:hover .applet-label,
-.applet-box:hover .applet-label {
+.applet-box:hover .applet-label, .applet-box:hover .applet-label {
     color: #fff;
 }
 
-.applet-box:checked > .applet-label,
-.applet-box:hover > .applet-label {
+.applet-box:checked > .applet-label, .applet-box:hover > .applet-label {
     color: #fff;
 }
 
@@ -1980,8 +2010,7 @@ menu-background allows the menu applet to be themed separately from other applet
     icon-size: 22px;
 }
 
-.applet-box:checked .applet-icon,
-.applet-box:hover .applet-icon {
+.applet-box:checked .applet-icon, .applet-box:hover .applet-icon {
     color: #fff;
     icon-shadow: white 0px 0px 0px;
 }
@@ -2001,14 +2030,14 @@ menu-background allows the menu applet to be themed separately from other applet
 }
 
 .desklet-with-borders {
-    border: 0px solid #a5a5a5;
+    border: 0px solid #5294e2;
     background-color: rgba(20, 20, 20, 0.75);
     color: #fff;
     border-radius: 0px;
 }
 
 .desklet-with-borders-and-header {
-    border: 0px solid #a5a5a5;
+    border: 0px solid #5294e2;
     background-color: rgba(20, 20, 20, 0.75);
     color: #fff;
     border-top: 0px;
@@ -2020,7 +2049,7 @@ menu-background allows the menu applet to be themed separately from other applet
     border-radius-topleft: 0px;
     border-radius-topright: 0px;
     font-size: 10.5pt;
-    border: 0px solid #a5a5a5;
+    border: 0px solid #5294e2;
     border-bottom: 0px;
     background-color: rgba(20, 20, 20, 0.75);
     color: #fff;
@@ -2028,8 +2057,15 @@ menu-background allows the menu applet to be themed separately from other applet
 }
 
 .desklet-drag-placeholder {
-    border: 2px solid #5294e2;
+    border: 0px solid #5294e2;
     background-color: rgba(109, 170, 0, 0.3);
+}
+
+.photoframe-box {
+    border: 0px solid #5294e2;
+    background-color: rgba(20, 20, 20, 0.75);
+    color: #fff;
+    border-radius: 0px;
 }
 
 /* ===================================================================
@@ -2057,8 +2093,9 @@ menu-background allows the menu applet to be themed separately from other applet
 }
 
 .about-scrollBox {
-    border: 2px solid #5294e2;
-    border-radius: 4px;
+    border: 0px solid #5294e2;
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .about-scrollBox-innerBox {
@@ -2095,7 +2132,7 @@ menu-background allows the menu applet to be themed separately from other applet
     padding: 5px;
     color: #fff;
     font-weight: bold;
-    background-color: rgba(20, 20,20, 0.70);
+    background-color: rgba(20, 20, 20, 0.75);
     selected-color: white;
     caret-color: rgb(82, 148, 226);
     caret-size: 0px;
@@ -2206,7 +2243,6 @@ menu-background allows the menu applet to be themed separately from other applet
 }
 
 /* Media keys OSD popup */
-
 .osd-window {
     background: rgba(20, 20, 20, 0.75);
     border: 0px solid white;
@@ -2287,6 +2323,6 @@ menu-background allows the menu applet to be themed separately from other applet
  * tray icons are not themed
  * ===================================================================*/
 
- .systray {
-    spacing: 1px;
+.systray {
+    spacing: 3px;
 }
