@@ -28,6 +28,8 @@ This build is based on [Adapta version 3.95.0.11](https://github.com/adapta-proj
 * Cinnamon - fixed off-centre media-key osd
 * Cinnamon - added spacing to menu-favorites-box to distinguish scrollbox from system-buttons
 * GTK 3.22 - Add a minimum height to headerbars.
+* Cinnamon - amend panel label text alignment to support centred labels on multiline calendar applet labels
+* Cinnamon - Simplified Grouped Window List thumbnail theming in preparation for Cinnamon 4.2
 
 ## License
 
