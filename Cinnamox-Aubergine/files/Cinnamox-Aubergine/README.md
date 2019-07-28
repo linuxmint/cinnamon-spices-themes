@@ -76,13 +76,13 @@ To run the script open a terminal window (Ctrl-Alt-T) and use the following comm
 
 ## Compatibility
 
-This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x` & `4.0.x`
+This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x`, `4.0.x` & `4.2.x`
 
 The GTK3 themes require GTK `3.18.x` or `3.20.x`+
 
 The GTK2 theme requires the package `gtk2-engines-murrine` or `gtk-engine-murrine` to be installed. The former is a default package in Linux Mint.
 
-Tested on Linux Mint `18.2`, `18.3`, `19`, & `19.1`  64bit with Cinnamon `3.4.x`, `3.6.x`, `3.8.x` & `4.0.x`; Also tested on Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x`, `3.8.x` & `4.0.x`
+Tested on Linux Mint `18.2`, `18.3`, `19`, `19.1` & `19.2` 64bit with Cinnamon `3.4.x`, `3.6.x`, `3.8.x`, `4.0.x` & `4.2.x`; Also tested on Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x`, `3.8.x` & `4.0.x`
 
 ### Firefox fix
 
