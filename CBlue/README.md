@@ -2,7 +2,7 @@
 
 **A semi-transparent Cinnamon theme for Arc-Dark/Arc-Dark-Solid and the Numix-Circle icon theme, with wallpaper + Firefox extra. Inspired by the CBlack theme (author: cloweling).**
 
-If you want a panel that is not transparent, modify the line `301` of the file `~/.themes/CBlue/cinnamon/cinnamon.css`.
+If you want a panel that is not transparent, modify the line `303` of the file `~/.themes/CBlue/cinnamon/cinnamon.css`.
 For example: background-color: rgba(53, 57, 69, `0.50`); . A value of `0` is equivalent to total transparency and `1` is totally opaque. Restart Cinnamon (Ctrl+Alt+Esc) for immediate modification.
 
 
@@ -20,6 +20,7 @@ Just copy the file `~/.themes/CBlue/cinnamon/userChrome.css` and paste it into `
 
 ## Versions
 
+* 1.7: modify categories in the menu and menu items, change of the sound player applet buttons.
 * 1.6: change of background color.
 * 1.5: support for Weather + BAMS applets and photoframe desklet.
 * 1.4: update: hover color, visual lock indicator Num/Shift, desklets decorations supported.
