@@ -1,3 +1,20 @@
+### Update 2.0
+* Update GTK+ Breans master in the repository Linux Mint
+* Change color notification
+* Change style at input search cinnamon menu
+* fix grouped window list
+* Change color progress in window quick list and grouped
+* Change color switch and size theme cinnamon
+* Change color background tooltips
+* Change style pop-menu theme cinnamon
+* Change style all input theme cinnamon
+* fix button notification
+* Add border between windows in Metacity
+* Change background color menu GTK+
+* Change color hover menu GTK+
+* Change color separator menu GTK+/Cinnamon
+* Change margin/padding menu GTK+
+
 ### Upadate 1.6
 * Compatible with cinnamon 4.
 * Added the new menu icon.
