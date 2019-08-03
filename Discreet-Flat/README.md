@@ -14,6 +14,10 @@ $ stylus src/cinnamon.styl -o files/Discreet-Flat/cinnamon
 
 ## Changelog
 
+### 1.2.1 - 02/08/2019
+
+- Fix invisible OSD sound bar (#569)
+
 ### 1.2.0 - 22/11/2018
 
 - Updated for Cinnamon 4.0
