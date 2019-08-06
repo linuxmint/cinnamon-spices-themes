@@ -1,0 +1,83 @@
+/* ===================================================================
+ * urlBar colored
+ * =================================================================== */
+	
+#urlbar {
+  position: relative;
+  z-index: 1;
+}
+
+#identity-box:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: white;
+  opacity: 0.2;
+}
+
+/* There is also grantedPermissions, but irrelevant. */
+
+/* about:about */
+#urlbar[pageproxystate='valid'] #identity-box.unknownIdentity:after {
+  background: #f393a8; /* Firefox Red 50 */
+}
+
+/* about:config */
+#urlbar[pageproxystate='valid'] #identity-box.chromeUI:after {
+  background: #0a84ff; /* Firefox Blue 50 */
+}
+
+/* uBlock Origin Dashboard */
+#urlbar[pageproxystate='valid'] #identity-box.extensionPage:after {
+  background: #45a1ff; /* Firefox Blue 40 */
+}
+
+/* https://extended-validation.badssl.com/ */
+#urlbar[pageproxystate='valid'] #identity-box.verifiedIdentity:after{
+  background: #058b00; /* Firefox Green 70 */
+}
+
+/* https://sha512.badssl.com/ */
+#urlbar[pageproxystate='valid'] #identity-box.verifiedDomain:after{
+  background: #3bdc2a; /* Firefox Green 60 */
+}
+
+/* https://mixed-script.badssl.com/ */
+#urlbar[pageproxystate='valid'] #identity-box.mixedActiveBlocked:after {
+  background:  #67c845; /* #30e60b* Firefox Green 50 */
+}
+
+/* https://self-signed.badssl.com/ but add certificate exception */
+#urlbar[pageproxystate='valid'] #identity-box.certUserOverridden:after {
+  background: #ded14a; /* Firefox Yellow 50 */
+}
+
+/* https://mixed.badssl.com/ */
+#urlbar[pageproxystate='valid'] #identity-box.mixedDisplayContent:after {
+  background: #ffe800; /* Firefox Yellow 60 */
+}
+
+/* https://very.badssl.com/ */
+#urlbar[pageproxystate='valid'] #identity-box.mixedDisplayContentLoadedActiveBlocked:after {
+  background: #ffe800; /* Firefox Yellow 60 */
+}
+
+/* Don't know an example for this */
+#urlbar[pageproxystate='valid'] #identity-box.weakCipher:after {
+  background: #a47f00; /* Firefox Yellow 70 */
+}
+
+/* https://mixed-script.badssl.com/ but disable protection */
+#urlbar[pageproxystate='valid'] #identity-box.mixedActiveContent:after {
+  background: #bc1222; /* Firefox Red 60 */
+}
+
+/* http://http-login.badssl.com/ */
+#urlbar[pageproxystate='valid'] #identity-box.insecureLoginForms:after {
+  background: #a4005f; /* Firefox Red 70 */
+}
