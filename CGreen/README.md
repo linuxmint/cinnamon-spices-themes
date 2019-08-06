@@ -1,4 +1,4 @@
-## CBlue
+## CGreen
 
 #### A semi-transparent Cinnamon theme for Matcha-Dark-Sea and the Numix-Circle icon theme, with Firefox extra. Inspired by the CBlack theme (author: cloweling).
 If you want a panel that is not transparent, modify the line `300` of the file `~/.themes/CGreen/cinnamon/cinnamon.css`.
