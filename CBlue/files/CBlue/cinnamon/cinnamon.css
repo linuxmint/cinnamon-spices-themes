@@ -79,10 +79,8 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     border: 0px solid rgba(212, 185, 67, 0);
     border-radius: 1px;
     padding: 10px;
-    background-gradient-end: rgba(75, 81, 98, 1);
-    background-gradient-start: rgba(75, 81, 98, 1);
-    background-gradient-direction: vertical;
-    color: white;
+    background-color: rgba(75, 81, 98, 0.95);
+    color: #ccc;
     font-size: 9pt;
     font-weight: normal;
     text-align: center;
@@ -118,7 +116,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 /* .popup-menu-boxpointer and .popup-menu are kept for compatibility
     with cinnamon version under 3.2. Use .menu in version 3.2 and above */
-
 .popup-menu-boxpointer {
     -arrow-border-color: transparent;
     -arrow-background-color: transparent;
@@ -465,7 +462,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .popup-menu-item-dot {
-    color: #5a65bd;
+    color: white;
 }
 
 .system-status-icon {
@@ -640,6 +637,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 /* ===================================================================
  * Date applet
  * ===================================================================*/
+ 
 /*calendar-background allows the date applet calendar to be themed separately from other applet menus*/
 .calendar-background {}
 
@@ -800,10 +798,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     color: white;
 }
 
-/* We use row-span = 2 for the image cell, which prevents its height preferences to be
-   taken into account during allocation, so its height ends up being limited by the height
-   of the content in the other rows. To avoid showing a stretched image, we set the minimum
-   height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
+/* We use row-span = 2 for the image cell, which prevents its height preferences to be taken into account during allocation, so its height ends up being limited by the height of the content in the other rows. To avoid showing a stretched image, we set the minimum height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
 .notification-with-image {
     min-height: 159px;
     color: white;
@@ -1777,23 +1772,23 @@ menu-background allows the menu applet to be themed separately from other applet
 }
 
 .workspace-graph .workspace {
-    border: 2px solid #ff0000;
+    border: 2px solid white;
     background-gradient-direction: vertical;
-    background-gradient-start: rgb(82, 148, 226);
-    background-gradient-end: rgb(82, 148, 226);
+    background-gradient-start: rgb(50, 50, 50);
+    background-gradient-end: rgb(50, 50, 50);
 }
 
 .workspace-graph .workspace:active {
-    border: 2px solid #0029c5;
+    border: 2px solid #5294e2;
     background-gradient-direction: vertical;
-    background-gradient-start: rgb(82, 148, 226);
-    background-gradient-end: rgb(82, 148, 226);
+    background-gradient-start: rgb(204, 204, 204);
+    background-gradient-end: rgb(204, 204, 204);
 }
 
 .workspace-graph .workspace .windows {
     -active-window-background: rgb(255, 255, 255);
     -active-window-border: rgb(0, 0, 0);
-    -inactive-window-background: rgb(227, 227, 227);
+    -inactive-window-background: rgb(53, 57, 69);
     -inactive-window-border: rgb(0, 0, 0);
 }
 
@@ -2165,7 +2160,6 @@ menu-background allows the menu applet to be themed separately from other applet
  * ===================================================================*/
 
 /*This option works only applica to any applet that is in the left corner*/
-
 .panel-bottom .applet-box:first-child:hover {
     border-image: url("common-assets/menu/button-menu-hover-bottom.svg") 9 9 9 9;
 }
@@ -2268,7 +2262,7 @@ menu-background allows the menu applet to be themed separately from other applet
 
 .osd-window .level-bar {
     border-radius: 0.3em;
-    background-color: rgba(82, 148, 226, 0.70);
+    background-color: rgba(82, 148, 226, 0.75);
 }
 
 .tile-preview, .tile-hud {
