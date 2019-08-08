@@ -13,6 +13,7 @@ Just copy the file `~/.themes/CGreen/cinnamon/userChrome.css` and paste it into 
 
 ## Versions
 
+* 1.1: modification of the workspace applet (visual representation).
 * 1.0: first version (Cinnamon 4).
 
 
