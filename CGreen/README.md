@@ -10,9 +10,18 @@ For example: background-color: rgba(53, 57, 69, `0.50`); . A value of `0` is equ
 ### This is a css file that changes the color of the address bar according to the security of a site:
 Just copy the file `~/.themes/CGreen/cinnamon/userChrome.css` and paste it into `~/.mozilla/firefox/YOUR_PROFILE/chrome/`. If the `chrome` directory is not present in your profile, you will need to create it.
 
+### From Firefox 69 and after:
+You must type `about:config` in the address bar and then modify the value `toolkit.legacyUserProfileCustomizations.stylesheets` by double-clicking on it to switch it to `TRUE`.
+
+
+![example](https://i.postimg.cc/L8G7tSsw/extra.png)
+
+**Without this modification, the extra doesn't work.**
+
 
 ## Versions
 
+* 1.2: instruction for the extra from Firefox 69.
 * 1.1: modification of the workspace applet (visual representation).
 * 1.0: first version (Cinnamon 4).
 
