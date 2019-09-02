@@ -26,9 +26,8 @@ You must type `about:config` in the address bar and then modify the value `toolk
 
 ## Versions
 
-* 1.10: instruction for the extra from Firefox 69.
-* 1.9: modification of the workspace applet (visual representation).
-* 1.8: instruction to use the extra with Firefox 69 and higher, minor changes (tooltip and calendar arrows).
+* 1.9: instruction for the extra from Firefox 69.
+* 1.8: color arrows calendar, modification of the workspace applet (visual representation)
 * 1.7: modify categories in the menu and menu items, change of the sound player applet buttons.
 * 1.6: change of background color.
 * 1.5: support for Weather + BAMS applets and photoframe desklet.
