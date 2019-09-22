@@ -84,7 +84,7 @@ color: @theme_fg_color;
     color: mix(@theme_fg_color, @theme_bg_color, 0.5);
 }
 
-/* apply effects to insensitive and prelit images */
+/* apply effects to disabled and prelit images */
 *:insensitive {
     -gtk-image-effect: dim;
 }
@@ -1097,7 +1097,7 @@ GtkTreeMenu .menuitem {
 
 .menu .menuitem:insensitive,
 .menu .menuitem *:insensitive {
-    color: mix(@menu_fg_color, @menu_bg_color, 0.5);
+    color: alpha(@menu_fg_color, 0.6);
 }
 
 .menuitem.check,
