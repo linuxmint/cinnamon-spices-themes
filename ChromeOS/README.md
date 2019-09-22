@@ -1,20 +1,40 @@
-#Chrome OS's theme for Cinnamon
+[![built-with-azurra-framework](https://github.com/Elbullazul/Azurra_framework/raw/assets/azurra_framework_smaller.png)](https://github.com/Elbullazul/Azurra_framework)
 
-Chrome OS is a theme with the goal of reproducing in the closest way possible Google's Web OS
+# Chrome OS theme for Linux
 
-![chromeos-theme](http://b00merang.weebly.com/uploads/1/6/8/1/16813022/screenshot-2016-10-18-16-18-36_orig.png)
+Material designed theme based on the latest Chrome OS version
+
+![chromeos-theme](https://github.com/B00merang-Project/gallery/raw/master/Chrome%20OS%2072%20(3).png)
+
+Should you be more privacy-oriented, we have an incognito theme as well:
+
+![chrome-os-dark](https://github.com/B00merang-Project/gallery/raw/master/Chrome%20OS%2072%20(5).png)
+
+The Cinnamon Spices Build is based on [Upstream Master](https://github.com/B00merang-Project/Chrome-OS/tree/b4eaddf6a828c0afdac91214a4d9bd63d6d5697d) with the following changes
+
+* Removed theme elements not relevant for Cinnamon Desktop
+* Added initial support for grouped-window-list
+* Added support for window-list-preview
 
 **Maintainer:** [Elbullazul](https://github.com/elbullazul)
 
 **Distributor:** [B00merang Project](https://github.com/B00merang-Project)
 
+**Cinnamon Spices Maintainer :** [Smurphos](https://github.com/smurphos)
+
 **License:** GPL v3
 
-**Features**
-- Flat & elegant colors 
-- Specially crafted Cinnamon theme 
-- Clean and modern look
-- Compatibility with GTK 3.20 +
-- Material design effetcs! (thanks to Flat-Plat theme)
+**More info :** http://b00merang.weebly.com/chrome-os.html
 
-### [Android 6.0 theme available too!](https://github.com/B00merang-Project/Chrome-OS/tree/android) ###
+### Manual installation
+
+Extract the zip file to the themes directory i.e. `/home/USERNAME/.themes`
+
+### Requirements
+
+- GTK+ 3.20 or above
+- Murrine and Pixmap theme engines
+
+### Contribute
+
+Contact us @ http://b00merang.weebly.com/contact.html

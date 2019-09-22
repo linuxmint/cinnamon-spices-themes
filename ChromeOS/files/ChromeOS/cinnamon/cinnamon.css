@@ -30,7 +30,9 @@
 .tile-preview,
 .tile-hud,
 .tile-preview.snap,
-.tile-hud.snap {
+.tile-hud.snap,
+.window-list-preview,
+.grouped-window-list-thumbnail-menu {
     background-color: white;
 }
 
@@ -87,7 +89,9 @@
 .window-caption#selected,
 .datemenu-date-label,
 .expo-workspaces-name-entry#selected,
-.calendar-day-with-events{
+.calendar-day-with-events,
+.window-list-preview,
+.grouped-window-list-thumbnail-menu {
     color: black;
 }
 /* ".keyboard-key:active" background on line 1074 */
@@ -1308,21 +1312,22 @@ StScrollBar StButton#hhandle {
     min-width: 5px;
 }
 .window-list-item-box {
-    color: black;
+    color: #fff;
     padding-left: 0px;
     padding-right: 0px;
     transition-duration: 50;
     border-image: url('active.png') 4 4 4 4;
 }
 .window-list-item-box:hover    {
-    color: black;
+    color: #fff;
     padding-left: 0px;
     padding-right: 0px;
+    border-image: url('hover.png');
 }
 .window-list-item-box:active,
 .window-list-item-box:checked,
 .window-list-item-box:focus    {
-    color: black;
+    color: #fff;
     padding-left: 0px;
     padding-right: 0px;
     border-image: url('active2.png') 4 4 4 4;
@@ -1330,13 +1335,13 @@ StScrollBar StButton#hhandle {
 .window-list-item-box:checked:hover,
 .window-list-item-box:focus:hover,
 .window-list-item-box:active:hover  {
-    color: black;
+    color: #fff;
     padding-left: 0px;
     padding-right: 0px;
 }
 
 .window-list-item-demands-attention {
-    color: black;
+    color: #fff;
     padding-left: 0px;
     padding-right: 0px;
 }
@@ -1350,6 +1355,62 @@ StScrollBar StButton#hhandle {
 .window-list-item-box:focus:hover,
 .window-list-item-box:active:hover {
 }
+
+.window-list-preview {
+    padding: 8px 8px 8px 8px;
+    box-shadow: 0 0 8px 2px rgba(0,0,0,0.25);
+}
+
+/* experimental support for grouped window list */
+
+.grouped-window-list-item-box {
+  color: #fff;
+  border-image: none;
+  transition-duration: 50;
+}
+
+.grouped-window-list-item-box:hover,
+.grouped-window-list-item-box:focus:hover,
+.grouped-window-list-item-box:active:hover,
+.grouped-window-list-item-box:checked:hover {
+    color: #fff;
+    border-image: url('hover.png');
+}
+
+.grouped-window-list-item-box:active,
+.grouped-window-list-item-box:checked {
+    color: #fff;
+    border-image: url('active.png') 4 4 4 4;
+}
+
+.grouped-window-list-item-box:focus {
+    color: #fff;
+    border-image: url('active2.png') 4 4 4 4;
+}
+
+.grouped-window-list-thumbnail-menu {
+  padding: 2px;
+  spacing: 3px;
+  box-shadow: 0 0 8px 2px rgba(0,0,0,0.25); }
+  
+.grouped-window-list-thumbnail-menu .item-box {
+  padding: 8px 8px 8px 8px; }
+  
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+  background-color: rgba(0,0,0,0.25); }
+  
+.grouped-window-list-thumbnail-menu .item-box:selected {
+  background-color: rgba(0,0,0,0.15); }
+
+.grouped-window-list-thumbnail-menu .thumbnail-box {
+  padding: 2px;
+  spacing: 3px; }
+.grouped-window-list-thumbnail-menu .thumbnail {
+  width: 256px;
+  padding-top: 4px; }
+.grouped-window-list-thumbnail-menu .separator {
+    width: 1px; }
+
 /* ===================================================================
  * Sound Applet (status/volume.js)
  * ===================================================================*/
