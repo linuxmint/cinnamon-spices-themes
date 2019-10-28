@@ -1,8 +1,8 @@
 ## CGreen
 
-#### A semi-transparent Cinnamon theme for Matcha-Dark-Sea and the Numix-Circle icon theme, with Firefox extra. Inspired by the CBlack theme (author: cloweling).
+#### A semi-transparent Cinnamon theme, with Firefox extra. Inspired by the CBlack theme (author: cloweling).
 If you want a panel that is not transparent, modify the line `300` of the file `~/.themes/CGreen/cinnamon/cinnamon.css`.
-For example: background-color: rgba(53, 57, 69, `0.50`); . A value of `0` is equivalent to total transparency and `1` is totally opaque. Restart Cinnamon (Ctrl+Alt+Esc) for immediate modification..
+For example: background-color: rgba(53, 57, 69, `0.50`); . A value of `0` is equivalent to total transparency and `1` is totally opaque. Restart Cinnamon (Ctrl+Alt+Esc) for immediate modification.
 
 
 ## Firefox extra
@@ -21,6 +21,7 @@ You must type `about:config` in the address bar and then modify the value `toolk
 
 ## Versions
 
+* 1.3: slight panel touch-ups.
 * 1.2: instruction for the extra from Firefox 69.
 * 1.1: modification of the workspace applet (visual representation).
 * 1.0: first version (Cinnamon 4).
