@@ -1,7 +1,7 @@
 /* ***********************************************************************  
                                J A D E   1
                
-                            v3.2 (04.05.2018)
+                            v3.1 (02.05.2018)
  
   ------------------------------------------------------------------------
   Mixed light-dark gtk theme with green color accents developed for 
@@ -31,12 +31,12 @@ stage {
 }
 
 .cinnamon-link {
-    color: #0000ff;
+    color: #11cc00;
     text-decoration: underline;
 }
 
 .cinnamon-link:hover {
-    color: #0000e0;
+    color: #22ee00;
 }
 
 .label-shadow {
@@ -272,8 +272,8 @@ StScrollBar StButton#vhandle:hover
     -slider-height: 0.3em;
     -slider-background-color: rgba(35,35,35,1);
     -slider-border-color: rgba(0,0,0,1);
-    -slider-active-background-color: rgba(0,150,100,1);
-    -slider-active-border-color: rgba(0,70,20,1);
+    -slider-active-background-color: #5fa24a;
+    -slider-active-border-color: #5fa24a;
     -slider-border-width: 1px;
     -slider-handle-radius: 0.5em;
 }
@@ -302,17 +302,17 @@ StScrollBar StButton#vhandle:hover
 }
 
 .toggle-switch-us {
-    background-image: url("switch-off.svg");
+    background-image: url("assets/switch-off.svg");
 }
 .toggle-switch-us:checked {
-    background-image: url("switch-on.svg");
+    background-image: url("assets/switch-on.svg");
 }
 
 .toggle-switch-intl {
-    background-image: url("switch-off.svg");
+    background-image: url("assets/switch-off.svg");
 }
 .toggle-switch-intl:checked {
-    background-image: url("switch-on.svg");
+    background-image: url("assets/switch-on.svg");
 }
 
 .nm-menu-item-icons {
@@ -510,6 +510,38 @@ StScrollBar StButton#vhandle:hover
     icon-size: 1.14em;
 }
 
+.window-list-item-demands-attention {
+    border-image: url("assets/attention.svg") 6;
+}
+
+.panel-top .window-list-item-demands-attention {
+    border-image: url("assets/attention-top.svg") 6;
+}
+
+.panel-left .window-list-item-demands-attention {
+    border-image: url("assets/attention-left.svg") 6;
+}
+
+.panel-right .window-list-item-demands-attention {
+    border-image: url("assets/attention-right.svg") 6;
+}
+
+.window-list-item-box .progress {
+    border-image: url("assets/progress.svg") 6;
+}
+
+.panel-top .window-list-item-box .progress {
+    border-image: url("assets/progress-top.svg") 6;
+}
+
+.panel-left .window-list-item-box .progress {
+    border-image: url("assets/progress-left.svg") 6;
+}
+
+.panel-right .window-list-item-box .progress {
+    border-image: url("assets/progress-right.svg") 6;
+}
+
 /* ===================================================================
  * Overview
  * ===================================================================*/
@@ -553,19 +585,19 @@ StScrollBar StButton#vhandle:hover
 }
 
 .workspace-add-button {
-    background-image: url("add-workspace.png");
+    background-image: url("assets/add-workspace.png");
     height: 200px;
     width: 35px;
     transition-duration: 300;
 }
 
 .workspace-add-button:hover {
-    background-image: url("add-workspace-hover.png");
+    background-image: url("assets/add-workspace-hover.png");
     transition-duration: 300;
 }
 
 .workspace-close-button {
-    background-image: url("close-window.svg");
+    background-image: url("assets/close-window.svg");
     height: 34px;
     width: 34px;
     -cinnamon-close-overlap: 20px;
@@ -588,7 +620,7 @@ StScrollBar StButton#vhandle:hover
 }
 
 .window-close {
-    background-image: url("close-window.svg");
+    background-image: url("assets/close-window.svg");
     height: 34px;
     width: 34px;
     -cinnamon-close-overlap: 20px;
@@ -599,7 +631,7 @@ StScrollBar StButton#vhandle:hover
 }
 
 .window-close-area {
-  background-image: url("trash-icon.png");
+  background-image: url("assets/trash-icon.png");
   background-color: rgba(60, 60, 60, 0.8);
   border: 4px solid rgba(128,128,128,0.8);
   border-bottom-width: 0px;
@@ -742,13 +774,13 @@ StScrollBar StButton#vhandle:hover
 .calendar-change-month-back {
     width: 18px;
     height: 12px;
-    background-image: url("calendar-arrow-left.svg");
+    background-image: url("assets/calendar-arrow-left.svg");
     border-radius: 4px;
     border: 1px solid rgba(0,0,0,0);
 }
 
 .calendar-change-month-back:rtl {
-    background-image: url("calendar-arrow-right.svg");
+    background-image: url("assets/calendar-arrow-right.svg");
 }
 
 .calendar-change-month-back:hover {
@@ -762,13 +794,13 @@ StScrollBar StButton#vhandle:hover
 .calendar-change-month-forward {
     width: 18px;
     height: 12px;
-    background-image: url("calendar-arrow-right.svg");
+    background-image: url("assets/calendar-arrow-right.svg");
     border-radius: 4px;
     border: 1px solid rgba(0,0,0,0);
 }
 
 .calendar-change-month-forward:rtl {
-    background-image: url("calendar-arrow-left.svg");
+    background-image: url("assets/calendar-arrow-left.svg");
 }
 
 .calendar-change-month-forward:hover {
@@ -838,7 +870,7 @@ StScrollBar StButton#vhandle:hover
     text-shadow: black 0px 2px 2px;
     color: #ffffff;
     font-weight: bold;
-    background-color: rgba(0,150,100,1);
+    background-color: #5fa24a;
     box-shadow: inset 0px 0px 0px 1px rgba(120,120,120,1);
 }
 
@@ -1035,11 +1067,11 @@ StScrollBar StButton#vhandle:hover
 .ripple-box {
     width: 104px;
     height: 104px;
-    background-image: url("corner-ripple.png");
+    background-image: url("assets/corner-ripple.png");
 }
 
 .ripple-box:rtl {
-    background-image: url("corner-ripple.png");
+    background-image: url("assets/corner-ripple.png");
 }
 
 .switcher-arrow {
@@ -1576,8 +1608,8 @@ StScrollBar StButton#vhandle:hover
 
 .menu-favorites-button:hover {
     background-gradient-direction: vertical;
-    background-gradient-start: rgba(180,180,180,0.3);
-    background-gradient-end: rgba(180,180,180,0.3);
+    background-gradient-start: #5b6464;
+    background-gradient-end: #5b6464;
     border-radius: 4px;
     border-right: 0px solid transparent;
     border-left: 0px solid transparent;
@@ -1778,10 +1810,12 @@ StScrollBar StButton#vhandle:hover
 }
 .window-list-item-box {
 	color: #dbdbdb;
-    border: 1px rgba(0,0,0,0.5);
+    border: 1px solid rgba(0,0,0,0.5);
     text-shadow: rgba(0,0,0,0.65) 0px 0px 2px;
 	border-top: 0px;
-	border-right: 0px;
+	border-bottom: 0px;
+    border-right: 1px;
+    border-left: 0px;
     background-color: rgba(255,255,255,0.1);
 	font-weight: normal;
 	font-size: 0.93em;
@@ -1816,19 +1850,144 @@ StScrollBar StButton#vhandle:hover
 }
 
 .window-list-item-box:first-child {
-	border-right: 0px;
-	}
-
-.window-list-item-box:last-child {
-	border-left: 1px;
-	border-right: 1px;
-	}
+    border-left: 1px;
+}
 
 .window-list-item-demands-attention {
 	color: white;
 	font-weight: normal;
     background-color: rgba(125,1,38,0.45);
 }
+
+
+/* Window List Cinnamon 4.0 */
+
+.grouped-window-list-item-label {
+    font-weight: bold;
+   width: 15em;
+    min-width: 5px; 
+}
+
+.grouped-window-list-item-box {
+    font-weight: bold;
+    background-image: none;
+    padding-top: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    transition-duration: 100;
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 3px; 
+    border: 1px solid transparent;
+}
+
+.grouped-window-list-item-box.top StLabel, 
+.grouped-window-list-item-box.bottom StLabel {
+    padding-left: 2px; 
+}
+
+.grouped-window-list-item-box.right {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.grouped-window-list-item-box.right StBin {
+    padding-right: 0; 
+}
+
+.grouped-window-list-item-box.left {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.grouped-window-list-item-box.left StBin {
+    padding-left: 1px; 
+}
+
+.grouped-window-list-item-box:hover, 
+.grouped-window-list-item-box:focus {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.3); 
+}
+
+.grouped-window-list-item-box:active, 
+.grouped-window-list-item-box:checked {
+    color: #ffffff;
+    border-color: #999999; 
+}
+
+.grouped-window-list-item-box .progress {
+    background-color: rgba(0, 191, 255, 0.8);
+    border-radius: 3px;
+}
+
+.grouped-window-list-item-demands-attention {
+    background-gradient-direction: vertical;
+    background-gradient-start: #F04A50;
+    background-gradient-end: #F04A50; 
+}
+.grouped-window-list-thumbnail-label {
+    padding-left: 4px; 
+}
+.grouped-window-list-number-label {
+    z-index: 99;
+    color: #d0d0d0; 
+}
+
+.grouped-window-list-badge {
+    border-radius: 256px;
+    background-color: #4a4a4a; 
+}
+
+.grouped-window-list-button-label {
+    padding-left: 4px; 
+}
+
+.grouped-window-list-thumbnail-alert {
+    background: rgba(255, 52, 52, 0.3); 
+}
+.grouped-window-list-thumbnail-menu {
+    color: #F0F0F0;
+    border: 0px solid #646969;
+    background-color: #343939;
+    border-radius: 3px;
+    padding: 5px; 
+
+}
+
+.grouped-window-list-thumbnail-menu > StBoxLayout {
+    padding: 4px; 
+}
+
+.grouped-window-list-thumbnail-menu .item-box {
+    padding: 10px;
+    border-radius: 3px;
+    spacing: 4px; 
+    border: 1px solid #646969;
+    margin: 5px;
+}
+
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+    padding: 8px;
+    border: 1px solid #5fa24a;  
+}
+.grouped-window-list-thumbnail-menu .item-box:selected {
+    color: #ffffff;
+    background-color: #646972;
+    border: 0px solid #646972; 
+}
+
+.grouped-window-list-thumbnail-menu .thumbnail {
+    width: 256px; 
+}
+
+.grouped-window-list-thumbnail-menu .separator {
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2); 
+}
+
+
+
+
 
 /* ===================================================================
  * Sound Applet (status/volume.js)
@@ -1865,12 +2024,10 @@ StScrollBar StButton#vhandle:hover
 
 .sound-player StButton:small:hover {
     color: rgb(255, 255, 255);
-    border-image: url("button-assets/button-hover.png") 4;
 }
 
 .sound-player StButton:small:active {
     color: rgb(255, 255, 255);
-    border-image: url("button-assets/button-pressed.png") 4;
 }
 
 .sound-player .slider {
@@ -1878,8 +2035,8 @@ StScrollBar StButton#vhandle:hover
     -slider-height: 0.5em;
     -slider-background-color: #000000;
     -slider-border-color: rgba(0, 0, 0, 0);
-    -slider-active-background-color: rgb(0,150,100);
-    -slider-active-border-color: rgba(0, 0, 0, 0);
+    -slider-active-background-color: #5fa24a;
+    -slider-active-border-color: #5fa24a;
     -slider-border-width: 0px;
     -slider-handle-radius: 0px;
 }
@@ -2057,18 +2214,18 @@ StScrollBar StButton#vhandle:hover
  * Overview corner
  * ===================================================================*/
 #overview-corner {
-    background-image: url("overview.png");
+    background-image: url("assets/overview.png");
 }
 
 #overview-corner:hover {
-    background-image:  url("overview-hover.png");
+    background-image:  url("assets/overview-hover.png");
 }
 
 /* ===================================================================
  * Applets (applet.js)
  * ===================================================================*/
 .applet-separator {
-    padding: 0px 2px;
+    padding: 1px 4px;
 }
 .applet-separator-line {
     width: 1px;
@@ -2076,10 +2233,13 @@ StScrollBar StButton#vhandle:hover
 }
 
 .applet-box {
-    padding-left: 3px;
-    padding-right: 3px;
+    spacing: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
     color: #ccc;
     text-shadow: black 0px 0px 2px;
+    font-weight: bold;
 }
 
 .applet-box.horizontal {
@@ -2087,13 +2247,15 @@ StScrollBar StButton#vhandle:hover
 }
 
 .applet-box.vertical {
-    padding: 3px;
+    padding: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .applet-box:checked,
 .applet-box:hover {
     color: #fff;
-    background-color: #009B6F;
+    background-color: #5fa24a;
 }
 
 .applet-box:highlight {
@@ -2182,12 +2344,12 @@ StScrollBar StButton#vhandle:hover
 .check-box:focus StBin {
     width: 16px;
     height: 16px;
-    background-image: url("checkbox-off.svg");
+    background-image: url("assets/checkbox-off.svg");
 }
 
 .check-box:checked StBin,
 .check-box:focus:checked StBin {
-    background-image: url("checkbox.svg");
+    background-image: url("assets/checkbox.svg");
 }
 
 .check-box StLabel {
@@ -2204,13 +2366,13 @@ StScrollBar StButton#vhandle:hover
 .radiobutton:focus StBin {
     width: 16px;
     height: 16px;
-    background-image: url("radiobutton-off.svg");
+    background-image: url("assets/radiobutton-off.svg");
     border-radius: 15px;
 }
 
 .radiobutton:checked StBin,
 .radiobutton:focus:checked StBin {
-    background-image: url("radiobutton.svg");
+    background-image: url("assets/radiobutton.svg");
 }
 
 .radiobutton StLabel {
