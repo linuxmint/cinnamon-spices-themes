@@ -26,6 +26,7 @@ You must type `about:config` in the address bar and then modify the value `toolk
 
 ## Versions
 
+* 1.11: workspace-graph editing.
 * 1.10: slight panel touch-ups.
 * 1.9: instruction for the extra from Firefox 69.
 * 1.8: color arrows calendar, modification of the workspace applet (visual representation).
