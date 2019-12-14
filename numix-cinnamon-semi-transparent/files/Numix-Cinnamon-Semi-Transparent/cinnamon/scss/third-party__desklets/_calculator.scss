@@ -1,0 +1,86 @@
+/* ======================================
+ * ! Calculator
+ * ====================================== */
+
+.calc-mainBox {
+    padding: 0;
+    spacing: 7px;
+}
+
+.calc-displayArea {
+    padding: 0;
+}
+
+.calc-displayWindow {
+    border-image: url("img/containers/light-bg.svg") 7;
+    padding: 8px;
+    padding-top: 4px;
+    padding-bottom: 1.5em;
+
+    &-rpn {
+        border-image: url("img/containers/light-bg.svg") 7;
+        padding: 8px;
+        padding-top: 4px;
+    }
+}
+
+.calc-displayText-primary {
+    font-size: $font-size-xxxl;
+    color: $text-primary;
+    text-align: right;
+}
+
+.calc-displayText-secondary {
+    font-size: $font-size-base;
+    color: $text-info;
+    text-align: right;
+    padding-bottom: 8px;
+}
+
+.calc-displayText-operation {
+    color: $text-info;
+}
+
+.calc-displayText-status {
+    font-size: $font-size-base;
+    color: $text-secondary;
+}
+
+.calc-displayText-rpn {
+    color: $text-primary;
+    font-size: $font-size-base;
+}
+
+.calc-stackArea {
+    height: 85px;
+    padding-top: .8em;
+    padding-bottom: 0;
+}
+
+.calc-navigation-box {
+    padding: 0 0 0 8px;
+    width: 16px;
+    border: none;
+}
+
+.calc-navigation-icon {
+    color: $text-primary;
+    icon-size: 16px;
+}
+
+.calc-navigation-button {
+    border: none;
+
+    &:hover .calc-navigation-icon {
+        color: $accent-primary;
+    }
+}
+
+.calc-button {
+    @include btn-primary;
+    @include size(3.8em, 3em);
+
+    &-padding {
+        padding: .1em;
+    }
+}

@@ -1,0 +1,100 @@
+/* ======================================
+ * ! Calendar
+ * ====================================== */
+
+.calendar-day {/* ! */}
+.calendar-day-top {/* ! */}
+.calendar-day-left {/* ! */}
+
+.datemenu-date-label {
+    padding: .7em 1.3em .4em 1.3em;
+    font-size: $font-size-base;
+    font-weight: bold;
+    text-align: center;
+    color: $text-primary;
+}
+
+.calendar {
+    padding: .8em 1.3em .6em 1.3em;
+    spacing-rows: 2px;
+    spacing-columns: 2px;
+}
+
+.calendar-month-label {
+    padding-top: 2px;
+    font-size: $font-size-base;
+    font-weight: bold;
+    color: $text-secondary;
+    padding: .5em;
+}
+
+.calendar-change-month-back,
+.calendar-change-month-forward:rtl {
+    background-image: url("img/controls/calendar-arrow-left.svg");
+    background-size: 16px;
+    @include size(16px);
+    padding: 0 .2em;
+
+    &:hover {
+        background-image: url("img/controls/calendar-arrow-left-hover.svg");
+    }
+}
+
+.calendar-change-month-forward,
+.calendar-change-month-back:rtl {
+    background-image: url("img/controls/calendar-arrow-right.svg");
+    background-size: 16px;
+    @include size(16px);
+    padding: 0 .2em;
+
+    &:hover {
+        background-image: url("img/controls/calendar-arrow-right-hover.svg");
+    }
+}
+
+.calendar-day-base {
+    font-size: $font-size-base;
+    font-weight: bold;
+    text-align: center;
+    padding: 1px 0 0 1px;
+    @include size(2.5em);
+}
+
+.calendar-day-heading {
+    color: $text-primary;
+    padding: 1.2em 0 .6em 0;
+    height: 1.5em;
+}
+
+.calendar-work-day {
+    border-image: url("img/misc/calendar-work-day.svg") 6;
+    border: none;
+    color: $text-primary;
+}
+
+.calendar-nonwork-day {
+    border-image: url("img/misc/calendar-nonwork-day.svg") 6;
+    border: none;
+    color: $text-secondary;
+}
+
+.calendar-today {
+    border-image: url("img/misc/calendar-today.svg") 6;
+    color: $text-active;
+    font-weight: bold;
+}
+
+.calendar-other-month-day {
+    border-image: url("img/misc/calendar-other-month-day.svg") 6;
+    color: $text-disabled;
+    font-weight: normal;
+}
+
+.calendar-week-number {
+    color: $text-secondary;
+    font-size: $font-size-base;
+    font-weight: normal;
+    @include size(1.3em, 1.6em);
+    padding-top: .7em;
+    padding-right: .6em;
+}
