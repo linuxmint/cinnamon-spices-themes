@@ -1,0 +1,86 @@
+/* ======================================
+ * ! Window list
+ * ====================================== */
+
+.grouped-window-list-box {
+    spacing: 0px;
+    font-weight: bold;
+
+    #appMenuIcon { padding: 0 0 0 1px; }
+
+    .grouped-window-list-item-box {
+        padding: 0 1px;
+        max-width: 10em;
+    }
+
+    &.vertical {
+        #appMenuIcon { padding: 8px 0 0 0; }
+
+        .grouped-window-list-item-box { padding: 0; }
+    }
+}
+
+@each $pos in top, bottom, left, right {
+    .panel-#{$pos} {
+        .grouped-window-list {
+            &-item-box {
+                color: $text-primary;
+                &:hover  {
+                    border-image: url("img/panel/panel-#{$pos}__inactive__open.svg") 4;
+                    color: $text-primary;
+                }
+
+                &:active, &:checked, &:focus  {
+                    border-image: url("img/panel/grouped-window-list__#{$pos}__active.svg") 4;
+                    color: $text-primary;
+                }
+
+                &:hover:active, &:hover:checked, &:hover:focus  {
+                    border-image: url("img/panel/grouped-window-list__#{$pos}__active__hover.svg") 4;
+                    color: $text-primary;
+                }
+            }
+            &-badge {
+              border-image: url("img/containers/little-transparent-bg.svg") 4;
+              color: $text-primary;
+            }
+            &-thumbnail-menu{
+              background-color: #ffffff;
+              .item-box{
+                background-color: #ffffff;
+              }
+            }
+        }
+
+        .grouped-window-list-item-demands-attention {
+            border-image: url("img/panel/grouped-window-list__#{$pos}__attention.svg") 4;
+            color: $text-active;
+        }
+    }
+}
+
+.grouped-window-list-thumbnail-menu{
+
+  border-image: url("img/containers/semi-transparent-bg.svg") 4;
+
+  .item-box{
+    color: $text-primary;
+    font-size: $font-size-base;
+    font-weight: bold;
+
+    &:selected{
+      border-image: url("img/containers/semi-transparent-bg.svg") 4;
+      color: $text-primary;
+    }
+
+    &:outlined{
+      border-image: url("img/containers/transparent-bg-outlined.svg") 4;
+      color: $text-primary;
+    }
+
+    &:outlined:hover{
+      border-image: url("img/containers/semi-transparent-bg-selected-outlined.svg") 4;
+      color: $text-primary;
+    }
+  }
+}
