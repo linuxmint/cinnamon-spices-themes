@@ -1,4 +1,4 @@
-# Monternos
+# The Monternos Theme
 
 ## Overview
 
@@ -10,11 +10,8 @@ Having an innovative and modern design.
 To set up the Theme go through the following steps.
 
 1. Create a second panel
-
 2. Set one panel to the top, and one at the bottom.
-
 3. Have your item shortcuts in the center of the panel at the bottom.
 
---1. Goto Panelsettings
-
---2. Set bottom panel to automatically go away.
+    1. Goto Panelsettings
+    2. Set bottom panel to automatically go away.
