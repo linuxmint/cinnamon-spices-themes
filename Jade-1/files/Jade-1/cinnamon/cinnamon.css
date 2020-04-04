@@ -1,29 +1,17 @@
-/* ***********************************************************************  
-                               J A D E   1
-               
-                            v3.1 (02.05.2018)
- 
-  ------------------------------------------------------------------------
-  Mixed light-dark gtk theme with green color accents developed for 
-  Linux Mint based upon Obsidian 2.
- 
-  Code available at Github:
-  https://github.com/madmaxms/theme-jade-1
- 
- ------------------------------------------------------------------------
+/* *********************************************************************** 
 
-  This program is free software: you can whiteistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version. 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 
-  You should have received a copy of the GNU General Public License
-  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ************************************************************************** */
 stage {
@@ -31,12 +19,12 @@ stage {
 }
 
 .cinnamon-link {
-    color: #11cc00;
+    color: #22ee00; /*+*/
     text-decoration: underline;
 }
 
 .cinnamon-link:hover {
-    color: #22ee00;
+    color: #22ee00; /*+*/
 }
 
 .label-shadow {
@@ -87,16 +75,15 @@ StScrollBar StButton#vhandle:hover
 }
 
 #Tooltip {
-    border: 1px solid rgba(212,185,67,1.0);
-    border-radius: 4px;
-    padding: 2px 12px;
-    background-gradient-end: rgba(251,234,159,0.9);
-    background-gradient-start: rgba(254,245,198,0.9);
-    background-gradient-direction: vertical;
-    color: #000000;
-    font-size: 8.5pt;
-    font-weight: normal;
+    padding: 8px;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: none;
+    text-shadow: 0 1px black; 
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-clip: padding-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ===================================================================
@@ -272,8 +259,8 @@ StScrollBar StButton#vhandle:hover
     -slider-height: 0.3em;
     -slider-background-color: rgba(35,35,35,1);
     -slider-border-color: rgba(0,0,0,1);
-    -slider-active-background-color: #5fa24a;
-    -slider-active-border-color: #5fa24a;
+    -slider-active-background-color: #5fa24a; /*+*/
+    -slider-active-border-color: #5fa24a; /*+*/
     -slider-border-width: 1px;
     -slider-handle-radius: 0.5em;
 }
@@ -870,7 +857,7 @@ StScrollBar StButton#vhandle:hover
     text-shadow: black 0px 2px 2px;
     color: #ffffff;
     font-weight: bold;
-    background-color: #5fa24a;
+    background-color: #5fa24a; /*+*/
     box-shadow: inset 0px 0px 0px 1px rgba(120,120,120,1);
 }
 
@@ -1462,11 +1449,11 @@ StScrollBar StButton#vhandle:hover
     background-gradient-direction: vertical;
     color: black;
     border-radius: 5px;
-    border: 2px solid #555753;
+    border: 2px solid #535557; 
 }
 
 .polkit-dialog-password-entry:focus {
-    border: 2px solid #3465a4;
+    border: 2px solid #69C000; /*+*/
 }
 
 .polkit-dialog-password-entry .capslock-warning {
@@ -1608,7 +1595,7 @@ StScrollBar StButton#vhandle:hover
 
 .menu-favorites-button:hover {
     background-gradient-direction: vertical;
-    background-gradient-start: #5b6464;
+    background-gradient-start: #5b6464; 
     background-gradient-end: #5b6464;
     border-radius: 4px;
     border-right: 0px solid transparent;
@@ -1810,13 +1797,13 @@ StScrollBar StButton#vhandle:hover
 }
 .window-list-item-box {
 	color: #dbdbdb;
-    border: 1px solid rgba(0,0,0,0.5);
-    text-shadow: rgba(0,0,0,0.65) 0px 0px 2px;
+        border: 1px solid rgba(0,0,0,0.5);
+        text-shadow: rgba(0,0,0,0.65) 0px 0px 2px;
 	border-top: 0px;
 	border-bottom: 0px;
-    border-right: 1px;
-    border-left: 0px;
-    background-color: rgba(255,255,255,0.1);
+        border-right: 1px;
+        border-left: 0px;
+        background-color: rgba(255,255,255,0.1);
 	font-weight: normal;
 	font-size: 0.93em;
 	padding-left: 5px;
@@ -1875,7 +1862,7 @@ StScrollBar StButton#vhandle:hover
     padding-left: 8px;
     padding-right: 8px;
     transition-duration: 100;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.3);
     border-radius: 3px; 
     border: 1px solid transparent;
 }
@@ -1903,27 +1890,36 @@ StScrollBar StButton#vhandle:hover
     padding-left: 1px; 
 }
 
-.grouped-window-list-item-box:hover, 
-.grouped-window-list-item-box:focus {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.3); 
-}
-
 .grouped-window-list-item-box:active, 
 .grouped-window-list-item-box:checked {
     color: #ffffff;
-    border-color: #999999; 
+    border-color: rgba(144,149,154,0.8);
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(110,120,130,0.5);
+    background-gradient-end: rgba(40,50,60,0.5);
+}
+
+.grouped-window-list-item-box:hover, 
+.grouped-window-list-item-box:focus {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.7);
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(255,255,255,0.5);
+    background-gradient-end: rgba(255,255,255,0.2); 
 }
 
 .grouped-window-list-item-box .progress {
-    background-color: rgba(0, 191, 255, 0.8);
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(0,191,255,0.9);
+    background-gradient-end: rgba(0,191,255,0.3);
     border-radius: 3px;
 }
 
 .grouped-window-list-item-demands-attention {
     background-gradient-direction: vertical;
-    background-gradient-start: #F04A50;
-    background-gradient-end: #F04A50; 
+    background-gradient-start: rgba(240,164,74,0.9);
+    background-gradient-end: rgba(240,164,74,0.3);
+    border-radius: 3px;
 }
 .grouped-window-list-thumbnail-label {
     padding-left: 4px; 
@@ -1968,7 +1964,7 @@ StScrollBar StButton#vhandle:hover
 
 .grouped-window-list-thumbnail-menu .item-box:outlined {
     padding: 8px;
-    border: 1px solid #5fa24a;  
+    border: 1px solid #5fa24a; /*+*/ 
 }
 .grouped-window-list-thumbnail-menu .item-box:selected {
     color: #ffffff;
@@ -2035,8 +2031,8 @@ StScrollBar StButton#vhandle:hover
     -slider-height: 0.5em;
     -slider-background-color: #000000;
     -slider-border-color: rgba(0, 0, 0, 0);
-    -slider-active-background-color: #5fa24a;
-    -slider-active-border-color: #5fa24a;
+    -slider-active-background-color: #5fa24a; /*+*/
+    -slider-active-border-color: #5fa24a; /*+*/
     -slider-border-width: 0px;
     -slider-handle-radius: 0px;
 }
@@ -2150,15 +2146,15 @@ StScrollBar StButton#vhandle:hover
     padding-left: 1px;
     padding-right: 1px;
     border: 0 solid transparent;
-    border-bottom-width: 1px;
+    border-width: 1px;
+    border-radius: 3px;
 }
 
 .panel-launchers .launcher:hover {
+    border-color: rgba(255, 255, 255, 0.7);
     background-gradient-direction: vertical;
-    background-gradient-start: rgba(255,255,255,0.0);
-    background-gradient-end: rgba(255,255,255,0.2);
-    border-color: rgba(255,255,255,0.5);
-
+    background-gradient-start: rgba(255,255,255,0.5);
+    background-gradient-end: rgba(255,255,255,0.2); 
 }
 
 .panel-launcher-add-dialog-content-box {
@@ -2255,7 +2251,7 @@ StScrollBar StButton#vhandle:hover
 .applet-box:checked,
 .applet-box:hover {
     color: #fff;
-    background-color: #5fa24a;
+    background-color: #5fa24a; /*+*/
 }
 
 .applet-box:highlight {
