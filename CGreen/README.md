@@ -21,6 +21,7 @@ You must type `about:config` in the address bar and then modify the value `toolk
 
 ## Versions
 
+* 1.6: fixes the workspace-switcher offset.
 * 1.5: fixed a bug in the panel-launchers applet for vertical panels, magnification of some panel elements.
 * 1.4: workspace-graph editing.
 * 1.3: slight panel touch-ups.
