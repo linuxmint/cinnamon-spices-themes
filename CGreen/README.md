@@ -16,8 +16,7 @@ You must type `about:config` in the address bar and then modify the value `toolk
 ![example](https://i.postimg.cc/L8G7tSsw/extra.png)
 
 ### /!\ IMPORTANT: From Firefox 75 and after /!\
-You must also change the following key to `FALSE`:
-`browser.urlbar.update1`
+You must also change the following key to `FALSE`: `browser.urlbar.update1`
 
 **Without this modifications, the extra doesn't work.**
 
@@ -26,7 +25,7 @@ You must also change the following key to `FALSE`:
 
 * Download the Brizel font [here](https://dl.dafont.com/dl/?f=brizel), then unzip into `~/.local/share/fonts`. The `fc-cache -f -v` command may be needed to update the fonts.
 
-* Copy the file located in `~/.themes/CGreen/cinnamon/TimeFull` and paste it into `~/.conky` (these are hidden folders: Ctrl+h to show them). More informations can be found at the beginning of the file.
+* Copy the file located in `~/.themes/CGreen/cinnamon/TimeFull` and paste it into `~/.conky` (these are hidden folders: Ctrl+h to show them). You must also allow the file to run with the command `chmod 750 ~/.conky/TimeFull`. More informations can be found at the beginning of the file.
 
 ## Versions
 
