@@ -1,0 +1,82 @@
+----------------------------------------------------------------------------------------
+-- Modified by Bundy01, inspired by the work of satya164 - Conky Metro Clock.	      --
+-- Change the 'enp3s0f1' interface if you are using another one:	                  --
+-- ex: 'eth0' (line 82).'ip addr' or 'ifconfig' to know it.		            	      --
+--																					  --
+-- Depends on curl to get the IP and Brizel font: https://www.dafont.com/brizel.font  --
+-- Run this command at startup with a few seconds delay for a VPN connection:		  --
+-- sh -c "conky -c ~/.conky/TimeFull &" %u										      --
+-- License: GPL.																	  --
+----------------------------------------------------------------------------------------
+
+conky.config = {
+use_xft = true,
+xftalpha = 0.8,
+background = true,
+
+-- Update interval in seconds
+update_interval = 1,
+own_window_argb_visual = true,
+-- This is the number of times Conky will update before quitting.
+-- Set to zero to run forever.
+total_run_times = 0,
+
+-- Create own window instead of using desktop (required in nautilus)
+own_window = true,
+own_window_transparent = true,
+own_window_type = 'normal',
+own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+
+-- Use double buffering (reduces flicker, may not work for everyone)
+double_buffer = true,
+
+-- Draw shades?
+draw_shades = false,
+
+-- Draw outlines?
+draw_outline = false,
+
+-- Draw borders around text
+draw_borders = false,
+
+-- Stippled borders?
+stippled_borders = 0,
+
+-- Border width
+border_width = 60,
+
+-- Subtract file system buffers from used memory?
+no_buffers = true,
+
+-- set to yes if you want all text to be in uppercase
+uppercase = false,
+
+-- Number of cpu samples to average
+-- Set to 1 to disable averaging
+cpu_avg_samples = 4,
+
+-- Number of net samples to average
+-- Set to 1 to disable averaging
+net_avg_samples = 2,
+
+-- Force UTF8? note that UTF8 support required XFT
+override_utf8_locale = true,
+
+-- Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer = 'none',
+
+-- Alignment = bl,
+gap_x = 60,
+gap_y = 60,
+
+color1 = '2EB398',
+color2 = 'FFFFFF',
+color3 = 'CCCCCC',
+}
+
+conky.text = [[
+${voffset 8}${font Brizel:size=65}${color1}${time %H:%M %p}${font}${voffset -8}
+${voffset 8}${font Brizel:size=23}${color2}${time %A} ${time %e} ${time %B}${font}${voffset -8}
+${voffset 8}${font Cantarel:size=9}${color3}RM $mem/$memmax  $memperc%  -  HD ${fs_used /}/${fs_size /}${font}${voffset -8}
+${voffset 8}${font Cantarel:size=9}BATT ${battery_percent BAT0}%  UPT ${uptime_short}  -  CPU ${freq_g}GHz $cpu% ${hwmon 3 temp 1}°${font}${voffset -8}
+${voffset 8}${font Cantarel:size=9}IP ${execi 180 curl https://ipapi.co/ip 2>/dev/null}  -  DOWN ${downspeedf enp3s0f1}KB/s UP ${upspeedf enp3s0f1}KB/s${font}${voffset -8} ]]
