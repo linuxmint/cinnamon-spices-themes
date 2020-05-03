@@ -1,3 +1,10 @@
+### Update 3.0.0
+* Support CSS CinnVIIStarkMenu Applet
+* Border most Highlighted
+* Round the edges of the container
+* Change the status style of an application on Grouped window list Apple
+* Update theme GTK
+
 ### Update 2.0
 * Update GTK+ Breans master in the repository Linux Mint
 * Change color notification
