@@ -1,28 +1,45 @@
-## Installation
+## CBLACK - CINNAMON
+
+### Installation
 
 * Download the zip file and extract the folder.
-* Move the document to the .themes folder located in the personal folder
+* Move the document to the .themes folder located in the /home/$USER/.themes
 
-## Extra
+## FQA
 
-* Includes the theme Linux-Mint for gtk / gtk + with personal modifications.
+**What custom applets do I use?**
 
-### Change the transparency of the panels, for this you must look for the following code
+1. CinnVIIStarkMenu - https://cinnamon-spices.linuxmint.com/applets/view/281
+2. Collapsible Systray - https://cinnamon-spices.linuxmint.com/applets/view/265
+3. Shutdown applet - https://cinnamon-spices.linuxmint.com/applets/view/159
+4. Weather - https://cinnamon-spices.linuxmint.com/applets/view/17
+
+**How to make the panel transparent?**
+
+Inside the CBlack folder, open the cinnamon.css file, search the following code
 ```
 .panel-left {
-background color: rgba (20, 20, 20, 0.8);
+    box-shadow: 1px 0px 0px 0px rgba(20, 20, 20, 1);
 }
 
 .panel-right {
-background color: rgba (20, 20, 20, 0.8);
+    box-shadow: -1px 0px 0px 0px rgba(20, 20, 20, 1);
 }
 
 .panel-top {
-background color: rgba (20, 20, 20, 1);
+    box-shadow: 0px 1px 0px 0px rgba(20, 20, 20, 1);
 }
 
 .panel-bottom {
-background color: rgba (20, 20, 20, 1);
+    box-shadow: 0px -1px 0px 0px rgba(20, 20, 20, 1);
 }
 ```
-Modify the last value, in the case of the left / right is 0.8 and top / bottom part is 1. You can only put a value from 0 to 1 taking into account decimals, with total transparency 0 and no transparency 1. 
+You modify the last value between 0 (full transparency) to 1 (full visibility)
+
+**What is the GTK theme based on?**
+
+It is based on the Linux Mint theme, only the colors, tooltip and the menu were modified.
+
+**Where can I get the wallpaper?**
+
+[Click here to download wallpaper](https://mocah.org/4536956-night-moon-dark-minimalism-digital-art.html)
