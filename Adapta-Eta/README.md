@@ -1,6 +1,6 @@
 ## Adapta-Eta
 
-A compact dark theme based on Material Design Guidelines. Cinnamon, Metacity, GTK2, GTK3.18 and GTK3.22+ themes are included.
+A compact light theme based on Material Design Guidelines. Cinnamon, Metacity, GTK2, GTK3.18 and GTK3.22+ themes are included.
 
 ## Credits
 
