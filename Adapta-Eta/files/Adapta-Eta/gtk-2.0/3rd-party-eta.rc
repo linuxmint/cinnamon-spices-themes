@@ -12,7 +12,7 @@ style "theme-panel" {
   ythickness = 0
 
   bg[NORMAL] = @panel_bg_color
-  bg[ACTIVE] = @selected_bg_color
+  bg[ACTIVE] = @panel_bg_color
   bg[PRELIGHT] = shade(1.1, @selected_bg_color)
   bg[SELECTED] = @selected_bg_color
   fg[NORMAL] = @inverted_fg_color
@@ -241,14 +241,14 @@ style "xfsm-logout" {
   GtkDialog::action-area-spacing = 3
 
   bg[NORMAL]   = @bg_color
-  bg[SELECTED] = @bg_color # Border around the dialog
-  fg[NORMAL]   = mix(0.87, @fg_color, @bg_color)
+  bg[SELECTED] = @bg_color
+  fg[NORMAL]   = @bg_color
 }
 
 style "xfsm-label" {
   font_name = "12"
 
-  fg[NORMAL]   = mix(0.54, @fg_color, @bg_color)
+  fg[NORMAL]   = @accent_color
 }
 
 widget_class "*XfceHeading*"                          style "xfce-heading"

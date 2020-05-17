@@ -10,7 +10,7 @@ This is a build of [Tista's](https://github.com/tista500) [Adapta theme](https:/
 
 [Original Source Code](https://github.com/adapta-project/adapta-gtk-theme)
 
-[Fork for this build](https://github.com/smurphos/adapta-gtk-theme)
+[Fork for this build](https://github.com/Joshaby/Adapta-Colorpack)
 
 This build is based on [Adapta version 3.95.0.11](https://github.com/adapta-project/adapta-gtk-theme/releases/tag/3.95.0.11) with the following modifications.
 
@@ -60,11 +60,11 @@ To allow the GTK2, GTK3 and Metacity1 themes to apply to GUI apps running as roo
 
 ## Compatibility
 
-This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x` & `4.0`
+This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x` & `4.x`
 
 The GTK3 themes require GTK `3.18.x` or `3.2x`
 
-Tested on Linux Mint `18.2`, `18.3` & `19` 64bit with Cinnamon `3.4.x`, `3.6.x`, and `3.8.x`. Also tested on Manjaro with Cinnamon `4.0`
+Tested on Linux Mint `18.2`, `18.3` & `19` 64bit with Cinnamon `3.4.x`, `3.6.x`, and `3.8.x`. Also tested on Manjaro with Cinnamon `4.x`
 
 ### Firefox fix
 
