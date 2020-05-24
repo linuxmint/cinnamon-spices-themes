@@ -12,10 +12,6 @@ The Cinnamon themes in both [Cinnamox-gtk-theme](https://github.com/smurphos/cin
 
 GTK2, GTK3, GTK3.20 and Metacity themes in both [Cinnamox-gtk-theme](https://github.com/smurphos/cinnamox-gtk-theme) & [Oomox-gtk-theme](https://github.com/themix-project/oomox-gtk-theme) are authored by [@actionless and contributors](https://github.com/themix-project/oomox-gtk-theme/graphs/contributors).
 
-Menu in screenshots is the excellent [Cinnamenu](https://cinnamon-spices.linuxmint.com/applets/view/282).
-
-Icons in screenshots are from [ePapirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/tree/master/ePapirus).
-
 [Licensed under GPL-3.0](https://github.com/smurphos/cinnamox-gtk-theme/blob/master/LICENSE)
 
 ## Installation
@@ -34,13 +30,25 @@ To allow the GTK2, GTK3 and Metacity1 themes to apply to GUI apps running as roo
 
 ### Cinnamon Theme Font-Size
 
-The theme includes an interactive bash script that allows end users to adjust the base font-size of the Cinnamon Theme. This can be useful for users running Cinnamon on realtively high resolution displays with relatively small screen dimensions where the hard-coded theme default font-sizes are too small.
+For Cinnamon version 4.6.x and later the Cinnamon theme's font characteristics van be set via changing the default font in Font Selection settings module available from the menu.
+
+For users of older Cinnamon versions the theme includes an interactive bash script that allows end users to adjust the base font-size in the Cinnamon theme. This can be useful for users running Cinnamon on relatively high resolution displays with relatively small screen dimensions where the hard-coded theme default font-sizes are too small.
 
 To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
 
-`chmod +x ~/.themes/Cinnamox-Heather/cinnamon/cinnamox_fontsize.sh && ~/.themes/Cinnamox-Heather/cinnamon/cinnamox_fontsize.sh`
+`chmod +x ~/.themes/Cinnamox-Heather/scripts/cinnamox_fontsize.sh && ~/.themes/Cinnamox-Heather/scripts/cinnamox_fontsize.sh`
 
-If you are not happy with the end result simply run `~/.themes/Cinnamox-Heather/cinnamon/cinnamox_fontsize.sh` again to chose another option including the default
+If you are not happy with the end result simply run `~/.themes/Cinnamox-Heather/scripts/cinnamox_fontsize.sh` again to chose another option including the default
+
+### Titlebar Button-Size
+
+The theme includes an interactive bash script that allows end users to adjust the size of the Titlebar buttons. Please note this only affects Windows with a traditional titlebar. It has no affect on on Widows using Client Side Decorations.
+
+To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
+
+`chmod +x ~/.themes/Cinnamox-Heather/scripts/cinnamox_titlebar_button_size.sh && ~/.themes/Cinnamox-Heather/scripts/cinnamox_titlebar_button_size.sh`
+
+If you are not happy with the end result simply run `~/.themes/Cinnamox-Heather/scripts/cinnamox_titlebar_button_size.sh` again to chose another option including the default
 
 ### Cinnamon Theme Transparency
 
@@ -48,9 +56,9 @@ The theme includes an interactive bash script that allows end users to adjust th
 
 To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
 
-`chmod +x ~/.themes/Cinnamox-Heather/cinnamon/cinnamox_transparency.sh && ~/.themes/Cinnamox-Heather/cinnamon/cinnamox_transparency.sh`
+`chmod +x ~/.themes/Cinnamox-Heather/scripts/cinnamox_transparency.sh && ~/.themes/Cinnamox-Heather/scripts/cinnamox_transparency.sh`
 
-If you are not happy with the end result simply run `~/.themes/Cinnamox-Heather/cinnamon/cinnamox_transparency.sh` again to chose another option including the default.
+If you are not happy with the end result simply run `~/.themes/Cinnamox-Heather/scripts/cinnamox_transparency.sh` again to chose another option including the default.
 
 If you would like to control transparency of application windows then please check out my [opacify windows script](https://github.com/smurphos/nemo_actions_and_cinnamon_scripts#opacify-windows)
 
@@ -62,9 +70,9 @@ If you prefer the old styling a helper script is included to facilitate a switch
 
 To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
 
-`chmod +x ~/.themes/Cinnamox-Heather/cinnamon/cinnamox_toggle_cinnamon.sh && ~/.themes/Cinnamox-Heather/cinnamon/cinnamox_toggle_cinnamon.sh`
+`chmod +x ~/.themes/Cinnamox-Heather/scripts/cinnamox_toggle_cinnamon.sh && ~/.themes/Cinnamox-Heather/scripts/cinnamox_toggle_cinnamon.sh`
 
-To revert to the new styling simply run `~/.themes/Cinnamox-Heather/cinnamon/cinnamox_toggle_cinnamon.sh` again.
+To revert to the new styling simply run `~/.themes/Cinnamox-Heather/scripts/cinnamox_toggle_cinnamon.sh` again.
 
 ### GTK2 HIDPI support
 
@@ -72,9 +80,9 @@ If you need HIDPI Support in GTK2 the theme includes a HIDPI version of the gtkr
 
 To run the script open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
 
-`chmod +x ~/.themes/Cinnamox-Heather/gtk-2.0/cinnamox_toggle_GTK2_HIDPI.sh && ~/.themes/Cinnamox-Heather/gtk-2.0/cinnamox_toggle_GTK2_HIDPI.sh`
+`chmod +x ~/.themes/Cinnamox-Heather/scripts/cinnamox_toggle_GTK2_HIDPI.sh && ~/.themes/Cinnamox-Heather/scripts/cinnamox_toggle_GTK2_HIDPI.sh`
 
-After the first run you can toggle between the two using `~/.themes/Cinnamox-Heather/gtk-2.0/cinnamox_toggle_GTK2_HIDPI.sh`
+After the first run you can toggle between the two using `~/.themes/Cinnamox-Heather/scripts/cinnamox_toggle_GTK2_HIDPI.sh`
 
 ### qt5ct support
 
@@ -82,17 +90,15 @@ If you need support for qt5ct configuration the theme includes a premade qt5ct.c
 
 To run the script open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
 
-`chmod +x ~/.themes/Cinnamox-Heather/qt5ct/cinnamox_enable_qt5ct.sh && ~/.themes/Cinnamox-Heather/qt5ct/cinnamox_enable_qt5ct.sh`
+`chmod +x ~/.themes/Cinnamox-Heather/scripts/cinnamox_enable_qt5ct.sh && ~/.themes/Cinnamox-Heather/scripts/cinnamox_enable_qt5ct.sh`
 
 ## Compatibility
 
-This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x`, `4.0.x` & `4.2.x`
+This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x`, `4.0.x`, `4.2.x`, `4.4.x` & `4.6.x`
 
 The GTK3 themes require GTK `3.18.x` or `3.20.x`+
 
 The GTK2 theme requires the package `gtk2-engines-murrine` or `gtk-engine-murrine` to be installed. The former is a default package in Linux Mint.
-
-Tested on Linux Mint `18.2`, `18.3`, `19`, `19.1` & `19.2` 64bit with Cinnamon `3.4.x`, `3.6.x`, `3.8.x`, `4.0.x` & `4.2.x`; Also tested on Manjaro `17.0.6` 64Bit with Cinnamon `3.6.x`, `3.8.x` & `4.0.x`
 
 ### Firefox fix
 
@@ -102,7 +108,7 @@ This forces firefox to use the GTK default Adwaita theme for rendering all websi
 
 The theme includes a helper script that creates the file with this content in the correct location. To access the tool open a terminal window and use the following command to make the script executable and launch it.
 
-`chmod +x ~/.themes/Cinnamox-Heather/cinnamox_firefox_fix.sh && ~/.themes/Cinnamox-Heather/cinnamox_firefox_fix.sh`
+`chmod +x ~/.themes/Cinnamox-Heather/scripts/cinnamox_firefox_fix.sh && ~/.themes/Cinnamox-Heather/scripts/cinnamox_firefox_fix.sh`
 
 ## Make your own theme using Cinnamox / Oomox
 
