@@ -17,19 +17,26 @@ This build is based on [Adapta version 3.95.0.11](https://github.com/adapta-proj
 * Retain support for GTK 3.18
 * Stylesheets distributed in deobfuscated .css format
 * Build includes Cinnamon, GTK 2.0, 3.18, 3.22 & Metacity-1 themes only
-* GTK3.18 & 3.22 - Added support for different colored backgrounds in Nemo dual pane view
-* GTK3.18 & 3.22 - Cleaned out irrelevant third party styling related to non-Cinnamon desktop enviroments.
-* firefox_fix.sh script included to fix issues with firefox and dark themes
+* GTK3.18 & 3.22 - added support for different colored backgrounds in Nemo dual pane view
+* GTK3.18 & 3.22 - cleaned out irrelevant third party styling related to non-Cinnamon desktop enviroments.
+* Scripts - firefox_fix.sh script included to fix issues with firefox and dark themes
 * Cinnamon - fixed workspace-switcher applet on vertical panels
-* Cinnamon - fixed to menu theming for Cinnamenu compatibility
-* Cinnamon - Cinnamon 4.0 Grouped Window Applet theming by @jaszhix & @smurphos
+* Cinnamon - fixed to menu theming for cinnamenu compatibility
+* Cinnamon - cinnamon 4.0 grouped window list applet theming by @jaszhix & @smurphos
 * Cinnamon - support for Cinnamon 4.0 windows overview theming
 * Cinnamon - fixed keyboard applet on vertical panels
 * Cinnamon - fixed off-centre media-key osd
 * Cinnamon - added spacing to menu-favorites-box to distinguish scrollbox from system-buttons
 * GTK 3.22 - Add a minimum height to headerbars.
 * Cinnamon - amend panel label text alignment to support centred labels on multiline calendar applet labels
-* Cinnamon - Simplified Grouped Window List thumbnail theming in preparation for Cinnamon 4.2
+* Cinnamon - simplified grouped window list thumbnail theming in preparation for Cinnamon 4.2
+* Cinnamon - support for users on Cinnamon 4.6 and later to set the base theme font size and family via the Font Selections settings module
+* Cinnamon - added adapta_fontsize.sh script to allow users to revert to theme controlled font size and family with a choice of base font-size
+* Cinnamon - change all theme font-size declarations to scalable units
+* Cinnamon - fix the calendar applet's menu scaling to accomodate different font-sizes
+* Cinnamon - fix the sound applet's menu scaling to accomodate different font-sizes
+* Cinnamon - increased contrast for grouped window list / window list boxshadow to indicate open unfocused applications
+* Cinnamon - increased contrast to indicate active and inactive windows in workspace-switcher applet
 
 ## License
 
@@ -43,13 +50,6 @@ Wallpaper in screenshots is from [Adapta Backgrounds](https://github.com/adapta-
 
 ## Installation
 
-There are 4 variants of this theme available.
-
-* Adapta - light version of theme - recommended for users on GTK 3.22+ systems with 1080p screen resolution or greater
-* Adapta-Nokto - dark version of theme - recommended for users on GTK 3.22+ systems with 1080p screen resolution or greater
-* Adapta-Eta - light compact version of theme - recommended for users on GTK 3.18 systems or GTK3.22+ systems with screen resolution < 1080p
-* Adapta-Nokto-Eta - dark compact version of theme - recommended for users on GTK 3.18 systems or GTK3.22+ systems with screen resolution < 1080p
-
 Install via Cinnamon's Themes module in Cinnamon settings or download from [Cinnamon Spices](https://cinnamon-spices.linuxmint.com/themes) and unzip into your `~/.themes` directory.
 
 Select the theme as your Desktop, Controls and Window Borders in the Cinnamon Themes module.
@@ -60,13 +60,23 @@ To allow the GTK2, GTK3 and Metacity1 themes to apply to GUI apps running as roo
 
 ## Compatibility
 
-This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x` & `4.0`
+This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x`, `4.0.x`, `4.2.x`, `4.4.x` & `4.6.x`
 
-The GTK3 themes require GTK `3.18.x` or `3.2x`
+The GTK3 themes require GTK `3.18.x` or `3.20.x`+
 
-Tested on Linux Mint `18.2`, `18.3` & `19` 64bit with Cinnamon `3.4.x`, `3.6.x`, and `3.8.x`. Also tested on Manjaro with Cinnamon `4.0`
+## Cinnamon Theme Font-Size
 
-### Firefox fix
+For Cinnamon version 4.6.x and later the Cinnamon theme's font characteristics van be set via changing the default font in Font Selection settings module available from the menu.
+
+For users of older Cinnamon versions the theme includes an interactive bash script that allows end users to adjust the base font-size in the Cinnamon theme. This can be useful for users running Cinnamon on relatively high resolution displays with relatively small screen dimensions where the hard-coded theme default font-sizes are too small.
+
+To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
+
+`chmod +x ~/.themes/Adapta-Nokto/scripts/adapta_fontsize.sh && ~/.themes/Adapta-Nokto/scripts/adapta_fontsize.sh`
+
+If you are not happy with the end result simply run `~/.themes/Adapta-Nokto/scripts/adapta_fontsize.sh` again to chose another option including the default
+
+## Firefox fix
 
 If you have problems seeing text on input fields in Firefox with any particular theme this problem can be solved by adding a `~/.mozilla/firefox/********.default/user.js` file to your Firefox default profile including the line `user_pref("widget.content.gtk-theme-override", "Adwaita");` and restarting Firefox.
 
@@ -74,6 +84,6 @@ This forces Firefox to use the GTK default Adwaita theme for rendering all websi
 
 The theme includes a helper script that creates the file with this content in the correct location. To access the tool open a terminal window and use the following command to make the script executable and launch it.
 
-`chmod +x ~/.themes/Adapta-Nokto/firefox_fix.sh && ~/.themes/Adapta-Nokto/firefox_fix.sh`
+`chmod +x ~/.themes/Adapta-Nokto/scripts/firefox_fix.sh && ~/.themes/Adapta-Nokto/scripts/firefox_fix.sh`
 
 
