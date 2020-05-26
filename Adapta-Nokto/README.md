@@ -10,7 +10,7 @@ This is a build of [Tista's](https://github.com/tista500) [Adapta theme](https:/
 
 [Original Source Code](https://github.com/adapta-project/adapta-gtk-theme)
 
-[Fork for this build](https://github.com/smurphos/adapta-gtk-theme)
+[Fork for this build](https://github.com/smurphos/adapta-gtk-theme-cinnamon-spices/tree/spice-build)
 
 This build is based on [Adapta version 3.95.0.11](https://github.com/adapta-project/adapta-gtk-theme/releases/tag/3.95.0.11) with the following modifications.
 
@@ -37,6 +37,8 @@ This build is based on [Adapta version 3.95.0.11](https://github.com/adapta-proj
 * Cinnamon - fix the sound applet's menu scaling to accomodate different font-sizes
 * Cinnamon - increased contrast for grouped window list / window list boxshadow to indicate open unfocused applications
 * Cinnamon - increased contrast to indicate active and inactive windows in workspace-switcher applet
+* Cimmanon - alt-tab window preview mode - shade backdrop so the previewed window pops
+* Cinnamon - virtual keyboard - usability tweaks
 
 ## License
 
