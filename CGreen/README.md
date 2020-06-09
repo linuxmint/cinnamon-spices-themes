@@ -15,13 +15,14 @@ You must type `about:config` in the address bar and then modify the value `toolk
 
 ![example](https://i.postimg.cc/L8G7tSsw/extra.png)
 
-#### /!\ IMPORTANT: From Firefox 75 and after /!\
-You must also change the following key to `FALSE`: `browser.urlbar.update1`
+#### From Firefox 77 and after:
+You need to reinstall the `userChrome.css` file in the Firefox profile. To make sure you get the latest version of the theme, follow this [link](https://cinnamon-spices.linuxmint.com/files/themes/CGreen.zip?).
 
 **Without this modifications, the extra doesn't work.**
 
 
 ## Conky
+
 * Install the `conky` or `conky-all` package, depending on the GNU/Linux distribution. `curl` must already be present, if it isn't, you should install it as well.
 
 * Download the Brizel font [here](https://dl.dafont.com/dl/?f=brizel), then unzip into `~/.local/share/fonts`. The `fc-cache -f -v` command may be needed to update the fonts.
@@ -31,7 +32,8 @@ You must also change the following key to `FALSE`: `browser.urlbar.update1`
 
 ## Versions
 
-* 1.8: Correction of the menu display (official and alternatives) + modification of the IP URL in Conky.
+* 1.9: instruction for the extra from Firefox 77 and update userChrome.css file.
+* 1.8: correction of the menu display (official and alternatives) + modification of the IP URL in Conky.
 * 1.7: add conky.
 * 1.6: fixes the workspace-switcher offset.
 * 1.5: fixed a bug in the panel-launchers applet for vertical panels, magnification of some panel elements.
@@ -44,4 +46,4 @@ You must also change the following key to `FALSE`: `browser.urlbar.update1`
 
 ## License
 
-This theme is distributed under the terms of the [GPLv3.0 license.](https://raw.githubusercontent.com/linuxmint/cinnamon-spices-themes/master/CGreen/LICENCE)
+This theme is distributed under the terms of the [GPLv3.0 license.](https://raw.githubusercontent.com/linuxmint/cinnamon-spices-themes/master/CGreen/LICENCE).
