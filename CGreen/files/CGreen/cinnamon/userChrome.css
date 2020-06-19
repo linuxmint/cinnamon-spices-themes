@@ -1,39 +1,42 @@
-/*** BEGIN Firefox 77 (June 2, 2020) Override URL bar enlargement ***/
+/* ===================================================================
+ * Override URL bar enlargement (Firefox 77)
+ * =================================================================== */
 
 /* Compute new position, width, and padding */
-    #urlbar[breakout][breakout-extend] {
-    top: 5px !important;
-    left: 0px !important;
-    width: 100% !important;
-    padding: 0px !important;
+#urlbar[breakout][breakout-extend] {
+  top: 5px !important;
+  left: 0px !important;
+  width: 100% !important;
+  padding: 0px !important;
 }
 
 /* for alternate Density settings */
-    [uidensity="compact"] #urlbar[breakout][breakout-extend] {
-    top: 3px !important;
+[uidensity="compact"] #urlbar[breakout][breakout-extend] {
+  top: 3px !important;
 }
-    [uidensity="touch"] #urlbar[breakout][breakout-extend] {
-    top: 4px !important;
+[uidensity="touch"] #urlbar[breakout][breakout-extend] {
+  top: 4px !important;
 }
 
 /* Prevent shift of URL bar contents */
-    #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-    height: var(--urlbar-height) !important;
-    padding: 0 !important;
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding: 0 !important;
 }
 
 /* Do not animate */
-    #urlbar[breakout][breakout-extend] > #urlbar-background {
-    animation: none !important;
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+  animation: none !important;
 }
 
 /* Remove shadows */
-    #urlbar[breakout][breakout-extend] > #urlbar-background {
-    box-shadow: none !important;
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+  box-shadow: none !important;
 }
 
 /*** END Firefox 77 (June 2, 2020) Override URL bar enlargement ***/
 
+/* Source: https://www.userchrome.org/samples/userChrome-ZeroEnlargement.css*/
 
 
 
@@ -43,7 +46,6 @@
 	
 #urlbar {z-index: 3 !important;
 }
-
 #urlbar-background {z-index: -2 !important;
 }
 
@@ -61,11 +63,6 @@
 }
 
 /* There is also grantedPermissions, but irrelevant. */
-
-/* about:about */
-#urlbar[pageproxystate='valid'] #identity-box.unknownIdentity:after {
-  background: #f393a8; /* Firefox Red 50 */
-}
 
 /* about:config */
 #urlbar[pageproxystate='valid'] #identity-box.chromeUI:after {
@@ -89,7 +86,7 @@
 
 /* https://mixed-script.badssl.com/ */
 #urlbar[pageproxystate='valid'] #identity-box.mixedActiveBlocked:after {
-  background:  #67c845; /* #30e60b* Firefox Green 50 */
+  background:  #ded14a; /* Firefox Yellow 50 */
 }
 
 /* https://self-signed.badssl.com/ but add certificate exception */
@@ -112,6 +109,11 @@
   background: #a47f00; /* Firefox Yellow 70 */
 }
 
+/* about:about */
+#urlbar[pageproxystate='valid'] #identity-box.unknownIdentity:after {
+   background: #f393a8; /* Firefox Red 50 */
+}
+
 /* https://mixed-script.badssl.com/ but disable protection */
 #urlbar[pageproxystate='valid'] #identity-box.mixedActiveContent:after {
   background: #bc1222; /* Firefox Red 60 */
@@ -119,5 +121,10 @@
 
 /* http://http-login.badssl.com/ */
 #urlbar[pageproxystate='valid'] #identity-box.insecureLoginForms:after {
+  background: #a4005f; /* Firefox Red 70 */
+}
+
+/* http://http.badssl.com/ */
+#urlbar[pageproxystate='valid'] #identity-box.notSecure:after {
   background: #a4005f; /* Firefox Red 70 */
 }
