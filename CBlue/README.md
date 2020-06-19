@@ -21,7 +21,7 @@ You must type `about:config` in the address bar and then modify the value `toolk
 ![example](https://i.postimg.cc/L8G7tSsw/extra.png)
 
 #### From Firefox 77 and after:
-You need to reinstall the `userChrome.css` file in the Firefox profile. To make sure you get the latest version of the theme, follow this [link](https://cinnamon-spices.linuxmint.com/files/themes/CBlue.zip?).
+You need to reinstall the `userChrome.css` file in the Firefox profile. To make sure you get the latest version of the theme, follow this [link](https://cinnamon-spices.linuxmint.com/files/themes/CBlue.zip?) or install the 'Spices Update' applet.
 
 **Without this modifications, the extra doesn't work.**
 
@@ -37,6 +37,7 @@ You need to reinstall the `userChrome.css` file in the Firefox profile. To make 
 
 ## Versions
 
+* 1.17: OSD, panel editing and userChrome.css update.
 * 1.16: instruction for the extra from Firefox 77 and update userChrome.css file.
 * 1.15: correction of the menu display (official and alternatives) + modification of the IP URL in Conky.
 * 1.14: add conky.
