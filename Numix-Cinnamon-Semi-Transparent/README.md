@@ -1,4 +1,4 @@
-## Semi Transparent theme for cinnamon __4.2/4.4__
+## Semi Transparent theme for cinnamon __4.2/4.4/4.6__
 ---
 _Original theme: [Numix-Cinnamon-Transparent Theme](https://github.com/edoz90/numix-cinnamon-transparent)_
 

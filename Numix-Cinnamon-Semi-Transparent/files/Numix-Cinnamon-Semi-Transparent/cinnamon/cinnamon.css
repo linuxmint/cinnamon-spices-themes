@@ -25,7 +25,7 @@ stage {
  * ! Tooltips
  * ====================================== */
 #Tooltip {
-  border-image: url("img/containers/tooltip.svg") 10;
+  border-image: url("img/containers/little-transparent-bg.svg") 10;
   padding: 6px 8px;
   color: #eee;
   font-size: 12px;
@@ -264,15 +264,18 @@ StScrollBar StButton#hhandle:active {
  * ! Slider
  * ====================================== */
 .slider {
-  height: 16px;
-  min-width: 15em;
-  -slider-height: 0;
-  -slider-background-color: transparent;
-  -slider-border-color: #525252;
-  -slider-active-background-color: transparent;
-  -slider-active-border-color: #f0544c;
-  -slider-border-width: 2px;
-  -slider-handle-radius: 4px;
+      -slider-height: 0.3em;
+      -slider-background-color: #525252;
+      -slider-border-color: rgba(82, 82, 82, 0.3);
+      -slider-active-background-color: $accent-primary;
+      -slider-active-border-color: rgba(82, 82, 82, 0.3);
+      -slider-border-width: 1px;
+      -slider-handle-radius: 0.5em;
+      height: 1em;
+      min-width: 15em;
+      border: 0 solid transparent;
+      border-right-width: 1px;
+      border-left-width: 5px;
 }
 
 .separator {
@@ -375,15 +378,18 @@ StScrollBar StButton#hhandle:active {
 }
 
 .popup-slider-menu-item {
-  height: 16px;
+  -slider-height: 0.3em;
+  -slider-background-color: #525252;
+  -slider-border-color: rgba(82, 82, 82, 0.3);
+  -slider-active-background-color: #f0544c;
+  -slider-active-border-color: rgba(82, 82, 82, 0.3);
+  -slider-border-width: 1px;
+  -slider-handle-radius: 0.5em;
+  height: 1em;
   min-width: 15em;
-  -slider-height: 0;
-  -slider-background-color: transparent;
-  -slider-border-color: #525252;
-  -slider-active-background-color: transparent;
-  -slider-active-border-color: #f0544c;
-  -slider-border-width: 2px;
-  -slider-handle-radius: 4px;
+  border: 0 solid transparent;
+  border-right-width: 1px;
+  border-left-width: 5px;
 }
 
 /* Right click in scale (show all windows) */
@@ -2219,10 +2225,11 @@ StScrollBar StButton#hhandle:active {
 }
 
 .menu-selected-app-box {
+  padding-top: 10px;
   padding-right: 30px;
   padding-left: 30px;
   text-align: right;
-  height: 1.2em;
+  height: 2.8em;
 }
 
 .menu-selected-app-title {
