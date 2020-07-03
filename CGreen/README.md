@@ -32,6 +32,7 @@ You need to reinstall the `userChrome.css` file in the Firefox profile. To make 
 
 ## Versions
 
+* 1.11: editing the grouped-window-list applet.
 * 1.10: OSD, panel editing and userChrome.css update.
 * 1.9: instruction for the extra from Firefox 77 and update userChrome.css file.
 * 1.8: correction of the menu display (official and alternatives) + modification of the IP URL in Conky.
