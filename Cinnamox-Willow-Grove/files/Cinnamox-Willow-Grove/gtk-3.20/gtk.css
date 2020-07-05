@@ -137,6 +137,8 @@
     -gtk-icon-shadow: none; }
   .background.csd {
     background-color: #6f7f5f; }
+  .background.csd.popup {
+    background-color: transparent; }
 
 .gtkstyle-fallback {
   background-color: rgba(111, 127, 95, 0.5);
@@ -3966,6 +3968,10 @@ menubar, .menubar {
       color: #f8fcf5; }
     menubar > menuitem *:hover, .menubar > menuitem *:hover {
       color: #f8fcf5; }
+    menubar > menuitem > window.background.csd.popup > decoration,
+    menubar > menuitem > window.background.csd.popup > menu, .menubar > menuitem > window.background.csd.popup > decoration,
+    .menubar > menuitem > window.background.csd.popup > menu {
+      border-radius: 0 0 10px 10px; }
 
 /******
  ! Menu
@@ -3973,7 +3979,7 @@ menubar, .menubar {
 menu,
 .menu,
 .context-menu {
-  border-radius: 0;
+  border-radius: 10px;
   padding: 3px;
   background-color: #444c3d;
   color: #e6f2da;
@@ -4140,20 +4146,20 @@ menu,
     min-height: 16px;
     min-width: 16px;
     padding: 3px;
-    background-color: #444c3d;
-    border-radius: 0; }
+    background-color: #444c3d; }
     menu > arrow.top,
     .menu > arrow.top,
     .context-menu > arrow.top {
-      margin-top: -6px;
       border-bottom: 1px solid mix(#444c3d,#e6f2da,0.18);
-      -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
+      -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+      border-radius: 10px 10px 0 0; }
     menu > arrow.bottom,
     .menu > arrow.bottom,
     .context-menu > arrow.bottom {
       margin-bottom: -6px;
       border-top: 1px solid mix(#444c3d,#e6f2da,0.18);
-      -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
+      -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+      border-radius: 0 0 10px 10px; }
     menu > arrow:hover,
     .menu > arrow:hover,
     .context-menu > arrow:hover {
@@ -4464,7 +4470,8 @@ modelbutton.flat,
 menuitem.button.flat {
   padding: 5px;
   outline-color: transparent;
-  transition: none; }
+  transition: none;
+  border-radius: 10px; }
   modelbutton.flat:hover,
   menuitem.button.flat:hover {
     background-color: #6ccc3d;
@@ -7855,7 +7862,10 @@ decoration {
     border-radius: 0;
     box-shadow: none; }
   .csd.popup decoration {
-    border-radius: 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 1px 2px rgba(92, 136, 48, 0.2), 0 0 0 1px rgba(79, 89, 71, 0.13); }
+  .background.csd.popup decoration {
+    border-radius: 10px;
     box-shadow: 0 1px 2px rgba(92, 136, 48, 0.2), 0 0 0 1px rgba(79, 89, 71, 0.13); }
   tooltip.csd decoration {
     border-radius: 10px;

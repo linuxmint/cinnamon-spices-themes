@@ -22,9 +22,9 @@ The themes are also available via [openDesktop.org](https://www.opendesktop.org/
 
 Select the Cinnamox theme as your Desktop, Controls and Window Borders in the Cinnamon Themes module.
 
-To allow the GTK2, GTK3 and Metacity1 themes to apply to GUI apps running as root run this command in your terminal after installation to create symlinks to user themes in the system theme directory.
+To allow the GTK2, GTK3 and Metacity1 themes to apply to GUI apps running as root run this command in your terminal after installation to create symlinks to user themes in the local system theme directory.
 
-`sudo ln -s ~/.themes/* /usr/share/themes/`
+`sudo mkdir -p /usr/local/share/themes; sudo ln -s ~/.themes/Cinnamox-Gold-Spice /usr/local/share/themes/`
 
 ## Tweaking
 
@@ -39,6 +39,18 @@ To access the tool open a terminal window (Ctrl-Alt-T) and use the following com
 `chmod +x ~/.themes/Cinnamox-Gold-Spice/scripts/cinnamox_fontsize.sh && ~/.themes/Cinnamox-Gold-Spice/scripts/cinnamox_fontsize.sh`
 
 If you are not happy with the end result simply run `~/.themes/Cinnamox-Gold-Spice/scripts/cinnamox_fontsize.sh` again to chose another option including the default
+
+### Cinnamon Stock Menu applet in Cinnamon 4.4.x and older
+
+The app description area at the bottom of the stock cinnamon menu applet may not expand appropriately to fit the content in Cinnamon 4.4.x and older when text scaling factor is set > 1. 
+
+The theme includes an interactive bash script that allows end users toggle an adjustment of the cinnamon.css to mitigate this behaviour.
+
+To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
+
+`chmod +x ~/.themes/Cinnamox-Gold-Spice/scripts/cinnamox_toggle_menufix.sh && ~/.themes/Cinnamox-Gold-Spice/scripts/cinnamox_toggle_menufix.sh`
+
+If you are not happy with the end result simply run `~/.themes/Cinnamox-Gold-Spice/scripts/cinnamox_toggle_menufix.sh` again to revert.
 
 ### Titlebar Button-Size
 
@@ -104,7 +116,7 @@ The GTK2 theme requires the package `gtk2-engines-murrine` or `gtk-engine-murrin
 
 If you have problems seeing text on input fields in Firefox with any particular theme this problem can be solved by adding a `~/.mozilla/firefox/********.default/user.js` file to your Firefox default profile including the line `user_pref("widget.content.gtk-theme-override", "Adwaita");` and restarting Firefox.
 
-This forces firefox to use the GTK default Adwaita theme for rendering all website content.
+This forces Firefox to use the GTK default Adwaita theme for rendering all website content.
 
 The theme includes a helper script that creates the file with this content in the correct location. To access the tool open a terminal window and use the following command to make the script executable and launch it.
 
