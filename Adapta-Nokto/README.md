@@ -37,8 +37,10 @@ This build is based on [Adapta version 3.95.0.11](https://github.com/adapta-proj
 * Cinnamon - fix the sound applet's menu scaling to accomodate different font-sizes
 * Cinnamon - increased contrast for grouped window list / window list boxshadow to indicate open unfocused applications
 * Cinnamon - increased contrast to indicate active and inactive windows in workspace-switcher applet
-* Cimmanon - alt-tab window preview mode - shade backdrop so the previewed window pops
+* Cinnamon - alt-tab window preview mode - shade backdrop so the previewed window pops
 * Cinnamon - virtual keyboard - usability tweaks
+* Cinnamon - 4.6.x stock menu - add a height declaration for the app description box, and reduce margins
+* Cinnamon - add a helper script to revert above change for users still on 4.4.x or earlier
 
 ## License
 
@@ -56,9 +58,9 @@ Install via Cinnamon's Themes module in Cinnamon settings or download from [Cinn
 
 Select the theme as your Desktop, Controls and Window Borders in the Cinnamon Themes module.
 
-To allow the GTK2, GTK3 and Metacity1 themes to apply to GUI apps running as root run this command in your terminal after installation to create symlinks to user themes in the system theme directory.
+To allow the GTK2, GTK3 and Metacity1 themes to apply to GUI apps running as root run this command in your terminal after installation to create a symlink to the theme in the local system theme directory.
 
-`sudo ln -s ~/.themes/* /usr/share/themes/`
+`sudo mkdir -p /usr/local/share/themes; sudo ln -s ~/.themes/Adapta-Nokto /usr/local/share/themes/`
 
 ## Compatibility
 
@@ -77,6 +79,18 @@ To access the tool open a terminal window (Ctrl-Alt-T) and use the following com
 `chmod +x ~/.themes/Adapta-Nokto/scripts/adapta_fontsize.sh && ~/.themes/Adapta-Nokto/scripts/adapta_fontsize.sh`
 
 If you are not happy with the end result simply run `~/.themes/Adapta-Nokto/scripts/adapta_fontsize.sh` again to chose another option including the default
+
+## Cinnamon Stock Menu applet in Cinnamon 4.4.x and older
+
+The app description area at the bottom of the stock cinnamon menu applet may not expand appropriately to fit the content in Cinnamon 4.4.x and older when text scaling factor is set > 1. 
+
+The theme includes an interactive bash script that allows end users toggle an adjustment of the cinnamon.css to mitigate this behaviour.
+
+To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
+
+`chmod +x ~/.themes/Adapta-Nokto/scripts/adapta_toggle_menufix.sh && ~/.themes/Adapta-Nokto/scripts/adapta_toggle_menufix.sh`
+
+If you are not happy with the end result simply run `~/.themes/Adapta-Nokto/scripts/adapta_toggle_menufix.sh` again to revert.
 
 ## Firefox fix
 
