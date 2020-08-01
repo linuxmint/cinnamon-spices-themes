@@ -7,12 +7,12 @@
 /* The source code, tools and instructions to make your own cinnamox theme */
 /* can be found at https://github.com/smurphos/cinnamox-gtk-theme */
 /* -------------------------------------------------------------------------- */
-.expo-workspaces-name-entry, .expo-background, .window-caption, .switcher-list, #LookingGlassDialog, .workspace-graph .workspace, .sound-player-overlay, .panel-top, .popup-sub-menu, .starkmenu-favorites-box .menu-context-menu, .menu-context-menu, .menu-applications-inner-box StScrollView, .info-osd, .workspace-osd, .overview-empty-placeholder, .osd-window {
+.expo-workspaces-name-entry, .expo-background, .window-caption, .switcher-list, #LookingGlassDialog, .workspace-button, .sound-player-overlay, .panel-top, .popup-sub-menu, .starkmenu-favorites-box .menu-context-menu, .menu-context-menu, .menu-applications-inner-box StScrollView, .info-osd, .workspace-osd, .overview-empty-placeholder, .osd-window {
   background-gradient-direction: vertical;
   background-gradient-start: #5d89a8;
   background-gradient-end: #cddbe4; }
 
-.run-dialog-entry, #notification StEntry, #menu-search-entry {
+.workspace-graph .workspace, .workspace-button:shaded, .run-dialog-entry, #notification StEntry, #menu-search-entry {
   background-gradient-direction: vertical;
   background-gradient-start: #477b9d;
   background-gradient-end: #a6c3d7; }
@@ -32,7 +32,7 @@
   background-gradient-start: #cddbe4;
   background-gradient-end: #5d89a8; }
 
-.expo-workspaces-name-entry#selected, .window-caption:focus, .window-caption#selected, .switcher-list .item-box:selected, .calendar-today, .workspace-graph .workspace:active, .modal-dialog-button:pressed, .modal-dialog-button:active, .notification-icon-button:active, .notification-button:active, .keyboard-key:active, .sound-player StButton:active {
+.expo-workspaces-name-entry#selected, .window-caption:focus, .window-caption#selected, .switcher-list .item-box:selected, .calendar-today, .workspace-graph .workspace:active, .workspace-button:outlined, .workspace-button:outlined:shaded, .modal-dialog-button:pressed, .modal-dialog-button:active, .notification-icon-button:active, .notification-button:active, .keyboard-key:active, .sound-player StButton:active {
   background-gradient-direction: vertical;
   background-gradient-start: #2a5069;
   background-gradient-end: #4686af; }
@@ -544,6 +544,16 @@ StScrollView StScrollBar {
 .applet-spacer:highlight {
   background-color: rgba(56, 107, 140, 0.2); }
 
+.spacer-box {
+  border-radius: 10px;
+  border: 1px solid transparent; }
+  .spacer-box:highlight {
+    background-color: rgba(56, 107, 140, 0.2);
+    border: 1px symbolic; }
+  .spacer-box.edit-mode {
+    border-radius: 10px;
+    border: 1px symbolic; }
+
 .applet-box {
   color: #0c1419;
   transition-duration: 150;
@@ -755,24 +765,24 @@ StScrollView StScrollBar {
   transition-duration: 150; }
   .workspace-button.vertical {
     height: 1.5em; }
-  .workspace-button:outlined {
-    background-color: #386b8c;
+  .workspace-button:outlined, .workspace-button:outlined:shaded {
     color: #ffffff;
     border-color: #417292; }
 
 .workspace-graph .workspace {
+  margin: 2px;
   border: 1px solid rgba(12, 20, 25, 0.32); }
   .workspace-graph .workspace:active {
-    border: 1px solid rgba(12, 20, 25, 0.32); }
+    border: 1px solid #417292; }
     .workspace-graph .workspace:active .windows {
-      -active-window-background: rgba(255, 255, 255, 0.8);
+      -active-window-background: rgba(255, 255, 255, 0.6);
       -active-window-border: rgba(0, 0, 0, 0.9);
-      -inactive-window-background: rgba(140, 140, 140, 0.8);
+      -inactive-window-background: rgba(140, 140, 140, 0.4);
       -inactive-window-border: rgba(0, 0, 0, 0.7); }
   .workspace-graph .workspace .windows {
-    -active-window-background: rgba(140, 140, 140, 0.8);
+    -active-window-background: rgba(140, 140, 140, 0.6);
     -active-window-border: rgba(0, 0, 0, 0.7);
-    -inactive-window-background: rgba(140, 140, 140, 0.8);
+    -inactive-window-background: rgba(140, 140, 140, 0.4);
     -inactive-window-border: rgba(0, 0, 0, 0.7); }
 
 .panel-launchers {
