@@ -1,7 +1,7 @@
 ## CBlue
 
 ### A semi-transparent Cinnamon theme, with wallpaper + Firefox extra and Conky. Inspired by the CBlack theme (author: cloweling).
-If you want a panel that is not transparent, modify the line `300` of the file `~/.themes/CBlue/cinnamon/cinnamon.css`.
+If you want a panel that is not transparent, modify the line `294` of the file `~/.themes/CBlue/cinnamon/cinnamon.css`.
 For example: background-color: rgba(53, 57, 69, `0.50`); . A value of `0` is equivalent to total transparency and `1` is totally opaque. Restart Cinnamon (Ctrl+Alt+Esc) for immediate modification.
 
 
@@ -37,6 +37,7 @@ You need to reinstall the `userChrome.css` file in the Firefox profile. To make 
 
 ## Versions
 
+* 1.19: thumbnail outline (window list preview) and overview retouching (Ctl+Alt+Down).
 * 1.18: editing the grouped-window-list applet.
 * 1.17: OSD, panel editing and userChrome.css update.
 * 1.16: instruction for the extra from Firefox 77 and update userChrome.css file.
