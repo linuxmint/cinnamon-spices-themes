@@ -35,19 +35,13 @@ StScrollView StScrollBar {
 
 StScrollBar StBin#trough {
     background-color: rgba(0, 0, 0, 0);
-    border: 0px solid #555555;
+    border: 0px solid #555;
     border-radius: 1px;
 }
 
-StScrollBar StButton#vhandle {
+StScrollBar StButton#hhandle, StScrollBar StButton#vhandle {
     background-color: rgb(82, 148, 226);
-    border: 0px solid #555555;
-    border-radius: 10px;
-}
-
-StScrollBar StButton#hhandle {
-    background-color: rgb(82, 148, 226);
-    border: 0px solid #555555;
+    border: 0px solid #555;
     border-radius: 10px;
 }
 
@@ -58,7 +52,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 .separator {
     -gradient-height: 2px;
     -gradient-start: rgba(85, 85, 85, 1);
-    -gradient-end: #555555;
+    -gradient-end: #555;
     -margin-horizontal: 1.5em;
     height: 1em;
 }
@@ -67,10 +61,10 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     height: 1em;
     min-width: 15em;
     -slider-height: 0.3em;
-    -slider-background-color: #555555;
-    -slider-border-color: #555555;
-    -slider-active-background-color: #CCCCCC;
-    -slider-active-border-color: #DDDDDD;
+    -slider-background-color: #555;
+    -slider-border-color: #555;
+    -slider-active-background-color: #ccc;
+    -slider-active-border-color: #ddd;
     -slider-border-width: 1px;
     -slider-handle-radius: 0.5em;
 }
@@ -125,7 +119,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .popup-menu {
-    color: #ffffff;
+    color: #fff;
     font-size: 8pt;
     min-width: 150px;
     background-color: rgba(53, 57, 69, 0.75);
@@ -137,8 +131,8 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     border-radius: 1px;
     background-color: rgba(53, 57, 69, 0.75);
     border-width: 0px;
-    border-color: #ffffff;
-    color: #ffffff;
+    border-color: #fff;
+    color: #fff;
     font-size: 8pt;
     min-width: 150px;
 }
@@ -179,7 +173,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 .popup-combo-menu {
     background-color: rgba(0, 0, 0, 0.75);
     padding: 1em 0em;
-    color: #ffffff;
+    color: #fff;
     font-size: 8pt;
     border: 0px solid #5f5f5f;
     border-radius: 1px;
@@ -215,7 +209,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 .popup-separator-menu-item {
     -gradient-height: 0px;
     -gradient-start: rgba(85, 85, 85, 0.70);
-    -gradient-end: #555555;
+    -gradient-end: #555;
     -margin-horizontal: 0em;
     height: 0em;
 }
@@ -296,7 +290,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
  * ===================================================================*/
 
 #panel {
-    color: #ffffff;
+    color: #fff;
     background-color: rgba(53, 57, 69, 0);
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
     font-size: 8pt;
@@ -541,18 +535,18 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .window-caption {
     background-color: rgba(53, 57, 69, 0.75);
-    color: rgba(255, 255, 255, 1);
+    color: #ccc;
+    font-weight: bold;
     padding: .5em;
     spacing: .5em;
-    font-size: 10pt;
-    min-width: 10em;
-    max-width: 20em;
+    font-size: 8pt;
+    min-width: 5em;
+    max-width: 30em;
     -cinnamon-caption-spacing: 8px;
 }
 
 .window-caption:focus {
     color: white;
-    font-weight: bold;
     background-color: rgba(82, 148, 226, 1);
 }
 
@@ -631,7 +625,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     padding: 3px;
     border: 0px solid grey;
     border-radius: 1px;
-    color: #CCCCCC;
+    color: #ccc;
 }
 
 /* ===================================================================
@@ -648,7 +642,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .calendar-month-label {
-    color: #ffffff;
+    color: #fff;
     padding: 8px 0;
     font-weight: bold;
 }
@@ -694,7 +688,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 .datemenu-date-label {
     padding: .4em 1.75em;
     text-align: center;
-    color: #cccccc;
+    color: #ccc;
     font-weight: bold;
     font-size: 120%;
 }
@@ -728,7 +722,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 /* Hack used in lieu of border-collapse - see calendar.js */
 .calendar-day:ltr {
-    border: 0px solid #333333;
+    border: 0px solid #333;
     border-top-width: 0;
     border-left-width: 0;
 }
@@ -742,7 +736,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .calendar-day:rtl {
-    border: 0px solid #333333;
+    border: 0px solid #333;
     border-top-width: 0px;
     border-right-width: 0px;
 }
@@ -755,8 +749,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     border-right-width: 1px;
 }
 
-.calendar-work-day {
-}
+.calendar-work-day {}
 
 .calendar-nonwork-day {
     background-color: rgba(91, 98, 123, 0.3);
@@ -768,7 +761,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 
 .calendar-other-month-day {
-    color: #888888;
+    color: #888;
 }
 
 .calendar-day-with-events {
@@ -1080,7 +1073,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 .show-processes-dialog-subject, .mount-question-dialog-subject {
     font-size: 12pt;
     font-weight: bold;
-    color: #555555;
+    color: #555;
     padding-top: 10px;
     padding-left: 17px;
     padding-bottom: 6px;
@@ -1246,14 +1239,13 @@ menu-background allows the menu applet to be themed separately from other applet
 
 .menu-favorites-button:hover {
     color: white;
-    border-radius: 1px;
     border: 0px rgb(82, 148, 226);
     border-left: 2px;
 }
 
 .menu-places-box {
     padding: 10px;
-    border: 0px solid #555555;
+    border: 0px solid #555;
 }
 
 .menu-places-button {
@@ -1409,7 +1401,7 @@ menu-background allows the menu applet to be themed separately from other applet
 }
 
 .window-list-box.vertical {
-    spacing: 3px;
+    spacing: 0px;
 }
 
 .window-list-box.vertical #appMenuIcon {
@@ -1475,7 +1467,7 @@ menu-background allows the menu applet to be themed separately from other applet
     background-color: rgba(82, 148, 226, 0.3);
 }
 
-/* Miniatures */
+/* Thumbnails */
 .window-list-preview {
     background: rgba(53, 57, 69, 0.75);
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
@@ -1484,6 +1476,11 @@ menu-background allows the menu applet to be themed separately from other applet
     color: white;
     padding: 8px;
     spacing: 3px;
+}
+
+.window-list-preview StBin:last-child {
+    border: 1px rgb(82, 148, 226);
+    border-radius: 1px;
 }
 
 /* ===================================================================
@@ -1505,8 +1502,7 @@ menu-background allows the menu applet to be themed separately from other applet
     box-shadow: inset 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
 }
 
-.grouped-window-list-button-label {
-}
+.grouped-window-list-button-label {}
 
 .grouped-window-list-thumbnail-alert {
     background: rgb(82, 148, 226);
@@ -1554,8 +1550,7 @@ menu-background allows the menu applet to be themed separately from other applet
     border-color: rgb(82, 148, 226);
 }
 
-.grouped-window-list-item-box.bottom:active {
-}
+.grouped-window-list-item-box.bottom:active {}
 
 /* List top */
 .grouped-window-list-item-box.top {
@@ -1573,8 +1568,7 @@ menu-background allows the menu applet to be themed separately from other applet
     border-color: rgb(82, 148, 226);
 }
 
-.grouped-window-list-item-box.top:active {
-}
+.grouped-window-list-item-box.top:active {}
 
 /* List left */
 .grouped-window-list-item-box.left {
@@ -1592,8 +1586,7 @@ menu-background allows the menu applet to be themed separately from other applet
     border-color: rgb(82, 148, 226);
 }
 
-.grouped-window-list-item-box.left:active {
-}
+.grouped-window-list-item-box.left:active {}
 
 /* List right */
 .grouped-window-list-item-box.right {
@@ -1611,8 +1604,7 @@ menu-background allows the menu applet to be themed separately from other applet
     border-color: rgb(82, 148, 226);
 }
 
-.grouped-window-list-item-box.right:active {
-}
+.grouped-window-list-item-box.right:active {}
 
 .grouped-window-list-item-demands-attention {
     background-gradient-direction: vertical;
@@ -1643,6 +1635,11 @@ menu-background allows the menu applet to be themed separately from other applet
     color: white;
     padding: 8px;
     spacing: 3px;
+}
+
+.grouped-window-list-thumbnail-menu StBin.thumbnail:last-child {
+    border: 1px rgb(82, 148, 226);
+    border-radius: 1px;
 }
 
 .grouped-window-list-thumbnail-menu .item-box {
@@ -1728,7 +1725,7 @@ menu-background allows the menu applet to be themed separately from other applet
     padding: 12px 16px;
     spacing: 0.5em;
     background-color: rgba(53, 57, 69, 0.75);
-    color: #ffffff;
+    color: #fff;
     border-top: 0px solid #a5a5a5;
 }
 
@@ -2157,7 +2154,8 @@ menu-background allows the menu applet to be themed separately from other applet
     selected-color: white;
     caret-color: rgb(82, 148, 226);
     caret-size: 0px;
-    width: 180px;
+    min-width: 100px;
+    max-width: 200px;
     height: 15px;
 }
 
