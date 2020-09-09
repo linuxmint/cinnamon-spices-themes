@@ -37,6 +37,7 @@ You need to reinstall the `userChrome.css` file in the Firefox profile. To make 
 
 ## Versions
 
+* 1.20: touching up the weather applet and the slider bar.
 * 1.19: thumbnail outline (window list preview) and overview retouching (Ctl+Alt+Down).
 * 1.18: editing the grouped-window-list applet.
 * 1.17: OSD, panel editing and userChrome.css update.
