@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+local theme="Fresh-Cinnamon"
+local sass_cmd="$(which sassc)"
+local sass_input="scss/cinnamon.scss"
+local sass_output="cinnamon.css"
+local sass_style="expanded"
+
+
+"$sass_cmd" -t "$sass_style" "$sass_input" > "$sass_output"
+gsettings set org.cinnamon.theme name "Cinnamon"
+sleep .5
+gsettings set org.cinnamon.theme name "$theme"

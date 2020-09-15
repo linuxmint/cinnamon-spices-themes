@@ -1,0 +1,44 @@
+/* ======================================
+ * ! Stopwatch
+ * ====================================== */
+
+.stopwatch-ready,
+.stopwatch-ready:hover,
+.stopwatch-running,
+.stopwatch-running:hover,
+.stopwatch-paused,
+.stopwatch-day-exceeded,
+.stopwatch-running-day-exceeded,
+.stopwatch-paused-day-exceeded {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 3px 5px;
+}
+
+/* Different images used in top & bottom panels */
+@each $pos in top, bottom, left, right {
+    .panel-#{$pos} .stopwatch-ready:hover {
+        border-image: url("img/panel/applet__#{$pos}__hover.svg") 4;
+    }
+
+    .panel-#{$pos} .stopwatch-running {
+        border-image: url("img/panel/window-list__#{$pos}__active.svg") 4;
+        color: $text-primary;
+    }
+
+    .panel-#{$pos} .stopwatch-running:hover,
+    .panel-#{$pos} .stopwatch-paused:hover {
+        border-image: url("img/panel/window-list__#{$pos}__active__hover.svg") 4;
+        color: $text-primary;
+    }
+
+    .panel-#{$pos} .stopwatch-paused,
+    .panel-#{$pos} .stopwatch-day-exceeded,
+    .panel-#{$pos} .stopwatch-running-day-exceeded,
+    .panel-#{$pos} .stopwatch-paused-day-exceeded {
+        border-image: url("img/panel/window-list__#{$pos}__active.svg") 4;
+        color: $text-secondary;
+    }
+}
+
+.stopwatch-ready * { color: $text-secondary; }
+.stopwatch-ready:hover * { color: $text-primary; }
