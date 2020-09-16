@@ -1,0 +1,106 @@
+/* ======================================
+ * ! Applets
+ * ====================================== */
+
+/*
+ * Fullcolor icons have the 'applet-icon' class.
+ * Symbolic icons have the 'system-status-icon' class.
+ */
+.applet-icon,
+.system-status-icon {
+    icon-size: 16px;
+    padding: 0;
+    spacing: 0;
+}
+
+/* This is pretty much only used by the keyboard applet */
+.panel-status-button {
+    color: $text-primary;
+    font-weight: bold;
+
+    .panel-top &, .panel-bottom & { padding: 0 2px; }
+
+    // prevents a bug when using custom icon scaling in horiz panels
+    height: inherit;
+
+    // prevents a bug when using custom icon scaling in vert panels
+    .panel-left &, .panel-right & { height: 1.8em; }
+}
+
+.applet-label {
+    font-weight: bold;
+}
+
+.applet-separator {
+    .panel-top &, .panel-bottom & { padding: 0 7px; }
+
+    .panel-left &, .panel-right & { padding: 7px 0; }
+
+    &-line {
+        background-color: rgba($background-primary, .30);
+        width: 1px;
+    }
+
+    &-line-vertical {
+        border: 0 rgba($background-primary, .65);
+        border-bottom-width: 1px;
+    }
+}
+
+.applet-box {
+    padding: 0px;
+    color: $text-primary;
+    &.vertical { padding: 2px 0; }
+}
+@each $pos in top, bottom { 
+    .panel-#{$pos} .applet-box {
+        padding-left: 3px; //solid transparent;
+        padding-right: 3px; // solid transparent;
+        text-align: center;
+        &:hover {
+            border-image: url("img/panel/panel-#{$pos}__inactive__open.svg") 4;
+        }
+
+         &:checked {
+            color: $text-active;
+        }
+    }
+    .panel-#{$pos} .applet-box.xapp-status-cinnamon-org-applet {
+        border-image: none;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+@each $pos in left, right {
+    .panel-#{$pos} .applet-box {
+        padding-top: 3px ;//solid transparent;
+        padding-bottom: 3px ;// solid transparent;
+        &:hover {
+            border-image: url("img/panel/panel-#{$pos}__inactive__open.svg") 4;
+        }
+
+         &:checked {
+            color: $text-active;
+        }
+    }
+    .panel-#{$pos} .applet-box.xapp-status-cinnamon-org-applet {
+        border-image: none;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+.applet-box.show-desktop-cinnamon-org-applet, .applet-box.sw-mohammad-sn-applet, .applet-box.clean-show-desktop-filipetorresbr-applet {
+    &:hover {
+        border-image: url("img/panel/mini-semi-transparent-hover.svg") 2;
+    }
+    .applet-icon {
+        width: 0;    
+        height: 0;    
+    }
+    border-image: url("img/panel/mini-semi-transparent-bg.svg") 2;
+    width: 1em !important;
+    height: 1em !important;
+}
+
+
