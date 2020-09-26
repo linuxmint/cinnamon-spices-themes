@@ -491,7 +491,7 @@ color: #fb5858;
  * Overview
  * ===================================================================*/
 #overview {
-    spacing: 12px;
+    spacing: 8px;
 }
 .window-caption {
     background-color: black;
@@ -509,11 +509,11 @@ color: #fb5858;
     visible-height: 32px; /* Amount visible before hovering */
 }
 .workspace-thumbnails-background {
-    border: 1px solid rgba(128, 128, 128, 0.4);
+    border: 1px solid rgba(0, 0, 0, 1);
     border-right: 0px;
     border-radius: 14px 14px 14px 14px;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 8px;
+    padding: 4px;
 }
 .workspace-thumbnails-background:rtl {
     border-right: 1px;
@@ -521,7 +521,7 @@ color: #fb5858;
     border-radius: 14px 14px 14px 14px;
 }
 .workspace-thumbnails {
-    spacing: 14px;
+    spacing: 8px;
 }
 .workspace-add-button {
     background-image: url("add-workspace.png");
@@ -552,6 +552,13 @@ color: #fb5858;
     padding: 2px 8px;
     -cinnamon-caption-spacing: 4px;
 }
+.window-border {
+  border: 2px rgba(255,255,255,1.0);
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.0); /* overlays the thumbnail image */
+  /* Cover rounded corners and some bad adjustment gaps */
+   box-shadow: 0 0 10px 2px rgba(255,255,255,0.75); }
+
 .window-close {
     background-image: url("close-window.svg");
     height: 34px;
@@ -587,16 +594,17 @@ color: #fb5858;
 }
 
 .workspace-overview-background-shade {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0);
 }
 
 .expo-workspace-thumbnail-frame {
-    border: 1px, rgba(64,64,64,0.9);
+    border: 2px, rgba(0,0,0,1);
     background-color: rgba(64,64,64,0.9);
 }
 
 .expo-workspace-thumbnail-frame#active {
-    border: 2px, rgba(32,32,32,0.9);
+    border: 2px, rgba(255,255,255,1);
+    border-radius: 2px;
     background-color: rgba(32,32,32,0.9);
 }
 
@@ -1860,7 +1868,7 @@ color: #fb5858;
     padding-right: 0px;
     padding-top: 3px;
     padding-bottom: 3px;
-    font-size: 0.9em;
+    font-size: 0.85em;
 }
 .applet-box.vertical:hover {
     padding-top: 2px;
@@ -1964,6 +1972,8 @@ color: #fb5858;
 
 .expo-workspaces-name-entry {
     padding: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     border-radius: 4px;
     color: rgb(200, 200, 200);
     border: 2px solid rgb(136,138,133);
@@ -1974,8 +1984,7 @@ color: #fb5858;
     caret-color: rgb(128, 128, 128);
     caret-size: 1px;
     width: 250px;
-    height: 15px;
-    box-shadow: inset 0px 2px 4px rgba(0,0,0,0.6);
+    height: 1.2em;
     text-align: center;
 }
 
@@ -1990,7 +1999,7 @@ color: #fb5858;
     color: rgb(0, 0, 0);
     font-weight: bold;
     font-style: italic;
-    transition-duration: 300;
+    transition-duration: 200;
 }
 
 /* ===================================================================
