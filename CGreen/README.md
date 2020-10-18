@@ -13,7 +13,7 @@ Just copy the file `~/.themes/CGreen/cinnamon/userChrome.css` and paste it into 
 #### From Firefox 69 and after:
 You must type `about:config` in the address bar and then modify the value `toolkit.legacyUserProfileCustomizations.stylesheets` by double-clicking on it to switch it to `TRUE`.
 
-![example](https://i.postimg.cc/L8G7tSsw/extra.png)
+![example](https://i.ibb.co/WtC5R3G/extra.png)
 
 #### From Firefox 77 and after:
 You need to reinstall the `userChrome.css` file in the Firefox profile. To make sure you get the latest version of the theme, follow this [link](https://cinnamon-spices.linuxmint.com/files/themes/CGreen.zip?) or install the 'Spices Update' applet.
@@ -32,6 +32,7 @@ You need to reinstall the `userChrome.css` file in the Firefox profile. To make 
 
 ## Versions
 
+* 1.14: non-work-day calendar in bold.
 * 1.13: touching up the weather applet and the slider bar.
 * 1.12: thumbnail outline (window list preview) and overview retouching (Ctl+Alt+Down).
 * 1.11: editing the grouped-window-list applet.
