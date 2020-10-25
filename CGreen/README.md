@@ -32,6 +32,7 @@ You need to reinstall the `userChrome.css` file in the Firefox profile. To make 
 
 ## Versions
 
+* 1.15: deleted a variable following the update of the weather applet.
 * 1.14: non-work-day calendar in bold.
 * 1.13: touching up the weather applet and the slider bar.
 * 1.12: thumbnail outline (window list preview) and overview retouching (Ctl+Alt+Down).
