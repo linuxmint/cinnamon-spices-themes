@@ -51,6 +51,7 @@ StScrollBar {
   padding-right: 6px;
   min-width: 16px;
   min-height: 16px;
+  border-image: url("img/controls/scroll-box.svg") 7;
 }
 
 StScrollView.vfade StScrollBar {
@@ -349,7 +350,7 @@ StScrollBar StButton#hhandle:active {
 }
 
 .popup-sub-menu {
-  border-image: url("img/containers/popup.svg") 9;
+  border-image: url("img/containers/medium-transparent-bg.svg") 9;
   box-shadow: none;
   background-gradient-direction: none;
   padding: 12px 0;
@@ -421,7 +422,7 @@ StScrollBar StButton#hhandle:active {
   font-size: 12px;
   width: 32px;
   height: 26px;
-  background-color: rgba(0, 0, 0, 0.35);
+  border-image: url("img/panel/panel-top.svg") 4;
 }
 
 .panel-top:highlight {
@@ -445,7 +446,7 @@ StScrollBar StButton#hhandle:active {
   font-size: 12px;
   width: 32px;
   height: 26px;
-  background-color: rgba(0, 0, 0, 0.35);
+  border-image: url("img/panel/panel-bottom.svg") 4;
 }
 
 .panel-bottom:highlight {
@@ -469,7 +470,7 @@ StScrollBar StButton#hhandle:active {
   font-size: 12px;
   width: 32px;
   height: 26px;
-  background-color: rgba(0, 0, 0, 0.35);
+  border-image: url("img/panel/panel-left.svg") 4;
 }
 
 .panel-left:highlight {
@@ -493,7 +494,7 @@ StScrollBar StButton#hhandle:active {
   font-size: 12px;
   width: 32px;
   height: 26px;
-  background-color: rgba(0, 0, 0, 0.35);
+  border-image: url("img/panel/panel-right.svg") 4;
 }
 
 .panel-right:highlight {
@@ -1308,13 +1309,18 @@ StScrollBar StButton#hhandle:active {
 }
 
 .applet-box {
-  padding: 0 2px;
+  padding: 0px;
   color: #eee;
-  text-align: center;
 }
 
 .applet-box.vertical {
   padding: 2px 0;
+}
+
+.panel-top .applet-box {
+  padding-left: 3px;
+  padding-right: 3px;
+  text-align: center;
 }
 
 .panel-top .applet-box:hover {
@@ -1325,12 +1331,35 @@ StScrollBar StButton#hhandle:active {
   color: #fff;
 }
 
+.panel-top .applet-box.xapp-status-cinnamon-org-applet {
+  border-image: none;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.panel-bottom .applet-box {
+  padding-left: 3px;
+  padding-right: 3px;
+  text-align: center;
+}
+
 .panel-bottom .applet-box:hover {
   border-image: url("img/panel/panel-bottom__inactive__open.svg") 4;
 }
 
 .panel-bottom .applet-box:checked {
   color: #fff;
+}
+
+.panel-bottom .applet-box.xapp-status-cinnamon-org-applet {
+  border-image: none;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.panel-left .applet-box {
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .panel-left .applet-box:hover {
@@ -1341,12 +1370,44 @@ StScrollBar StButton#hhandle:active {
   color: #fff;
 }
 
+.panel-left .applet-box.xapp-status-cinnamon-org-applet {
+  border-image: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.panel-right .applet-box {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
 .panel-right .applet-box:hover {
   border-image: url("img/panel/panel-right__inactive__open.svg") 4;
 }
 
 .panel-right .applet-box:checked {
   color: #fff;
+}
+
+.panel-right .applet-box.xapp-status-cinnamon-org-applet {
+  border-image: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.applet-box.show-desktop-cinnamon-org-applet, .applet-box.sw-mohammad-sn-applet, .applet-box.clean-show-desktop-filipetorresbr-applet {
+  border-image: url("img/panel/mini-semi-transparent-bg.svg") 2;
+  width: 1em !important;
+  height: 1em !important;
+}
+
+.applet-box.show-desktop-cinnamon-org-applet:hover, .applet-box.sw-mohammad-sn-applet:hover, .applet-box.clean-show-desktop-filipetorresbr-applet:hover {
+  border-image: url("img/panel/mini-semi-transparent-hover.svg") 2;
+}
+
+.applet-box.show-desktop-cinnamon-org-applet .applet-icon, .applet-box.sw-mohammad-sn-applet .applet-icon, .applet-box.clean-show-desktop-filipetorresbr-applet .applet-icon {
+  width: 0;
+  height: 0;
 }
 
 /* ======================================
@@ -1427,6 +1488,10 @@ StScrollBar StButton#hhandle:active {
   color: #eee;
   padding: 1.2em 0 .6em 0;
   height: 1.5em;
+}
+
+.calendar-day-heading.calendar-work-day, .calendar-day-heading.calendar-nonwork-day {
+  border-image: none;
 }
 
 .calendar-work-day {
@@ -1670,6 +1735,10 @@ StScrollBar StButton#hhandle:active {
   color: #fff;
 }
 
+.panel-top .grouped-window-list-item-box .progress {
+  border-image: url("img/panel/grouped-window-list__top__progress.svg") 4;
+}
+
 .panel-bottom .grouped-window-list-item-box {
   color: #eee;
 }
@@ -1705,6 +1774,10 @@ StScrollBar StButton#hhandle:active {
 .panel-bottom .grouped-window-list-item-demands-attention {
   border-image: url("img/panel/grouped-window-list__bottom__attention.svg") 4;
   color: #fff;
+}
+
+.panel-bottom .grouped-window-list-item-box .progress {
+  border-image: url("img/panel/grouped-window-list__bottom__progress.svg") 4;
 }
 
 .panel-left .grouped-window-list-item-box {
@@ -1744,6 +1817,10 @@ StScrollBar StButton#hhandle:active {
   color: #fff;
 }
 
+.panel-left .grouped-window-list-item-box .progress {
+  border-image: url("img/panel/grouped-window-list__left__progress.svg") 4;
+}
+
 .panel-right .grouped-window-list-item-box {
   color: #eee;
 }
@@ -1779,6 +1856,10 @@ StScrollBar StButton#hhandle:active {
 .panel-right .grouped-window-list-item-demands-attention {
   border-image: url("img/panel/grouped-window-list__right__attention.svg") 4;
   color: #fff;
+}
+
+.panel-right .grouped-window-list-item-box .progress {
+  border-image: url("img/panel/grouped-window-list__right__progress.svg") 4;
 }
 
 .grouped-window-list-thumbnail-menu {
@@ -2161,6 +2242,13 @@ StScrollBar StButton#hhandle:active {
 .menu-categories-box {
   padding: 10px 30px;
   font-weight: bold;
+  border-image: url("img/containers/medium-transparent-bg.svg") 9;
+  margin: 10px;
+}
+
+.menu-applications-inner-box {
+  border-image: url("img/containers/medium-transparent-bg.svg") 9;
+  margin: 10px;
 }
 
 .menu-category-button {
@@ -2359,9 +2447,8 @@ StScrollBar StButton#hhandle:active {
   background-color: rgba(240, 84, 76, 0.75);
 }
 
-.cinnamenu-json-applet {
-  display: block;
-  border: 0.5em solid transparent;
+.applet-box.cinnamenu-json-applet {
+  border: 3px solid transparent;
 }
 
 /* The right click menu */
