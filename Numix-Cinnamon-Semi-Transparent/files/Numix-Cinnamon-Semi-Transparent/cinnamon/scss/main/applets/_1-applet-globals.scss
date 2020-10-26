@@ -48,17 +48,16 @@
 }
 
 .applet-box {
-    padding: 0 2px;
+    padding: 0px;
     color: $text-primary;
-    text-align: center;
     &.vertical { padding: 2px 0; }
 }
-
-@each $pos in top, bottom, left, right {
+@each $pos in top, bottom { 
     .panel-#{$pos} .applet-box {
+        padding-left: 3px; //solid transparent;
+        padding-right: 3px; // solid transparent;
+        text-align: center;
         &:hover {
-            // border-image: url("img/containers/little-transparent-bg.svg") 4;
-            // background-color: rgba($background-primary, .5);
             border-image: url("img/panel/panel-#{$pos}__inactive__open.svg") 4;
         }
 
@@ -66,4 +65,42 @@
             color: $text-active;
         }
     }
+    .panel-#{$pos} .applet-box.xapp-status-cinnamon-org-applet {
+        border-image: none;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
+@each $pos in left, right {
+    .panel-#{$pos} .applet-box {
+        padding-top: 3px ;//solid transparent;
+        padding-bottom: 3px ;// solid transparent;
+        &:hover {
+            border-image: url("img/panel/panel-#{$pos}__inactive__open.svg") 4;
+        }
+
+         &:checked {
+            color: $text-active;
+        }
+    }
+    .panel-#{$pos} .applet-box.xapp-status-cinnamon-org-applet {
+        border-image: none;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+.applet-box.show-desktop-cinnamon-org-applet, .applet-box.sw-mohammad-sn-applet, .applet-box.clean-show-desktop-filipetorresbr-applet {
+    &:hover {
+        border-image: url("img/panel/mini-semi-transparent-hover.svg") 2;
+    }
+    .applet-icon {
+        width: 0;    
+        height: 0;    
+    }
+    border-image: url("img/panel/mini-semi-transparent-bg.svg") 2;
+    width: 1em !important;
+    height: 1em !important;
+}
+
+
