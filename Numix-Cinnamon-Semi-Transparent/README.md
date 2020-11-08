@@ -1,4 +1,5 @@
 ## Semi Transparent theme for cinnamon __4.2/4.4/4.6__
+_Check Out my new Theme: [Fresh-Cinnamon](https://cinnamon-spices.linuxmint.com/themes/view/Fresh-Cinnamon)
 ---
 _Original theme: [Numix-Cinnamon-Transparent Theme](https://github.com/edoz90/numix-cinnamon-transparent)_
 
@@ -8,4 +9,3 @@ this theme support GroupedWindowsList applet (default on new cinnamon)
 
 ### Preview
 <img src="https://raw.githubusercontent.com/bomdia/numix-cinnamon-semi-transparent/master/screenshot.png" />
-
