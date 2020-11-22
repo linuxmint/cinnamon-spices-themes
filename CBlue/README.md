@@ -1,8 +1,10 @@
 ## CBlue
 
 ### A semi-transparent Cinnamon theme, with wallpaper + Firefox extra and Conky. Inspired by the CBlack theme (author: cloweling).
-If you want a panel that is not transparent, modify the line `294` of the file `~/.themes/CBlue/cinnamon/cinnamon.css`.
+If you want a panel that is not transparent, modify the line `274` of the file `~/.themes/CBlue/cinnamon/cinnamon.css`.
 For example: background-color: rgba(53, 57, 69, `0.50`); . A value of `0` is equivalent to total transparency and `1` is totally opaque. Restart Cinnamon (Ctrl+Alt+Esc) for immediate modification.
+
+**Don't hesitate to bring up inconsistencies in the theme or the extras** [here](https://github.com/Bundy01/cinnamon-spices-themes/issues).
 
 
 ## Wallpaper
@@ -37,6 +39,7 @@ You need to reinstall the `userChrome.css` file in the Firefox profile. To make 
 
 ## Versions
 
+* 2.0: corrected the calendar applet and removed obsolete codes.
 * 1.22: deleted a variable following the update of the weather applet.
 * 1.21: non-work-day calendar in bold.
 * 1.20: touching up the weather applet and the slider bar.
