@@ -108,24 +108,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
  * PopupMenu (popupMenu.js)
  * ===================================================================*/
 
-/* .popup-menu-boxpointer and .popup-menu are kept for compatibility
-    with cinnamon version under 3.2. Use .menu in version 3.2 and above */
-.popup-menu-boxpointer {
-    -arrow-border-color: transparent;
-    -arrow-background-color: transparent;
-    -boxpointer-gap: 5px;
-    -arrow-border-radius: 17px;
-    -arrow-border-width: 0px;
-}
-
-.popup-menu {
-    color: #fff;
-    font-size: 8pt;
-    min-width: 150px;
-    background-color: rgba(53, 57, 69, 0.75);
-    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
-}
-
 .menu {
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
     border-radius: 1px;
@@ -199,8 +181,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 .popup-menu-item:insensitive {
     background-color: rgb(82, 148, 226);
 }
-
-.popup-image-menu-item {}
 
 .popup-combobox-item {
     spacing: 1em;
@@ -385,19 +365,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .panel-right {}
 
-.panel-status-button {
-    border: 0px solid #8b8b8b;
-    -natural-hpadding: 3px;
-    -minimum-hpadding: 3px;
-    font-weight: bold;
-    color: #ccc;
-    height: 22px;
-}
-
-.panel-status-button:hover {
-    color: white;
-}
-
 .system-status-icon {
     padding: 0px;
     spacing: 0px;
@@ -425,36 +392,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     -panel-corner-inner-border-color: rgba(255, 255, 255, 0);
 }
 
-.panel-button #appMenuIcon {
-    app-icon-bottom-clip: 1px;
-}
-
-.panel-button:active #appMenuIcon, .panel-button:checked #appMenuIcon, .panel-button:focus #appMenuIcon {
-    app-icon-bottom-clip: 2px;
-}
-
-.panel-button {
-    -natural-hpadding: 6px;
-    -minimum-hpadding: 3px;
-    font-weight: normal;
-    color: #ccc;
-    transition-duration: 100;
-}
-
-.panel-button:hover {
-    color: white;
-}
-
-.panel-button:active, .panel-button:overview, .panel-button:focus {}
-
-.panel-button:active>.system-status-icon, .panel-button:checked>.system-status-icon, .panel-button:focus>.system-status-icon {
-    icon-shadow: black 0px 0px 0px;
-}
-
-.panel-menu {
-    -boxpointer-gap: 4px;
-}
-
 .popup-menu-item-dot {
     color: white;
 }
@@ -469,24 +406,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 #overview {
     spacing: 12px;
-}
-
-.workspace-controls {
-    visible-height: 32px; /* Amount visible before hovering */
-}
-
-.workspace-thumbnails-background {
-    border: 0px solid rgba(82, 148, 226, 1);
-    border-right: 0px;
-    border-radius: 9px 9px 0px 0px;
-    background-color: rgba(0, 0, 0, 0);
-    padding: 8px;
-}
-
-.workspace-thumbnails-background:rtl {
-    border-right: 0px;
-    border-left: 0px;
-    border-radius: 9px 9px 0px 0px;
 }
 
 .workspace-thumbnails {
@@ -526,11 +445,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     background-size: 26px;
     height: 26px;
     width: 26px;
-}
-
-.workspace-thumbnail-indicator {
-    outline: 2px solid white;
-    border: 1px solid rgba(53, 57, 69, 0.75);
 }
 
 .window-caption {
@@ -578,16 +492,6 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     border-radius: 20px 20px 0px 0px;
     height: 120px;
     width: 400px;
-}
-
-.overview-icon {
-    border-radius: 4px;
-    padding: 3px;
-    border: 0px rgba(0, 0, 0, 0);
-    font-size: 7.5pt;
-    color: white;
-    transition-duration: 100;
-    text-align: center;
 }
 
 .overview-empty-placeholder {
@@ -646,10 +550,12 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     padding: 8px 0;
     font-weight: bold;
 }
+
 .calendar-change-month-back, .calendar-change-month-forward {
     width: 16px;
     height: 16px;
 }
+
 .calendar-change-month-back {
     width: 18px;
     height: 12px;
@@ -696,15 +602,11 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 .calendar-day-base {
     font-size: 85%;
     text-align: center;
-    width: 25px;
-    height: 25px;
+    width: 26px;
+    height: 26px;
     padding: 0.1em;
     margin: 2px;
-    border-radius: 12.5px;
-}
-
-.calendar-day-base:hover {
-    color: #fff;
+    border-radius: 13px;
 }
 
 .calendar-day-base:active {
@@ -749,26 +651,35 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
     border-right-width: 1px;
 }
 
-.calendar-work-day {}
-
 .calendar-nonwork-day {
     color: #ccc;
     font-weight: bold;
-    background-color: rgba(91, 98, 123, 0.2);
 }
+
+.calendar-nonwork-day:active, .calendar-work-day:active {
+    color: #5294e2;
+    font-weight: bold;
+}
+
+.calendar-work-day {}
 
 .calendar-today {
     font-weight: bold;
     background-color: rgba(82, 148, 226, 1);
 }
 
+.calendar-today:active {
+    color: #fff;
+}
+
 .calendar-other-month-day {
-    color: #888;
+    color: #464b5b;
+    font-weight: normal;
 }
 
 .calendar-day-with-events {
+    color: #e07070;
     font-weight: bold;
-    color: #f7f7f7;
 }
 
 /* ===================================================================
@@ -1180,7 +1091,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 
 .keyboard-key:grayed {
     color: #808080;
-    border-color:rgb(82, 148, 226)
+    border-color:rgb(82, 148, 226);
 }
 
 .keyboard-key:checked, .keyboard-key:hover {
@@ -1243,15 +1154,6 @@ menu-background allows the menu applet to be themed separately from other applet
     color: white;
     border: 0px rgb(82, 148, 226);
     border-left: 2px;
-}
-
-.menu-places-box {
-    padding: 10px;
-    border: 0px solid #555;
-}
-
-.menu-places-button {
-    padding: 10px;
 }
 
 .menu-categories-box {
@@ -1322,11 +1224,6 @@ menu-background allows the menu applet to be themed separately from other applet
 
 .menu-category-button-label:rtl {
     padding-right: 5px;
-}
-
-.menu-category-button-button:hover {
-    background-color: #969696;
-    border-radius: 8px;
 }
 
 /* Name and description of the currently hovered item in the menu
@@ -1412,11 +1309,6 @@ menu-background allows the menu applet to be themed separately from other applet
 
 .window-list-box.vertical .window-list-item-box {
     padding: .1em 0;
-}
-
-.window-list-item-label {
-    width: 15em;
-    min-width: 5px;
 }
 
 .window-list-item-box {
@@ -1689,15 +1581,6 @@ menu-background allows the menu applet to be themed separately from other applet
     border-radius: 15.5px;
 }
 
-.sound-player StButton:small StIcon {
-    icon-size: 1.5em;
-
-}
-
-.sound-player StButton StIcon {
-    icon-size: 1.5em;
-}
-
 .sound-player StButton:hover, .sound-player StButton:active {
     color: #fff;
     background-color: rgb(90, 101, 189);
@@ -1852,54 +1735,6 @@ menu-background allows the menu applet to be themed separately from other applet
 
 .panel-right .panel-launchers.vertical .launcher:hover {
     border-image: url("common-assets/panel/window-list-hover-right.svg") 9 9 9 9;
-}
-
-.panel-launcher-add-dialog-content-box {
-    padding: 6px;
-    spacing: 20px;
-}
-
-.panel-launcher-add-dialog-content-box-left {
-    padding: 6px;
-    spacing: 20px;
-}
-
-.panel-launcher-add-dialog-content-box-right {
-    padding: 6px;
-    spacing: 20px;
-}
-
-.panel-launcher-add-dialog-entry {
-    padding: 5px;
-    border-radius: 1px;
-    color: rgb(128, 128, 128);
-    border: 0px solid rgba(245, 245, 245, 0.2);
-    background-gradient-start: rgba(5, 5, 6, 0.1);
-    background-gradient-end: rgba(254, 254, 254, 0.1);
-    background-gradient-direction: vertical;
-    selected-color: black;
-    caret-color: rgb(128, 128, 128);
-    caret-size: 1px;
-    width: 250px;
-    transition-duration: 300;
-    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.75);
-}
-
-.panel-launcher-add-dialog-entry:focus, .panel-launcher-add-dialog-entry:hover {
-    border: 0px solid rgb(136, 138, 133);
-    background-gradient-start: rgb(200, 200, 200);
-    background-gradient-end: #fff;
-    background-gradient-direction: vertical;
-}
-
-.panel-launcher-add-dialog-entry:hover {
-    transition-duration: 300;
-}
-
-.panel-launcher-add-dialog-entry:focus {
-    color: rgb(64, 64, 64);
-    font-weight: bold;
-    transition-duration: 0;
 }
 
 /* ===================================================================
@@ -2064,7 +1899,6 @@ menu-background allows the menu applet to be themed separately from other applet
 }
 
 .desklet-drag-placeholder {
-    border: 0px solid #5294e2;
     background-color: rgba(109, 170, 0, 0.3);
 }
 
@@ -2073,49 +1907,6 @@ menu-background allows the menu applet to be themed separately from other applet
     background-color: rgba(53, 57, 69, 0.75);
     color: #fff;
     border-radius: 1px;
-}
-
-/* ===================================================================
- * About Dialog (applet.js and desklet.js)
- * ===================================================================*/
-
-.about-content {
-    width: 550px;
-    height: 250px;
-    spacing: 8px;
-    padding-bottom: 16px;
-}
-
-.about-title {
-    font-size: 2em;
-    font-weight: bold;
-}
-
-.about-uuid {
-    font-size: .8em;
-}
-
-.about-icon {
-    padding-right: 20px;
-}
-
-.about-scrollBox {
-    border: 0px solid #5294e2;
-    border-radius: 1px;
-    background-color: rgba(91, 98, 123, 1);
-}
-
-.about-scrollBox-innerBox {
-    padding: 1.2em;
-    spacing: 1.2em;
-}
-
-.about-description {
-    padding-top: 4px;
-}
-
-.about-version {
-    padding-left: 7px;
 }
 
 /* ===================================================================
