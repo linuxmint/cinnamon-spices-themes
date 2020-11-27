@@ -1,5 +1,7 @@
 ## Semi Transparent theme for cinnamon __4.2/4.4/4.6__
-_Check Out my new Theme: [Fresh-Cinnamon](https://cinnamon-spices.linuxmint.com/themes/view/Fresh-Cinnamon)
+
+ChangeLog:
+- Fixed Glass Effect Weird looking on some surface
 ---
 _Original theme: [Numix-Cinnamon-Transparent Theme](https://github.com/edoz90/numix-cinnamon-transparent)_
 
