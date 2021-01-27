@@ -11,8 +11,8 @@
 <!-- meaningfull constants -->
 
 <constant name="C_title_focused" value="#f7f7f7" />
-<constant name="C_title_a" value="#414747" />
-<constant name="C_title_b" value="#404949" />
+<constant name="C_title_a" value="#384248" />
+<constant name="C_title_b" value="#384248" />
 <constant name="C_title_unfocused" value="#999999" />
 <constant name="D_icons_unfocused_offset" value="0" /> <!-- offset of the unfocused icons -->
 
@@ -26,15 +26,15 @@
 	<distance name="left_titlebar_edge" value="12"/> 
 	<distance name="right_titlebar_edge" value="0"/>
 	<distance name="title_vertical_pad" value="12"/>
-	<border name="title_border" left="10" right="10" top="0" bottom="0"/>
-	<border name="button_border" left="0" right="0" top="0" bottom="0"/>
+	<border name="title_border" left="10" right="10" top="3" bottom="3"/>
+	<border name="button_border" left="3" right="3" top="3" bottom="3"/>
 	<aspect_ratio name="button" value="1"/>
 </frame_geometry>
 
 <frame_geometry name="max" title_scale="medium" parent="normal" rounded_top_left="false" rounded_top_right="false">
-	<distance name="left_width" value="1" />
-	<distance name="right_width" value="1" />
-	<distance name="bottom_height" value="1" />
+	<distance name="left_width" value="2" />
+	<distance name="right_width" value="2" />
+	<distance name="bottom_height" value="2" />
 </frame_geometry>
 
 <frame_geometry name="tiled_left" title_scale="medium" rounded_top_left="false" rounded_top_right="false" parent="max">
@@ -78,19 +78,19 @@
 	<!-- title -->
 
 <draw_ops name="title_focused">
-  <title color="#333" x="10" y="(((height - title_height) / 2) `max` 0)+1"/>
-  <title color="#333" x="10" y="(((height - title_height) / 2) `max` 0)-1"/>
-  <title color="#333" x="9" y="(((height - title_height) / 2) `max` 0)"/>
-  <title color="#333" x="11" y="(((height - title_height) / 2) `max` 0)"/>
-  <title color="C_title_focused" x="10" y="(((height - title_height) / 2) `max` 0)"/>
+  <title color="#333" x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width)))" y="(((height - title_height) / 2) `max` 0)+1"/>
+  <title color="#333" x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width)))" y="(((height - title_height) / 2) `max` 0)-1"/>
+  <title color="#333" x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width))) - 1" y="(((height - title_height) / 2) `max` 0)"/>
+  <title color="#333" x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width))) + 1" y="(((height - title_height) / 2) `max` 0)"/>
+  <title color="C_title_focused" x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width)))" y="(((height - title_height) / 2) `max` 0)"/>
 </draw_ops>
 
 <draw_ops name="title_unfocused">
-  <title color="#333" x="10" y="(((height - title_height) / 2) `max` 0)+1"/>
-  <title color="#333" x="10" y="(((height - title_height) / 2) `max` 0)-1"/>
-  <title color="#333" x="9" y="(((height - title_height) / 2) `max` 0)"/>
-  <title color="#333" x="11" y="(((height - title_height) / 2) `max` 0)"/>
-  <title color="C_title_unfocused" x="10" y="(((height - title_height) / 2) `max` 0)"/>
+  <title color="#333" x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width)))" y="(((height - title_height) / 2) `max` 0)+1"/>
+  <title color="#333" x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width)))" y="(((height - title_height) / 2) `max` 0)-1"/>
+  <title color="#333" x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width))) - 1" y="(((height - title_height) / 2) `max` 0)"/>
+  <title color="#333" x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width))) + 1" y="(((height - title_height) / 2) `max` 0)"/>
+  <title color="C_title_unfocused" x="(0 `max` ((frame_x_center - title_width / 2) `min` (width - title_width)))" y="(((height - title_height) / 2) `max` 0)"/>
 </draw_ops>
 
 	<!-- window decorations -->
@@ -98,32 +98,32 @@
 <!-- normal state -->
 <draw_ops name="entire_background_focused">
   <gradient type="vertical" x="0" y="25" width="width" height="height/5">
-    <color value="#414747" />
-    <color value="#2e3434" />
+    <color value="#384248" />
+    <color value="#2d373d" />
   </gradient>
-  <rectangle color="#2e3434" filled="true" x="0" y="height/5" width="width" height="height"/>
+  <rectangle color="#2d373d" filled="true" x="0" y="height/5" width="width" height="height"/>
 </draw_ops>
 
 <draw_ops name="entire_background_unfocused">
   <gradient type="vertical" x="0" y="25" width="width" height="height/5">
-    <color value="#414747" />
-    <color value="#2e3434" />
+    <color value="#384248" />
+    <color value="#2d373d" />
   </gradient>
-  <rectangle color="#2e3434" filled="true" x="0" y="height/5" width="width" height="height"/>
+  <rectangle color="#2d373d" filled="true" x="0" y="height/5" width="width" height="height"/>
 </draw_ops>
 
 <draw_ops name="titlebar_fill_focused">
   <include name="entire_background_focused" />
   <gradient type="vertical" x="0" y="0" width="width" height="height">
     <color value="#4b5252" />
-    <color value="#414747" />
+    <color value="#384248" />
   </gradient>
   <line color="#546060" x1="1" y1="1" x2="width-2" y2="1" />
 </draw_ops>
 
 <draw_ops name="titlebar_fill_unfocused">
   <include name="entire_background_unfocused" />
-  <rectangle color="#414747" filled="true" x="0" y="0" width="width" height="height"/>
+  <rectangle color="#384248" filled="true" x="0" y="0" width="width" height="height"/>
   <line color="#546060" x1="1" y1="1" x2="width-2" y2="1" />
 </draw_ops>
 
@@ -149,7 +149,7 @@
 
 <!-- maximized state -->
 <draw_ops name="max_entire_background_focused">
-	<rectangle color="#414747" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="#384248" x="0" y="0" width="width" height="height" filled="true" />
 </draw_ops>
 
 <draw_ops name="max_entire_background_unfocused">
@@ -174,7 +174,7 @@
 
 <!-- tiled state -->
 <draw_ops name="tiled_left_entire_background_focused">
-	<rectangle color="#414747" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="#384248" x="0" y="0" width="width" height="height" filled="true" />
 	<line color="#212121" x1="width-1" y1="0" x2="width-1" y2="height" />
 </draw_ops>
 
@@ -191,7 +191,7 @@
 </draw_ops>
 
 <draw_ops name="tiled_right_entire_background_focused">
-	<rectangle color="#414747" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="#384248" x="0" y="0" width="width" height="height" filled="true" />
 	<line color="#212121" x1="0" y1="0" x2="0" y2="height" />
 </draw_ops>
 

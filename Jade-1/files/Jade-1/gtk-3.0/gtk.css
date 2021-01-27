@@ -784,7 +784,7 @@ headerbar button:backdrop,
     outline-color: rgba(238, 238, 236, 0.3);
     background-image: linear-gradient(to bottom, @titlebutton_bg_a, @titlebutton_bg_b 40%, @titlebutton_bg_c);
     text-shadow: 0 -1px alpha(@titlebutton_fg_shadow, 0.8);
-    -gtk-icon-shadow: 0 -1px alpha(@titlebutton_fg_shadow 0.8);
+    -gtk-icon-shadow: 0 -1px alpha(@titlebutton_fg_shadow, 0.8);
     box-shadow: 0 1px 1px alpha(@box_shadow, 0.2);
 }
 
@@ -993,12 +993,12 @@ button.flat:backdrop:insensitive,
     text-shadow: none;
     icon-shadow: none;
 }*/
+*:disabled {
+  -gtk-icon-effect: dim;
+}
 notebook > header > tabs > arrow:insensitive {
     border-color: @button_border;
     background-color: @insensitive_bg_color;
-    /*text-shadow: none;
-    icon-shadow: none;
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0);*/
     color: @button_fg_dis;
 }
 headerbar button:insensitive,
@@ -4729,7 +4729,7 @@ menu separator,
 popover.background {
     padding: 2px;
     border-radius: 5px;
-    background-color: @theme_bg_color;
+    background-color: @popover;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     border: 1px solid @border_box;
 }
@@ -4739,7 +4739,7 @@ popover.background {
     border: 1px solid @border_box;
 }
 popover.background:backdrop {
-    background-color: @theme_bg_color;
+    background-color: @popover;
     box-shadow: none;
 }
 .popover > .list,
@@ -5465,12 +5465,12 @@ menuitem:hover switch,
 row:selected switch,
 infobar switch
 {
-    background-image: -gtk-scaled(url("../assets/switch-off.svg"));
+    background-image: -gtk-scaled(url("assets/switch-off.svg"));
 }
 headerbar switch,
 .primary-toolbar switch
 {
-    background-image: -gtk-scaled(url("../assets/header-switch-off.svg"));
+    background-image: -gtk-scaled(url("assets/header-switch-off.svg"));
 }
 switch:hover,
 menuitem:hover switch:hover,
@@ -5481,26 +5481,26 @@ menuitem:hover switch:active,
 row:selected switch:active,
 infobar switch:active
 {
-    background-image: -gtk-scaled(url("../assets/switch-off-hover.svg"));
+    background-image: -gtk-scaled(url("assets/switch-off-hover.svg"));
 }
 headerbar switch:hover,
 .primary-toolbar switch:hover,
 headerbar switch:active,
 .primary-toolbar switch:active
 {
-    background-image: -gtk-scaled(url("../assets/header-switch-off-hover.svg"));
+    background-image: -gtk-scaled(url("assets/header-switch-off-hover.svg"));
 }
 switch:checked,
 menuitem:hover switch:checked,
 row:selected switch:checked,
 infobar switch:checked
 {
-    background-image: -gtk-scaled(url("../assets/switch-on.svg"));
+    background-image: -gtk-scaled(url("assets/switch-on.svg"));
 }
 headerbar switch:checked,
 .primary-toolbar switch:checked
 {
-    background-image: -gtk-scaled(url("../assets/header-switch-on.svg"));
+    background-image: -gtk-scaled(url("assets/header-switch-on.svg"));
 }
 switch:checked:hover,
 menuitem:hover switch:checked:hover,
@@ -5511,26 +5511,26 @@ menuitem:hover switch:checked:active,
 row:selected switch:checked:active,
 infobar switch:checked:active
 {
-    background-image: -gtk-scaled(url("../assets/switch-on-hover.svg"));
+    background-image: -gtk-scaled(url("assets/switch-on-hover.svg"));
 }
 headerbar switch:checked:hover,
 .primary-toolbar switch:checked:hover,
 headerbar switch:checked:active,
 .primary-toolbar switch:checked:active
 {
-    background-image: -gtk-scaled(url("../assets/header-switch-on-hover.svg"));
+    background-image: -gtk-scaled(url("assets/header-switch-on-hover.svg"));
 }
 switch:insensitive,
 menuitem:hover switch:insensitive,
 row:selected switch:insensitive,
 infobar switch:insensitive
 {
-  background-image: -gtk-scaled(url("../assets/switch-off-disabled.svg"));
+  background-image: -gtk-scaled(url("assets/switch-off-disabled.svg"));
 }
 headerbar switch:insensitive,
 .primary-toolbar switch:insensitive
 {
-  background-image: -gtk-scaled(url("../assets/header-switch-off-disabled.svg"));
+  background-image: -gtk-scaled(url("assets/header-switch-off-disabled.svg"));
 }
 
 switch:checked:insensitive,
@@ -5538,12 +5538,12 @@ menuitem:hover switch:checked:insensitive,
 row:selected switch:checked:insensitive,
 infobar switch:checked:insensitive
 {
-    background-image: -gtk-scaled(url("../assets/switch-on-disabled.svg"));
+    background-image: -gtk-scaled(url("assets/switch-on-disabled.svg"));
 }
 headerbar switch:checked:insensitive,
 .primary-toolbar switch:checked:insensitive
 {
-    background-image: -gtk-scaled(url("../assets/header-switch-on-disabled.svg"));
+    background-image: -gtk-scaled(url("assets/header-switch-on-disabled.svg"));
 }
 
 GtkSwitch.trough:dir(rtl), GtkSwitch.slider:dir(rtl) {
@@ -5551,98 +5551,98 @@ GtkSwitch.trough:dir(rtl), GtkSwitch.slider:dir(rtl) {
 }
 
 GtkSwitch.trough {
-    background-image: -gtk-scaled(url("../assets/switch-off.svg"));
+    background-image: -gtk-scaled(url("assets/switch-off.svg"));
 }
 
 .list-row:selected GtkSwitch.trough,
 GtkInfoBar GtkSwitch.trough {
-    background-image: -gtk-scaled(url("../assets/switch-off.svg"));
+    background-image: -gtk-scaled(url("assets/switch-off.svg"));
 }
 
 .header-bar GtkSwitch.trough,
 .primary-toolbar GtkSwitch.trough,
 .primary-toolbar .toolbar GtkSwitch.trough,
 .primary-toolbar .inline-toolbar GtkSwitch.trough {
-    background-image: -gtk-scaled(url("../assets/header-switch-off.svg"));
+    background-image: -gtk-scaled(url("assets/header-switch-off.svg"));
 }
 
 GtkSwitch.trough:hover {
-    background-image: -gtk-scaled(url("../assets/switch-off-hover.svg")); }
+    background-image: -gtk-scaled(url("assets/switch-off-hover.svg")); }
 
 .list-row:selected GtkSwitch.trough:hover,
 GtkInfoBar GtkSwitch.trough:hover {
-    background-image: -gtk-scaled(url("../assets/switch-off-hover.svg"));
+    background-image: -gtk-scaled(url("assets/switch-off-hover.svg"));
 }
 
 .header-bar GtkSwitch.trough:hover,
 .primary-toolbar GtkSwitch.trough:hover,
 .primary-toolbar .toolbar GtkSwitch.trough:hover,
 .primary-toolbar .inline-toolbar GtkSwitch.trough:hover {
-    background-image: -gtk-scaled(url("../assets/header-switch-off-hover.svg"));
+    background-image: -gtk-scaled(url("assets/header-switch-off-hover.svg"));
 }
 
 GtkSwitch.trough:active {
-    background-image: -gtk-scaled(url("../assets/switch-on.svg"));
+    background-image: -gtk-scaled(url("assets/switch-on.svg"));
 }
 
 .list-row:selected GtkSwitch.trough:active,
 GtkInfoBar GtkSwitch.trough:active {
-    background-image: -gtk-scaled(url("../assets/switch-on.svg"));
+    background-image: -gtk-scaled(url("assets/switch-on.svg"));
 }
 
 .header-bar GtkSwitch.trough:active,
 .primary-toolbar GtkSwitch.trough:active,
 .primary-toolbar .toolbar GtkSwitch.trough:active,
 .primary-toolbar .inline-toolbar GtkSwitch.trough:active {
-    background-image: -gtk-scaled(url("../assets/header-switch-on.svg"));
+    background-image: -gtk-scaled(url("assets/header-switch-on.svg"));
 }
 
 GtkSwitch.trough:active:hover {
-    background-image: -gtk-scaled(url("../assets/switch-on-hover.svg"));
+    background-image: -gtk-scaled(url("assets/switch-on-hover.svg"));
 }
 
 .list-row:selected GtkSwitch.trough:active:hover,
 GtkInfoBar GtkSwitch.trough:active:hover {
-    background-image: -gtk-scaled(url("../assets/switch-on-hover.svg"));
+    background-image: -gtk-scaled(url("assets/switch-on-hover.svg"));
 }
 
 .header-bar GtkSwitch.trough:active:hover,
 .primary-toolbar GtkSwitch.trough:active:hover,
 .primary-toolbar .toolbar GtkSwitch.trough:active:hover,
 .primary-toolbar .inline-toolbar GtkSwitch.trough:active:hover {
-    background-image: -gtk-scaled(url("../assets/header-switch-on-hover.svg"));
+    background-image: -gtk-scaled(url("assets/header-switch-on-hover.svg"));
 }
 
 GtkSwitch.trough:insensitive {
-    background-image: -gtk-scaled(url("../assets/switch-off-disabled.svg"));
+    background-image: -gtk-scaled(url("assets/switch-off-disabled.svg"));
 }
 
 .list-row:selected GtkSwitch.trough:insensitive,
 GtkInfoBar GtkSwitch.trough:insensitive {
-    background-image: -gtk-scaled(url("../assets/switch-off-disabled.svg"));
+    background-image: -gtk-scaled(url("assets/switch-off-disabled.svg"));
 }
 
 .header-bar GtkSwitch.trough:insensitive,
 .primary-toolbar GtkSwitch.trough:insensitive,
 .primary-toolbar .toolbar GtkSwitch.trough:insensitive,
 .primary-toolbar .inline-toolbar GtkSwitch.trough:insensitive {
-    background-image: -gtk-scaled(url("../assets/header-switch-off-disabled.svg"));
+    background-image: -gtk-scaled(url("assets/header-switch-off-disabled.svg"));
 }
 
 GtkSwitch.trough:active:insensitive {
-    background-image: -gtk-scaled(url("../assets/switch-on-disabled.png"));
+    background-image: -gtk-scaled(url("assets/switch-on-disabled.png"));
 }
 
 .list-row:selected GtkSwitch.trough:active:insensitive,
 GtkInfoBar GtkSwitch.trough:active:insensitive {
-    background-image: -gtk-scaled(url("../assets/switch-on-disabled.png"));
+    background-image: -gtk-scaled(url("assets/switch-on-disabled.png"));
 }
 
 .header-bar GtkSwitch.trough:active:insensitive,
 .primary-toolbar GtkSwitch.trough:active:insensitive,
 .primary-toolbar .toolbar GtkSwitch.trough:active:insensitive,
 .primary-toolbar .inline-toolbar GtkSwitch.trough:active:insensitive {
-    background-image: -gtk-scaled(url("../assets/header-switch-on-disabled.svg"));
+    background-image: -gtk-scaled(url("assets/header-switch-on-disabled.svg"));
 }
 
 
@@ -5672,16 +5672,16 @@ menuitem radio {
 .check,
 check,
 treeview.check {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxUnchecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxUnchecked.svg"));
 }
 .menu .menuitem.check,
 menuitem check {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxUnchecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxUnchecked_menu.svg"));
 }
 GtkFileChooserDialog GtkFileChooserWidget > GtkActionBar > GtkRevealer > .action-bar.frame .check,
 GtkFileChooserDialog .dialog-vbox > .frame .check,
 .osd check, filechooser actionbar check {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxUnchecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxUnchecked.svg"));
 }
 .view.content-view.check:hover,
 .view.content-view.check:active,
@@ -5692,11 +5692,11 @@ iconview check:selected,
 treeview.check:selected,
 row:selected check,
 infobar check {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxUnchecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxUnchecked.svg"));
 }
 menuitem check:hover,
 .menu .menuitem.check:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxUnchecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxUnchecked_menu.svg"));
 }
 .check:backdrop,
 .check:backdrop:insensitive
@@ -5704,12 +5704,12 @@ menuitem check:hover,
 .check:insensitive,
 check:insensitive,
 treeview.check:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxUncheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxUncheckedInsensitive.svg"));
 }
 
 .osd check:insensitive,
 filechooser actionbar check:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxUncheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxUncheckedInsensitive.svg"));
 }
 
 .view check:insensitive:selected,
@@ -5717,21 +5717,21 @@ iconview check:insensitive:selected,
 treeview.check:insensitive:selected,
 row:selected check:insensitive,
 infobar check:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxUncheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxUncheckedInsensitive.svg"));
 }
 .menu .menuitem.check:insensitive,
 menuitem check:insensitive:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxUncheckedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxUncheckedInsensitive_menu.svg"));
 }
 .check:inconsistent,
 check:inconsistent,
 treeview.check:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxMixed.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxMixed.svg"));
 }
 
 .osd check:inconsistent,
 filechooser actionbar check:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxMixed.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxMixed.svg"));
 }
 .check:inconsistent:selected,
 .view check:inconsistent:selected,
@@ -5739,22 +5739,22 @@ iconview check:inconsistent:selected,
 treeview.check:inconsistent:selected,
 row:selected check:inconsistent,
 infobar check:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxMixed.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxMixed.svg"));
 }
 .check:inconsistent:hover,
 menuitem check:inconsistent:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxMixed_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxMixed_menu.svg"));
 }
 
 .check:inconsistent:insensitive,
 check:inconsistent:insensitive,
 treeview.check:inconsistent:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxMixedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxMixedInsensitive.svg"));
 }
 
 .osd check:inconsistent:insensitive,
 filechooser actionbar check:inconsistent:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxMixedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxMixedInsensitive.svg"));
 }
 
 .view check:inconsistent:insensitive:selected,
@@ -5762,24 +5762,24 @@ iconview check:inconsistent:insensitive:selected,
 treeview.check:inconsistent:insensitive:selected,
 row:selected check:inconsistent:insensitive,
 infobar check:inconsistent:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxMixedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxMixedInsensitive.svg"));
 }
 menuitem check:inconsistent:insensitive:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxMixedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxMixedInsensitive_menu.svg"));
 }
 .view.content-view.check:checked,
 .check:checked,
 check:checked,
 treeview.check:checked {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxChecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxChecked.svg"));
 }
 menuitem check:checked {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxChecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxChecked_menu.svg"));
 }
 .view.content-view.check:checked:hover,
 .osd check:checked,
 filechooser actionbar check:checked {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxChecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxChecked.svg"));
 }
 .view.content-view.check:checked:active,
 .view.content-view.check:checked:hover,
@@ -5788,21 +5788,21 @@ iconview check:checked:selected,
 treeview.check:checked:selected,
 row:selected check:checked,
 infobar check:checked {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxChecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxChecked.svg"));
 }
 menuitem check:checked:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxChecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxChecked_menu.svg"));
 }
 
 .check:checked:insensitive,
 check:checked:insensitive,
 treeview.check:checked:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxCheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxCheckedInsensitive.svg"));
 }
 
 .osd check:checked:insensitive,
 filechooser actionbar check:checked:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxCheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxCheckedInsensitive.svg"));
 }
 
 .view check:checked:insensitive:selected,
@@ -5810,61 +5810,61 @@ iconview check:checked:insensitive:selected,
 treeview.check:checked:insensitive:selected,
 row:selected check:checked:insensitive,
 infobar check:checked:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxCheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxCheckedInsensitive.svg"));
 }
 menuitem check:checked:insensitive:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxCheckedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxCheckedInsensitive_menu.svg"));
 }
 
 .view.content-view.check:checked:not(list),
 iconview.content-view.check:checked:not(list) {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxChecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxChecked.svg"));
     background-color: transparent;
 }
 
 .check:inconsistent:backdrop {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxMixed.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxMixed.svg"));
 }
 
 .check:inconsistent:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxMixedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxMixedInsensitive.svg"));
 }
 
 .check:inconsistent:insensitive:backdrop {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxMixedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxMixedInsensitive.svg"));
 }
 
 .check:checked {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxChecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxChecked.svg"));
 }
 .menu .menuitem.check:active,
 .menu .menuitem.check:checked {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxChecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxChecked_menu.svg"));
 }
 
 GtkFileChooserDialog GtkFileChooserWidget > GtkActionBar > GtkRevealer > .action-bar.frame .check:checked,
 GtkFileChooserDialog .dialog-vbox > .frame .check:checked {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxUnchecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxUnchecked.svg"));
 }
 
 .check:checked:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxCheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxCheckedInsensitive.svg"));
 }
 .menu .menuitem.check:active:insensitive,
 .menu .menuitem.check:checked:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxCheckedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxCheckedInsensitive_menu.svg"));
 }
 
 .check:checked:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxChecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxChecked.svg"));
 }
 .menu .menuitem.check:active:hover,
 .menu .menuitem.check:checked:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxChecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxChecked_menu.svg"));
 }
 
 .check:checked:active {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxChecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxChecked.svg"));
 }
 
 .check:backdrop:checked {
@@ -5872,7 +5872,7 @@ GtkFileChooserDialog .dialog-vbox > .frame .check:checked {
 }
 
 .check:backdrop:checked:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxCheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxCheckedInsensitive.svg"));
 }
 
 
@@ -5880,14 +5880,14 @@ GtkFileChooserDialog .dialog-vbox > .frame .check:checked {
 .radio,
 radio,
 treeview.radio {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked.svg"));
 }
 menuitem radio {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked_menu.svg"));
 }
 
 .osd radio, filechooser actionbar radio {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked.svg"));
 }
 
 
@@ -5896,24 +5896,24 @@ iconview radio:selected,
 treeview.radio:selected,
 row:selected radio,
 infobar radio {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked.svg"));
 }
 menuitem radio:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked_menu.svg"));
 }
 
 .radio:insensitive,
 radio:insensitive,
 treeview.radio:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUncheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUncheckedInsensitive.svg"));
 }
 menuitem radio:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUncheckedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUncheckedInsensitive_menu.svg"));
 }
 
 .osd radio:insensitive,
 filechooser actionbar radio:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUncheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUncheckedInsensitive.svg"));
 }
 
 .view radio:insensitive:selected,
@@ -5921,21 +5921,21 @@ iconview radio:insensitive:selected,
 treeview.radio:insensitive:selected,
 row:selected radio:insensitive,
 infobar radio:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUncheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUncheckedInsensitive.svg"));
 }
 menuitem radio:insensitive:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUncheckedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUncheckedInsensitive_menu.svg"));
 }
 
 .radio:inconsistent,
 radio:inconsistent,
 treeview.radio:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixed.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixed.svg"));
 }
 
 .osd radio:inconsistent,
 filechooser actionbar radio:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixed.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixed.svg"));
 }
 
 .view radio:inconsistent:selected,
@@ -5943,24 +5943,24 @@ iconview radio:inconsistent:selected,
 treeview.radio:inconsistent:selected,
 row:selected radio:inconsistent,
 infobar radio:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixed.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixed.svg"));
 }
 menuitem radio:inconsistent:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixed.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixed.svg"));
 }
 
 .radio:inconsistent:insensitive,
 radio:inconsistent:insensitive,
 treeview.radio:inconsistent:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixedInsensitive.svg"));
 }
 menuitem radio:inconsistent:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixedInsensitive_menu.svg"));
 }
 
 .osd radio:inconsistent:insensitive,
 filechooser actionbar radio:inconsistent:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixedInsensitive.svg"));
 }
 
 menuitem radio:inconsistent:insensitive:hover,
@@ -5969,7 +5969,7 @@ iconview radio:inconsistent:insensitive:selected,
 treeview.radio:inconsistent:insensitive:selected,
 row:selected radio:inconsistent:insensitive,
 infobar radio:inconsistent:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixedInsensitive.svg"));
 }
 
 .radio:checked,
@@ -5978,16 +5978,16 @@ radio:checked,
 radio:checked:hover,
 treeview.radio:checked,
 treeview.radio:checked:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioChecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioChecked.svg"));
 }
 menuitem radio:checked,
 menuitem radio:checked:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioChecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioChecked_menu.svg"));
 }
 
 .osd radio:checked,
 filechooser actionbar radio:checked {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioChecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioChecked.svg"));
 }
 
 .view radio:checked:selected,
@@ -5995,26 +5995,26 @@ iconview radio:checked:selected,
 treeview.radio:checked:selected,
 row:selected radio:checked,
 infobar radio:checked {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioChecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioChecked.svg"));
 }
 menuitem radio:checked:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioChecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioChecked_menu.svg"));
 }
 
 .radio:checked:insensitive,
 radio:checked:insensitive,
 treeview.radio:checked:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioCheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioCheckedInsensitive.svg"));
 }
 .radio:checked:insensitive,
 .menu .menuitem.radio:checked:insensitive,
 menuitem radio:checked:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioCheckedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioCheckedInsensitive_menu.svg"));
 }
 
 .osd radio:checked:insensitive,
 filechooser actionbar radio:checked:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioCheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioCheckedInsensitive.svg"));
 }
 .radio:backdrop:checked:insensitive,
 .view radio:checked:insensitive:selected,
@@ -6022,131 +6022,131 @@ iconview radio:checked:insensitive:selected,
 treeview.radio:checked:insensitive:selected,
 row:selected radio:checked:insensitive,
 infobar radio:checked:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioCheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioCheckedInsensitive.svg"));
 }
 .menu .menuitem.radio:backdrop:checked:insensitive,
 menuitem radio:checked:insensitive:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioCheckedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioCheckedInsensitive_menu.svg"));
 }
 
 .view.content-view.check:not(list),
 iconview.content-view.check:not(list) {
-    -gtk-icon-source: -gtk-scaled(url("../assets/checkboxCheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/checkboxCheckedInsensitive.svg"));
     background-color: transparent;
 }
 
 .radio {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked.svg"));
 }
 
 .radio:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked.svg"));
 }
 
 .radio:active {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked.svg"));
 }
 
 .radio:backdrop {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked.svg"));
 }
 
 .menu .menuitem.radio {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked_menu.svg"));
 }
 
 .menu .menuitem.radio:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked_menu.svg"));
 }
 
 .menu .menuitem.radio:active {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked_menu.svg"));
 }
 
 .menu .menuitem.radio:backdrop {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUnchecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUnchecked_menu.svg"));
 }
 
 .radio:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUncheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUncheckedInsensitive.svg"));
 }
 .radio:backdrop:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUncheckedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUncheckedInsensitive.svg"));
 }
 .menu .menuitem.radio:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUncheckedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUncheckedInsensitive_menu.svg"));
 }
 .menu .menuitem.radio:backdrop:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioUncheckedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioUncheckedInsensitive_menu.svg"));
 }
 
 .radio:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixed.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixed.svg"));
 }
 
 .radio:inconsistent:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixed.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixed.svg"));
 }
 
 .radio:inconsistent:selected {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixed.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixed.svg"));
 }
 
 .radio:inconsistent:backdrop {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixed.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixed.svg"));
 }
 
 .menu .menuitem.radio:inconsistent {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixed_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixed_menu.svg"));
 }
 
 .menu .menuitem.radio:inconsistent:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixed_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixed_menu.svg"));
 }
 
 .menu .menuitem.radio:inconsistent:selected {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixed_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixed_menu.svg"));
 }
 
 .menu .menuitem.radio:inconsistent:backdrop {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixed_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixed_menu.svg"));
 }
 
 .radio:inconsistent:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixedInsensitive.svg"));
 }
 .radio:inconsistent:insensitive:backdrop {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixedInsensitive.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixedInsensitive.svg"));
 }
 .menu .menuitem.radio:inconsistent:insensitive {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixedInsensitive_menu.svg"));
 }
 .menu .menuitem.radio:inconsistent:insensitive:backdrop {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioMixedInsensitive_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioMixedInsensitive_menu.svg"));
 }
 
 .radio:checked:active {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioChecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioChecked.svg"));
 }
 
 .radio:backdrop:checked {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioChecked.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioChecked.svg"));
 }
 
 .menu .menuitem.radio:checked {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioChecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioChecked_menu.svg"));
 }
 
 .menu .menuitem.radio:checked:hover {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioChecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioChecked_menu.svg"));
 }
 
 .menu .menuitem.radio:checked:active {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioChecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioChecked_menu.svg"));
 }
 
 .menu .menuitem.radio:backdrop:checked {
-    -gtk-icon-source: -gtk-scaled(url("../assets/radioChecked_menu.svg"));
+    -gtk-icon-source: -gtk-scaled(url("assets/radioChecked_menu.svg"));
 }
 
 
@@ -6164,6 +6164,11 @@ radiobutton label:not(:only-child):first-child {
 checkbutton label:not(:only-child):last-child,
 radiobutton label:not(:only-child):last-child {
     margin-right: 4px;
+}
+
+checkbutton:hover, 
+radiobutton:hover {
+    background-color: mix (@theme_accent_color, @theme_base_color, 0.9);
 }
 
 check,
@@ -6597,8 +6602,8 @@ scale.horizontal.marks-before:not(.marks-after) slider {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-above-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-above-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-horz-scale-has-marks-above-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-above-dark@2.png"));
     margin-top: -14px;
     background-position: top;
     background-repeat: no-repeat;
@@ -6613,8 +6618,8 @@ scale.horizontal.marks-before:not(.marks-after) slider:hover {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-above-hover-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-above-hover-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-horz-scale-has-marks-above-hover-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-above-hover-dark@2.png"));
     margin-top: -14px;
     background-position: top;
     background-repeat: no-repeat;
@@ -6630,8 +6635,8 @@ scale.horizontal.marks-before:not(.marks-after) slider:active {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-above-active-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-above-active-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-horz-scale-has-marks-above-active-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-above-active-dark@2.png"));
     margin-top: -14px;
     background-position: top;
     background-repeat: no-repeat;
@@ -6647,8 +6652,8 @@ scale.horizontal.marks-before:not(.marks-after) slider:insensitive {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-above-insensitive-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-above-insensitive-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-horz-scale-has-marks-above-insensitive-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-above-insensitive-dark@2.png"));
     margin-top: -14px;
     background-position: top;
     background-repeat: no-repeat;
@@ -6664,8 +6669,8 @@ scale.horizontal.marks-before:not(.marks-after) slider:backdrop {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-above-backdrop-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-above-backdrop-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-horz-scale-has-marks-above-backdrop-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-above-backdrop-dark@2.png"));
     margin-top: -14px;
     background-position: top;
     background-repeat: no-repeat;
@@ -6681,8 +6686,8 @@ scale.horizontal.marks-before:not(.marks-after) slider:backdrop:insensitive {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-above-backdrop-insensitive-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-above-backdrop-insensitive-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-horz-scale-has-marks-above-backdrop-insensitive-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-above-backdrop-insensitive-dark@2.png"));
     margin-top: -14px;
     background-position: top;
     background-repeat: no-repeat;
@@ -6698,8 +6703,8 @@ scale.horizontal.marks-after:not(.marks-before) slider {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-below-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-below-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-horz-scale-has-marks-below-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-below-dark@2.png"));
     margin-bottom: -14px;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -6714,8 +6719,8 @@ scale.horizontal.marks-after:not(.marks-before) slider:hover {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-below-hover-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-below-hover-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-horz-scale-has-marks-below-hover-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-below-hover-dark@2.png"));
     margin-bottom: -14px;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -6730,8 +6735,8 @@ scale.horizontal.marks-after:not(.marks-before) slider:active {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-below-active-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-below-active-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-horz-scale-has-marks-below-active-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-below-active-dark@2.png"));
     margin-bottom: -14px;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -6747,8 +6752,8 @@ scale.horizontal.marks-after:not(.marks-before) slider:insensitive {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-below-insensitive-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-below-insensitive-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-horz-scale-has-marks-below-insensitive-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-below-insensitive-dark@2.png"));
     margin-bottom: -14px;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -6764,8 +6769,8 @@ scale.horizontal.marks-after:not(.marks-before) slider:backdrop {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-below-backdrop-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-below-backdrop-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-horz-scale-has-marks-below-backdrop-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-below-backdrop-dark@2.png"));
     margin-bottom: -14px;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -6780,8 +6785,8 @@ scale.horizontal.marks-after:not(.marks-before) slider:backdrop:insensitive {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-below-backdrop-insensitive-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-below-backdrop-insensitive-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-horz-scale-has-marks-below-backdrop-insensitive-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-below-backdrop-insensitive-dark@2.png"));
     margin-bottom: -14px;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -6797,8 +6802,8 @@ scale.vertical.marks-before:not(.marks-after) slider {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-vert-scale-has-marks-above-dark.png"),
-                                  url("../assets/slider-vert-scale-has-marks-above-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-vert-scale-has-marks-above-dark.png"),
+                                  url("assets/slider-vert-scale-has-marks-above-dark@2.png"));
     margin-left: -14px;
     background-position: left bottom;
     background-repeat: no-repeat;
@@ -6814,8 +6819,8 @@ scale.vertical.marks-before:not(.marks-after) slider:hover {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-vert-scale-has-marks-above-hover-dark.png"),
-                                  url("../assets/slider-vert-scale-has-marks-above-hover-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-vert-scale-has-marks-above-hover-dark.png"),
+                                  url("assets/slider-vert-scale-has-marks-above-hover-dark@2.png"));
     margin-left: -14px;
     background-position: left bottom;
     background-repeat: no-repeat;
@@ -6831,8 +6836,8 @@ scale.vertical.marks-before:not(.marks-after) slider:active {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-vert-scale-has-marks-above-active-dark.png"),
-                                  url("../assets/slider-vert-scale-has-marks-above-active-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-vert-scale-has-marks-above-active-dark.png"),
+                                  url("assets/slider-vert-scale-has-marks-above-active-dark@2.png"));
     margin-left: -14px;
     background-position: left bottom;
     background-repeat: no-repeat;
@@ -6848,8 +6853,8 @@ scale.vertical.marks-before:not(.marks-after) slider:insensitive {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-vert-scale-has-marks-above-insensitive-dark.png"),
-                                  url("../assets/slider-vert-scale-has-marks-above-insensitive-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-vert-scale-has-marks-above-insensitive-dark.png"),
+                                  url("assets/slider-vert-scale-has-marks-above-insensitive-dark@2.png"));
     margin-left: -14px;
     background-position: left bottom;
     background-repeat: no-repeat;
@@ -6865,8 +6870,8 @@ scale.vertical.marks-before:not(.marks-after) slider:backdrop {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-vert-scale-has-marks-above-backdrop-dark.png"),
-                                  url("../assets/slider-vert-scale-has-marks-above-backdrop-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-vert-scale-has-marks-above-backdrop-dark.png"),
+                                  url("assets/slider-vert-scale-has-marks-above-backdrop-dark@2.png"));
     margin-left: -14px;
     background-position: left bottom;
     background-repeat: no-repeat;
@@ -6882,8 +6887,8 @@ scale.vertical.marks-before:not(.marks-after) slider:backdrop:insensitive {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-vert-scale-has-marks-above-backdrop-insensitive-dark.png"),
-                                  url("../assets/slider-vert-scale-has-marks-above-backdrop-insensitive-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-vert-scale-has-marks-above-backdrop-insensitive-dark.png"),
+                                  url("assets/slider-vert-scale-has-marks-above-backdrop-insensitive-dark@2.png"));
     margin-left: -14px;
     background-position: left bottom;
     background-repeat: no-repeat;
@@ -6899,8 +6904,8 @@ scale.vertical.marks-after:not(.marks-before) slider {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-vert-scale-has-marks-below-dark.png"),
-                                  url("../assets/slider-vert-scale-has-marks-below-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-vert-scale-has-marks-below-dark.png"),
+                                  url("assets/slider-vert-scale-has-marks-below-dark@2.png"));
     margin-right: -14px;
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -6916,8 +6921,8 @@ scale.vertical.marks-after:not(.marks-before) slider:hover {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-vert-scale-has-marks-below-hover-dark.png"),
-                                  url("../assets/slider-vert-scale-has-marks-below-hover-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-vert-scale-has-marks-below-hover-dark.png"),
+                                  url("assets/slider-vert-scale-has-marks-below-hover-dark@2.png"));
     margin-right: -14px;
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -6933,8 +6938,8 @@ scale.vertical.marks-after:not(.marks-before) slider:active {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-vert-scale-has-marks-below-active-dark.png"),
-                                  url("../assets/slider-vert-scale-has-marks-below-active-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-vert-scale-has-marks-below-active-dark.png"),
+                                  url("assets/slider-vert-scale-has-marks-below-active-dark@2.png"));
     margin-right: -14px;
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -6950,8 +6955,8 @@ scale.vertical.marks-after:not(.marks-before) slider:insensitive {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-vert-scale-has-marks-below-insensitive-dark.png"),
-                                  url("../assets/slider-vert-scale-has-marks-below-insensitive-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-vert-scale-has-marks-below-insensitive-dark.png"),
+                                  url("assets/slider-vert-scale-has-marks-below-insensitive-dark@2.png"));
     margin-right: -14px;
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -6967,8 +6972,8 @@ scale.vertical.marks-after:not(.marks-before) slider:backdrop {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-vert-scale-has-marks-below-backdrop-dark.png"),
-                                  url("../assets/slider-vert-scale-has-marks-below-backdrop-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-vert-scale-has-marks-below-backdrop-dark.png"),
+                                  url("assets/slider-vert-scale-has-marks-below-backdrop-dark@2.png"));
     margin-right: -14px;
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -6984,8 +6989,8 @@ scale.vertical.marks-after:not(.marks-before) slider:backdrop:insensitive {
     border-style: none;
     border-radius: 0;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/slider-vert-scale-has-marks-below-backdrop-insensitive-dark.png"),
-                                  url("../assets/slider-vert-scale-has-marks-below-backdrop-insensitive-dark@2.png"));
+    background-image: -gtk-scaled(url("assets/slider-vert-scale-has-marks-below-backdrop-insensitive-dark.png"),
+                                  url("assets/slider-vert-scale-has-marks-below-backdrop-insensitive-dark@2.png"));
     margin-right: -14px;
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -7831,9 +7836,12 @@ filechooser #pathbarbox {
     color: @sidebar_fg;
 }
 
-.sidebar row,
 .sidebar .frame {
     background-color: @sidebar_bg;
+}
+
+.sidebar row {
+    background-color: transparent;
 }
 
 row.activatable:hover {
@@ -9178,54 +9186,54 @@ cursor-handle {
 }
 cursor-handle.top:dir(ltr),
 cursor-handle.bottom:dir(rtl) {
-    -gtk-icon-source: -gtk-scaled(url("../assets/text-select-start-dark.png"),
-                                  url("../assets/text-select-start-dark@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/text-select-start-dark.png"),
+                                  url("assets/text-select-start-dark@2.png"));
     padding-left: 10px;
 }
 cursor-handle.bottom:dir(ltr),
 cursor-handle.top:dir(rtl) {
-    -gtk-icon-source: -gtk-scaled(url("../assets/text-select-end-dark.png"),
-                                  url("../assets/text-select-end-dark@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/text-select-end-dark.png"),
+                                  url("assets/text-select-end-dark@2.png"));
     padding-right: 10px;
 }
 cursor-handle.insertion-cursor:dir(ltr),
 cursor-handle.insertion-cursor:dir(rtl) {
-    -gtk-icon-source: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-above-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-above-dark@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/slider-horz-scale-has-marks-above-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-above-dark@2.png"));
 }
 cursor-handle.top:hover:dir(ltr),
 cursor-handle.bottom:hover:dir(rtl) {
-    -gtk-icon-source: -gtk-scaled(url("../assets/text-select-start-hover-dark.png"),
-                                  url("../assets/text-select-start-hover-dark@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/text-select-start-hover-dark.png"),
+                                  url("assets/text-select-start-hover-dark@2.png"));
     padding-left: 10px;
 }
 cursor-handle.bottom:hover:dir(ltr),
 cursor-handle.top:hover:dir(rtl) {
-    -gtk-icon-source: -gtk-scaled(url("../assets/text-select-end-hover-dark.png"),
-                                  url("../assets/text-select-end-hover-dark@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/text-select-end-hover-dark.png"),
+                                  url("assets/text-select-end-hover-dark@2.png"));
     padding-right: 10px;
 }
 cursor-handle.insertion-cursor:hover:dir(ltr),
 cursor-handle.insertion-cursor:hover:dir(rtl) {
-    -gtk-icon-source: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-above-hover-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-above-hover-dark@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/slider-horz-scale-has-marks-above-hover-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-above-hover-dark@2.png"));
 }
 cursor-handle.top:active:dir(ltr),
 cursor-handle.bottom:active:dir(rtl) {
-    -gtk-icon-source: -gtk-scaled(url("../assets/text-select-start-active-dark.png"),
-                                  url("../assets/text-select-start-active-dark@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/text-select-start-active-dark.png"),
+                                  url("assets/text-select-start-active-dark@2.png"));
     padding-left: 10px;
 }
 cursor-handle.bottom:active:dir(ltr),
 cursor-handle.top:active:dir(rtl) {
-    -gtk-icon-source: -gtk-scaled(url("../assets/text-select-end-active-dark.png"),
-                                  url("../assets/text-select-end-active-dark@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/text-select-end-active-dark.png"),
+                                  url("assets/text-select-end-active-dark@2.png"));
     padding-right: 10px;
 }
 cursor-handle.insertion-cursor:active:dir(ltr),
 cursor-handle.insertion-cursor:active:dir(rtl) {
-    -gtk-icon-source: -gtk-scaled(url("../assets/slider-horz-scale-has-marks-above-active-dark.png"),
-                                  url("../assets/slider-horz-scale-has-marks-above-active-dark@2.png"));
+    -gtk-icon-source: -gtk-scaled(url("assets/slider-horz-scale-has-marks-above-active-dark.png"),
+                                  url("assets/slider-horz-scale-has-marks-above-active-dark@2.png"));
 }
 
 .context-menu {
@@ -9269,7 +9277,7 @@ stackswitcher button.text-button.circular {
     box-shadow: none;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: -gtk-scaled(url("../assets/min.svg"));
+    background-image: -gtk-scaled(url("assets/min.svg"));
 }
 
 .titlebar .titlebutton.minimize:backdrop {
@@ -9280,7 +9288,7 @@ stackswitcher button.text-button.circular {
     box-shadow: none;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: -gtk-scaled(url("../assets/minUnfocused.svg"));
+    background-image: -gtk-scaled(url("assets/minUnfocused.svg"));
 }
 
 .titlebar .titlebutton.minimize:hover,
@@ -9293,7 +9301,7 @@ stackswitcher button.text-button.circular {
     background-position: center;
     background-color: transparent;
     background-repeat: no-repeat;
-    background-image: -gtk-scaled(url("../assets/minPrelight.svg"));
+    background-image: -gtk-scaled(url("assets/minPrelight.svg"));
 }
 
 .titlebar .titlebutton.minimize:active {
@@ -9304,7 +9312,7 @@ stackswitcher button.text-button.circular {
     box-shadow: none;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: -gtk-scaled(url("../assets/minPress.svg"));
+    background-image: -gtk-scaled(url("assets/minPress.svg"));
 }
 
 /* maximize */
@@ -9316,7 +9324,7 @@ stackswitcher button.text-button.circular {
     box-shadow: none;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: -gtk-scaled(url("../assets/max.svg"));
+    background-image: -gtk-scaled(url("assets/max.svg"));
 }
 
 .titlebar .titlebutton.maximize:backdrop {
@@ -9327,7 +9335,7 @@ stackswitcher button.text-button.circular {
     box-shadow: none;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: -gtk-scaled(url("../assets/maxUnfocused.svg"));
+    background-image: -gtk-scaled(url("assets/maxUnfocused.svg"));
 }
 
 .titlebar .titlebutton.maximize:hover,
@@ -9340,7 +9348,7 @@ stackswitcher button.text-button.circular {
     background-position: center;
     background-color: transparent;
     background-repeat: no-repeat;
-    background-image: -gtk-scaled(url("../assets/maxPrelight.svg"));
+    background-image: -gtk-scaled(url("assets/maxPrelight.svg"));
 }
 
 .titlebar .titlebutton.maximize:active  {
@@ -9351,7 +9359,7 @@ stackswitcher button.text-button.circular {
     box-shadow: none;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: -gtk-scaled(url("../assets/maxPress.svg"));
+    background-image: -gtk-scaled(url("assets/maxPress.svg"));
 }
 
 /* close */
@@ -9363,7 +9371,7 @@ stackswitcher button.text-button.circular {
     box-shadow: none;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: -gtk-scaled(url("../assets/close.svg"));
+    background-image: -gtk-scaled(url("assets/close.svg"));
 }
 
 .titlebar .titlebutton.close:backdrop {
@@ -9374,7 +9382,7 @@ stackswitcher button.text-button.circular {
     box-shadow: none;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: -gtk-scaled(url("../assets/closeUnfocused.svg"));
+    background-image: -gtk-scaled(url("assets/closeUnfocused.svg"));
 }
 
 
@@ -9388,7 +9396,7 @@ stackswitcher button.text-button.circular {
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
-    background-image: -gtk-scaled(url("../assets/closePrelight.svg"));
+    background-image: -gtk-scaled(url("assets/closePrelight.svg"));
 }
 
 .titlebar .titlebutton.close:active  {
@@ -9399,7 +9407,7 @@ stackswitcher button.text-button.circular {
     box-shadow: none;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: -gtk-scaled(url("../assets/closePress.svg"));
+    background-image: -gtk-scaled(url("assets/closePress.svg"));
 }
 
 /* ******************************************************************************************** */
@@ -9748,7 +9756,7 @@ PanelApplet.wnck-applet .wnck-pager:hover {
     background-color: transparent; 
     background-image: none;
     text-shadow: 0 -1px alpha(@titlebutton_fg_shadow, 0.8);
-    -gtk-icon-shadow: 0 -1px alpha(@titlebutton_fg_shadow 0.8);
+    -gtk-icon-shadow: 0 -1px alpha(@titlebutton_fg_shadow, 0.8);
 }
 .gnome-panel-menu-bar button:hover:not(#tasklist-button),
 .mate-panel-menu-bar button:hover:not(#tasklist-button), 
@@ -9757,7 +9765,7 @@ PanelApplet.wnck-applet .wnck-pager:hover {
     background-color: @panel_bg_hov; 
     background-image: none;
     text-shadow: 0 -1px alpha(@titlebutton_fg_shadow, 0.8);
-    -gtk-icon-shadow: 0 -1px alpha(@titlebutton_fg_shadow 0.8);
+    -gtk-icon-shadow: 0 -1px alpha(@titlebutton_fg_shadow, 0.8);
 }
 .gnome-panel-menu-bar button:active:not(#tasklist-button),
 .mate-panel-menu-bar button:active:not(#tasklist-button), 
@@ -9770,7 +9778,7 @@ PanelApplet.wnck-applet .wnck-pager:hover {
     background-color: @theme_accent_color;
     background-image: none; 
     text-shadow: 0 -1px alpha(@titlebutton_fg_shadow, 0.8);
-    -gtk-icon-shadow: 0 -1px alpha(@titlebutton_fg_shadow 0.8);
+    -gtk-icon-shadow: 0 -1px alpha(@titlebutton_fg_shadow, 0.8);
 }
 .gnome-panel-menu-bar button:not(#tasklist-button) label,
 .mate-panel-menu-bar button:not(#tasklist-button) label, 
@@ -9781,7 +9789,7 @@ PanelApplet.wnck-applet .wnck-pager:hover {
     color: inherit; 
     background-image: none;
     text-shadow: 0 -1px alpha(@titlebutton_fg_shadow, 0.8);
-    -gtk-icon-shadow: 0 -1px alpha(@titlebutton_fg_shadow 0.8);
+    -gtk-icon-shadow: 0 -1px alpha(@titlebutton_fg_shadow, 0.8);
 }
 
 .floating-bar {
