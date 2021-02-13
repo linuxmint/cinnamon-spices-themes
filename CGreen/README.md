@@ -1,7 +1,7 @@
 ## CGreen
 
 ### A semi-transparent Cinnamon theme, with Firefox extra and Conky. Inspired by the CBlack theme (author: cloweling).
-If you want a panel that is not transparent, modify the line `274` of the file `~/.themes/CGreen/cinnamon/cinnamon.css`.
+If you want a panel that is not transparent, modify the line `275` of the file `~/.themes/CGreen/cinnamon/cinnamon.css`.
 For example: background-color: rgba(53, 57, 69, `0.50`); . A value of `0` is equivalent to total transparency and `1` is totally opaque. Restart Cinnamon (Ctrl+Alt+Esc) for immediate modification.
 
 **Don't hesitate to bring up inconsistencies in the theme or the extras** [here](https://github.com/Bundy01/cinnamon-spices-themes/issues).
@@ -32,27 +32,6 @@ You need to reinstall the `userChrome.css` file in the Firefox profile. To make 
 * Copy the file located in `~/.themes/CGreen/cinnamon/TimeFull` and paste it into `~/.conky` (these are hidden folders: Ctrl+h to show them). You must also allow the file to run with the command `chmod 750 ~/.conky/TimeFull`. More informations can be found at the beginning of the file.
 
 
-## Versions
-
-* 2.0: corrected the calendar applet and removed obsolete codes.
-* 1.15: deleted a variable following the update of the weather applet.
-* 1.14: non-work-day calendar in bold.
-* 1.13: touching up the weather applet and the slider bar.
-* 1.12: thumbnail outline (window list preview) and overview retouching (Ctl+Alt+Down).
-* 1.11: editing the grouped-window-list applet.
-* 1.10: OSD, panel editing and userChrome.css update.
-* 1.9: instruction for the extra from Firefox 77 and update userChrome.css file.
-* 1.8: correction of the menu display (official and alternatives) + modification of the IP URL in Conky.
-* 1.7: add conky.
-* 1.6: fixes the workspace-switcher offset.
-* 1.5: fixed a bug in the panel-launchers applet for vertical panels, magnification of some panel elements.
-* 1.4: workspace-graph editing.
-* 1.3: slight panel touch-ups.
-* 1.2: instruction for the extra from Firefox 69.
-* 1.1: modification of the workspace applet (visual representation).
-* 1.0: first version (Cinnamon 4).
-
-
 ## License
 
-This theme is distributed under the terms of the [GPLv3.0 license.](https://raw.githubusercontent.com/linuxmint/cinnamon-spices-themes/master/CGreen/LICENCE).
+This theme is distributed under the terms of the [GPLv3.0 license](https://raw.githubusercontent.com/linuxmint/cinnamon-spices-themes/master/CGreen/LICENCE).
