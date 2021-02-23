@@ -5,7 +5,6 @@
 
 stage {
 	font-family: Liberation Sans;
-	font-size: 13px;
 
 	color: rgb(230, 230, 230);
 }
@@ -86,7 +85,7 @@ StScrollBar StButton#vhandle:hover {
 	/* (RU) Всплывающие подсказки при наведении на апплеты (и прочее) на панели и в других местах (к примеру, при наведении на окна в режиме обзора рабочих областей. */
 	padding: 12px;
 	margin: 6px;
-	font-size: 10pt;
+
 	font-weight: normal;
 	text-align: center;
 	background-gradient-direction: vertical;
@@ -110,12 +109,10 @@ StScrollBar StButton#vhandle:hover {
 	/* (EN) Plane with popup menu. Deprecated. In Cinnamon 3.2 was changed to .menu.
    .popup-menu-boxpointer and .popup-menu are kept for compatibility
 	with cinnamon version under 3.2. Use .menu in version 3.2 and above
-   (RU) Сама плоскость со всплывающим меню. В Сinnamon 3.2 заменена на .menu
-*/
+   (RU) Сама плоскость со всплывающим меню. В Сinnamon 3.2 заменена на .menu */
 	-boxpointer-gap: 2px;
 	-arrow-border-width: 0px;
 	-arrow-border-radius: 0px;
-	font-size: 13px;
 	-arrow-base: 15px;
 	-arrow-rise: 4px; /* (RU) Это стрелки, наподобие тех что в диалогах в комиксах, от апплета до плоскости всплывающих меню этих апплетов */
 
@@ -131,16 +128,11 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu {
-	/*
-	(EN) Plane with popup menu itself. Appeared in Cinnamon 3.2.
-	Same, as .popup-menu-boxpointer and .popup-menu in earlier Cinnamon versions.
-	*/
-	/*
-	(RU) Сама плоскость со всплывающим меню. Появился в Cinnamon 3.2.
+	/* (EN) Plane with popup menu itself. Appeared in Cinnamon 3.2.
+	Same, as .popup-menu-boxpointer and .popup-menu in earlier Cinnamon versions. */
+	/* (RU) Сама плоскость со всплывающим меню. Появился в Cinnamon 3.2.
 	То же, что и .popup-menu-boxpointer и .popup-menu в более ранних версиях Cinnamon.
-	Стрелки удалены.
-	*/
-	font-size: 13px;
+	Стрелки удалены. */
 	padding: 8px;
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(46, 45, 42, 0.9);
@@ -150,6 +142,14 @@ StScrollBar StButton#vhandle:hover {
 	text-shadow: -1px 1px 3px rgba(0, 0, 0, 1);
 	color: rgb(230, 230, 230);
 }
+
+
+.popup-sub-menu {
+	padding: 10px 0;
+	background-color: rgba(10, 10, 10, 0.4);
+	box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
+}
+
 
 .popup-sub-menu StScrollBar {
 	padding: 4px;
@@ -180,9 +180,7 @@ StScrollBar StButton#vhandle:hover {
 
 .popup-menu-item {
 	/* (EN) Buttons (or items) in popup menus (inactive,mouse is not above it).
-   (RU) Кнопки или пункты во всплывающих плоскостях (меню) (неактивные, не наведена мышь).
-
-*/
+   (RU) Кнопки или пункты во всплывающих плоскостях (меню) (неактивные, не наведена мышь). */
 	padding: 5px 24px 5px 24px;
 	spacing: 2px;
 	border-radius: 1px;
@@ -191,8 +189,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .popup-menu-item:active {
-	/* (RU) Активный пункт всплывающего меню (на него наведена мышь).
-*/
+	/* (RU) Активный пункт всплывающего меню (на него наведена мышь). */
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(194, 221, 167, 0.3);
 	background-gradient-end:  rgba(172, 205, 138, 0.5);
@@ -202,8 +199,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .popup-submenu-menu-item:open {
-	/* (RU) Открытый пункт меню (когда высвечены подменю).
-*/
+	/* (RU) Открытый пункт меню (когда высвечены подменю). */
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(172, 205, 138, 0.4);
 	background-gradient-end:  rgba(194, 221, 167, 0.6);
@@ -310,7 +306,6 @@ StScrollBar StButton#vhandle:hover {
 
 
 #panel {
-	font-size: 9pt;
 	height: 32pt;
 	width: 28pt;
 	background-gradient-direction: vertical;
@@ -434,42 +429,31 @@ StScrollBar StButton#vhandle:hover {
 
 
 
-/* (RU) Панель в режиме редактирования, разбита на три части: #panelLeft:dnd, #panelCenter:dnd, #panelRight:dnd (слева, справа и по центру, соответственно). */
-
-#panelLeft:dnd {
-	/* (EN) Left part of panel in panel edit mode.
-*/
-	border-radius: 6px;
+/* (EN) Panel edit mode,  separated for 3 parts:  #panelLeft:dnd, #panelCenter:dnd, #panelRight:dnd  (left, center, right)  */
+/* (RU) Панель в режиме редактирования,  разбита на три части:  #panelLeft:dnd, #panelCenter:dnd, #panelRight:dnd  (слева, справа и по центру, соответственно). */
+#panelLeft:dnd,
+#panelCenter:dnd,
+#panelRight:dnd {
+	border-radius: 1px;
 
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(172, 205, 138, 0);
-	background-gradient-end:  rgba(194, 221, 167, 1);
-	box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.9);
+	background-gradient-start: rgba(194, 221, 167, 0.35);
+	background-gradient-end:  rgba(194, 221, 167, 0.5);
+	box-shadow: inset 0.4px 0.4px 1px 0.5px rgba(255, 255, 255, 0.5);
+}
+
+#panelLeft:dnd {
+	border-radius: 0 1.5px 1.5px 0;
 }
 
 #panelCenter:dnd {
-	/* (EN) Central part of panel in panel edit mode.
-*/
-	border-radius: 6px;
-
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(172, 205, 138, 0);
-	background-gradient-end:  rgba(194, 221, 167, 1);
-	box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.9);
-	border-right: 3px solid transparent;
-	border-left: 3px solid transparent;
+	border-radius: 4px;
+	border-right: 3px solid black;
+	border-left: 3px solid black;
 }
 
 #panelRight:dnd {
-	/* (EN) Right part of panel in panel edit mode.
-*/
-	border-radius: 6px;
-
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(172, 205, 138, 0);
-	background-gradient-end:  rgba(194, 221, 167, 1);
-	box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.9);
-
+	border-radius: 1.5px 0 0 1.5px;
 }
 
 
@@ -560,8 +544,7 @@ StScrollBar StButton#vhandle:hover {
 
 
 #LookingGlassDialog .notebook-tab {
-	/* (RU) Кнопки на панели линзы для переключения функций (режимов) линзы.
-*/
+	/* (RU) Кнопки на панели линзы для переключения функций (режимов) линзы. */
 	padding: 2px;
 	border-radius: 4px;
 
@@ -732,7 +715,6 @@ StScrollBar StButton#vhandle:hover {
 
 .datemenu-date-label {
 	/* (RU) Дата. Пишется в самом верху всплывающего окна (пример: Четверг, Сентябрь 24, 2015). */
-	font-size: 11pt;
 	padding-top: 0.65em;
 	padding-bottom: 0.3em;
 	font-weight: bold;
@@ -740,7 +722,6 @@ StScrollBar StButton#vhandle:hover {
 }
 .calendar-month-label {
 	/* (RU) Название месяца и года, пишется между кнопками перелистывания месяцев и годов. */
-	font-size: 11pt;
 	font-weight: bold;
 	padding-top: 10px;
 	padding-bottom: 0.3em;
@@ -749,7 +730,6 @@ StScrollBar StButton#vhandle:hover {
 .calendar-day-heading {
 	/* (RU) Названия дней недели (Пнд, Вто, ...). */
 	padding-top: 10px;
-	font-size: 9pt;
 	font-weight: bold;
 }
 .calendar-week-number {
@@ -775,7 +755,6 @@ StScrollBar StButton#vhandle:hover {
 .calendar-day {
 	/* (RU) Кнопки с днями (числами) месяца, располагаются над (поверх, ближе к пользователю клетками (базами). */
 	/* (EN) Hack used in lieu of border-collapse - see calendar.js . */
-	font-size: 11.5pt;
 	font-weight: 550;
 	/* (RU) если не добавить фон градиентом, тень box-shadow будет иметь острые углы,
 	если не добавить фон вообще - не будет и тени вообще. */
@@ -1158,7 +1137,7 @@ StBin.menu #notification {
 
 .modal-dialog-button {
 	/* (RU) Кнопки всплывающего (дополнительного) диалога. */
-	border-radius: 0.5px;
+	border-radius: 2px 2px 1px 1px;
 	font-weight: normal;
 	padding: 8px 5px;
 	min-width: 105px;
@@ -1167,8 +1146,8 @@ StBin.menu #notification {
 
 	/* (RU) Нужно указать градиент а не просто цвет, без градиента box-shadow не работает */
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(0, 0, 0, 0.0);
-	background-gradient-end:   rgba(0, 0, 0, 0.1);
+	background-gradient-start: rgba(0, 0, 0, 0.2);
+	background-gradient-end:   rgba(0, 0, 0, 0.2);
 	box-shadow: inset 0px -1px 0px 0px rgb(172, 205, 138);
 
 	transition-duration: 450;
@@ -1278,12 +1257,12 @@ StBin.menu #notification {
 .run-dialog-entry {
 	/* (EN) этот пункт отвечает за область ввода текста (можно ее расширить, к примеру) */
 	width: 300px;
+	height: 2em;
 	border-radius: 2px;
 	padding: 8px 16px;
 
 	font-weight: normal;
 	caret-size: 1px;
-	font-size: 14px;
 
 	text-shadow: -1px 1px 3px rgba(255, 255, 255, 0.5);
 	caret-color: rgb(230, 230, 230);
@@ -1300,13 +1279,11 @@ StBin.menu #notification {
 	/* (RU) Заголовок сверху над полем ввода команд */
 	font-weight: bold;
 	padding-bottom: 14px;
-	font-size: 10pt;
 }
 
 .run-dialog-error-label {
 	/* (RU) Надпись об ошибке, которая появляется под полем ввода команд */
 	font-weight: bold;
-	font-size: 9pt;
 	color: red;
 }
 
@@ -1323,7 +1300,6 @@ StBin.menu #notification {
 
 .run-dialog-completion-box {
 	padding-left: 15px;
-	font-size: 10px;
 }
 
 
@@ -1359,7 +1335,6 @@ StBin.menu #notification {
 
 .show-processes-dialog-subject,
 .mount-question-dialog-subject {
-	font-size: 12pt;
 	font-weight: bold;
 	padding-top: 10px;
 	padding-left: 17px;
@@ -1374,7 +1349,6 @@ StBin.menu #notification {
 }
 .show-processes-dialog-description,
 .mount-question-dialog-description {
-	font-size: 10pt;
 	padding-left: 17px;
 	width: 28em;
 
@@ -1385,7 +1359,6 @@ StBin.menu #notification {
 	padding-right: 17px;
 }
 .show-processes-dialog-app-list {
-	font-size: 10pt;
 	max-height: 200px;
 	padding-top: 24px;
 	padding-left: 49px;
@@ -1421,7 +1394,6 @@ StBin.menu #notification {
 }
 
 .show-processes-dialog-app-list-item-name {
-	font-size: 10pt;
 }
 
 
@@ -1447,7 +1419,6 @@ StBin.menu #notification {
 }
 
 .polkit-dialog-headline {
-	font-size: 12pt;
 	font-weight: bold;
 }
 
@@ -1560,7 +1531,7 @@ StBin.menu #notification {
 	min-height: 30px;
 	min-width: 30px;
 	border-radius: 8px;
-	font-size: 14pt;
+	font-size: 1.2em;
 	font-weight: bold;
 
 	background-gradient-direction: horizontal;
@@ -1638,10 +1609,9 @@ StBin.menu #notification {
 	/* (RU) Диалог ввода текста для поиска по меню. */
 	width: 300px;
 	padding: 8px 12px 6px 12px;
-	border-radius: 4px;
+	border-radius: 2px;
 	margin-bottom: 10px;
 
-	font-size: 14px;
 	font-weight: normal;
 	caret-size: 1px;
 	color: rbg(230, 230, 230);
@@ -2041,7 +2011,6 @@ StBin.menu #notification {
 	box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
 	border: 1px solid rgb(22, 22, 22);
 
-	font-size: 9pt;
 	color: white;
 	text-shadow: black 0px 0px 2px;
 	padding: 16px 36px;
@@ -2066,7 +2035,6 @@ StBin.menu #notification {
 .grouped-window-list-number-label {
 	z-index: 99;
 	text-shadow: black 1px 0px 2px;
-	font-size: 10px;
 	color:#fff;
 	padding: 0;
 }
@@ -2207,7 +2175,6 @@ StBin.menu #notification {
 	/* (RU) Сами кнопки апплетов. */
 	padding-left: 5px;
 	padding-right: 5px;
-	font-size: 12px;
 	font-weight: normal;
 	border-radius: 1px;
 	/*min-width: 12px;*/
@@ -2754,7 +2721,7 @@ padding: .4em 1.75em;
 .workspace-button {
 	/* (RU) Кнопки на плоскости апплета переключателя рабочих областей. */
 	width: 50px;
-	font-size: 11px;
+	font-size: 0.9em;
 
 	color: rgb(172, 205, 138); /* (RU) Цвет надписи (цифры) на кнопке рабочей области. */
 	background-gradient-direction: vertical;
@@ -2790,9 +2757,10 @@ padding: .4em 1.75em;
 .workspace-graph .workspace {
 	/* (EN) workspace button (with preview of it's windows) on workspace-switcher applet */
 	border: 1px solid black;
-	background-gradient-direction: vertical;
+	/*background-gradient-direction: vertical;
 	background-gradient-start: rgb(41,40,38);
-	background-gradient-end:  rgb(41,40,38);
+	background-gradient-end:  rgb(41,40,38);*/
+	background-color: rgba(0, 0, 0, 0.2);
 
 }
 .workspace-graph .workspace:first-child {
@@ -2813,15 +2781,15 @@ padding: .4em 1.75em;
 .workspace-graph .workspace .windows {
 	/* (EN) windows of inactive (non-chosen) workspace */
 	-active-window-background: rgb(60, 60, 60);
-	-active-window-border: rgb(0, 0, 0);
-	-inactive-window-background: rgb(60, 60, 60);
-	-inactive-window-border: rgb(0, 0, 0);
+	-active-window-border: rgb(172, 205, 138);
+	-inactive-window-background: rgb(40, 40, 40);
+	-inactive-window-border: rgb(172, 205, 138);
 }
 .workspace-graph .workspace:active .windows {
 	/* (EN) windows of active (chosen) workspace */
 	-active-window-background: rgb(120, 120, 120);
 	-active-window-border: rgb(0, 0, 0);
-	-inactive-window-background: rgb(80, 80, 80);
+	-inactive-window-background: rgb(60, 60, 60);
 	-inactive-window-border: rgb(0, 0, 0);
 }
 
@@ -2979,7 +2947,7 @@ padding: .4em 1.75em;
 
 .user-label {
 	/* (RU) надпись перед фотографией пользователя. */
-  	font-size: 16px;
+  	font-size: 1.2em;
   	margin: 6px;
 }
 
@@ -3054,7 +3022,7 @@ padding: .4em 1.75em;
 
 /* =============================================================================================
   (RU) Режим обзора рабочих областей (столов).
-  (EN) Overview workspace mode.
+  (EN) Workspace Overview mode.
   ============================================================================================== */
 
 
@@ -3110,7 +3078,7 @@ padding: .4em 1.75em;
 
 .expo-workspace-thumbnail-frame#active {
 	/* (RU) Рамка вокруг активной миниатюры рабочего стола. */
-	border: 1px solid rgb(172, 205, 138);
+	border: 2px solid rgb(172, 205, 138);
 }
 
 
@@ -3213,7 +3181,7 @@ padding: .4em 1.75em;
 
 /* ==================================================================================
   (RU) Режим обзора окон.
-  (EN) Windows overview mode.
+  (EN) Windows Overview mode.
   ===================================================================================*/
 
 
@@ -3286,6 +3254,13 @@ padding: .4em 1.75em;
 	color: black;
 }
 
+.window-border {
+	border: 1px solid rgb(172, 205, 138);
+	border-radius: 2px;
+	transition-duration: 450;
+	box-shadow: 0 0 0 1px rgb(172, 205, 138) inset;  /* Cover rounded corners and some bad adjustment gaps */
+}
+
 
 
 .osd-window {
@@ -3321,40 +3296,40 @@ padding: .4em 1.75em;
 }
 
 .desklet-with-borders {
-	padding: 0px 10px 0px 10px;
-	border-radius: 12px;
+	padding: 0px 40px 0px 40px;
+	border-radius: 2px;
 
 	border: 1px solid rgb(22, 22, 22);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(46, 45, 42, 0.6);
-	background-gradient-end:  rgba(46, 45, 42, 0.6);
-	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+	background-gradient-start: rgba(0, 0, 0, 0.4);
+	background-gradient-end: rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
 	color: rgb(230, 230, 230);
 }
 
 .desklet-with-borders-and-header {
-	padding: 0px 10px 0px 10px;
-	border-radius: 0px 0px 12px 12px;
+	padding: 0px 40px 0px 40px;
+	border-radius: 0px 0px 2px 2px;
 
 	border: 1px solid rgb(22, 22, 22);
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(46, 45, 42, 0.6);
-	background-gradient-end:  rgba(46, 45, 42, 0.6);
-	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+	background-gradient-start: rgba(0, 0, 0, 0.4);
+	background-gradient-end: rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
 	color: rgb(230, 230, 230);
 }
 
 .desklet-header {
-	border-radius: 12px 12px 0px 0px;
-	font-size: 10.5pt;
+	border-radius: 2px 2px 0px 0px;
+	font-size: 1.2em;
 	padding: 6px;
 
 	border: 1px solid rgb(22, 22, 22);
 	border-bottom: 0px;
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(46, 45, 42, 0.6);
-	background-gradient-end:  rgba(46, 45, 42, 0.6);
-	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+	background-gradient-start: rgba(0, 0, 0, 0.4);
+	background-gradient-end: rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
 	color: rgb(230, 230, 230);
 }
 
@@ -3387,17 +3362,18 @@ padding: .4em 1.75em;
 		при перетаскивании окна к краю монитора,  также при переключении рабочих областей */
 	/* (EN) Info OSD popups,  which appear in center of screen
 		on dragging windows to the edge of screen,  or changing workspaces. */
-	font-size: 22pt;
+	font-size: 2em;
 	font-weight: bold;
 	padding: 12px 36px 11px 36px;
 	border-radius: 1px;
+	
+	background-color: rgba(172, 205, 138, 0.7);
+	box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.8);
+	border: 1px solid rgb(172, 205, 138);
 
-	color: rgb(210, 210, 210);
-	background-color: rgba(46, 45, 42, 0.9);
-	box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
-	border: 1px solid black;
+	color: black;
 
-	transition-duration: 800;
+	transition-duration: 2000;
 }
 
 
