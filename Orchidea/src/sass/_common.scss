@@ -1,0 +1,1974 @@
+/* ###################################################################
+ * Section common with Gnome Shell
+ * ... contains a few cinnamon specific styles (rare occurrences)
+ * ###################################################################*/
+ stage {
+}
+.cinnamon-link {
+    color: $link_color;
+}
+.cinnamon-link:hover {
+    color: $link_color;
+}
+.label-shadow {
+    color: transparent;
+}
+StScrollBar {
+    padding: 0;
+}
+StScrollView.vfade {
+    -st-vfade-offset: 32px;
+}
+StScrollView.hfade {
+    -st-hfade-offset: 32px;
+}
+StScrollView StScrollBar {
+    min-width: 16px;
+    min-height: 6px;
+}
+
+StScrollBar StBin#trough {
+    margin: 6px;
+    border-radius: 100px; 
+    background-color: $divider_color;
+}
+StScrollBar StButton#vhandle {
+    border-radius: 100px;
+    background-color: $hint_fg_color;
+    //border: 4px solid transparent; //would be nice to margin or at least to transparent
+    margin: 6px;
+}
+StScrollBar StButton#hhandle {
+    border-radius: 100px;
+    background-color: $hint_fg_color;
+    //border: 4px solid transparent; //would be nice to margin or at least to transparent
+    margin: 6px;
+}
+StScrollBar StButton#hhandle:hover,
+StScrollBar StButton#vhandle:hover {
+    background-color: $secondary_fg_color;
+}
+StScrollBar StButton#hhandle:active,
+StScrollBar StButton#vhandle:active {
+    background-color: $fg_color;
+}
+.separator {
+    background: $border_color;
+    height: 1em;
+}
+.slider {
+    height: 20px;
+    color: $slider_color;
+    -slider-height: 2px;
+    -slider-background-color: $track_color; //background of the trough
+    -slider-border-color: transparent; //trough border color
+    -slider-active-background-color: $accent_color; //active trough fill
+    -slider-active-border-color: transparent; //active trough border
+    -slider-border-width: 0;
+    -slider-handle-radius: 7px;
+    -slider-handle-border-width: 0;
+    -slider-handle-border-color: $border_color;
+  
+    // barlevels are for >= 3.29.90
+    -barlevel-height: 2px;
+    -barlevel-background-color: $track_color;
+    -barlevel-border-color: transparent;
+    -barlevel-active-background-color: $accent_color;
+    -barlevel-active-border-color: transparent;
+    -barlevel-overdrive-color: $destructive_color;
+    -barlevel-overdrive-border-color: transparent;
+    -barlevel-overdrive-separator-width: 2px;
+    -barlevel-border-width: 0;  
+}
+#Tooltip {
+    padding: 2px 12px;
+    background-color: $hint_fg_color;
+    color: $inverse_hint_fg_color;
+    font-weight: normal;
+    text-align: center;
+}
+/* ===================================================================
+ * Shared button properties
+ * ===================================================================*/
+.notification-button, .notification-icon-button,
+.modal-dialog-button,
+.sound-player-overlay StButton {
+    color: $secondary_fg_color;
+    background-color: transparent;
+}
+.notification-button:hover,
+.notification-icon-button:hover, .modal-dialog-button:hover,
+.sound-player-overlay StButton:hover {
+    background-color: $divider_color;
+    color: $fg_color;
+}
+.notification-button:focus,
+.notification-icon-button:focus,
+.modal-dialog-button:focus,
+.sound-player-overlay StButton:focus {
+    background-color: transparent;
+    color: $secondary_fg_color;
+}
+.notification-button:active, .notification-icon-button:active,
+.modal-dialog-button:active, .modal-dialog-button:pressed,
+.sound-player-overlay StButton:active {
+    background-color: $track_color; 
+    color: $fg_color;
+}
+/* ===================================================================
+ * PopupMenu (popupMenu.js)
+ * ===================================================================*/
+ /* .popup-menu-boxpointer and .popup-menu are kept for compatibility
+    with cinnamon version under 3.2. Use .menu in version 3.2 and above */
+.popup-menu-boxpointer {
+    -arrow-border-radius: $buttons_radius;
+    -arrow-background-color: $menu_bg_color;
+    -arrow-border-width: 2px;
+    -arrow-border-color: #a5a5a5;
+    -arrow-base: 24px;
+    -arrow-rise: 11px;
+}
+.popup-menu {
+    min-width: 15em;
+    color: $fg_color;
+    background: none;
+}
+.menu {
+    min-width: 15em;
+    color: $fg_color;
+    background-color: $menu_bg_color;
+    border-radius: $buttons_radius;
+    box-shadow: $shadow_3;
+    margin: $container_padding * 1.5;
+    padding: $container_padding 0;
+}
+.popup-menu-arrow {
+    icon-size: 16px;
+}
+.popup-submenu-menu-item:open {
+    background-color: if($variant == 'light', rgba(black, 0.15), #eaeaea);
+    color: rgba(black, 0.75);
+    margin: 0 $container_padding;
+    border-radius: $buttons_radius $buttons_radius 0 0;
+}
+.popup-submenu-menu-item:open:hover {
+    color: rgba(black, 0.85);
+    background-color: if($variant == 'light', rgba(black, 0.15), #eaeaea);
+}
+.popup-sub-menu {
+    margin: 0 $container_padding;
+    color: rgba(black, 0.75);
+    background-color: if($variant == 'light', rgba(black, 0.10), rgba(white, 0.95));
+    border-radius: 0 0 $buttons_radius $buttons_radius;
+    border: none;
+    box-shadow: none;
+    background-image: none;
+}
+.popup-sub-menu .popup-menu-item {
+    margin: 0;
+    border-radius: $buttons_radius;
+    color: rgba(black, 0.75);
+    background-image: none;
+
+    &:hover {
+        color: rgba(black, 0.85);
+        background-color: rgba(black, 0.15);
+    }
+
+    &:active {
+    color: rgba(black, 0.85);
+    background-color: rgba(black, 0.2);
+    }
+
+    &.selected:active { color: rgba(black, 0.75); }
+
+    &:not(:first-child):last-child {
+        border-radius: 0 0 $buttons_radius $buttons_radius;
+    }
+}
+
+.popup-sub-menu .popup-menu-item:ltr {
+    padding-right: 1.75em;
+    // padding-left: 16px; margin-left: 1.09em;
+}
+.popup-sub-menu .popup-menu-item:rtl {
+    padding-left: 1.75em;
+    // padding-right: 16px; margin-right: 1.09em;
+}
+.popup-sub-menu StScrollBar {
+    padding: 4px;
+}
+.popup-sub-menu StScrollBar StBin#trough {
+    border-width: 0px;
+}
+.popup-sub-menu StScrollBar StBin#vhandle {
+    background-color: $primary_color;
+    border-width: 0px;
+}
+.popup-combo-menu {
+    background-color: rgba(0,0,0,0.9);
+    padding: 1em 0em;
+    color: $fg_color;
+    border-radius: $buttons_radius;
+}
+/* The remaining popup-menu sizing is all done in ems, so that if you
+ * override .popup-menu.font-size, everything else will scale with it.
+ */
+.popup-menu-content {
+    padding: $container_padding 0;
+}
+.popup-menu-item {
+    spacing: 12px;
+    margin: 0 $container_padding;
+    padding: 6px;
+    color: $fg_color;
+    transition-duration: $shorter_duration;
+    border-radius: 100px;
+    background-image: none;
+}
+.popup-menu-item:active {
+    background-color: $track_color;
+    color: $fg_color;
+    transition-duration: $longer_duration;
+}
+.popup-menu-item:insensitive {
+    color: $disabled_fg_color;
+}
+.popup-image-menu-item {
+}
+.popup-combobox-item {
+    spacing: 1em;
+}
+.popup-separator-menu-item {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0 0;
+    height: 0;
+}
+.popup-alternating-menu-item:alternate {
+    font-weight: bold;
+}
+.popup-slider-menu-item {
+    height: 20px;
+    color: $slider_color;
+    -slider-height: 2px;
+    -slider-background-color: $track_color; //background of the trough
+    -slider-border-color: transparent; //trough border color
+    -slider-active-background-color: $accent_color; //active trough fill
+    -slider-active-border-color: transparent; //active trough border
+    -slider-border-width: 0;
+    -slider-handle-radius: 7px;
+    -slider-handle-border-width: 0;
+    -slider-handle-border-color: $border_color;
+  
+    // barlevels are for >= 3.29.90
+    -barlevel-height: 2px;
+    -barlevel-background-color: $track_color;
+    -barlevel-border-color: transparent;
+    -barlevel-active-background-color: $accent_color;
+    -barlevel-active-border-color: transparent;
+    -barlevel-overdrive-color: $destructive_color;
+    -barlevel-overdrive-border-color: transparent;
+    -barlevel-overdrive-separator-width: 2px;
+    -barlevel-border-width: 0;
+}
+.popup-device-menu-item {
+    spacing: .5em;
+}
+.popup-inactive-menu-item {
+    color: $fg_color;
+
+    &:insensitive { color: $hint_fg_color; }
+}
+.popup-subtitle-menu-item {
+    font-weight: bold;
+}
+.popup-menu-icon {
+    icon-size: em(16px);
+}
+/* Switches (to be used in menus) */
+.toggle-switch {
+    width: 40px;
+    height: 20px;
+    background-size: contain;
+    background-image: url("assets/toggle-off.svg");
+}
+.toggle-switch-us {
+    background-image: url("assets/toggle-off.svg");
+}
+.toggle-switch-us:checked {
+    background-image: url("assets/toggle-on.svg");
+}
+.toggle-switch-intl {
+    background-image: url("assets/toggle-off.svg");
+}
+.toggle-switch-intl:checked {
+    background-image: url("assets/toggle-on.svg");
+}
+.nm-menu-item-icons {
+    spacing: .5em;
+}
+/* ===================================================================
+ * Panel (panel.js)
+ * ===================================================================*/
+#panel {
+    background-color: $panel_bg_color;
+    transition-duration: 250ms; // transition from solid to transparent
+    font-weight: bold;
+    height: $medium_size + 2px;
+    color: $panel_fg_color;
+    // height: 26px;
+    width: $medium_size;
+    box-shadow: if($trans == 'true', $shadow_0, $shadow_3);
+}
+#panel:highlight {
+    background-color: $highlight_color;
+}
+.panel-dummy {
+    background-color: $panel_bg_color;
+    border-radius: $buttons_radius;
+}
+.panel-dummy:entered {
+    background-color: $highlight_color;
+}
+.panelLeft {
+    spacing: 6px;
+}
+.panelCenter {
+    spacing: 6px;
+}
+.panelRight {
+    spacing: 6px;
+}
+.panelLeft:dnd {
+    // TODO remove?
+    // background-gradient-direction: vertical;
+    // background-gradient-start: rgba(255,0,0,0.05);
+    // background-gradient-end: rgba(255,0,0,0.2);
+}
+.panelCenter:dnd {
+    // TODO remove?
+    // background-gradient-direction: vertical;
+    // background-gradient-start: rgba(0,255,0,0.05);
+    // background-gradient-end: rgba(0,255,0,0.2);
+}
+.panelRight:dnd {
+    // TODO remove?
+    // background-gradient-direction: vertical;
+    // background-gradient-start: rgba(0,0,255,0.05);
+    // background-gradient-end: rgba(0,0,255,0.2);
+}
+.panelLeft:ltr {
+    padding-right: 4px;
+}
+.panelLeft:rtl {
+    padding-left: 4px;
+}
+.panelRight:ltr {
+    padding-left: 0px;
+    spacing: 0px;
+}
+.panelRight:rtl {
+    padding-right: 0px;
+    spacing: 0px;
+}
+.panelLeft.vertical {
+    padding: 0px;
+}
+.panelRight.vertical {
+    padding: 0px;
+}
+.panelCenter.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.panelLeft.vertical:dnd {
+}
+.panelCenter.vertical:dnd {
+}
+.panelRight.vertical:dnd {
+}
+.panel-top {
+    padding: 0 12px;
+    border-radius: 0 0 $buttons_radius $buttons_radius;
+}
+.panel-bottom {
+    padding: 0 12px;
+    border-radius: $buttons_radius $buttons_radius 0 0;
+}
+.panel-left {
+    padding: 12px 0;
+    border-radius: 0 $buttons_radius $buttons_radius 0;
+}
+.panel-right {
+    padding: 12px 0 ;
+    border-radius: $buttons_radius 0 0 $buttons_radius;
+}
+.panel-status-button {
+    -natural-hpadding: 4px;
+    -minimum-hpadding: 4px;
+    font-weight: bold;
+    color: $panel_fg_color;
+    height: 22px;
+}
+.panel-status-button:hover {
+    color: $highlight_color;
+}
+.system-status-icon {
+    padding-left: 0px;
+    padding-right: 0px;
+    spacing: 0px;
+    margin: 0px;
+}
+
+.system-status-icon.warning {
+    color: $warning_color;
+}
+
+.system-status-icon.error {
+    color: $error_color;
+}
+
+.panel-corner {
+    -panel-corner-radius: $panel-corner-radius;
+    -panel-corner-background-color: $panel_bg_color;
+    -panel-corner-border-width: 0;
+    -panel-corner-border-color: transparent;
+}
+.panel-corner:active,
+.panel-corner:overview,
+.panel-corner:focus {
+    -panel-corner-inner-border-color: $inverse_fg_color;
+}
+
+.panel-button #appMenuIcon {
+    app-icon-bottom-clip: 1px;
+}
+.panel-button:active #appMenuIcon,
+.panel-button:checked #appMenuIcon,
+.panel-button:focus #appMenuIcon {
+    app-icon-bottom-clip: 2px;
+}
+.panel-button {
+    margin: 4px 6px;
+    -natural-hpadding: $minimum_hpadding;
+    -minimum-hpadding: $minimum_hpadding;
+    font-weight: bold;
+    color: $panel_fg_color;
+    text-shadow: none;
+    border-radius: $circular_radius;
+    transition-duration: $longer_duration;
+}
+.panel-button:hover {
+    color: $panel_fg_color;
+    background-color: $inverse_divider_color;
+    text-shadow: none;
+}
+.panel-button:active,
+.panel-button:overview,
+.panel-button:focus {
+    background-color: rgba($inverse_fg_color, 0.25);
+    color: $inverse_fg_color;
+    text-shadow: none;
+    box-shadow: none;
+}
+.panel-button:active > .system-status-icon,
+.panel-button:checked > .system-status-icon,
+.panel-button:focus > .system-status-icon {
+    icon-shadow: none;
+}
+.panel-menu {
+    -boxpointer-gap: $container_padding;
+    margin-bottom: 1.75em;
+}
+.popup-menu-item-dot {
+}
+.system-status-icon {
+    icon-size: em(16px); padding: 0 3px;
+}
+/* ===================================================================
+ * Overview
+ * ===================================================================*/
+#overview {
+    spacing: 24px;
+    StScrollBar { @extend %overview_scrollbar; }
+}
+
+.workspace-controls {
+    visible-height: 32px; /* Amount visible before hovering */
+}
+.workspace-thumbnails-background {
+    @extend %overview-panel;
+    border-radius: $buttons_radius;
+}
+.workspace-thumbnails-background:rtl {
+    @extend %overview-panel;
+    border-radius: $buttons_radius;
+}
+.workspace-thumbnails {
+    @extend %overview-panel;
+    visible-width: 32px; //amount visible before hover
+    spacing: 12px;
+    padding: 16px;
+    border-radius: $buttons_radius;
+    margin: 6px;
+}
+.workspace-add-button {
+    background-image: if($variant == 'dark', url("assets/more-results-dark.svg"), url("assets/more-results.svg"));
+    height: 42px;
+    width: 42px;
+    padding: 0;
+    transition-duration: 300;
+}
+.workspace-add-button:hover {
+    background-image: if($variant == 'dark', url("assets/more-results-dark.svg"), url("assets/more-results.svg"));
+    transition-duration: 300;
+}
+
+.workspace-close-button {
+    background-image: url("assets/window-close.svg");
+    height: 34px;
+    width: 34px;
+    -cinnamon-close-overlap: 20px;
+
+    &:hover {
+        background-image: url("assets/window-close-hover.svg");
+    }
+    &:active {
+        background-image: url("assets/window-close-active.svg");
+    }
+}
+
+.workspace-thumbnail-indicator {
+    border: 2px solid $primary_color;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+.window-caption {
+    spacing: 25px;
+    color: $inverse_fg_color;
+    background-color: $bg_color;
+    border-radius: $buttons_radius;
+    padding: 4px 8px;
+    border: none;
+    font-size: 1em;
+    font-weight: normal;  
+    -cinnamon-caption-spacing: 8px;
+    max-width: 20em;
+}
+.window-caption:focus {
+    color: $inverse_fg_color;
+}
+
+.window-border {
+    border: 4px solid $inverse_track_color;
+    border-radius: $material_radius;
+    // For window decorations with round corners we can't match
+    // the exact shape when the window is scaled. So apply a shadow
+    // to fix that case
+    box-shadow: inset 0 0 0 1px $inverse_track_color;
+}
+
+.window-close {
+    transition-duration: 0ms;
+    height: 42px;
+    width: 42px;
+    -cinnamon-close-overlap: 20px;
+    border: none;
+    border-image: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    color: transparent;
+    background-color: transparent;
+    background-image: url("assets/window-close.svg");
+}
+.window-close:hover {
+    height: 42px;
+    width: 42px;
+    border: none;
+    border-image: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    color: transparent;
+    background-color: transparent;
+    // -st-background-image-shadow: $shadow_2;
+    background-image: url("assets/window-close-hover.svg");
+}
+.window-close:active {
+    height: 42px;
+    width: 42px;
+    border: none;
+    border-image: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    color: transparent;
+    background-color: transparent;
+    background-image: url("assets/window-close-active.svg");
+}
+
+.window-close-area {
+    background-size: 100px;
+    background-color: transparent;
+    border-radius: $buttons_radius;
+    height: 120px;
+    width: 400px;
+}
+
+.overview-icon {
+    padding: 10px 8px 5px 8px;
+    spacing: 6px;
+  
+    > StBoxLayout {
+      spacing: 6px;
+    }
+}
+
+.overview-empty-placeholder {
+    color: $inverse_fg_color;
+    font-size: 2em;
+}
+
+.expo-background {
+    color: $inverse_fg_color;
+    background-color: $inverse_bg_color;
+    border: none;
+}
+
+.workspace-overview-background-shade {
+    background-color: $alt_bg_color;
+}
+
+.expo-workspace-thumbnail-frame {
+    border: 4px solid $inverse_track_color;
+    border-radius: $material_radius;
+}
+
+.expo-workspace-thumbnail-frame#active {
+    border: 4px solid $primary_color;
+    border-radius: $material_radius;
+}
+
+%overview_scrollbar {
+    StBin#trough {
+      background-color: $inverse_divider_color;
+    }
+  
+    StButton#vhandle, StButton#hhandle {
+      background-color: $inverse_hint_fg_color;
+      &:hover { background-color: $inverse_secondary_fg_color; }
+      &:active { background-color: $inverse_fg_color; }
+    }
+}
+
+%overview-panel {
+    color: $inverse_fg_color;
+    background-color: $inverse_bg_color;
+    border: none;
+}
+  
+/* ===================================================================
+ * Looking Glass
+ * ===================================================================*/
+#LookingGlassDialog {
+    background-color: $bg_color;
+    spacing: 4px;
+    padding: 4px;
+    border-radius: $material_radius;
+    color: $fg_color;
+}
+/* ===================================================================
+ * Date applet
+ * ===================================================================*/
+/*calendar-background allows the date applet calendar to be themed separately from other applet menus*/
+.calendar-background {
+}
+.calendar {
+    padding: 0;
+    margin: 0 8px;
+    border: none;
+    box-shadow: none;
+    background: none;
+    text-shadow: none;
+    color: $secondary_fg_color;
+    spacing-rows: 0px;
+    spacing-columns: 0px;
+}
+.calendar-month-label {
+    height: $menuitem_size - 4px * 2;
+    margin: 2px;
+    padding: 6px 6px;
+    border-radius: $buttons_radius;
+    color: $secondary_fg_color;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: none;
+  
+    &:focus { color: $fg_color; background-color: $divider_color; }  
+}
+.calendar-change-month-back {
+    width: 12px;
+    height: 12px;
+    padding: 0 2px;
+    background-image: url("assets/calendar-arrow-left.svg");
+    border-radius: $material_radius;
+}
+.calendar-change-month-back:rtl {
+    background-image: url("assets/calendar-arrow-right.svg");
+}
+.calendar-change-month-back:hover {
+    color: $fg_color; 
+    background-color: $divider_color;
+}
+.calendar-change-month-back:active {
+    color: $fg_color; 
+    background-color: $divider_color;
+}
+.calendar-change-month-forward {
+    width: 12px;
+    height: 12px;
+    padding: 0 2px;
+    background-image: url("assets/calendar-arrow-right.svg");
+    border-radius: $material_radius;
+}
+.calendar-change-month-forward:rtl {
+    background-image: url("assets/calendar-arrow-left.svg");
+}
+.calendar-change-month-forward:hover {
+    color: $fg_color; 
+    background-color: $divider_color;
+}
+.calendar-change-month-forward:active {
+    color: $fg_color; 
+    background-color: $divider_color;
+}
+.datemenu-date-label {
+    text-align: center;
+    padding: 12px;
+    font-size: 1.1em;
+    color: #cccccc;
+    font-weight: bold;
+}
+.calendar-day-base {
+    @include font(caption);
+    text-align: center;
+    width: $menuitem_size;
+    height: $menuitem_size;
+    padding: 0 0;
+    margin: 2px;
+    border-radius: 1000px;
+    color: $secondary_fg_color;
+    border: none;
+    font-feature-settings: "tnum";
+    text-shadow: none;
+}
+
+.calendar-day-base:hover {
+    background-color: $divider_color;
+}
+.calendar-day-heading {
+    width: $menuitem_size; height: $menuitem_size - 7px;
+    margin-top: 2px;
+    padding: 7px 0 0;
+    border-radius: 100px;
+    background-color: transparent;
+    color: $hint_fg_color;
+    @include font(caption);
+    font-weight: bold;
+    text-align: center;
+}
+.calendar-week-number {
+    height: 1.8em;
+    width: 2em;
+    margin: $container_padding 0;
+    border-radius: 100px;
+    background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
+    color: $hint_fg_color;
+    font-size: inherit;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: none;  
+}
+/* Hack used in lieu of border-collapse - see calendar.js */
+.calendar-day:ltr {
+    border-width: 0;
+}
+.calendar-day-top:ltr {
+    border-top-width: 0;
+}
+.calendar-day-left:ltr {
+    border-top-width: 0;
+}
+.calendar-day:rtl {
+    border-width: 0;
+}
+.calendar-day-top:rtl {
+    border-top-width: 0;
+}
+.calendar-day-left:rtl {
+    border-top-width: 0;
+}
+.calendar-work-day {
+}
+.calendar-nonwork-day {
+    color: $fg_color;
+}
+.calendar-today {
+    font-weight: bold !important;
+    color: white;
+    background-color: $primary_color;
+    border: none;
+  
+}
+.calendar-other-month-day {
+    color: $disabled_secondary_fg_color;
+    opacity: 0.5;
+}
+.calendar-day-with-events {
+    color: $hint_fg_color;
+    background-image: url("assets/calendar-today.svg");
+
+    &.calendar-work-day {
+        color: $hint_fg_color;
+        font-weight: bold;
+    }    
+}
+/* ===================================================================
+ * Notifications
+ * ===================================================================*/
+#notification {
+    font-size: 1em;
+    width: 34em;
+    min-height: $menuitem_size * 2;
+    margin: 5px;
+    border-radius: $buttons_radius;
+    color: $fg_color;
+    background-color: lighten($base_color, 5%);
+    border: none;
+    box-shadow: $shadow_2;
+      padding: 12px;
+    spacing-rows: 10px;
+    spacing-columns: 10px;
+    margin-from-right-edge-of-screen: 20px;
+}
+#notification.multi-line-notification {
+    padding-bottom: 8px;
+    color: $fg_color;
+}
+/* We use row-span = 2 for the image cell, which prevents its height preferences to be
+    taken into account during allocation, so its height ends up being limited by the height
+    of the content in the other rows. To avoid showing a stretched image, we set the minimum
+    height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
+.notification-with-image {
+    min-height: 159px;
+    color: $fg_color;
+}
+#notification-scrollview {
+    max-height: 10em;
+}
+#notification-scrollview > .top-shadow, #notification-scrollview > .bottom-shadow {
+    height: 1em;
+}
+#notification-scrollview:ltr > StScrollBar {
+    padding-left: 6px;
+}
+#notification-scrollview:rtl > StScrollBar {
+    padding-right: 6px;
+}
+#notification-body {
+    spacing: 5px;
+}
+#notification-actions {
+    spacing: 10px;
+}
+.notification-button {
+    border-radius: $buttons_radius;
+    padding: 4px 8px 5px;
+}
+.notification-button:focus {
+    padding: 3px 8px 4px;
+}
+.notification-icon-button {
+    border-radius: $buttons_radius;
+    padding: 5px;
+}
+.notification-icon-button:focus {
+    padding: 4px;
+}
+.notification-icon-button > StIcon {
+    icon-size: 48px;
+}
+#notification StEntry {
+    padding: 4px;
+    border-radius: $buttons_radius;
+    color: $fg_color;
+    background-color: $bg_color;
+    selected-color: $bg_color;
+    transition-duration: 300;
+    box-shadow: $shadow_2;
+    caret-color: $fg_color;
+    caret-size: 1px;
+}
+#notification StEntry:focus {
+    color: $fg_color;
+    caret-color: $fg_color;
+    background-color: $bg_color;
+    selection-background-color: $bg_color;
+}
+/* ===================================================================
+ * Alt Tab
+ * ===================================================================*/
+#altTabPopup {
+    padding: 8px;
+    spacing: 16px;
+}
+.switcher-list {
+    background: $base_color;
+    border-radius: $buttons_radius;
+    padding: 20px;
+    color: $fg_color;
+    box-shadow: $shadow_5;
+}
+.switcher-list-item-container {
+    spacing: 8px;
+}
+.thumbnail-scroll-gradient-left {
+    border-radius: 24px;
+    border-radius-topright: 0px;
+    border-radius-bottomright: 0px;
+    width: 60px;
+}
+.thumbnail-scroll-gradient-right {
+    border-radius: 24px;
+    border-radius-topleft: 0px;
+    border-radius-bottomleft: 0px;
+    width: 60px;
+}
+.switcher-list .item-box {
+    padding: 8px;
+    border-radius: $buttons_radius;
+}
+.switcher-list .item-box:outlined {
+    padding: 6px;
+    border: 4px solid $inverse_track_color;
+}
+.switcher-list .item-box:selected {
+    background: $primary_color;
+}
+.switcher-list .thumbnail-box {
+    padding: 2px;
+    spacing: 4px;
+}
+.switcher-list .thumbnail {
+    width: 256px;
+}
+.switcher-list .separator {
+    width: 1px;
+}
+.ripple-box {
+    width: 104px;
+    height: 104px;
+}
+.ripple-box:rtl {
+}
+.switcher-arrow {
+    color: $fg_color;
+}
+.switcher-arrow:highlighted {
+    color: $fg_color;
+}
+.switcher-preview-backdrop {
+    background-color: $bg_color;
+}
+
+/* ===================================================================
+ * Modal dialogs
+ * ===================================================================*/
+.modal-dialog {
+    border-radius: $buttons_radius * 2;
+    color: $fg_color;
+    background-color: $base_color;
+    box-shadow: $shadow_3;
+    padding: 24px;
+}
+.modal-dialog-button-box {
+    spacing: 3px;
+}
+.modal-dialog-button {
+    @include button(flat-normal, $tc: $inverse_fg_color);
+    border-radius: $buttons_radius;
+    padding: 12px 48px;
+    margin-top: 24px;
+}
+.modal-dialog-button:disabled {
+    @include button(flat-insensitive, $tc: $inverse_fg_color);
+}
+.modal-dialog-button:focus {
+    @include button(flat-hover, $tc: $inverse_fg_color);
+}
+
+/* Info OSD popup */
+.info-osd {
+    font-size: 1.2em;
+    border-radius: $buttons_radius;
+    background-color: $base_color;
+    color: $fg_color;
+    padding: 24px;
+    text-align: center;
+    box-shadow: $shadow_2;
+}
+
+.workspace-osd {
+    color: $fg_color;
+    font-weight: bold;
+    font-size: 2.6em;
+}
+
+/* ===================================================================
+ * Run dialog
+ * ===================================================================*/
+.run-dialog-label {
+    color: $fg_color;
+    padding-bottom: 16px;
+}
+.run-dialog-error-label {
+    color: $fg_color;
+}
+.run-dialog-error-box {
+    padding-top: 16px;
+    spacing: 6px;
+}
+.run-dialog-completion-box {
+    padding-left: 16px;
+}
+.run-dialog-entry {
+    font-weight: bold;
+    width: 23em;
+    color: $fg_color;
+    selection-background-color: $fg_color;
+    selected-color: $base_color;
+}
+.run-dialog {
+    border-radius: $buttons_radius;
+    padding: 16px;
+}
+.lightbox {
+    background-color: $bg_color;
+}
+
+/* ===================================================================
+ * Magnifier
+ * ===================================================================*/
+
+.magnifier-zoom-region {
+    border-radius: $buttons_radius;
+    border: 4px solid $inverse_track_color;
+}
+.magnifier-zoom-region.full-screen {
+    border-width: 0px;
+}
+/* ===================================================================
+ * On screen keyboard
+ * ===================================================================*/
+
+$keyboard_hover_bg_color: if($variant == 'light', darken($keyboard_bg_color, 10%), lighten($keyboard_bg_color, 10%));
+$keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20%), lighten($keyboard_bg_color, 20%));
+
+#keyboard {
+    background-color: rgba(black, 0.65);
+
+    border: none;
+    border-top-width: 0;
+    box-shadow: none;
+}
+.keyboard-layout {
+    padding: 12px;
+    spacing: 12px;
+}
+.keyboard-row {
+    spacing: 15px;
+}
+.keyboard-key {
+    min-height: 2em;
+    min-width: 2em;
+    font-size: 14pt;
+    font-weight: bold;
+    border-radius: $buttons_radius;
+    border: none;
+    color: $fg_color;
+    background-color: $keyboard_bg_color;
+    box-shadow: 0 1px rgba($black, 0.2);  
+}
+.keyboard-key:grayed {
+    background-color: $alt_bg_color;
+    color: $inverse_fg_color;
+    border-color: $alt_bg_color;
+}
+.keyboard-key:hover {
+    color: $fg_color; 
+    background-color: $keyboard_hover_bg_color;
+}
+.keyboard-key:checked,
+.keyboard-key:active {
+    color: $fg_color;
+    background-color: $keyboard_active_bg_color;
+}
+.keyboard-subkeys {
+    color: inherit;
+    -arrow-border-radius: $buttons_radius;
+    -arrow-background-color: rgba(black, 0.45);
+    -arrow-border-width: 0;
+    -arrow-border-color: transparent;
+    -arrow-base: 20px;
+    -arrow-rise: 10px;
+    -boxpointer-gap: 5px;
+    box-shadow: $shadow_2;
+}
+/* ###################################################################
+ * Cinnamon Specific Section
+ * ###################################################################*/
+/* ===================================================================
+ * Menu (menu.js)
+ * ===================================================================*/
+/* Main menu title */
+/* menu-background allows the menu applet to be themed separately from other applet menus */
+.menu-background {
+    padding: 12px;
+}
+.menu-favorites-box {
+    padding: 6px;
+    border-radius: $buttons_radius; 
+    background-color: $inverse_divider_color;
+    color: $inverse_secondary_fg_color;
+    transition-duration: 300;
+}
+.menu-favorites-button {
+    padding: 6px;
+}
+.menu-favorites-button:hover {
+    color: $inverse_fg_color;
+    background-color: rgba($inverse_fg_color, 0.20);
+    border-radius: $buttons_radius;
+}
+
+.menu-categories-box {
+    padding: 12px 32px;
+}
+.menu-applications-inner-box {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+}
+.menu-applications-outer-box {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+}
+.menu-application-button {
+    padding: 6px;
+}
+.menu-application-button:highlighted {
+    /* This style is used in menu application buttons for applications which were newly installed */
+    font-weight: bold;
+}
+.menu-application-button-selected {
+    padding: 6px;
+    background-color: $track_color;
+    color: $fg_color;
+    transition-duration: $longer_duration;
+    border-radius: 100px;
+}
+.menu-application-button-selected:highlighted {
+    /* This style is used in menu application buttons for applications which were newly installed */
+    font-weight: bold;
+}
+.menu-application-button-label:ltr {
+    padding-left: 6px;
+}
+.menu-application-button-label:rtl {
+    padding-right: 6px;
+}
+.menu-category-button {
+    padding: 6px 12px;
+}
+.menu-category-button-greyed {
+    padding: 6px 12px;
+    color: $disabled_fg_color;
+}
+.menu-category-button-greyed StIcon {
+	opacity: 0.5;
+}
+.menu-category-button-selected {
+    padding: 6px 12px;
+    background-color: $track_color;
+    color: $fg_color;
+    transition-duration: $longer_duration;
+    border-radius: 100px;
+}
+.menu-category-button-label:ltr {
+    padding-left: 6px;
+}
+.menu-category-button-label:rtl {
+    padding-right: 6px;
+
+}
+.menu-category-button-selected:hover {
+}
+/* Name and description of the currently hovered item in the menu
+ * This appears on the bottom right hand corner of the menu*/
+.menu-selected-app-box {
+    padding-right: 32px;
+    padding-left: 28px;
+    text-align: right;
+    height: 2.2em;
+}
+.menu-selected-app-box:rtl {
+    padding-top: 12px;
+    height: 2.2em;
+}
+.menu-selected-app-title {
+    font-weight: bold;
+}
+.menu-selected-app-description {
+    max-width: 150px;
+}
+.menu-top-box {
+    spacing: 10px;
+}
+.menu-systembuttons-box {
+}
+.menu-search-box:ltr {
+    padding-left: 32px;
+}
+.menu-search-box:rtl {
+    padding-right: 32px;
+}
+#menu-search-entry {
+    background-color: $primary_color;
+    padding: 4px 8px;
+    margin-bottom: 12px;
+    border-radius: $circular_radius;
+    color: $dark_fg_color;
+    selected-color: black;
+    caret-color: $fg_color;
+    caret-size: 1px;
+    width: 320px - 8px * 2;
+    height: 24px;
+    transition-duration: 300;
+    @include search_entry(normal);  
+}
+#menu-search-entry:focus,
+#menu-search-entry:hover {
+    background-color: $light_fg_color;
+    @include search_entry(focus);
+}
+#menu-search-entry:hover {
+    transition-duration: 300;
+}
+#menu-search-entry:focus {
+    color: $dark_fg_color;
+    font-weight: bold;
+    transition-duration: 0;
+}
+.menu-search-entry-icon {
+    icon-size: 16px;
+    color: rgba(black, 0.75);
+    margin: 0 6px;
+}
+/* Context menu (at the moment only for favorites) */
+.menu-context-menu {
+}
+/* ===================================================================
+ * Window list (windowList.js)
+ * ===================================================================*/
+.window-list-box {
+    spacing: 4px;
+    padding: 6px 0PX;
+}
+.window-list-box.vertical {
+    spacing: 4px;
+    padding: 10px 0;
+}
+.window-list-box.vertical #appMenuIcon {
+    padding-top: 4px;
+}
+.window-list-item-box {
+    color: $panel_fg_color;
+    background: transparent;
+    border-radius: $circular_radius;
+    transition-duration: 100;
+    spacing: 8px;
+}
+.window-list-item-box.top {
+    border-radius: $circular_radius;
+}
+.window-list-item-box.left {
+    border-radius: $buttons_radius;
+    margin: 0 4px;
+}
+.window-list-item-box.right {
+    border-radius: $buttons_radius;
+    margin: 0 4px;
+}
+.window-list-item-box.top,
+.window-list-item-box.bottom {
+    padding: 0 8px;
+    border: 4px solid transparent;
+    // margin-bottom: 4px;
+    // margin-top: 4px;
+}
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box:focus,
+.window-list-item-box:running {
+    background: rgba($inverse_fg_color, 0.25);
+    color: $inverse_fg_color;
+}
+.window-list-item-box:hover {
+    background: darken($color: rgba($inverse_fg_color, 0.25), $amount: 10%);
+    color: $inverse_fg_color;
+}
+.window-list-item-demands-attention {
+    background: $error_color;
+}
+
+.window-list-item-box .progress {
+    background: darken($color: rgba($inverse_fg_color, 0.25), $amount: 10%);
+    border-radius: $circular_radius;
+}
+.panel-top .window-list-item-box .progress {
+    border-radius: $circular_radius;
+}
+.panel-left .window-list-item-box .progress {
+    border-radius: $buttons_radius;
+}
+.panel-right .window-list-item-box .progress {
+    border-radius: $buttons_radius;
+}
+
+.window-list-preview {
+    background: $menu_bg_color;
+    color: $fg_color;
+    border-radius: $buttons_radius;
+    padding: 16px;
+    spacing: 6px;
+}
+
+/* ===================================================================
+ * Grouped window list (grouped-window-list@cinnamon.org)
+ * ===================================================================*/
+
+.grouped-window-list-thumbnail-label {
+    padding-left: 4px;
+}
+.grouped-window-list-number-label {
+    z-index: 99;
+    color: $fg_color;
+    padding: 0;
+}
+.grouped-window-list-badge {
+    border-radius: $circular_radius;
+    background: rgba($inverse_fg_color, 0.25);
+}
+.grouped-window-list-button-label {
+    padding-left: 4px;
+}
+.grouped-window-list-thumbnail-alert {
+    background: $error_color;
+}
+
+.grouped-window-list-item-box {
+    color: $panel_fg_color;
+    background: transparent;
+    border-radius: $circular_radius;
+    transition-duration: 100;
+    spacing: 0.5em;
+}
+.grouped-window-list-item-box.top {
+    border-radius: $circular_radius;
+}
+.grouped-window-list-item-box.left {
+    border-radius: $buttons_radius;
+}
+.grouped-window-list-item-box.right {
+    border-radius: $buttons_radius;
+}
+.grouped-window-list-item-box.top,
+.grouped-window-list-item-box.bottom {
+    // margin-top: 4px;
+    // margin-bottom: 4px;
+    border: 4px solid transparent;
+    padding: 0 8px;
+}
+
+.grouped-window-list-item-box:checked,
+.grouped-window-list-item-box:active:hover {
+    background: darken($color: rgba($inverse_fg_color, 0.25), $amount: 10%);
+    color: $panel_fg_color;
+}
+
+.grouped-window-list-item-box:focus {
+    background: rgba($inverse_fg_color, 0.25);
+    color: $panel_fg_color
+}
+
+.grouped-window-list-item-box:active:focus:hover,
+.grouped-window-list-item-box:focus:hover {
+    background: darken($color: rgba($inverse_fg_color, 0.25), $amount: 10%);
+    color: $panel_fg_color;
+}
+.grouped-window-list-item-box:hover {
+}
+
+.grouped-window-list-item-box:active {
+}
+
+.grouped-window-list-item-demands-attention {
+    background: $error_color;
+}
+
+.grouped-window-list-item-box .progress {
+    background: darken($color: rgba($inverse_fg_color, 0.25), $amount: 10%);
+    border-radius: $buttons_radius;
+}
+.panel-top .grouped-window-list-item-box .progress {
+    border-radius: $buttons_radius;
+}
+.panel-left .grouped-window-list-item-box .progress {
+    border-radius: $buttons_radius;
+}
+.panel-right .grouped-window-list-item-box .progress {
+    border-radius: $buttons_radius;
+}
+
+.grouped-window-list-thumbnail-menu {
+}
+.grouped-window-list-thumbnail-menu .item-box {
+    background: transparent;
+    padding: 12px;
+    border-radius: $buttons_radius;
+    spacing: 4px;
+}
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+    padding: 6px;
+}
+.grouped-window-list-thumbnail-menu .item-box:selected {
+    background: transparent;
+}
+.grouped-window-list-thumbnail-menu .thumbnail {
+    width: 256px;
+}
+.grouped-window-list-thumbnail-menu .separator {
+    width: 1px;
+    background: transparent;
+}
+
+/* ===================================================================
+ * Sound Applet (sound@cinnamon.org)
+ * ===================================================================*/
+
+.sound-player StButton {
+    width: 18px;
+    height: 18px;
+    padding: 5px;
+    color: $fg_color;
+    border-radius: $circular_radius;
+}
+
+.sound-player StButton:small {
+    width: 16px;
+    height: 16px;
+}
+
+.sound-player StButton:small StIcon {
+    icon-size: 1.2em;
+}
+
+.sound-player StButton StIcon {
+    icon-size: 1.5em;
+}
+
+.sound-player StButton:hover, .sound-player StButton:active {
+    color: $fg_color;
+    border-radius: $circular_radius;
+}
+
+.sound-player .slider {
+    height: 6px;
+    -slider-height: 6px;
+    -slider-background-color: $alt_bg_color;
+    -slider-active-background-color: $primary_color;
+    -slider-border-width: 0px;
+    -slider-handle-radius: 0px;
+}
+
+.sound-player StBoxLayout {
+    spacing: 0.5em;
+}
+
+.sound-player>StBoxLayout {
+    padding: 0 16px 8px;
+}
+
+.sound-player-overlay {
+    width: 300px;
+    padding: 12px 16px;
+    spacing: 0.5em;
+    background-color: $bg_color;
+    color: $fg_color;
+}
+
+.sound-player-overlay StButton {
+    border-radius: $buttons_radius;
+    padding: 8px;
+}
+
+.sound-player-overlay StButton > StIcon {
+    icon-size: 16px;
+}
+
+.sound-player-overlay StBoxLayout {
+    padding-top: 2px;
+}
+
+.sound-player-generic-coverart {
+    background: rgba(0,0,0,0.2);
+}
+
+/* ===================================================================
+ * Spacer applet
+ * ===================================================================*/
+.spacer-box {
+    border-radius: 1px;
+    border: 1px solid transparent;
+}
+
+.spacer-box:highlight {
+    background-color: $highlight_color;
+}
+
+.spacer-box.vertical {
+}
+
+.spacer-box.edit-mode {
+    border-radius: 1px;
+    border: 1px symbolic;
+}
+
+/* ===================================================================
+ * Workspace Switcher applet (workspaceSwitcher.js)
+ * ===================================================================*/
+/* Controls the styling when using the "Simple buttons" option */
+.panel-top .workspace-switcher,
+.panel-bottom .workspace-switcher {
+    padding: 0 3px;
+}
+
+.panel-left .workspace-switcher,
+.panel-right .workspace-switcher {
+    padding: 3px;
+}
+
+.workspace-button {
+    border-radius: $circular_radius;
+    color: $panel_fg_color;
+    padding: 0 8px;
+    transition-duration: 300;
+    margin: 2px;
+}
+
+.vertical .workspace-button {
+    padding: 4px 0;
+}
+
+.workspace-button:outlined {
+    background: rgba($inverse_fg_color, 0.25);
+    color: $primary_color;
+}
+
+.workspace-button:shaded {
+    color: $panel_fg_color;
+}
+
+/* Controls the style when using the "Visual representation" option */
+.workspace-graph {
+    padding: 3px;
+    spacing: 3px;
+    margin: 2px;
+}
+
+.workspace-graph .workspace {
+    border-radius: 4px;
+    background: rgba($inverse_fg_color, 0.25);
+}
+
+.workspace-graph .workspace:active {
+    background: rgba($inverse_fg_color, 0.25);
+    border: 1px solid $primary_color;
+}
+
+.workspace-graph .workspace .windows {
+    -active-window-background: darken($color: rgba($inverse_fg_color, 0.25), $amount: 50%);
+    -active-window-border: darken($color: rgba($inverse_fg_color, 0.25), $amount: 20%);
+    -inactive-window-background: darken($color: rgba($inverse_fg_color, 0.25), $amount: 10%);
+    -inactive-window-border: darken($color: rgba($inverse_fg_color, 0.25), $amount: 20%);
+}
+
+.workspace-graph .workspace:active .windows {
+    -active-window-background: darken($color: rgba($inverse_fg_color, 0.25), $amount: 50%);
+    -active-window-border: darken($color: rgba($inverse_fg_color, 0.25), $amount: 20%);
+    -inactive-window-background: darken($color: rgba($inverse_fg_color, 0.25), $amount: 10%);
+    -inactive-window-border: darken($color: rgba($inverse_fg_color, 0.25), $amount: 20%);
+}
+
+/* ===================================================================
+ * Panel Launchers Applet (panelLaunchers.js)
+ * ===================================================================*/
+.panel-launchers {
+    padding-left: 7px;
+    spacing: 2px;
+}
+
+.panel-launchers.vertical {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    spacing: 3px;
+}
+
+.launcher {
+    padding-left: 1px;
+    padding-right: 1px;
+    border-bottom-width: 1px;
+    transition-duration: 300;
+}
+
+.launcher .icon-box {
+    padding-top: 2px;
+}
+
+.panel-launchers.vertical .launcher .icon-box {
+    padding-top: 0;
+}
+
+.panel-launchers .launcher:hover {
+    border-radius: $circular_radius;
+    background: rgba($inverse_fg_color, 0.25);
+}
+
+/* ===================================================================
+ * Overview corner
+ * ===================================================================*/
+#overview-corner {
+    background-image: url("assets/overview.png");
+}
+#overview-corner:hover {
+    background-image: url("assets/overview-hover.png");
+}
+/* ===================================================================
+ * Applets (applet.js)
+ * ===================================================================*/
+.applet-separator {
+    padding: 6px 4px;
+}
+.applet-separator-line {
+    width: 2px;
+    background: rgba($inverse_fg_color, 0.25);
+}
+
+.applet-separator-line-vertical {
+    border: 0px solid rgba($inverse_fg_color, 0.25);
+    border-bottom-width: 2px;
+}
+
+.applet-box {
+    padding-left: 4px;
+    padding-right: 4px;
+    color: $panel_fg_color;
+    transition-duration: 300;
+}
+.panel-top .applet-box,
+.panel-bottom .applet-box {
+    spacing: 3px;
+}
+.applet-box:checked,
+.applet-box:hover {
+    color: #fff;
+}
+.applet-box.vertical {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.applet-box.vertical:hover {
+}
+.applet-box:highlight {
+    background-color: $primary_color;
+}
+.applet-label {
+    font-weight: bold;
+    color: $panel_fg_color;
+}
+.applet-box:checked > .applet-label,
+.applet-box:hover > .applet-label {
+    color: #fff;
+}
+.applet-box.vertical:hover > .applet-label {
+}
+.applet-icon {   /* symbolic icons will use system-status-icon instead */
+    color: $panel_fg_color;
+    icon-size: 16px;
+}
+.applet-box:checked .applet-icon,
+.applet-box:hover .applet-icon {
+    color: #fff;
+    icon-shadow: #fff 0px 0px 0px;
+}
+.applet-box.vertical:hover .applet-icon {
+}
+/* ===================================================================
+ * Desklets (desklet.js)
+ * ===================================================================*/
+.desklet {
+    color: #fff;
+}
+
+.desklet:highlight, .desklet:highlight-with-borders, .desklet:highlight-with-borders-and-header {
+    background-color: $primary_color;
+}
+
+.desklet-with-borders {
+    background-color: $panel_bg_color;
+    color: $panel_fg_color;
+    box-shadow: $shadow_2;
+    border-radius-bottomleft: $buttons_radius;
+    border-radius-bottomright: $buttons_radius;
+    border-radius-topleft: $buttons_radius;
+    border-radius-topright: $buttons_radius;
+    padding: 12px;
+}
+
+.desklet-with-borders-and-header {
+    background-color: $panel_bg_color;
+    color: $panel_fg_color;
+    box-shadow: $shadow_2;
+    border-radius-bottomleft: $buttons_radius;
+    border-radius-bottomright: $buttons_radius;
+}
+
+.desklet-header {
+    border-radius-topleft: $buttons_radius;
+    border-radius-topright: $buttons_radius;
+    border-bottom: 0px;
+    background-color: $panel_bg_color;
+    color: $panel_fg_color;
+    padding: 6px;
+}
+
+.desklet-drag-placeholder {
+    border-radius: $buttons_radius;
+    background-color: rgba($inverse_fg_color, 0.25);
+}
+
+/* ===================================================================
+ * Clock Desklet (desklet.js)
+ * ===================================================================*/
+.clock-desklet-label {
+}
+
+.expo-workspaces-name-entry {
+    padding: 4px;
+    border-radius: $circular_radius;
+    color: $inverse_fg_color;
+    background: $bg_color;
+    selected-color: #fff;
+    caret-color: $inverse_fg_color;
+    caret-size: 1px;
+    width: 250px;
+    height: 24px;
+    text-align: center;
+}
+
+.expo-workspaces-name-entry#selected {
+    background: $alt_bg_color;
+    font-weight: bold;
+    color: $inverse_fg_color;
+}
+
+.expo-workspaces-name-entry:focus {
+    color: $inverse_fg_color;
+    font-weight: bold;
+    transition-duration: 300;
+}
+/* ===================================================================
+ * Notification Applet
+ * ===================================================================*/
+
+.notification-applet-padding {
+    padding: .5em 1em;
+}
+
+.notification-applet-container {
+    max-height: 100px;
+}
+
+/* Check Boxes */
+.check-box CinnamonGenericContainer {
+    spacing: .2em;
+}
+
+.check-box StBin,
+.check-box:focus StBin {
+    width: 16px;
+    height: 16px;
+    background-image: url("assets/checkbox-off.svg");
+}
+
+.check-box:checked StBin,
+.check-box:focus:checked StBin {
+    background-image: url("assets/checkbox.svg");
+}
+
+.check-box StLabel {
+    font-weight: normal;
+}
+
+.radiobutton CinnamonGenericContainer {
+    spacing: .2em;
+    height: 18px;
+    padding-top: 2px;
+}
+
+.radiobutton StBin,
+.radiobutton:focus StBin {
+    width: 16px;
+    height: 16px;
+    background-image: url("assets/menu-radio-unchecked.png");
+    border-radius: 15px;
+}
+
+.radiobutton:checked StBin,
+.radiobutton:focus:checked StBin {
+    background-image: url("assets/menu-radio-checked.png");
+}
+
+.radiobutton StLabel {
+    padding-top: 4px;
+    box-shadow: none;
+}
+
+.flashspot {
+    background-color: white;
+}
+
+/* Media keys OSD popup */
+.osd-window {
+    @extend %osd-panel;
+    text-align: center;
+    font-weight: bold;
+    spacing: 1em;
+    margin: 32px;
+    min-width: 64px;
+    min-height: 64px;
+}
+
+.osd-window .level {
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba($primary_color, $lower_opacity);
+    color: $fg_color;
+
+    // height: 0.7em;
+    // border-radius: 0.3em;
+    // background-color: rgba(190,190,190,0.2);
+}
+
+.osd-window .level-bar {
+    background-color: $primary_color;
+    border-radius: 2px;
+}
+
+.tile-preview,
+.tile-hud {
+    background-color: rgba($alt_primary_color, $lower_opacity);
+    border: 1px solid $alt_primary_color;  
+}
+
+.tile-preview.snap,
+.tile-hud.snap {
+    background-color: rgba($alt_primary_color, $lower_opacity);
+    border: 1px solid $alt_primary_color;  
+}
+
+.tile-hud:top {
+    border-top-width: 0px;
+    border-radius: 0px 0px $panel-corner-radius $panel-corner-radius;
+}
+
+.tile-hud:bottom {
+    border-bottom-width: 0px;
+    border-radius: $panel-corner-radius $panel-corner-radius 0px 0px;
+}
+
+.tile-hud:left {
+    border-left-width: 0px;
+    border-radius: 0px $panel-corner-radius $panel-corner-radius 0px;
+}
+
+.tile-hud:right {
+    border-right-width: 0px;
+    border-radius: $panel-corner-radius 0px 0px $panel-corner-radius;
+}
+
+.tile-hud:top-left {
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-radius: 0px 0px $panel-corner-radius 0px;
+}
+
+.tile-hud:top-right {
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-radius: 0px 0px 0px $panel-corner-radius;
+}
+
+.tile-hud:bottom-left {
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-radius: 0px $panel-corner-radius 0px 0px;
+}
+
+.tile-hud:bottom-right {
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-radius: $panel-corner-radius 0px 0px 0px;
+}
+
+%osd-panel {
+    color: $fg_color;
+    background-color: $base_color;
+    border: none;
+    box-shadow: $shadow_2;
+    border-radius: $buttons_radius;
+    padding: 12px;
+  }
+  
+
+/* ===================================================================
+ * Systray Applet
+ *
+ * .systray is for theming to be applied to the systray as a whole
+ * .applet-box is used for indicators (not tray icons) within the systray
+ * tray icons are not themed
+ * ===================================================================*/
+.systray {
+    spacing: 6px;
+}
