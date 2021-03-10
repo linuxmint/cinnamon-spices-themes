@@ -7,7 +7,9 @@ const SRC_PATH = './src';
 const OUT_PATH = './files';
 const REGEX = /.*cinnamon-(.+)-(.+)\.scss/;
 
-const files = fs.readdirSync(SRC_PATH);
+// Use this to read all the theme varaints in src folder
+// const files = fs.readdirSync(SRC_PATH);
+const files = ['cinnamon-blue-dark.scss'];
 
 const themeFiles = [];
 
