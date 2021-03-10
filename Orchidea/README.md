@@ -3,9 +3,9 @@
 A theme inspired by vinceliuice's Orchis Theme
 ([https://github.com/vinceliuice/Orchis-theme](https://github.com/vinceliuice/Orchis-theme)).
 
-It comes in multiple variants: you can choose between light or dark version and
+<!-- It comes in multiple variants: you can choose between light or dark version and
 8 different accent colors from the vinceliuice's theme (blue, green, grey,
-orange, pink, purple, red, yellow).
+orange, pink, purple, red, yellow). -->
 
 ## License
 
