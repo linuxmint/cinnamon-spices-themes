@@ -61,6 +61,11 @@ themeFiles.forEach(data => {
   // 3 Theme
   execSync(`cp -r ${SRC_PATH}/assets/theme-${data.color}/* ${data.outPath}/assets`);
 
+  // Copy metacity
+  const metacityOutPath = `${data.outPath}/../metacity-1`;
+  fs.mkdirSync(metacityOutPath, { recursive: true });
+  execSync(`cp -r ${SRC_PATH}/assets/metacity-1/* ${metacityOutPath}`);
+
 });
 
 
