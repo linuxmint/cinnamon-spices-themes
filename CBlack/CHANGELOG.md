@@ -1,3 +1,11 @@
+### Update 3.1.0
+* Change style button title bar metacity/gtk
+* Clean code
+* Change style notification
+* Change style workspace switcher type: simple buttons
+* Change style calendar
+* Change style minor
+
 ### Update 3.0.0
 * Support CSS CinnVIIStarkMenu Applet
 * Border most Highlighted
