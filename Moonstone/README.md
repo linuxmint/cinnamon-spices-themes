@@ -13,8 +13,10 @@ Fork of the elegant Mint-Y-Dark theme for Cinnamon Desktop Environment using tra
 
 ### Manual
 1. `git clone https://github.com/Mario-paul/moonstone-theme.git`
-3. `mv -r "Moonstone"/ ~/.themes/`
+2. `cd moonstone-theme/`
+3. `cp -r "Moonstone"/ ~/.themes/`
 4. Open the Themes app, and on `Desktop` select `Moonstone`.
+5. *optional: Remaining `moonstone-theme` directory can be safely deleted.*
 
 ## Compatibility
 This theme was created and tested with Cinnamon version `5.0.5`. Cinnamon versions `4.x.x`+ likely work fine but have not been tested, and versions older than that might or might not work.
