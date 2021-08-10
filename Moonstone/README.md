@@ -29,6 +29,9 @@ Controls: Mint-Y-Dark<br>
 Mouse Pointer: DMZ-Black<br>
 Desktop: **Moonstone**
 
+## Customization
+For help customizing the *accent color* or *transparency* effect, check the `customize-readme.txt` file inside the `cinnamon` folder.
+
 ## Other info
 This theme is based on Mint-Y-Dark, which itself is based on [horst3180's Arc theme](https://github.com/horst3180/arc-theme), and uses the same GUI colors as the former. However, most desktop elements have been given transparency, carefully adjusted so they are not only pleasing to look at, but also usable (ie. not so transparent that it's difficult to read text). Some of these elements are the desktop panel, menu, OSD, window switcher list (alt + tab), grouped window list thumbnail, as well as run dialog box.
 
