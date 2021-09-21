@@ -1,5 +1,6 @@
 ## Versions
 
+* 2.2: minor modifications.
 * 2.1: tooltip shadow, visual indicator Lock/Num and special vowel characters of the virtual keyboard.
 * 2.0: corrected the calendar applet and removed obsolete codes.
 * 1.15: deleted a variable following the update of the weather applet.
