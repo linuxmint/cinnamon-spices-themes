@@ -1,5 +1,6 @@
 ## Versions
 
+* 2.3: conky update ( flickering correction…).
 * 2.2: minor modifications.
 * 2.1: tooltip shadow, visual indicator Lock/Num and special vowel characters of the virtual keyboard.
 * 2.0: corrected the calendar applet and removed obsolete codes.
