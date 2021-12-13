@@ -7,7 +7,7 @@
 /* The source code, tools and instructions to make your own cinnamox theme */
 /* can be found at https://github.com/smurphos/cinnamox-gtk-theme */
 /* -------------------------------------------------------------------------- */
-.expo-workspaces-name-entry, .expo-background, .window-caption, .switcher-list, #LookingGlassDialog, .workspace-button, .sound-player-overlay, .panel-top, .popup-sub-menu, .starkmenu-favorites-box .menu-context-menu, .menu-context-menu, .menu-applications-inner-box StScrollView, .info-osd, .workspace-osd, .overview-empty-placeholder, .osd-window {
+.expo-workspaces-name-entry, .expo-background, .window-caption, .switcher-list, #LookingGlassDialog, .calendar-events-main-box, .workspace-button, .sound-player-overlay, .panel-top, .popup-sub-menu, .starkmenu-favorites-box .menu-context-menu, .menu-context-menu, .menu-applications-inner-box StScrollView, .info-osd, .workspace-osd, .overview-empty-placeholder, .osd-window {
   background-gradient-direction: vertical;
   background-gradient-start: #242a30;
   background-gradient-end: #3c4650; }
@@ -17,12 +17,12 @@
   background-gradient-start: #15191d;
   background-gradient-end: #232930; }
 
-.modal-dialog-button, .notification-icon-button, .notification-button, .keyboard-key, .sound-player StButton {
+.modal-dialog-button, .notification-icon-button, .notification-button, .keyboard-key, .calendar-today-home-button-enabled, .calendar-event-button, .calendar-events-no-events-button, .sound-player StButton {
   background-gradient-direction: vertical;
   background-gradient-start: #4a555f;
   background-gradient-end: #2c3339; }
 
-.modal-dialog-button:hover, .notification-icon-button:hover, .notification-button:hover, .keyboard-key:hover, .sound-player StButton:hover {
+.modal-dialog-button:hover, .notification-icon-button:hover, .notification-button:hover, .keyboard-key:hover, .calendar-today-home-button-enabled:hover, .calendar-event-button:hover, .calendar-events-no-events-button:hover, .sound-player StButton:hover {
   background-gradient-direction: vertical;
   background-gradient-start: #4d5964;
   background-gradient-end: #2e363c; }
@@ -32,7 +32,7 @@
   background-gradient-start: #3c4650;
   background-gradient-end: #242a30; }
 
-.expo-workspaces-name-entry#selected, .window-caption:focus, .window-caption#selected, .switcher-list .item-box:selected, .calendar-today, .workspace-graph .workspace:active, .workspace-button:outlined, .workspace-button:outlined:shaded, .modal-dialog-button:pressed, .modal-dialog-button:active, .notification-icon-button:active, .notification-button:active, .keyboard-key:active, .sound-player StButton:active {
+.expo-workspaces-name-entry#selected, .window-caption:focus, .window-caption#selected, .switcher-list .item-box:selected, .calendar-not-today:selected:hover, .calendar-not-today:selected, .calendar-today, .workspace-graph .workspace:active, .workspace-button:outlined, .workspace-button:outlined:shaded, .modal-dialog-button:pressed, .modal-dialog-button:active, .notification-icon-button:active, .notification-button:active, .keyboard-key:active, .sound-player StButton:active {
   background-gradient-direction: vertical;
   background-gradient-start: #29609d;
   background-gradient-end: #71a2da; }
@@ -102,14 +102,14 @@
   border-radius: 10px;
   transition-duration: 150; }
 
-.modal-dialog-button, .notification-icon-button, .notification-button, .keyboard-key, .sound-player StButton {
+.modal-dialog-button, .notification-icon-button, .notification-button, .keyboard-key, .calendar-today-home-button-enabled, .calendar-event-button, .calendar-events-no-events-button, .sound-player StButton {
   border: 1px solid rgba(216, 229, 242, 0.22);
   border-radius: 10px;
   text-align: center;
   color: #d8e5f2;
   transition-duration: 150; }
 
-.modal-dialog-button:hover, .notification-icon-button:hover, .notification-button:hover, .keyboard-key:hover, .sound-player StButton:hover {
+.modal-dialog-button:hover, .notification-icon-button:hover, .notification-button:hover, .keyboard-key:hover, .calendar-today-home-button-enabled:hover, .calendar-event-button:hover, .calendar-events-no-events-button:hover, .sound-player StButton:hover {
   border: 1px solid #3b73b3; }
 
 .modal-dialog-button:pressed, .modal-dialog-button:active, .notification-icon-button:active, .notification-button:active, .keyboard-key:active, .sound-player StButton:active {
@@ -855,6 +855,8 @@ StScrollView StScrollBar {
   border-radius: 10px; }
   .calendar-day-base:active {
     background-color: #3d80cc; }
+  .calendar-day-base:hover {
+    background-color: #3d80cc; }
 
 .calendar-day-heading {
   color: #d8e5f2;
@@ -880,8 +882,12 @@ StScrollView StScrollBar {
 
 .calendar-today {
   font-weight: bold; }
-  .calendar-today:active {
+  .calendar-today:selected {
     color: #000000; }
+
+.calendar-not-today:selected {
+  font-weight: bold;
+  color: #000000; }
 
 .calendar-other-month-day {
   font-style: italic; }
@@ -891,6 +897,98 @@ StScrollView StScrollBar {
   font-weight: bold; }
   .calendar-day-with-events:active {
     color: #000000; }
+
+.calendar-events-main-box {
+  min-width: 350px;
+  height: 300px;
+  border: 1px solid rgba(216, 229, 242, 0.22);
+  border-radius: 10px;
+  padding: 1em 1.75em; }
+
+.calendar-events-no-events-button {
+  padding: 5px; }
+
+.calendar-events-no-events-icon,
+.calendar-events-no-events-label {
+  font-weight: bold;
+  text-align: center; }
+
+.calendar-events-date-label {
+  padding: .1em .1em 1em;
+  color: #d8e5f2;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2em; }
+
+.calendar-event-button {
+  padding: 5px;
+  color: #d8e5f2;
+  text-align: left;
+  font-style: normal; }
+
+.calendar-event-button .calendar-event-time-past {
+  color: rgba(216, 229, 242, 0.7);
+  font-size: 1.2em; }
+
+.calendar-event-button .calendar-event-time-present {
+  color: #d8e5f2;
+  font-size: 1.2em; }
+
+.calendar-event-button .calendar-event-time-present:all-day {
+  color: #d8e5f2;
+  font-size: 1.2em; }
+
+.calendar-event-button .calendar-event-time-future {
+  color: #d8e5f2;
+  font-size: 1.2em; }
+
+.calendar-event-button .calendar-event-summary {
+  text-align: left;
+  width: 200px; }
+
+.calendar-event-button .calendar-event-countdown {
+  text-align: right;
+  margin-bottom: .6em;
+  color: #d8d84e; }
+
+.calendar-event-button:hover {
+  font-weight: bold; }
+
+.calendar-event-button:hover .calendar-event-countdown {
+  font-weight: bold; }
+
+.calendar-event-color-strip {
+  width: 1px; }
+
+.calendar-today-home-button {
+  padding: 5px;
+  border: 1px solid transparent; }
+
+.calendar-today-day-label {
+  font-size: 1.4em;
+  color: #d8e5f2;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: .1em; }
+
+.calendar-today-date-label {
+  font-size: 1.2em;
+  color: #d8e5f2;
+  font-weight: bold;
+  text-align: center; }
+
+.calendar-today-home-button-enabled {
+  padding: 5px; }
+
+.calendar-day-event-dot-box {
+  margin-top: 1.7em;
+  max-rows: 1; }
+
+.calendar-day-event-dot {
+  margin: 1px;
+  border-radius: 99px;
+  width: 4px;
+  height: 4px; }
 
 #keyboard {
   background-color: rgba(48, 56, 64, 0.5); }

@@ -106,7 +106,7 @@ To run the script open a terminal window (Ctrl-Alt-T) and use the following comm
 
 ## Compatibility
 
-This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x`, `4.0.x`, `4.2.x`, `4.4.x` & `4.6.x`
+This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x`, `4.0.x`, `4.2.x`, `4.4.x`, `4.6.x`, `4.8.x`, `5.0.x` & `5.2.x`
 
 The GTK3 themes require GTK `3.18.x` or `3.20.x`+
 
