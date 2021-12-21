@@ -41,6 +41,12 @@ This build is based on [Adapta version 3.95.0.11](https://github.com/adapta-proj
 * Cinnamon - virtual keyboard - usability tweaks
 * Cinnamon - 4.6.x stock menu - add a height declaration for the app description box, and reduce margins
 * Cinnamon - add a helper script to revert above change for users still on 4.4.x or earlier
+* Cinnamon - support for Spacer applet theming added in Cinnamon 4.2
+* Cinnamon - workspace switcher applet - better distinguish empty workspaces in simple button mode.
+* Cinnamon - minor tweak to pop-up menu sizes to better match GTK menus
+* Cinnamon - incorporate @fredcw patach to menu category hover color for Cinnamenu
+* Cinnamon - add support for calendar with events in Cinnamon 5.2
+* Cinnamon - support for new Run Dialog theming in Cinnamon 5.2
 
 ## License
 
@@ -64,7 +70,7 @@ To allow the GTK2, GTK3 and Metacity1 themes to apply to GUI apps running as roo
 
 ## Compatibility
 
-This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x`, `4.0.x`, `4.2.x`, `4.4.x` & `4.6.x`
+This theme is compatible with Cinnamon versions `3.2.x`, `3.4.x`, `3.6.x`, `3.8.x`, `4.0.x`, `4.2.x`, `4.4.x`, `4.6.x`, `4.8.x`, `5.0.x` & `5.2.x`
 
 The GTK3 themes require GTK `3.18.x` or `3.20.x`+
 
