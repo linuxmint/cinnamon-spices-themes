@@ -1,5 +1,6 @@
 ## Versions
 
+* 2.4: better visibility of non-work days in calendar.
 * 2.3: conky update ( flickering correction…).
 * 2.2: minor modifications.
 * 2.1: tooltip shadow, visual indicator Lock/Num and special vowel characters of the virtual keyboard.
