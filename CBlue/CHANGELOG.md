@@ -1,5 +1,6 @@
 ## Versions
 
+* 2.5: modification of the calendar (Cinnamon 5.2) and notifications.
 * 2.4: better visibility of non-work days in calendar.
 * 2.3: conky update ( flickering correction…).
 * 2.2: minor modifications.
