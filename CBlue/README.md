@@ -37,20 +37,20 @@ You need to reinstall the `userChrome.css` file in the Firefox profile. To make 
 * Copy the file located in `~/.themes/CBlue/cinnamon/TimeFull` and paste it into `~/.conky` (these are hidden folders: Ctrl+h to show them). You must also allow the file to run with the command `chmod 750 ~/.conky/TimeFull`. More informations can be found at the beginning of the file.
 
 ### Prevent your conky from flickering
-- Increase the update interval in the `TimeFull` file.
+* Increase the update interval in the `TimeFull` file.
 
 If this is not enough:
--Check that the `dbe` module is loaded with the `grep LoadModule /var/log/Xorg.0.log` command
+* Check that the `dbe` module is loaded with the `grep LoadModule /var/log/Xorg.0.log` command
 If the module is not present,
--Create the file `/etc/X11/xorg.conf.d/01-conky.conf` and add
+* Create the file `/etc/X11/xorg.conf.d/01-conky.conf` and add
 
 ```
  Section "Module
  Load "dbe
  EndSection
 ```
--If you have the `/etc/X11/xorg.conf` file, don't create the previous file but look for the `Section "Module"` line, then add after that line `Load "dbe"`. 
--Then restart X (control+alt+backspace).
+* If you have the `/etc/X11/xorg.conf` file, don't create the previous file but look for the `Section "Module"` line, then add after that line `Load "dbe"`. 
+* Then restart X (control+alt+backspace).
 
 
 ## License
