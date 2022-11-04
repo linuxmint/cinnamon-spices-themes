@@ -1,9 +1,9 @@
 ## Versions
 
-* 2.6: color for pointer location with Ctrl (system settings>mouse) and README update (conky)
+* 2.6: color for pointer location with Ctrl (system settings>mouse) and README update (conky).
 * 2.5: modification of the calendar (Cinnamon 5.2) and notifications.
 * 2.4: better visibility of non-work days in calendar.
-* 2.3: conky update ( flickering correction…).
+* 2.3: conky update (flickering correction…).
 * 2.2: minor modifications.
 * 2.1: tooltip shadow, visual indicator Lock/Num and special vowel characters of the virtual keyboard.
 * 2.0: corrected the calendar applet and removed obsolete codes.

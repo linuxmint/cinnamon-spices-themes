@@ -1,7 +1,7 @@
 ## CGreen
 
 ### A semi-transparent Cinnamon theme, with Firefox extra and Conky. Inspired by the CBlack theme (author: cloweling).
-If you want a panel that is not transparent, modify the line `275` of the file `~/.themes/CGreen/cinnamon/cinnamon.css`.
+If you want a panel that is not transparent, modify the line `282` of the file `~/.themes/CGreen/cinnamon/cinnamon.css`.
 For example: background-color: rgba(53, 57, 69, `0.50`); . A value of `0` is equivalent to total transparency and `1` is totally opaque. Restart Cinnamon (Ctrl+Alt+Esc) for immediate modification.
 
 **Don't hesitate to bring up inconsistencies in the theme or the extras** [here](https://github.com/Bundy01/cinnamon-spices-themes/issues).
