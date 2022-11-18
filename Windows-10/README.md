@@ -4,7 +4,7 @@
 
 GTK theme based on the appearance of Win32 apps on the Windows 10 platform using the default color scheme
 
-The Cinnamon Spices Build is based on [Upstream Master]((https://github.com/B00merang-Project/Windows-10/tree/8a8320252c7579a7e030c627d1e1c356e2aeae78) with the following changes
+The Cinnamon Spices Build is based on [Upstream Master](https://github.com/B00merang-Project/Windows-10/tree/8a8320252c7579a7e030c627d1e1c356e2aeae78) with the following changes
 
 * Removed theme elements not relevant for Cinnamon Desktop
 * Tweaked Grouped Window List theming to match existing window list themeing.
