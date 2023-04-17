@@ -9,7 +9,7 @@ Requirements: Cinnamon Desktop Environment and Git.
 
 1. `git clone https://github.com/anime-is-real/faded-dream-cinnamon-theme.git`
 2. `cd faded-dream-cinnamon-theme/`
-3. `cp -r "Faded Dream"/ ~/.themes/`
+3. `cp -r "Faded-Dream"/ ~/.themes/`
 4. Launch the `Themes` application in Cinnamon
 5. Click the desktop theme
 6. Click Faded Dream
