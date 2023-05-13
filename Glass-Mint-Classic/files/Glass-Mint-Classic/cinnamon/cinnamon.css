@@ -1,6 +1,8 @@
-/* ###################################################################
-  (EN) General.
-  ###################################################################*/
+/*
+===============================================================================================================
+	(EN) General.
+===============================================================================================================
+*/
 
 
 stage {
@@ -36,8 +38,7 @@ StScrollView StScrollBar {
 
 
 StScrollBar StBin#trough {
-	/* (RU) Штука по которой ползет ползунок.
-*/
+	/* (RU) Штука по которой ползет ползунок. */
 	border-radius: 4px;
 
 	background-gradient-direction: vertical;
@@ -45,8 +46,7 @@ StScrollBar StBin#trough {
 	background-gradient-end: rgba(0, 0, 0, 0.4);
 }
 StScrollBar StButton#vhandle {
-	/* (RU) Сам ползунок, только для вертикальной прокрутки.
-*/
+	/* (RU) Сам ползунок, только для вертикальной прокрутки. */
 	border-radius: 4px;
 
 	background-image: url("scroll-vhandle.svg");
@@ -59,8 +59,7 @@ StScrollBar StButton#vhandle {
 	transition-duration: 850;
 }
 StScrollBar StButton#hhandle {
-	/* (RU) Сам ползунок, только для горизонтальной прокрутки.
-*/
+	/* (RU) Сам ползунок, только для горизонтальной прокрутки.*/
 	border-radius: 4px;
 
 	background-image: url("scroll-hhandle.svg");
@@ -82,7 +81,9 @@ StScrollBar StButton#vhandle:hover {
 
 
 #Tooltip {
-	/* (RU) Всплывающие подсказки при наведении на апплеты (и прочее) на панели и в других местах (к примеру, при наведении на окна в режиме обзора рабочих областей. */
+	/* (RU) Всплывающие подсказки при наведении на апплеты (и прочее)
+	на панели и в других местах (к примеру, при наведении на окна в режиме обзора
+	рабочих областей. */
 	padding: 12px;
 	margin: 6px;
 
@@ -99,17 +100,19 @@ StScrollBar StButton#vhandle:hover {
 
 
 
-/* ===================================================================
-  (RU) Всплывающее меню (любое, что открывается с панели, в том числе и главное.
-  (EN) Popup Menu (popupMenu.js).
-  ==================================================================== */
+/*
+=========================================================================================
+	(RU) Всплывающее меню (любое, что открывается с панели, в том числе и главное.
+	(EN) Popup Menu (popupMenu.js).
+==========================================================================================
+*/
 
 
 .popup-menu-boxpointer {
 	/* (EN) Plane with popup menu. Deprecated. In Cinnamon 3.2 was changed to .menu.
-   .popup-menu-boxpointer and .popup-menu are kept for compatibility
-	with cinnamon version under 3.2. Use .menu in version 3.2 and above
-   (RU) Сама плоскость со всплывающим меню. В Сinnamon 3.2 заменена на .menu */
+	.popup-menu-boxpointer and .popup-menu are kept for compatibility
+	with cinnamon version under 3.2. Use .menu in version 3.2 and above */
+	/* (RU) Сама плоскость со всплывающим меню. В Сinnamon 3.2 заменена на .menu */
 	-boxpointer-gap: 2px;
 	-arrow-border-width: 0px;
 	-arrow-border-radius: 0px;
@@ -167,20 +170,20 @@ StScrollBar StButton#vhandle:hover {
 
 
 	/* (EN) The remaining popup-menu sizing is all done in ems, so that if you
-	override .popup-menu.font-size, everything else will scale with it.
-*/
+	override .popup-menu.font-size, everything else will scale with it. */
 
 
 .popup-menu-content {
-	/* (RU) Плоскость всплывающего меню, на которой располагаются элементы. Находится на плоскости со всплывающим меню popup-menu-boxpointer. */
+	/* (RU) Плоскость всплывающего меню, на которой располагаются элементы.
+	Находится на плоскости со всплывающим меню popup-menu-boxpointer. */
 	padding: 9px 0px 9px 0px;
 }
 
 
 
 .popup-menu-item {
-	/* (EN) Buttons (or items) in popup menus (inactive,mouse is not above it).
-   (RU) Кнопки или пункты во всплывающих плоскостях (меню) (неактивные, не наведена мышь). */
+	/* (EN) Buttons (or items) in popup menus (inactive,mouse is not above it). */
+	/* (RU) Кнопки или пункты во всплывающих плоскостях (меню) (неактивные, не наведена мышь). */
 	padding: 5px 24px 5px 24px;
 	spacing: 2px;
 	border-radius: 1px;
@@ -235,7 +238,8 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .popup-slider-menu-item {
-	/* (RU) Ползунок (слайдер) для плавной настройки уровня чего-либо. Присутствует, к примеру, в звуковом апплете (sound applet). */
+	/* (RU) Ползунок (слайдер) для плавной настройки уровня чего-либо.
+	Присутствует, к примеру, в звуковом апплете (sound applet). */
 	height: 19px;
 	min-width: 15em;
 	-slider-handle-radius: 9px;
@@ -245,7 +249,8 @@ StScrollBar StButton#vhandle:hover {
 	-slider-background-color: rgb(22, 22, 22);
 	-slider-active-background-color: rgba(172, 205, 138, 0.2);
 	-slider-border-color: rgb(172, 205, 138);
-	-slider-active-border-color: rgb(172, 205, 138); /* (RU) Если убрать, то вообще никакого не будет на активной зоне */
+	-slider-active-border-color: rgb(172, 205, 138);
+	/* (RU) Если убрать, то вообще никакого не будет на активной зоне */
 }
 
 .popup-device-menu-item {
@@ -254,8 +259,7 @@ StScrollBar StButton#vhandle:hover {
 
 .popup-inactive-menu-item {
 	/* (EN) This is used for some applet menu items to show a menu item is unselectable.
-	You can see it in the menu for the power applet.
-*/
+	You can see it in the menu for the power applet. */
 	color: black;
 }
 
@@ -268,8 +272,8 @@ StScrollBar StButton#vhandle:hover {
 }
 
 
-	/* (EN) Switches (to be used in menus).
-   (RU) Переключатели (0 или 1, on или off). */
+/* (EN) Switches (to be used in menus). */
+/* (RU) Переключатели (0 или 1, on или off). */
 
 .toggle-switch {
 	width: 64px;
@@ -299,10 +303,13 @@ StScrollBar StButton#vhandle:hover {
 
 
 
-/* ===================================================================
-* (EN) Panel (panel.js).
-* ===================================================================*/
-	/* (RU) Цвет панели (если выбрать отображать две, то двух) задается в #panel. Также цвет каждой панели можно задаеть отдельно в .panel-top и .panel-bottom . */
+/*
+=========================================================================================
+	(EN) Panel (panel.js).
+=========================================================================================
+*/
+/* (RU) Цвет панели (если выбрать отображать две, то двух) задается в #panel.
+Также цвет каждой панели можно задаеть отдельно в .panel-top и .panel-bottom . */
 
 
 #panel {
@@ -337,8 +344,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 #panel:highlight {
-	/* (EN) Hightlights panel when you go to panel edit tab in cinnamon-control-center.
-*/
+	/* (EN) Hightlights panel when you go to panel edit tab in cinnamon-control-center. */
 	background-gradient-direction: horizontal;
 	background-gradient-start: rgba(130,45,42,0.8);
 	background-gradient-end: rgba(130,45,42,0.8);
@@ -429,8 +435,12 @@ StScrollBar StButton#vhandle:hover {
 
 
 
-/* (EN) Panel edit mode,  separated for 3 parts:  #panelLeft:dnd, #panelCenter:dnd, #panelRight:dnd  (left, center, right)  */
-/* (RU) Панель в режиме редактирования,  разбита на три части:  #panelLeft:dnd, #panelCenter:dnd, #panelRight:dnd  (слева, справа и по центру, соответственно). */
+/* (EN) Panel edit mode,  separated for 3 parts:
+	#panelLeft:dnd, #panelCenter:dnd, #panelRight:dnd
+	(left, center, right) */
+/* (RU) Панель в режиме редактирования,  разбита на три части:
+	#panelLeft:dnd, #panelCenter:dnd, #panelRight:dnd
+	(слева, справа и по центру, соответственно) */
 #panelLeft:dnd,
 #panelCenter:dnd,
 #panelRight:dnd {
@@ -460,8 +470,7 @@ StScrollBar StButton#vhandle:hover {
 
 
 #panelLeft.vertical:dnd {
-	/* (EN) same as panelLeft:dnd, but on vertical panel
-*/
+	/* (EN) same as panelLeft:dnd, but on vertical panel */
 	border-radius: 6px;
 
 	background-gradient-direction: horizontal;
@@ -471,8 +480,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 #panelCenter.vertical:dnd {
-	/* (EN) same as panelCenter:dnd, but on vertical panel
-*/
+	/* (EN) same as panelCenter:dnd, but on vertical panel */
 	border-radius: 6px;
 
 	background-gradient-direction: horizontal;
@@ -486,8 +494,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 #panelRight.vertical:dnd {
-	/* (EN) same as panelRight:dnd, but on vertical panel
-*/
+	/* (EN) same as panelRight:dnd, but on vertical panel */
 	border-radius: 6px;
 
 	background-gradient-direction: horizontal;
@@ -499,15 +506,16 @@ StScrollBar StButton#vhandle:hover {
 
 
 
-/* ===================================================================
-  (EN) Looking Glass.
-  (RU) Линза.
-   =================================================================== */
-	/* (EN) Lens for debuging. Now is replaced by GTK 3 alternative (24.09.2015),
-	from theme in Cinnamon 2.8 removed all from this category, except #LookingGlassDialog {}
-   (RU) Линза для проведения отладки. В настоящее время заменена альтернативной программой с интерфейсом GTK 3 (24.09.2015),
-	из темы новой версии Cinnamon 2.8 удалено все из данной категории, кроме #LookingGlassDialog {}
-*/
+/*
+=========================================================================================
+	(EN) Looking Glass.
+	(RU) Линза.
+========================================================================================= */
+/* (EN) Lens for debuging. Now is replaced by GTK 3 alternative (24.09.2015),
+from theme in Cinnamon 2.8 removed all from this category, except #LookingGlassDialog {} */
+/* (RU) Линза для проведения отладки.
+В настоящее время заменена альтернативной программой с интерфейсом GTK 3 (24.09.2015),
+из темы новой версии Cinnamon 2.8 удалено все из данной категории, кроме #LookingGlassDialog {} */
 
 
 #LookingGlassDialog {
@@ -525,8 +533,7 @@ StScrollBar StButton#vhandle:hover {
 
 
 #LookingGlassDialog > #Toolbar {
-	/* (RU) Панель с кнопками выбора в линзе.
-*/
+	/* (RU) Панель с кнопками выбора в линзе. */
 	border-radius: 8px 4px 4px 8px;
 	height: 28px;
 
@@ -591,8 +598,7 @@ StScrollBar StButton#vhandle:hover {
 
 
 .lg-obj-inspector-button {
-	/* (RU) Кнопки вверху в субпанели инспектора (линзы)
-*/
+	/* (RU) Кнопки вверху в субпанели инспектора (линзы) */
 	border-radius: 4px;
 	padding: 4px;
 
@@ -622,16 +628,16 @@ StScrollBar StButton#vhandle:hover {
 
 
 .lg-obj-inspector-title {
-	/* (RU) Название кнопки (надпись в ней) .lg-obj-inspector-button (вверху в субпанели инспектора (линзы))
-*/
+	/* (RU) Название кнопки (надпись в ней) .lg-obj-inspector-button
+	(вверху в субпанели инспектора (линзы)) */
 	spacing: 4px;
 	color: rgb(230, 230, 230);
 }
 
 
 .lg-dialog .cinnamon-link {
-	/* (RU) Ссылки на запущенные приложения в циннамоне (не кнопки, а те ссылки, что в виде текста со значками находятся в области просмотра линзы)
-*/
+	/* (RU) Ссылки на запущенные приложения в циннамоне
+	(не кнопки, а те ссылки, что в виде текста со значками находятся в области просмотра линзы) */
 	font-weight: bold;
 	color: rgb(230, 230, 230);
 	transition-duration: 150;
@@ -699,11 +705,13 @@ StScrollBar StButton#vhandle:hover {
 
 
 
-/* ===================================================================
-  (EN) Date applet.
-  (RU) Апплет календаря (calendar.js).
-   ===================================================================*/
-	/* (RU) Апплет с календарем и часами. */
+/*
+=========================================================================================
+	(EN) Date applet.
+	(RU) Апплет календаря (calendar.js).
+=========================================================================================
+*/
+/* (RU) Апплет с календарем и часами. */
 
 
 .calendar {
@@ -746,14 +754,15 @@ StScrollBar StButton#vhandle:hover {
 	/* (RU) Клетка (база) с одним днем месяца, в ней пишется число этого дня. Именно клетка (база), а не кнопка. */
 	/*font-size: 9pt;*/ /* (RU) отвечает за размер шрифта не только в кнопках дней месяца (чисел), но подобное есть и в .calendar-day . */
 	text-align: center;
-	width: 38px;
-	height: 28px;
+	width: 48px;
+	height: 38px;
 	max-height: 2.4em;
 	padding: 5px 0px 5px 0px;
 }
 
 .calendar-day {
-	/* (RU) Кнопки с днями (числами) месяца, располагаются над (поверх, ближе к пользователю клетками (базами). */
+	/* (RU) Кнопки с днями (числами) месяца, располагаются над
+	        (поверх, ближе к пользователю клетками (базами). */
 	/* (EN) Hack used in lieu of border-collapse - see calendar.js . */
 	font-weight: 550;
 	/* (RU) если не добавить фон градиентом, тень box-shadow будет иметь острые углы,
@@ -765,6 +774,14 @@ StScrollBar StButton#vhandle:hover {
 	color: rgb(230, 230, 230);
 	text-shadow: -1px 1px 3px rgba(0, 0, 0, 1);
 	box-shadow: 0px 0px 4px 1px rgba(22,22,22, 0.9);
+
+	transition-duration: 450;
+}
+
+.calendar-day:hover {
+	box-shadow: inset 0 0 0 1px rgb(172, 205, 138);
+
+	transition-duration: 250;
 }
 
 .calendar-day-top {
@@ -786,7 +803,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .calendar-today {
-/* Кнопка, соответствующая текущему дню недели */
+	/* (RU) Кнопка, соответствующая текущему дню недели */
 	font-weight: 600;
 
 	/* (RU) без рамки (border) будет тень налазить. */
@@ -812,9 +829,16 @@ StScrollBar StButton#vhandle:hover {
 	text-shadow: -1px 1px 1px rgba(255, 0, 0, 1);
 	/*color: red;*/
 }
+.calendar-today:hover {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(194, 221, 167, 0.5);
+	background-gradient-end:  rgba(194, 221, 167, 0.6);
+	box-shadow: inset 0 0 0 1px rgb(194, 221, 167);
+}
 
 .calendar-other-month-day {
-	/* (EN) Other days of month (that belong to another month, but are displayed on current page. */
+	/* (EN) Other days of month (that belong to another month,
+	        but are displayed on current page.*/
 	/* (RU) Другие дни месяца (те, что принадлежат другому месяцу, но просто попали в таблицу). */
 	color: rgb(109,91,74);
 }
@@ -825,9 +849,90 @@ StScrollBar StButton#vhandle:hover {
 }
 
 
+.calendar-events-main-box {
+	/* (RU) Панель с событиями выбранного дня. Слева от самого календаря. */
+	/* (EN) Panel with chosen day events. At the left of calendar itself. */
+
+	min-width: 300px;
+	padding: 8px 12px 6px 12px;
+	border-radius: 4px;
+
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(0, 0, 0, 0.3);
+	background-gradient-end:   rgba(0, 0, 0, 0.3);
+}
+
+.calendar-events-no-events-button {
+	padding: 8px 12px;
+	border-radius: 0.5px;
+
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(0, 0, 0, 0.0);
+	background-gradient-end:  rgba(0, 0, 0, 0.1);
+	box-shadow: inset 1px 0px 0px 0px rgb(194, 221, 167);
+	text-shadow: -1px 1px 2px rgba(0, 0, 0, 1);
+	color: white;
+
+	transition-duration: 450;
+}
+
+.calendar-events-no-events-button:hover {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(172, 205, 138, 0.4);
+	background-gradient-end:   rgba(172, 205, 138, 0.55);
+}
+
+
+.calendar-event-button {
+	/* (RU) кнопка с событием с приложения gnome-calendar */
+	/* (EN) button with event from gnome-calendar app */
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(0, 0, 0, 0.0);
+	background-gradient-end:  rgba(0, 0, 0, 0.1);
+	box-shadow: inset 1px 0px 0px 0px rgb(194, 221, 167);
+	text-shadow: -1px 1px 2px rgba(0, 0, 0, 1);
+	color: white;
+
+	transition-duration: 450;
+}
+
+.calendar-event-button:hover {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(172, 205, 138, 0.4);
+	background-gradient-end:   rgba(172, 205, 138, 0.55);
+}
+
+.calendar-event-color-strip {
+	width: 0px; /* can't change it's color */
+}
+
+
+.calendar-day-event-dot-box {
+	margin-top: 40px;
+
+	/* any other way do do something like this? */
+	max-rows: 2;
+}
+
+.calendar-day-event-dot {
+	margin: 1px;
+	border-radius: 2px;
+	width: 4px;
+	height: 4px;
+	box-shadow: inset 0px 0px 0px 10px rgb(172, 205, 138); /* background-color doesn't work */
+}
+
+.calendar-event-time-future {
+    font-weight: bold;
+}
+
+
+
 
 	/* (RU) Кнопки перелистывания месяцев и годов. ============================================
-=========================================================================================== */
+================================================================================================================= */
 
 
 .calendar-change-month-back,
@@ -885,9 +990,9 @@ StScrollBar StButton#vhandle:hover {
 
 
 
-/* ===================================================================
+/* =========================================================================================
    (EN) Notifications.
-   =================================================================== */
+   ========================================================================================= */
 
 
 #notification {
@@ -1000,10 +1105,10 @@ StBin.menu #notification {
 
 
 
-/* ===================================================================
+/* =========================================================================================
   (EN) Alt Tab.
   (RU) Переключатель окон с помощью alt+tab.
-* ===================================================================*/
+* =========================================================================================*/
 
 
 #altTabPopup {
@@ -1107,10 +1212,10 @@ StBin.menu #notification {
 
 
 
-/* ===================================================================
+/* =========================================================================================
   (EN) Modal dialogs.
   (RU) Дополнительные (всплывающие) диалоги.
-  ===================================================================*/
+  =========================================================================================*/
 /*
 (RU) Всплывающие (дополнительные) диалоги с информацией и кнопками (да, нет, закрыть, т.д.) и все что с ними связано.
 Конкренно всплывающие диалоги с информацией о апплете/десклете находятся в разделе About Dialog (ниже).
@@ -1180,9 +1285,9 @@ StBin.menu #notification {
 
 
 
-/* ===================================================================
+/* =========================================================================================
   (EN) About Dialog (applet.js and desklet.js).
-   =================================================================== */
+   ========================================================================================= */
 /* (EN) probably is not used now, I saw gtk window instead of this one */
 /* (RU) Конкренно всплывающие диалоги с информацией о апплете/десклете, общие данные о всплывающих диалогах находятся выше в разделе Modal Dialogs (предыдущем). */
 
@@ -1232,9 +1337,9 @@ StBin.menu #notification {
 
 
 
-/* ===================================================================
+/* =========================================================================================
   (EN) Run dialog.
-   ===================================================================*/
+   =========================================================================================*/
 /* Всплывающее окно для запуска программ. Вызывается нажатием двух клавиш: alt, f2 */
 
 
@@ -1399,9 +1504,9 @@ StBin.menu #notification {
 
 
 
-/* ===================================================================
+/* =========================================================================================
   (EN) Policykit authentication dialog.
-  ===================================================================*/
+  =========================================================================================*/
 
 
 .polkit-dialog {
@@ -1489,9 +1594,9 @@ StBin.menu #notification {
 
 
 
-/* ===================================================================
+/* =========================================================================================
   (EN) Magnifier.
-  =================================================================== */
+  ========================================================================================= */
 
 
 .magnifier-zoom-region {
@@ -1505,9 +1610,9 @@ StBin.menu #notification {
 
 
 
-/* ===================================================================
+/* =========================================================================================
   (EN) On screen keyboard.
-  =================================================================== */
+  ========================================================================================= */
 
 
 #keyboard {
@@ -1581,20 +1686,20 @@ StBin.menu #notification {
 
 
 
-/* ###################################################################
+/* ===============================================================================================================
 * (EN) Cinnamon Specific Section
-* #################################################################### */
+* ===============================================================================================================# */
 
 
 
 /* ==================================================================
-  (EN) Menu (menu.js)
-  =================================================================== */
+  (EN) Main Menu (menu.js)
+  ========================================================================================= */
 
 
 /* (EN) Search entry.
    (RU) Плоскость поиска.
-  =================================================================== */
+  ========================================================================================= */
 
 
 .menu-search-box:ltr {
@@ -1634,7 +1739,7 @@ StBin.menu #notification {
 
 /* (EN) Favourites-box.
    (RU) Плоскость избранного.
-  =================================================================== */
+  ========================================================================================= */
 
 
 .menu-favorites-box {
@@ -1709,7 +1814,7 @@ StBin.menu #notification {
 
 /* (EN) Categories.
    (RU) Категории приложений в меню.
-  =================================================================== */
+  ========================================================================================= */
 
 
 .menu-categories-box {
@@ -1763,7 +1868,7 @@ StBin.menu #notification {
 
 /* (EN) Applications.
    (RU) Приложения главного меню, разбиваются на категории.
-  =================================================================== */
+  ========================================================================================= */
 
 
 .menu-applications-outer-box {
@@ -1893,9 +1998,9 @@ StBin.menu #notification {
 
 
 
-/* ===================================================================
+/* =========================================================================================
 * (EN) Window list (windowList.js)
-* ===================================================================*/
+* =========================================================================================*/
 /* (RU) Стандартный апплет: все запущенные окна отображаются на панели. */
 /* (RU) Миниатюры предпросмотра окон при наведении мыши на кнопки открытых окон, в частности, скругление углов, настраиваются в
 	разделе переключателя Alt-Tab в разделе .switcher-list {}. */
@@ -2021,10 +2126,10 @@ StBin.menu #notification {
 
 
 /*
-===================================================================
+=========================================================================================
 (EN) Grouped window list (grouped-window-list@cinnamon.org)
 (RU) Сгруппированный список окон
-===================================================================
+=========================================================================================
 */
 /* (RU) Виджет со списком окон, что отображаются группами. Либо только значками, либо еще и с подписями. */
 
@@ -2164,10 +2269,10 @@ StBin.menu #notification {
 
 
 
-/* ===================================================================
+/* =========================================================================================
   (EN) Applets (applet.js).
   (RU) Аплеты. Общие стили для всех апплетов.
-* ==================================================================== */
+* ========================================================================================== */
 	/* (RU) Апплеты - небольшие объекты (дополнения), располагающиеся на панели */
 
 
@@ -2176,6 +2281,7 @@ StBin.menu #notification {
 	padding-left: 5px;
 	padding-right: 5px;
 	font-weight: normal;
+	border-radius: 1px;
 	border-radius: 1px;
 	/*min-width: 12px;*/
 	/* (RU) убрал чтобы апплеты не уменьшались в размерах в случае,
@@ -2198,8 +2304,8 @@ StBin.menu #notification {
 .applet-box:hover {
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(194, 221, 167, 0.3);
-	background-gradient-end:  rgba(172, 205, 138, 0.7);
-	box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.8);
+	background-gradient-end:  rgba(172, 205, 138, 0.6);
+	box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.6);
 	/*color: white;*/
 	/* (RU) этот color не для текста, а для картинок стандартных, но не тех,
 	что назначаются изображениями темой icon theme */
@@ -2213,7 +2319,7 @@ StBin.menu #notification {
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(172, 205, 138, 0.4);
 	background-gradient-end: rgba(194, 221, 167, 0.8);
-	box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.7);
+	box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.7);
 }
 
 
@@ -2300,10 +2406,10 @@ StBin.menu #notification {
 
 
 
-/* ===================================================================
+/* =========================================================================================
   (EN) Notification Applet.
   (RU) Апплет уведомлений.
-  ==================================================================== */
+  ========================================================================================== */
 	/* (RU) Присылает в верхнем правом углу уведомления пользователю */
 
 
@@ -2336,7 +2442,7 @@ StBin.menu #notification {
 /*
 (EN) Check Boxes.
 (RU) Переключатели вкл\выкл в виде галочек.
-====================================================================
+==========================================================================================
 */
 
 
@@ -2398,9 +2504,9 @@ StBin.menu #notification {
 
 
 
-/* ===================================================================
+/* =========================================================================================
   (EN) Sound Applet (status/volume.js)
-  =================================================================== */
+  ========================================================================================= */
 
 	/* (RU) Стандартный апплет настройки громкости звука как всей системы, так и отдельных приложений.
 	Также можно запускать музыкальный проигрыватель и управлять им. */
@@ -2540,7 +2646,7 @@ StBin.menu #notification {
 .sound-player-overlay {
 	/* (RU) Плоскость с названием песни, исполнителем, кнопками старта/паузы/листания. */
 	/* (EN) Plane with song, artist name; start/pause/next buttons. */
-	width: 300px;
+	min-width: 400px;
 	height: 70px;
 	padding: 15px;
 	spacing: 0.5em;
@@ -2572,7 +2678,7 @@ StBin.menu #notification {
 
 /* (EN) Old items. They are absent in new theme
    (RU) Старые пункты. Отсутствуют в стандартной теме
-  =================================================================== */
+  ========================================================================================= */
 
 .sound-button-container {
 	/* (RU) Устарело. Отсутствует в стандартной теме. */
@@ -2691,11 +2797,11 @@ padding: .4em 1.75em;
 
 
 
-/* ===================================================================
+/* =========================================================================================
   (EN) Workspace Switcher applet (workspaceSwitcher.js)
   (RU) Апплет переключения рабочих столов.
    Переключения рабочих столов на панели щелчком или колесиком мыши.
-  ==================================================================== */
+  ========================================================================================== */
 
 
 /* (RU) Если в настройках апплета были выбраны "простые кнопки". */
@@ -2733,7 +2839,6 @@ padding: .4em 1.75em;
 .workspace-button:hover {
 	box-shadow: inset 0 0 0 1px rgb(172, 205, 138);
 }
-
 .workspace-button:outlined {
 	color: black;
 	background-gradient-direction: vertical;
@@ -2741,13 +2846,18 @@ padding: .4em 1.75em;
 	background-gradient-end:  rgba(172, 205, 138, 0.4);
 	box-shadow: inset 0 0 0 1px rgb(172, 205, 138);
 }
+.vertical .workspace-button {
+	padding-top: 0.1em;
+	padding-bottom: 0.1em;
+	margin-bottom: 1px;
+}
 
 
 
 
 /* (RU) Если в настройках апплета были выбраны кнопки с "видимым представлением рабочих областей"
    (EN) Controls the style when using the "Visual representation" option
-  ==================================================================== */
+  ========================================================================================== */
 
 
 .workspace-graph {
@@ -2757,11 +2867,12 @@ padding: .4em 1.75em;
 .workspace-graph .workspace {
 	/* (EN) workspace button (with preview of it's windows) on workspace-switcher applet */
 	border: 1px solid black;
-	/*background-gradient-direction: vertical;
-	background-gradient-start: rgb(41,40,38);
-	background-gradient-end:  rgb(41,40,38);*/
+	margin: 3px 1px;
 	background-color: rgba(0, 0, 0, 0.2);
-
+	width: 60px; /* is applied for vertical only */
+}
+.workspace-graph .workspace:hover {
+	/* doesn't work */
 }
 .workspace-graph .workspace:first-child {
 	/*box-shadow: -1px 0 0 0px black;*/
@@ -2771,12 +2882,17 @@ padding: .4em 1.75em;
 	/*box-shadow: 1px 0 0 0px black;*/
 	border-right-width: 2px;
 }
+.vertical .workspace-graph .workspace {
+	margin: 1px;
+	margin-bottom: 2px;
+}
 .workspace-graph .workspace:active {
 	/* (EN) currently active (chosen) workspace */
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(194, 221, 167, 0.5);
 	background-gradient-end:  rgba(172, 205, 138, 0.6);
 	/*box-shadow: inset 0px -1px 0px 0px rgb(194, 221, 167);*/
+	box-shadow: 0 0 0 1px rgb(172, 205, 138);
 }
 .workspace-graph .workspace .windows {
 	/* (EN) windows of inactive (non-chosen) workspace */
@@ -2796,10 +2912,10 @@ padding: .4em 1.75em;
 
 
 
-/* ===================================================================
+/* =========================================================================================
 * (EN) Panel Launchers Applet (panelLaunchers.js)
 * (RU) Апплет значков запуска.
-* ===================================================================*/
+* =========================================================================================*/
 /* (RU) Это апплет с кнопками (значка) быстрого запуска программ прямо на панели. */
 
 
@@ -2926,9 +3042,9 @@ padding: .4em 1.75em;
 
 
 
-/* ===================================================================
+/* =========================================================================================
  * (EN) User Applet.
- * =================================================================== */
+ * ========================================================================================= */
 	/* (RU) Апплет с иконкой пользователя и некоторыми действиям с компьютером. */
 
 
@@ -2954,18 +3070,20 @@ padding: .4em 1.75em;
 
 
 
-/* ###################################################################
+/* ===============================================================================================================
 *  (EN) All for overview mode(s)
 *  (RU) Все для режима(ов) обзора
-*  ################################################################### */
+*  =============================================================================================================== */
 
 
 
 
-/* ====================================================================================
+/*
+===============================================================================================================
    (EN) Overview corner.
    (RU) Угол для перехода в режим обзора.
-   ==================================================================================== */
+===============================================================================================================
+*/
 
 
 #overview-corner {
@@ -2997,10 +3115,12 @@ padding: .4em 1.75em;
 
 
 
-/* ================================================================================================
+/*
+===============================================================================================================
    (RU) Сами режимы обзора. Общие для обоих режимов обзора параменты.
    (EN) Overview modes. Common pameters for both overview modes.
-   ================================================================================================ */
+===============================================================================================================
+*/
 
 
 #overview {/* (RU) Узнать: что это */
@@ -3020,10 +3140,12 @@ padding: .4em 1.75em;
 
 
 
-/* =============================================================================================
+/*
+===============================================================================================================
   (RU) Режим обзора рабочих областей (столов).
   (EN) Workspace Overview mode.
-  ============================================================================================== */
+===============================================================================================================
+*/
 
 
 .expo-background {
@@ -3096,9 +3218,9 @@ padding: .4em 1.75em;
 	/* (EN) Names (captions) of windows with workspaces previews  in workspace overview mode.
 	/* (RU) Названия (подписи) к окошкам предпросмотра рабочих областей в режиме обзора рабочих областей. */
 	font-weight: bold;
-	caret-size: 1px;
-	padding: 8px 16px 7px 16px;
-	height: 20px;
+	caret-size: 0.1em;
+	padding: 0.5em 16px 0.4em 16px;
+	height: 1.2em;
 	border-radius: 1px;
 
 	color: rgb(210, 210, 210);
@@ -3116,7 +3238,7 @@ padding: .4em 1.75em;
 }
 .expo-workspaces-name-entry#selected {
 	background-color: rgba(172, 205, 138, 0.7);
-	box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.8);
+	box-shadow: 0px 0px 4px 1px rgba(50, 50, 50, 0.8);
 	border: 1px solid rgb(172, 205, 138);
 
 	color: black;
@@ -3179,10 +3301,10 @@ padding: .4em 1.75em;
 
 
 
-/* ==================================================================================
+/* ========================================================================================================
   (RU) Режим обзора окон.
   (EN) Windows Overview mode.
-  ===================================================================================*/
+  =========================================================================================================*/
 
 
 .window-close {
@@ -3286,9 +3408,9 @@ padding: .4em 1.75em;
 
 
 
-/* ======================================================================
+/* ============================================================================================
  * (RU) Desklets (desklet.js) Тут все десклеты, что и на рабочем столе.
- * ======================================================================*/
+ * ============================================================================================*/
 
 
 .desklet {
@@ -3341,9 +3463,9 @@ padding: .4em 1.75em;
 
 
 
-/* ===================================================================
+/* =========================================================================================
  * Clock Desklet (desklet.js)
- * ===================================================================*/
+ * =========================================================================================*/
 
 .clock-desklet-label {
 }
@@ -3351,10 +3473,10 @@ padding: .4em 1.75em;
 
 
 
-/* =========================================================================================
+/* ===============================================================================================================
   (EN) Snap/Tile Chrome.
   (RU) Эффекты, которые возникают при перетаскивании окон к краям монитора (рабочей области).
-   ========================================================================================== */
+   ================================================================================================================ */
 
 
 .info-osd {
@@ -3366,9 +3488,9 @@ padding: .4em 1.75em;
 	font-weight: bold;
 	padding: 12px 36px 11px 36px;
 	border-radius: 1px;
-	
+
 	background-color: rgba(172, 205, 138, 0.7);
-	box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.8);
+	box-shadow: 0px 0px 4px 1px rgba(50, 50, 50, 0.8);
 	border: 1px solid rgb(172, 205, 138);
 
 	color: black;
