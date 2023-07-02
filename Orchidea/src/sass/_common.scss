@@ -1401,7 +1401,8 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 .grouped-window-list-item-box.bottom {
     // margin-top: 4px;
     // margin-bottom: 4px;
-    border: 4px solid transparent;
+    // border: 4px solid transparent;
+    border: 0;
     padding: 0 8px;
 }
 
@@ -1412,8 +1413,8 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 }
 
 .grouped-window-list-item-box:focus {
-    background: rgba($inverse_fg_color, 0.25);
-    color: $panel_fg_color
+    background: $primary_color;
+    color: $panel_fg_color;
 }
 
 .grouped-window-list-item-box:active:focus:hover,
@@ -1448,19 +1449,23 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 .grouped-window-list-thumbnail-menu {
 }
 .grouped-window-list-thumbnail-menu .item-box {
-    background: transparent;
+    background: $panel_bg_color;
+    color: $panel_fg_color;
     padding: 12px;
     border-radius: $buttons_radius;
     spacing: 4px;
+    margin: 6px;
 }
 .grouped-window-list-thumbnail-menu .item-box:outlined {
     padding: 6px;
 }
 .grouped-window-list-thumbnail-menu .item-box:selected {
-    background: transparent;
+    // background: $panel_bg_color;
 }
 .grouped-window-list-thumbnail-menu .thumbnail {
     width: 256px;
+    // background: $panel_bg_color;
+    // color: $panel_fg_color;
 }
 .grouped-window-list-thumbnail-menu .separator {
     width: 1px;
