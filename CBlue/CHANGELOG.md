@@ -1,5 +1,6 @@
 ## Versions
 
+* 2.7: increase virtual keyboard font.
 * 2.6: color for pointer location with Ctrl (system settings>mouse) and README update (conky).
 * 2.5: modification of the calendar (Cinnamon 5.2) and notifications.
 * 2.4: better visibility of non-work days in calendar.
