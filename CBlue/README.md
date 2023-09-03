@@ -1,7 +1,7 @@
 ## CBlue
 
-### A semi-transparent Cinnamon theme, with wallpaper + Firefox extra and Conky. Inspired by the CBlack theme (author: cloweling).
-If you want a panel that is not transparent, modify the line `282` of the file `~/.themes/CBlue/cinnamon/cinnamon.css`.
+### A semi-transparent Cinnamon theme, with wallpaper + Firefox extra, Conky and Plank's theme. Inspired by the CBlack theme (author: cloweling).
+If you want a panel that is not transparent, modify the line `231` of the file `~/.themes/CBlue/cinnamon/cinnamon.css`.
 For example: background-color: rgba(53, 57, 69, `0.50`); . A value of `0` is equivalent to total transparency and `1` is totally opaque. Restart Cinnamon (Ctrl+Alt+Esc) for immediate modification.
 
 **Don't hesitate to bring up inconsistencies in the theme or the extras** [here](https://github.com/Bundy01/cinnamon-spices-themes/issues).
@@ -9,7 +9,7 @@ For example: background-color: rgba(53, 57, 69, `0.50`); . A value of `0` is equ
 
 ## Wallpaper
 
-It is located in the directory `~/.themes/CBlue/cinnamon/`.
+It is located in the directory `~/.themes/CBlue/cinnamon/wallpaper.png`.
 
 
 ## Firefox extra
@@ -20,10 +20,10 @@ Just copy the file `~/.themes/CBlue/cinnamon/userChrome.css` and paste it into `
 #### From Firefox 69 and after:
 You must type `about:config` in the address bar and then modify the value `toolkit.legacyUserProfileCustomizations.stylesheets` by double-clicking on it to switch it to `TRUE`.
 
-![example](https://i.ibb.co/WtC5R3G/extra.png)
+![example](https://github.com/Bundy01/cinnamon-spices-themes/blob/76ecd5df3cd8936caafacd0f63793baf5d0f1e41/CBlue/extra.png)
 
 #### From Firefox 77 and after:
-You need to reinstall the `userChrome.css` file in the Firefox profile. To make sure you get the latest version of the theme, follow this [link](https://cinnamon-spices.linuxmint.com/files/themes/CBlue.zip?) or install the 'Spices Update' applet.
+You need to reinstall the `userChrome.css` file in the Firefox profile.
 
 **Without this modifications, the extra doesn't work.**
 
@@ -51,6 +51,14 @@ If the module is not present,
 ```
 * If you have the `/etc/X11/xorg.conf` file, don't create the previous file but look for the `Section "Module"` line, then add after that line `Load "dbe"`. 
 * Then restart X (control+alt+backspace).
+
+
+## Plank's theme
+
+* Copy the file `~/.theme/CBlue/cinnamon/dock.theme` to `~/.local/share/plank/themes/CBlue/`.
+* I recommend the following settings:
+
+![](https://github.com/Bundy01/cinnamon-spices-themes/blob/2d6bc2b84207a66c5caae4223af4873f743f5d3e/CBlue/settings-CBlue.png)
 
 
 ## License
