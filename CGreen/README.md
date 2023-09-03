@@ -20,7 +20,7 @@ Just copy the file `~/.themes/CGreen/cinnamon/userChrome.css` and paste it into 
 #### From Firefox 69 and after:
 You must type `about:config` in the address bar and then modify the value `toolkit.legacyUserProfileCustomizations.stylesheets` by double-clicking on it to switch it to `TRUE`.
 
-![example](https://i.ibb.co/WtC5R3G/extra.png)
+![example](https://github.com/Bundy01/cinnamon-spices-themes/blob/e77599088eac84861695d447a79a932a24e9128c/CGreen/extra.png)
 
 #### From Firefox 77 and after:
 You need to reinstall the `userChrome.css` file in the Firefox profile.
@@ -58,7 +58,7 @@ If the module is not present,
 * Copy the file `~/.theme/CGreen/cinnamon/dock.theme` to `~/.local/share/plank/themes/CGreen/`.
 * I recommend the following settings:
 
-![](https://pix.milkywan.fr/TM7UJtPg)
+![](https://github.com/Bundy01/cinnamon-spices-themes/blob/aa35db7bc067953441b48ad03d696be67fccea35/CGreen/settings-CGreen.png)
 
 
 ## License
