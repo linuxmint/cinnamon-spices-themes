@@ -9,7 +9,7 @@ For example: background-color: rgba(53, 57, 69, `0.50`); . A value of `0` is equ
 
 ## Wallpaper
 
-It is located in the directory `~/.themes/CGreen/cinnamon/wallpaper.png`.
+It is located in the directory `~/.themes/CGreen/cinnamon/Wallpaper.png`.
 
 
 ## Firefox extra
@@ -20,7 +20,7 @@ Just copy the file `~/.themes/CGreen/cinnamon/userChrome.css` and paste it into 
 #### From Firefox 69 and after:
 You must type `about:config` in the address bar and then modify the value `toolkit.legacyUserProfileCustomizations.stylesheets` by double-clicking on it to switch it to `TRUE`.
 
-![example](https://github.com/Bundy01/cinnamon-spices-themes/blob/e77599088eac84861695d447a79a932a24e9128c/CGreen/extra.png)
+![example](https://raw.githubusercontent.com/Bundy01/cinnamon-spices-themes/e77599088eac84861695d447a79a932a24e9128c/CGreen/extra.png)
 
 #### From Firefox 77 and after:
 You need to reinstall the `userChrome.css` file in the Firefox profile.
@@ -58,7 +58,7 @@ If the module is not present,
 * Copy the file `~/.theme/CGreen/cinnamon/dock.theme` to `~/.local/share/plank/themes/CGreen/`.
 * I recommend the following settings:
 
-![](https://github.com/Bundy01/cinnamon-spices-themes/blob/aa35db7bc067953441b48ad03d696be67fccea35/CGreen/settings-CGreen.png)
+![](https://raw.githubusercontent.com/Bundy01/cinnamon-spices-themes/aa35db7bc067953441b48ad03d696be67fccea35/CGreen/settings-CGreen.png)
 
 
 ## License
