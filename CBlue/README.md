@@ -20,7 +20,7 @@ Just copy the file `~/.themes/CBlue/cinnamon/userChrome.css` and paste it into `
 #### From Firefox 69 and after:
 You must type `about:config` in the address bar and then modify the value `toolkit.legacyUserProfileCustomizations.stylesheets` by double-clicking on it to switch it to `TRUE`.
 
-![example](https://i.ibb.co/WtC5R3G/extra.png)
+![example](https://github.com/Bundy01/cinnamon-spices-themes/blob/76ecd5df3cd8936caafacd0f63793baf5d0f1e41/CBlue/extra.png)
 
 #### From Firefox 77 and after:
 You need to reinstall the `userChrome.css` file in the Firefox profile.
@@ -58,7 +58,7 @@ If the module is not present,
 * Copy the file `~/.theme/CBlue/cinnamon/dock.theme` to `~/.local/share/plank/themes/CBlue/`.
 * I recommend the following settings:
 
-![](https://pix.milkywan.fr/JPwBw1q0)
+![](https://github.com/Bundy01/cinnamon-spices-themes/blob/2d6bc2b84207a66c5caae4223af4873f743f5d3e/CBlue/settings-CBlue.png)
 
 
 ## License
