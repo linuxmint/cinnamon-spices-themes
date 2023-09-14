@@ -1,5 +1,6 @@
 ## Versions
 
+* 2.9: fixed two small bugs (in menu and when restarting Cinnamon) and modifications to calendar/notifications and Plank theme.
 * 2.8: add wallpaper, Plank's theme and minor calendar touch-up + panel.
 * 2.7: increase virtual keyboard font.
 * 2.6: color for pointer location with Ctrl (system settings>mouse) and README update (conky).
