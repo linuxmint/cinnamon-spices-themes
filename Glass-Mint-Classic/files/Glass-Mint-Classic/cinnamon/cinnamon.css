@@ -2647,7 +2647,7 @@ StBin.menu #notification {
 	/* (RU) Плоскость с названием песни, исполнителем, кнопками старта/паузы/листания. */
 	/* (EN) Plane with song, artist name; start/pause/next buttons. */
 	min-width: 400px;
-	height: 70px;
+	min-height: 70px;
 	padding: 15px;
 	spacing: 0.5em;
 	border-radius: 6px 6px 0 0;
@@ -2826,8 +2826,12 @@ padding: .4em 1.75em;
 
 .workspace-button {
 	/* (RU) Кнопки на плоскости апплета переключателя рабочих областей. */
-	width: 50px;
+	width: 55px;
+	height: 10px; /* doesn't work */
 	font-size: 0.9em;
+	/*margin-bottom: 2px;*/  /* doesn't work */
+
+	border-bottom: 1px solid transparent;
 
 	color: rgb(172, 205, 138); /* (RU) Цвет надписи (цифры) на кнопке рабочей области. */
 	background-gradient-direction: vertical;
@@ -2867,9 +2871,12 @@ padding: .4em 1.75em;
 .workspace-graph .workspace {
 	/* (EN) workspace button (with preview of it's windows) on workspace-switcher applet */
 	border: 1px solid black;
-	margin: 3px 1px;
+	margin: 2px 1px;
 	background-color: rgba(0, 0, 0, 0.2);
 	width: 60px; /* is applied for vertical only */
+	height: 32px;
+	/* like panel, but if you specify lesser - it'll be stretched */
+	/* any should be specified, otherwise it'll be too big */
 }
 .workspace-graph .workspace:hover {
 	/* doesn't work */
@@ -2883,8 +2890,7 @@ padding: .4em 1.75em;
 	border-right-width: 2px;
 }
 .vertical .workspace-graph .workspace {
-	margin: 1px;
-	margin-bottom: 2px;
+	margin: 1px 1px 2px 1px;
 }
 .workspace-graph .workspace:active {
 	/* (EN) currently active (chosen) workspace */
