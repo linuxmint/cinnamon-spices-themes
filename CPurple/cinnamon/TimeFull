@@ -1,0 +1,70 @@
+----------------------------------------------------------------------------------------
+-- Modified by Bundy01, inspired by the work of satya164 - Conky Metro Clock. Then JoeEnderman just messed with some hex values.         --
+-- Change the 'enp3s0f1' interface if you are using another one:                      --
+-- ex: 'eth0, wlan0…' (line 69).'ip addr' or 'ifconfig' to know it.                   --
+--                                                                                    --
+-- Depends on curl to get the IP and Brizel font: https://www.dafont.com/brizel.font  --
+-- Run this command at startup with a few seconds delay for a VPN connection:	      --
+-- sh -c "conky -c ~/.conky/TimeFull &" %u                                            --
+-- License: GPL.                                                                      --
+----------------------------------------------------------------------------------------
+
+conky.config = {
+
+background = true,
+use_xft = true,
+xftalpha = 0.8,
+
+-- Update interval in seconds.
+update_interval = 1.0,
+
+-- This is the number of times Conky will update before quitting.
+-- Set to zero to run forever.
+total_run_times = 0,
+
+-- Create own window instead of using desktop.
+own_window = true,
+own_window_argb_visual = false,
+own_window_class = 'Conky',
+own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+own_window_transparent = true,
+own_window_type = 'desktop',
+
+-- Use double buffering (reduces flicker, may not work for everyone).
+double_buffer = true,
+
+-- Subtract file system buffers from used memory?
+no_buffers = true,
+
+-- set to true if you want all text to be in uppercase.
+uppercase = false,
+
+-- Number of cpu samples to average.
+-- Set to 1 to disable averaging.
+cpu_avg_samples = 2,
+
+-- Number of net samples to average.
+-- Set to 1 to disable averaging.
+net_avg_samples = 2,
+
+-- Force UTF8? note that UTF8 support required XFT.
+override_utf8_locale = true,
+
+-- Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer = 'none',
+
+gap_x = 60,
+gap_y = 60,
+
+color1 = '702eb2',
+color2 = 'FFFFFF',
+color3 = 'CCCCCC',
+}
+
+conky.text = [[
+${voffset 3}${font Brizel:size=65}${color1}${time %H:%M}${font}${voffset -3}
+${voffset 3}${font Brizel:size=26}${color2}${time %A %d %B}${font}${voffset -3}
+${voffset 3}${font Sans:bold:size=9}${color3}RM: ${font Sans:size=9}$mem/$memmax $memperc%${font Sans:bold:size=9}    HD: ${font Sans:size=9}${fs_used /}/${fs_size /}${font}${voffset -3}
+${voffset 3}${font Sans:bold:size=9}BATT: ${font Sans:size=9}${battery_percent BAT0}%${font Sans:bold:size=9} UPT: ${font Sans:size=9}${uptime_short}${font Sans:bold:size=9}    CPU: ${font Sans:size=9}${freq_g}GHz $cpu% ${exec sensors|grep Core\ 0|cut -c17-18}°${font}${voffset -3}
+${voffset 3}${font Sans:bold:size=9}IP: ${font Sans:size=9}${texeci 120 curl -4 https://icanhazip.com 2>/dev/null}${font Sans:bold:size=9}   DOWN: ${font Sans:size=9}${downspeedf enp0s31f6}KB/s${font Sans:bold:size=9} UP: ${font Sans:size=9}${upspeedf enp0s31f6}KB/s${font}${voffset -3}
+]]

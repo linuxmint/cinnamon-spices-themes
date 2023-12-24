@@ -1,0 +1,1827 @@
+/* ###################################################################
+ * Section common with Gnome Shell
+ * ... contains a few cinnamon specific styles (rare occurrences)
+ * ###################################################################*/
+stage {
+	font-family: sans, sans-serif;
+}
+.cinnamon-link {
+	color: #702eb2;
+	text-decoration: underline;
+}
+.cinnamon-link:hover {
+	color: #718de0;
+}
+.label-shadow {
+	color: rgba(0, 0, 0, 0.75);
+}
+StScrollBar {
+	padding: 0px;
+}
+StScrollView.vfade {
+	-st-vfade-offset: 68px;
+}
+StScrollView StScrollBar {
+	min-width: 5px;
+	min-height: 10px;
+}
+StScrollBar StBin#trough {
+	background-color: rgba(0, 0, 0, 0);
+	border: 0px solid #555;
+	border-radius: 1px;
+}
+StScrollBar StButton#hhandle, StScrollBar StButton#vhandle {
+	background-color: rgb(112, 46, 178);
+	border: 0px solid #555;
+	border-radius: 10px;
+}
+StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
+	background-color: #e07070;
+}
+.separator {
+	-gradient-height: 2px;
+	-gradient-start: rgba(85, 85, 85, 1);
+	-gradient-end: #555;
+	-margin-horizontal: 1.5em;
+	height: 1em;
+}
+.slider {
+	height: 1em;
+	min-width: 15em;
+	-slider-height: 0.3em;
+	-slider-background-color: #555;
+	-slider-border-color: #555;
+	-slider-active-background-color: #ccc;
+	-slider-active-border-color: #ddd;
+	-slider-border-width: 1px;
+	-slider-handle-radius: 0.5em;
+}
+#Tooltip {
+	border: 0px solid rgba(212, 185, 67, 0);
+	border-radius: 1px;
+	padding: 10px;
+	background-color: rgba(25, 27, 30, 0.95);
+	color: #ccc;
+	font-size: 9pt;
+	font-weight: normal;
+	text-align: center;
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+}
+.ripple-pointer-location {
+	width: 70px;
+	height: 70px;
+	border-radius: 35px;
+	background-color: rgb(112, 46, 178);
+	Vbox-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+}
+/* ===================================================================
+ * Shared button properties
+ * ===================================================================*/
+.notification-button, .notification-icon-button, .modal-dialog-button, .sound-player-overlay StButton {
+	color: white;
+	border: 0px solid white;
+	border-radius: 1px;
+	background-color: rgb(112, 46, 178);
+}
+.notification-button:hover, .notification-icon-button:hover, .modal-dialog-button:hover, .sound-player-overlay StButton:hover {
+	background-color: #718de0;
+}
+.notification-button:focus, .notification-icon-button:focus, .modal-dialog-button:focus, .sound-player-overlay StButton:focus {
+	border: 0px solid #8b8b8b;
+}
+.notification-button:active, .notification-icon-button:active, .modal-dialog-button:active, .modal-dialog-button:pressed, .sound-player-overlay StButton:active {
+	background-color: #702eb2;
+}
+/* ===================================================================
+ * PopupMenu (popupMenu.js)
+ * ===================================================================*/
+.menu {
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+	border-radius: 1px;
+	background-color: rgba(27, 26, 35, 0.75);
+	border-width: 0px;
+	border-color: #fff;
+	color: #fff;
+	font-size: 8pt;
+	min-width: 150px;
+}
+.popup-menu-arrow {
+	icon-size: 1.14em;
+}
+.popup-submenu-menu-item:open {
+	background-color: transparent;
+}
+.popup-sub-menu {
+	background-color: rgba(27, 26, 35, 0.75);
+}
+.popup-sub-menu .popup-menu-item:ltr {
+	padding-right: 1.75em;
+}
+.popup-sub-menu .popup-menu-item:rtl {
+	padding-left: 1.75em;
+}
+.popup-sub-menu StScrollBar {
+	padding: 4px;
+}
+.popup-sub-menu StScrollBar StBin#trough {
+	border-width: 0px;
+}
+.popup-sub-menu StScrollBar StBin#vhandle {
+	background-color: #4c4c4c;
+	border-width: 0px;
+}
+.popup-combo-menu {
+	background-color: rgba(0, 0, 0, 0.75);
+	padding: 1em 0em;
+	color: #fff;
+	font-size: 8pt;
+	border: 0px solid #5f5f5f;
+	border-radius: 1px;
+}
+/* The remaining popup-menu sizing is all done in ems, so that if you
+ * override .popup-menu.font-size, everything else will scale with it.*/
+.popup-menu-content {
+	padding: 1em 0em;
+}
+.popup-menu-item {
+	padding: .4em 2em;
+	spacing: .5em;
+	color: #ccc;
+}
+.popup-menu-item:active {
+	background-color: rgb(112, 46, 178);
+	color: white;
+}
+.popup-menu-item:insensitive {
+	background-color: rgb(112, 46, 178);
+}
+.popup-combobox-item {
+	spacing: 1em;
+}
+.popup-separator-menu-item {
+	-gradient-height: 0px;
+	-gradient-start: rgba(85, 85, 85, 0.70);
+	-gradient-end: #555;
+	-margin-horizontal: 0em;
+	height: 0em;
+}
+.popup-alternating-menu-item:alternate {
+	font-weight: bold;
+}
+.popup-slider-menu-item {
+	height: 1em;
+	min-width: 15em;
+	-slider-height: 0.3em;
+	-slider-background-color: #444;
+	-slider-border-color: rgba(0, 0, 0, 0.2);
+	-slider-active-background-color: rgb(112, 46, 178);
+	-slider-active-border-color: rgba(0, 0, 0, 0.2);
+	-slider-border-width: 1px;
+	-slider-handle-radius: 0.5em;
+}
+.popup-menu-item:active .popup-slider-menu-item {
+	height: 1em;
+	min-width: 15em;
+	-slider-height: 0.3em;
+	-slider-background-color: #444;
+	-slider-border-color: rgba(0, 0, 0, 0.2);
+	-slider-active-background-color: #718de0;
+	-slider-active-border-color: rgba(0, 0, 0, 0.2);
+	-slider-border-width: 1px;
+	-slider-handle-radius: 0.5em;
+}
+.popup-device-menu-item {
+	spacing: .5em;
+}
+.popup-inactive-menu-item {
+	font-weight: normal;
+	color: #999;
+}
+.popup-subtitle-menu-item {
+	font-weight: bold;
+}
+.popup-menu-icon {
+	icon-size: 1.14em;
+}
+/* Switches (to be used in menus) */
+.toggle-switch {
+	width: 50px;
+	height: 20px;
+}
+.toggle-switch-us {
+	background-image: url("common-assets/switch/switch-off.svg");
+}
+.toggle-switch-us:checked {
+	background-image: url("common-assets/switch/switch-on.svg");
+}
+.toggle-switch-intl {
+	background-image: url("common-assets/switch/switch-off.svg");
+}
+.toggle-switch-intl:checked {
+	background-image: url("common-assets/switch/switch-on.svg");
+}
+.nm-menu-item-icons {
+	spacing: .5em;
+}
+/* ===================================================================
+ * Panel (panel.js)
+ * ===================================================================*/
+#panel {
+	color: #fff;
+	background-color: rgba(27, 26, 35, 0);
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+	font-size: 8pt;
+	font-weight: normal;
+	height: 26px;
+	width: 26px;
+}
+#panel:highlight {
+	background-color: #8055aa;
+}
+.panel-dummy {
+	background-color: rgba(112, 46, 178, 1);
+}
+.panel-dummy:entered {
+	background-color: rgba(113, 141, 224, 1);
+}
+.panelLeft {
+	spacing: 3px;
+}
+.panelCenter {
+	spacing: 3px;
+}
+.panelRight {
+	spacing: 3px;
+}
+.panelLeft:dnd {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255, 0, 0, 0.05);
+	background-gradient-end: rgba(255, 0, 0, 0.3);
+}
+.panelCenter:dnd {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(0, 255, 0, 0.05);
+	background-gradient-end: rgba(0, 255, 0, 0.3);
+}
+.panelRight:dnd {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(0, 0, 255, 0.05);
+	background-gradient-end: rgba(0, 0, 255, 0.3);
+}
+.panelLeft:ltr {
+	padding-right: 3px;
+}
+.panelLeft:rtl {
+	padding-left: 3px;
+}
+.panelRight:ltr {
+	padding-left: 0px;
+	spacing: 3px;
+}
+.panelRight:rtl {
+	padding-right: 0px;
+	spacing: 3px;
+}
+.panelLeft.vertical {
+	padding: 0px;
+}
+.panelRight.vertical {
+	padding: 0px;
+}
+.panelCenter.vertical {
+	padding: 0px;
+}
+.panelLeft.vertical:dnd {}
+.panelCenter.vertical:dnd {}
+.panelRight.vertical:dnd {}
+.panel-top{}
+.panel-bottom {}
+.panel-left {}
+.panel-right {}
+.system-status-icon {
+	icon-size: 1.45em;
+	padding: 0px;
+	spacing: 0px;
+	margin: 0px;
+}
+.system-status-icon.warning {
+	color: #e1da1a;
+}
+.system-status-icon.error {
+	color: #1940b3;
+}
+.panel-corner {
+	-panel-corner-radius: 0px;
+	-panel-corner-background-color: rgba(37, 18, 46, 0.75);
+	-panel-corner-inner-border-width: 0px;
+	-panel-corner-inner-border-color: transparent;
+	-panel-corner-outer-border-width: 0px;
+	-panel-corner-outer-border-color: #536272;
+}
+.panel-corner:active, .panel-corner:overview, .panel-corner:focus {
+	-panel-corner-inner-border-color: rgba(255, 255, 255, 0);
+}
+.panel-button #appMenuIcon {
+	app-icon-bottom-clip: 1px;
+}
+.panel-button:active #appMenuIcon, .panel-button:checked #appMenuIcon, .panel-button:focus #appMenuIcon {
+	app-icon-bottom-clip: 2px;
+}
+.panel-button {
+	-natural-hpadding: 6px;
+	-minimum-hpadding: 2px;
+	font-weight: bold;
+	color: #ccc;
+	transition-duration: 100;
+}
+.panel-button:hover {
+	color: #fff;
+	text-shadow: black 0px 2px 2px;
+}
+.panel-button:active, .panel-button:overview, .panel-button:focus {}
+.panel-button:active > .system-status-icon, .panel-button:checked > .system-status-icon, .panel-button:focus > .system-status-icon {
+	icon-shadow: black 0px 2px 2px;
+}
+.panel-menu {
+	-boxpointer-gap: 4px;
+}
+.popup-menu-item-dot {
+	color: #fff;
+}
+/* ===================================================================
+ * Overview (Ctl+Alt+Down)
+ * ===================================================================*/
+#overview {
+	spacing: 12px;
+}
+.workspace-thumbnails {
+	spacing: 24px;
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+}
+.workspace-add-button {
+	background-image: url("common-assets/misc/add-workspace.svg");
+	height: 200px;
+	width: 35px;
+	transition-duration: 300;
+}
+.workspace-add-button:hover {
+	background-image: url("common-assets/misc/add-workspace-hover.svg");
+	transition-duration: 300;
+}
+.workspace-close-button {
+	background-image: url("common-assets/misc/close.svg");
+	background-size: 26px;
+	height: 26px;
+	width: 26px;
+	-cinnamon-close-overlap: 20px;
+}
+.workspace-close-button:hover {
+	background-image: url("common-assets/misc/close-hover.svg");
+	background-size: 26px;
+	height: 26px;
+	width: 26px;
+}
+.workspace-close-button:active {
+	background-image: url("common-assets/misc/close-active.svg");
+	background-size: 26px;
+	height: 26px;
+	width: 26px;
+}
+.window-caption {
+	background-color: rgba(37, 18, 46, 0.75);
+	color: #ccc;
+	font-weight: bold;
+	padding: .5em;
+	spacing: .5em;
+	font-size: 8pt;
+	min-width: 5em;
+	max-width: 30em;
+	-cinnamon-caption-spacing: 8px;
+}
+.window-caption:focus {
+	color: white;
+	background-color: rgba(112, 46, 178, 1);
+}
+.window-border {
+	border: 2px rgba(112, 46, 178, 1);
+	background-color: rgba(255, 255, 255, 0.1); /* active */
+/* Cover rounded corners and some bad adjustment gaps */
+	box-shadow: 0 0 0 1px rgba(112, 46, 178, 1) inset;
+}
+.window-close {
+	background-image: url("common-assets/misc/close.svg");
+	background-size: 26px;
+	height: 26px;
+	width: 26px;
+	-cinnamon-close-overlap: 10px;
+}
+.window-close:hover {
+	background-image: url("common-assets/misc/close-hover.svg");
+}
+.window-close-area {
+	background-image: url("common-assets/misc/trash-icon.svg");
+	background-size: 100px;
+	background-color: rgb(112, 46, 178);
+	border: 0px solid white;
+	border-bottom-width: 0px;
+	border-radius: 20px 20px 0px 0px;
+	height: 120px;
+	width: 400px;
+}
+.overview-empty-placeholder {
+	color: white;
+	font-weight: bold;
+	font-size: 48pt;
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+}
+.expo-background {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.workspace-overview-background-shade {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.expo-workspace-thumbnail-frame {
+	border: 0px solid rgba(37, 18, 46, 0.75);
+	background-color: rgba(37, 18, 46, 0.75);
+}
+.expo-workspace-thumbnail-frame#active {
+	border: 2px solid rgba(112, 46, 178, 1);
+	background-color: rgba(112, 46, 178, 1);
+}
+/* ===================================================================
+ * Looking Glass
+ * ===================================================================*/
+#LookingGlassDialog {
+	background-color: rgba(37, 18, 46, 0.75);
+	spacing: 3px;
+	padding: 3px;
+	border: 0px solid grey;
+	border-radius: 1px;
+	color: #ccc;
+}
+/* ===================================================================
+ * Date applet
+ * ===================================================================*/
+/*calendar-background allows the date applet calendar to be themed separately from other applet menus*/
+.calendar-background {}
+.calendar {
+	padding: .4em 1.75em;
+	spacing-rows: 0px;
+	spacing-columns: 0px;
+}
+.calendar-events-main-box {
+	height: 300px;
+	margin-right: 0.5em;
+	padding: 0.5em;
+	min-width: 250px;
+	background: #1a0033;
+	border: 1px solid #702eb2;
+	border-radius: 1px;
+}
+.calendar-events-no-events-box {}
+.calendar-events-no-events-button {
+	margin: 6px 0 6px 0;
+	padding: 6px;
+	border-radius: 1px;
+}
+.calendar-events-no-events-button:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+.calendar-events-no-events-icon {
+	color: #ccc;
+}
+.calendar-events-no-events-label {
+	font-size: 1.7em;
+	color: #ccc;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 10px;
+}
+.calendar-events-date-label {
+	padding: .2em 0 .75em .2em;
+	font-size: 1.1em;
+	color: #ccc;
+	font-weight: bold;
+	text-align: center;
+}
+.calendar-events-event-container {
+	padding: .1em;
+}
+.calendar-events-scrollbox {}
+.calendar-events-main-box .separator {}
+.calendar-event-button {
+	margin: 3px;
+	border-radius: 1px;
+}
+.calendar-event-button:hover {
+	color: #fff;
+	background: rgba(255, 255, 255, 0.1);
+}
+.calendar-event-color-strip {
+	width: 3px;
+	border-radius: 1px;
+}
+.calendar-today-home-button, .calendar-today-home-button-enabled {
+	font-size: 1.1em;
+	color: #ccc;
+}
+.calendar-month-label {
+	color: #fff;
+	padding: 8px 0;
+	font-size: 1.25em;
+	font-weight: bold;
+}
+.calendar-change-month-back, .calendar-change-month-forward {
+	width: 16px;
+	height: 16px;
+}
+.calendar-change-month-back {
+	background-image: url("common-assets/misc/calendar-arrow-left.svg");
+	border-radius: 4px;
+}
+.calendar-change-month-back:rtl {
+	background-image: url("common-assets/misc/calendar-arrow-right.svg");
+}
+.calendar-change-month-back:hover {
+	background-image: url("common-assets/misc/calendar-arrow-left-hover.svg");
+}
+.calendar-change-month-back:active {
+	background-image: url("common-assets/misc/calendar-arrow-left.svg");
+}
+.calendar-change-month-forward {
+	background-image: url("common-assets/misc/calendar-arrow-right.svg");
+}
+.calendar-change-month-forward:rtl {
+	background-image: url("common-assets/misc/calendar-arrow-left.svg");
+}
+.calendar-change-month-forward:hover {
+	background-image: url("common-assets/misc/calendar-arrow-right-hover.svg");
+}
+.calendar-change-month-forward:active {
+	background-image: url("common-assets/misc/calendar-arrow-right-hover.svg");
+}
+.datemenu-date-label {
+	padding: .4em 1.75em;
+	text-align: center;
+	color: #ccc;
+	font-weight: bold;
+	font-size: 120%;
+}
+.calendar-day-event-dot {
+	margin: 1px;
+	border-radius: 2.5px;
+	width: 5px;
+	height: 5px;
+}
+.calendar-day-base {
+	font-size: 90%;
+	text-align: center;
+	width: 35px;
+	height: 35px;
+	padding: 0.1em;
+	margin: 2px;
+	border-radius: 17.5px;
+}
+.calendar-day-base:active {
+	font-weight: bold;
+}
+.calendar-day-heading {
+	padding-top: 0.5em;
+	font-size: 90%;
+}
+.calendar-week-number {
+	color: #fff;
+	font-weight: bold;
+}
+/* Hack used in lieu of border-collapse - see calendar.js */
+.calendar-day:ltr {
+	border: 0px solid #333;
+	border-top-width: 0;
+	border-left-width: 0;
+}
+.calendar-day-top:ltr {
+	border-top-width: 0px;
+}
+.calendar-day-left:ltr {
+	border-left-width: 0px;
+}
+.calendar-day:rtl {
+	border: 0px solid #333;
+	border-top-width: 0px;
+	border-right-width: 0px;
+}
+.calendar-day-top:rtl {
+	border-top-width: 1px;
+}
+.calendar-day-left:rtl {
+	border-right-width: 1px;
+}
+.calendar-work-day {
+	color: #ccc;
+}
+.calendar-nonwork-day {
+	color: #ccc;
+	font-weight: bold;
+}
+.calendar-nonwork-day:active, .calendar-work-day:active {
+	color: #702eb2;
+	font-weight: bold;
+}
+.calendar-today {
+	color: #fff;
+	font-weight: bold;
+	background-color: rgba(112, 46, 178, 1);
+}
+.calendar-today:selected {
+	color: #fff;
+}
+.calendar-other-month-day {
+	color: #2f2b3b;
+	font-weight: normal;
+}
+.calendar-not-today {
+	color: #ccc;
+}
+.calendar-not-today:selected {
+	color: #fff;
+	font-weight: bold;
+}
+/* ===================================================================
+ * Notifications
+ * ===================================================================*/
+#notification {
+	font-size: 8pt;
+	border: 0px solid #a5a5a5;
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+	background-color: rgba(37, 18, 46, 0.75);
+	padding: 8px;
+	spacing-rows: 10px;
+	spacing-columns: 10px;
+	margin-from-right-edge-of-screen: 20px;
+	width: 35em;
+	color: white;
+}
+#notification.multi-line-notification {
+	padding-bottom: 8px;
+	color: white;
+}
+/* We use row-span = 2 for the image cell, which prevents its height preferences to be taken into account during allocation, so its height ends up being limited by the height of the content in the other rows. To avoid showing a stretched image, we set the minimum height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
+.notification-with-image {
+	min-height: 159px;
+	color: white;
+}
+#notification-scrollview {
+	max-height: 10em;
+}
+#notification-scrollview>.top-shadow, #notification-scrollview>.bottom-shadow {
+	height: 1em;
+}
+#notification-scrollview:ltr>StScrollBar {
+	padding-left: 6px;
+}
+#notification-scrollview:rtl>StScrollBar {
+	padding-right: 6px;
+}
+#notification-body {
+	spacing: 5px;
+}
+#notification-actions {
+	spacing: 10px;
+}
+.notification-button {
+	border-radius: 1px;
+	padding: 4px 8px 5px;
+}
+.notification-button:focus {
+	padding: 3px 8px 4px;
+}
+.notification-icon-button {
+	border-radius: 1px;
+	padding: 5px;
+}
+.notification-icon-button:focus {
+	padding: 4px;
+}
+.notification-icon-button>StIcon {
+	icon-size: 20px;
+}
+#notification StEntry {
+	padding: 4px;
+	border-radius: 4px;
+	color: #a8a8a8;
+	selected-color: black;
+	border: 1px solid rgba(245, 245, 245, 0.2);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgb(200, 200, 200);
+	background-gradient-end: white;
+	transition-duration: 300;
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+	caret-color: white;
+	caret-size: 1px;
+}
+#notification StEntry:focus {
+	border-color: rgba(112, 46, 178, 1);
+	background-color: rgba(255, 255, 255, 1);
+}
+/* ===================================================================
+ * Alt Tab
+ * ===================================================================*/
+#altTabPopup {
+	padding: 8px;
+	spacing: 16px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+#altTabPopup .switcher-list .item-box:selected {
+	background-color: rgb(112, 46, 178);
+}
+.switcher-list {
+	background: rgba(37, 18, 46, 0.75);
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+	border: 0px solid #a5a5a5;
+	border-radius: 1px;
+	padding: 20px;
+	font-size: 9pt;
+	color: white;
+}
+.switcher-list-item-container {
+	spacing: 8px;
+}
+.thumbnail-scroll-gradient-left {
+	background-gradient-direction: horizontal;
+	background-gradient-start: rgba(37, 18, 46, 0.75);
+	background-gradient-end: rgba(27, 26, 35, 0);
+	border-radius: 24px;
+	border-radius-topright: 1px;
+	border-radius-bottomright: 1px;
+	width: 60px;
+}
+.thumbnail-scroll-gradient-right {
+	background-gradient-direction: horizontal;
+	background-gradient-start: rgba(27, 26, 35, 0);
+	background-gradient-end: rgba(37, 18, 46, 0.75);
+	border-radius: 24px;
+	border-radius-topleft: 1px;
+	border-radius-bottomleft: 1px;
+	width: 60px;
+}
+.switcher-list .item-box {
+	padding: 8px;
+	border-radius: 1px;
+}
+.switcher-list .item-box:outlined {
+	padding: 6px;
+	border: 0px solid rgba(37, 18, 46, 0.75);
+}
+.switcher-list .item-box:selected {
+	background-color: red;
+}
+.switcher-list .thumbnail-box {
+	padding: 2px;
+	spacing: 4px;
+}
+.switcher-list .thumbnail {
+	width: 256px;
+}
+.switcher-list .separator {
+	width: 1px;
+	background: rgba(255, 255, 255, 0.1);
+}
+.ripple-box {
+	width: 104px;
+	height: 104px;
+	background-image: url("common-assets/misc/corner-ripple.svg");
+}
+.ripple-box:rtl {
+	background-image: url("common-assets/misc/corner-ripple.svg");
+}
+.switcher-arrow {
+	border-color: rgba(0, 0, 0, 0);
+	color: white;
+}
+.switcher-arrow:highlighted {
+	border-color: rgba(0, 0, 0, 0);
+	color: white;
+}
+.switcher-preview-backdrop {
+	background-color: rgba(0, 0, 0, 0);
+}
+/* ===================================================================
+ * Modal dialogs
+ * ===================================================================*/
+.modal-dialog {
+	font-size: 12pt;
+	border-radius: 1px;
+	background-color: rgba(37, 18, 46, 0.75);
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+	color: #fff;
+	padding: 30px 42px;
+}
+.modal-dialog-button-box {
+	spacing: 21px;
+}
+.modal-dialog-button {
+	border-radius: 1px;
+	font-size: 12pt;
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 4px 32px 5px;
+}
+.modal-dialog-button:disabled {
+	color: rgb(60, 60, 60);
+}
+.modal-dialog-button:focus {
+	padding: 3px 31px 4px;
+}
+.confirm-dialog-title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.5em;
+	padding-bottom: 12px;
+}
+/* Info OSD popup */
+.info-osd {
+	font-size: 18pt;
+	border-radius: 1px;
+	background-color: rgba(37, 18, 46, 0.75);
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+.workspace-osd {
+	background-color: rgba(53, 57, 69, 0);
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+	color: #fff;
+	font-weight: bold;
+	font-size: 48pt;
+}
+/* ===================================================================
+ * Run dialog (Alt+F2)
+ * ===================================================================*/
+.run-dialog-label {
+	font-size: 10pt;
+	color: white;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+.run-dialog-error-label {
+	font-size: 8pt;
+	color: white;
+}
+.run-dialog-error-box {
+	padding-top: 15px;
+	spacing: 5px;
+}
+.run-dialog-completion-box {
+	padding-left: 15px;
+	font-size: 10px;
+}
+.run-dialog-entry {
+	font-size: 10pt;
+	width: 250px;
+	height: 25px;
+	color: white;
+	padding-left: 7px;
+	background-color: rgb(112, 46, 178);
+	selection-background-color: white;
+	selected-color: rgb(112, 46, 178);
+	border-radius: 20px;
+}
+.run-dialog {
+	border-radius: 1px;
+	border: 0px;
+	padding: 15px 21px;
+	background-color: rgba(37, 18, 46, 0.75);
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+}
+.lightbox {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+/* CinnamonMountOperation Dialogs */
+.cinnamon-mount-operation-icon {
+	icon-size: 48px;
+}
+.mount-password-reask {
+	color: red;
+}
+.show-processes-dialog, .mount-question-dialog {
+	spacing: 24px;
+}
+.show-processes-dialog-subject, .mount-question-dialog-subject {
+	font-size: 12pt;
+	font-weight: bold;
+	color: #555;
+	padding-top: 10px;
+	padding-left: 17px;
+	padding-bottom: 6px;
+}
+.show-processes-dialog-subject:rtl, .mount-question-dialog-subject:rtl {
+	padding-left: 0px;
+	padding-right: 17px;
+}
+.show-processes-dialog-description, .mount-question-dialog-description {
+	font-size: 10pt;
+	color: white;
+	padding-left: 17px;
+	width: 28em;
+}
+.show-processes-dialog-description:rtl, .mount-question-dialog-description:rtl {
+	padding-right: 17px;
+}
+.show-processes-dialog-app-list {
+	font-size: 10pt;
+	max-height: 200px;
+	padding-top: 24px;
+	padding-left: 49px;
+	padding-right: 32px;
+}
+.show-processes-dialog-app-list:rtl {
+	padding-right: 49px;
+	padding-left: 32px;
+}
+.show-processes-dialog-app-list-item {
+	color: #ccc;
+}
+.show-processes-dialog-app-list-item:hover {
+	color: white;
+}
+.show-processes-dialog-app-list-item:ltr {
+	padding-right: 1em;
+}
+.show-processes-dialog-app-list-item:rtl {
+	padding-left: 1em;
+}
+.show-processes-dialog-app-list-item-icon:ltr {
+	padding-right: 17px;
+}
+.show-processes-dialog-app-list-item-icon:rtl {
+	padding-left: 17px;
+}
+.show-processes-dialog-app-list-item-name {
+	font-size: 10pt;
+}
+/* ===================================================================
+ * Magnifier (Loupe)
+ * ===================================================================*/
+.magnifier-zoom-region {
+	border: 2px solid rgba(112, 46, 178, 1);
+}
+.magnifier-zoom-region.full-screen {
+	border-width: 2px;
+}
+/* ===================================================================
+ * On screen keyboard
+ * ===================================================================*/
+#keyboard {
+	background-color: rgba(37, 18, 46, 0.75);
+}
+.keyboard-layout {
+	spacing: 5px;
+	padding: 20px;
+}
+.keyboard-row {
+	spacing: 15px;
+}
+.keyboard-key {
+	min-height: 30px;
+	min-width: 30px;
+	background-color: rgb(112, 46, 178);
+	font-size: 18pt;
+	font-weight: bold;
+	border-radius: 50px;
+	border: 0px solid #a0a0a0;
+	color: #ccc;
+}
+.keyboard-key:grayed {
+	color: #808080;
+	border-color:rgb(112, 46, 178);
+}
+.keyboard-key:checked, .keyboard-key:hover {
+	background: rgb(113, 141, 224);
+	border: 0px solid white;
+	color: white;
+}
+.keyboard-key:active {
+	background: rgb(112, 46, 178);
+}
+.keyboard-subkeys {
+	margin: 5px;
+	border: 1px;
+	border-radius: 1px;
+	border-color: rgb(112, 46, 178);
+	background-color: rgb(27, 36, 32);
+}
+/* ###################################################################
+ * Cinnamon Specific Section
+ * ###################################################################*/
+/* ===================================================================
+ * Menu (menu.js)
+ * ===================================================================*/
+/* Menu-background allows the menu applet to be themed separately from other applet menus */
+.menu-background {
+	background-color: rgba(37, 18, 46, 0.75);
+}
+.menu-top-box {
+	spacing: 10px;
+}
+.menu-systembuttons-box {}
+/* Main menu title */
+.menu-favorites-box {
+	padding: 10px;
+	border: 0px solid #702eb2;
+	border-radius: 1px;
+	transition-duration: 300;
+}
+.menu-favorites-button {
+	color: #ccc;
+	padding: 0px 0px 2px 2px;
+	border: 0px rgba(112, 46, 178, 0);
+	border-left: 2px;
+}
+.menu-favorites-button:hover {
+	color: white;
+	border: 0px rgb(112, 46, 178);
+	border-left: 2px;
+}
+.menu-categories-box {
+	padding: 10px 30px 10px 30px;
+}
+.menu-applications-inner-box {
+	margin: 10px 10px 0px 10px;
+}
+.menu-applications-outer-box {
+	padding: 10px 10px 0px 10px;
+}
+.menu-application-button {
+	color: #ccc;
+	padding: 7px;
+}
+.menu-application-button:highlighted {
+/* This style is used in menu application buttons for applications which were newly installed */
+	font-weight: bold;
+}
+.menu-application-button-selected {
+	padding: 7px;
+	color: #fff;
+	background-color: rgb(112, 46, 178);
+}
+.menu-application-button-selected:highlighted {
+/* This style is used in menu application buttons for applications which were newly installed */
+	font-weight: bold;
+}
+.menu-application-button-label:ltr {
+	padding-left: 5px;
+}
+.menu-application-button-label:rtl {
+	padding-right: 5px;
+}
+.menu-category-button {
+	color: #ccc;
+	padding: 7px;
+	border: 0px solid rgba(0, 0, 0, 0);
+	border-left: 3px;
+}
+.menu-category-button:hover {
+	background-color: #702eb2;
+	border-radius: 1px;
+	border-image: none;
+}
+.menu-category-button-greyed {
+	padding: 7px;
+	color: #fbfbfb;
+	border: 0px solid rgba(0, 0, 0, 0);
+	border-left: 3px;
+}
+.menu-category-button-selected {
+	padding: 7px;
+	color: white;
+	border: 0px solid rgb(112, 46, 178);
+	border-left: 3px;
+}
+.menu-category-button-label:ltr {
+	padding-left: 5px;
+}
+.menu-category-button-label:rtl {
+	padding-right: 5px;
+}
+/* Name and description of the currently hovered item in the menu
+ * This appears on the bottom right hand corner of the menu*/
+.menu-selected-app-box {
+	padding: 7px 30px 7px 28px;
+	text-align: right;
+	height: 30px;
+	color: #fbfbfb;
+}
+.menu-selected-app-box:rtl {
+	padding-top: 10px;
+	height: 30px;
+}
+.menu-selected-app-title {
+	font-weight: bold;
+}
+.menu-selected-app-description {
+	max-width: 150px;
+}
+.menu-search-box:ltr {
+	padding-left: 40px;
+}
+.menu-search-box:rtl {
+	padding-right: 40px;
+}
+#menu-search-entry {
+	padding: 0px 15px;
+	color: white;
+	selected-color: rgb(112, 46, 178);
+	caret-color: white;
+	caret-size: 1px;
+	width: 250px;
+	height: 25px;
+	transition-duration: 300;
+}
+#menu-search-entry:focus, #menu-search-entry:hover {
+	background-color: rgb(112, 46, 178);
+	border-radius: 15px;
+}
+#menu-search-entry:hover {
+	transition-duration: 300;
+}
+#menu-search-entry:focus {
+	font-size: 20px;
+	color: #fff;
+	transition-duration: 300;
+}
+.menu-search-entry-icon {
+	icon-size: 1.2em;
+	color: #ccc;
+}
+/* Context menu (at the moment only for favorites) */
+.menu-context-menu {}
+/* ===================================================================
+ * Window list (windowList.js)
+ * ===================================================================*/
+.window-list-box {
+	spacing: 0px;
+	padding-left: 7px;
+}
+.window-list-box.vertical {
+	spacing: 0px;
+}
+.window-list-box.vertical #appMenuIcon {
+	padding-top: 0px;
+}
+.window-list-box.vertical .window-list-item-box {
+	padding: .1em 0;
+}
+.window-list-item-box {
+	color: #ccc;
+	transition-duration: 100;
+}
+.window-list-item-box:hover {
+	color: white;
+}
+.panel-bottom .window-list-item-box:active, .panel-bottom .window-list-item-box:checked, .panel-bottom .window-list-item-box:focus {
+	border-image: url("common-assets/panel/window-list-bottom.svg") 9 9 9 9;
+}
+.panel-bottom .window-list-item-box:hover{
+	border-image: url("common-assets/panel/window-list-hover-bottom.svg") 9 9 9 9;
+}
+.panel-top .window-list-item-box:active, .panel-top .window-list-item-box:checked, .panel-top .window-list-item-box:focus {
+	border-image: url("common-assets/panel/window-list-top.svg") 9 9 9 9;
+}
+.panel-top .window-list-item-box:hover {
+	border-image: url("common-assets/panel/window-list-hover-top.svg") 9 9 9 9;
+}
+.panel-left .window-list-item-box:active, .panel-left .window-list-item-box:checked, .panel-left .window-list-item-box:focus {
+	border-image: url("common-assets/panel/window-list-left.svg") 9 9 9 9;
+}
+.panel-left .window-list-item-box:hover {
+	border-image: url("common-assets/panel/window-list-hover-left.svg") 9 9 9 9;
+}
+.panel-right .window-list-item-box:active, .panel-right .window-list-item-box:checked, .panel-right .window-list-item-box:focus {
+	border-image: url("common-assets/panel/window-list-right.svg") 9 9 9 9;
+}
+.panel-right .window-list-item-box:hover{
+	border-image: url("common-assets/panel/window-list-hover-right.svg") 9 9 9 9;
+}
+.window-list-item-demands-attention {
+	background-gradient-start: rgba(112, 46, 178, 0);
+	background-gradient-end: rgba(113, 141, 224, 0);
+}
+.window-list-item-box .progress {
+	background-color: rgba(112, 46, 178, 0.3);
+}
+/* Thumbnails */
+.window-list-preview {
+	background: rgba(37, 18, 46, 0.75);
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+	border-radius: 1px;
+	font-size: 9pt;
+	color: white;
+	padding: 8px;
+	spacing: 3px;
+}
+.window-list-preview StBin:last-child {
+	border: 1px rgb(112, 46, 178);
+	border-radius: 1px;
+}
+/* ===================================================================
+ * Grouped window list (grouped-window-list@cinnamon.org)
+ * ===================================================================*/
+.grouped-window-list-thumbnail-label {
+	padding-left: 2px;
+}
+.grouped-window-list-number-label {
+	z-index: 99;
+	color: white;
+}
+.grouped-window-list-badge {
+	border-radius: 256px;
+	background-color: rgba(37, 18, 46, 0.75);
+	box-shadow: inset 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+}
+.grouped-window-list-button-label {}
+.grouped-window-list-thumbnail-alert {
+	background: rgb(112, 46, 178);
+}
+.grouped-window-list-item-box {
+	color: #ccc;
+	transition-duration: 100;
+	padding-left: 13em;
+}
+.grouped-window-list-item-box.top, .grouped-window-list-item-box.bottom {
+	padding: 0 0.5em;
+}
+.grouped-window-list-item-box.top StLabel, .grouped-window-list-item-box.bottom StLabel {
+	padding-left: 2px;
+}
+/* List bottom */
+.grouped-window-list-item-box.bottom {
+	border-bottom-width: 2px;
+}
+.grouped-window-list-item-box.bottom:hover, .grouped-window-list-item-box.bottom:focus:hover {
+	color: white;
+	border-color: #718de0;
+}
+.grouped-window-list-item-box.bottom:checked, .grouped-window-list-item-box.bottom:active:focus {
+	background-color: rgba(27, 26, 35, 0);
+	color: white;
+	border-color: rgb(112, 46, 178);
+}
+.grouped-window-list-item-box.bottom:active {}
+/* List top */
+.grouped-window-list-item-box.top {
+	border-top-width: 2px;
+}
+.grouped-window-list-item-box.top:hover, .grouped-window-list-item-box.top:focus:hover {
+	color: white;
+	border-color: #718de0;
+}
+.grouped-window-list-item-box.top:checked, .grouped-window-list-item-box.top:active:focus {
+	background-color: rgba(27, 26, 35, 0);
+	color: white;
+	border-color: rgb(112, 46, 178);
+}
+.grouped-window-list-item-box.top:active {}
+/* List left */
+.grouped-window-list-item-box.left {
+	border-left-width: 2px;
+}
+.grouped-window-list-item-box.left:hover, .grouped-window-list-item-box.left:focus:hover {
+	color: white;
+	border-color: #718de0;
+}
+.grouped-window-list-item-box.left:checked, .grouped-window-list-item-box.left:active:focus {
+	background-color: rgba(27, 26, 35, 0);
+	color: white;
+	border-color: rgb(112, 46, 178);
+}
+.grouped-window-list-item-box.left:active {}
+/* List right */
+.grouped-window-list-item-box.right {
+	border-right-width: 2px;
+}
+.grouped-window-list-item-box.right:hover, .grouped-window-list-item-box.right:focus:hover {
+	color: white;
+	border-color: #718de0;
+}
+.grouped-window-list-item-box.right:checked, .grouped-window-list-item-box.right:active:focus {
+	background-color: rgba(27, 26, 35, 0);
+	color: white;
+	border-color: rgb(112, 46, 178);
+}
+.grouped-window-list-item-box.right:active {}
+.grouped-window-list-item-demands-attention {
+	background-gradient-direction: vertical;
+	background-gradient-start: #702eb2;
+	background-gradient-end: #702eb2;
+}
+.grouped-window-list-item-box .progress {
+	background-color: rgba(112, 46, 178, 0.3);
+}
+.panel-top .grouped-window-list-item-box .progress {
+	border-radius: 0px 0px 2px 2px;
+}
+.panel-left .grouped-window-list-item-box .progress {
+	border-radius: 0px 2px 2px 0px;
+}
+.panel-right .grouped-window-list-item-box .progress {
+	border-radius: 2px 0px 0px 2px;
+}
+.grouped-window-list-thumbnail-menu:first-child {
+	background: rgba(37, 18, 46, 0.75);
+	border-radius: 1px;
+	font-size: 9pt;
+	color: white;
+	padding: 8px;
+	spacing: 3px;
+}
+.grouped-window-list-thumbnail-menu StBin.thumbnail:last-child {
+	border: 1px rgb(112, 46, 178);
+	border-radius: 1px;
+}
+.grouped-window-list-thumbnail-menu .item-box {
+	background: rgba(37, 18, 46, 0.75);
+	border: 0px solid rgba(0, 0, 0, 0);
+	color: white;
+	text-shadow: 0px 0px 2px black;
+	padding: 10px;
+	border-radius: 1px;
+	spacing: 3px;
+}
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+	padding: 6px;
+	border: 1px solid rgb(112, 46, 178);
+}
+.grouped-window-list-thumbnail-menu .item-box:selected {
+	background: rgba(37, 18, 46, 0.75);
+}
+.grouped-window-list-thumbnail-menu .thumbnail {
+	width: 256px;
+}
+.grouped-window-list-thumbnail-menu .separator {
+	width: 1px;
+	background: rgba(255, 255, 255, 0.1);
+}
+/* ===================================================================
+ * Sound Applet (sound@cinnamon.org)
+ * ===================================================================*/
+.sound-player StButton {
+	width: 13px;
+	height: 13px;
+	margin: 0px;
+	border-radius: 20px;
+	color: white;
+	background-color: rgb(112, 46, 178);
+}
+.sound-player StButton:small {
+	width: 13px;
+	height: 13px;
+	margin: 0px;
+	border-radius: 15.5px;
+}
+.sound-player StButton:hover, .sound-player StButton:active {
+	color: #fff;
+	background-color: rgb(113, 141, 224);
+}
+.sound-player .slider {
+	height: 0.5em;
+	-slider-height: 0.5em;
+	-slider-background-color: #3c3c3c;
+	-slider-border-color: rgba(0, 0, 0, 0);
+	-slider-active-background-color: #718de0;
+	-slider-active-border-color: rgba(0, 0, 0, 0);
+	-slider-border-width: 0px;
+	-slider-handle-radius: 0px;
+}
+.sound-player StBoxLayout {
+	spacing: 0.5em;
+}
+.sound-player>StBoxLayout {
+	padding: 5px;
+}
+.sound-player-overlay {
+	width: 300px;
+	padding: 12px 16px;
+	spacing: 0.5em;
+	background-color: rgba(37, 18, 46, 0.75);
+	color: #fff;
+	border-top: 0px solid #702eb2;
+}
+.sound-player-overlay StButton {
+	border-radius: 50%;
+	padding: 12px;
+}
+.sound-player-overlay StButton>StIcon {
+	icon-size: 16px;
+}
+.sound-player-overlay StBoxLayout {
+	padding-top: 2px;
+}
+.sound-player-generic-coverart {
+	background: rgba(37, 18, 46, 1);
+}
+/* ===================================================================
+ * Workspace Switcher applet (workspaceSwitcher.js)
+ * ===================================================================*/
+/* Controls the styling when using the "Simple buttons" option */
+.panel-top .workspace-switcher, .panel-bottom .workspace-switcher {
+	padding: 0px 3px;
+}
+.panel-left .workspace-switcher, .panel-right .workspace-switcher {
+	padding: 3px 0px;
+}
+.workspace-button {
+	width: 15px;
+	height: 20px;
+	color: #ccc;
+	font-size: 160%;
+	font-weight: bold;
+	transition-duration: 300;
+}
+.workspace-button:hover {
+	color: white;
+}
+.workspace-button:outlined {
+	color: rgb(112, 46, 178);
+}
+/* Controls the style when using the "Visual representation" option */
+.workspace-graph {
+	padding-left: 3px;
+	padding-right: 3px;
+}
+.workspace-graph .workspace {
+	border: 2px solid #ccc;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgb(41, 53, 48);
+	background-gradient-end: rgb(41, 53, 48);
+}
+.workspace-graph .workspace:active {
+	border: 2px solid #702eb2;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgb(177, 197, 186);
+	background-gradient-end: rgb(177, 197, 186);
+}
+.workspace-graph .workspace .windows {
+	-active-window-background: rgb(74, 99, 86);
+	-active-window-border: rgb(0, 0, 0);
+	-inactive-window-background: rgb(94, 126, 109);
+	-inactive-window-border: rgb(0, 0, 0);
+}
+.workspace-graph .workspace:active .windows {
+	-active-window-background: rgb(204, 204, 204);
+	-active-window-border: rgb(0, 0, 0);
+	-inactive-window-background: rgb(155,155, 155);
+	-inactive-window-border: rgb(0, 0, 0);
+}
+/* ===================================================================
+ * Panel Launchers Applet (panelLaunchers.js)
+ * ===================================================================*/
+.panel-launchers {
+	spacing: 3px;
+	padding: 0px 5px;
+}
+.panel-launchers.vertical {
+	padding: 5px 0px;
+	spacing: 3px;
+}
+.launcher {
+	transition-duration: 300;
+}
+.launcher .icon-box {
+	padding: 1px 0px;
+}
+.panel-launchers.vertical .launcher .icon-box {
+	padding-top: 0;
+}
+.panel-bottom .panel-launchers .launcher:hover {
+	border-image: url("common-assets/panel/window-list-hover-bottom.svg") 9 9 9 9;
+}
+.panel-top .panel-launchers .launcher:hover {
+	border-image: url("common-assets/panel/window-list-hover-top.svg") 9 9 9 9;
+}
+.panel-left .panel-launchers.vertical .launcher:hover {
+	border-image: url("common-assets/panel/window-list-hover-left.svg") 9 9 9 9;
+}
+.panel-right .panel-launchers.vertical .launcher:hover {
+	border-image: url("common-assets/panel/window-list-hover-right.svg") 9 9 9 9;
+}
+/* ===================================================================
+ * Weather Applet
+ * ===================================================================*/
+.weather-menu {
+	width: 2128px;
+}
+.weather-current-databox-captions {
+	padding-left: 48px;
+}
+.weather-current-astronomy {
+	font-size: 10pt;
+}
+.weather-forecast-day {
+	font-size: 10pt;
+	color: #702eb2;
+}
+/* ===================================================================
+ * User Applet and CinnVIIStarkMenu
+ * ===================================================================*/
+.user-icon, .hover-user-icon {
+	border-radius: 1px;
+	border: 2px solid #702eb2;
+}
+/* ===================================================================
+ * Overview corner
+ * ===================================================================*/
+#overview-corner {
+	background-image: url("common-assets/misc/overview.svg");
+}
+#overview-corner:hover {
+	background-image: url("common-assets/misc/overview-hover.svg");
+}
+/* ===================================================================
+ * Applets (applet.js)
+ * ===================================================================*/
+.applet-separator {
+	padding: 3px;
+}
+.applet-separator-line {
+	width: 1px;
+	background-color: white;
+}
+.applet-separator-line-vertical {
+	border: 0px solid white;
+	border-bottom-width: 1px;
+}
+.applet-cornerbar-box {
+	padding: 4px 4px;
+	background: rgba(255,255,255,0);
+}
+.applet-cornerbar {
+	width: 8px;
+	background: #ccc;
+}
+.applet-cornerbar.vertical {
+	height: 8px;
+}
+.applet-cornerbar-box:hover > .applet-cornerbar {
+	background: #fff;
+}
+.applet-box {
+	padding-left: 1px;
+	padding-right: 1px;
+	color: #ccc;
+	font-size: 115%;
+	transition-duration: 300;
+}
+.panel-top .applet-box, .panel-bottom .applet-box {
+	spacing: 1px;
+}
+.applet-box:checked, .applet-box:hover {
+	color: #fff;
+}
+.applet-box.vertical {
+	padding: 1px 0px 1px 0px;
+}
+.applet-box.vertical:hover {}
+.applet-box:highlight {
+	background-color: #aa5555;
+}
+.applet-label {
+	font-weight: bold;
+	color: #ccc;
+}
+.applet-box:hover .applet-label, .applet-box:hover .applet-label {
+	color: #fff;
+}
+.applet-box:checked > .applet-label, .applet-box:hover > .applet-label {
+	color: #fff;
+}
+.applet-box.vertical:hover>.applet-label {}
+.applet-icon {
+	color: #fff;
+	icon-size: 22px;
+}
+.applet-box:checked .applet-icon, .applet-box:hover .applet-icon {
+	color: #fff;
+	icon-shadow: white 0px 0px 0px;
+}
+.applet-box.vertical:hover .applet-icon {}
+/* ===================================================================
+ * Desklets (desklet.js)
+ * ===================================================================*/
+.desklet {
+	color: #fff;
+}
+.desklet:highlight, .desklet:highlight-with-borders, .desklet:highlight-with-borders-and-header {
+	background-color: #8055aa;
+}
+.desklet-with-borders {
+	border: 0px solid #702eb2;
+	background-color: rgba(37, 18, 46, 0.75);
+	color: #fff;
+	border-radius: 1px;
+}
+.desklet-with-borders-and-header {
+	border: 0px solid #702eb2;
+	background-color: rgba(37, 18, 46, 0.75);
+	color: #fff;
+	border-top: 0px;
+	border-radius-bottomleft: 1px;
+	border-radius-bottomright: 1px;
+}
+.desklet-header {
+	border-radius-topleft: 1px;
+	border-radius-topright: 1px;
+	font-size: 10.5pt;
+	border: 0px solid #702eb2;
+	border-bottom: 0px;
+	background-color: rgba(37, 18, 46, 0.75);
+	color: #fff;
+	padding: 6px;
+}
+.desklet-drag-placeholder {
+	background-color: rgba(128, 85, 170, 0.3);
+}
+.photoframe-box {
+	border: 0px solid #702eb2;
+	background-color: rgba(53, 57, 69, 0.75);
+	color: #fff;
+	border-radius: 1px;
+}
+/* ===================================================================
+ * Clock Desklet (desklet.js)
+ * ===================================================================*/
+.clock-desklet-label {}
+/* ===================================================================
+ * Workspace OSD (Ctl+Alt+Up)
+ * ===================================================================*/
+.expo-workspaces-name-entry {
+	padding: 5px;
+	color: #fff;
+	font-weight: bold;
+	background-color: rgba(37, 18, 46, 0.75);
+	selected-color: white;
+	caret-color: rgb(112, 46, 178);
+	caret-size: 0px;
+	min-width: 100px;
+	max-width: 200px;
+	height: 25px;
+}
+.expo-workspaces-name-entry#selected {
+	background-color: rgb(112, 46, 178);
+	font-weight: bold;
+	color: white;
+}
+.expo-workspaces-name-entry:focus {
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	transition-duration: 300;
+}
+/* ===================================================================
+ * Button Menu
+ * ===================================================================*/
+/*This option works only applica to any applet that is in the left corner*/
+.panel-bottom .applet-box:first-child:hover {
+	border-image: url("common-assets/menu/button-menu-hover-bottom.svg") 9 9 9 9;
+}
+.panel-top #panelLeft .applet-box:first-child:hover {
+	border-image: url("common-assets/menu/button-menu-hover-top.svg") 9 9 9 9;
+}
+.panel-left #panelLeft .applet-box:first-child:hover {
+	border-image: url("common-assets/menu/button-menu-hover-left.svg") 9 9 9 9;
+}
+.panel-right #panelLeft .applet-box:first-child:hover {
+	border-image: url("common-assets/menu/button-menu-hover-right.svg") 9 9 9 9;
+}
+ #panelLeft .applet-box:first-child:active {
+	background-color: rgba(112, 46, 178, 0);
+}
+/* ===================================================================
+ * Notification Applet
+ * ===================================================================*/
+.notification-applet-padding {
+	padding: .5em 1em;
+}
+.notification-applet-container {
+	max-height: 100px;
+}
+/* Check Boxes */
+.check-box CinnamonGenericContainer {
+	spacing: .2em;
+}
+.check-box StBin, .check-box:focus StBin {
+	width: 16px;
+	height: 16px;
+	background-image: url("common-assets/checkbox/checkbox-off.svg");
+}
+.check-box:checked StBin, .check-box:focus:checked StBin {
+	background-image: url("common-assets/checkbox/checkbox.svg");
+}
+.check-box StLabel {
+	font-weight: normal;
+}
+.radiobutton CinnamonGenericContainer {
+	spacing: .2em;
+	height: 18px;
+	padding-top: 2px;
+}
+.radiobutton StBin, .radiobutton:focus StBin {
+	width: 16px;
+	height: 16px;
+	background-image: url("common-assets/checkbox/radiobutton-off.svg");
+	border-radius: 15px;
+}
+.radiobutton:checked StBin, .radiobutton:focus:checked StBin {
+	background-image: url("common-assets/checkbox/radiobutton.svg");
+}
+.radiobutton StLabel {
+	padding-top: 4px;
+	font-size: 0.9em;
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+}
+.flashspot {
+	background-color: white;
+}
+/* Notifs look inside the notification applet & other popups. */
+.popup-menu-content #notification {
+	border-image: url("common-assets/misc/message.svg") 7;
+	padding: .8em .8em .6em 1em;
+}
+/* Media keys OSD popup */
+.osd-window {
+	background: rgba(37, 18, 46, 0.75);
+	border: 0px solid rgb(112, 46, 178);
+	border-radius: 1px;
+	padding: 20px;
+	color: rgb(112, 46, 178);
+	spacing: 1em;
+	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+}
+.osd-window .level {
+	height: 0.7em;
+	border-radius: 0.3em;
+	background-color: rgba(112, 46, 178, 0.3);
+}
+.osd-window .level-bar {
+	border-radius: 0.3em;
+	background-color: rgba(112, 46, 178, 0.75);
+}
+.tile-preview, .tile-hud {
+	background-color: rgba(37, 18, 46, 0.5); /*magnet*/
+}
+.tile-preview.snap, .tile-hud.snap {
+	background-color: rgba(37, 18, 46,0.5);
+}
+.tile-hud:top {
+	border-top-width: 0px;
+	border-radius: 0px 0px 8px 8px;
+}
+.tile-hud:bottom {
+	border-bottom-width: 0px;
+	border-radius: 8px 8px 0px 0px;
+}
+.tile-hud:left {
+	border-left-width: 0px;
+	border-radius: 0px 8px 8px 0px;
+}
+.tile-hud:right {
+	border-right-width: 0px;
+	border-radius: 8px 0px 0px 8px;
+}
+.tile-hud:top-left {
+	border-top-width: 0px;
+	border-left-width: 0px;
+	border-radius: 0px 0px 8px 0px;
+}
+.tile-hud:top-right {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-radius: 0px 0px 0px 8px;
+}
+.tile-hud:bottom-left {
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-radius: 0px 8px 0px 0px;
+}
+.tile-hud:bottom-right {
+	border-bottom-width: 0px;
+	border-right-width: 0px;
+	border-radius: 8px 0px 0px 0px;
+}
+/* ===================================================================
+ * Systray Applet
+ *
+ * .systray is for theming to be applied to the systray as a whole
+ * .applet-box is used for indicators (not tray icons) within the systray
+ * tray icons are not themed
+ * ===================================================================*/
+.systray {
+	spacing: 1px;
+}
+/* Pointer accessibility notifications */
+.pie-timer {
+	width: 40px;
+	height: 40px;
+	-pie-border-width: 1px;
+	-pie-border-color: rgb(113, 141, 224);
+	-pie-background-color: rgb(112, 46, 178);
+}
