@@ -1,0 +1,100 @@
+#!/usr/bin/python3
+
+import argparse
+import json
+import os
+import sys
+
+
+class CheckError(Exception):
+    pass
+
+
+# function with checks for an xlet
+def validate_xlet(uuid):
+    valid = False
+    os.chdir(uuid)
+
+    try:
+        # Check mandatory directories
+        mandatory_dirs = ["files", f"files/{uuid}", f"files/{uuid}/cinnamon"]
+        for directory in mandatory_dirs:
+            if not os.path.isdir(directory):
+                raise CheckError(f"Missing directory: {directory}")
+
+        # Check mandatory files
+        mandatory_files = ["info.json", "screenshot.png",
+                           f"files/{uuid}/cinnamon/cinnamon.css"]
+        for file in mandatory_files:
+            if not os.path.exists(file):
+                raise CheckError(f"Missing file: {file}")
+
+        # Check forbidden files
+        forbidden_files = ["metadata.json"]
+        for file in forbidden_files:
+            if os.path.exists(file):
+                raise CheckError(f"Forbidden file: {file}")
+
+        # Check that there are no files in files other than the uuid directory
+        if len(os.listdir("files")) != 1:
+            raise CheckError("The files directory should ONLY contain the $uuid directory!")
+
+        # check info.json
+        with open("info.json", encoding='utf-8') as file:
+            try:
+                info = json.load(file)
+            except Exception as e:
+                raise CheckError(f"Could not parse info.json: {e}") from e
+
+            # check mandatory fields
+            mandatory_fields = ['author', 'description', 'name']
+            for field in mandatory_fields:
+                if field not in info:
+                    raise CheckError(f"Missing field '{field}' in info.json")
+
+        # Finally...
+        valid = True
+    except CheckError as error:
+        print(f"[{uuid}] Error during validation: {error}")
+    except Exception as error:
+        print(f"[{uuid}] Unknown error. {error}")
+
+    os.chdir("..")
+    return valid
+
+
+def quit(valid):
+    if valid:
+        print("No errors found. Everything looks good.")
+        sys.exit(0)
+    else:
+        print("\nErrors were found! Once you fix the issue, please re-run "
+              "'validate-spice <uuid>' to check for further errors.")
+        sys.exit(1)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.description = 'Arguments for validate-spice'
+    parser.add_argument('-a', '--all', action='store_true',
+                        help='Validate all Spices')
+    parser.add_argument('uuid', type=str, metavar='UUID', nargs='?',
+                        help='the UUID of the Spice')
+    args = parser.parse_args()
+
+    if args.all:
+        is_valid = True
+        for file_path in os.listdir("."):
+            if os.path.isdir(file_path) and not file_path.startswith("."):
+                is_valid = validate_xlet(file_path)
+    elif args.uuid:
+        is_valid = validate_xlet(args.uuid)
+    else:
+        parser.print_help()
+        sys.exit(2)
+
+    quit(is_valid)
+
+
+if __name__ == "__main__":
+    main()
