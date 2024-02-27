@@ -1,0 +1,357 @@
+// generic drawing of more complex things
+
+@mixin entry($t, $fc: $primary) {
+//
+// entry
+//
+// $t: entry type
+// $fc: focus color
+//
+
+  @if $t == normal {
+    transition: $transition,
+                border $ripple-fade-out-duration $ease-out,
+                box-shadow $ripple-fade-out-duration $ease-out;
+    box-shadow: inset 0 0 0 1px transparent;
+    background-color: $base;
+    color: $text;
+
+    @if $variant == "light" {
+      border-color: $border;
+      border-bottom-color: $border-bottom;
+    } @else {
+      border-color: $border-bottom;
+      border-top-color: $border;
+    }
+  }
+
+  @if $t == hover {
+    background-color: $base;
+    box-shadow: inset 0 0 0 1px transparent;
+    border-color: $text-disabled;
+  }
+
+  @if $t == focus {
+    background-color: $base;
+    box-shadow: inset 0 0 0 1px if($fc == $primary, $text-disabled, $fc);
+    border-color: if($fc == $primary, $text-disabled, $fc);
+    outline: none;
+  }
+
+  @if $t == disabled {
+    box-shadow: inset 0 0 0 1px transparent;
+    background-color: $base-alt;
+    color: $text-disabled;
+    border-color: $fill;
+  }
+
+  @if $t == round-normal {
+    transition: $transition,
+                border-image $ripple-fade-out-duration $ease-out;
+    background-color: if($fc == $primary, $base, $fc);
+    color: if($fc == $primary, $text, on($fc));
+    border-image-width: 4px 4px 4px 4px;
+    border-image-slice: 4 4 4 4;
+    border-image-repeat: stretch;
+    border-image-source: -gtk-scaled(url("assets/entry-normal#{$asset-suffix}.png"),url("assets/entry-normal#{$asset-suffix}@2.png"));
+    box-shadow: none;
+    outline: none;
+  }
+
+  @if $t == round-hover {
+    border-image-source: -gtk-scaled(url("assets/entry-normal#{$asset-suffix}.png"),url("assets/entry-normal#{$asset-suffix}@2.png"));
+  }
+
+  @if $t == round-focus {
+    border-image-source: -gtk-scaled(url("assets/entry-focus#{$asset-suffix}.png"),url("assets/entry-focus#{$asset-suffix}@2.png"));
+    box-shadow: none;
+    outline: none;
+  }
+
+  @if $t == round-disabled {
+    border-image-source: -gtk-scaled(url("assets/entry-disabled#{$asset-suffix}.png"),url("assets/entry-disabled#{$asset-suffix}@2.png"));
+    background-color: $base-alt;
+    color: $text-disabled;
+  }
+}
+
+
+@mixin button($t) {
+//
+// button
+//
+// $t: button type
+//
+
+  @if $t == normal {
+    transition: $transition,
+                border $ripple-fade-out-duration $ease-out,
+                box-shadow $ripple-fade-out-duration $ease-out;
+    outline: none;
+    box-shadow: inset 0 0 0 1px transparent, 0 0 0 2px transparent;
+    background-color: $base;
+    color: $text;
+
+    @if $variant == "light" {
+      border-color: $border;
+      border-bottom-color: $border-bottom;
+    } @else {
+      border-color: $border-bottom;
+      border-top-color: $border;
+    }
+  }
+
+  @if $t == hover {
+    box-shadow: inset 0 0 0 1px transparent, 0 0 0 2px transparent;
+    // background-color: $base;
+    border-color: $track;
+    outline: none;
+  }
+
+  @if $t == focus {
+    box-shadow: inset 0 0 0 1px transparent, 0 0 0 2px $text-secondary;
+    border-color: transparent;
+    background-clip: padding-box;
+    outline: none;
+  }
+
+  @if $t == active {
+    animation: none;
+    transition: $transition,
+                border $ripple-fade-out-duration $ease-out,
+                box-shadow $ripple-fade-out-duration $ease-out;
+    box-shadow: inset 0 0 0 1px $track, 0 0 0 2px transparent;
+  }
+
+  @if $t == disabled {
+    box-shadow: none;
+    background-color: $base-alt;
+    color: $text-disabled;
+    border-color: $fill;
+  }
+
+  @if $t == checked {
+    box-shadow: inset 0 0 0 1px transparent, 0 0 0 2px transparent;
+    background-clip: border-box;
+    background-color: $primary;
+    color: on($primary);
+    border-color: lighten($primary, 5%);
+    border-bottom-color: darken($primary, 5%);
+    transition: $transition, background-color $ripple-fade-out-duration $ease-out;
+  }
+
+  @if $t == checked-hover {
+    box-shadow: inset 0 0 0 9999px transparent;
+  }
+
+  @if $t == checked-disabled {
+    box-shadow: none;
+    background-color: rgba($primary, 0.35);
+    border-color: rgba($primary, 0.35);
+    background-clip: padding-box;
+    color: rgba(on($primary), 0.5);
+  }
+
+  @if $t == flat-normal {
+    transition: $transition,
+                box-shadow $ripple-fade-out-duration $ease-out;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+    color: $text-secondary;
+  }
+
+  @if $t == flat-hover {
+    background-color: $overlay-hover;
+    color: $text;
+    border-color: transparent;
+    outline: none;
+  }
+
+  @if $t == flat-focus {
+    box-shadow: inset 0 0 0 2px $overlay-focus;
+    color: $text;
+    border-color: transparent;
+    outline: none;
+  }
+
+  @if $t == flat-active {
+    animation: none;
+    transition: $transition,
+                box-shadow $ripple-fade-out-duration $ease-out;
+    background-color: $overlay-active;
+    color: $text;
+    border-color: transparent;
+  }
+
+  @if $t == flat-disabled {
+    box-shadow: none;
+    background-color: transparent;
+    color: $text-secondary-disabled;
+  }
+
+  @if $t == flat-checked {
+    background-color: $overlay-checked;
+    color: $text;
+    outline: none;
+  }
+
+  @if $t == flat-checked-disabled {
+    background-color: $overlay-checked;
+    color: $text-disabled;
+  }
+}
+
+
+@mixin overshoot($p) {
+//
+// overshoot
+//
+// $p: position
+//
+// possible $p values:
+// top, bottom, right, left
+//
+
+  $_small_gradient_length: 3%;
+  $_big_gradient_length: 50%;
+
+  $_small_gradient_size: 100% $_small_gradient_length;
+  $_big_gradient_size: 100% $_big_gradient_length;
+
+  @if $p==right or $p==left {
+    $_small_gradient_size: $_small_gradient_length 100%;
+    $_big_gradient_size: $_big_gradient_length 100%;
+  }
+
+  $_small_gradient: radial-gradient(farthest-side at $p,
+                                    gtkalpha(currentColor, 0.12) 85%,
+                                    gtkalpha(currentColor, 0));
+
+  $_big_gradient: radial-gradient(farthest-side at $p,
+                                  gtkalpha(currentColor, 0.05),
+                                  gtkalpha(currentColor, 0));
+
+  background-image: $_small_gradient, $_big_gradient;
+  background-size: $_small_gradient_size, $_big_gradient_size;
+
+  background-repeat: no-repeat;
+  background-position: $p;
+
+  background-color: transparent; // reset some properties to be sure to not inherit them somehow
+  border: none;
+  box-shadow: none;
+}
+
+
+@mixin overshoot($p) {
+//
+// overshoot
+//
+// $p: position
+//
+// possible $p values:
+// top, bottom, right, left
+//
+
+  $_small_gradient_length: 3%;
+  $_big_gradient_length: 50%;
+
+  $_small_gradient_size: 100% $_small_gradient_length;
+  $_big_gradient_size: 100% $_big_gradient_length;
+
+  @if $p==right or $p==left {
+    $_small_gradient_size: $_small_gradient_length 100%;
+    $_big_gradient_size: $_big_gradient_length 100%;
+  }
+
+  $_small_gradient: radial-gradient(farthest-side at $p,
+                                    gtkalpha(currentColor, 0.12) 85%,
+                                    gtkalpha(currentColor, 0));
+
+  $_big_gradient: radial-gradient(farthest-side at $p,
+                                  gtkalpha(currentColor, 0.05),
+                                  gtkalpha(currentColor, 0));
+
+  background-image: $_small_gradient, $_big_gradient;
+  background-size: $_small_gradient_size, $_big_gradient_size;
+
+  background-repeat: no-repeat;
+  background-position: $p;
+
+  background-color: transparent; // reset some properties to be sure to not inherit them somehow
+  border: none;                  //
+  box-shadow: none;              //
+}
+
+
+@mixin undershoot($p, $c: $frame, $neighbor: false) {
+//
+// undershoot
+//
+// $p: position
+// $c: shade color
+// $neighbor: use ~ instead of >
+//
+// possible $p values:
+// top, bottom, right, left
+//
+
+  $_border_pos: '';
+  $_direction: '';
+  $_selector: if($neighbor, '~', '>');
+
+  @if $p==top {
+    $_direction: bottom;
+    $_border_pos: 0 1px;
+  } @else if $p==bottom {
+    $_direction: top;
+    $_border_pos: 0 -1px;
+  } @else if $p==left {
+    $_direction: right;
+    $_border_pos: 1px 0;
+  } @else if $p==right {
+    $_direction: left;
+    $_border_pos: -1px 0;
+  } @else {
+    @error "Unknown position #{$p}"
+  }
+  
+  #{$_selector} undershoot.#{$p} {
+    box-shadow: inset $_border_pos $border;
+    background: linear-gradient(to $_direction, gtkalpha($c, .75), transparent 4px);
+  }
+}
+
+@mixin background-shadow($direction, $color) {
+  background-image:
+  linear-gradient($direction,
+                  gtkalpha($color, 0.7),
+                  gtkalpha($color, 0.14) 40px,
+                  gtkalpha($color, 0) 56px),
+  linear-gradient($direction,
+                  gtkalpha($color, 0.4),
+                  gtkalpha($color, 0.14) 7px,
+                  gtkalpha($color, 0) 24px);
+}
+
+@mixin transition-shadows($color) {
+  > dimming {
+    background: $color;
+  }
+  
+  > border {
+    background: none;
+  }
+  
+  > shadow {
+    min-width: 56px;
+    min-height: 56px;
+  
+    &.left  { @include background-shadow(to right,  $color); }
+    &.right { @include background-shadow(to left,   $color); }
+    &.up    { @include background-shadow(to bottom, $color); }
+    &.down  { @include background-shadow(to top,    $color); }
+  }
+}
