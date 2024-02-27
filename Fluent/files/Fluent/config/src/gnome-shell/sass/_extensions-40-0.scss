@@ -1,0 +1,481 @@
+
+//
+// Dash to Dock
+//
+
+// Scrollview style
+.bottom #dashtodockDashScrollview,
+.top #dashtodockDashScrollview {
+  -st-hfade-offset: 24px;
+}
+
+.left #dashtodockDashScrollview,
+.right #dashtodockDashScrollview {
+  -st-vfade-offset: 24px;
+}
+
+#dashtodockContainer {
+  background-color: transparent;
+  box-shadow: none;
+
+  .number-overlay {
+    color: $light_fg_color;
+    background-color: rgba(black, 0.75);
+    text-align: center;
+  }
+
+  .notification-badge {
+    color: $inverse_fg_color;
+    background-color: $primary_color;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
+    border-radius: $circular_radius;
+    margin: 2px 3px 5px;
+    padding: 0.2em 0.6em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  @each $_pos, $b_pos in (top, bottom),
+                         (bottom, top),
+                         (left, right),
+                         (right, left) {
+    &.#{$_pos}.straight-corner #dash,
+    &.#{$_pos}.shrink.straight-corner #dash,
+    &.#{$_pos}.extended #dash,
+    &.#{$_pos}.extended:overview #dash {
+      margin: 0 !important;
+      padding: 0 !important;
+
+      .dash-background {
+        margin: 0 !important;
+        margin-bottom: 0 !important;
+      }
+
+      .dash-item-container .app-well-app, .show-apps {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  &.extended #dash,
+  &.straight-corner #dash {
+    .dash-background {
+      border-radius: 0;
+    }
+  }
+
+  &.shrink #dash {
+    .dash-background {
+      padding: 0 0 !important;
+      border-radius: $menu_radius;
+    }
+
+    .dash-item-container .app-well-app, .show-apps {
+      margin: 0 !important;
+      padding: 0 0 0 !important;
+    }
+  }
+
+  &.left,
+  &.right {
+    #dash {
+      .dash-item-container .app-well-app {
+        padding: $dash_spacing $container-padding !important;
+      }
+
+      .show-apps {
+        padding-bottom: $container-padding !important;
+      }
+    }
+
+    &.shrink #dash {
+      .dash-item-container .app-well-app, .show-apps {
+        margin: 0 !important;
+        padding: 0 0 0 !important;
+      }
+    }
+
+    &.extended #dash,
+    &.straight-corner #dash {
+      .dash-item-container .app-well-app, .show-apps {
+        padding: $dash_spacing $dash_padding !important;
+      }
+    }
+  }
+
+  &.top,
+  &.bottom {
+    #dash {
+      .dash-background {
+        padding: $dash_padding $dash_padding / 2 !important;
+      }
+    }
+
+    &.shrink #dash {
+      .dash-background {
+        padding: 0 0 !important;
+      }
+
+      .dash-item-container .app-well-app, .show-apps {
+        margin: 0 !important;
+        padding: 0 0 $dash_bottom_margin !important;
+      }
+    }
+
+    &.extended #dash,
+    &.straight-corner #dash {
+      .dash-separator {
+        margin: 0 ($dash_spacing + ($dash_padding / 2)) !important;
+      }
+
+      .dash-item-container .app-well-app, .show-apps {
+        padding: $dash_padding $dash_spacing !important;
+      }
+    }
+  }
+
+  #dash { // default-mode
+    background: none;
+    box-shadow: none;
+
+    .dash-background {
+      background-color: $panel_bg_color;
+      background-clip: padding-box;
+    }
+
+    .app-well-app-running-dot {
+      background-color: $panel_hint_fg_color !important;
+    }
+
+    StWidget.focused .app-well-app-running-dot {
+      background-color: $primary_color;
+    }
+
+    .show-apps,
+    .app-well-app {
+      .overview-icon {
+        color: $panel_secondary_fg_color !important;
+      }
+
+      &:hover .overview-icon,
+      &:focus .overview-icon,
+      &:selected .overview-icon {
+        background-color: $panel_divider_color !important;
+        color: $panel_fg_color !important;
+
+        @if $window == 'round' {
+          border: 1px solid $panel_border_color;
+        }
+      }
+
+      &:active .overview-icon,
+      &:checked .overview-icon {
+        background-color: $panel_divider_color !important;
+        color: $panel_fg_color !important;
+      }
+    }
+  }
+
+  .dash-separator {
+    background-color: rgba($panel_fg_color, 0.15) !important;
+  }
+
+  StWidget.focused {
+    .overview-icon {
+      background-color: $panel_divider_color !important;
+
+      @if $window == 'round' {
+        border: 1px solid $panel_border_color;
+        box-shadow: inset 0 1px $panel_highlight_color;
+      }
+    }
+
+    &:hover .overview-icon {
+      background-color: $panel_track_color !important;
+    }
+
+    .app-well-app-running-dot {
+      background-color: $primary_color !important;
+    }
+  }
+
+  &.opaque #dash .dash-background { // solid-mode
+    background-color: $panel_bg;
+  }
+
+  &.transparent #dash .dash-background { // translucent-mode
+    background-color: $panel_bg_color; // does not work
+  }
+
+  &:overview #dash {
+    .dash-background { // overview-mode #1
+      background-color: rgba(white, 0.2);
+    }
+
+    .show-apps,
+    .app-well-app {
+      .overview-icon {
+        color: $inverse_secondary_fg_color !important;
+      }
+
+      &:hover .overview-icon,
+      &:focus .overview-icon,
+      &:selected .overview-icon {
+        background-color: $panel_divider_color !important;
+        color: $inverse_fg_color !important;
+      }
+
+      &:active .overview-icon,
+      &:checked .overview-icon {
+        background-color: $panel_divider_color !important;
+        color: $inverse_fg_color !important;
+      }
+    }
+
+    .app-well-app-running-dot {
+      background-color: $panel_hint_fg_color !important;
+    }
+
+    StWidget.focused {
+      .overview-icon {
+        background-color: $inverse_divider_color !important;
+
+        @if $window == 'round' {
+          border: 1px solid $icon_border_color;
+          box-shadow: inset 0 1px $icon_highlight_color;
+        }
+      }
+
+      &:hover .overview-icon {
+        background-color: $inverse_track_color !important;
+      }
+
+      .app-well-app-running-dot {
+        background-color: $primary_color !important;
+      }
+    }
+
+    .app-well-app-running-dot {
+      background-color: $inverse_hint_fg_color !important;
+    }
+
+    StWidget.focused {
+      .app-well-app-running-dot {
+        background-color: $primary_color !important;
+      }
+    }
+  }
+
+  &.opaque:overview,
+  &.transparent:overview { // overview-mode #2
+    #dash {
+      background-color: transparent !important;
+      box-shadow: none !important;
+
+      .dash-background { background-color: transparent !important; }
+    }
+  }
+
+  &.extended:overview, // overview-mode #3
+  &.opaque.extended:overview,
+  &.transparent.extended:overview {
+    #dash {
+      background: none;
+    }
+
+    .dash-background {
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  &.running-dots,
+  &.dashtodock {
+    .dash-item-container > StButton {
+      transition-duration: 250ms;
+      background-size: contain;
+    }
+  }
+
+  &.extended,
+  &.extended:overview {
+    .app-well-app,
+    .show-apps {
+      .overview-icon {
+        border-radius: $buttons_radius;
+      }
+    }
+  }
+
+  .metro .overview-icon {
+    border-radius: 0;
+  }
+}
+
+.dashtodock-app-well-preview-menu-item {
+  padding: 1em 1em 0.5em 1em;
+}
+
+#dashtodockPreviewSeparator.popup-separator-menu-item-horizontal {
+  width: 1px;
+  height: auto;
+  border-right-width: 1px;
+  margin: 32px 0;
+}
+
+//
+// Dash to Panel
+//
+
+.dashtopanelMainPanel {
+  .show-apps,
+  .app-well-app {
+    .overview-icon {
+      color: $panel_secondary_fg_color !important;
+    }
+
+    &:hover .overview-icon,
+    &:focus .overview-icon,
+    &:selected .overview-icon {
+      background-color: $panel_divider_color !important;
+      color: $panel_fg_color !important;
+      box-shadow: none !important;
+    }
+
+    &:active .overview-icon,
+    &:checked .overview-icon {
+      background-color: $panel_track_color !important;
+      color: $panel_fg_color !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .panel-button { color: $panel_secondary_fg_color !important; }
+}
+
+//
+// OpenWeather
+//
+
+.openweather {
+  &-button,
+  &-button-action,
+  &-menu-button-container,
+  &-button-box {
+    border: 1px solid transparent !important;
+  }
+
+  &-provider {
+    // generic text buttons are allocated with y-expand-ed
+    padding: 0 16px;
+    font-weight: 500;
+    @include button(flat-normal);
+    &:hover { @include button(flat-hover); }
+    &:focus { @include button(flat-focus); }
+    &:active { @include button(flat-active); }
+    &:insensitive { @include button(flat-disabled); }
+  }
+
+  &-current {
+    &-icon,
+    &-summary,
+    &-summarybox {
+      background: none;
+      color: $fg_color;
+    }
+
+    &-databox-values {
+      background: none;
+      color: $hint_fg_color;
+    }
+
+    &-databox-captions {
+      background: none;
+      color: $hint_fg_color;
+    }
+  }
+
+  &-forecast {
+    &-icon,
+    &-summary {
+      background: none;
+      color: $secondary_fg_color;
+    }
+
+    &-day,
+    &-temperature {
+      background: none;
+      color: $hint_fg_color;
+    }
+  }
+
+  &-sunrise-icon,
+  &-sunset-icon,
+  &-build-icon { color: $secondary_fg_color; }
+}
+
+//
+// Gsconnect
+//
+.gsconnect-device-menu {
+  .popup-menu-item {
+    height: 20px !important;
+    padding: $container_padding / 2 0;
+
+    > :last-child {
+      &:ltr { padding-right: $container_padding !important; margin-right: $container_padding * 2 !important; }
+      &:rtl { padding-left: $container_padding !important; padding-left: $container_padding * 2 !important; }
+    }
+  }
+}
+
+//
+// Blur my shell
+//
+
+#panel.light-panel,
+#panel.dark-panel,
+#panel.transparent-panel {
+  .panel-button {
+    color: $inverse_secondary_fg_color !important;
+
+    &.clock-display {
+      .clock {
+        color: $inverse_secondary_fg_color !important;
+      }
+    }
+
+    &:hover {
+      color: $inverse_secondary_fg_color !important;
+      background-color: $inverse_divider_color !important;
+    }
+
+    &:active, &:checked, &:focus {
+      color: $inverse_fg_color !important;
+      background-color: $inverse_track_color !important;
+    }
+
+    &:hover, &:active, &:overview, &:focus, &:checked {
+      &.clock-display {
+        .clock {
+          color: $inverse_fg_color !important;
+        }
+      }
+    }
+  }
+}
+
+.overview-components-transparent .search-entry,
+.overview-components-light .search-entry,
+.overview-components-dark .search-entry {
+  caret-color: rgba(white, 0.75) !important;
+
+  .search-entry-icon {
+    color: rgba(white, 0.65);
+  }
+
+  StLabel.hint-text {
+    color: rgba(white, 0.35) !important;
+  }
+}

@@ -1,0 +1,128 @@
+//This is the RIGHT PLACE to edit the stylesheet
+
+//let's start by telling people not to edit the generated CSS:
+$cakeisalie: "This stylesheet is generated, DO NOT EDIT";
+/* #{$cakeisalie} */
+
+stage {
+  @include font(body-1);
+  color: $fg_color;
+}
+
+%status_text {
+  @include font(display-2);
+  color: $inverse_hint_fg_color;
+}
+
+%bubble_button {
+  @include font(button);
+  margin: 0;
+  border-radius: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  transition: border-image 200ms;
+  border-image: url("assets/modal-button.svg") 16 16 16 16;
+
+  &:hover {
+    border-image: url("assets/modal-button-hover.svg") 16 16 16 16;
+  }
+
+  &:active {
+    border-image: url("assets/modal-button-active.svg") 16 16 16 16;
+  }
+
+  &:first-child {
+    color: $secondary_fg_color;
+    border-image: url("assets/modal-button-left.svg") 16 16 16 16;
+
+    &:hover {
+      border-image: url("assets/modal-button-left-hover.svg") 16 16 16 16;
+    }
+
+    &:active {
+      border-image: url("assets/modal-button-left-active.svg") 16 16 16 16;
+    }
+
+    &:hover, &:active {
+      color: $fg_color;
+    }
+
+    &:insensitive {
+      color: $disabled_secondary_fg_color;
+    }
+  }
+
+  &:last-child {
+    color: white;
+    border-image: url("assets/modal-button-right.svg") 16 16 16 16;
+
+    &:hover {
+      color: white;
+      border-image: url("assets/modal-button-right-hover.svg") 16 16 16 16;
+    }
+
+    &:active {
+      color: white;
+      border-image: url("assets/modal-button-right-active.svg") 16 16 16 16;
+    }
+
+    &:insensitive {
+      color: rgba(white, 0.45);
+    }
+  }
+
+  // &:first-child:last-child {
+  //   border-image: none;
+  // }
+}
+
+/* General Typography */
+
+%large_title {
+  font-weight: 300;
+  @include fontsize(24);
+}
+
+%title_1 {
+  font-weight: 800;
+  @include fontsize(20);
+}
+
+%title_2 {
+  font-weight: 800;
+  @include fontsize(15);
+}
+
+%title_3 {
+  font-weight: 700;
+  @include fontsize(15);
+}
+
+%title_4 {
+  font-weight: 700;
+  @include fontsize(13);
+}
+
+%heading {
+  font-weight: 700;
+  @include fontsize(11);
+}
+
+%caption_heading {
+  font-weight: 700;
+  @include fontsize(9);
+}
+
+%caption {
+  font-weight: 400;
+  @include fontsize(9);
+}
+
+%smaller {
+  font-weight: 400;
+  @include fontsize(8);
+}
+
+%monospace {font-family: monospace;}
+%numeric { font-feature-settings: "tnum";}
