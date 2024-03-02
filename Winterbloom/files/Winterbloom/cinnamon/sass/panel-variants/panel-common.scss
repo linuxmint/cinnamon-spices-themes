@@ -1,0 +1,97 @@
+@use '../palette';
+@import 'panel-X';   // SELECT ONE VARIANT HERE
+
+@function -decide-gradient-orientation($position, $is-hard) {
+    @if $is-hard {
+        @return ($position==top or $position==left);
+    }
+    @else {
+        @return ($position==bottom or $position==right);
+    }
+}
+
+@mixin -bggrad($color-hardouter, $color-hardinner, $position, $is-hard) {
+    @if ($position==top or $position==bottom) {
+        background-gradient-direction: vertical;
+    }
+    @else {
+        background-gradient-direction: horizontal;
+    }
+
+    @if -decide-gradient-orientation($position, $is-hard) {
+        background-gradient-start: $color-hardouter;
+        background-gradient-end: $color-hardinner;
+    }
+    @else {
+        background-gradient-start: $color-hardinner;
+        background-gradient-end: $color-hardouter;
+    }
+}
+
+@mixin panel-background-gradient($position) {
+    $color-D: palette.$gradient-panel-D;
+    $color-L: palette.$gradient-panel-L;
+    @include -bggrad($color-D, $color-L, $position, panel-is-hard($position));
+}
+
+@mixin window-list-hoverfocus-background-gradient($position) {
+    $color-strong: rgba(palette.$accent-vivid, 0.5);
+    $color-transp: rgba(palette.$accent-vivid, 0.4);
+    @include -bggrad($color-strong, $color-transp, $position, panel-is-hard($position));
+}
+
+@mixin window-list-focus-background-gradient($position) {
+    $color-strong: rgba(palette.$accent-vivid, 0.35);
+    $color-transp: rgba(palette.$accent-vivid, 0.0);
+    @include -bggrad($color-strong, $color-transp, $position, panel-is-hard($position));
+}
+
+// I tried :(
+
+// @mixin applet-box-hover-background-gradient($position) {
+//     $color-transp: rgba(palette.$applet-hover-bg, 0.25);
+//     $color-strong: rgba(palette.$applet-hover-bg, 0.4);
+//     @include -bggrad($color-transp, $color-strong, $position, panel-is-hard($position));
+// }
+
+@mixin grouped-window-list-hover-background-gradient($position) {
+    $color-transp: rgba(palette.$applet-hover-bg, 0.25);
+    $color-strong: rgba(palette.$applet-hover-bg, 0.4);
+    @include -bggrad($color-transp, $color-strong, $position, panel-is-hard($position));
+}
+
+@mixin grouped-window-list-focus-background-gradient($position) {
+    $color-strong: rgba(palette.$accent-vivid, 0.5);
+    $color-transp: rgba(palette.$accent-vivid, 0.4);
+    @include -bggrad($color-strong, $color-transp, $position, panel-is-hard($position));
+}
+
+@mixin grouped-window-list-hoverfocus-background-gradient($position) {
+    $color-strong: rgba(palette.$accent-vivid, 0.7);
+    $color-transp: rgba(palette.$accent-vivid, 0.5);
+    @include -bggrad($color-strong, $color-transp, $position, panel-is-hard($position));
+}
+
+
+@mixin -bordwidth($width, $position, $is-hard) {
+    @if (($position==top and $is-hard) or ($position==bottom and not $is-hard)) {
+        border-top-width: $width;
+    }
+    @else if (($position==bottom and $is-hard) or ($position==top and not $is-hard)) {
+        border-bottom-width: $width;
+    }
+    @else if (($position==left and $is-hard) or ($position==right and not $is-hard)) {
+        border-left-width: $width;
+    }
+    @else if (($position==right and $is-hard) or ($position==left and not $is-hard)) {
+        border-right-width: $width;
+    }
+}
+
+@mixin window-list-border-width($width, $position) {
+    @include -bordwidth($width, $position, panel-is-hard($position))
+}
+
+@mixin grouped-window-list-border-width($width, $position) {
+    @include -bordwidth($width, $position, panel-is-hard($position))
+}

@@ -1,0 +1,72 @@
+/// uniform style of a few text entry fields across Cinnamon
+
+#menu-search-entry,
+.popup-menu #notification StEntry {
+    padding: 7px;
+    caret-size: 1px;
+    selection-background-color: colors.$ENTRIES-selected-background-color;
+    selected-color: colors.$ENTRIES-selected-text-color;
+    transition-duration: 300ms;
+    border-radius: 10px;
+    color: colors.$ENTRIES-text-color;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$ENTRIES-background-gradient-start;
+    background-gradient-end: colors.$ENTRIES-background-gradient-end;
+    border: 1px solid colors.$ENTRIES-border-color;
+    box-shadow: inset 0 2px 4px colors.$ENTRIES-shadow-color;
+    padding-left: 15px;
+}
+#menu-search-entry:focus,
+#menu-search-entry:hover,
+.popup-menu #notification StEntry:focus,
+.popup-menu #notification StEntry:hover {
+    color: colors.$ENTRIES-focus-hover-text-color;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$ENTRIES-focus-hover-background-gradient-start;
+    background-gradient-end: colors.$ENTRIES-focus-hover-background-gradient-end;
+    border: 1px solid colors.$ENTRIES-focus-hover-border-color;
+    box-shadow: inset 0 2px 4px colors.$ENTRIES-focus-hover-shadow-color;
+}
+#menu-search-entry:insensitive,
+.popup-menu #notification StEntry:insensitive {
+    color: colors.$ENTRIES-insensitive-text-color;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$ENTRIES-insensitive-background-gradient-start;
+    background-gradient-end: colors.$ENTRIES-insensitive-background-gradient-end;
+    border-color: 1px solid colors.$ENTRIES-insensitive-border-color;
+    box-shadow: inset 0 2px 4px colors.$ENTRIES-insensitive-shadow-color;
+}
+#menu-search-entry StIcon.capslock-warning,
+.popup-menu #notification StEntry StIcon.capslock-warning {
+    icon-size: 16px;
+    warning-color: colors.$ENTRIES-capslock-warning-color;
+    padding: 0 4px;
+}
+
+.notification StEntry {
+    padding: 7px;
+    caret-size: 1px;
+    caret-color: colors.$ENTRIES-notif-caret-color;
+    selection-background-color: colors.$ENTRIES-notif-selected-background-color;
+    selected-color: colors.$ENTRIES-notif-selected-text-color;
+    transition-duration: 300ms;
+    border-radius: 3px;
+    color: colors.$ENTRIES-notif-text-color;
+    background-color: colors.$ENTRIES-notif-background-color;
+    border: 1px solid colors.$ENTRIES-notif-border-color;
+    box-shadow: inset 0 2px 4px colors.$ENTRIES-notif-shadow-color;
+}
+.notification StEntry:focus {
+    color: colors.$ENTRIES-notif-focus-text-color;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$ENTRIES-notif-focus-background-gradient-start;
+    background-gradient-end: colors.$ENTRIES-notif-focus-background-gradient-end;
+    border: 1px solid colors.$ENTRIES-notif-focus-border-color;
+    box-shadow: inset 0 2px 4px colors.$ENTRIES-notif-focus-shadow-color;
+}
+.notification StEntry:insensitive {
+    color: colors.$ENTRIES-notif-insensitive-text-color;
+    background-color: colors.$ENTRIES-notif-insensitive-background-color;
+    border: 1px solid colors.$ENTRIES-notif-insensitive-border-color;
+    box-shadow: inset 0 2px 4px colors.$ENTRIES-notif-insensitive-shadow-color;
+}

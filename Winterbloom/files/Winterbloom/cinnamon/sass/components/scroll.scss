@@ -1,0 +1,36 @@
+/// Scrollbars!
+
+StScrollView.vfade {
+    -st-vfade-offset: 68px;
+}
+
+StScrollView.hfade {
+    -st-hfade-offset: 68px;
+}
+
+StScrollBar {
+    padding: 8px;
+}
+StScrollView StScrollBar {
+    min-width: 5px;
+    min-height: 5px;
+}
+StScrollBar StBin#trough {
+    background-color: colors.$scroll-bin-color;
+    border-radius: 8px;
+}
+StScrollBar StButton#hhandle,
+StScrollBar StButton#vhandle {
+    border-radius: 2px;
+    background-color: colors.$scrollbar-color;
+    border: 0 solid;
+    margin: 0;
+}
+StScrollBar StButton#hhandle:hover,
+StScrollBar StButton#vhandle:hover {
+    background-color: colors.$scrollbar-hover-color;
+}
+StScrollBar StButton#hhandle:active,
+StScrollBar StButton#vhandle:active {
+    background-color: colors.$scrollbar-active-color;
+}

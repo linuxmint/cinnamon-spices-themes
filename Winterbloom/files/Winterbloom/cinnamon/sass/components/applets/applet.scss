@@ -1,0 +1,72 @@
+/// Generic applet stuff
+
+.applet-separator {
+    padding: 1px 4px;
+}
+.applet-separator.vertical {
+    padding: 4px 1px;
+}
+
+.applet-separator-line {
+    width: 1px;
+    background: colors.$applet-separator-line-color;
+}
+.applet-separator-line-vertical {
+    height: 1px;
+    background: colors.$applet-separator-line-vertical-color;
+}
+
+.applet-box {
+    padding-left: 4px;
+    padding-right: 4px;
+    spacing: 4px;
+    color: colors.$applet-box-text-color;
+    text-shadow: none;
+    transition-duration: 100;
+    text-align: center;
+}
+.applet-box.vertical {
+    padding: 3px 0;
+}
+.applet-box:checked,
+.applet-box:hover {
+    color: colors.$applet-box-hover-text-color;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$applet-box-hover-background-gradient-start;
+    background-gradient-end: colors.$applet-box-hover-background-gradient-end;
+}
+.applet-box:checked-label,
+.applet-box:hover-label {
+    color: colors.$applet-box-hover-label-color;
+}
+.applet-box:highlight {
+    background-image: none;
+    border-image: none;
+    background-color: colors.$applet-box-highlight-background-color;
+}
+
+.applet-label {
+    font-weight: bold;
+    color: colors.$applet-label-color;
+}
+.applet-box:checked > .applet-label,
+.applet-box:hover > .applet-label,
+.applet-box:checked .applet-label,
+.applet-box:hover .applet-label,
+.applet-label:checked,
+.applet-label:hover {
+    color: colors.$applet-label-hover-color;
+    text-shadow: none;
+}
+
+.applet-icon {
+    color: colors.$applet-icon-color;
+    icon-size: 22px;
+}
+.applet-box:checked > .applet-icon,
+.applet-box:hover > .applet-icon,
+.applet-icon:checked,
+.applet-icon:hover {
+    color: colors.$applet-icon-hover-color;
+    text-shadow: none;
+}

@@ -1,0 +1,54 @@
+/// A number of boxes that appear in a few circumstances,
+/// such as when pressing volume/brightness buttons on the keyboard,
+/// or switching workspaces, etc.
+
+/* Context menu (at the moment only for favorites) */
+// This is for changing workspace, dragging a window to the border of the screen, etc.
+.info-osd {
+    text-align: center;
+    font-weight: bold;
+    spacing: 1em;
+    padding: 16px;
+    color: colors.$osd-info-text-color;
+    border: 1px solid colors.$osd-info-border-color;
+    border-radius: 5px;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$osd-info-background-gradient-start;
+    background-gradient-end: colors.$osd-info-background-gradient-end;
+}
+
+.restart-osd {
+    font-size: 1.6em;
+}
+
+.workspace-osd {
+    font-size: 4em;
+}
+
+// This is for volume/brightness changes, etc.
+.osd-window {
+    text-align: center;
+    font-weight: bold;
+    spacing: 1em;
+    padding: 20px;
+    color: colors.$osd-window-text-color;
+    /* background-color: rgba(221, 235, 253, 0.808); */
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$osd-window-background-gradient-start;
+    background-gradient-end: colors.$osd-window-background-gradient-end;
+    border: 1px solid colors.$osd-window-border-color;
+    border-radius: 5px;
+}
+.osd-window .osd-monitor-label {
+    font-size: 3em;
+}
+.osd-window .level {
+    padding: 0;
+    height: 0.7em;
+    background-color: colors.$osd-level-background-color;
+    border-radius: 5px;
+}
+.osd-window .level-bar {
+    border-radius: 5px;
+    background-color: colors.$osd-level-bar-color;
+}

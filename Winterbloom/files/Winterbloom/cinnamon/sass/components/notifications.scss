@@ -1,0 +1,61 @@
+/// Notifications
+/// Also depends on both BUTTONS and ENTRIES.
+
+#notification {
+    border: 1px solid colors.$notif-border-color;
+    border-radius: 3px;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$notif-background-gradient-start;
+    background-gradient-end: colors.$notif-background-gradient-end;
+    padding: 13px;
+    spacing-rows: 10px;
+    spacing-columns: 10px;
+    margin-from-right-edge-of-screen: 20px;
+    width: 34em;
+    color: colors.$notif-text-color;
+}
+.popup-menu #notification {
+    color: colors.$popupmenu-notif-text-color;
+    border-image: url("dark-assets/misc/message.svg") 9 9 9 9;
+}
+.popup-menu #notification .notification-button,
+.popup-menu #notification .notification-icon-button {
+    padding: 5px;
+}
+#notification.multi-line-notification {
+    padding-bottom: 13px;
+    color: colors.$notif-multiline-text-color;
+}
+#notification-scrollview {
+    max-height: 10em;
+}
+#notification-scrollview > .bottom-shadow,
+#notification-scrollview > .top-shadow {
+    height: 1em;
+}
+#notification-scrollview:ltr > StScrollBar {
+    padding-left: 6px;
+}
+#notification-scrollview:rtl > StScrollBar {
+    padding-right: 6px;
+}
+#notification-body {
+    spacing: 5px;
+}
+#notification-actions {
+    spacing: 10px;
+}
+
+.notification-with-image {
+    min-height: 159px;
+    color: colors.$notif-withimage-text-color;
+}
+
+.notification-button,
+.notification-icon-button {
+    padding: 5px;
+}
+
+.notification-icon-button > StIcon {
+    icon-size: 32px;
+}

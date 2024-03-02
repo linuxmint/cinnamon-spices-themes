@@ -1,0 +1,187 @@
+/// The main panels of the Cinnamon desktop,
+/// those found at the sides of the screen
+/// and hosting applets (such as the window list and the menu)
+
+#panel {
+    font-weight: bold;
+    /* sets the height of horizontal panels */
+    height: 40px;
+    /* sets the width of vertical panels */
+    width: 32px;
+}
+#panelLeft {
+    spacing: 4px;
+}
+#panelLeft:dnd {
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$panel-left-dnd-background-gradient-start;
+    background-gradient-end: colors.$panel-left-dnd-background-gradient-end;
+}
+#panelLeft:ltr {
+    padding-right: 4px;
+}
+#panelLeft:rtl {
+    padding-left: 4px;
+}
+#panelLeft.vertical {
+    padding: 0;
+}
+#panelLeft.vertical:ltr {
+    padding-right: 0;
+}
+#panelLeft.vertical:rtl {
+    padding-left: 0;
+}
+#panelRight:dnd {
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$panel-right-dnd-background-gradient-start;
+    background-gradient-end: colors.$panel-right-dnd-background-gradient-end;
+}
+#panelRight:ltr {
+    padding-left: 4px;
+    spacing: 0;
+}
+#panelRight:rtl {
+    padding-right: 4px;
+    spacing: 0;
+}
+#panelRight.vertical {
+    padding: 0;
+}
+#panelRight.vertical:ltr {
+    padding-right: 0;
+}
+#panelRight.vertical:rtl {
+    padding-left: 0;
+}
+#panelCenter {
+    spacing: 4px;
+}
+#panelCenter:dnd {
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$panel-center-dnd-background-gradient-start;
+    background-gradient-end: colors.$panel-center-dnd-background-gradient-end;
+}
+#panel:highlight {
+    border-image: none;
+    background-color: colors.$panel-highlight-color;
+}
+
+.panelLeft {
+    spacing: 4px;
+}
+.panelLeft:dnd {
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$panel-left-dnd-background-gradient-start;
+    background-gradient-end: colors.$panel-left-dnd-background-gradient-end;
+}
+.panelLeft:ltr {
+    padding-right: 4px;
+}
+.panelLeft:rtl {
+    padding-left: 4px;
+}
+.panelLeft.vertical {
+    padding: 0;
+}
+.panelLeft.vertical:ltr {
+    padding-right: 0;
+}
+.panelLeft.vertical:rtl {
+    padding-left: 0;
+}
+.panelRight:dnd {
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$panel-right-dnd-background-gradient-start;
+    background-gradient-end: colors.$panel-right-dnd-background-gradient-end;
+}
+.panelRight:ltr {
+    padding-left: 4px;
+    spacing: 0;
+}
+.panelRight:rtl {
+    padding-right: 4px;
+    spacing: 0;
+}
+
+.panelRight.vertical {
+    padding: 0;
+}
+.panelRight.vertical:ltr {
+    padding-left: 0;
+    spacing: 0;
+}
+.panelRight.vertical:rtl {
+    padding-right: 0;
+    spacing: 0;
+}
+
+.panelCenter {
+    spacing: 4px;
+}
+.panelCenter.vertical {
+    padding-left: 0;
+    padding-right: 0;
+}
+.panelCenter:dnd {
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$panel-center-dnd-background-gradient-start;
+    background-gradient-end: colors.$panel-center-dnd-background-gradient-end;
+}
+
+.panel-bottom,
+.panel-left,
+.panel-right,
+.panel-top {
+    color: colors.$panel-color;
+    border: none;
+    background-color: colors.$panel-background-color;
+    font-size: 1em;
+    padding: 0;
+}
+
+.panel-top {
+    box-shadow: 0 1px colors.$panel-shadow-color;
+    box-shadow: 0 -1px colors.$panel-shadow-color;
+    @include PanelVariants.panel-background-gradient(top);
+}
+
+.panel-bottom {
+    box-shadow: 0 -1px colors.$panel-shadow-color;
+    @include PanelVariants.panel-background-gradient(bottom);
+}
+
+.panel-left {
+    box-shadow: 1px 0 colors.$panel-shadow-color;
+    box-shadow: 0 -1px colors.$panel-shadow-color;
+    @include PanelVariants.panel-background-gradient(left);
+}
+
+.panel-right {
+    box-shadow: -1px 0 colors.$panel-shadow-color;
+    box-shadow: 0 -1px colors.$panel-shadow-color;
+    @include PanelVariants.panel-background-gradient(right);
+}
+
+.panel-dummy {
+    background-color: colors.$panel-dummy-color;
+}
+.panel-dummy:entered {
+    background-color: colors.$panel-dummy-entered-color;
+}
+
+.panel-status-button {
+    border-width: 0;
+    -natural-hpadding: 3px;
+    -minimum-hpadding: 3px;
+    font-weight: bold;
+    color: colors.$panel-status-button-color;
+}
+
+.panel-button {
+    -natural-hpadding: 6px;
+    -minimum-hpadding: 2px;
+    font-weight: bold;
+    color: colors.$panel-button-color;
+    transition-duration: 100;
+}

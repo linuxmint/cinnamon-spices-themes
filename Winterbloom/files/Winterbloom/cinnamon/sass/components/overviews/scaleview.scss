@@ -1,0 +1,34 @@
+/// The view of all current windows (Ctrl + Alt + down arrow)
+
+#overview {
+    spacing: 12px;
+}
+
+.window-caption {
+    background-color: colors.$scaleview-caption-background-color;
+    border: 1px solid colors.$scaleview-caption-border-color;
+    color: colors.$scaleview-caption-text-color;
+    spacing: 8px;
+    border-radius: 2px;
+    font-size: 0.9em;
+    padding: 5px 8px;
+    -cinnamon-caption-spacing: 8px;
+}
+.window-caption:focus {
+    background-color: colors.$scaleview-caption-focus-background-color;
+    color: colors.$scaleview-caption-focus-text-color;
+    border: 1px solid colors.$scaleview-caption-focus-border-color;
+}
+
+.window-border {
+    border: 3px colors.$scaleview-windowborder-color;
+    border-radius: 2px;
+    background-color: colors.$scaleview-windowborder-background-color;
+    /* Cover rounded corners and some bad adjustment gaps */
+    box-shadow: 0 0 0 1px colors.$scaleview-windowborder-shadow-color inset;
+}
+
+.overview-empty-placeholder {
+    color: colors.$overview-empty-placeholder-color;
+    font-size: 2em;
+}

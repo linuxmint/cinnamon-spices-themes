@@ -1,0 +1,149 @@
+/// Various dialigs for Cinnamon
+/// modal-dialog depends on BUTTONS
+
+.modal-dialog {
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$modal-dialog-background-gradient-start;
+    background-gradient-end: colors.$modal-dialog-background-gradient-end;
+    border: 1px solid colors.$modal-dialog-border-color;
+    border-radius: 3px;
+    padding: 0;
+}
+.modal-dialog > StBoxLayout:first-child {
+    padding: 10px;
+}
+.modal-dialog-button-box {
+    spacing: 0;
+    margin: 0;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+}
+.modal-dialog-button-box .modal-dialog-button {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 30px;
+}
+
+.run-dialog {
+    padding: 10px 15px;
+    border: 1px solid colors.$run-dialog-border-color;
+    border-radius: 3px;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$run-dialog-background-gradient-start;
+    background-gradient-end: colors.$run-dialog-background-gradient-end;
+}
+.run-dialog > * {
+    padding: 0;
+}
+.run-dialog-label {
+    font-size: 0;
+    font-weight: bold;
+    color: colors.$run-dialog-label-color;
+    padding-bottom: 0;
+}
+.run-dialog-error-label {
+    color: colors.$run-dialog-error-label-color;
+}
+.run-dialog-error-box {
+    padding-top: 15px;
+    spacing: 5px;
+}
+.run-dialog-completion-box {
+    padding-top: 5px;
+    padding-left: 15px;
+    font-size: 1em;
+}
+.run-dialog-entry {
+    width: 21em;
+    padding: 7px;
+    border-radius: 3px;
+    caret-color: colors.$run-dialog-entry-caret-color;
+    selected-color: colors.$run-dialog-entry-selected-text-color;
+    selection-background-color: colors.$run-dialog-entry-selected-background-color;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$run-dialog-entry-background-gradient-start;
+    background-gradient-end: colors.$run-dialog-entry-background-gradient-end;
+    background-color: colors.$run-dialog-entry-background-color;
+    border: 1px solid colors.$run-dialog-entry-border-color;
+    box-shadow: inset 0 2px 4px colors.$run-dialog-entry-shadow-color;
+}
+.run-dialog-entry:focus {
+    color: colors.$run-dialog-entry-focus-text-color;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$run-dialog-entry-focus-background-gradient-start;
+    background-gradient-end: colors.$run-dialog-entry-focus-background-gradient-end;
+    border: 1px solid colors.$run-dialog-entry-focus-border-color;
+    box-shadow: inset 0 2px 4px colors.$run-dialog-entry-focus-shadow-color;
+}
+.run-dialog .modal-dialog-button-box {
+    border: none;
+    box-shadow: none;
+    background: none;
+}
+
+/* CinnamonMountOperation Dialogs */
+.cinnamon-mount-operation-icon {
+    icon-size: 48px;
+}
+
+.mount-password-reask {
+    color: colors.$mount-password-reask-color;
+}
+
+.mount-question-dialog,
+.show-processes-dialog {
+    spacing: 24px;
+}
+.mount-question-dialog-subject,
+.show-processes-dialog-subject {
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 6px;
+}
+.mount-question-dialog-subject:rtl,
+.show-processes-dialog-subject:rtl {
+    padding-left: 0;
+    padding-right: 17px;
+}
+.mount-question-dialog-description,
+.show-processes-dialog-description {
+    padding-left: 17px;
+    width: 28em;
+}
+.mount-question-dialog-description:rtl,
+.show-processes-dialog-description:rtl {
+    padding-right: 17px;
+}
+
+.show-processes-dialog-app-list {
+    max-height: 200px;
+    padding-top: 24px;
+    padding-left: 49px;
+    padding-right: 32px;
+}
+.show-processes-dialog-app-list:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+}
+.show-processes-dialog-app-list-item {
+    color: colors.$show-processes-dialog-app-list-item-text-color;
+}
+.show-processes-dialog-app-list-item:hover {
+    color: colors.$show-processes-dialog-app-list-item-hover-text-color;
+}
+.show-processes-dialog-app-list-item:ltr {
+    padding-right: 1em;
+}
+.show-processes-dialog-app-list-item:rtl {
+    padding-left: 1em;
+}
+.show-processes-dialog-app-list-item-icon:ltr {
+    padding-right: 17px;
+}
+.show-processes-dialog-app-list-item-icon:rtl {
+    padding-left: 17px;
+}
+.show-processes-dialog-app-list-item-name {
+    font-size: 1.1em;
+}

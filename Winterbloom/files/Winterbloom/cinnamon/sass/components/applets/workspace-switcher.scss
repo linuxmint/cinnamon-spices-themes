@@ -1,0 +1,70 @@
+/// For the applet of the same name
+
+#workspaceSwitcher {
+    spacing: 0;
+    padding: 3px;
+}
+
+/* Controls the styling when using the "Simple buttons" option */
+.workspace-switcher {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.panel-left .workspace-switcher,
+.panel-right .workspace-switcher {
+    padding: 0;
+}
+
+.workspace-button {
+    border: 1px solid colors.$workspace-switcher-button-border-color;
+    background-color: colors.$workspace-switcher-button-background-color;
+    width: 20px;
+    height: 14px;
+    color: colors.$workspace-switcher-button-text-color;
+    padding: 4px 3px 3px;
+    transition-duration: 200;
+}
+.workspace-button.vertical {
+    height: 1.5em;
+    width: 24px;
+    padding: 3px 0;
+}
+.workspace-button:outlined {
+    background-color: colors.$workspace-switcher-button-outlined-background-color;
+    color: colors.$workspace-switcher-button-outlined-text-color;
+}
+.workspace-button:outlined:hover {
+    background-color: colors.$workspace-switcher-button-outlined-hover-background-color;
+    color: colors.$workspace-switcher-button-outlined-hover-text-color;
+}
+.workspace-button:hover {
+    background-color: colors.$workspace-switcher-button-hover-background-color;
+    color: colors.$workspace-switcher-button-hover-text-color;
+}
+
+/* Controls the style when using the "Visual representation" option */
+.workspace-graph {
+    padding: 3px;
+    spacing: 6px;
+}
+
+.workspace-graph .workspace {
+    border: 1px solid colors.$workspace-switcher-graph-border-color;
+    background-color: colors.$workspace-switcher-graph-background-color;
+}
+.workspace-graph .workspace:active {
+    border: 1px solid colors.$workspace-switcher-graph-active-border-color;
+}
+
+.workspace-graph .workspace .windows {
+    -active-window-background: colors.$workspace-switcher-graph-windows-activewindow-background-color;
+    -active-window-border: colors.$workspace-switcher-graph-windows-activewindow-border-color;
+    -inactive-window-background: colors.$workspace-switcher-graph-windows-inactivewindow-background-color;
+    -inactive-window-border: colors.$workspace-switcher-graph-windows-inactivewindow-border-color;
+}
+.workspace-graph .workspace:active .windows {
+    -active-window-background: colors.$workspace-switcher-graph-windows-active-activewindow-background;
+    -active-window-border: colors.$workspace-switcher-graph-windows-active-activewindow-border;
+    -inactive-window-background: colors.$workspace-switcher-graph-windows-active-inactivewindow-background;
+    -inactive-window-border: colors.$workspace-switcher-graph-windows-active-inactivewindow-border;
+}
