@@ -1,0 +1,92 @@
+/// sliders, checkboxes, etc.
+
+.separator {
+    -gradient-height: 1px;
+    -gradient-start: rgba(0, 0, 0, 0);
+    -gradient-end: rgba(0, 0, 0, 0);
+    -margin-horizontal: 1.5em;
+    height: 1em;
+}
+
+.popup-slider-menu-item,
+.slider {
+    color: colors.$slider-handle-color;
+    -slider-height: 0.3em;
+    -slider-background-color: colors.$slider-background-color;
+    -slider-border-color: colors.$slider-border-color;
+    -slider-active-background-color: colors.$slider-active-background-color;
+    -slider-active-border-color: colors.$slider-active-border-color;
+    -slider-border-width: 1px;
+    -slider-handle-radius: 0.5em;
+    height: 1em;
+    min-width: 15em;
+    border: 0 solid transparent;
+    border-right-width: 1px;
+    border-left-width: 5px;
+}
+
+.check-box CinnamonGenericContainer {
+    spacing: 0.2em;
+    min-height: 30px;
+    padding-top: 2px;
+}
+
+.check-box StLabel {
+    font-weight: normal;
+}
+
+.check-box StBin {
+    width: 16px;
+    height: 16px;
+    background-image: url("dark-assets/checkbox/checkbox-unchecked.svg");
+}
+.check-box:focus StBin {
+    background-image: url("dark-assets/checkbox/checkbox-unchecked-focused.svg");
+}
+.check-box:checked StBin {
+    background-image: url("dark-assets/checkbox/checkbox-checked.svg");
+}
+.check-box:focus:checked StBin {
+    background-image: url("dark-assets/checkbox/checkbox-checked-focused.svg");
+}
+
+.radiobutton CinnamonGenericContainer {
+    spacing: 0.2em;
+    height: 26px;
+    padding-top: 2px;
+}
+
+.radiobutton StLabel {
+    padding-top: 4px;
+    font-size: 0.9em;
+    box-shadow: none;
+}
+
+.radiobutton StBin {
+    width: 16px;
+    height: 16px;
+    background-image: url("dark-assets/checkbox/checkbox-unchecked.svg");
+}
+.radiobutton:focus StBin {
+    background-image: url("dark-assets/checkbox/checkbox-unchecked-focused.svg");
+}
+.radiobutton:checked StBin {
+    background-image: url("dark-assets/checkbox/checkbox-checked.svg");
+}
+.radiobutton:focus:checked StBin {
+    background-image: url("dark-assets/checkbox/checkbox-checked-focused.svg");
+}
+
+.toggle-switch {
+    width: 50px;
+    height: 20px;
+    background-size: contain;
+}
+.toggle-switch-intl,
+.toggle-switch-us {
+    background-image: url("dark-assets/switch/switch-off.svg");
+}
+.toggle-switch-intl:checked,
+.toggle-switch-us:checked {
+    background-image: url("dark-assets/switch/switch-on.svg");
+}

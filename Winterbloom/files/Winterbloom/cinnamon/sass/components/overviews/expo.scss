@@ -1,0 +1,68 @@
+/// The graphical view of all workspaces (Ctrl + Alt + up arrow)
+
+.expo-workspaces-name-entry,
+.expo-workspaces-name-entry#selected {
+    height: 1.5em;
+    border-radius: 2px;
+    font-size: 1em;
+    padding: 5px 8px;
+    -cinnamon-caption-spacing: 4px;
+    color: colors.$expo-nameentry-text-color;
+    background-color: colors.$expo-nameentry-background-color;
+    border: 1px solid colors.$expo-nameentry-border-color;
+    box-shadow: inset 0 2px 4px colors.$expo-nameentry-shadow-color;
+}
+.expo-workspaces-name-entry:focus,
+.expo-workspaces-name-entry#selected:focus {
+    border: 1px solid colors.$expo-nameentry-focus-border-color;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$expo-nameentry-focus-background-gradient-start;
+    background-gradient-end: colors.$expo-nameentry-focus-background-gradient-end;
+    color: colors.$expo-nameentry-focus-text-color;
+    font-style: italic;
+    transition-duration: 300;
+    selection-background-color: colors.$expo-nameentry-focus-selected-background-color;
+    selected-color: colors.$expo-nameentry-focus-selected-text-color;
+}
+
+.expo-workspace-thumbnail-frame {
+    border: 4px solid colors.$expo-thumbnailframe-border-color;
+    background-color: colors.$expo-thumbnailframe-background-color;
+    border-radius: 2px;
+}
+.expo-workspace-thumbnail-frame#active {
+    border: 4px solid colors.$expo-thumbnailframe-active-border-color;
+    background-color: colors.$expo-thumbnailframe-active-background-color;
+    border-radius: 2px;
+}
+
+.expo-background {
+    background-color: colors.$expo-background-color;
+}
+
+.workspace-thumbnails {
+    spacing: 26px;
+}
+.workspace-thumbnails-background,
+.workspace-thumbnails-background:rtl {
+    padding: 8px;
+}
+
+.workspace-add-button {
+    background-image: url("common-assets/misc/add-workspace.svg");
+    height: 200px;
+    width: 35px;
+    transition-duration: 100;
+}
+.workspace-add-button:hover {
+    background-image: url("common-assets/misc/add-workspace-hover.svg");
+    transition-duration: 100;
+}
+.workspace-add-button:active {
+    background-image: url("common-assets/misc/add-workspace-active.svg");
+    transition-duration: 100;
+}
+
+.workspace-overview-background-shade {
+    background-color: colors.$expo-background-shade-color;
+}

@@ -1,0 +1,157 @@
+/// The main window list (grouped variant)
+
+.grouped-window-list-item-label {
+    font-weight: bold;
+    width: 15em;
+    min-width: 5px;
+}
+
+.grouped-window-list-item-box {
+    text-align: left;
+    font-weight: bold;
+    background-image: none;
+    padding-top: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    transition-duration: 100;
+    color: colors.$grouped-window-list-text-color;
+}
+.grouped-window-list-item-box.bottom {
+    @include PanelVariants.grouped-window-list-border-width(2px, bottom);
+}
+.grouped-window-list-item-box.top {
+    @include PanelVariants.grouped-window-list-border-width(2px, top);
+}
+.grouped-window-list-item-box.bottom StLabel,
+.grouped-window-list-item-box.top StLabel {
+    padding-left: 2px;
+}
+.grouped-window-list-item-box.right {
+    padding-left: 0;
+    padding-right: 0;
+    @include PanelVariants.grouped-window-list-border-width(2px, right);
+}
+.grouped-window-list-item-box.right StBin {
+    padding-right: 0;
+}
+.grouped-window-list-item-box.left {
+    padding-left: 0;
+    padding-right: 0;
+    @include PanelVariants.grouped-window-list-border-width(2px, left);
+}
+.grouped-window-list-item-box.left StBin {
+    padding-left: 1px;
+}
+.grouped-window-list-item-box:hover:focus {
+    color: colors.$grouped-window-list-hoverfocus-text-color;
+    &.top {
+        @include PanelVariants.grouped-window-list-hoverfocus-background-gradient(top);
+    }
+    &.bottom {
+        @include PanelVariants.grouped-window-list-hoverfocus-background-gradient(bottom);
+    }
+    &.left {
+        @include PanelVariants.grouped-window-list-hoverfocus-background-gradient(left);
+    }
+    &.right {
+        @include PanelVariants.grouped-window-list-hoverfocus-background-gradient(right);
+    }
+}
+.grouped-window-list-item-box:hover {
+    color: colors.$grouped-window-list-hover-text-color;
+    &.top {
+        @include PanelVariants.grouped-window-list-hover-background-gradient(top);
+    }
+    &.bottom {
+        @include PanelVariants.grouped-window-list-hover-background-gradient(bottom);
+    }
+    &.left {
+        @include PanelVariants.grouped-window-list-hover-background-gradient(left);
+    }
+    &.right {
+        @include PanelVariants.grouped-window-list-hover-background-gradient(right);
+    }
+}
+.grouped-window-list-item-box:focus {
+    color: colors.$grouped-window-list-focus-text-color;
+    &.top {
+        @include PanelVariants.grouped-window-list-focus-background-gradient(top);
+    }
+    &.bottom {
+        @include PanelVariants.grouped-window-list-focus-background-gradient(bottom);
+    }
+    &.left {
+        @include PanelVariants.grouped-window-list-focus-background-gradient(left);
+    }
+    &.right {
+        @include PanelVariants.grouped-window-list-focus-background-gradient(right);
+    }
+}
+.grouped-window-list-item-box:active,
+.grouped-window-list-item-box:checked {
+    color: colors.$grouped-window-list-active-text-color;
+    border-color: colors.$grouped-window-list-active-border-color;
+}
+.grouped-window-list-item-box .progress {
+    background-color: colors.$grouped-window-list-progress-color;
+}
+
+.grouped-window-list-item-demands-attention {
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$grouped-window-list-attention-gradient-start;
+    background-gradient-end: colors.$grouped-window-list-attention-gradient-end;
+}
+
+.grouped-window-list-thumbnail-label {
+    padding-left: 4px;
+}
+
+.grouped-window-list-number-label {
+    z-index: 99;
+    color: colors.$grouped-window-list-number-label-text-color;
+}
+
+.grouped-window-list-badge {
+    border-radius: 256px;
+    background-color: colors.$grouped-window-list-badge-background-color;
+}
+
+.grouped-window-list-button-label {
+    padding-left: 4px;
+}
+
+.grouped-window-list-thumbnail-alert {
+    background: colors.$grouped-window-list-thumbnail-alert-background-color;
+}
+
+.grouped-window-list-thumbnail-menu {
+    color: colors.$grouped-window-list-thumbnail-menu-text-color;
+    border: 1px solid colors.$grouped-window-list-thumbnail-menu-border-color;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$grouped-window-list-thumbnail-menu-background-gradient-start;
+    background-gradient-end: colors.$grouped-window-list-thumbnail-menu-background-gradient-end;
+    border-radius: 3px;
+    padding: 0;
+}
+.grouped-window-list-thumbnail-menu > StBoxLayout {
+    padding: 4px;
+}
+.grouped-window-list-thumbnail-menu .item-box {
+    padding: 10px;
+    border-radius: 2px;
+    spacing: 4px;
+}
+.grouped-window-list-thumbnail-menu .item-box:outlined {
+    padding: 8px;
+    border: 1px solid colors.$grouped-window-list-thumbnail-outlined-border-color;
+}
+.grouped-window-list-thumbnail-menu .item-box:selected {
+    border: 1px solid colors.$grouped-window-list-thumbnail-selected-border-color;
+}
+.grouped-window-list-thumbnail-menu .thumbnail {
+    width: 256px;
+}
+.grouped-window-list-thumbnail-menu .separator {
+    width: 1px;
+    background: colors.$grouped-window-list-thumbnail-menu-separator-color;
+}

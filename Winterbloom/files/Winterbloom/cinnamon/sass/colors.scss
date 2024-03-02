@@ -1,0 +1,607 @@
+/// All the colors in the same place, for ease of viewing and managing.
+/// See the palette file for the actual colors.
+
+// (sto seguendo l'ordine di main.scss)
+
+@use 'sass:color';
+@use 'palette';
+
+
+$stage-color: #f0f0f0;
+
+
+$label-shadow-color: rgba(0, 0, 0, 0);
+
+
+$BUTTONS-text-color: #202020;
+$BUTTONS-background-color: palette.$BUTTONS-base-bg;
+$BUTTONS-border-color: #d9d9d9;
+$BUTTONS-shadow-color: rgba(245, 245, 245, 0.05);
+
+$BUTTONS-focus-text-color: $BUTTONS-text-color;
+$BUTTONS-focus-background-color: $BUTTONS-background-color;
+$BUTTONS-focus-border-color: palette.$accent-vivid;
+$BUTTONS-focus-shadow-color: $BUTTONS-shadow-color;
+
+$BUTTONS-hover-text-color: $BUTTONS-text-color;
+$BUTTONS-hover-background-gradient-start: palette.$BUTTONS-base-bg;
+$BUTTONS-hover-background-gradient-end: palette.$BUTTONS-active-bg;
+$BUTTONS-hover-border-color: $BUTTONS-border-color;
+$BUTTONS-hover-shadow-color: rgba(255, 255, 255, 0.05);
+
+$BUTTONS-hoverfocus-text-color: $BUTTONS-text-color;
+$BUTTONS-hoverfocus-background-gradient-start: $BUTTONS-hover-background-gradient-start;
+$BUTTONS-hoverfocus-background-gradient-end: $BUTTONS-hover-background-gradient-end;
+$BUTTONS-hoverfocus-border-color: $BUTTONS-focus-border-color;
+$BUTTONS-hoverfocus-shadow-color: $BUTTONS-shadow-color;
+
+$BUTTONS-active-text-color: $BUTTONS-text-color;
+$BUTTONS-active-background-color: palette.$BUTTONS-active-bg;
+$BUTTONS-active-border-color: $BUTTONS-focus-border-color;
+
+$BUTTONS-insensitive-text-color: rgba($BUTTONS-text-color, 0.55);
+$BUTTONS-insensitive-background-color: rgba(245, 245, 245, 0.55);
+$BUTTONS-insensitive-border-color: rgba($BUTTONS-border-color, 0.55);
+$BUTTONS-insensitive-shadow-color: $BUTTONS-shadow-color;
+
+
+$ENTRIES-selected-text-color: palette.$selected-text-color;
+$ENTRIES-selected-background-color: palette.$accent-bright;
+
+$ENTRIES-text-color: #202020;
+$ENTRIES-background-gradient-start: rgba(palette.$gradient-light-D, 0.0);
+$ENTRIES-background-gradient-end: rgba(palette.$gradient-light-L, 0.2);
+$ENTRIES-border-color: palette.$light-grey-2;
+$ENTRIES-shadow-color: rgba(255, 255, 255, 0.05);
+
+$ENTRIES-focus-hover-text-color: $ENTRIES-text-color;
+$ENTRIES-focus-hover-background-gradient-start: rgba(palette.$gradient-light-D, 0.4);
+$ENTRIES-focus-hover-background-gradient-end: rgba(palette.$gradient-light-L, 0.801);
+$ENTRIES-focus-hover-border-color: palette.$white;
+$ENTRIES-focus-hover-shadow-color: $ENTRIES-shadow-color;
+
+$ENTRIES-insensitive-text-color: rgba($ENTRIES-text-color, 0.55);
+$ENTRIES-insensitive-background-gradient-start: rgba(palette.$gradient-light-D, 0.1);
+$ENTRIES-insensitive-background-gradient-end: rgba(palette.$gradient-light-L, 0.2);
+$ENTRIES-insensitive-border-color: palette.$light-grey-1;
+$ENTRIES-insensitive-shadow-color: rgba(248, 248, 248, 0.05);
+
+$ENTRIES-capslock-warning-color: palette.$warning-color;
+
+$ENTRIES-notif-caret-color: #c3c3c3;
+$ENTRIES-notif-selected-text-color: palette.$selected-text-color;
+$ENTRIES-notif-selected-background-color: palette.$accent-bright;
+
+$ENTRIES-notif-text-color: $ENTRIES-notif-caret-color;
+$ENTRIES-notif-background-color: rgba(109, 109, 109, 0.4);
+$ENTRIES-notif-border-color: rgba(22, 22, 22, 0.4);
+$ENTRIES-notif-shadow-color: rgba(0, 0, 0, 0.05);
+
+$ENTRIES-notif-focus-text-color: #ffffff;
+$ENTRIES-notif-focus-background-gradient-start: rgba(palette.$gradient-light-D, 0.4);
+$ENTRIES-notif-focus-background-gradient-end: rgba(palette.$gradient-light-L, 0.801);
+$ENTRIES-notif-focus-border-color: palette.$white;
+$ENTRIES-notif-focus-shadow-color: $ENTRIES-notif-shadow-color;
+
+$ENTRIES-notif-insensitive-text-color: rgba(195, 195, 195, 0.55);
+$ENTRIES-notif-insensitive-background-color: rgba(109, 109, 109, 0.25);
+$ENTRIES-notif-insensitive-border-color: rgba(22, 22, 22, 0.4);
+$ENTRIES-notif-insensitive-shadow-color: $ENTRIES-notif-shadow-color;
+
+
+$scroll-bin-color: rgba(255, 255, 255, 0.1);
+$scrollbar-color: rgba(palette.$accent-vivid, 0.699);   // oppure 42accc
+$scrollbar-hover-color: palette.$accent-vivid;
+$scrollbar-active-color: palette.$accent-bright;
+
+$slider-handle-color: palette.$light-grey-2;
+$slider-background-color: rgba(palette.$gradient-dark-D, 0.7);  // same color as one end of the manu gradient, yes
+$slider-border-color: rgba(0, 0, 41, 0.1);
+$slider-active-background-color: rgba(palette.$accent-vivid, 0.8);
+$slider-active-border-color: $slider-border-color;
+
+
+$link-color: palette.$accent-vivid;
+$link-hover-color: palette.$accent-bright;
+
+
+$tooltip-text-color: palette.$selected-text-color;
+$tooltip-background-color: rgba(palette.$accent-bright, 0.90);
+
+
+$lookingglass-text-color: #202020;
+$lookingglass-background-color: #f0f0f0;
+$lookingglass-border-color: #d9d9d9;
+
+
+$menu-text-color: palette.$light-grey-2;
+$menu-background-gradient-start: rgba(palette.$gradient-dark-D, 0.9);
+$menu-background-gradient-end: rgba(palette.$gradient-dark-L, 0.9);
+
+$submenu-background-color: rgba(palette.$submenu-color, 0.6);
+
+$menuitem-active-text-color: palette.$active-text-color;
+$menuitem-active-background-gradient-start: rgba(palette.$menu-hover-bg,0.4);
+$menuitem-active-background-gradient-end: rgba(palette.$menu-hover-bg,0.25);
+
+$menuitem-insensitive-text-color: rgba(32, 32, 32, 0.5);
+$menuitem-inactive-text-color: palette.$light-grey-2;
+$menuitem-inactive-insensitive-text-color: $menuitem-insensitive-text-color;
+
+// This is for popup menus in Cinnamon versions < 3.2
+$menu32-color: white;
+$menu32-color2: #202020;  // ?!
+$menu32-background-color: #ffffff;
+$menu32-active-text-color: #202020;
+$menu32-active-background-color: rgba(32, 32, 32, 0.08);
+$menu32-active-border-color: rgba(32, 32, 32, 0.11);
+$menu32-insensitive-text-color: rgba(32, 32, 32, 0.5);
+$menu32-inactive-text-color: $menu32-active-text-color;
+$menu32-inactive-insensitive-text-color: rgba(32, 32, 32, 0.55);
+$menu32-boxpointer-arrow-background-color: #f0f0f0;
+$menu32-boxpointer-arrow-border-color: #d9d9d9;
+// END of "This is for popup menus in Cinnamon versions < 3.2"
+
+// Scale view context menu (right-click on a window in the Ctrl+Alt+down view)
+$menu-popupcombo-text-color: $menu-text-color;
+$menu-popupcombo-background-gradient-start: $menu-background-gradient-start;
+$menu-popupcombo-background-gradient-end: $menu-background-gradient-end;
+
+$menu-separator-gradient-start: rgba(palette.$accent-vivid, 0.603);   // sides
+$menu-separator-gradient-end: rgba(palette.$accent-bright, 0.603);   // middle
+
+
+$panel-color: #ffffff;
+$panel-background-color: rgba(47, 47, 47, 0.99);
+$panel-shadow-color: #202020;
+
+// $panel-*-background-gradient-* moved to the colors-panel-*.scss files, in order to have multiple variants
+// see @import at the top
+
+$panel-left-dnd-background-gradient-start: rgba(palette.$dnd-left, 0.4);
+$panel-left-dnd-background-gradient-end: rgba(palette.$dnd-left, 0.6);
+$panel-right-dnd-background-gradient-start: rgba(palette.$dnd-right, 0.4);
+$panel-right-dnd-background-gradient-end: rgba(palette.$dnd-right, 0.6);
+$panel-center-dnd-background-gradient-start: rgba(palette.$dnd-center, 0.4);
+$panel-center-dnd-background-gradient-end: rgba(palette.$dnd-center, 0.6);
+
+$panel-special-color: palette.$highlight-color;
+$panel-highlight-color: rgba($panel-special-color, 0.5);
+$panel-dummy-color: rgba($panel-special-color, 0.5);
+$panel-dummy-entered-color: rgba($panel-special-color, 0.6);
+
+$panel-status-button-color: white;
+$panel-button-color: green;
+
+
+$system-status-icon-warning-color: palette.$warning-color;
+$system-status-icon-error-color: palette.$error-color;
+
+
+$scaleview-caption-text-color: #c3c3c3;
+$scaleview-caption-background-color: #353535;
+$scaleview-caption-border-color: #353535;
+
+$scaleview-caption-focus-text-color: #ffffff;
+$scaleview-caption-focus-background-color: palette.$accent-vivid;
+$scaleview-caption-focus-border-color: palette.$accent-vivid;
+
+$scaleview-windowborder-color: palette.$accent-vivid;
+$scaleview-windowborder-background-color: rgba(255, 255, 255, 0.05);
+$scaleview-windowborder-shadow-color: palette.$accent-vivid;
+
+$overview-empty-placeholder-color: #ffffff;
+
+
+$expo-background-color: #353535;
+$expo-background-shade-color: rgba(0, 0, 0, 0.5);
+
+$expo-nameentry-text-color: #c3c3c3;
+$expo-nameentry-background-color: rgba(109, 109, 109, 0.4);
+$expo-nameentry-border-color: rgba(22, 22, 22, 0.4);
+$expo-nameentry-shadow-color: rgba(0, 0, 0, 0.05);
+
+$expo-nameentry-focus-text-color: palette.$dark-grey-2;
+$expo-nameentry-focus-background-gradient-start: rgba(palette.$gradient-light-D, 0.6);
+$expo-nameentry-focus-background-gradient-end: rgba(palette.$gradient-light-L, 1);
+$expo-nameentry-focus-border-color: palette.$white;
+$expo-nameentry-focus-selected-background-color: palette.$accent-bright;
+$expo-nameentry-focus-selected-text-color: palette.$selected-text-color;
+
+$expo-thumbnailframe-background-color: rgba(255, 255, 255, 0);
+$expo-thumbnailframe-border-color: rgba(255, 255, 255, 0);
+
+$expo-thumbnailframe-active-background-color: black;
+$expo-thumbnailframe-active-border-color: palette.$accent-vivid;
+
+
+$calendar-monthlabel-color: #f0f0f0;
+$calendar-datelabel-color: #f0f0f0;
+
+$calendar-dayheading-color: rgba(240, 240, 240, 0.85);
+$calendar-day-color: rgba(240, 240, 240, 0.9);
+$calendar-nonworkday-color: #f0f0f0;
+$calendar-today-color: palette.$active-text-color;
+$calendar-today-background-color: palette.$accent-vivid;
+$calendar-othermonthday-color: rgba(240, 240, 240, 0.3);
+
+$calendar-weeknumber-color: rgba(240, 240, 240, 0.85);
+
+
+$notif-text-color: #f0f0f0;
+$notif-background-gradient-start: rgba(palette.$gradient-dark-D, 0.9);
+$notif-background-gradient-end: rgba(palette.$gradient-dark-L, 0.95);   // oppure rgba(223, 234, 255, 0.95)
+$notif-border-color: #d9d9d9;
+
+$popupmenu-notif-text-color: $notif-text-color;
+$notif-multiline-text-color: $notif-text-color;
+$notif-withimage-text-color: $notif-text-color;
+
+
+$alt-tab-text-color: palette.$light-grey-2;
+$alt-tab-background-gradient-start: rgba(palette.$gradient-dark-D, 0.8);
+$alt-tab-background-gradient-end: rgba(palette.$gradient-dark-L, 0.8);
+$alt-tab-border-color: #d9d9d9;
+
+$alt-tab-itembox-outlined-border-color: palette.$accent-vivid;
+
+$alt-tab-itembox-selected-text-color: palette.$active-text-color;
+$alt-tab-itembox-selected-background-gradient-start: rgba(palette.$gradient-light-D, 0.6);
+$alt-tab-itembox-selected-background-gradient-end: rgba(palette.$gradient-light-L, 0.801);
+$alt-tab-itembox-selected-border-color: palette.$accent-vivid;
+
+$alt-tab-separator-background-color: rgba(255, 255, 255, 0.2);
+
+$alt-tab-arrow-color: palette.$light-grey-2;
+$alt-tab-arrow-border-color: rgba(0, 0, 0, 0);
+
+$alt-tab-arrow-highlighted-color: palette.$dark-grey-2;
+$alt-tab-arrow-highlighted-border-color: rgba(0, 0, 0, 0);
+
+
+$thumbnail-scroll-gradient-left-background-color: rgba(0, 0, 0, 0);
+$thumbnail-scroll-gradient-right-background-color: $thumbnail-scroll-gradient-left-background-color;
+
+
+$lightbox-background-color: rgba(0, 0, 0, 0.4);
+
+$flashspot-background-color: white;
+
+
+$modal-dialog-background-gradient-start: rgba(palette.$gradient-dark-D, 0.9);
+$modal-dialog-background-gradient-end: rgba(palette.$gradient-dark-L, 0.9);
+$modal-dialog-border-color: #d9d9d9;
+
+$run-dialog-label-color: palette.$light-grey-3;
+$run-dialog-error-label-color: palette.$error-color;
+$run-dialog-background-gradient-start: rgba(palette.$gradient-dark-D, 0.9);
+$run-dialog-background-gradient-end: rgba(palette.$gradient-dark-L, 0.9);
+$run-dialog-border-color: #d9d9d9;
+
+$run-dialog-entry-background-color: rgba(109, 109, 109, 0.4);
+$run-dialog-entry-background-gradient-start: rgba(palette.$gradient-light-D, 0.0);
+$run-dialog-entry-background-gradient-end: rgba(palette.$gradient-light-L, 0.2);
+$run-dialog-entry-border-color: rgba(22, 22, 22, 0.4);
+$run-dialog-entry-shadow-color: rgba(0, 0, 0, 0.05);
+$run-dialog-entry-caret-color: #272727;
+$run-dialog-entry-selected-text-color: palette.$selected-text-color;
+$run-dialog-entry-selected-background-color: palette.$accent-bright;
+
+$run-dialog-entry-focus-text-color: #202020;
+$run-dialog-entry-focus-background-gradient-start: rgba(palette.$gradient-light-D, 0.4);
+$run-dialog-entry-focus-background-gradient-end: rgba(palette.$gradient-light-L, 0.801);
+$run-dialog-entry-focus-border-color: rgba(208, 208, 208, 0.808);
+$run-dialog-entry-focus-shadow-color: rgba(255, 255, 255, 0.05);
+
+$mount-password-reask-color: palette.$warning-color;
+
+$show-processes-dialog-app-list-item-text-color: #ccc;
+$show-processes-dialog-app-list-item-hover-text-color: white;
+
+
+$magnifier-zoom-region-border-color: maroon;
+
+
+$keyboard-background-color: #353535;
+$keyboard-border-color: rgba(0, 0, 0, 0.4);
+
+$keyboard-key-text-color: #c3c3c3;
+$keyboard-key-background-color: rgba(109, 109, 109, 0.4);
+$keyboard-key-border-color: #d9d9d9;
+
+$keyboard-key-hover-text-color: $keyboard-key-text-color;
+$keyboard-key-hover-background-color: rgba(127, 127, 127, 0.5);
+$keyboard-key-hover-border-color: rgba(2, 2, 2, 0.4);
+
+$keyboard-key-active-text-color: #ffffff;
+$keyboard-key-active-border-color: palette.$accent-vivid;
+$keyboard-key-active-background-color: palette.$accent-vivid;
+
+$keyboard-key-grayed-text-color: #606060;
+$keyboard-key-grayed-background-color: rgba(109, 109, 109, 0.25);
+$keyboard-key-grayed-border-color: rgba(2, 2, 2, 0.4);
+
+$keyboard-subkeys-text-color: #c3c3c3;
+$keyboard-subkeys-arrow-background-color: #353535;
+$keyboard-subkeys-arrow-border-color: rgba(0, 0, 0, 0.4);
+
+
+$mainmenu-favorites-box-background-gradient-start: rgba(180, 206, 255, 0.801);
+$mainmenu-favorites-box-background-gradient-end: rgba(208, 209, 255, 0.4);
+$mainmenu-favorites-button-hover-background-gradient-start: rgba(palette.$menu-hover-bg,0.25);
+$mainmenu-favorites-button-hover-background-gradient-end: rgba(palette.$menu-hover-bg,0.4);
+
+$mainmenu-places-box-border-color: red;
+
+$mainmenu-app-button-border-color: rgba(0, 0, 0, 0);
+
+$mainmenu-app-button-selected-text-color: palette.$active-text-color;
+$mainmenu-app-button-selected-background-gradient-start: rgba(palette.$menu-hover-bg,0.4);
+$mainmenu-app-button-selected-background-gradient-end: rgba(palette.$menu-hover-bg,0.25);
+$mainmenu-app-button-selected-border-color: rgba(217, 217, 217, 0.5);
+
+$mainmenu-category-button-border-color: rgba(0, 0, 0, 0);
+
+$mainmenu-category-button-selected-text-color: palette.$active-text-color;
+$mainmenu-category-button-selected-background-gradient-start: rgba(palette.$menu-hover-bg,0.4);
+$mainmenu-category-button-selected-background-gradient-end: rgba(palette.$menu-hover-bg,0.25);
+// other tested background-colors (no gradient): rgba(245, 253, 255, 0.75) rgba(194, 236, 255, 0.69);
+
+$mainmenu-category-button-hover-background-color: red;
+
+$mainmenu-category-button-greyed-text-color: rgba(32, 32, 32, 0.55);
+$mainmenu-category-button-greyed-border-color: rgba(0, 0, 0, 0);
+
+$mainmenu-search-entry-caret-color: #202020;
+$mainmenu-search-entry-icon-color: #202020;
+
+
+// $osd-info-gradient-start-base: palette.$gradient-ligher-D;
+// $osd-info-gradient-end-base: palette.$gradient-ligher-L;
+
+// $osd-info-text-color: #202020;
+// $osd-info-background-gradient-start: rgba($osd-info-gradient-start-base, 0.9);
+// $osd-info-background-gradient-end: rgba($osd-info-gradient-end-base, 0.95);
+// $osd-info-border-color: #d9d9d9;
+
+// $osd-window-text-color: $osd-info-text-color;
+// $osd-window-background-gradient-start: rgba($osd-info-gradient-start-base, 0.7);
+// $osd-window-background-gradient-end: rgba($osd-info-gradient-end-base, 0.801);
+// // OLD background-color: rgba(221, 235, 253, 0.808);
+// $osd-window-border-color: #a1bcee;
+
+// $osd-level-background-color: rgba(0, 0, 0, 0.5);
+// $osd-level-border-color: rgba(palette.$active-text-color, 0.5);  // was 0, 0, 41
+// $osd-level-bar-color: palette.$accent-vivid;
+
+$osd-info-gradient-start-base: palette.$gradient-dark-D;
+$osd-info-gradient-end-base: palette.$gradient-dark-L;
+
+$osd-info-text-color: #f0f0f0;
+$osd-info-background-gradient-start: rgba($osd-info-gradient-start-base, 0.9);
+$osd-info-background-gradient-end: rgba($osd-info-gradient-end-base, 0.95);
+$osd-info-border-color: #d9d9d9;
+
+$osd-window-text-color: $osd-info-text-color;
+$osd-window-background-gradient-start: rgba($osd-info-gradient-start-base, 0.7);
+$osd-window-background-gradient-end: rgba($osd-info-gradient-end-base, 0.801);
+// OLD background-color: rgba(221, 235, 253, 0.808);
+$osd-window-border-color: $osd-info-border-color;
+
+$osd-level-background-color: rgba(0, 0, 0, 0.5);
+$osd-level-bar-color: palette.$accent-vivid;
+
+
+$window-list-highlight-background-color: rgba(palette.$highlight-color, 0.5);
+
+$window-list-text-color: rgba(255, 255, 255, 0.7);
+// looks like I also tried background-color: rgba(0, 255, 255, 0.2); for a little while
+
+$window-list-hover-text-color: #ffffff;
+$window-list-hover-background-color: rgba(palette.$window-list-hover-bg, 0.15);
+
+// was 17, 200, 255
+$window-list-focus-background-base: palette.$accent-vivid;
+
+$window-list-focus-text-color: #ffffff;
+// $window-list-focus-background-gradient-start: rgba($window-list-focus-background-base, 0.35);
+// $window-list-focus-background-gradient-end: rgba($window-list-focus-background-base, 0);
+// moved to panel variants
+$window-list-focus-border-color: palette.$accent-bright;  // IMPORTANT This is the "underline" for the active window
+
+// $window-list-hoverfocus-background-gradient-start: rgba($window-list-focus-background-base, 0.5);
+// $window-list-hoverfocus-background-gradient-end: rgba($window-list-focus-background-base, 0.4);
+// moved to panel variants
+
+$window-list-progress-color: rgba(palette.$accent-vivid, 0.7);
+
+$window-list-attention-gradient-start: palette.$attention-color;
+$window-list-attention-gradient-end: $window-list-attention-gradient-start;
+
+$window-list-preview-text-color: palette.$light-grey-2;
+$window-list-preview-background-gradient-start: rgba(palette.$gradient-dark-D, 0.9);
+$window-list-preview-background-gradient-end: rgba(palette.$gradient-dark-L, 0.9);
+// was just a single background-color: rgba(41, 107, 207, 0.8);
+$window-list-preview-border-color: #d9d9d9;
+
+
+$grouped-window-list-text-color: $window-list-text-color;
+// was alpha 0.6, but let's be uniform
+
+$grouped-window-list-hover-text-color: $window-list-hover-text-color;
+// $grouped-window-list-hover-background-gradient-start: rgba(palette.$applet-hover-bg, 0.25);
+// $grouped-window-list-hover-background-gradient-end: rgba(palette.$applet-hover-bg, 0.4);
+// moved to panel variants
+
+$grouped-window-list-focus-background-base: $window-list-focus-background-base;
+
+$grouped-window-list-focus-text-color: $grouped-window-list-hover-text-color;
+// $grouped-window-list-focus-background-gradient-start: rgba($grouped-window-list-focus-background-base, 0.5);
+// $grouped-window-list-focus-background-gradient-end: rgba($grouped-window-list-focus-background-base, 0.4);
+// moved to panel variants
+
+$grouped-window-list-hoverfocus-text-color: $grouped-window-list-hover-text-color;
+// $grouped-window-list-hoverfocus-background-gradient-start: rgba($grouped-window-list-focus-background-base, 0.7);
+// $grouped-window-list-hoverfocus-background-gradient-end: rgba($grouped-window-list-focus-background-base, 0.5);
+// moved to panel variants
+
+// $grouped-window-list-hover-focus-text-color: $window-list-hover-text-color;
+// $grouped-window-list-hover-focus-background-color: rgba(255, 255, 255, 0.3);
+// This could be the same bg color as the normal window list,
+// but the author doesn't use the grouped one so it wasn't tested as much.
+// Someone who does is free to open a pull request, in case.
+
+$grouped-window-list-active-text-color: $window-list-focus-text-color;
+$grouped-window-list-active-border-color: $window-list-focus-border-color;  // IMPORTANT This is the "underline" for the active window
+
+$grouped-window-list-progress-color: $window-list-progress-color;
+
+$grouped-window-list-attention-gradient-start: $window-list-attention-gradient-start;
+$grouped-window-list-attention-gradient-end: $window-list-attention-gradient-end;
+
+$grouped-window-list-number-label-text-color: palette.$grouped-window-list-label-color;
+$grouped-window-list-badge-background-color: rgba(palette.$accent-bright, 0.8);
+
+$grouped-window-list-thumbnail-menu-text-color: $window-list-preview-text-color;
+$grouped-window-list-thumbnail-menu-background-gradient-start: $window-list-preview-background-gradient-start;
+$grouped-window-list-thumbnail-menu-background-gradient-end: $window-list-preview-background-gradient-end;
+$grouped-window-list-thumbnail-menu-border-color: $window-list-preview-border-color;
+// border alpha was 0.9, but let's be uniform
+
+$grouped-window-list-thumbnail-menu-separator-color: rgba(255, 255, 255, 0.2);
+
+$grouped-window-list-thumbnail-outlined-border-color: palette.$accent-vivid;
+$grouped-window-list-thumbnail-selected-border-color: palette.$accent-vivid;
+
+$grouped-window-list-thumbnail-alert-background-color: rgba(255, 52, 52, 0.3);
+
+
+$sound-player-buttonsmall-hover-text-color: palette.$white;
+$sound-player-buttonsmall-hover-background-color: rgba(palette.$sound-player-hover-bg, 0.5);
+$sound-player-buttonsmall-hover-border-color: rgba(217, 217, 217, 0.5);
+$sound-player-buttonsmall-hover-shadow-color: rgba(255, 255, 255, 0.05);
+
+$sound-player-buttonsmall-active-text-color: palette.$active-text-color;
+$sound-player-buttonsmall-active-background-color: rgba(palette.$sound-player-hover-bg, 0.9);
+$sound-player-buttonsmall-active-border-color: palette.$white;
+$sound-player-buttonsmall-active-shadow-color: palette.$white;
+
+$sound-player-generic-coverart-background-color: rgba(0, 0, 0, 0.2);
+
+$sound-player-overlay-text-color: #202020;
+$sound-player-overlay-background-gradient-start: rgba(palette.$gradient-ligher-D, 0.9);
+$sound-player-overlay-background-gradient-end: rgba(palette.$gradient-ligher-L, 0.95);
+$sound-player-overlay-border-color: rgba(palette.$gradient-ligher-D, 0.9);
+
+$sound-player-overlay-button-text-color: #202020;
+
+$sound-player-overlay-button-hover-text-color: $sound-player-overlay-button-text-color;
+$sound-player-overlay-button-hover-background-color: rgba(palette.$sound-player-hover-bg, 0.5);
+$sound-player-overlay-button-hover-border-color: rgba(217, 217, 217, 0.5);
+$sound-player-overlay-button-hover-shadow-color: rgba(255, 255, 255, 0.05);
+
+$sound-player-overlay-button-active-text-color: palette.$active-text-color;
+$sound-player-overlay-button-active-background-color: rgba(palette.$sound-player-hover-bg, 0.9);
+$sound-player-overlay-button-active-border-color: palette.$white;
+$sound-player-overlay-button-active-shadow-color: palette.$white;
+                                         // v                    was hardcoded #d2e2ff (w/ alpha)                    v
+$sound-player-slider-background-color: rgba(color.adjust($sound-player-overlay-background-gradient-end, $lightness: 6%), 0.95);
+$sound-player-slider-border-color: rgba(0, 0, 0, 0.2);
+$sound-player-slider-active-background-color: palette.$accent-vivid;
+$sound-player-slider-active-border-color: rgba(0, 0, 0, 0);
+
+
+$workspace-switcher-button-text-color: rgba(255, 255, 255, 0.45);
+$workspace-switcher-button-background-color: rgba(0, 0, 0, 0.2);
+$workspace-switcher-button-border-color: rgba(0, 0, 0, 0.4);
+
+$workspace-switcher-button-hover-text-color: #ffffff;
+$workspace-switcher-button-hover-background-color: rgba(224, 224, 224, 0.2);
+
+$workspace-switcher-button-outlined-text-color: #ffffff;
+$workspace-switcher-button-outlined-background-color: palette.$accent-vivid;
+
+$workspace-switcher-button-outlined-hover-text-color: $workspace-switcher-button-outlined-text-color;
+$workspace-switcher-button-outlined-hover-background-color: color.adjust(palette.$accent-vivid, $lightness: 10%);  // was hardcoded #81e2ff
+
+$workspace-switcher-graph-background-color: rgba(0, 0, 0, 0.2);
+$workspace-switcher-graph-border-color: rgba(0, 0, 0, 0.4);
+
+$workspace-switcher-graph-active-border-color: palette.$accent-bright;
+
+$workspace-switcher-graph-windows-activewindow-background-color: #555555;
+$workspace-switcher-graph-windows-activewindow-border-color: rgba(0, 0, 0, 0.8);
+$workspace-switcher-graph-windows-inactivewindow-background-color: $workspace-switcher-graph-windows-activewindow-background-color;
+$workspace-switcher-graph-windows-inactivewindow-border-color: $workspace-switcher-graph-windows-activewindow-border-color;
+
+$workspace-switcher-graph-windows-active-activewindow-background: #6f6f6f;
+$workspace-switcher-graph-windows-active-activewindow-border: $workspace-switcher-graph-windows-activewindow-border-color;
+$workspace-switcher-graph-windows-active-inactivewindow-background: #3c3c3c;
+$workspace-switcher-graph-windows-active-inactivewindow-border: $workspace-switcher-graph-windows-activewindow-border-color;
+
+
+//Maybe was rgba(239, 247, 255, 0.3) */
+//Then was rgba(198, 255, 255, 0.15); */
+$panel-launchers-hover-background-gradient-start: rgba(palette.$applet-hover-bg, 0.25);
+$panel-launchers-hover-background-gradient-end: rgba(palette.$applet-hover-bg, 0.4);
+
+
+$applet-separator-line-color: rgba(255, 255, 255, 0.12);
+$applet-separator-line-vertical-color: rgba(255, 255, 255, 0.12);
+
+$applet-box-text-color: #f0f0f0;
+
+$applet-box-hover-text-color: palette.$accent-vivid;
+$applet-box-hover-background-gradient-start: rgba(palette.$applet-hover-bg, 0.25);
+$applet-box-hover-background-gradient-end: rgba(palette.$applet-hover-bg, 0.4);
+//was background-color: rgba(198, 255, 255, 0.15);
+
+$applet-box-hover-label-color: #ffffff;
+
+$applet-box-highlight-background-color: rgba(palette.$highlight-color, 0.5);
+
+$applet-label-color: #f0f0f0;
+
+$applet-label-hover-color: palette.$accent-vivid;
+
+$applet-icon-color: #ffffff;
+
+$applet-icon-hover-color: palette.$accent-vivid;  // I don't know when this color is supposed to show up, maybe older Cinnamon versions?
+                                                 // Anyway, this was #0e37ec, completely at random
+
+$user-menu-icon-background-color: rgba(palette.$white, 0.2);
+
+$user-menu-label-text-color: palette.$light-grey-3;
+
+
+$desklet-text-color: #202020;
+$desklet-highlight-color: rgba(palette.$highlight-color, 0.5);
+
+$desklet-with-borders-text-color: $desklet-text-color;
+$desklet-with-borders-highlight-color: $desklet-highlight-color;
+
+$desklet-with-borders-and-header-text-color: $desklet-text-color;
+$desklet-with-borders-and-header-highlight-color: $desklet-highlight-color;
+$desklet-header-text-color: #202020;
+
+$desklet-drag-placeholder-border-color: palette.$accent-bright;
+$desklet-drag-placeholder-background-color: rgba(palette.$accent-bright, 0.3);
+
+
+$photoframe-box-text-color: #202020;
+$photoframe-box-background-color: #f0f0f0;
+$photoframe-box-border-color: #d9d9d9;
+
+
+$tile-preview-background-color: rgba(palette.$accent-bright, 0.3);
+$tile-preview-border-color: palette.$accent-bright;
+
+$tile-preview-snap-background-color: rgba(palette.$accent-bright, 0.6);
+
+$tile-hud-background-color: $tile-preview-background-color;
+$tile-hud-border-color: $tile-preview-border-color;
+
+$tile-hud-snap-background-color: $tile-preview-snap-background-color;
+
+
+$xkcd-box-background-color: rgba(143, 157, 221, 0);

@@ -1,0 +1,118 @@
+/// The main window list, traditional (non-grouped) variant
+
+.window-list-box {
+    spacing: 6px;
+    padding-left: 10px;
+    padding-top: 1px;
+}
+.window-list-box.vertical {
+    spacing: 2px;
+    padding: 10px 0;
+}
+.window-list-box:highlight {
+    background-color: colors.$window-list-highlight-background-color;
+}
+
+.window-list-item-label {
+    font-weight: bold;
+    width: 15em;
+    min-width: 5px;
+}
+
+.window-list-item-box {
+    font-weight: bold;
+    background-image: none;
+    padding-top: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    transition-duration: 100;
+    color: colors.$window-list-text-color;
+}
+.window-list-item-box.bottom {
+    @include PanelVariants.window-list-border-width(2px, bottom);
+}
+.window-list-item-box.top {
+    @include PanelVariants.window-list-border-width(2px, top);
+}
+.window-list-item-box.bottom StLabel,
+.window-list-item-box.top StLabel {
+    padding-left: 2px;
+}
+.window-list-item-box.right {
+    padding-left: 0;
+    padding-right: 0;
+    @include PanelVariants.window-list-border-width(2px, right);
+}
+.window-list-item-box.right StBin {
+    padding-right: 0;
+}
+.window-list-item-box.left {
+    padding-left: 0;
+    padding-right: 0;
+    @include PanelVariants.window-list-border-width(2px, left);
+}
+.window-list-item-box.left StBin {
+    padding-left: 1px;
+}
+.window-list-item-box:hover:active,
+.window-list-item-box:hover:checked,
+.window-list-item-box:hover:focus,
+.window-list-item-box:hover:running {
+    &.top {
+        @include PanelVariants.window-list-hoverfocus-background-gradient(top);
+    }
+    &.bottom {
+        @include PanelVariants.window-list-hoverfocus-background-gradient(bottom);
+    }
+    &.left {
+        @include PanelVariants.window-list-hoverfocus-background-gradient(left);
+    }
+    &.right {
+        @include PanelVariants.window-list-hoverfocus-background-gradient(right);
+    }
+}
+.window-list-item-box:groupFocus,
+.window-list-item-box:hover {
+    color: colors.$window-list-hover-text-color;
+    background-color: colors.$window-list-hover-background-color;
+}
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box:focus,
+.window-list-item-box:running {
+    color: colors.$window-list-focus-text-color;
+    border-color: colors.$window-list-focus-border-color;
+    &.top {
+        @include PanelVariants.window-list-focus-background-gradient(top);
+    }
+    &.bottom {
+        @include PanelVariants.window-list-focus-background-gradient(bottom);
+    }
+    &.left {
+        @include PanelVariants.window-list-focus-background-gradient(left);
+    }
+    &.right {
+        @include PanelVariants.window-list-focus-background-gradient(right);
+    }
+}
+.window-list-item-box .progress {
+    background-color: colors.$window-list-progress-color;
+}
+
+.window-list-item-demands-attention {
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$window-list-attention-gradient-start;
+    background-gradient-end: colors.$window-list-attention-gradient-end;
+}
+
+.window-list-preview {
+    spacing: 6px;
+    color: colors.$window-list-preview-text-color;
+    border: 1px solid colors.$window-list-preview-border-color;
+    background-gradient-direction: vertical;
+    background-gradient-start: colors.$window-list-preview-background-gradient-start;
+    background-gradient-end: colors.$window-list-preview-background-gradient-end;
+    border-radius: 3px;
+    padding: 6px 12px 12px;
+    font-size: 1em;
+}
