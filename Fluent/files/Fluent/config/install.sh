@@ -212,12 +212,12 @@ lcolors=()
 
 while [[ "$#" -gt 0 ]]; do
   case "${1:-}" in
-    -d|--dest)
+    --dest)
       dest="$2"
       mkdir -p "$dest"
       shift 2
       ;;
-    -n|--name)
+    --name)
       _name="$2"
       shift 2
       ;;
@@ -251,7 +251,7 @@ while [[ "$#" -gt 0 ]]; do
       echo -e "Install square windows button version ..."
       shift
       ;;
-    -t|--theme)
+    --theme)
       accent='true'
       shift
       for variant in "$@"; do
@@ -307,7 +307,7 @@ while [[ "$#" -gt 0 ]]; do
         esac
       done
       ;;
-    -i|--icon)
+    --icon)
       shift
       for icons in "$@"; do
         case "$icons" in
@@ -391,7 +391,7 @@ while [[ "$#" -gt 0 ]]; do
         echo "Install $icons icon for gnome-shell panel..."
       done
       ;;
-    -c|--color)
+    --color)
       shift
       for variant in "$@"; do
         case "$variant" in
@@ -421,7 +421,7 @@ while [[ "$#" -gt 0 ]]; do
         esac
       done
       ;;
-    -s|--size)
+    --size)
       shift
       for variant in "$@"; do
         case "$variant" in

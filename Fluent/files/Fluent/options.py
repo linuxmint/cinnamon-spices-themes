@@ -4,6 +4,7 @@ import os
 from gi.repository import Gio
 import subprocess
 from config import config_gui
+import time
 
 '''
 $XDG_CURRENT_DESKTOP values:
@@ -105,27 +106,6 @@ def set_theme(current_theme_name, new_theme_name, reload_only):
                             current_theme_name, new_theme_name, reload_only)
         gsettings_set("org.cinnamon.theme", "name", current_theme_name,
                                             new_theme_name, reload_only)
-        '''
-        if reload_only:
-            CINNAMON_PATH   = '/org/Cinnamon'
-            CINNAMON_IFACE  = 'org.Cinnamon'
-            bus = Gio.bus_get_sync(Gio.BusType.SESSION, None)
-            proxy  = Gio.DBusProxy.new_sync( bus, Gio.DBusProxyFlags.NONE, None,
-                                CINNAMON_IFACE, CINNAMON_PATH, CINNAMON_IFACE, None)
-            if gsettings_get("org.cinnamon.desktop.interface",
-                                        "gtk-theme") == current_theme_name:
-                #reload gtk and cinnamon themes
-                proxy.RestartCinnamon('(b)', False)
-                gsettings_set("org.cinnamon.desktop.interface", "gtk-theme",
-                                current_theme_name, new_theme_name, reload_only)
-            elif gsettings_get("org.cinnamon.theme", "name") == current_theme_name:
-                #reload cinnamon theme only
-                proxy.ReloadTheme()
-        else:
-            #set gtk theme
-            gsettings_set("org.cinnamon.desktop.interface", "gtk-theme",
-                            current_theme_name, new_theme_name, reload_only)
-        '''
     elif desktop_environment == "XFCE":
         xfconf_set("xsettings", "/Net/ThemeName", current_theme_name, reload_only)
         #xfconf_set("xfwm4", "/general/theme", current_theme_name, reload_only)

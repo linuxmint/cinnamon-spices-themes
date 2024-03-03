@@ -32,10 +32,12 @@ class OptionsWindow(Gtk.Window):
         
         self.load_config_file()
         self.set_title(self.options["theme_name"] + " theme options")
+        self.set_icon_name("applications-graphics")
+        
         self.widgets = {}
         
         for option in self.options["options"]:
-            if option["desktop"] == "All" or option["desktop"] == self.desktop_environment:
+            if option["desktop"] == "all" or option["desktop"] == self.desktop_environment:
                 if option["type"] == "combo":
                     combobox = Gtk.Box.new(Gtk.Orientation.HORIZONTAL, 10)
                     combobox_label = Gtk.Label.new(option["label"])
@@ -89,7 +91,7 @@ class OptionsWindow(Gtk.Window):
         box.pack_start(setthemebox, False, True, 0)
         self.update_setthemebox()
         #---------------------------
-        if self.options["adwaita_link_to_gtk4"]:
+        if self.options.get("adwaita_link_to_gtk4", False):
             adwaitabox = Gtk.Box.new(Gtk.Orientation.HORIZONTAL, 10)
             self.adwaitabox_label = Gtk.Label.new("")
             self.adwaitabox_label.set_halign(Gtk.Align.START)
@@ -173,7 +175,7 @@ class OptionsWindow(Gtk.Window):
         command.append(os.path.dirname(new_theme_dir))
         
         for option in self.options["options"]:
-            if option["desktop"] == "All" or option["desktop"] == self.desktop_environment:
+            if option["desktop"] == "all" or option["desktop"] == self.desktop_environment:
                 if option["type"] == "combo":
                     command.append("--" + option["name"])
                     value = self.widgets[option["name"]].get_active()
