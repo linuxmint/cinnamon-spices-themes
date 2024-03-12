@@ -1,0 +1,1252 @@
+
+//
+// Nautilus
+//
+.nautilus-window {
+  @if $sidebar == 'styled' {
+    &.background {
+      background-color: $titlebar;
+
+      &:backdrop {
+        background-color: $titlebar-backdrop;
+      }
+    }
+
+    flap.unfolded > placessidebar {
+      @if $topbar == 'dark' and $variant == 'light' {
+        margin: 0;
+        background-color: transparent;
+        color: $titlebar-text-secondary;
+      } @else {
+        background-color: $primary;
+        color: on($primary);
+        margin: 0 0 $modal-radius + $space-size 0;
+        border-radius: 0 $modal-radius + $space-size  $modal-radius + $space-size 0;
+      }
+
+      > scrolledwindow > viewport {
+        > list.navigation-sidebar {
+          background: none;
+          padding: $space-size;
+
+          @if $topbar == 'dark' and $variant == 'light' {
+            padding-right: $space-size;
+          } @else {
+            padding-right: $space-size + 2px;
+          }
+
+          > separator { background: none; }
+
+          > row.activatable {
+            border-radius: $modal-radius;
+
+            &, image.sidebar-icon, label.sidebar-label, button.sidebar-button {
+              @if $topbar == 'dark' and $variant == 'light' {
+                color: $titlebar-text-secondary;
+              } @else {
+                color: on($primary);
+              }
+            }
+
+            &:hover {
+              background-color: on($primary, divider);
+              color: on($primary);
+            }
+
+            &:selected {
+              background-color: $base;
+              font-weight: 700;
+
+              &, image.sidebar-icon, label.sidebar-label, button.sidebar-button {
+                color: $primary;
+              }
+            }
+
+            &:disabled {
+              &, image.sidebar-icon, label.sidebar-label {
+                color: $titlebar-text-secondary-disabled;
+              }
+            }
+          }
+        }
+      }
+
+      > scrolledwindow > scrollbar {
+        background-color: $primary;
+        border: none;
+
+        > range > though {
+          background: none;
+
+          > slider {
+            border: none;
+          }
+        }
+      }
+    }
+
+    @if $variant == 'light' and $topbar == 'dark' {
+      .sidebar-pane {
+        background-color: $titlebar;
+        border: none;
+      }
+
+      tabbar {
+        &:not(.inline) {
+          .box {
+            background-color: $titlebar-fill;
+          }
+  
+          &:backdrop .box {
+            background-color: $titlebar-fill;
+          }
+        }
+  
+        scrolledwindow:not(.pinned) > tabbox {
+          tab, tab > button.flat {
+            color: $titlebar-text-secondary;
+  
+            &:hover {
+              color: $titlebar-text;
+              background-color: $titlebar-fill;
+            }
+  
+            &:active, &:checked, &:selected {
+              color: $titlebar-text;
+              background-color: $titlebar-divider;
+            }
+  
+            &:disabled {
+              color: $titlebar-text-secondary-disabled;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &:not(.view) headerbar {
+    @if $sidebar == 'normal' {
+      border-bottom: 1px solid $border;
+    }
+  }
+
+  .nautilus-grid-view {
+    &, gridview.view {
+      background-color: $base;
+      border-radius: $window-radius - $space-size;
+    }
+
+    @if $variant == 'light' and $topbar == 'dark' {
+      margin: 0 $space-size $space-size $space-size;
+    }
+  }
+
+  .nautilus-list-view {
+    &, columnview.view {
+      background-color: $base;
+      border-radius: $window-radius - $space-size;
+    }
+
+    @if $variant == 'light' and $topbar == 'dark' {
+      margin: 0 $space-size $space-size $space-size;
+    }
+  }
+
+  @if $sidebar == 'styled' {
+    flap > separator {
+      background: none;
+    }
+  }
+
+  placesview {
+    label { color: $text-secondary; }
+  }
+
+  infobar {
+    margin: $space-size / 2;
+
+    > revealer > box {
+      border-radius: $corner-radius + $space-size;
+    }
+  }
+
+  label.search-information {
+    margin: $space-size / 2;
+    border-radius: $corner-radius;
+  }
+
+  .floating-bar {
+    min-height: 32px;
+    padding: 0;
+    margin: $space-size;
+    border-style: none;
+    border-radius: $corner-radius;
+    background-color: $primary;
+    color: on($primary);
+    box-shadow: $shadow-z3;
+
+    button {
+      margin: (32px - $small-size) / 2;
+      color: on($primary);
+
+      @extend %small-button;
+    }
+  }
+}
+
+#NautilusViewCell {
+  clamp box {
+    margin: 0;
+    border-spacing: 0;
+  }
+}
+
+#NautilusQueryEditor { // search entry
+  > menubutton {
+    margin: 0;
+
+    > button {
+      min-width: 16px;
+      min-height: 16px;
+      margin: 4px 0;
+    }
+  }
+
+  > text { margin: 0; }
+}
+
+#NautilusPathBar {
+  background-color: $titlebar-fill;
+  border-radius: $circular-radius;
+  margin: $space-size 0;
+
+  #NautilusPathButton {
+    margin: 0 $space-size / 2;
+    border-radius: $circular-radius;
+
+    &.current-dir {
+      color: $titlebar-text;
+
+      &:hover, &:active {
+        background: none;
+        box-shadow: none;
+      }
+    }
+
+    &:first-child { margin-left: 0; }
+  }
+
+  > menubutton {
+    margin: 0;
+
+    > button {
+      border-radius: $circular-radius;
+    }
+  }
+}
+
+#NautilusQueryEditorTag {
+  border-radius: $circular-radius;
+
+  > button {
+   margin: $space-size / 2;
+   padding: 0;
+   min-height: $small-size - 2px;
+   min-width: $small-size - 2px;
+  }
+}
+
+//
+// Gnome Control Center
+//
+window.dialog {
+  > box > stack > box > box {
+    > notebook.frame {
+      border-width: 0 0 0 1px;
+      border-radius: 0;
+    }
+  }
+}
+
+//
+// Calculator
+//
+
+.history-view { background-color: $base; }
+
+#displayitem {
+  border-top: 1px solid $border;
+}
+
+.small .card {
+  border-radius: 0;
+  box-shadow: none;
+
+  &.forecast-card {
+    border-width: 1px 0;
+  }
+
+  &.display-container {
+    border-width: 0 0 1px 0;
+  }
+}
+
+leaflet {
+  button.number-button {
+    background-color: rgba($text, 0.1);
+
+    &:hover {
+      background-color: rgba($text, 0.2);
+    }
+
+    &:active {
+      background-color: rgba($text, 0.3);
+    }
+  }
+
+  button.clear-button.image-button {
+    border-radius: $corner-radius;
+  }
+}
+
+//
+// Calendar
+//
+
+// labels
+label {
+  &.primary-label, &.month-name, &.secondary-label {
+    font-size: 16pt;
+    font-weight: bold;
+    padding: $space-size * 2;
+  }
+
+  &.primary-label, &.month-name {
+    color: $primary;
+  }
+
+  &.secondary-label {
+    color: $text-disabled;
+  }
+}
+
+calendar-view {
+  font-size: 10pt;
+
+  &:selected {
+    color: $primary;
+    font-weight: bold;
+  }
+}
+
+calendar-view.header,
+label.header {
+  font-size: 10pt;
+  font-weight: bold;
+  color: $text-disabled;
+}
+
+calendar-view.current,
+weekgrid.current {
+  background-color: gtkalpha($primary, 0.3);
+}
+
+popover.events {
+  background-color: $popover;
+  padding: 0;
+
+  box {
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+  }
+
+  list {
+    background-color: $base;
+    border-radius: $corner-radius;
+  }
+
+  scrolledwindow {
+    border-width: 0;
+  }
+
+  button {
+    border-radius: $corner-radius;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-style: solid none none;
+    box-shadow: none;
+  }
+}
+
+// Event widget
+event {
+  margin: 1px;
+  font-size: 0.9rem;
+
+  widget.content {
+    margin: 4px;
+  }
+
+  &.timed,
+  &:not(.slanted):not(.slanted-start):not(.slanted-end) {
+    border-radius: $corner-radius;
+  }
+
+  &.timed widget.edge {
+    border-radius: $corner-radius / 2;
+    min-width: 5px;
+  }
+
+  &.slanted-start,
+  &.slanted-end:dir(rtl) {
+    padding-left: $space-size * 2 + 4px;
+    border-radius: 0 $corner-radius / 2 $corner-radius / 2 0;
+  }
+
+  &.slanted-end,
+  &.slanted-start:dir(rtl) {
+    padding-right: $space-size * 2 + 4px;
+    border-radius: $corner-radius / 2 0 0 $corner-radius / 2;
+  }
+
+  &:not(.timed).color-dark {
+    color: white;
+    outline-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &.timed,
+  &:not(.timed).color-light {
+    color: gtkalpha(black, 0.75);
+    outline-color: rgba(255, 255, 255, 0.5);
+  }
+
+}
+
+// Event Popover
+popover.event-popover,
+popover.event-popover > contents {
+  padding: 0;
+}
+
+.search-viewport {
+  background-color: $base;
+}
+
+// calendar popover
+.calendar-list {
+  background-color: transparent;
+
+  > list {
+    border-radius: 4px;
+  }
+}
+
+// Edit dialog's header button
+.sources-button {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 0;
+  border-top-style: none;
+  border-bottom-style: none;
+
+  &:hover:not(:backdrop) {
+    background-image: none;
+    text-shadow: none;
+  }
+}
+
+// defeats the ugly hover effect of the calendar color dot on buttons
+.calendar-color-image {
+  -gtk-icon-filter: none;
+}
+
+// adds a subtle shadow to the calendar color dot when it makes sense
+image.calendar-color-image,
+button:active:not(:backdrop) .calendar-color-image,
+button:checked:not(:backdrop) .calendar-color-image,
+.calendars-list .calendar-color-image:not(:backdrop):not(:disabled),
+.calendar-list .calendar-color-image:not(:backdrop):not(:disabled),
+.sources-button:not(:backdrop):not(:disabled) .calendar-color-image {
+  -gtk-icon-shadow: 0 1px gtkalpha(black, 0.1);
+}
+
+// Date chooser
+
+// month/year controls
+datechooser {
+  padding: $space-size;
+
+  navigator {
+    margin-right: $space-size;
+    margin-left: $space-size;
+    margin-bottom: $space-size;
+
+    label { font-weight: bold; }
+
+    button.flat, button.image-button {
+      min-height: $medium-size;
+      min-width: $medium-size;
+      padding: 0;
+    }
+  }
+
+  .current-week {
+    background-color: $fill;
+    color: $text;
+    border-radius: $corner-radius;
+  }
+
+  // day names and week numbers
+  .weeknum, .weekday {
+    color: $text-disabled;
+    font-size: smaller;
+  }
+
+  // days
+  button.day, button.day.flat {
+    font-size: 10pt;
+    font-weight: normal;
+    margin: $space-size / 2;
+    padding: 0;
+    min-height: $medium-size;
+    min-width: $medium-size;
+    transition: none;
+
+    dot {
+      background-color: $text;
+      border-radius: 50%;
+      min-height: $space-size / 2;
+      min-width: $space-size / 2;
+    }
+
+    &:selected, &.today:selected {
+      background-color: $primary;
+      color: on($primary);
+      font-weight: bold;
+
+      dot { background-color: on($primary); }
+    }
+
+    &.today {
+      color: $primary;
+
+      dot { background-color: $primary; }
+    }
+
+    &.other-month {
+      &:not(:hover),
+      &:backdrop {
+        color: $text-secondary-disabled;
+
+        dot { background-color: $text-secondary-disabled; }
+      }
+
+      &:hover:not(:backdrop) {
+        color: $text-disabled;
+
+        dot { background-color: $text-disabled; }
+      }
+    }
+  }
+}
+
+// Week View CSS
+.week-header {
+  padding: 0;
+
+  & > box:first-child {
+    border-bottom: 1px solid $border;
+  }
+
+  .week-number {
+    font-size: 16pt;
+    font-weight: bold;
+    padding: $space-size * 2 $space-size * 2 $space-size * 3 $space-size * 2;
+    color: $track;
+  }
+
+  &.week-temperature {
+    font-size: 10pt;
+    font-weight: bold;
+    color: $text-disabled;
+  }
+
+  &.lines {
+    color: $border;
+  }
+}
+
+weekhourbar > label {
+  font-size: 10pt;
+  padding: 4px $space-size;
+}
+
+.week-view .lines {
+  color: $border;
+}
+
+weekgrid > widget.now-strip {
+  background-color: gtkalpha($primary, 0.8);
+  margin: 0 0 0 1px;
+  min-height: 3px;
+}
+
+weekgrid,
+.week-header {
+  &:selected, &.dnd {
+    background-color: gtkalpha($primary, 0.25);
+  }
+}
+
+// Month cell
+monthcell {
+  border: solid 1px $border;
+  border-width: 1px 0 0 1px;
+  background-color: transparent;
+  transition: background-color 200ms;
+
+  &:hover:not(.out-of-month):not(.today) {
+    background-color: $base-alt;
+    transition: background-color 200ms;
+    color: $text;
+  }
+
+  &:selected {
+    background-color: gtkalpha($primary, 0.1);
+
+    &:hover {
+      background-color: gtkalpha($primary, 0.2);
+    }
+
+    label.day-label { font-weight: bold; }
+  }
+
+  &:nth-child(7n + 1) { border-left-width: 0; }
+
+  &.today {
+    background-color: gtkalpha($primary, 0.2);
+
+    &:hover {
+      background-color: gtkalpha($primary, 0.3);
+      color: $primary;
+    }
+
+    &:selected {
+      background-color: gtkalpha($primary, 0.25);
+
+      &:hover {
+        background-color: gtkalpha($primary, 0.35);
+      }
+    }
+
+    label.day-label.numeric {
+      color: on($primary);
+      background-color: $primary;
+      border-radius: $circular-radius;
+      padding: 0;
+      min-height: 24px;
+      min-width: 24px;
+    }
+  }
+
+  label {
+    color: $text;
+    font-size: 0.9rem;
+
+    &.day-label {
+      font-size: 1rem;
+    }
+  }
+
+  &.out-of-month {
+    background-color: $fill;
+
+    label {
+      color: $text-secondary;
+    }
+  }
+
+  button {
+    padding: 0 $space-size;
+    border-radius: 0;
+    border-bottom: none;
+    border-right: none;
+  }
+}
+
+// Month popover
+monthpopover > box {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.notes-section box > textview {
+  border-radius: $corner-radius;
+  padding: $space-size;
+
+  > text {
+    background: none;
+  }
+}
+
+// Agenda View CSS
+agenda-view list {
+  &.background { background-color: transparent; }
+
+  > row {
+    padding: 2px $space-size * 2;
+  }
+
+  > label {
+    padding: $space-size $space-size * 2;
+  }
+}
+
+label.no-events {
+  font-style: italic;
+}
+
+// Search
+searchbutton > popover > arrow {
+  background: none;
+  border: none;
+}
+
+menubutton.sources-button {
+  margin: 0;
+
+  > button {
+    border-radius: 0 0 $window-radius $window-radius;
+    margin: 0;
+  }
+}
+
+menubutton stack > box {
+  border-spacing: $space-size;
+}
+
+@if $sidebar == 'styled' {
+  window:not(.nautilus-window) toastoverlay .sidebar-pane {
+    background-color: $base-alt;
+    color: $text;
+
+    &:dir(ltr), &.end:dir(rtl) {
+      &, banner > revealer > widget {
+        box-shadow: inset -1px 0 $border;
+      }
+    }
+
+    &:dir(rtl), &.end:dir(ltr) {
+      &, banner > revealer > widget {
+        box-shadow: inset 1px 0 $border;
+      }
+    }
+
+    headerbar {
+      color: $text-secondary;
+
+      &:backdrop { color: $text-secondary-disabled; }
+
+      button:not(.suggested-action):not(.destructive-action) {
+        @include button(flat-normal);
+
+        &:focus { @include button(focus); }
+
+        &:hover { @include button(hover); }
+
+        &:active { @include button(active); }
+
+        &:disabled { @include button(disabled); }
+
+        &:checked { @include button(checked); }
+
+        &:checked:hover { @include button(checked-hover); }
+
+        &:checked:disabled { @include button(checked-disabled); }
+      }
+    }
+  }
+}
+
+.content-pane {
+  toolbarview.undershoot-top calendar-view scrolledwindow {
+    @include undershoot(top, $style: 'compact');
+  }
+  
+  toolbarview.undershoot-bottom calendar-view scrolledwindow {
+    @include undershoot(bottom, $style: 'compact');
+  }
+}
+
+//
+// Contacts
+//
+
+.contacts-contact-list list.navigation-sidebar {
+  background: none;
+}
+
+//
+// Gnome Software
+//
+
+flowboxchild {
+  &.card:not(.category-tile) {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    background: none;
+  }
+}
+
+.category-tile.card {
+  padding: $space-size * 3.5;
+  border: none;
+  border-radius: $corner-radius;
+  min-width: 140px;
+  font-weight: 900;
+  font-size: larger;
+
+  &.category-tile-iconless {
+    padding: $space-size * 1.5 $space-size * 2.5;
+    min-width: 130px;
+    font-size: 105%;
+    font-weight: normal;
+    border: 1px solid $border;
+  }
+}
+
+app-context-bar {
+  > box:not(:first-child) > button.flat {
+    border-radius: 0;
+
+    &:last-child {
+      border-radius: 0 $corner-radius $corner-radius 0;
+    }
+  }
+
+  > box:first-child > button.flat {
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: $corner-radius 0 0 $corner-radius;
+    }
+  }
+
+  > box > button.flat {
+    border-left-color: $border;
+  }
+}
+
+carousel.card {
+  border: none;
+}
+
+.context-tile-lozenge {
+  min-height: 28px;
+  min-width: 28px;
+  padding: $space-size;
+
+  &.grey {
+    color: $text;
+    background-color: $divider;
+  }
+
+  &.green, &.details-rating-0 {
+    color: darken($success, 15%);
+    background-color: rgba($success, 0.15);
+  }
+
+  &.blue,
+  &.details-rating-5 {
+    color: $blue-500;
+    background-color: rgba($blue-500, 0.15);
+  }
+
+  &.yellow, &.details-rating-12 {
+    color: darken($warning, 15%);
+    background-color: rgba($warning, 0.15);
+  }
+
+  &.details-rating-15 {
+    color: $orange-500;
+    background-color: rgba($orange-500, .15);
+  }
+
+  &.red, &.details-rating-18 {
+    color: darken($error, 15%);
+    background-color: rgba($error, 0.15);
+  }
+}
+
+screenshot-carousel box.frame.view {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+
+
+/* Styling for specific category buttons. */
+.category-tile.category-create {
+  background: linear-gradient(180deg, #ce8cd7 0%, #2861c6 100%);
+  color: white;
+
+  &:hover {
+    background: linear-gradient(180deg, shade(#ce8cd7, 1.07) 0%, shade(#2861c6, 1.1) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(180deg, shade(#ce8cd7, .95) 0%, shade(#2861c6, .95) 100%);
+  }
+}
+
+.category-tile.category-develop {
+  background: #5e5c64;
+  color: white;
+
+  &:hover {
+    background: shade(#5e5c64, 1.2);
+  }
+
+  &:active {
+    background-color: shade(#5e5c64, .95);
+  }
+}
+
+.category-tile.category-learn {
+  background: linear-gradient(180deg, #2ec27e 30%, #27a66c 100%);
+  color: white;
+
+  &:hover {
+    background: linear-gradient(180deg, shade(#2ec27e, 1.06) 30%, shade(#27a66c, 1.06) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(180deg, shade(#2ec27e, .95) 30%, shade(#27a66c, .95) 100%);
+  }
+}
+
+.category-tile.category-play {
+  background: linear-gradient(75deg, #f9e2a7 0%, #eb5ec3 50%, #6d53e0 100%);
+  color: #393484;
+
+  &:hover {
+    background: linear-gradient(75deg, shade(#f9e2a7, 1.07) 0%, shade(#eb5ec3, 1.07) 50%, shade(#6d53e0, 1.07) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(75deg, shade(#f9e2a7, .97) 0%, shade(#eb5ec3, .95) 50%, shade(#6d53e0, 1.07) 100%);
+  }
+}
+
+.category-tile.category-socialize {
+  background: linear-gradient(90deg, #ef4e9b 0%, #f77466 100%);
+  color: $text-secondary;
+
+  &:hover {
+    background: linear-gradient(90deg, shade(#ef4e9b, 1.08) 0%, shade(#f77466, 1.08) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(90deg, shade(#ef4e9b, .95) 0%, shade(#f77466, .95) 100%);
+  }
+}
+
+.category-tile.category-work {
+  padding: 1px; /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
+  color: #1c71d8;
+  background-color:#fdf8d7;
+  background-image: linear-gradient($border 1px, transparent 1px),
+           linear-gradient(90deg, $border 1px, transparent 1px);
+  background-size: 10px 10px, 10px 10px;
+  background-position: -1px -4px, center -1px;
+
+  &:hover {
+    background-color: lighten(#fdf8d7, 5%);
+    background-image: linear-gradient($border 1px, transparent 1px),
+             linear-gradient(90deg, $border 1px, transparent 1px);
+  }
+
+  &:active {
+    background-color: darken(#fdf8d7, 5%);
+    background-image: linear-gradient($border 1px, transparent 1px),
+             linear-gradient(90deg, $border 1px, transparent 1px);
+  }
+}
+
+//
+// Polari
+//
+.polari-room-list {
+  .sidebar {
+    background: none;
+
+    > row.activatable:selected {
+      background-color: $primary;
+      color: on($primary);
+    }
+  }
+
+  popover.background {
+    > arrow,
+    > contents {
+      padding: 0;
+    }
+  }
+}
+
+//
+// Builder
+//
+
+window.org-gnome-Builder {
+  headerbar {
+    box-shadow: inset 0 -1px $border;
+
+    splitbutton {
+      button {
+        border-radius: $corner-radius;
+      }
+
+      notification button {
+        margin: 0;
+        min-height: $small-size;
+        min-width: $small-size;
+        padding: 0;
+      }
+    }
+
+    menubutton > button {
+      border-radius: $corner-radius;
+      padding: $space-size $space-size * 1.5;
+    }
+
+    paneltogglebutton {
+      button {
+        border-radius: $corner-radius;
+      }
+    }
+  }
+}
+
+popover.background.global-search {
+  > arrow, > contents { padding: 0; }
+}
+
+panelframeswitcher {
+  padding: $space-size;
+}
+
+.frameheader.header {
+  min-height: $small-size;
+  background-color: $base-alt;
+  border-bottom: 1px solid $border;
+
+  > button {
+    border: none;
+    margin: 0;
+    padding: $space-size / 2;
+  }
+
+  tabbar.inline {
+    > revealer > box {
+      min-height: $small-size;
+
+      .start-action {
+        padding: 0;
+        border: none;
+      }
+
+      .end-action {
+        padding: 0;
+        border-left: 1px solid $border;
+
+        menubutton > button {
+          margin: $space-size;
+          min-height: $small-size;
+          min-width: $small-size;
+          padding: $space-size / 2;
+          border-radius: $corner-radius;
+        }
+      }
+
+      tabbox {
+        border: none;
+        background: none;
+      }
+    }
+  }
+}
+
+panelstatusbar {
+  background-color: $background;
+
+  > menubutton > button,
+  > paneltogglebutton button.image-button {
+    border-radius: 0;
+    @extend %button-flat-simple;
+  }
+}
+
+// Setting window
+.style-variant {
+  padding: 0 $space-size * 2;
+
+  button.toggle {
+    padding: 0;
+
+    &, &:hover, &:focus, &:active, &:checked {
+      background: none;
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    > stylevariantpreview > .wallpaper {
+      border-radius: $corner-radius;
+      outline-color: transparent;
+      outline-width: 3px;
+      outline-offset: $space-size / 2;
+      outline-style: solid;
+      box-shadow: none;
+    }
+
+    &:hover > stylevariantpreview > .wallpaper {
+      outline-color: $fill;
+    }
+
+    &:active > stylevariantpreview > .wallpaper {
+      outline-color: $track;
+    }
+
+    &:checked > stylevariantpreview > .wallpaper {
+      outline-color: $primary;
+    }
+  }
+}
+
+// theme-selector
+checkbutton.theme-selector {
+  radio {
+    &, &:hover, &:disabled {
+      border-color: transparent;
+      background-color: transparent;
+    }
+
+    &:not(:checked):not(:indeterminate):not(:disabled) {
+      &:hover {
+        border-color: transparent;
+        background-color: transparent;
+      }
+    }
+
+    &:checked, &:active, &:active:hover {
+      border-color: transparent;
+      background-color: $primary;
+      color: on($primary);
+      -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/check-symbolic.svg")),
+                                    -gtk-recolor(url("assets/scalable/check-symbolic@2.svg")));
+    }
+
+    &:checked:hover {
+      background-color: lighten($primary, 10%);
+      color: on($primary);
+    }
+  }
+}
+
+themeswitcher {
+  padding: $space-size;
+
+  .check {
+    min-height: 16px;
+    min-width: 16px;
+    background-color: $primary;
+    color: on($primary);
+    padding: 2px;
+    border-radius: $circular-radius;
+    margin: $space-size / 2;
+    -gtk-icon-size: 20px;
+    -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("assets/scalable/check-symbolic.svg")),
+                                  -gtk-recolor(url("assets/scalable/check-symbolic@2.svg")));
+
+    &:hover {
+      background-color: lighten($primary, 10%);
+      color: on($primary);
+    }
+
+    &:active {
+      background-color: $primary;
+      color: on($primary);
+    }
+  }
+
+  checkbutton {
+    radio {
+      padding: 0;
+      margin: 2px;
+      min-height: 48px;
+      min-width: 48px;
+
+      &, &:active, &:hover {
+        outline-color: $border;
+        outline-width: 1px;
+        outline-offset: -1px;
+        outline-style: solid;
+        box-shadow: none;
+      }
+
+      &, &:hover, &:active, &:checked, &:checked:hover {
+        -gtk-icon-source: none;
+        transition: none;
+        border: none;
+      }
+    }
+
+    radio:checked, radio:active {
+      &, &:hover {
+        box-shadow: inset 0 0 0 2px $primary;
+      }
+    }
+
+    &.system radio {
+      &, &:hover, &:active, &:checked, &:checked:hover {
+        background-image: linear-gradient(-45deg, #242424 49.99%, white 50.01%);
+        background-color: transparent;
+      }
+    }
+
+    &.light radio {
+      &, &:hover, &:active, &:checked, &:checked:hover {
+        color: rgba(black, 0.8);
+        background-color: white;
+      }
+    }
+
+    &.dark radio {
+      &, &:hover, &:active, &:checked, &:checked:hover {
+        color: white;
+        background-image: image(#242424);
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+//
+// dialogs
+//
+
+window.dialog {
+  > .dialog-vbox > box > scrolledwindow > viewport > widget {
+    > list.boxed-list {
+      border: none;
+      border-radius: 0;
+
+      > row {
+        &:first-child, &:last-child { border-radius: 0; }
+      }
+    }
+  }
+}

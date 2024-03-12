@@ -1,0 +1,248 @@
+// When color definition differs for dark and light variant,
+// it gets @if ed depending on $variant
+
+@import 'tweaks-temp';
+@import 'color-palette';
+
+$theme_default_color: if($variant == 'light', $grey-900, $grey-300);
+$theme_purple_color:  if($variant == 'light', $purple-400, $purple-300);
+$theme_pink_color:    if($variant == 'light', $pink-400, $pink-300);
+$theme_red_color:     if($variant == 'light', $red-600, $red-500);
+$theme_orange_color:  if($variant == 'light', $orange-700, $orange-600);
+$theme_yellow_color:  if($variant == 'light', $yellow-700, $yellow-a700);
+$theme_green_color:   if($variant == 'light', $green-500, $green-400);
+$theme_teal_color:    if($variant == 'light', $teal-500, $teal-300);
+$theme_blue_color:    if($variant == 'light', #3684dd, #5294e2);
+
+@if $color_type == 'nord' {
+  $theme_default_color: if($variant == 'light', #434c5e, #dbdee5);
+  $theme_purple_color:  if($variant == 'light', #b57daa, #c89dbf);
+  $theme_pink_color:    if($variant == 'light', #cd7092, #dc98b1);
+  $theme_red_color:     if($variant == 'light', #c35b65, #d4878f);
+  $theme_orange_color:  if($variant == 'light', #d0846c, #dca493);
+  $theme_yellow_color:  if($variant == 'light', #e4b558, #eac985);
+  $theme_green_color:   if($variant == 'light', #82ac5d, #a0c082);
+  $theme_teal_color:    if($variant == 'light', #63a6a5, #83b9b8);
+  $theme_blue_color:    if($variant == 'light', #5e81ac, #89a3c2);
+}
+
+@function gtkalpha($c, $a) {
+  @return unquote("alpha(#{$c}, #{$a})");
+}
+
+@function on($color, $state: 'primary') {
+  // Allow 'light' or 'dark' to $color
+  @if ($color == 'light') { $color: white; }
+  @if ($color == 'dark') { $color: black; }
+
+  // Calculate color brightness according to https://www.w3.org/TR/AERT/#color-contrast
+  $brightness: (red($color) * 299 + green($color) * 587 + blue($color) * 114) / 1000;
+
+  @if ($brightness >= 156) {
+    @if ($state == 'primary') { @return rgba(black, 0.87); }
+    @if ($state == 'secondary') { @return rgba(black, 0.6); }
+    @if ($state == 'disabled') { @return rgba(black, 0.38); }
+    @if ($state == 'secondary-disabled') { @return rgba(black, 0.26); }
+    @if ($state == 'track') { @return rgba(black, 0.26); }
+    @if ($state == 'track-disabled') { @return rgba(black, 0.12); }
+    @if ($state == 'divider') { @return rgba(black, 0.12); }
+    @if ($state == 'secondary-fill') { @return rgba(black, 0.08); }
+    @if ($state == 'fill') { @return rgba(black, 0.04); }
+  } @else {
+    @if ($state == 'primary') { @return white; }
+    @if ($state == 'secondary') { @return rgba(white, 0.7); }
+    @if ($state == 'disabled') { @return rgba(white, 0.5); }
+    @if ($state == 'secondary-disabled') { @return rgba(white, 0.3); }
+    @if ($state == 'track') { @return rgba(white, 0.3); }
+    @if ($state == 'track-disabled') { @return rgba(white, 0.12); }
+    @if ($state == 'divider') { @return rgba(white, 0.12); }
+    @if ($state == 'secondary-fill') { @return rgba(white, 0.08); }
+    @if ($state == 'fill') { @return rgba(white, 0.04); }
+  }
+}
+
+@function highlight($color) {
+  @if (lightness($color) >= 80%) { @return rgba(white, 0); }
+  @else if (lightness($color) >= 40%) { @return rgba(white, 0.2); }
+  @else { @return rgba(white, 0.1); }
+}
+
+@function theme($color) {
+  @if ($theme == 'default') { @return $theme_default_color; }
+  @if ($theme == 'purple')  { @return $theme_purple_color; }
+  @if ($theme == 'pink')    { @return $theme_pink_color; }
+  @if ($theme == 'red')     { @return $theme_red_color; }
+  @if ($theme == 'orange')  { @return $theme_orange_color; }
+  @if ($theme == 'yellow')  { @return $theme_yellow_color; }
+  @if ($theme == 'green')   { @return $theme_green_color; }
+  @if ($theme == 'teal')    { @return $theme_teal_color; }
+  @if ($theme == 'blue')    { @return $theme_blue_color; }
+}
+
+@function background($type) {
+  @if ($color_type == 'nord') {
+    @if ($type == 'a') { @return #f9fafb; }
+    @if ($type == 'b') { @return #f3f4f6; }
+    @if ($type == 'c') { @return #f0f1f4; }
+    @if ($type == 'd') { @return #c4c9d4; }
+
+    @if ($darker == 'true') {
+      @if ($type == 'e') { @return #1c1f26; }
+      @if ($type == 'f') { @return #1e222a; }
+      @if ($type == 'g') { @return #252a33; }
+      @if ($type == 'h') { @return #333a47; }
+    } @else {
+      @if ($type == 'e') { @return #292e38; }
+      @if ($type == 'f') { @return #2b303b; }
+      @if ($type == 'g') { @return #313744; }
+      @if ($type == 'h') { @return #404859; }
+    }
+  } @else {
+    @if ($type == 'a') { @return #FFFFFF; }
+    @if ($type == 'b') { @return #FAFAFA; }
+    @if ($type == 'c') { @return #F2F2F2; }
+    @if ($type == 'd') { @return #CCCCCC; }
+
+    @if ($color_type == 'blackness') {
+      @if ($type == 'e') { @return #000000; }
+      @if ($type == 'f') { @return #030303; }
+      @if ($type == 'g') { @return #0F0F0F; }
+      @if ($type == 'h') { @return #121212; }
+    }
+
+    @if ($color_type == 'default') {
+      @if ($darker == 'true') {
+        @if ($type == 'e') { @return #0A0A0A; }
+        @if ($type == 'f') { @return #141414; }
+        @if ($type == 'g') { @return #1F1F1F; }
+        @if ($type == 'h') { @return #292929; }
+      } @else {
+        @if ($type == 'e') { @return #212121; }
+        @if ($type == 'f') { @return #242424; }
+        @if ($type == 'g') { @return #2C2C2C; }
+        @if ($type == 'h') { @return #3C3C3C; }
+      }
+    }
+  }
+}
+
+@function overlay($color, $state: 'normal') {
+  @if ($state == 'normal') { @return rgba(on($color), 0.06); }
+  @if ($state == 'hover') { @return rgba(on($color), 0.12); }
+  @if ($state == 'focus') { @return rgba(on($color), 0.08); }
+  @if ($state == 'active') { @return rgba(on($color), 0.20); }
+  @if ($state == 'checked') { @return rgba(on($color), 0.15); }
+  @if ($state == 'selected') { @return rgba(on($color), 0.1); }
+}
+
+//
+// Basic colors
+//
+
+$primary:                               theme(color);
+$drop_target_color:                     $deep-orange-400;
+$indicator:                             theme(color);
+$titlebar-indicator:                    if($variant == 'dark', currentColor, $primary);
+$inverse-indicator:                     if($theme == 'default', white, $primary);
+$applet-primary:                        if($topbar == 'dark' and $theme == 'default' and $variant == 'light', #DDDDDD, $primary);
+$titlebar-primary:                      if($topbar == 'dark' and $theme == 'default' and $variant == 'light', if($color_type == 'nord', #dbdee5, #e0e0e0), $primary);
+$osd-primary:                           if($theme == 'default', if($color_type == 'nord', #dbdee5, #e0e0e0), $primary);
+
+$background:                            if($variant == 'light', background(a), background(g));
+$surface:                               if($variant == 'light', background(a), background(h));
+$base:                                  if($variant == 'light', background(a), background(g));
+$base-alt:                              if($variant == 'light', background(b), background(f));
+$sidebg:                                if($variant == 'light', background(b), background(f));
+
+@if $sidebar == 'contrast' {
+  $sidebg:                              if($variant == 'light', background(h), background(d));
+}
+
+@if $sidebar == 'styled' {
+  $sidebg:                              $primary;
+}
+
+$login-background:                      if($variant == 'light', background(d), background(g)); // For gnome-shell
+
+$tooltip:                               if($variant == 'dark', rgba(darken(background(e), 3%), 0.9), rgba(darken(background(h), 3%), 0.9));
+$system:                                darken(background(e), 3%);
+$osd:                                   background(e);
+$scrim:                                 background(f);
+$scrim-alt:                             background(g);
+$scrim-inverse:                         rgba(white, 0.1);
+$titlebar:                              if($topbar == 'dark', background(g), background(a));
+$titlebar-backdrop:                     if($topbar == 'dark', background(g), background(a));
+$popover:                               $base;
+$panel-solid:                           if($topbar == 'dark', background(e), background(c)); // for Unity panel which doesn't allow translucent colors
+$panel:                                 rgba($panel-solid, $panel_opacity);
+
+$button:                                on($background, fill);
+$entry:                                 on($background, fill);
+
+//
+// Misc colors
+//
+
+$link:                                  $blue-500;
+$link-visited:                          if($variant == 'light', $purple-500, $purple-200);
+
+$warning:                               if($variant == 'light', #F4B400, #FDD633);
+$error:                                 if($variant == 'light', #D93025, #F28B82);
+$success:                               if($variant == 'light', #0F9D58, #81C995);
+
+$suggested:                             $primary;
+$destructive:                           $error;
+
+$frame:                                 if($variant == 'light', rgba(black, 0.12), rgba(black, 0.25));
+$side-frame:                            if($variant == 'light', rgba(black, 0.25), rgba(black, 0.12));
+$border:                                if($variant == 'light', rgba(black, 0.12), rgba(white, 0.12));
+$side-border:                           if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1));
+$solid-border:                          if($variant == 'light', darken($background, 12%), lighten($background, 12%));
+$border-alt:                            rgba(black, 0.16); // darker border color for Chrome and Firefox
+
+//
+// Overlay state colors
+//
+
+$overlay-normal:                        gtkalpha(currentColor, 0.05);
+$overlay-hover:                         gtkalpha(currentColor, 0.08);
+$overlay-focus:                         gtkalpha(currentColor, 0.08);
+$overlay-focus-hover:                   gtkalpha(currentColor, 0.16);
+$overlay-active:                        gtkalpha(currentColor, 0.12);
+$overlay-checked:                       gtkalpha(currentColor, 0.10);
+$overlay-selected:                      gtkalpha(currentColor, 0.06);
+
+//
+// Text and derivative colors
+//
+
+$text:                                  on($background);
+$text-secondary:                        on($background, secondary);
+$text-disabled:                         on($background, disabled);
+$text-secondary-disabled:               on($background, secondary-disabled);
+$track:                                 on($background, track);
+$track-disabled:                        on($background, track-disabled);
+$divider:                               on($background, divider);
+$secondary-fill:                        on($background, secondary-fill);
+$fill:                                  on($background, fill);
+
+$titlebar-text:                         on($titlebar);
+$titlebar-text-secondary:               on($titlebar, secondary);
+$titlebar-text-disabled:                on($titlebar, disabled);
+$titlebar-text-secondary-disabled:      on($titlebar, secondary-disabled);
+$titlebar-track:                        on($titlebar, track);
+$titlebar-track-disabled:               on($titlebar, track-disabled);
+$titlebar-divider:                      on($titlebar, divider);
+$titlebar-fill:                         on($titlebar, fill);
+
+$panel-text:                            on($panel);
+$panel-text-secondary:                  on($panel, secondary);
+$panel-text-disabled:                   on($panel, disabled);
+$panel-text-secondary-disabled:         on($panel, secondary-disabled);
+$panel-track:                           on($panel, track);
+$panel-track-disabled:                  on($panel, track-disabled);
+$panel-divider:                         on($panel, divider);
+$panel-fill:                            on($panel, fill);
+
+// workaround for GTK3 @placeholder_text_color which doesn't allow translucent colors
+$placeholder_text_color:                if($variant == 'light', mix(black, $base, percentage(0.6)), mix(white, $base, percentage(0.7)));
