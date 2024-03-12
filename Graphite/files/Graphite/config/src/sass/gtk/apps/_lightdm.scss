@@ -1,0 +1,59 @@
+// based css:
+// https://bazaar.launchpad.net/~lightdm-gtk-greeter-team/lightdm-gtk-greeter/trunk/view/head:/data/sample-lightdm-gtk-greeter.css
+
+/************************
+ * LightDM GTK+ Greeter *
+ ************************/
+// the panel widget at the top
+#panel_window {
+  background-color: $scrim-alt;
+  color: on($scrim-alt);
+  // font-weight: bold;
+
+  // the menubars/menus of the panel, i.e. indicators
+  menubar,
+  separator { background-color: transparent; }
+
+  separator {
+    padding: 0 4px;
+
+    &:first-child { padding: 0 8px; }
+  }
+
+  menubar > menuitem {
+    color: on($scrim-alt, secondary);
+
+    &:hover { color: on($scrim-alt); }
+
+    &:disabled label { color: on($scrim-alt, secondary-disabled); }
+  }
+}
+
+// the login window
+#login_window,
+#shutdown_dialog,
+#restart_dialog {
+  margin: 8px;
+  border-radius: $corner-radius;
+  box-shadow: $shadow-z4, inset 0 1px highlight($surface);
+  background-color: $surface;
+}
+
+// the top half of the login-window, in GtkDialog terms, the content
+#content_frame {
+  padding-bottom: 28px - 12px; // take into account the hard-coded 12px margin_bottom
+}
+
+// the lower half of the login-window, in GtkDialog terms the buttonbox or action area
+#buttonbox_frame {
+  padding-top: 24px;
+
+  > box,
+  > buttonbox { margin: -16px; }
+
+  button {
+    @extend %button-flat;
+
+    &:not(:disabled) { color: $primary; }
+  }
+}

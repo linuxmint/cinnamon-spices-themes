@@ -1,0 +1,67 @@
+// Search entry
+.search-entry {
+  @extend %entry;
+  width: 320px;
+  min-height: 20px;
+  padding: $base_padding $base_padding * 2;
+  transition-duration: 150ms;
+  border-radius: $base_radius;
+
+  .search-entry-icon {
+    color: $text-disabled;
+    icon-size: $base_icon_size;
+    margin-top: 0; // center vertically
+    padding: 0 $base_margin;
+  }
+
+  StLabel.hint-text {
+    color: $text-disabled;
+  }
+
+  &:hover, &:focus {
+    .search-entry-icon { color: $text-secondary; }
+  }
+
+  &:insensitive {
+    StLabel.hint-text, .search-entry-icon {
+      color: $text-secondary-disabled;
+    }
+  }
+}
+
+%overview-search-entry,
+#overview .search-entry {
+  @include entry(normal, $bc: on($osd, fill), $tc: on($osd));
+
+  &:hover {
+    @include entry(hover, $bc: on($osd, fill), $tc: on($osd), $fc: $osd-primary);
+  }
+
+  &:focus {
+    @if $theme == 'grey' {
+      @include entry(focus, $bc: on($osd, fill), $tc: on($osd), $fc: white);
+    } @else {
+      @include entry(focus, $bc: on($osd, fill), $tc: on($osd), $fc: $osd-primary);
+    }
+  }
+
+  .search-entry-icon {
+    color: on($osd, disabled);
+  }
+
+  StLabel.hint-text {
+    color: on($osd, disabled);
+  }
+
+  &:hover, &:focus {
+    .search-entry-icon { color: on($osd, secondary); }
+  }
+
+  &:insensitive {
+    @include entry(insensitive, $bc: transparent, $tc: on($osd, secondary-disabled));
+
+    StLabel.hint-text, .search-entry-icon {
+      color: on($osd, secondary-disabled);
+    }
+  }
+}

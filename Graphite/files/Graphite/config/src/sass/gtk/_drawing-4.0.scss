@@ -1,0 +1,295 @@
+// generic drawing of more complex things
+
+@mixin entry($t, $fc: $primary) {
+//
+// entry
+//
+// $t: entry type
+// $fc: focus color
+//
+
+  @if $t == normal {
+    transition: $transition, box-shadow $ripple-fade-out-duration $ease-out;
+    box-shadow: inset 0 0 0 2px transparent;
+    background-color: $entry;
+    color: $text;
+    outline: none;
+  }
+
+  @if $t == hover {
+    background-color: $overlay-hover;
+    box-shadow: inset 0 0 0 2px $overlay-hover;
+    outline: none;
+  }
+
+  @if $t == focus {
+    background-color: $overlay-focus;
+    box-shadow: inset 0 0 0 2px gtkalpha(currentColor, 0.3);
+    outline: none;
+  }
+
+  @if $t == checked {
+    background-color: $entry;
+    box-shadow: inset 0 0 0 2px if($fc == $primary, $primary, $fc);
+    outline: none;
+  }
+
+  @if $t == disabled {
+    box-shadow: inset 0 0 0 2px transparent;
+    background-color: $fill;
+    color: $text-disabled;
+    outline: none;
+    opacity: 1;
+    filter: none;
+  }
+
+  @if $t == raised-normal {
+    transition: $transition, box-shadow $ripple-fade-out-duration $ease-out;
+    border-image: none;
+    box-shadow: inset 0 0 0 2px transparent;
+    background-color: if($fc == $primary, $surface, $fc);
+    color: if($fc == $primary, $text, on($fc));
+  }
+
+  @if $t == raised-hover {
+    box-shadow: inset 0 0 0 2px $overlay-hover;
+  }
+
+  @if $t == raised-focus {
+    border-image: none;
+    box-shadow: inset 0 0 0 2px if($fc == $primary, $primary, $fc);
+  }
+
+  @if $t == raised-disabled {
+    box-shadow: inset 0 0 0 2px transparent;
+    background-color: $base-alt;
+    color: $text-disabled;
+  }
+}
+
+
+@mixin button($t) {
+//
+// button
+//
+// $t: button type
+//
+
+  @if $t == normal {
+    transition: $transition,
+                background-color $ripple-fade-in-duration $ease-out,
+                box-shadow $ripple-fade-out-duration $ease-out;
+    outline: none;
+    background-color: $button;
+    color: $text;
+    box-shadow: inset 0 0 0 2px transparent;
+  }
+
+  @if $t == hover {
+    background-color: $overlay-hover;
+    color: $text;
+    box-shadow: inset 0 0 0 2px transparent;
+  }
+
+  @if $t == focus {
+    box-shadow: inset 0 0 0 2px $overlay-focus;
+    color: $text;
+    outline: none;
+  }
+
+  @if $t == active {
+    transition: $transition,
+                background-color $ripple-fade-in-duration $ease-out,
+                box-shadow $ripple-fade-out-duration $ease-out;
+    background-color: $overlay-active;
+    box-shadow: inset 0 0 0 2px transparent;
+    color: $text;
+  }
+
+  @if $t == disabled {
+    box-shadow: none;
+    background-color: $fill;
+    color: $text-disabled;
+    transition: none;
+    opacity: 1;
+    filter: none;
+  }
+
+  @if $t == checked {
+    box-shadow: none;
+    background-color: $primary;
+    color: on($primary);
+    outline: none;
+  }
+
+  @if $t == checked-hover {
+    box-shadow: none;
+  }
+
+  @if $t == checked-disabled {
+    box-shadow: none;
+    background-color: $fill;
+    color: $text-disabled;
+    opacity: 1;
+    filter: none;
+  }
+
+  @if $t == flat-normal {
+    background-color: transparent;
+    color: $text-secondary;
+  }
+
+  @if $t == flat-hover {
+    background-color: $overlay-hover;
+    color: $text;
+  }
+
+  @if $t == flat-focus {
+    box-shadow: inset 0 0 0 2px $overlay-focus;
+    color: $text;
+  }
+
+  @if $t == flat-active {
+    background-color: $overlay-active;
+    color: $text;
+    box-shadow: none;
+  }
+
+  @if $t == flat-disabled {
+    box-shadow: none;
+    background-color: transparent;
+    color: $text-secondary-disabled;
+    opacity: 1;
+    filter: none;
+  }
+
+  @if $t == flat-checked {
+    background-color: $overlay-checked;
+    color: $text;
+    outline: none;
+    box-shadow: none;
+  }
+
+  @if $t == flat-checked-disabled {
+    background-color: $overlay-selected;
+    color: $text-disabled;
+    opacity: 1;
+    filter: none;
+  }
+}
+
+
+@mixin overshoot($p, $c: $primary) {
+//
+// overshoot
+//
+// $p: position
+// $t: type
+// $c: base color
+//
+// possible $p values:
+// top, bottom, right, left
+//
+// possible $t values:
+// normal, backdrop
+//
+
+  $_position: center $p;
+
+  @if ($p == left) or ($p == right) {
+    $_position: $p center;
+  }
+
+  background-size: 200% 70%;
+  background-image: radial-gradient( farthest-side at $p, gtkalpha($c, .24) 99%, transparent 100%);
+  background-repeat: no-repeat;
+  background-position: $_position;
+  background-color: transparent; // reset some properties to be sure to not inherit them somehow
+  border: none;
+  box-shadow: none;
+}
+
+
+@mixin undershoot($p, $c: $frame, $neighbor: false, $style: 'default') {
+//
+// undershoot
+//
+// $p: position
+// $c: shade color
+// $neighbor: use ~ instead of >
+//
+// possible $p values:
+// top, bottom, right, left
+//
+  
+  $_border_pos: '';
+  $_direction: '';
+  $_border_radius: '';
+  $_selector: if($neighbor, '~', '>');
+
+  @if $p==top {
+    $_direction: bottom;
+    $_border_pos: 0 1px;
+    $_border_radius: 0 $menu-radius 0 0;
+  } @else if $p==bottom {
+    $_direction: top;
+    $_border_pos: 0 -1px;
+    $_border_radius: 0 0 $menu-radius 0;
+  } @else if $p==left {
+    $_direction: right;
+    $_border_pos: 1px 0;
+    $_border_radius: 0;
+  } @else if $p==right {
+    $_direction: left;
+    $_border_pos: -1px 0;
+    $_border_radius: 0 $menu-radius $menu-radius 0;
+  } @else {
+    @error "Unknown position #{$p}"
+  }
+
+  #{$_selector} undershoot.#{$p} {
+    background: linear-gradient(to $_direction, gtkalpha($c, .75), transparent 8px);
+
+    @if $style == 'round' {
+      border-radius: $_border_radius;
+    }
+
+    @if $style == 'compact' {
+      box-shadow: none;
+    } @else {
+      box-shadow: inset $_border_pos $side-border;
+    }
+  }
+}
+
+@mixin background-shadow($direction, $color) {
+  background-image:
+    linear-gradient($direction,
+                    gtkalpha($color, 0.7),
+                    gtkalpha($color, 0.14) 40px,
+                    gtkalpha($color, 0) 56px),
+    linear-gradient($direction,
+                    gtkalpha($color, 0.4),
+                    gtkalpha($color, 0.14) 7px,
+                    gtkalpha($color, 0) 24px);
+}
+
+@mixin transition-shadows($color) {
+  > dimming {
+    background: $color;
+  }
+
+  > border {
+    background: none;
+  }
+
+  > shadow {
+    min-width: 56px;
+    min-height: 56px;
+
+    &.left  { @include background-shadow(to right,  $color); }
+    &.right { @include background-shadow(to left,   $color); }
+    &.up    { @include background-shadow(to bottom, $color); }
+    &.down  { @include background-shadow(to top,    $color); }
+  }
+}

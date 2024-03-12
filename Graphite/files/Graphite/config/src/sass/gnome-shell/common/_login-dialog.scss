@@ -1,0 +1,235 @@
+/* Login Dialog */
+
+#lockDialogGroup {
+  background-color: $login-background;
+  background-image: url("background.png");
+  background-size: cover;
+}
+
+.login-dialog-banner-view {
+  padding-top: $base_padding * 4;
+  max-width: 23em;
+}
+
+#panel.login-screen {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.login-dialog,
+.unlock-dialog {
+  //reset
+  border: none;
+  background-color: transparent;
+
+  .modal-dialog-button-box { spacing: 3px; }
+
+  .modal-dialog-button {
+    padding: 0 16px;
+    border: none;
+  }
+
+  .cancel-button,
+  .switch-user-button,
+  .login-dialog-session-list-button {
+    padding: 0;
+    border-radius: $circular_radius;
+    width: 32px;
+    height: 32px;
+    border: none;
+
+    StIcon { icon-size: 16px; }
+  }
+
+  .user-icon {
+    &.user-avatar {
+      @if $rimless == 'false' {
+        border: 2px solid $primary !important;
+      } @else { border: none; }
+    }
+  }
+}
+
+.login-dialog {
+  color: $text;
+
+  StEntry {
+    @extend %entry;
+    border-radius: $circular-radius;
+  }
+
+  .modal-dialog-button {
+    &, &:default {
+      @extend %button;
+    }
+  }
+
+  .cancel-button,
+  .switch-user-button,
+  .login-dialog-session-list-button {
+    @extend %button;
+  }
+
+  .login-dialog-message-warning {
+    color: $text-secondary;
+  }
+
+  .user-icon {
+    color: $text-secondary;
+
+    StIcon {
+      background-color: $background;
+      color: $text;
+    }
+
+    &.user-avatar {
+      @if $rimless == 'false' {
+        border: 2px solid $primary !important;
+      } @else { border: none; }
+    }
+  }
+}
+
+.unlock-dialog {
+  color: on($osd) !important;
+
+  StEntry {
+   @extend %overview-search-entry;
+  }
+
+  .modal-dialog-button {
+    &, &:default {
+      @extend %osd_button;
+    }
+  }
+
+  .cancel-button,
+  .switch-user-button,
+  .login-dialog-session-list-button {
+    @extend %osd_button;
+  }
+
+  .login-dialog-message-warning {
+    color: on($osd, secondary) !important;
+  }
+
+  .user-icon {
+    color: on($osd, secondary) !important;
+
+    StIcon {
+      background-color: $osd !important;
+      color: on($osd) !important;
+    }
+
+    &.user-avatar {
+      @if $rimless == 'false' {
+        border: 2px solid if($theme == 'default', if($color_type == 'nord', #dbdee5, #e0e0e0), $primary) !important;
+      } @else { border: none; }
+    }
+  }
+
+  .user-widget-label {
+    color: on($osd, secondary) !important;
+  }
+}
+
+.login-dialog-logo-bin { padding: 24px 0px; }
+.login-dialog-banner { color: $text-secondary; }
+.login-dialog-button-box { spacing: 5px; }
+.login-dialog-message { text-align: center; }
+.login-dialog-message-warning { color: $warning; }
+.login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
+.login-dialog-user-selection-box { padding: 100px 0px; }
+.login-dialog-not-listed-label {
+  padding-left: 2px;
+  .login-dialog-not-listed-button:focus &,
+  .login-dialog-not-listed-button:hover & {
+    color: $text;
+  }
+}
+
+.login-dialog-not-listed-label {
+  font-size: 1em;
+  font-weight: bold;
+  color: $text-secondary;
+  padding-top: 1em;
+  &:hover { color: $text-secondary; }
+  &:focus { background-color: $divider; }
+}
+
+.login-dialog-user-list-view { -st-vfade-offset: 1em; }
+.login-dialog-user-list {
+  spacing: 12px;
+  padding: .2em;
+  width: 23em;
+  &:expanded .login-dialog-user-list-item:selected,
+  &:expanded .login-dialog-user-list-item:hover,
+  &:expanded .login-dialog-user-list-item:active { background-color: $track; color: $text-secondary; }
+  &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $primary; }
+}
+
+.login-dialog-user-list-item {
+  border-radius: $menu_radius;
+  padding: $base_padding;
+  color: $text-secondary;
+
+  &:ltr .user-widget { padding-right: 1em; }
+  &:rtl .user-widget { padding-left: 1em; }
+
+  &:focus {
+    background-color: $fill !important;
+  }
+
+  &:hover, &:focus:hover {
+    background-color: $divider !important;
+    color: $text-secondary;
+  }
+
+  &:active, &:focus:active {
+    background-color: $track !important;
+    color: $text-secondary;
+  }
+
+  .login-dialog-timed-login-indicator {
+    height: 2px;
+    margin: $base_padding 0 0 0;
+    background-color: overlay($background, hover) !important;
+  }
+}
+
+.user-widget-label {
+  color: $text-secondary;
+}
+
+.user-widget.horizontal .user-widget-label {
+  @include fontsize($font_size + 2);
+  font-weight: bold;
+  padding-left: 15px;
+
+  &:ltr { padding-left: 14px; text-align: left; }
+  &:rtl { padding-right: 14px; text-align: right; }
+}
+
+.user-widget.vertical .user-widget-label {
+  @include fontsize($font_size + 5);
+  text-align: center;
+  font-weight: normal;
+  padding-top: 16px;
+}
+
+.login-dialog-prompt-layout {
+  padding-top: 24px;
+  padding-bottom: 12px;
+  spacing: $base_spacing * 2;
+  width: 23em;
+}
+
+.login-dialog-prompt-entry {
+  height: 1.5em;
+}
+
+.login-dialog-prompt-label {
+  color: $text-secondary;
+  @include fontsize($font_size + 1);
+  padding-top: 1em;
+}

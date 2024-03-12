@@ -1,0 +1,50 @@
+$dash_background_color: on(dark, divider);
+$dash_placeholder_size: 32px;
+$dash_padding: 10px; // 10px
+$dash_spacing: 2px;
+$dash_bottom_margin: 16px;
+$dash_border_radius: $base_radius * 2 + $dash_padding;
+
+#dash {
+  margin-top: $base_spacing * 2;
+  padding: 0 !important;
+
+  .placeholder {
+    background-image:none;
+    background-size: contain;
+    height: $dash_placeholder_size;
+  }
+}
+
+.dash-background {
+  background-color: $dash_background_color;
+  margin-bottom: $dash_bottom_margin;
+  padding: $dash_padding $dash_padding - $dash_spacing !important;
+  border-radius: $dash_border_radius;
+  border: none;
+  box-shadow: none;
+}
+
+// Dash Items
+.dash-item-container {
+  > * { margin: 0 $dash_spacing; }
+
+  &:ltr { &:first-child { margin-left: 0; } }
+  &:rtl { &:first-child { margin-right: 0; } }
+
+  .app-well-app, .show-apps {
+    padding: $dash_padding 0 $dash_padding + $dash_bottom_margin !important;
+    border-radius: $base_radius * 2;
+
+    .overview-icon {
+      padding: $dash_padding / 2;
+      border-radius: $base_radius * 2;
+    }
+  }
+}
+
+.dash-separator {
+  width: 1px;
+  margin: 0 ($dash_spacing + ($dash_padding / 2)) $dash_bottom_margin;
+  background-color: on(dark, divider);
+}

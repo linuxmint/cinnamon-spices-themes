@@ -1,0 +1,169 @@
+/* Popovers/Menus */
+
+//.the popover itself
+.popup-menu-boxpointer {
+  -arrow-border-radius: $menu-radius;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 30px - $menu-radius;
+  -arrow-rise: 0;
+  -arrow-box-shadow: none; //dreaming. bug #689995
+  background: transparent; // needs to reset?
+}
+
+// container of the popover menu
+.popup-menu {
+  min-width: if($compact == 'true', 10em, 12em);
+  color: $text-secondary;
+  padding: 0;
+  font-weight: normal;
+  @include fontsize($font_size - 1);
+
+  .popup-menu-content {
+    padding: $base_padding;
+    background-color: $popover;
+    border-radius: $menu_radius;
+    box-shadow: 0 3px 8px 0 rgba(black, 0.15);
+    margin: 4px 10px 12px;
+    font-weight: normal;
+
+    @if $rimless == 'false' {
+      border: 2px solid $primary;
+    } @else { border: none; }
+  }
+
+  .popup-menu-item {
+    spacing: $base_spacing * 1.5;
+    padding: $base_padding;
+    color: $text-secondary !important;
+    text-shadow: none;
+    border-radius: $base_radius;
+    margin: 0;
+    font-weight: normal;
+
+    &:checked {
+      font-weight: normal;
+      border: none;
+      box-shadow: none;
+      color: on($primary) !important;
+      background-color: $primary !important;
+      border-radius: $base_radius $base_radius 0 0 !important;
+
+      &:focus, &:hover, &.selected {
+        color: on($primary) !important;
+        background-color: lighten($primary, 5%) !important;
+      }
+
+      &:active {
+        color: on($primary) !important;
+        background-color: darken($primary, 5%) !important;
+      }
+
+      &:insensitive { color: on($primary, disabled) !important; }
+    }
+
+    &:focus, &:hover, &.selected {
+      color: $text !important;
+      background-color: $divider !important;
+      transition-duration: 0;
+    }
+
+    &:active, &.selected:active {
+      color: $text !important;
+      background-color: $track !important;
+
+      @if $colorful == 'true' {
+        background-color: $primary !important;
+        color: on($primary) !important;
+      }
+    }
+
+    &:insensitive { color: $text-secondary-disabled !important; }
+  }
+
+  .popup-sub-menu {
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0 0 $base_radius $base_radius !important;
+
+    @if $sidebar == 'styled' {
+      background-color: $primary !important;
+      color: on($primary, secondary) !important;
+    } @else {
+      background-color: $divider !important;
+      color: $text !important;
+    }
+
+    .popup-menu-item {
+      border-radius: 0;
+      margin: 0;
+      background-color: transparent !important;
+
+      @if $sidebar == 'styled' {
+        color: on($primary, secondary) !important;
+
+        &:focus, &.hover, &.selected {
+          color: on($primary) !important;
+          background-color: on($primary, divider) !important;
+        }
+
+        &:active, &.selected:active {
+          color: on($primary) !important;
+          background-color: on($primary, track) !important;
+        }
+
+        &:insensitive { color: on($primary, secondary-disabled) !important; }
+      }
+    }
+
+    .popup-menu-section {
+      &:last-child .popup-menu-item:last-child {
+        border-radius: 0 0 $base_radius $base_radius !important;
+      }
+    }
+  }
+
+  .popup-inactive-menu-item { //all icons and other graphical elements
+    color: $text-secondary !important;
+
+    &:insensitive { color: $text-secondary-disabled !important; }
+  }
+
+  //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
+  &.panel-menu {
+    -boxpointer-gap: $base_margin; // distance from the panel
+    margin-bottom: 1.75em;
+  }
+}
+
+// symbolic icons in popover
+.popup-menu-arrow,
+.popup-menu-icon { icon-size: $base_icon_size !important; }
+
+// container for radio and check boxes
+.popup-menu-ornament {
+  width: 1.2em;
+
+  &:ltr { text-align: right };
+  &:rtl { text-align: left };
+}
+
+// desktop background menu
+.background-menu {
+  -boxpointer-gap: $base_margin;
+  -arrow-rise: 0px; // hide the beak on the menu
+}
+
+// system status popover menu
+.aggregate-menu {
+  min-width: if($compact == 'true', 20em, 21em);
+
+  // lock screen, shutdown, etc. buttons
+  .popup-menu-icon {
+    padding: 0;
+    margin: 0 $base_padding / 2;
+    -st-icon-style: symbolic;
+  }
+}
