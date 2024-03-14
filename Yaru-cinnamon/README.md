@@ -7,3 +7,5 @@ Ubuntu Cinnamon light theme available at https://github.com/ubuntucinnamon/ubunt
 ## How to install
 
 Download or clone this repo, then put the `Yaru-cinnamon/files/Yaru-cinnamon` folder into your `~/.themes` folder.
+
+Change all your fonts size in the Fonts app to 11 to match Ubuntu. Mint is set to 10 by default.
