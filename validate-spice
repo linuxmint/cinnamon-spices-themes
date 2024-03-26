@@ -82,18 +82,18 @@ def main():
                         help='the UUID of the Spice')
     args = parser.parse_args()
 
+    is_valid = []
     if args.all:
-        is_valid = True
         for file_path in os.listdir("."):
             if os.path.isdir(file_path) and not file_path.startswith("."):
-                is_valid = validate_xlet(file_path)
+                is_valid.append(validate_xlet(file_path))
     elif args.uuid:
-        is_valid = validate_xlet(args.uuid)
+        is_valid.append(validate_xlet(args.uuid))
     else:
         parser.print_help()
         sys.exit(2)
 
-    quit(is_valid)
+    quit(all(is_valid))
 
 
 if __name__ == "__main__":
