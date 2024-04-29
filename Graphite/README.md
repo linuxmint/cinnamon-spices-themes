@@ -8,8 +8,8 @@ This is a repackaging of the Graphite theme for convenience of installation and 
 
 ## Installation
 
-Most easily installed via Cinnamon's Themes module in Cinnamon settings.
+Install via Cinnamon's Themes module in Cinnamon settings or download from Cinnamon Spices and unzip into your ~/.themes directory.
 
 ## Options/Configuration
 
-Various options are available such as light/dark theme, accent color, etc. Simply go to `~/.themes/Graphite` directory and run `options.py`
+Various options are available such as light/dark theme, accent color, etc. Go to `~/.themes/Graphite` directory and run `options.py`. You may need to give execute permissions to `options.py` first in order to run it (right click on file > Properties > Permissions tab).

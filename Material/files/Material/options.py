@@ -26,7 +26,9 @@ Manjaro xfce 22     XFCE,           x11,        ok
 MX Linux 23.2       XFCE,           x11,
 Manjaro Cinnamon    X-Cinnamon,     x11,        rename theme.
 Manjaro Cinnamon    X-Cinnamon,     wayland,    ok
-LinuxMint 21.3 mate MATE,           x11,        ok
+Mint 21.3 cinnamon  X-Cinnamon,     x11,        rename theme
+Mint 21.1 cinnamon  X-Cinnamon,     x11,        rename theme
+Mint 21.3 mate      MATE,           x11,        ok
 elementaryos-7      Pantheon,       x11,        rename theme. Has no effect on gtk3 apps
 popOS 22,           pop:GNOME,      x11,        rename theme.
 Ubuntu Budgie 23    Budgie:GNOME,   x11,        rename theme and set org.gnome.desktop.interface
@@ -43,16 +45,16 @@ elif "Unity" in desktop_environment:
     desktop_environment = 'Unity'
 elif "pop" in desktop_environment:
     desktop_environment = 'pop'
-    rename_theme_on_update = os.environ["XDG_SESSION_TYPE"] == "x11"
+    rename_theme_on_update = os.environ.get("XDG_SESSION_TYPE") == "x11"
 elif "ubuntu:GNOME" in desktop_environment:
     desktop_environment = 'ubuntu:GNOME'
-    rename_theme_on_update = os.environ["XDG_SESSION_TYPE"] == "x11"
+    rename_theme_on_update = os.environ.get("XDG_SESSION_TYPE") == "x11"
 elif "GNOME" in desktop_environment:
     desktop_environment = 'GNOME'
-    rename_theme_on_update = os.environ["XDG_SESSION_TYPE"] == "x11"
+    rename_theme_on_update = os.environ.get("XDG_SESSION_TYPE") == "x11"
 elif "Cinnamon" in desktop_environment:
     desktop_environment = "Cinnamon"
-    rename_theme_on_update = os.environ["XDG_SESSION_TYPE"] == "x11"
+    rename_theme_on_update = os.environ.get("XDG_SESSION_TYPE") == "x11"
 elif "MATE" in desktop_environment:
     desktop_environment = "MATE"
 elif "XFCE" in desktop_environment:
@@ -259,7 +261,7 @@ class OptionsWindow(Gtk.Window):
             os.rename(self.current_theme_dir, new_theme_dir)
 
         #prepare install command and store settings
-        command = [os.path.join(new_theme_dir, 'config', self.options["script_name"])]
+        command = ['bash', os.path.join(new_theme_dir, 'config', self.options["script_name"])]
         
         for option in self.options["options"]:
             desktops = option["desktop"]

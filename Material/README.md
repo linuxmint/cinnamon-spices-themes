@@ -6,8 +6,8 @@ This is a repackaging of the Material Gtk theme for convenience of installation 
 
 ## Installation
 
-Most easily installed via Cinnamon's Themes module in Cinnamon settings.
+Install via Cinnamon's Themes module in Cinnamon settings or download from Cinnamon Spices and unzip into your ~/.themes directory.
 
 ## Options/Configuration
 
-Two color schemes, and other options are available. Simply go to `~/.themes/Material` directory and run `options.py`
+Two color schemes, and other options are available. Go to `~/.themes/Material` directory and run `options.py`. You may need to give execute permissions to `options.py` first in order to run it (right click on file > Properties > Permissions tab).
