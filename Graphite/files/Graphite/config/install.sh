@@ -20,7 +20,6 @@ THEME_NAME=$(basename $THEME_DIR)
 
 SASSC_OPT="-M -t expanded"
 
-THEME_NAME=Graphite
 THEME_VARIANTS=('' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-blue')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-compact')
