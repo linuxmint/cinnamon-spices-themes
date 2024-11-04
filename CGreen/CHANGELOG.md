@@ -1,5 +1,6 @@
 ## Versions
 
+* 2.12: weather applet touch-up.
 * 2.11: increase font size, small changes to menu appearance, calendar, panel-lauchers...
 * 2.10: fixed a display bug in workspace names.
 * 2.9: fixed two small bugs (in menu and when restarting Cinnamon) and modifications to calendar/notifications and Plank theme.
