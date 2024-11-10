@@ -1372,7 +1372,7 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 }
 .grouped-window-list-badge {
     border-radius: $circular_radius;
-    background: rgba($inverse_fg_color, 0.25);
+    background: rgba(0, 0, 0, 0.9);
 }
 .grouped-window-list-button-label {
     padding-left: 4px;
@@ -1408,6 +1408,11 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 
 .grouped-window-list-item-box:checked,
 .grouped-window-list-item-box:active:hover {
+    background: darken($color: rgba($inverse_fg_color, 0.25), $amount: 10%);
+    color: $panel_fg_color;
+}
+
+.grouped-window-list-item-box:active {
     background: darken($color: rgba($inverse_fg_color, 0.25), $amount: 10%);
     color: $panel_fg_color;
 }
