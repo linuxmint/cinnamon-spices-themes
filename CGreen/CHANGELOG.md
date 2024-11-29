@@ -1,5 +1,6 @@
 ## Versions
 
+* 3.0: compatibility with Cinnamon 6.4.
 * 2.12: weather applet touch-up.
 * 2.11: increase font size, small changes to menu appearance, calendar, panel-lauchers...
 * 2.10: fixed a display bug in workspace names.
