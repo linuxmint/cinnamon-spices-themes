@@ -154,6 +154,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 }
 .popup-menu-item:insensitive {
 	background-color: rgb(46, 179, 152);
+	background: none;
 }
 .popup-combobox-item {
 	spacing: 1em;
@@ -390,6 +391,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 .window-caption {
 	background-color: rgba(27, 36, 32, 0.75);
 	color: #ccc;
+	border-radius: 25px;
 	font-weight: bold;
 	padding: .5em;
 	spacing: .5em;
@@ -734,11 +736,18 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 #altTabPopup .switcher-list .item-box:selected {
 	background-color: rgb(46, 179, 152);
 }
+.resize-popup, .workspace-switch-osd, .info-osd, .media-keys-osd, #Tooltip, #LookingGlassDialog {
+	color: #ccc;
+	background-color: rgba(27, 36, 32, 0.75);
+	border-radius: 55px;
+	text-align: center;
+	padding: 16px;
+}
 .switcher-list {
 	background: rgba(27, 36, 32, 0.75);
 	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
 	border: 0px solid #a5a5a5;
-	border-radius: 1px;
+	border-radius: 25px;
 	padding: 20px;
 	font-size: 9pt;
 	color: white;
@@ -750,7 +759,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 	background-gradient-direction: horizontal;
 	background-gradient-start: rgba(27, 36, 32, 0.75);
 	background-gradient-end: rgba(27, 36, 32, 0);
-	border-radius: 24px;
+	border-radius: 25px;
 	border-radius-topright: 1px;
 	border-radius-bottomright: 1px;
 	width: 60px;
@@ -759,7 +768,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 	background-gradient-direction: horizontal;
 	background-gradient-start: rgba(27, 36, 32, 0);
 	background-gradient-end: rgba(27, 36, 32, 0.75);
-	border-radius: 24px;
+	border-radius: 25px;
 	border-radius-topleft: 1px;
 	border-radius-bottomleft: 1px;
 	width: 60px;
@@ -849,11 +858,22 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 	text-align: center;
 }
 .workspace-osd {
-	background-color: rgba(53, 57, 69, 0);
+	background-color: rgba(27, 36, 32, 0);
 	box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
 	color: #fff;
 	font-weight: bold;
 	font-size: 48pt;
+}
+.workspace-switch-osd-indicator {
+	background-color: #071603;
+	padding: 7px;
+	margin: 7px;
+	border-radius: 14px;
+}
+.workspace-switch-osd-indicator:active {
+	background-color: #2eb398;
+	padding: 7px;
+	margin: 7px;
 }
 /* ===================================================================
  * Run dialog (Alt+F2)
@@ -861,7 +881,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 .run-dialog-label {
 	font-size: 12pt;
 	text-align: center;
-	color: white;
+	color: #ccc;
 	font-weight: bold;
 	padding-bottom: 5px;
 }
@@ -881,7 +901,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 	font-size: 12pt;
 	width: 250px;
 	height: 25px;
-	color: white;
+	color: #ccc;
 	padding-left: 7px;
 	background-color: rgb(46, 179, 152);
 	selection-background-color: rgba(27, 36, 32, 0.75);
@@ -1511,16 +1531,17 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
 	color: #2eb398;
 }
 .hourly-time {
-	padding: 0px 7px;
+	padding: 0px 8px;
 }
 .hourly-box {
-	padding: 0px 25px;
+/*	padding: 0px 10px;*/
 }
 /* ===================================================================
  * User Applet and CinnVIIStarkMenu
  * ===================================================================*/
 .user-icon, .hover-user-icon {
 	border-radius: 1px;
+	border-radius: 45px;
 	border: 2px solid #2eb398;
 }
 /* ===================================================================
@@ -1650,8 +1671,9 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
  * Workspace OSD (Ctl+Alt+Up)
  * ===================================================================*/
 .expo-workspaces-name-entry {
-	padding: 5px;
-	color: #fff;
+	padding: 8px;
+	color: #ccc;
+	border-radius: 25px;
 	font-weight: bold;
 	background-color: rgba(27, 36, 32, 0.75);
 	selected-color: white;
@@ -1675,7 +1697,7 @@ StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:hover {
  * Button Menu
  * ===================================================================*/
 /*This option works only applica to any applet that is in the left corner*/
- #panelLeft .applet-box:first-child:active {
+#panelLeft .applet-box:first-child:active {
 	background-color: rgba(46, 179, 152, 0);
 }
 /* ===================================================================
