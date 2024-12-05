@@ -1,7 +1,7 @@
 ## CBlue
 
 ### A semi-transparent Cinnamon theme, with wallpaper + Firefox extra, Conky and Plank's theme. Inspired by the CBlack theme (author: cloweling).
-If you want a panel that is not transparent, modify the line `231` of the file `~/.themes/CBlue/cinnamon/cinnamon.css`.
+If you want a panel that is not transparent, modify the line `243` of the file `~/.themes/CBlue/cinnamon/cinnamon.css`.
 For example: background-color: rgba(53, 57, 69, `0.50`); . A value of `0` is equivalent to total transparency and `1` is totally opaque. Restart Cinnamon (Ctrl+Alt+Esc) for immediate modification.
 
 If the theme's font is too small, you can modify Cinnamon's settings:
