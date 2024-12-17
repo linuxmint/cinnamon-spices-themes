@@ -1,5 +1,6 @@
 ## Versions
 
+* 3.2: fix #837.
 * 3.1: improvement for Cinnamon 6.4 that I hadn't seen in the previous version.
 * 3.0: compatibility with Cinnamon 6.4.
 * 2.12: weather applet touch-up.
