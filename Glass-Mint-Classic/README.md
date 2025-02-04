@@ -3,17 +3,13 @@
 
 **Supported Cinnamon:**
 `Themes have Cinnamon 1.8 and later versions support.
-Last supported version: 3.4.3`
+Last supported version: 6.4.6`
 
 **Installation:**
-`Extract {Glass-Theme-Name} folder (which contains 'cinnamon' folder) from archive into either /usr/share/themes/ (as root) or ~/.themes/ (recommended).`
+`Extract {Glass-Theme-Name} folder (which contains 'cinnamon' folder) to ~/.themes/.`
 
-**Other Glass themes:**
-- On Bitbucket: ssh://hg@bitbucket.org/vlad1777d/cinnamon-glass-themes
-
-- Glass Mint Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Mint-Classic
-- Glass Lemon Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Lemon-Classic
-- Glass Glaucous Classic: https://cinnamon-spices.linuxmint.com/themes/view/Glass-Glaucous-Classic
+**Other Color variations of Glass themes:**
+- On Sourcehut: https://hg.sr.ht/~vlad0337187/cinnamon-glass-themes
 
 Totally there are:
 Glass Mint,  Glass Mint Classic,  Glas Ubuntu,  Glass Ubuntu Classic,
@@ -28,4 +24,6 @@ Glass Lemon,  Glass Lemon Classic,  Glass Glaucous,  Glass Glaucous Classic.
 Best regards,
 Vladislav.
 
+03.02.2025
+20.09.2020
 27.09.2012
