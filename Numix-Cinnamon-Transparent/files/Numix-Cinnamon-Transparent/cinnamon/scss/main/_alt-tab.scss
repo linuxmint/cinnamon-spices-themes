@@ -39,8 +39,76 @@
     color: $text-primary;
 }
 
-.switcher-list-item-container { spacing: 0; }
 
 .thumbnail { width: 256px; }
 
 .alt-tab-app {}
+
+
+#altTabPopup {
+    padding: 0;
+    spacing: 4px;
+  }
+  
+  .switcher-list {
+    border-image: url("img/containers/dark-bg.svg") 7;
+    color: $text-primary;
+    padding: 4px;
+    font-size: $font-size-lg;
+    font-weight: bold;
+  
+    &-item-container { spacing: 0px; }
+  
+    .item-box {
+      padding: 6px;
+  
+      // this doesn't ever seem to get used
+      &:outlined { }
+      &:selected {
+        border-image: url("img/containers/hover.svg") 7;
+        color: $text-active;
+      }
+    }
+  
+    .thumbnail-box {
+      padding: 4px;
+      spacing: 4px;
+    }
+  
+    .thumbnail { width: 256px; }
+  
+    .separator {}
+  }
+  
+  .switcher-preview-backdrop { background-color: transparentize(black, 0.5); }
+  
+  .switcher-arrow {
+    background-color: transparent;
+    border-color: transparent;
+    color: $text-active;
+  
+    &:highlighted {}
+  }
+  
+  .thumbnail-scroll-gradient {
+  
+    &-left {
+      background-gradient-direction: horizontal;
+      background-gradient-start: transparentize(black, 0.0);
+      background-gradient-end: transparentize(black, 1.0);
+      border-radius: 0px;
+      border-radius-topright: 0px;
+      border-radius-bottomright: 0px;
+      width: 60px;
+    }
+  
+    &-right {
+      background-gradient-direction: horizontal;
+      background-gradient-start: transparentize(black, 1.0);
+      background-gradient-end: transparentize(black, 0.0);
+      border-radius: 0px;
+      border-radius-topleft: 0px;
+      border-radius-bottomleft: 0px;
+      width: 60px;
+    }
+  }

@@ -11,9 +11,9 @@
 
 
 /* ======================================
- * ! Modal dialogs
+ * ! dialogs
  * ====================================== */
-
+.dialog,
 .modal-dialog {
     border-radius: 0;
     padding: 0;
@@ -32,7 +32,35 @@
     }
 }
 
+.dialog-button,
 .modal-dialog-button {
+    @include btn-primary;
+    @include btn-width(wide);
+}
+
+/* ======================================
+ * ! Dialogs
+ * ====================================== */
+
+.dialog {
+    border-radius: 0;
+    padding: 0;
+    color: $text-primary;
+    border-image: url("img/containers/dark-bg.svg") 9;
+
+    > * {
+        padding: 24px;
+        border-radius: 0;
+    }
+
+    &-button-box {
+        border-image: url("img/containers/modal-button-box.svg") 8;
+        spacing: 0;
+        padding: 8px;
+    }
+}
+
+.dialog-button {
     @include btn-primary;
     @include btn-width(wide);
 }
