@@ -1,7 +1,8 @@
-/* ======================================
- * ! Window list
- * ====================================== */
+/* ===========================================
+ * ! Window list & Grouped window list applets
+ * =========================================== */
 
+.grouped-window-list-box,
 .window-list-box {
     spacing: 0px;
     font-weight: bold;
@@ -22,6 +23,7 @@
 
 @each $pos in top, bottom, left, right {
     .panel-#{$pos} {
+        .grouped-window-list-item,
         .window-list-item {
             &-box {
                 color: $text-primary;
@@ -43,10 +45,51 @@
             }
         }
 
+        .grouped-window-list-item-demands-attention,
         .window-list-item-demands-attention {
             border-image: url("img/panel/window-list__#{$pos}__attention.svg") 4;
             color: $text-active;
         }
+    }
+}
+
+.window-list-preview {
+    color: $text-active;
+    border-image: url("img/containers/dark-bg.svg") 9;
+    padding: 12px;
+    spacing: 4px;
+}
+
+.grouped-window-list {
+    &-thumbnail-menu {
+        margin: 2px;
+        border-image: url("img/containers/dark-bg.svg") 9;
+        border-radius: 0px;
+        color: $text-primary;
+
+        .item-box {
+            padding: 10px;
+            spacing: 4px;
+
+            &:outlined {
+                border: 2px solid $accent-primary
+            }
+            
+            &:selected {
+                border-image: url("img/containers/hover.svg") 9;
+                color: $text-active;
+            }
+        }
+    }
+
+    &-number-label {
+        color: $text-active;
+        z-index: 99;
+    }
+
+    &-badge {
+        border-radius: 9999px;
+        background-color: rgb(0,0,0);
     }
 }
 
