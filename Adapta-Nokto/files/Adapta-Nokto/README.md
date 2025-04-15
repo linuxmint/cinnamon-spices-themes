@@ -99,6 +99,7 @@ Changes in [this fork][this_adapta]:
 * Cinnamon - converted a [manual fix for the sound applet][sound_padding] in the spices theme to SCSS
 * Cinnamon - fix width of some text in sound applet
 * Cinnamon - support and fixes for style changes in version 6.4
+* Cinnamon - OSD color fixes for 6.4 for regular Adapta
 
 [cornerbar]: https://github.com/linuxmint/cinnamon-spices-themes/commit/1acded2135d31218834fb0d716d45d1866878629
 [sound_padding]: https://github.com/linuxmint/cinnamon-spices-themes/commit/e160215c3a7f5e4cec78b9eaa6d129cdba7e3968
