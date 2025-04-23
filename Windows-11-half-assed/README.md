@@ -2,6 +2,7 @@
 
 version: 1
 2025-04-22
+By carsten88
 
 Rounded corners and with windows 10 buttons for min-max-close-window.
 
@@ -23,6 +24,7 @@ Theme is based on Orchid-Light. All credit goes to the original author(s).
 Version: 2024.01.05
 
 https://github.com/vinceliuice/Orchis-theme
+
 
 
 
