@@ -3,7 +3,7 @@
 version: 1
 2025-04-22
 
- But less rounded and with windows 10 buttons for min-max-close-window.
+Rounded corners and with windows 10 buttons for min-max-close-window.
 
 https://github.com/carsten88/windows-11-half-assed
 
@@ -23,7 +23,6 @@ Theme is based on Orchid-Light. All credit goes to the original author(s).
 Version: 2024.01.05
 
 https://github.com/vinceliuice/Orchis-theme
-
 
 
 
