@@ -1,7 +1,7 @@
 ## Windows-11-sort-of
 
-version: 1
-2025-04-24
+version: 3
+2025-06-03
 By carsten88
 
 Rounded corners and with windows 10 buttons for min-max-close-window.
