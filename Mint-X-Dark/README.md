@@ -1,8 +1,8 @@
 # Mint-X-Dark theme for Cinnamon
 
-This is a "no BS" Mint-X theme adjusted for Dark Mode.
+This is a "no frills" Mint-X theme adjusted for Dark Mode.
 
-No BS meaning that it resembles the default Mint-X theme as close as possible but without any garbage added, just a plain dark mode Mint-X theme!
+No frills meaning that it resembles the default Mint-X theme as close as possible but without any extras added, just a plain dark mode Mint-X theme!
 
 
 ## Installation
