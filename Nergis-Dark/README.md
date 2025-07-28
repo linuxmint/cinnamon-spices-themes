@@ -38,8 +38,4 @@ Manual instalation instructions are available in the [github repo](https://githu
 
 ### More screenshots
 
-
-<img src="/edit-mode.png?raw=true" alt="edit mode" width="300"/>
-<img src="/workspace-overview.png?raw=true" alt="workspace overview" width="300"/>
-<img src="/window-overview.png?raw=true" alt="window overview" width="300"/>
-<img src="/vertical-panel.png?raw=true" alt="vertical panel" width="300"/>
+More screenshots can be found in the [github repo](https://github.com/Murat-Karakaya/nergis-theme)
