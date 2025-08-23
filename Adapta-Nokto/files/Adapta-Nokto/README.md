@@ -63,7 +63,7 @@ For Cinnamon version 4.6.x and later the Cinnamon theme's font characteristics c
 
 For users of older Cinnamon versions the theme includes an interactive bash script that allows end users to adjust the base font-size in the Cinnamon theme. This can be useful for users running Cinnamon on relatively high resolution displays with relatively small screen dimensions where the hard-coded theme default font-sizes are too small.
 
-To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
+To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it.
 
 `chmod +x ~/.themes/Adapta-Nokto/scripts/adapta_fontsize.sh && ~/.themes/Adapta-Nokto/scripts/adapta_fontsize.sh`
 
@@ -71,11 +71,11 @@ If you are not happy with the end result simply run `~/.themes/Adapta-Nokto/scri
 
 ## Cinnamon Stock Menu applet in Cinnamon 4.4.x and older
 
-The app description area at the bottom of the stock cinnamon menu applet may not expand appropriately to fit the content in Cinnamon 4.4.x and older when text scaling factor is set > 1. 
+The app description area at the bottom of the stock cinnamon menu applet may not expand appropriately to fit the content in Cinnamon 4.4.x and older when text scaling factor is set > 1.
 
 The theme includes an interactive bash script that allows end users toggle an adjustment of the cinnamon.css to mitigate this behaviour.
 
-To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it. 
+To access the tool open a terminal window (Ctrl-Alt-T) and use the following command to make the script executable and launch it.
 
 `chmod +x ~/.themes/Adapta-Nokto/scripts/adapta_toggle_menufix.sh && ~/.themes/Adapta-Nokto/scripts/adapta_toggle_menufix.sh`
 
@@ -100,6 +100,7 @@ Changes in [this fork][this_adapta]:
 * Cinnamon - fix width of some text in sound applet
 * Cinnamon - support and fixes for style changes in version 6.4
 * Cinnamon - OSD color fixes for 6.4 for regular Adapta
+* Gtk - fix generated CSS to avoid :not(.class1.class2)
 
 [cornerbar]: https://github.com/linuxmint/cinnamon-spices-themes/commit/1acded2135d31218834fb0d716d45d1866878629
 [sound_padding]: https://github.com/linuxmint/cinnamon-spices-themes/commit/e160215c3a7f5e4cec78b9eaa6d129cdba7e3968
