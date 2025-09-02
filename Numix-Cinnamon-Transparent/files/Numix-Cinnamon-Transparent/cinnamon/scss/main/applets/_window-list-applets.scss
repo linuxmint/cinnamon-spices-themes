@@ -1,0 +1,118 @@
+/* ===========================================
+ * ! Window list & Grouped window list applets
+ * =========================================== */
+
+.grouped-window-list-box,
+.window-list-box {
+    spacing: 0px;
+    font-weight: bold;
+
+    #appMenuIcon { padding: 0 0 0 1px; }
+
+    .window-list-item-box {
+        padding: 0 1px; 
+        max-width: 10em;
+    }
+
+    &.vertical {
+        #appMenuIcon { padding: 8px 0 0 0; }
+
+        .window-list-item-box { padding: 0; }
+    }
+}
+
+@each $pos in top, bottom, left, right {
+    .panel-#{$pos} {
+        .grouped-window-list-item,
+        .window-list-item {
+            &-box {
+                color: $text-primary;
+
+                &:hover  {
+                    border-image: url("img/containers/dark-bg.svg") 4;
+                    color: $text-primary;
+                }
+
+                &:active, &:checked, &:focus  {
+                    border-image: url("img/panel/window-list__bottom__active.svg") 4;
+                    color: $text-primary;
+                }
+
+                &:hover:active, &:hover:checked, &:hover:focus  {
+                    border-image: url("img/panel/window-list__bottom__active__hover.svg") 4;
+                    color: $text-primary;
+                }
+            }
+        }
+
+        .grouped-window-list-item-demands-attention,
+        .window-list-item-demands-attention {
+            border-image: url("img/panel/window-list__#{$pos}__attention.svg") 4;
+            color: $text-active;
+        }
+    }
+}
+
+.window-list-preview {
+    color: $text-active;
+    border-image: url("img/containers/dark-bg.svg") 9;
+    padding: 12px;
+    spacing: 4px;
+}
+
+.grouped-window-list {
+    &-thumbnail-menu {
+        margin: 2px;
+        border-image: url("img/containers/dark-bg.svg") 9;
+        border-radius: 0px;
+        color: $text-primary;
+
+        .item-box {
+            padding: 10px;
+            spacing: 4px;
+
+            &:outlined {
+                border: 2px solid $accent-primary
+            }
+            
+            &:selected {
+                border-image: url("img/containers/hover.svg") 9;
+                color: $text-active;
+            }
+        }
+    }
+
+    &-number-label {
+        color: $text-primary;
+        z-index: 99;
+    }
+
+    &-badge {
+        border-radius: 9999px;
+        background-color: $text-primary-invert
+    }
+}
+
+/*
+ * The window list thumbnail shares a class
+ * with the alt-tab switcher, but it is
+ * the direct child of the top container.
+ *
+ * Hopefully a 'switcher-list' doesn't appear
+ * anywhere else as the direct child of '#uiGroup'.
+ */
+#uiGroup > .switcher-list {
+    border-image: url("img/containers/dark-bg.svg") 7;
+    padding: 6px;
+    color: $text-primary;
+    font-size: $font-size-base;
+    font-weight: bold;
+
+    > StBoxLayout {
+        spacing: .4em;
+
+        > StBoxLayout {
+            spacing: .4em;
+        }
+    }
+}

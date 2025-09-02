@@ -1,14 +1,18 @@
-#Mint-X-Dark theme for Cinnamon
+# Mint-X-Dark theme for Cinnamon
 
-> This is a fork of the default Linux Mint theme in Mint-X style.
+This is a "no frills" Mint-X theme adjusted for Dark Mode.
+
+No frills meaning that it resembles the default Mint-X theme as close as possible but without any extras added, just a plain dark mode Mint-X theme!
+
 
 ## Installation
 
-Move the `Mint-X-Dark` folder into your `~/.themes` directory.
+Download the zip file and extract the `Mint-X-Dark` folder into your `~/.themes` directory.
+
 
 ## Compatibility
 
-Tested and developed in Cinnamon `3.6.2`.
+Tested and developed in Cinnamon `6.4.6`.
 
 ## Font
 
