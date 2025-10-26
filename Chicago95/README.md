@@ -1,5 +1,6 @@
 # Chicago95
-#### XFCE / Xubuntu Windows 95 Total Conversion
+
+## Cinnamon / GTK3 / GTK2 / XFCE Windows 95 Total Conversion
 
 <p align="center">
 <img src="https://github.com/grassmunk/Chicago95/blob/master/Screenshots/Chicago95_Desktop.png" alt="Chicago95 Desktop"/>
@@ -39,18 +40,18 @@
 #### LightDM login manager webkit theme
 ![alt text](https://github.com/grassmunk/Chicago95/blob/master/Screenshots/lightdm_webkit_theme.png "LightDM Webkit Theme")
 
-I was unhappy with the various XFCE/GTK2/GTK3 Windows 95 based themes and decided to make one that was more consistent across the board for theming.
+This is a Cinnamon/XFCE/GTK2/GTK3 Windows 95 based theme.
 
 ### Included in this theme:
 
 - Icons to complete the icon theme started with Classic95
 - GTK2 and GTK3 themes
 - Edited Redmond XFWM theme to more accurately reflect Windows 95
-- Chicago95 Plus! A tool to preview and install Windows 95/98/ME/XP themes
-- Plymouth theme created from scratch
-- An MS-DOS inspired theme for oh-my-zsh
+- Chicago95 Plus! A tool to preview and install Windows 95/98/ME/XP themes (install separately)
+- Plymouth theme created from scratch (install separately)
+- An MS-DOS inspired theme for oh-my-zsh (install separately)
 - Partial support for HiDPI monitors
-- Partial icon theme for LibreOffice 6+
+- Partial icon theme for LibreOffice 6+ (install separately)
 
 ### Requirements:
 
@@ -850,39 +851,6 @@ After installing the gtk3-nocsd package, you may need to reboot your computer. T
 ### KDE Support (experimental):
 - SDDM Logon Manager:: Click `Install from file...` in Loggin Screen (SDDM) manager. Select `SDDM/Chicago95.tar.gz` to install the theme. 
 - Splash Screen: `plasmapkg2 -t lookandfeel -i KDE/Splash/chicago95.splashscreen`
-
-## Screenshots
-
-#### Desktop screenshots
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/Desktop0.png "Desktop")
-
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/Desktop1.png "Desktop1")
-
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/web_browser.png "Web Browser")
-
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/Desktop2.png "Desktop2")
-
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/Desktop3.png "Desktop3")
-
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/Desktop4.png "Desktop4")
-
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/Desktop5.png "Desktop5")
-
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/Desktop6.png "Desktop6")
-#### Windows 95 Plymouth boot screen
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/plymouth.gif "Windows95 Plymouth Boot Splash")
-
-#### RetroTux Plymouth boot screen
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/retrotux.png "RetroTux Plymouth Boot Splash")
-
-#### XFCE4 Screensaver lock screen
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/lock_screen.png "Screensaver lock")
-
-#### LightDM login manager theme
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/lightdm_theme.png "LightDM")
-
-#### LightDM login manager webkit theme
-![alt text](https://github.com/grassmunk/Chicago95/blob/master/https://github.com/grassmunk/Chicago95/blob/master/Screenshots/lightdm_webkit_theme.png "LightDM Webkit Theme")
 
 ### IRC server:
 [Click here](https://web.emhmki.org:8443/) to connect to the IRC server. Please read server rules and be kind.
