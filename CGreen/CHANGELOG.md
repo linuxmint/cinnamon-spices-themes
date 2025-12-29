@@ -1,5 +1,6 @@
 ## Versions
 
+* 4.0: compatibility with Cinnamon 6.6.
 * 3.4: switch button touch-up.
 * 3.3: removal of Firefox Extra and appearance of weather applet.
 * 3.2: fix #837.
