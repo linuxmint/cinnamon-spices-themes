@@ -52,7 +52,7 @@ stage {
   border: 1px solid #212112;
   box-shadow: inset 0 2px 4px rgba(48, 48, 54, 0.05); }
   .prompt-dialog-password-entry:focus, .run-dialog-entry:focus, #appmenu-search-entry:focus, #menu-search-entry:focus, .popup-menu #notification StEntry:focus, .prompt-dialog-password-entry:hover, .run-dialog-entry:hover, #appmenu-search-entry:hover, #menu-search-entry:hover, .popup-menu #notification StEntry:hover {
-    color: #e1e1e1;
+    color: #ffffff;
     background-color: #212112;
     border: 1px solid #aa8200;
     box-shadow: inset 0 2px 4px rgba(48, 48, 54, 0.05); }
@@ -229,17 +229,11 @@ StScrollBar {
 
 .menu {
   color: #e1e1e1;
-  background-color: rgba(18, 15, 5, 0.80);
+  background-color: rgba(18, 15, 5, 0.85);
   margin: 4px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5); }  
-  .menu-top {
-    border-radius: 0 0 6px 6px; }
-  .menu-bottom {
-    border-radius: 6px 6px 0 0; }
-  .menu-left {
-    border-radius: 0 6px 6px 0; }
-  .menu-right {
-    border-radius: 6px 0 0 6px; }
+  padding: 6px;
+box-shadow: none;
+  border-radius: 6px; }  
 
 .popup-sub-menu {
   background-color: #140f05;
@@ -1040,6 +1034,7 @@ StScrollBar {
 .appmenu-search-box {
   spacing: 10px; }
 
+/* Sivupalkin pohjaväri tässä background-color: #303036; Sammutanapin takana #d61f2d; */
 .appmenu-sidebar {
   padding: 15px 0px;
   background-color: #303036;
@@ -1071,10 +1066,15 @@ StScrollBar {
 .appmenu-system-box {
   spacing: 10px; }
 
+/* Sivupalkin suosikit kansioiden värit */
 .appmenu-sidebar-button {
   padding: 4px 7px;
   margin: 0 10px; }
+
+/* Sivupalkin nimet kirkastuu kun hiiren vie päälle. Originaali tausta #44444c; tehty */
   .appmenu-sidebar-button:hover {
+    font-weight: normal;
+    color: #ffffff;
     background-color: #44444c;
     border-color: #303036; }
 
@@ -1094,32 +1094,44 @@ StScrollBar {
     color: white;
     background-color: #d61f2d; }
 
+/* Ohjelmien varsinaiset nimet. Tähän saa värin */
 .appmenu-application-button-label {
   padding: 0; }
 
+/* Ohjelmien kuvaukset Originaali color: #a0a0a0; */
 .appmenu-application-button-description {
-  color: #a0a0a0; }
+  color: #d4d4d4; }
 
 .appmenu-application-button:highlighted {
   font-weight: bold; }
 
+/* Ohjelman nimi kirkastuu kun hiiren vie päälle. Originaali tausta #303036; tehty */
 .appmenu-application-button-selected {
-  background-color: #303036; }
+  font-weight: normal;
+  color: #ffffff;
+  background-color: #44444c; }
   .appmenu-application-button-selected:highlighted {
     font-weight: bold; }
 
+/* Ohjelmaryhmän nimi. Tähän voi määrätä värin */
 .appmenu-category-button-label {
   padding: 0; }
 
 .appmenu-category-button:hover {
   background-color: #44444c; }
 
+/* Ohjelmaryhmän nimen väri kun hiirellä osoittaa. */
 .appmenu-category-button-selected {
-  background-color: #303036; }
+  font-weight: normal;
+  color: #ffffff;
+  background-color: #44444c; }
 
+/* Kun hakee ohjelmaa nimellä - ohjelmaryhmät muuttuu italic tyyliseksi. */
 .appmenu-category-button-greyed {
   color: rgba(225, 225, 225, 0.45);
   font-style: italic; }
+
+/* Kun hakee ohjelmaa nimellä, ohjelmaryhmän kuvakkeet sumentuu, hieno! Voi vaihtaa värin. */
   .appmenu-category-button-greyed StIcon {
     opacity: 0.5; }
 
@@ -1144,6 +1156,7 @@ StScrollBar {
   width: 15em;
   min-width: 5px; }
 
+/* Ikkunalista moodi tekstiväri passiviset ikkunat */
 .window-list-item-box {
   font-weight: bold;
   background-image: none;
@@ -1152,6 +1165,8 @@ StScrollBar {
   padding-right: 8px;
   transition-duration: 100;
   color: rgba(225, 225, 225, 0.8); }
+
+/* Ikkunalista moodi aktiivisen ohjelman tekstiväri */
   .window-list-item-box.top, .window-list-item-box.bottom {
     border-bottom-width: 2px; }
     .window-list-item-box.top StLabel, .window-list-item-box.bottom StLabel {
@@ -1168,13 +1183,16 @@ StScrollBar {
     border-left-width: 2px; }
     .window-list-item-box.left StBin {
       padding-left: 1px; }
+/* Ikkunalista moodi passiivisen ohjelman tekstiväri kun osoittaa sitä hiirellä */
   .window-list-item-box:hover, .window-list-item-box:groupFocus {
-    color: #e1e1e1;
+    color: #ffffff;
     background-color: rgba(225, 225, 225, 0.2); }
+
+/* Ikkunalista moodi tekstiväri paneelissa kun ohjelmassa joka on auki. Viivan väri alla */
   .window-list-item-box:active, .window-list-item-box:checked, .window-list-item-box:focus, .window-list-item-box:running {
-    color: #e1e1e1;
+    color: #ffffff;
     border-color: #aa8200;
-    background-color: rgba(225, 225, 225, 0.2); }
+    background-color: rgba(225, 225, 225, 0.3); }
   .window-list-item-box .progress {
     background-color: rgba(170, 130, 1, 0.8); }
 
@@ -1183,13 +1201,13 @@ StScrollBar {
   background-gradient-start: #F04A50;
   background-gradient-end: #F04A50; }
 
-.window-list-preview {
-  spacing: 6px;
-  color: #e1e1e1;
+/* Ikkunalista moodi pikkuikkuna ohjelmasta paneelissa */
+.window-list-preview {  
+  color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0);
-  background-color: #140f05;
-  border-radius: 3px;
-  padding: 6px 12px 12px 12px;
+  background-color: rgba(18, 15, 5, 0.80);
+  border-radius: 6px;
+  padding: 6px;
   font-size: 1em; }
 
 .grouped-window-list-item-label {
@@ -1220,9 +1238,11 @@ StScrollBar {
     border-left-width: 2px; }
     .grouped-window-list-item-box.left StBin {
       padding-left: 1px; }
+
+/* Paneelin kuvakkeen takana oleva väri myös osoittaessa hiirellä */
   .grouped-window-list-item-box:hover, .grouped-window-list-item-box:focus {
-    color: #e1e1e1;
-    background-color: #43444c; }
+    color: #ffffff;
+    background-color: rgba(225, 225, 225, 0.4) }
   .grouped-window-list-item-box:active, .grouped-window-list-item-box:checked {
     color: #e1e1e1;
     border-color: #aa8200; }
@@ -1234,19 +1254,25 @@ StScrollBar {
   background-gradient-start: #F04A50;
   background-gradient-end: #F04A50; }
 
+/* Paneelin ohjelman pikkuikkunen nimen tai otsikon väri */
 .grouped-window-list-thumbnail-label {
+  color: #ffffff;
   padding-left: 4px; }
 
+/* Paneelin ohjelmakuvakkeen kuvekkeessa oleva numero. Montako samaa käynnissä */
 .grouped-window-list-number-label {
   font-size: 12px;
   color: #ffffff; }
 
+/* Paneelin ohjelmakuvakkeen kuvekkeessa oleva numeron pohjaväri */
 .grouped-window-list-badge {
   border-radius: 99px;
   background-color: #aa8200;
   margin: 0; }
 
+/* Paneelin ilmoitukset kuvakkeen numeron väri */
 .grouped-window-list-notifications-badge-label {
+  color: #ffffff;
   font-size: 12px; }
 
 .grouped-window-list-button-label {
@@ -1255,17 +1281,19 @@ StScrollBar {
 .grouped-window-list-thumbnail-alert {
   background: rgba(255, 52, 52, 0.3); }
 
+/* Paneelin ohjelmien kuvakkeiden pikkuikkuna */
 .grouped-window-list-thumbnail-menu {
-  color: #e1e1e1;
+  margin: 4px;
+  color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0);
-  background-color: #140f05;
-  border-radius: 3px;
-  padding: 0px; }
+  background-color: rgba(18, 15, 5, 0.80);
+  border-radius: 6px;
+  padding: 6px; }
   .grouped-window-list-thumbnail-menu > StBoxLayout {
     padding: 4px; }
   .grouped-window-list-thumbnail-menu .item-box {
     padding: 10px;
-    border-radius: 2px;
+    border-radius: 6px;
     spacing: 4px; }
     .grouped-window-list-thumbnail-menu .item-box:outlined {
       padding: 8px;
@@ -1275,7 +1303,7 @@ StScrollBar {
   .grouped-window-list-thumbnail-menu .thumbnail {
     width: 256px; }
   .grouped-window-list-thumbnail-menu .separator {
-    width: 1px;
+    width: 2px;
     background: rgba(255, 255, 255, 0.2); }
 
 .sound-button {
@@ -1334,8 +1362,10 @@ StScrollBar {
     border: 1px solid transparent; }
     .sound-player > StBoxLayout:first-child StButton:small StIcon {
       icon-size: 12px; }
+
+/* Celluloid soittaa. Pieni nuoli ja x väri ja taustaväri sekä väri kun painetaan */
     .sound-player > StBoxLayout:first-child StButton:small:hover {
-      color: #e1e1e1;
+      color: #ffffff;
       background-color: #3c3c44;
       border: 1px solid #212112;
       box-shadow: inset 0 2px 4px rgba(60, 60, 68, 0.05); }
@@ -1348,6 +1378,7 @@ StScrollBar {
 .sound-player-generic-coverart {
   background: rgba(0, 0, 0, 0.2); }
 
+/* Ikkuna jossa on play stop pause */
 .sound-player-overlay {
   width: 290px;
   padding: 15px;
@@ -1365,7 +1396,7 @@ StScrollBar {
     .sound-player-overlay StButton StIcon {
       icon-size: 16px; }
     .sound-player-overlay StButton:hover {
-      color: #e1e1e1;
+      color: #ffffff;
       background-color: #3c3c44;
       border: 1px solid #212112;
       box-shadow: inset 0 2px 4px rgba(60, 60, 68, 0.05); }
@@ -1690,7 +1721,7 @@ StScrollBar {
     border: 1px solid #797987; }
   .dialog .dialog-button:hover {
     border: 1px solid #212112;
-    color: #e1e1e1;
+    color: #ffffff;
     background-color: #494951; }
   .dialog .dialog-button:active {
     border: 1px solid #212112;
@@ -1716,7 +1747,7 @@ StScrollBar {
     border: 1px solid #f4ede6; }
   .dialog .dialog-button:hover:default {
     border: 1px solid #aa8200;
-    color: #e1e1e1;
+    color: #ffffff;
     background-color: #aa8200; }
   .dialog .dialog-button:active:default {
     border: 1px solid #aa8200;
@@ -1743,7 +1774,7 @@ StScrollBar {
     border: 1px solid #ee878f; }
   .dialog .dialog-button:hover:destructive-action {
     border: 1px solid #c01c28;
-    color: #e1e1e1;
+    color: #ffffff;
     background-color: #e12e3b; }
   .dialog .dialog-button:active:destructive-action {
     border: 1px solid #c01c28;
