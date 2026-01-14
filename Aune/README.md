@@ -1,12 +1,12 @@
 ## Aune
 
-Version: 11.1.2026
+Version: 1.3
 
 Theme supports cinnamon.
 
-Aune is a transparent theme. The color has been changed from black to slightly brown. A 3px gap has been added between the panel and the menu. The menu is also off the edge. Works beautifully on the left edge and at the top. The panel on the right and bottom is attached to the edge, but I'll think about that later. 
+Aune is a transparent theme. The color has been changed from black to a slightly brown. A 3px gap has been added between the panel and the menu. Rounded corners. The text brightens slightly when hovered over.
 
-The transparency may be too high on some monitors. I have tested colors on three different monitor manufacturers (HP, Samsung, Aoc). It is a little different on all of them. The goal has been to get the color and transparency so that it works with different background images.
+The goal is to make transparency work well with different background images. Currently, a light background image works better.
 
 The theme is named after my grandmother.
 
@@ -15,6 +15,8 @@ The theme is named after my grandmother.
 Most easily installed via Cinnamon's Themes module in Cinnamon settings.
 
 ## Changelog
+14.1.2026
+Rounded corners for window.list and grouped-window. Menu text brightens when hovering over it. Mostly text-related improvements. New Aune version numbering.
 
 11.1.2026
 Aune now also supports Cinnamon 6.6.4 (Linux Mint 22.3). The new menu works, but I will make some minor color changes to it in the future.
