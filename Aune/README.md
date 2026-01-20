@@ -1,6 +1,6 @@
 ## Aune
 
-Version: 1.4
+Version: 1.5
 
 Theme supports cinnamon.
 
@@ -15,6 +15,10 @@ The theme is named after my grandmother.
 Most easily installed via Cinnamon's Themes module in Cinnamon settings.
 
 ## Changelog
+
+20.1.2026
+Now supports Cinnamon legacy menu and Cinnanu. Panel customization window colors are better visible.
+
 19.1.2026
 Changes to polkit, dialog and popup windows.
 
