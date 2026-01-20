@@ -48,19 +48,19 @@ stage {
   transition-duration: 300ms;
   border-radius: 3px;
   color: #D3D3D3;
-  background-color: #212112;
+  background-color: rgba(0, 0, 0, 0);
   border: 1px solid #212112;
   box-shadow: inset 0 2px 4px rgba(48, 48, 54, 0.05); }
 
   .prompt-dialog-password-entry:focus, .run-dialog-entry:focus, #appmenu-search-entry:focus, #menu-search-entry:focus, .popup-menu #notification StEntry:focus, .prompt-dialog-password-entry:hover, .run-dialog-entry:hover, #appmenu-search-entry:hover, #menu-search-entry:hover, .popup-menu #notification StEntry:hover {
     color: #ffffff;
-    background-color: #212112;
+    background-color: rgba(0, 0, 0, 0);
     border: 1px solid #aa8200;
     box-shadow: inset 0 2px 4px rgba(48, 48, 54, 0.05); }
 
   .prompt-dialog-password-entry:insensitive, .run-dialog-entry:insensitive, #appmenu-search-entry:insensitive, #menu-search-entry:insensitive, .popup-menu #notification StEntry:insensitive {
     color: rgba(225, 225, 225, 0.45);
-    background-color: #2a2a2f;
+    background-color: rgba(0, 0, 0, 0);
     border-color: 1px solid #2a2a2f;
     box-shadow: inset 0 2px 4px rgba(42, 42, 47, 0.05); }
 
@@ -78,7 +78,7 @@ stage {
 .notification StEntry {
   padding: 7px;
   caret-size: 1px;
-  caret-color: #c3c3c3;
+  caret-color: #e1e1e1;
   selection-background-color: #aa8200;
   selected-color: #ffffff;
   transition-duration: 300ms;
@@ -136,8 +136,7 @@ StScrollBar {
   background-color: rgba(170, 130, 1, 0.3);
   box-shadow: 0 0 2px 2px #aa8200; }
 
-.popup-slider-menu-item,
-.slider {
+.popup-slider-menu-item, .slider {
   -slider-height: 0.3em;
   -slider-background-color: #212112;
   -slider-border-color: rgba(34, 34, 38, 0.3);
@@ -315,14 +314,17 @@ box-shadow: none;
 
 #panel {
   font-weight: bold;
+  /* sets the height of horizontal panels */
   height: 40px;
+  /* sets the width of vertical panels */
   width: 32px;
+  /* Set the symbolic foreground color for icons, and importantly, the system tray applet icons */
   color: #e1e1e1; }
   #panelLeft {
     spacing: 4px; }
     #panelLeft:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(255, 0, 0, 0.05);
+      background-gradient-start: rgba(255, 0, 5, 0.5);
       background-gradient-end: rgba(255, 0, 0, 0.2); }
     #panelLeft:ltr {
       padding-right: 4px; }
@@ -336,7 +338,7 @@ box-shadow: none;
         padding-left: 0px; }
   #panelRight:dnd {
     background-gradient-direction: vertical;
-    background-gradient-start: rgba(0, 0, 255, 0.05);
+    background-gradient-start: rgba(0, 5, 255, 0.4);
     background-gradient-end: rgba(0, 0, 255, 0.2); }
   #panelRight:ltr {
     padding-left: 4px;
@@ -354,7 +356,7 @@ box-shadow: none;
     spacing: 4px; }
     #panelCenter:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(0, 255, 0, 0.05);
+      background-gradient-start: rgba(0, 255, 0, 0.5);
       background-gradient-end: rgba(0, 255, 0, 0.2); }
   #panel:highlight {
     border-image: none;
@@ -364,7 +366,7 @@ box-shadow: none;
   spacing: 4px; }
   .panelLeft:dnd {
     background-gradient-direction: vertical;
-    background-gradient-start: rgba(255, 0, 0, 0.05);
+    background-gradient-start: rgba(255, 0, 5, 0.5);
     background-gradient-end: rgba(255, 0, 0, 0.2); }
   .panelLeft:ltr {
     padding-right: 4px; }
@@ -379,7 +381,7 @@ box-shadow: none;
 
 .panelRight:dnd {
   background-gradient-direction: vertical;
-  background-gradient-start: rgba(0, 0, 255, 0.05);
+  background-gradient-start: rgba(0, 5, 255, 0.4);
   background-gradient-end: rgba(0, 0, 255, 0.2); }
 
 .panelRight:ltr {
@@ -406,7 +408,7 @@ box-shadow: none;
     padding-right: 0px; }
   .panelCenter:dnd {
     background-gradient-direction: vertical;
-    background-gradient-start: rgba(0, 255, 0, 0.05);
+    background-gradient-start: rgba(0, 255, 0, 0.5);
     background-gradient-end: rgba(0, 255, 0, 0.2); }
 
 .panel-top, .panel-bottom, .panel-left, .panel-right {
@@ -459,9 +461,9 @@ box-shadow: none;
   spacing: 12px; }
 
 .window-caption {
-  background-color: #303030;
+  background-color: rgba(170, 130, 0, 0.7);
   border: 1px solid #303030;
-  color: #c3c3c3;
+  color: #ffffff;
   spacing: 8px;
   border-radius: 2px;
   font-size: 0.9em;
@@ -476,6 +478,7 @@ box-shadow: none;
   border: 3px #aa8200;
   border-radius: 2px;
   background-color: rgba(255, 255, 255, 0.05);
+  /* Cover rounded corners and some bad adjustment gaps */
   box-shadow: 0 0 0 1px #aa8200 inset; }
 
 .overview-empty-placeholder {
@@ -489,8 +492,8 @@ box-shadow: none;
   font-size: 1em;
   padding: 5px 8px;
   -cinnamon-caption-spacing: 4px;
-  color: #c3c3c3;
-  background-color: rgba(104, 104, 104, 0.4);
+  color: #ffffff;
+  background-color: rgba(170, 130, 0, 0.7);
   border: 1px solid rgba(17, 17, 17, 0.4);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); }
   .expo-workspaces-name-entry:focus,
@@ -634,7 +637,7 @@ box-shadow: none;
       font-weight: bold; }
     .calendar-event-button .calendar-event-countdown:imminent {
       font-weight: bold;
-      color: #F27835; }
+      color: #e1e1e1; }
     .calendar-event-button .calendar-event-countdown:current {
       font-weight: bold;
       color: #e1e1e1; }
@@ -791,9 +794,13 @@ box-shadow: none;
   opacity: 1; }
 
 .calendar-week-number {
-  color: #e0c162;
+  color: #ffffff;
   font-size: 0.8em;
-  margin-top: 0.8em; }
+  margin-top: 0.8em;
+  border-top-color: rgba(170, 130, 0, 0.4);
+  border-top: 3px;
+  margin: 1px;
+  padding: 1px; }
 
 #notification {
   box-shadow: 0 1px 15px 4px #212112;
@@ -912,11 +919,11 @@ box-shadow: none;
   border-radius: 6px; }
 
 .menu-favorites-button {
-  padding: .9em 1em;
-  border: 1px solid rgba (0, 0, 0, 0);
-  border-radius: 6px; }
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0); }
   .menu-favorites-button:hover {
-    background-color: #434444;
+    background-color: #44444c;
     border: 1px solid rgba(0, 0, 0, 0); }
 
 .menu-places-box {
@@ -940,7 +947,7 @@ box-shadow: none;
   .menu-application-button-selected {
     padding: 7px;
     color: #ffffff;
-    background-color: #212112;
+    background-color: #44444c;
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 6px; }
     .menu-application-button-selected:highlighted {
@@ -966,7 +973,7 @@ box-shadow: none;
   .menu-category-button:hover {
     padding: 7px;
     color: #ffffff;
-    background-color: #212112;
+    background-color: #44444c;
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 6px; }
   .menu-category-button-label:ltr {
@@ -1000,14 +1007,16 @@ box-shadow: none;
   min-height: 16px;
   font-weight: normal;
   caret-color: #e1e1e1;
+  border-color: #aa8200;
   border-radius: 6px; }
 
 .menu-search-entry-icon {
   icon-size: 1em;
   color: #e1e1e1; }
 
+/* Context menu (at the moment only for favorites) */
 .appmenu-category-button-greyed, .appmenu-category-button-selected, .appmenu-category-button, .appmenu-application-button-selected, .appmenu-application-button, .appmenu-sidebar-button {
-  padding: 7px;
+  padding: 8px;
   spacing: 5px;
   border-radius: 6px; }
 
@@ -1064,8 +1073,8 @@ box-shadow: none;
   spacing: 10px; }
 
 .appmenu-sidebar-button {
-  padding: 4px 7px;
-  margin: 0 10px; }
+  padding: 4px 7px 4px 7px;
+  margin: 0 10px 0 10px; }
 
   .appmenu-sidebar-button:hover {
     font-weight: normal;
@@ -1207,8 +1216,9 @@ box-shadow: none;
   padding-right: 8px;
   transition-duration: 100;
   color: rgba(225, 225, 225, 0.8); }
+
   .grouped-window-list-item-box.top, .grouped-window-list-item-box.bottom {
-    border-bottom-width: 2px; }
+    border-bottom-width: 3px; }
   .grouped-window-list-item-box.right {
     padding-left: 0px;
     padding-right: 0px;
@@ -1710,7 +1720,7 @@ box-shadow: none;
   background-color: #212112; }
 
   .dialog .dialog-button:focus {
-    color: #e1e1e1;
+    color: #FFFF00;
     background-color: #212112;
     border: 1px solid #797987; }
 
@@ -1723,10 +1733,10 @@ box-shadow: none;
     border: 1px solid #ffffff;
     color: #ffffff;
     background-color: #907404; }
-
+/* ??? keltainen */
   .dialog .dialog-button:checked {
-    border: 1px solid #3c3c44;
-    color: #ffffff;
+    border: 1px solid #FFFF00;
+    color: #FFFF00;
     background-color: #3c3c44; }
 
   .dialog .dialog-button:insensitive {
@@ -1747,14 +1757,17 @@ box-shadow: none;
     border: 1px solid #ffffff;
     color: #ffffff;
     background-color: #14371b; }
+
   .dialog .dialog-button:active:default {
     border: 1px solid #ffffff;
     color: #ffffff;
     background-color: #04522b; }
+
   .dialog .dialog-button:checked:default {
     border: 1px solid #aa8200;
     color: #e1e1e1;
     background-color: #cdad8e; }
+
   .dialog .dialog-button:insensitive:default {
     border-color: #212112;
     border: 1px solid #212112;
@@ -2025,7 +2038,7 @@ On-Screen Keyboard (>= Cinnamon 6.6)
       border: 1px solid #aa8200;
       box-shadow: inset 0 2px 4px #1f9ede; }
 
-/* New virtual keyboard pressed keys */
+/* Virtuaalinäppäimistön pohjaan jäävien näppäinten värit */
   .vkeyboard-key.modifier-key {
     background-color: #303036; }
     .vkeyboard-key.modifier-key:hover, .vkeyboard-key.modifier-key:checked {
