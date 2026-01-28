@@ -24,7 +24,8 @@ stage {
   color: transparent;
 }
 
-.menu #notification .notification-button,
+.menu-system-button,
+.appmenu-system-button, .menu #notification .notification-button,
 .menu #notification .notification-icon-button, .popup-menu #notification .notification-button,
 .popup-menu #notification .notification-icon-button {
   border-color: transparent;
@@ -38,7 +39,8 @@ stage {
   border-width: 0;
   font-weight: 500;
 }
-.menu #notification .notification-button:focus,
+.menu-system-button:focus,
+.appmenu-system-button:focus, .menu #notification .notification-button:focus,
 .menu #notification .notification-icon-button:focus, .popup-menu #notification .notification-button:focus,
 .popup-menu #notification .notification-icon-button:focus {
   color: #263238;
@@ -46,7 +48,8 @@ stage {
   text-shadow: none;
   icon-shadow: none;
 }
-.menu #notification .notification-button:hover,
+.menu-system-button:hover,
+.appmenu-system-button:hover, .menu #notification .notification-button:hover,
 .menu #notification .notification-icon-button:hover, .popup-menu #notification .notification-button:hover,
 .popup-menu #notification .notification-icon-button:hover {
   border-color: transparent;
@@ -56,7 +59,8 @@ stage {
   text-shadow: none;
   icon-shadow: none;
 }
-.menu #notification .notification-button:active,
+.menu-system-button:active,
+.appmenu-system-button:active, .menu #notification .notification-button:active,
 .menu #notification .notification-icon-button:active, .popup-menu #notification .notification-button:active,
 .popup-menu #notification .notification-icon-button:active {
   border-color: transparent;
@@ -66,7 +70,8 @@ stage {
   text-shadow: none;
   icon-shadow: none;
 }
-.menu #notification .notification-button:insensitive,
+.menu-system-button:insensitive,
+.appmenu-system-button:insensitive, .menu #notification .notification-button:insensitive,
 .menu #notification .notification-icon-button:insensitive, .popup-menu #notification .notification-button:insensitive,
 .popup-menu #notification .notification-icon-button:insensitive {
   border-color: transparent;
@@ -76,7 +81,8 @@ stage {
   text-shadow: none;
   icon-shadow: none;
 }
-.menu #notification .notification-button,
+.menu-system-button,
+.appmenu-system-button, .menu #notification .notification-button,
 .menu #notification .notification-icon-button, .popup-menu #notification .notification-button,
 .popup-menu #notification .notification-icon-button {
   border-radius: 2px;
@@ -138,7 +144,7 @@ stage {
   icon-shadow: none;
 }
 
-#menu-search-entry, .menu #notification StEntry, .popup-menu #notification StEntry {
+#appmenu-search-entry, #menu-search-entry, .menu #notification StEntry, .popup-menu #notification StEntry {
   border-color: transparent;
   background-color: rgba(0, 0, 0, 0.01);
   box-shadow: inset 0 -1px rgba(38, 50, 56, 0.2);
@@ -152,23 +158,23 @@ stage {
   selection-background-color: #00BCD4;
   selected-color: #FFFFFF;
 }
-#menu-search-entry:focus, .menu #notification StEntry:focus, .popup-menu #notification StEntry:focus {
+#appmenu-search-entry:focus, #menu-search-entry:focus, .menu #notification StEntry:focus, .popup-menu #notification StEntry:focus {
   border-color: transparent;
   box-shadow: inset 0 -2px #00BCD4;
 }
-#menu-search-entry:hover, .menu #notification StEntry:hover, .popup-menu #notification StEntry:hover {
+#appmenu-search-entry:hover, #menu-search-entry:hover, .menu #notification StEntry:hover, .popup-menu #notification StEntry:hover {
   border-color: transparent;
   box-shadow: inset 0 -2px rgba(38, 50, 56, 0.2);
 }
-#menu-search-entry:insensitive, .menu #notification StEntry:insensitive, .popup-menu #notification StEntry:insensitive {
+#appmenu-search-entry:insensitive, #menu-search-entry:insensitive, .menu #notification StEntry:insensitive, .popup-menu #notification StEntry:insensitive {
   border-color: transparent;
   color: rgba(38, 50, 56, 0.28);
   box-shadow: inset 0 -1px rgba(38, 50, 56, 0.056);
 }
-#menu-search-entry, .menu #notification StEntry, .popup-menu #notification StEntry, .menu #notification StEntry:focus, .popup-menu #notification StEntry:focus, .menu #notification StEntry:hover, .popup-menu #notification StEntry:hover, .menu #notification StEntry:insensitive, .popup-menu #notification StEntry:insensitive {
+#appmenu-search-entry, #menu-search-entry, .menu #notification StEntry, .popup-menu #notification StEntry, .menu #notification StEntry:focus, .popup-menu #notification StEntry:focus, .menu #notification StEntry:hover, .popup-menu #notification StEntry:hover, .menu #notification StEntry:insensitive, .popup-menu #notification StEntry:insensitive {
   background-color: rgba(255, 255, 255, 0.01);
 }
-#menu-search-entry StIcon.capslock-warning, .menu #notification StEntry StIcon.capslock-warning, .popup-menu #notification StEntry StIcon.capslock-warning {
+#appmenu-search-entry StIcon.capslock-warning, #menu-search-entry StIcon.capslock-warning, .menu #notification StEntry StIcon.capslock-warning, .popup-menu #notification StEntry StIcon.capslock-warning {
   icon-size: 16px;
   padding: 0 2px;
   warning-color: #FF9800;
@@ -1522,16 +1528,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #FFFFFF;
 }
 
-.menu-top-box {
+.menu-top-box,
+.appmenu-top-box {
   spacing: 10px;
 }
-.menu-systembuttons-box {
+.menu-systembuttons-box,
+.appmenu-systembuttons-box {
   padding: 5px 0;
 }
-.menu .menu-favorites-button {
+.menu .menu-favorites-button,
+.appmenu .menu-favorites-button {
   padding: 5px;
 }
-.menu .menu-favorites-button:hover {
+.menu .menu-favorites-button:hover,
+.appmenu .menu-favorites-button:hover {
   border-color: transparent;
   color: #263238;
   background-color: rgba(38, 50, 56, 0.12);
@@ -1539,26 +1549,75 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: none;
   icon-shadow: none;
 }
-.menu-favorites-box {
+.menu-system-box,
+.appmenu-system-box {
+  spacing: 10px;
+}
+.menu-system-button,
+.appmenu-system-button {
+  border-width: 0;
+  color: #263238;
+  font-size: 0.8em;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0;
+  border-radius: 999px;
+  text-align: center;
+}
+.menu-system-button:hover,
+.appmenu-system-button:hover {
+  background-color: rgba(38, 50, 56, 0.12);
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+.menu-system-button-shutdown,
+.appmenu-system-button-shutdown {
+  background-color: rgba(244, 67, 54, 0.16);
+}
+.menu-system-button-shutdown:hover,
+.appmenu-system-button-shutdown:hover {
+  background-color: rgba(244, 67, 54, 0.6);
+}
+.menu-system-button StIcon,
+.appmenu-system-button StIcon {
+  margin-left: 10px;
+}
+.menu-favs-box, .menu-favorites-box,
+.appmenu-favs-box,
+.appmenu-favorites-box {
   padding: 7px;
   spacing: 20px;
   border-radius: 0;
   border: 0 solid rgba(0, 0, 0, 0.09);
   background-color: transparent;
 }
-.menu-favorites-box:ltr {
+.menu-favs-box:ltr, .menu-favorites-box:ltr,
+.appmenu-favs-box:ltr,
+.appmenu-favorites-box:ltr {
   border-right-width: 1px;
 }
-.menu-favorites-box:rtl {
+.menu-favs-box:rtl, .menu-favorites-box:rtl,
+.appmenu-favs-box:rtl,
+.appmenu-favorites-box:rtl {
   border-left-width: 1px;
 }
-.menu-favorites-box .popup-menu-item {
+.menu-favs-box .popup-menu-item, .menu-favorites-box .popup-menu-item,
+.appmenu-favs-box .popup-menu-item,
+.appmenu-favorites-box .popup-menu-item {
   padding: 10px;
 }
-.menu-favorites-button {
+.menu-favs-box,
+.appmenu-favs-box {
+  spacing: 0;
+}
+.menu-favorites-button,
+.appmenu-favorites-button {
   padding: 10px;
 }
-.menu-favorites-button:hover {
+.menu-favorites-button:hover,
+.appmenu-favorites-button:hover {
   border-color: transparent;
   color: #263238;
   background-color: rgba(38, 50, 56, 0.12);
@@ -1566,34 +1625,49 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: none;
   icon-shadow: none;
 }
-.menu-places-box {
+.menu-places-box,
+.appmenu-places-box {
   padding: 7px;
 }
-.menu-places-button {
+.menu-places-button,
+.appmenu-places-button {
   padding: 10px;
 }
-.menu-categories-box {
+.menu-categories-applications-box, .menu-categories-box,
+.appmenu-categories-applications-box,
+.appmenu-categories-box {
   padding: 7px 7px 0 7px;
   border: 0 solid rgba(0, 0, 0, 0.09);
 }
-.menu-categories-box:ltr {
+.menu-categories-applications-box:ltr, .menu-categories-box:ltr,
+.appmenu-categories-applications-box:ltr,
+.appmenu-categories-box:ltr {
   border-right-width: 1px;
 }
-.menu-categories-box:rtl {
+.menu-categories-applications-box:rtl, .menu-categories-box:rtl,
+.appmenu-categories-applications-box:rtl,
+.appmenu-categories-box:rtl {
   border-left-width: 1px;
 }
-.menu-applications-inner-box, .menu-applications-outer-box {
+.menu-applications-box, .menu-applications-inner-box, .menu-applications-outer-box,
+.appmenu-applications-box,
+.appmenu-applications-inner-box,
+.appmenu-applications-outer-box {
   padding: 7px 7px 0 7px;
 }
-.menu-application-button {
+.menu-application-button,
+.appmenu-application-button {
   padding: 0 7px;
   border: 1px solid transparent;
   color: rgba(38, 50, 56, 0.87);
 }
-.menu-application-button:highlighted {
+.menu-application-button:highlighted,
+.appmenu-application-button:highlighted {
   font-weight: 700;
 }
-.menu-application-button-selected {
+.menu-application-button:selected, .menu-application-button-selected,
+.appmenu-application-button:selected,
+.appmenu-application-button-selected {
   border-color: transparent;
   color: #263238;
   background-color: rgba(38, 50, 56, 0.12);
@@ -1603,92 +1677,158 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 0 7px;
   border: 1px solid transparent;
 }
-.menu-application-button-selected:highlighted {
+.menu-application-button:selected:highlighted, .menu-application-button-selected:highlighted,
+.appmenu-application-button:selected:highlighted,
+.appmenu-application-button-selected:highlighted {
   font-weight: 700;
 }
-.menu-application-button-label:ltr {
+.menu-application-button-label:ltr,
+.appmenu-application-button-label:ltr {
   padding: 0.5em 0 0.5em 5px;
 }
-.menu-application-button-label:rtl {
+.menu-application-button-label:rtl,
+.appmenu-application-button-label:rtl {
   padding: 0.5em 5px 0.5em 0;
 }
-.menu StScrollView.menu-application-button {
+.menu StScrollView.menu-application-button,
+.appmenu StScrollView.menu-application-button {
   padding: 0;
   border-radius: 2px;
   border: 1px solid rgba(0, 0, 0, 0.09);
   background-color: rgb(247.4, 248.6, 249.4);
 }
-.menu StScrollView.menu-application-button .popup-menu-item {
+.menu StScrollView.menu-application-button .popup-menu-item,
+.appmenu StScrollView.menu-application-button .popup-menu-item {
   padding: 0;
   spacing: 0;
 }
-.menu StScrollView.menu-application-button .popup-menu-item:ltr {
+.menu StScrollView.menu-application-button .popup-menu-item:ltr,
+.appmenu StScrollView.menu-application-button .popup-menu-item:ltr {
   padding-left: 7px;
 }
-.menu StScrollView.menu-application-button .popup-menu-item:rtl {
+.menu StScrollView.menu-application-button .popup-menu-item:rtl,
+.appmenu StScrollView.menu-application-button .popup-menu-item:rtl {
   padding-right: 7px;
 }
-.menu StScrollView.menu-application-button .popup-menu-item:active {
+.menu StScrollView.menu-application-button .popup-menu-item:active,
+.appmenu StScrollView.menu-application-button .popup-menu-item:active {
   border-image: none;
   background-color: rgba(38, 50, 56, 0.12);
 }
-.menu StScrollView.menu-application-button .popup-menu-item StIcon {
+.menu StScrollView.menu-application-button .popup-menu-item StIcon,
+.appmenu StScrollView.menu-application-button .popup-menu-item StIcon {
   min-width: 22px;
 }
-.menu StScrollView.menu-application-button .popup-menu-item StLabel:ltr {
+.menu StScrollView.menu-application-button .popup-menu-item StLabel:ltr,
+.appmenu StScrollView.menu-application-button .popup-menu-item StLabel:ltr {
   padding: 0.5em 0 0.5em 5px;
 }
-.menu StScrollView.menu-application-button .popup-menu-item StLabel:rtl {
+.menu StScrollView.menu-application-button .popup-menu-item StLabel:rtl,
+.appmenu StScrollView.menu-application-button .popup-menu-item StLabel:rtl {
   padding: 0.5em 5px 0.5em 0;
 }
-.menu-category-button {
+.menu-sidebar-button, .menu-category-button,
+.appmenu-sidebar-button,
+.appmenu-category-button {
   padding: 0 7px;
   border: 1px solid transparent;
   color: rgba(38, 50, 56, 0.87);
 }
-.menu-category-button-hover, .menu-category-button-selected {
+.menu-sidebar-button:hover, .menu-sidebar-button:selected, .menu-sidebar-button-hover, .menu-sidebar-button-selected, .menu-category-button:hover, .menu-category-button:selected, .menu-category-button-hover, .menu-category-button-selected,
+.appmenu-sidebar-button:hover,
+.appmenu-sidebar-button:selected,
+.appmenu-sidebar-button-hover,
+.appmenu-sidebar-button-selected,
+.appmenu-category-button:hover,
+.appmenu-category-button:selected,
+.appmenu-category-button-hover,
+.appmenu-category-button-selected {
   padding: 0 7px;
   border-radius: 2px;
   border: 1px solid transparent;
   background-color: rgba(0, 188, 212, 0.12);
   color: #00BCD4;
 }
-.menu-category-button-greyed {
+.menu-sidebar-button-greyed, .menu-category-button-greyed,
+.appmenu-sidebar-button-greyed,
+.appmenu-category-button-greyed {
   padding: 0 7px;
   border: 1px solid transparent;
   color: rgba(38, 50, 56, 0.28);
 }
-.menu-category-button-label:ltr {
+.menu-sidebar-button-label:ltr, .menu-category-button-label:ltr,
+.appmenu-sidebar-button-label:ltr,
+.appmenu-category-button-label:ltr {
   padding: 0.5em 0 0.5em 5px;
 }
-.menu-category-button-label:rtl {
+.menu-sidebar-button-label:rtl, .menu-category-button-label:rtl,
+.appmenu-sidebar-button-label:rtl,
+.appmenu-category-button-label:rtl {
   padding: 0.5em 5px 0.5em 0;
 }
-.menu-selected-app-box {
+.menu-selected-app-box,
+.appmenu-selected-app-box {
   margin-bottom: 0.4em;
   height: 2.2em;
   padding: 0 30px;
   text-align: right;
 }
-.menu-selected-app-title {
+.menu-selected-app-title,
+.appmenu-selected-app-title {
   font-size: 0.9em;
   margin-top: 0.4em;
   color: rgba(38, 50, 56, 0.87);
   font-weight: 700;
 }
-.menu-selected-app-description {
+.menu-selected-app-description,
+.appmenu-selected-app-description {
   font-size: 0.9em;
   max-width: 150px;
   color: rgba(38, 50, 56, 0.54);
 }
-.menu-search-box {
+.menu-search-box,
+.appmenu-search-box {
   margin-bottom: 7px;
 }
-.menu-search-box:ltr {
+.menu-search-box:ltr,
+.appmenu-search-box:ltr {
   padding-left: 30px;
 }
-.menu-search-box:rtl {
+.menu-search-box:rtl,
+.appmenu-search-box:rtl {
   padding-right: 30px;
+}
+.menu-search-entry-icon,
+.appmenu-search-entry-icon {
+  icon-size: 1em;
+  color: #263238;
+}
+
+.appmenu-search-box {
+  spacing: 10px;
+}
+.appmenu-sidebar-user-box .user-icon {
+  margin-bottom: 5px;
+}
+.appmenu-application-button {
+  spacing: 10px;
+}
+.appmenu-application-button-selected {
+  spacing: 10px !important;
+}
+.appmenu-application-button-selected :last-child:last-child {
+  padding: 0;
+  margin: 0;
+}
+.appmenu-application-button-label {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.appmenu-application-button-description {
+  font-size: 0.8em;
+  color: rgba(38, 50, 56, 0.54);
+  padding-left: 5px;
+  padding-bottom: 0.5em;
 }
 
 #menu-search-entry {
@@ -1697,13 +1837,28 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: 500;
 }
 
-.menu-search-entry-icon {
-  icon-size: 1em;
-  color: #263238;
+#appmenu-search-entry {
+  width: 100%;
+  padding-right: 16px;
+  margin-right: 16px;
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 0.01);
+  box-shadow: inset 0 -1px rgba(38, 50, 56, 0.2);
+}
+#appmenu-search-entry:hover {
+  border-color: transparent;
+  box-shadow: inset 0 -2px #00BCD4;
 }
 
 .menu-context-menu {
   padding: 0.5em 1px;
+}
+
+.user-widget-label {
+  font-size: 1.2em;
+  color: #CFD8DC;
+  font-weight: 700;
+  text-align: center;
 }
 
 .info-osd {
@@ -2778,6 +2933,14 @@ StBin.menu StBoxLayout.switcher-list .item-box > StBin.thumbnail {
 }
 .applet-cornerbar-box:hover {
   background-color: rgb(129, 195.6, 191.2);
+}
+
+.ripple-pointer-location {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #4DB6AC;
+  box-shadow: 0 0 2px 2px rgb(160, 160, 160);
 }
 
 /*# sourceMappingURL=cinnamon.css.map */
