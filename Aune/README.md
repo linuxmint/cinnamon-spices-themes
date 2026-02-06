@@ -1,12 +1,12 @@
 ## Aune
 
-Version: 1.5
+Version: 1.6
 
 Theme supports cinnamon.
 
 Aune is a partially transparent theme. The color has been changed from black to a slightly brown. A 3px gap has been added between the panel and the menu. Rounded corners. The text brightens slightly when hovered over.
 
-The goal is to make transparency work well with different background images. Currently, a light background image works better.
+The goal is to make transparency work well with different background images. Currently, a light background image works better. 
 
 The theme is named after my grandmother.
 
@@ -15,6 +15,8 @@ The theme is named after my grandmother.
 Most easily installed via Cinnamon's Themes module in Cinnamon settings.
 
 ## Changelog
+6.2.2026
+Added gtk3-gtk4 folders. All png images are now in svg format (better quality). Added comments in the css files (now in Finnish, in English later). Many improvements to colors. Text is more black and gray text is also easier to read. Idea: you can easily change the colors of svg images with Inkscape.
 
 20.1.2026
 Now supports Cinnamon legacy menu and Cinnanu. Panel customization window colors are better visible.
