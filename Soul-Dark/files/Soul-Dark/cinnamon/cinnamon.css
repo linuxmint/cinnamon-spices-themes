@@ -211,7 +211,7 @@ stage {
   font-size: 1em;
   line-height: 1.45; }
 
-.appmenu-application-button-description, .prompt-dialog-error-label, .prompt-dialog-info-label, .prompt-dialog-null-label, .run-dialog-description, .message-dialog-content .message-dialog-caption, .dialog-list .dialog-list-box .dialog-list-item .dialog-list-item-description, .calendar-event-countdown, .caps-lock-warning-label {
+.menu-application-button-description, .appmenu-application-button-description, .prompt-dialog-error-label, .prompt-dialog-info-label, .prompt-dialog-null-label, .run-dialog-description, .message-dialog-content .message-dialog-caption, .dialog-list .dialog-list-box .dialog-list-item .dialog-list-item-description, .calendar-event-countdown, .caps-lock-warning-label {
   font-weight: 400;
   font-size: 0.818em;
   line-height: 1.5; }
@@ -446,10 +446,10 @@ stage {
         -inactive-window-background: rgba(232, 232, 232, 0.15);
         -inactive-window-border: rgba(232, 232, 232, 0.2); }
     .workspace-graph .workspace .windows {
-      -active-window-background: rgba(232, 232, 232, 0.3);
-      -active-window-border: rgba(232, 232, 232, 0.4);
-      -inactive-window-background: rgba(232, 232, 232, 0.1);
-      -inactive-window-border: rgba(232, 232, 232, 0.15); }
+      -active-window-background: rgba(232, 232, 232, 0.4);
+      -active-window-border: rgba(232, 232, 232, 0.45);
+      -inactive-window-background: rgba(232, 232, 232, 0.15);
+      -inactive-window-border: rgba(232, 232, 232, 0.2); }
 
 .system-status-icon {
   icon-size: 1.091em; }
@@ -1483,19 +1483,19 @@ StScrollBar StButton#hhandle {
   transition-duration: 200ms;
   transition-property: background-color, border-color; }
   .grouped-window-list-item-box.top {
-    border-bottom-width: 5px; }
+    border-bottom-width: 4px; }
   .grouped-window-list-item-box.bottom {
-    border-top-width: 5px; }
+    border-top-width: 4px; }
   .grouped-window-list-item-box.right {
     padding-left: 0;
     padding-right: 0;
-    border-right-width: 5px; }
+    border-right-width: 4px; }
     .grouped-window-list-item-box.right StBin {
       padding-right: 0; }
   .grouped-window-list-item-box.left {
     padding-left: 0;
     padding-right: 0;
-    border-left-width: 5px; }
+    border-left-width: 4px; }
     .grouped-window-list-item-box.left StBin {
       padding-left: 0; }
   .grouped-window-list-item-box:hover {
@@ -1602,20 +1602,20 @@ StScrollBar StButton#hhandle {
   .window-list-item-box.top StLabel, .window-list-item-box.bottom StLabel {
     padding-left: 2px; }
   .window-list-item-box.top {
-    border-bottom-width: 5px; }
+    border-bottom-width: 4px; }
   .window-list-item-box.bottom {
-    border-top-width: 5px; }
+    border-top-width: 4px; }
   .window-list-item-box.right {
     padding-left: 0;
     padding-right: 0;
-    border-right-width: 5px; }
+    border-right-width: 4px; }
     .window-list-item-box.right StBin {
       padding-right: 0;
       padding-left: 5px; }
   .window-list-item-box.left {
     padding-left: 0;
     padding-right: 0;
-    border-left-width: 5px; }
+    border-left-width: 4px; }
     .window-list-item-box.left StBin {
       padding-left: 0;
       padding-right: 5px; }
@@ -1638,10 +1638,13 @@ StScrollBar StButton#hhandle {
   spacing: 4px;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4); }
 
-.menu-category-button-greyed, .menu-category-button-selected, .menu-category-button, .menu-application-button-selected, .menu-application-button {
+.menu-category-button-greyed, .menu-category-button-selected, .menu-category-button, .menu-application-button-selected, .menu-application-button, .menu-favorites-button {
   padding: 6px;
   spacing: 4px;
-  border-radius: 6px; }
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition-duration: 200ms;
+  transition-property: background-color, border-color, color, box-shadow; }
 
 .menu-favorites-box {
   padding: 9px;
@@ -1651,15 +1654,21 @@ StScrollBar StButton#hhandle {
 
 .menu-favorites-button {
   padding: 9px;
-  border-radius: 6px; }
+  margin: 0 6px; }
   .menu-favorites-button:hover {
-    background-color: rgba(83, 83, 83, 0.92); }
+    background-color: rgba(70, 70, 70, 0.915);
+    border-color: #555555; }
+  .menu-favorites-button:focus {
+    background-color: rgba(57, 57, 57, 0.91);
+    border-color: #8a8378; }
 
 .menu-categories-box {
-  padding: 9px 24px; }
+  padding: 9px 24px;
+  spacing: 12px; }
 
 .menu-applications-box {
-  padding: 9px; }
+  padding: 9px;
+  padding-right: 6px; }
 
 .menu-applications-inner-box:ltr {
   padding-left: 24px; }
@@ -1670,11 +1679,15 @@ StScrollBar StButton#hhandle {
 .menu-application-button-label {
   padding: 0; }
 
+.menu-application-button-description {
+  color: rgba(189, 189, 189, 0.975); }
+
 .menu-application-button:highlighted {
   font-weight: bold; }
 
 .menu-application-button-selected {
-  background-color: rgba(57, 57, 57, 0.91); }
+  background-color: rgba(70, 70, 70, 0.915);
+  border-color: #555555; }
   .menu-application-button-selected:highlighted {
     font-weight: bold; }
 
@@ -1682,10 +1695,16 @@ StScrollBar StButton#hhandle {
   padding: 0; }
 
 .menu-category-button:hover {
-  background-color: rgba(70, 70, 70, 0.915); }
+  background-color: rgba(70, 70, 70, 0.915);
+  border-color: #555555; }
+
+.menu-category-button:focus {
+  background-color: rgba(57, 57, 57, 0.91);
+  border-color: #8a8378; }
 
 .menu-category-button-selected {
-  background-color: rgba(57, 57, 57, 0.91); }
+  background-color: rgba(70, 70, 70, 0.915);
+  border-color: #555555; }
 
 .menu-category-button-greyed {
   color: rgba(131, 131, 131, 0.945);
@@ -1702,7 +1721,8 @@ StScrollBar StButton#hhandle {
   color: rgba(131, 131, 131, 0.945); }
 
 .menu-search-box {
-  padding: 0 0 6px 9px; }
+  padding: 0 0 6px 9px;
+  spacing: 12px; }
 
 .menu-search-entry-icon {
   icon-size: 1.091em; }
