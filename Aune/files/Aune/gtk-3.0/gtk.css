@@ -13,7 +13,7 @@
   outline-offset: -3px;
   outline-width: 1px;
   -gtk-outline-radius: 2px; }
-/* Tekstin väri mustaksi Kuva 1 orginaali rgba(0, 0, 0, 0.87); */
+/* Tekstin väri mustaksi Kuva 1 orginaali rgba(0, 0, 0, 0.87); rgba(248, 248, 249, 0.999) */
 .background {
   color: #000001;
   background-color: rgba(248, 248, 249, 0.999); }
@@ -1465,12 +1465,13 @@ treeview.view {
     color: #1f9ede;
     box-shadow: inset 1px 1px 0 1px #1f9ede, inset -1px 0 0 1px #1f9ede, inset 1px 1px #FFFFFF, inset -1px 0 #FFFFFF; }
 
-/* Nemo tiedosto muokaa palkkitausta #184050; alkuperäinen #ebebed;   */
+/* Nemo tiedosto muokaa palkkitausta #184050 fix rgba(22, 63, 85, 0.999) alkuperäinen #ebebed;   */
 menubar,
 .menubar {
   -GtkWidget-window-dragging: true;
-  padding: 0px;
-  background-color: #184050;
+padding: 0px 6px;
+border: 4px solid transparent;
+  background-color: rgba(22, 63, 85, 0.999);
   color: #ffffff; }
   menubar:backdrop,
   .menubar:backdrop {
@@ -1496,14 +1497,14 @@ menubar,
     .menubar > menuitem > label:disabled {
       color: rgba(0, 0, 0, 0.50); }
 
-/* nemo libreoffice pudotusvalikon taustaväri #F8F7F7; voisi olla myös #ffffff; */ 
+/* nemo libreoffice pudotusvalikon taustaväri #F8F7F7; vaihdoin valkoiseksi #ffffff; kehys ruskea #c8c8ce-#1d0200 */ 
 menu,
 .menu {
   margin: 4px;
   padding: 0;
   border-radius: 0;
-  background-color: #F8F7F7;
-  border: 2px solid #c8c8ce; }
+  background-color: #ffffff;
+  border: 1px solid #1d0200; }
   .csd menu, .csd .menu {
     padding: 4px 0px;
     border-radius: 2px;
@@ -2971,7 +2972,7 @@ headerbar button.titlebutton,
   .titlebar button.titlebutton.minimize:active:backdrop {
     background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#909092), to(transparent)); }
 
-/* Nemo kansion teksti kun klikattu ja nimen maalaaminen #184050; alkuperäinen sininen #1f9ede; */
+/* Nemo kansion teksti kun klikattu ja nimen maalaaminen #184050; fix rgba(22, 63, 100, 0.80) alkuperäinen sininen #1f9ede; */
 .caja-navigation-window .view .cell:selected, .caja-navigation-window iconview .cell:selected, .caja-navigation-window .view .cell:selected:focus, .nemo-window .nemo-inactive-pane .view:selected:focus, .nemo-window .nemo-inactive-pane iconview:selected:focus, .nemo-window .nemo-inactive-pane .view:selected, .nemo-window .nemo-inactive-pane iconview:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .nautilus-window placessidebar.sidebar list row.sidebar-row.has-open-popup:selected, .nautilus-window placessidebar.sidebar list row.sidebar-row:selected, .nautilus-window placessidebar.sidebar list row.sidebar-row:selected:hover, .nautilus-window placessidebar.sidebar list row.sidebar-row:active:hover,
 filechooser placessidebar.sidebar list row.sidebar-row.has-open-popup:selected,
 filechooser placessidebar.sidebar list row.sidebar-row:selected,
@@ -2983,7 +2984,7 @@ textview text:selected,
 textview text:selected:focus, .view text selection:focus, .view text selection,
 textview text selection:focus,
 textview text selection, iconview:selected, iconview:selected:focus, iconview text selection:focus, iconview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected {
-  background-color: #184050; }
+  background-color: rgba(22, 63, 100, 0.9); }
   row:selected label, label:selected, .caja-navigation-window .view .cell:selected, .caja-navigation-window iconview .cell:selected, .caja-navigation-window .view .cell:selected:focus, .nemo-window .nemo-inactive-pane .view:selected:focus, .nemo-window .nemo-inactive-pane iconview:selected:focus, .nemo-window .nemo-inactive-pane .view:selected, .nemo-window .nemo-inactive-pane iconview:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .nautilus-window placessidebar.sidebar list row.sidebar-row.has-open-popup:selected, .nautilus-window placessidebar.sidebar list row.sidebar-row:selected, .nautilus-window placessidebar.sidebar list row.sidebar-row:selected:hover, .nautilus-window placessidebar.sidebar list row.sidebar-row:active:hover,
   filechooser placessidebar.sidebar list row.sidebar-row.has-open-popup:selected,
   filechooser placessidebar.sidebar list row.sidebar-row:selected,
@@ -3233,7 +3234,7 @@ NautilusListView .view, NautilusListView iconview {
   /* This is to keep the separator next to the sidebar dark so we don't see a gap
      between it and the trash bar */ }
   .nemo-window .nemo-window-pane widget.entry {
-    border: 1px solid;
+    border: 1px solid #ffffff;
     border-radius: 3px;
     color: #303030;
     border-color: #1f9ede;
