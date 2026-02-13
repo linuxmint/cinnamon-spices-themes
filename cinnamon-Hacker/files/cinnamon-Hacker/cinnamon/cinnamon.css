@@ -231,16 +231,18 @@ StScrollBar {
   color: #00ff00;
   background-color: rgba(0, 0, 0, 0.7);
   border: 1px solid #003000;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 255, 0, 0.2); }
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 255, 0, 0.2);
+  margin-bottom: 12px;
+  -st-anchor-y-offset: -12px; }
   .menu-top {
-    border-radius: 0 0 6px 6px; }
+    border-radius: 15px 15px 0 0; }
   .menu-bottom {
-    border-radius: 6px 6px 0 0; }
+    border-radius: 0 0 15px 15px; }
   .menu-left {
-    border-radius: 0 6px 6px 0; }
+    border-radius: 15px 0 0 15px; }
   .menu-right {
-    border-radius: 6px 0 0 6px; }
+    border-radius: 0 15px 15px 0; }
 
 .popup-sub-menu {
    background-color: rgba(0, 0, 0, 0.5);
@@ -264,9 +266,10 @@ StScrollBar {
   spacing: 1em;
   border-left-width: 0;
   border-right-width: 0; }
-  .popup-menu-item:active {
-    color: #00ff00;
-    background-color: rgba(0, 0, 0, 0.5); }
+.popup-menu-item:active,
+.popup-menu-item:hover {
+    color: #00FF00;
+    background-color: rgba(0, 50, 0, 0.5); }
   .popup-menu-item:insensitive {
     color: rgba(0, 100, 0, 0.5);
     background: none; }
@@ -430,7 +433,6 @@ StScrollBar {
 
 .panel-bottom {
   box-shadow: 0 -1px #000000; }
-
 .panel-left {
   box-shadow: 1px 0 #000000; }
 
@@ -923,26 +925,37 @@ StScrollBar {
 .menu-favorites-box {
   padding: 10px;
   transition-duration: 300ms;
-  background-color: rgba(0, 5, 0, 0.85);
-  border: 1px solid #00ff00;
+  background-color: rgba(0, 5, 0, 0.5);
+  border: 1px solid #009900;
   border-radius: 4px; }
 
 .menu-favorites-button {
   padding: .9em 1em;
-  border: 1px solid rgba(0, 100, 0, 1);
+  border: 1px solid transparent;
   border-radius: 6px; }
   .menu-favorites-button:hover {
-    color: #000000; 
-    background-color: rgba(0, 50, 0, 0.85);
-    border: 1px solid #00ff00; }
+    color: #00ff00; 
+    background-color: rgba(0, 50, 0, 0.5);
+    border: 1px solid #009900; }
 
 .menu-places-box {
   padding: 10px;
-  background-color: rgba(0, 5, 0, 0.95);
-  border: 1px solid #00ff00; }
+  background-color: rgba(0, 5, 0, 0.5);
+  border: border: 1px solid transparent;
+  border-radius: 6px;
+  transition-duration: 150ms; }
 
 .menu-places-button {
-  padding: 10px; }
+  padding: 10px;
+  background-color: rgba(0, 5, 0, 0.5);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition-duration: 150ms; }
+
+.menu-places-button:hover {
+  background-color: rgba(0, 50, 0, 0.5);
+  color: #00ff00;
+  border: 1px solid #009900; }
 
 .menu-categories-box {
   padding: 10px 30px 10px 30px; }
@@ -952,14 +965,14 @@ StScrollBar {
 
 .menu-application-button {
   padding: 7px;
-  border: 1px solid rgba(0, 0, 0, 0); }
+  border: 1px solid transparent; }
   .menu-application-button:highlighted {
     font-weight: bold; }
   .menu-application-button-selected {
     padding: 7px;
     color: #00ff00;
-    background-color: rgba(0, 50, 0, 0.85);
-    border: 1px solid #00ff00;
+    background-color: rgba(0, 50, 0, 0.5);
+    border: 1px solid #009900;
     border-radius: 6px; }
     .menu-application-button-selected:highlighted {
       font-weight: bold; }
@@ -970,12 +983,12 @@ StScrollBar {
 
 .menu-category-button {
   padding: 7px;
-  border: 1px solid rgba(0, 100, 0, 1); }
+  border: border: 1px solid transparent; }
   .menu-category-button-selected {
     padding: 7px;
     color: #00ff00;
-    background-color: rgba(0, 50, 0, 0.85);
-    border: 1px solid #00ff00;
+    background-color: rgba(0, 50, 0, 0.5);
+    border: 1px solid #009900;
     border-radius: 6px; }
   .menu-category-button-greyed {
     padding: 7px;
@@ -984,8 +997,8 @@ StScrollBar {
   .menu-category-button:hover {
     padding: 7px;
     color: #00ff00;
-    background-color: rgba(0, 50, 0, 0.85);
-    border: 1px solid #006400;
+    background-color: rgba(0, 50, 0, 0.5);
+    border: 1px solid #009900;
     border-radius: 6px; }
   .menu-category-button-label:ltr {
     padding-left: 5px; }
@@ -1018,7 +1031,13 @@ StScrollBar {
   min-height: 16px;
   font-weight: normal;
   caret-color: #00ff00;
-  border-radius: 6px; }
+  color: #00ff00;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 12px; 
+  border: 1px solid transparent;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.8), inset 0 0 3px rgba(0, 255, 0, 0.2);
+}
+
 
 .menu-search-entry-icon {
   icon-size: 1em;
@@ -1034,11 +1053,13 @@ StScrollBar {
   padding: 0; }
 
 .appmenu-main-box {
-  spacing: 10px; }
+  spacing: 10px;
+  border-radius: 0 0 15px 15px;  }
 
 .appmenu-right-box {
   spacing: 5px;
-  padding: 10px 10px; }
+  padding: 10px 10px;
+  border-radius: 0 0 15px 0; }
 
 .appmenu-categories-applications-box {
   spacing: 15px; }
@@ -2146,5 +2167,17 @@ On-Screen Keyboard (<= Cinnamon 6.4)
     .appmenu-navigation-grid-item:hover StLabel,
 .appmenu-navigation-grid-item:selected StLabel {
     color: #000000; }
+.menu,
+.menu-bottom,
+.menu-right,
+.menu-main-box,
+.appmenu-main-box,
+.appmenu-right-box,
+.popup-menu-content {
+    border-radius: 15px !important; 
+    overflow: hidden !important; }
+.menu {
+    margin: 12px !important;
+    -st-anchor-y-offset: -12px !important; }
 
   /* ****** DEPRECATED */
