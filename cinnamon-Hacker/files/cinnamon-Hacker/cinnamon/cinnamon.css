@@ -349,7 +349,7 @@ StScrollBar {
   #panelRight:dnd {
     background-gradient-direction: vertical;
     background-gradient-start: rgba(0, 0, 255, 0.05);
-    background-gradient-end: rgba(0, 0, 255, 0.2); }
+    background-gradient-end: rgba(0, 0, 255, 0.3); }
   #panelRight:ltr {
     padding-left: 4px;
     spacing: 0px; }
@@ -392,7 +392,7 @@ StScrollBar {
 .panelRight:dnd {
   background-gradient-direction: vertical;
   background-gradient-start: rgba(0, 0, 255, 0.05);
-  background-gradient-end: rgba(0, 0, 255, 0.2); }
+  background-gradient-end: rgba(0, 0, 255, 0.3); }
 
 .panelRight:ltr {
   padding-left: 4px;
@@ -429,15 +429,15 @@ StScrollBar {
   padding: 0px; }
 
 .panel-top {
-  box-shadow: 0 1px #000000; }
+  box-shadow: 0 1px rgba(0, 0, 0, 0.8); }
 
 .panel-bottom {
-  box-shadow: 0 -1px #000000; }
+  box-shadow: 0 1px rgba(0, 0, 0, 0.8); }
 .panel-left {
-  box-shadow: 1px 0 #000000; }
+  box-shadow: 1px 0 rgba(0, 0, 0, 0.8); }
 
 .panel-right {
-  box-shadow: -1px 0 #000000; }
+  box-shadow: -1px 0 rgba(0, 0, 0, 0.8); }
 
 .panel-dummy {
   background-color: rgba(252, 65, 56, 0.5); }
@@ -858,7 +858,7 @@ StScrollBar {
 .switcher-list {
   color: #00ff00;
   border: 1px solid #006400;
-  background-color: rgba(10, 15, 10, 0.95);
+  background-color: rgba(0, 15, 0, 0.95);
   border-radius: 6px;
   padding: 20px; }
   .switcher-list > StBoxLayout {
@@ -926,7 +926,7 @@ StScrollBar {
   padding: 10px;
   transition-duration: 300ms;
   background-color: rgba(0, 5, 0, 0.5);
-  border: 1px solid #009900;
+  border: 1px solid transparent;
   border-radius: 4px; }
 
 .menu-favorites-button {
@@ -936,7 +936,7 @@ StScrollBar {
   .menu-favorites-button:hover {
     color: #00ff00; 
     background-color: rgba(0, 50, 0, 0.5);
-    border: 1px solid #009900; }
+    border: 1px solid transparent; }
 
 .menu-places-box {
   padding: 10px;
@@ -955,7 +955,7 @@ StScrollBar {
 .menu-places-button:hover {
   background-color: rgba(0, 50, 0, 0.5);
   color: #00ff00;
-  border: 1px solid #009900; }
+  border: 1px solid transparent; }
 
 .menu-categories-box {
   padding: 10px 30px 10px 30px; }
@@ -972,7 +972,7 @@ StScrollBar {
     padding: 7px;
     color: #00ff00;
     background-color: rgba(0, 50, 0, 0.5);
-    border: 1px solid #009900;
+    border: 1px solid transparent;
     border-radius: 6px; }
     .menu-application-button-selected:highlighted {
       font-weight: bold; }
@@ -988,7 +988,7 @@ StScrollBar {
     padding: 7px;
     color: #00ff00;
     background-color: rgba(0, 50, 0, 0.5);
-    border: 1px solid #009900;
+    border: 1px solid transparent;
     border-radius: 6px; }
   .menu-category-button-greyed {
     padding: 7px;
@@ -998,7 +998,7 @@ StScrollBar {
     padding: 7px;
     color: #00ff00;
     background-color: rgba(0, 50, 0, 0.5);
-    border: 1px solid #009900;
+    border: 1px solid transparent;
     border-radius: 6px; }
   .menu-category-button-label:ltr {
     padding-left: 5px; }
@@ -1044,7 +1044,7 @@ StScrollBar {
   color: #00ff00; }
 
 /* Context menu (at the moment only for favorites) */
-.appmenu-category-button-greyed, .appmenu-category-button-selected, .appmenu-category-button, .appmenu-application-button-selected, .appmenu-application-button, .appmenu-sidebar-button {
+.appmenu-category-button-greyed, .appmenu-category-button-selected, .appmenu-category-button, .appmenu-application-button-selected, .appmenu-application-button, .appmenu--button {
   padding: 7px;
   spacing: 5px;
   border-radius: 6px; }
@@ -1072,44 +1072,44 @@ StScrollBar {
 .appmenu-search-box {
   spacing: 10px; }
 
-.appmenu-sidebar {
+.appmenu- {
   padding: 15px 0px;
   background-color: rgba(0, 20, 0, 0.9);
   border-radius: 6px 0 0 0;
   border-right-width: 1px;
   border-color: #006400;
   spacing: 5px; }
-  .menu-top .appmenu-sidebar {
+  .menu-top .appmenu- {
     border-radius: 0 0 0 6px; }
-  .menu-bottom .appmenu-sidebar {
+  .menu-bottom .appmenu- {
     border-radius: 6px 0 0 0; }
-  .menu-left .appmenu-sidebar {
+  .menu-left .appmenu- {
     border-radius: 0; }
-  .menu-right .appmenu-sidebar {
+  .menu-right .appmenu- {
     border-radius: 0; }
-  .appmenu-sidebar .appmenu-system-button {
+  .appmenu- .appmenu-system-button {
     color: black;
     background-color: #009900; }
-    .appmenu-sidebar .appmenu-system-button-lock:hover {
+    .appmenu- .appmenu-system-button-lock:hover {
       color: #00ff00;
       background-color: #005000; }
-    .appmenu-sidebar .appmenu-system-button-logout:hover {
+    .appmenu- .appmenu-system-button-logout:hover {
       color: #00ff00;
       background-color: #005000; }
-    .appmenu-sidebar .appmenu-system-button-shutdown {
+    .appmenu- .appmenu-system-button-shutdown {
       color: black;
       background-color: #c01c28; }
-    .appmenu-sidebar .appmenu-system-button-shutdown:hover {
+    .appmenu- .appmenu-system-button-shutdown:hover {
       color: #00ff00;
       background-color: #8c121c; }
 
 .appmenu-system-box {
   spacing: 10px; }
 
-.appmenu-sidebar-button {
+.appmenu--button {
   padding: 4px 7px;
   margin: 0 10px; }
-  .appmenu-sidebar-button:hover {
+  .appmenu--button:hover {
     background-color: rgba(0, 100, 0, 0.3);
     border-color: #006400; }
 
@@ -2157,7 +2157,7 @@ On-Screen Keyboard (<= Cinnamon 6.4)
   -arrow-rise: 10px;
   -boxpointer-gap: 5px; }
 
-.appmenu-sidebar,
+.appmenu-,
 .appmenu-navigation-grid {
     background-color: rgba(0, 0, 0, 0) !important; }
 .appmenu-navigation-grid-item:hover,
