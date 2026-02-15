@@ -922,6 +922,19 @@ StScrollBar {
   .magnifier-zoom-region .full-screen {
     border-width: 0px; }
 
+.menu,
+.menu-bottom,
+.menu-right,
+.menu-main-box,
+.appmenu-main-box,
+.appmenu-right-box,
+.popup-menu-content {
+    border-radius: 15px !important; 
+    overflow: hidden !important; }
+.menu {
+    margin: 12px !important;
+    -st-anchor-y-offset: -12px !important; }
+
 .menu-favorites-box {
   padding: 10px;
   transition-duration: 300ms;
@@ -1032,12 +1045,10 @@ StScrollBar {
   font-weight: normal;
   caret-color: #00ff00;
   color: #00ff00;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5) ;
   border-radius: 12px; 
   border: 1px solid transparent;
-  box-shadow: 0 0 5px rgba(0, 255, 0, 0.8), inset 0 0 3px rgba(0, 255, 0, 0.2);
-}
-
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.8), inset 0 0 3px rgba(0, 255, 0, 0.2); }
 
 .menu-search-entry-icon {
   icon-size: 1em;
@@ -1175,6 +1186,18 @@ StScrollBar {
 
 .appmenu-search-entry-icon {
   icon-size: 1em; }
+
+.appmenu-sidebar,
+.appmenu-navigation-grid {
+    padding-top: 15px;
+    background-color: rgba(0, 0, 0, 0.5) !important; }
+.appmenu-navigation-grid-item:hover,
+.appmenu-navigation-grid-item:selected {
+    background-color: #00ff00;
+    border-radius: 4px; }
+    .appmenu-navigation-grid-item:hover StLabel,
+.appmenu-navigation-grid-item:selected StLabel {
+    color: #000000; }
 
 .window-list-box {
   spacing: 6px;
@@ -2166,28 +2189,5 @@ On-Screen Keyboard (<= Cinnamon 6.4)
   -arrow-base: 20px;
   -arrow-rise: 10px;
   -boxpointer-gap: 5px; }
-
-.appmenu-sidebar,
-.appmenu-navigation-grid {
-    background-color: rgba(0, 0, 0, 0) !important; }
-.appmenu-navigation-grid-item:hover,
-.appmenu-navigation-grid-item:selected {
-    background-color: #00ff00;
-    border-radius: 4px; }
-    .appmenu-navigation-grid-item:hover StLabel,
-.appmenu-navigation-grid-item:selected StLabel {
-    color: #000000; }
-.menu,
-.menu-bottom,
-.menu-right,
-.menu-main-box,
-.appmenu-main-box,
-.appmenu-right-box,
-.popup-menu-content {
-    border-radius: 15px !important; 
-    overflow: hidden !important; }
-.menu {
-    margin: 12px !important;
-    -st-anchor-y-offset: -12px !important; }
 
   /* ****** DEPRECATED */
