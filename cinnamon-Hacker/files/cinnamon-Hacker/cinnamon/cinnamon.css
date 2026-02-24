@@ -941,13 +941,20 @@ StScrollBar {
   border-radius: 4px; }
 
 .menu-favorites-button {
-  padding: .9em 1em;
-  border: 1px solid transparent;
-  border-radius: 6px; }
-  .menu-favorites-button:hover {
-    color: #00ff00; 
-    background-color: rgba(0, 50, 0, 0.5);
-    border: 1px solid transparent; }
+  font-weight: normal !important;
+  icon-size: 1.15em; 
+  padding: 7px;
+  border: 1px solid rgba(0, 255, 0, 0.01) !important;
+  spacing: 8px !important;
+  border-radius: 4px;
+  transition-duration: 150ms; }
+
+.menu-favorites-button:hover {
+  font-weight: normal !important; 
+  border: 1px solid #00ff00 !important;
+  spacing: 8px !important; 
+  background-color: rgba(0, 48, 0, 0.6) !important;
+  color: #00ff00 !important; }
 
 .menu-places-box {
   padding: 10px;
@@ -993,28 +1000,32 @@ StScrollBar {
     padding-right: 5px; }
 
 .menu-category-button {
+  font-weight: normal !important;
+  icon-size: 1.15em;  
   padding: 7px;
-  border: border: 1px solid transparent; }
-  .menu-category-button-selected {
-    padding: 7px;
-    color: #00ff00;
-    background-color: rgba(0, 50, 0, 0.5);
-    border: 1px solid transparent;
-    border-radius: 6px; }
-  .menu-category-button-greyed {
-    padding: 7px;
-    color: rgba(0, 255, 0, 0.4);
-    border: 1px solid rgba(0, 0, 0, 0); }
-  .menu-category-button:hover {
-    padding: 7px;
-    color: #00ff00;
-    background-color: rgba(0, 50, 0, 0.5);
-    border: 1px solid transparent;
-    border-radius: 6px; }
-  .menu-category-button-label:ltr {
-    padding-left: 5px; }
-  .menu-category-button-label:rtl {
-    padding-right: 5px; }
+  border: 1px solid rgba(0, 255, 0, 0.01) !important;
+  spacing: 8px !important;
+  border-radius: 4px;
+  transition-duration: 150ms; }
+
+.menu-category-button:hover,
+.menu-category-button:selected,
+.menu-category-button-selected {
+  font-weight: normal !important; 
+  padding: 7px;
+  color: #00ff00 !important;
+  spacing: 8px !important; 
+  background-color: rgba(0, 48, 0, 0.6) !important;
+  border: 1px solid #00ff00 !important;
+  border-radius: 4px; }
+
+.menu-category-button-greyed {
+  padding: 7px;
+  color: rgba(0, 255, 0, 0.4);
+  border: 1px solid transparent; }
+
+.menu-category-button-label:ltr { padding-left: 5px; }
+.menu-category-button-label:rtl { padding-right: 5px; }
 
 .menu-selected-app-box {
   padding-right: 30px;
