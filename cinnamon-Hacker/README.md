@@ -5,7 +5,7 @@
 - SVG assets: Based on [Tyr-jord's](https://github.com) work.
 
 ## Description
-A dark theme for the Linux Mint Cinnamon desktop environment, inspired by a hacker aesthetic. It uses a dark background with vibrant green highlights for better visibility in low-light environments.
+A clean dark theme for Cinnamon, designed with a focus on translucency and visual consistency.
 
 ## Installation
 1. Download the theme folder.
