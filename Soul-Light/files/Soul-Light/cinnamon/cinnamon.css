@@ -324,7 +324,8 @@ stage {
 .applet-cornerbar {
   width: 10px;
   background-color: rgba(240, 240, 240, 0.9);
-  border: 1px solid #c8c8c8; }
+  border: 0.7px solid #c8c8c8;
+  margin: 1.25px 1.25px; }
   .applet-cornerbar.vertical {
     height: 10px; }
   .applet-cornerbar-box {
@@ -892,9 +893,9 @@ StScrollBar StButton#hhandle {
   background-color: rgba(0, 0, 0, 0.45); }
 
 .expo-workspace-thumbnail-frame {
-  border: 1px solid rgba(200, 200, 200, 0.4); }
+  border: 1px solid rgba(107, 107, 107, 0.4); }
   .expo-workspace-thumbnail-frame#active {
-    border-color: rgba(200, 200, 200, 0.7);
+    border-color: #6b6b6b;
     border-width: 2px; }
 
 .expo-workspaces-name-entry {
@@ -932,6 +933,9 @@ StScrollBar StButton#hhandle {
 
 #overview {
   spacing: 10px; }
+
+.overview-empty-placeholder {
+  text-shadow: 0 1px 0.7px rgba(107, 107, 107, 0.7); }
 
 .candidate-popup-boxpointer {
   -arrow-border-radius: 10px;
@@ -1291,16 +1295,16 @@ StScrollBar StButton#hhandle {
     padding-right: 0; }
 
 .panel-top {
-  box-shadow: inset 0 -1px #c8c8c8; }
+  box-shadow: inset 0 -0.7px #c8c8c8; }
 
 .panel-bottom {
-  box-shadow: inset 0 1px #c8c8c8; }
+  box-shadow: inset 0 0.7px #c8c8c8; }
 
 .panel-left {
-  box-shadow: inset -1px 0 #c8c8c8; }
+  box-shadow: inset -0.7px 0 #c8c8c8; }
 
 .panel-right {
-  box-shadow: inset 1px 0 #c8c8c8; }
+  box-shadow: inset 0.7px 0 #c8c8c8; }
 
 .panel-dummy {
   background-color: rgba(192, 57, 43, 0.5); }
@@ -1585,13 +1589,20 @@ StScrollBar StButton#hhandle {
 .grouped-window-list-notifications-badge-label {
   font-size: 12px; }
 
-.grouped-window-list-scrollbox.vfade {
-  -st-vfade-offset: 68px !important;
-  -st-hfade-offset: 0 !important; }
+.grouped-window-list-scrollbox-scrollview.vfade {
+  -st-vfade-offset: 68px;
+  -st-hfade-offset: 0; }
 
-.grouped-window-list-scrollbox.hfade {
-  -st-hfade-offset: 68px !important;
-  -st-vfade-offset: 0 !important; }
+.grouped-window-list-scrollbox-scrollview.hfade {
+  -st-hfade-offset: 68px;
+  -st-vfade-offset: 0; }
+
+.grouped-window-list-scrollbox-button-start, .grouped-window-list-scrollbox-button-end, .grouped-window-list-scrollbox-button-up, .grouped-window-list-scrollbox-button-down {
+  margin: 0;
+  padding: 0; }
+
+.grouped-window-list-scrollbox-button-icon {
+  icon-size: 1.091em; }
 
 .window-list-box {
   spacing: 6px;
