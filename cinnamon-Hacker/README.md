@@ -5,7 +5,13 @@
 - SVG assets: Based on [Tyr-jord's](https://github.com) work.
 
 ## Description
-A dark theme for the Linux Mint Cinnamon desktop environment, inspired by a hacker aesthetic. It uses a dark background with vibrant green highlights for better visibility in low-light environments.
+A clean dark theme for Cinnamon, designed with a focus on translucency and visual consistency.
+
+## Recommended Icons
+To get the full look as shown in the screenshots, I highly recommend using the **Dedicated to Hacker** icon theme.
+- **Icon Theme:** [Download Dedicated to Hacker Icons](https://www.pling.com/s/Gnome/p/2332618)
+
+> **Note:** I am also planning to develop a matching GTK theme for apps in the future. Stay tuned!
 
 ## Installation
 1. Download the theme folder.
