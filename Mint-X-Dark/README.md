@@ -4,6 +4,7 @@ This is a "no frills" Mint-X theme adjusted for Dark Mode.
 
 No frills meaning that it resembles the default Mint-X theme as close as possible but without any extras added, just a plain dark mode Mint-X theme!
 
+Now including all the accent colors!
 
 ## Installation
 
@@ -12,7 +13,7 @@ Download the zip file and extract the `Mint-X-Dark` folder into your `~/.themes`
 
 ## Compatibility
 
-Tested and developed in Cinnamon `6.4.6`.
+Tested and developed in Cinnamon `6.6.7`.
 
 ## Font
 
