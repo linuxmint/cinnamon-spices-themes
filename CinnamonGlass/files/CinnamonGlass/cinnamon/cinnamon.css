@@ -22,7 +22,7 @@ StScrollBar {
   padding: 0px; }
 
 StScrollBar StBin#trough {
-  background-color: rgba(0,0,0,0.2); }
+  border-image: url('assets/slider-vert.png') 4; }
 
 #Tooltip {
   border: 1px solid #767676;
@@ -40,7 +40,7 @@ StScrollBar StBin#trough {
 .hotplug-notification-item, .hotplug-resident-eject-button,
 .modal-dialog-button {
   color: white;
-  border-image: url('buttons/glass-button.png') 5;
+  border-image: url('assets/item-normal.png') 5;
   font-size: 8.5pt;
   font-weight: normal;
   text-align: center; }
@@ -48,19 +48,7 @@ StScrollBar StBin#trough {
 .notification-button:hover,
 .notification-icon-button:hover, .hotplug-notification-item:hover,
 .hotplug-resident-eject-button:hover, .modal-dialog-button:hover {
-  border-image: url('buttons/button-hover.png') 5;
-  color: black; }
-
-.notification-button:focus,
-.notification-icon-button:focus, .hotplug-notification-item:focus,
-.modal-dialog-button:focus {
-  border-image: url('buttons/button-focused.png') 5;
-  color: black; }
-
-.notification-button:active, .notification-icon-button:active,
-.hotplug-notification-item:active, .hotplug-resident-eject-button:active,
-.modal-dialog-button:active, .modal-dialog-button:pressed {
-  border-image: url('buttons/button-pressed.png') 5;
+  border-image: url('assets/item-hover.png') 5;
   color: black; }
 
 .menu,
@@ -68,7 +56,7 @@ StScrollBar StBin#trough {
   -arrow-border-radius: 16px;
   -boxpointer-gap: 5px;
   -arrow-base: 40px;
-  border-image: url('menu-assets/background.png') 8;
+  border-image: url('assets/background.png') 8;
 }
 
 .popup-menu,
@@ -136,7 +124,7 @@ StScrollBar StBin#trough {
   spacing: 1em;
   border: 2px solid transparent; }
 .popup-menu-item:active {
-  border-image: url('menu-assets/hover.png') 5; }
+  border-image: url('assets/item-normal.png') 5; }
 .popup-menu-item:insensitive {
   color: #9f9f9f; }
 .popup-combobox-item {
@@ -149,7 +137,7 @@ StScrollBar StBin#trough {
   height: 1px; }
 .popup-alternating-menu-item:alternate {
   font-weight: bold; }
-.popup-slider-menu-item {
+.popup-slider-menu-item #vhandle {
   height: 1em;
   min-width: 15em;
   -slider-height: 0.3em;
@@ -174,18 +162,28 @@ StScrollBar StBin#trough {
   height: 18px; }
 
 .toggle-switch-us, .toggle-switch-intl {
-  background-image: url("menu-assets/switch-off.svg"); }
+  background-image: url("assets/switch-off.svg"); }
 
 .toggle-switch-us:checked, .toggle-switch-intl:checked {
-  background-image: url("menu-assets/switch-on.svg"); }
+  background-image: url("assets/switch-on.svg"); }
 
 .nm-menu-item-icons {
   spacing: .5emv; }
 
+#menu-search-entry, #appmenu-search-entry {
+  border-image: url("assets/item-normal.png") 4;
+  background-color: rgba(0,0,0,0.6); 
+  color: white; }
+
+#menu-search-entry:hover, #appmenu-search-entry:hover {
+  border-image: url("assets/item-hover.png") 4;
+  background-color: rgba(0,0,0,0.6); 
+  color: black; }
+
 #panel {
   background-color: rgba(0,0,0,0);
   box-shadow: none;
-  border-image: url('panel.png') 80 0 0 0;
+  border-image: url('assets/panel.png') 80 0 0 0;
   outline: 1px rgba(200,200,200,0.5);
   color: #fff;
   font-size: 9pt;
@@ -297,7 +295,7 @@ StScrollBar StBin#trough {
   spacing: 12px; }
 
 .window-caption {
-  border-image: url('buttons/glass-button.png') 4;
+  border-image: url('assets/item-normal.png') 4;
   border-radius: 0px;
   color: white;
   spacing: 25px;
@@ -332,17 +330,17 @@ StScrollBar StBin#trough {
   spacing: 14px; }
 
 .workspace-add-button {
-  background-image: url("add-workspace.png");
+  background-image: url("assets/add-workspace.png");
   height: 200px;
   width: 35px;
   transition-duration: 300; }
 
 .workspace-add-button:hover {
-  background-image: url("add-workspace-hover.png");
+  background-image: url("assets/add-workspace-hover.png");
   transition-duration: 300; }
 
 .workspace-close-button {
-  background-image: url("close.png");
+  background-image: url("assets/close.png");
   height: 34px;
   width: 34px;
   -cinnamon-close-overlap: 20px; }
@@ -365,7 +363,7 @@ StScrollBar StBin#trough {
   -st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5); }
 
 .window-close-area {
-  background-image: url("trash-icon.png");
+  background-image: url("assets/trash-icon.png");
   background-color: rgba(0, 0, 0, 0.8);
   border: 2px solid rgba(255,255,255,0.33);
   border-bottom: 0px;
@@ -492,12 +490,12 @@ StScrollBar StBin#trough {
 .calendar-change-month-back {
   width: 18px;
   height: 12px;
-  background-image: url("calendar-arrow-left.svg");
+  background-image: url("assets/calendar-arrow-left.svg");
   border-radius: 4px;
   border: 1px solid rgba(0,0,0,0); }
 
 .calendar-change-month-back:rtl {
-  background-image: url("calendar-arrow-right.svg"); }
+  background-image: url("assets/calendar-arrow-right.svg"); }
 
 .calendar-change-month-back:hover {
   background-color: rgba(255,255,255,0.5); }
@@ -507,12 +505,12 @@ StScrollBar StBin#trough {
 .calendar-change-month-forward {
   width: 18px;
   height: 12px;
-  background-image: url("calendar-arrow-right.svg");
+  background-image: url("assets/calendar-arrow-right.svg");
   border-radius: 4px;
   border: 1px solid rgba(0,0,0,0); }
 
 .calendar-change-month-forward:rtl {
-  background-image: url("calendar-arrow-left.svg"); }
+  background-image: url("assets/calendar-arrow-left.svg"); }
 
 .calendar-change-month-forward:hover {
   background-color: rgba(255,255,255,0.5); }
@@ -532,7 +530,7 @@ StScrollBar StBin#trough {
   height: 2.4em; }
 
 .calendar-day-base:hover {
-  border-image: url('menu-assets/hover.png') 5;
+  border-image: url('assets/item-normal.png') 5;
   color: white; }
 
 .calendar-day-heading {
@@ -554,7 +552,7 @@ StScrollBar StBin#trough {
 .calendar-today {
   color: white;
   font-weight: bold;
-  background: url('buttons/glass-button-hover.png') 4;
+  background: url('assets/item-hover.png') 4;
   border: 1px solid rgba(0,0,0,0.4);
   border-radius: 3px; }
 
@@ -569,7 +567,7 @@ StScrollBar StBin#trough {
   border: 1px solid #767676;
   border-radius: 3px;
   padding: 6px 12px;
-  background: url('buttons/glass-button-hover.png') 4;
+  background: url('assets/item-hover.png') 4;
   background-gradient-start: rgba(0,0,0,0.5);
   background-gradient-end: rgba(0,0,0,0.5);
   background-gradient-direction: vertical;
@@ -680,7 +678,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
   border-radius: 2px;
   background-color: #fff;
   /*    border: 2px solid #013b6b; */
-  border-image: url('menu-assets/background.png') 8;
+  border-image: url('assets/background.png') 8;
   color: white;
   padding-right: 42px;
   padding-left: 42px;
@@ -702,7 +700,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .modal-dialog-button:active,
 .modal-dialog-button:checked {
   color: white;
-  border-image: url('buttons/button-focused-pressed.png') 5; }
+  border-image: url('assets/button-focused-pressed.png') 5; }
 
 .modal-dialog-button:disabled {
   color: rgb(60, 60, 60); }
@@ -745,7 +743,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
   padding: 20px;
   padding-top: 15px;
   color: white;
-  border-image: url('tab.png') 16; }
+  border-image: url('assets/item-normal.png') 16; }
 
 .lightbox {
   background-color: rgba(0, 0, 0, 0.0); }
@@ -921,26 +919,26 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .window-list-item-box {
   font-weight: normal;
   font-size: 9pt;
-  border-image: url("panel-assets/item-normal.png") 4; }
+  border-image: url("assets/item-normal.png") 4; }
 
 .window-list-item-box:hover  {
-  border-image:url("panel-assets/item-hover.png") 4; }
+  border-image:url("assets/item-hover.png") 4; }
 
 .window-list-item-box:active,
 .window-list-item-box:checked,
 .window-list-item-box:focus  {
-  border-image: url("panel-assets/item-active.png") 4; }
+  border-image: url("assets/item-active.png") 4; }
 
 .window-list-item-box:checked:hover,
 .window-list-item-box:focus:hover,
 .window-list-item-box:active:hover  {
-  border-image: url("panel-assets/item-active-hover.png") 4; }
+  border-image: url("assets/item-active-hover.png") 4; }
 
 .window-list-item-demands-attention {
-  border-image: url("panel-assets/item-attention.png") 4; }
+  border-image: url("assets/item-attention.png") 4; }
 
 .window-list-item-demands-attention:hover {
-  border-image: url("panel-assets/item-attention-hover.png") 4; }
+  border-image: url("assets/item-attention-hover.png") 4; }
 
 .grouped-window-list-item-box {
   color: #ffffff;
@@ -949,28 +947,28 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
   transition-duration: 100;}
 
 .grouped-window-list-item-box:hover {
-  border-image: url("panel-assets/tray-hover.png") 4; }
+  border-image: url("assets/tray-hover.png") 4; }
 
 .grouped-window-list-item-box:active,
 .grouped-window-list-item-box:checked {
-  border-image: url("panel-assets/item-normal.png") 4; }
+  border-image: url("assets/item-normal.png") 4; }
 
 .grouped-window-list-item-box:active:hover,
 .grouped-window-list-item-box:checked:hover {
-  border-image: url("panel-assets/item-hover.png") 4; }
+  border-image: url("assets/item-hover.png") 4; }
 
 .grouped-window-list-item-box:focus {
-  border-image: url("panel-assets/item-active.png") 4; }
+  border-image: url("assets/item-active.png") 4; }
 
 .grouped-window-list-item-box:focus:hover {
-  border-image: url("panel-assets/item-active-hover.png") 4; }
+  border-image: url("assets/item-active-hover.png") 4; }
 
 .grouped-window-list-item-demands-attention {
   font-weight: normal;
-  border-image: url("panel-assets/item-attention.png") 4; }
+  border-image: url("assets/item-attention.png") 4; }
 
 .grouped-window-list-item-attention:hover {
-  border-image: url("panel-assets/item-attention-hover.png") 4; }
+  border-image: url("assets/item-attention-hover.png") 4; }
 
 .window-list-item-box .progress,
 .grouped-window-list-item-box .progress {
@@ -980,7 +978,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
   spacing: 6px;
   color: #000000;
   border: none;
-  border-image: url('menu-assets/background.png') 8;
+  border-image: url('assets/background.png') 8;
   border-radius: 0;
   padding: 6px 12px 12px 12px;
   font-size: 1em; }
@@ -995,7 +993,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 
 .grouped-window-list-thumbnail-menu .item-box {
   padding: 10px;
-  border-image: url('panel-assets/item-normal.png') 5;
+  border-image: url('assets/item-normal.png') 5;
   border-radius: 0;
   spacing: 4px;
   color: #000000; }
@@ -1093,7 +1091,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
   border: 1px solid transparent; }
 
 .panel-launcher:hover {
-  border-image:url("panel-assets/tray-hover.png") 4; }
+  border-image:url("assets/tray-hover.png") 4; }
 
 .panel-launcher-add-dialog-content-box {
   padding: 6px;
@@ -1138,10 +1136,10 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
   transition-duration: 0; }
 
 #overview-corner {
-  background-image: url("overview.png"); }
+  background-image: url("assets/overview.png"); }
 
 #overview-corner:hover {
-  background-image:  url("overview-hover.png"); }
+  background-image:  url("assets/overview-hover.png"); }
 
 .snap-osd {
   font-size: 18pt;
@@ -1157,7 +1155,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .info-osd {
   font-size: 18pt;
   font-weight: normal;
-  border-image: url('tab.png') 16;
+  border-image: url('assets/item-normal.png') 16;
   color: white;
   padding: 20px;
   text-align: center; }
@@ -1222,7 +1220,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
     border-radius: 12px; }
 
 .switcher-list .item-box {
-    border-image: url("buttons/glass-button.png") 4 4 4 4 fill !important;
+    border-image: url("assets/item-normal.png") 4 4 4 4 fill !important;
     background-color: transparent !important;
     background-image: none !important;
     
@@ -1231,7 +1229,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
     color: white !important; }
 
 .switcher-list .item-box:selected {
-    border-image: url("buttons/glass-button-hover.png") 4 4 4 4 fill !important;
+    border-image: url("assets/item-hover.png") 4 4 4 4 fill !important;
     background-color: transparent !important; }
 
 .applet-separator {
@@ -1248,18 +1246,18 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .applet-box:hover {
 
   background-color: rgba(25,25,25,0);
-  border-image: url('panel-assets/tray-hover.png') 16;
+  border-image: url('assets/tray-hover.png') 16;
   color:  white;
   transition-duration: 100; }
 .applet-box:active {
   background-color: rgba(25,25,25,0);
-  border-image: url('panel-assets/tray-pressed.png') 16;
+  border-image: url('assets/tray-pressed.png') 16;
   color:  white;
   transition-duration: 100; }
 
 .applet-box:checked,
 .applet-box:hover {
-  border-image: url('panel-assets/tray-pressed.png') 6; }
+  border-image: url('assets/tray-pressed.png') 6; }
 
 .applet-label:not(:first-child) {
   font-weight: normal; }
@@ -1287,7 +1285,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
   padding-bottom: 7px;
   color: rgba(255,255,255,0.8);
   border: none;
-  border-image: url('buttons/glass-button.png') 4;
+  border-image: url('assets/item-normal.png') 4;
   selected-color: white;
   caret-color: white;
   caret-size: 1px;
@@ -1318,10 +1316,10 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .check-box StBin {
   width: 24px;
   height: 18px;
-  background-image: url("menu-assets/switch-off.svg"); }
+  background-image: url("assets/switch-off.svg"); }
 
 .check-box:checked StBin {
-  background-image: url("menu-assets/switch-on.svg"); }
+  background-image: url("assets/switch-on.svg"); }
 
 .check-box StLabel {
   font-weight: normal; }
@@ -1334,17 +1332,17 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .radiobutton StBin {
   width: 22px;
   height: 22px;
-  background-image: url("radio-unselected.png");
+  background-image: url("assets/checkbox.png");
   border-radius: 15px; }
 
 .radiobutton:focus StBin {
-  background-image: url("radio-unselected.png"); }
+  background-image: url("assets/checkbox.png"); }
 
 .radiobutton:checked StBin {
-  background-image: url("radio-selected.png"); }
+  background-image: url("assets/checkbox-focus.png"); }
 
 .radiobutton:focus:checked StBin {
-  background-image: url("radio-selected.png"); }
+  background-image: url("assets/checkbox-focus.png"); }
 
 .radiobutton StLabel {
   padding-top: 4px;
@@ -1394,19 +1392,15 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 /* Classic Menu */
 
 .menu-favorites-box {
-  margin: auto;
-  min-height: 500px;
-  background: transparent;
-  border: 1px solid rgba(200,200,200,0.33);
-  border-radius: 3px;
-  color: white; }
+  min-height:500px;
+  border-image: url('assets/background.png') 5; }
 
 .menu-favorites-button {
   padding: 10px;
   border-radius: 0px; }
 
 .menu-favorites-button:hover {
-  border-image: url('menu-assets/hover.png') 5; }
+  border-image: url('assets/item-normal.png') 5; }
 
 .menu-places-box {
   margin: auto;
@@ -1434,15 +1428,15 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
   background: none;
   border-width: 0px;
   box-shadow: none;
-  border-image: url('menu-assets/trough.png') 3; }
+  border-image: url('assets/slider-vert.png') 3; }
 
 .menu-applications-box StButton#vhandle {
-  border-image: url('menu-assets/slider-vert.png') 3;
-  background: url('menu-assets/handle-vert.png') no-repeat center center; }
+  border-image: url('assets/slider-vert.png') 3;
+  background: url('assets/handle-vert.png') no-repeat center center; }
 
 .menu-applications-box StButton#vhandle:hover {
-  border-image: url('menu-assets/slider-vert-hover.png') 3;
-  background: url('menu-assets/handle-vert.png') no-repeat center center; }
+  border-image: url('assets/item-hover.png') 3;
+  background: url('assets/handle-vert.png') no-repeat center center; }
 
 .menu-application-button {
   padding: 7px;
@@ -1452,7 +1446,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .menu-application-button-selected {
   padding: 7px;
   color: white;
-  border-image: url('menu-assets/hover.png') 5; }
+  border-image: url('assets/item-normal.png') 5; }
 
 .menu-application-button-label:ltr {
   padding-left: 5px; }
@@ -1470,7 +1464,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .menu-category-button-selected {
   padding: 7px;
   color: white;
-  border-image: url('menu-assets/hover.png') 5; }
+  border-image: url('assets/item-normal.png') 5; }
 
 .menu-category-button-label:ltr {
   padding-left: 5px }
@@ -1491,85 +1485,50 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .menu-selected-app-description {
   max-width: 150px; }
 
-#menu-search-entry, #menu-search-entry:hover, #menu-search-entry:focus {
-  border: 1px solid rgba(0,0,0,0.33);
-  color: grey; }
-
-.menu-search-box {
-  padding-left: 20px;
-  padding-bottom: 10px; }
-
-.menu-search-entry-icon {
-  icon-size: 1em;
-  color: grey; }
-
 /* Modern menu (Cinnamon 6.6 and later) */
 
 .menu {
     color: white }
 
 .menu StButton#vhandle {
-  border-image: url('menu-assets/slider-vert.png') 3;
-  background: url('menu-assets/handle-vert.png') no-repeat center center; }
+  border-image: url('assets/slider-vert.png') 3;
+  background: url('assets/handle-vert.png') no-repeat center center; }
 
 .menu StButton#vhandle:hover {
-  border-image: url('menu-assets/slider-vert-hover.png') 3;
-  background: url('menu-assets/handle-vert.png') no-repeat center center; }
+  border-image: url('assets/item-hover.png') 3;
+  background: url('assets/handle-vert.png') no-repeat center center; }
 
 .appmenu-sidebar {
-  border-image: url('menu-assets/menu-bg.png') 8;
+  border-image: url('assets/menu-bg.png') 8;
   color: white;
   padding-top: 20px;
   padding-bottom: 20px; }
 
 .user-icon {
   border: 3px solid rgba(255,255,255,0.5);
-  border-radius: 10px; }
+  border-radius: 5px; }
 
 .appmenu-sidebar-button {
   padding: 3px 6px 3px 6px;
   margin: 1px 12px 1px 12px; }
 
 .appmenu-sidebar-button:hover {
-  border-image: url('buttons/glass-button-hover.png') 4;
-  color: black; }
+  border-image: url('assets/item-normal.png') 4; }
 
 .appmenu-category-button-selected, .appmenu-application-button-selected {
-  padding: 6px 8px 6px 8px;
-  border-image: url('buttons/glass-button-hover.png') 4;
-  color: black; }
+  padding: 6px;
+  border-image: url('assets/item-normal.png') 4; }
 
-.appmenu-system-button-lock {
-  padding: 8.4px;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 10px;
-  background: url('buttons/glass-glass-button.png') 4;
-  background-color: transparent; }
-
-.appmenu-system-button-logout {
-  padding: 8.4px;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 10px;
-  background: url('buttons/glass-glass-button.png') 4;
-  background-color: transparent; }
-
-.appmenu-system-button-shutdown {
-  padding: 8.4px;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 10px;
-  background: url('buttons/glass-glass-button.png') 4;
-  background-color: #C02020; }
-
-.appmenu-system-button:hover {
-  background: url('buttons/glass-button-hover.png') 4; }
-
-.appmenu-system-button-shutdown:hover {
-  background: url('buttons/glass-glass-button.png') 4;
-  background-color: red; }
+.appmenu-application-button-description {
+  font-size: 11px;
+  color: #EEEEEE }
 
 /* CinnVIIStarkMenu */
 
-.right-buttons-box {
+.starkmenu-favorites-box {
+  border-image: none;
+  border: 1px solid rgba(200,200,200,0.33); }
+.right-assets-box {
   color: white; }
 .starkmenu-background {
   color: #fff;
@@ -1579,54 +1538,60 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
   -arrow-rise: -1px;
   background-color: transparent;
   border: inset 1px solid rgba(0,0,0,0.5);
-  border-image: url('menu-assets/background.png') 8;
+  border-image: url('assets/background.png') 8;
   box-shadow: 16px -5px 20px 10px rgba(0,0,0,0.4);
   border-radius: 6px 6px 0px 0px;
   padding-bottom: 0px; }
 .hover-user-icon {
   border: 3px solid rgba(255,255,255,0.5);
-  border-radius: 3px; }
+  border-radius: 5px; }
 .starkmenu-quit-horizontal-button {
   color: white !important;
   padding-left: 4px;
   padding-right: 4px;
-  border-image: url('buttons/shutdown.png') 8; }
+  border-image: url('assets/shutdown.png') 8; }
 .starkmenu-quit-horizontal-button-selected {
   padding-bottom: 4px;
   padding-left: 4px;
   padding-right: 4px;
-  border-image: url('buttons/shutdown-hover.png') 8; }
+  border-image: url('assets/shutdown-hover.png') 8; }
 .starkmenu-logout-horizontal-button {
   padding-bottom: 4px;
   padding-left: 4px;
   padding-right: 4px;
-  border-image: url('buttons/logout.png') 8; }
+  border-image: url('assets/logout.png') 8; }
 .starkmenu-logout-horizontal-button-selected {
   padding-bottom: 4px;
   padding-left: 4px;
   padding-right: 4px;
-  border-image: url('buttons/logout-hover.png') 8; }
+  border-image: url('assets/logout-hover.png') 8; }
 .starkmenu-lockscreen-horizontal-button {
   padding-bottom: 4px;
   padding-left: 4px;
   padding-right: 4px;
-  border-image: url('buttons/lock.png') 8; }
+  border-image: url('assets/lock.png') 8; }
 .starkmenu-lockscreen-horizontal-button-selected {
   padding-bottom: 4px;
   padding-left: 4px;
   padding-right: 4px;
-  border-image: url('buttons/lock-hover.png') 4; }
+  border-image: url('assets/lock-hover.png') 4; }
 
 /* Glowing Start Orb */
 .menu-applet-button:hover,
+.menu-applet-button:active,
+.menu-applet-button.active,
 .applet-box:first-child:hover,
-.panel-button:first-child:hover {
-    background-image: url("menu-assets/glow.png") !important;
-    background-size: 250% 250% !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
+.applet-box:first-child:active,
+.applet-box:first-child.active,
+.panel-button:first-child:hover,
+.panel-button:first-child:active,
+.panel-button:first-child.active {
+    background-image: url("assets/glow.png");
+    background-size: 250% 250%;
+    background-position: center;
+    background-repeat: no-repeat;
     border: none !important;
-    box-shadow: 0 0 15px 10px rgb(255, 255, 255) !important; }
+    box-shadow: 0 0 15px 10px rgb(255, 255, 255); }
 
 /* This targets the 'Light/Dark' applet specifically and tells it to STOP glowing */
 .fancier-transition-applet:hover, 
