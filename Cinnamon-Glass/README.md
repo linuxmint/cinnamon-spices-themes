@@ -1,0 +1,1 @@
+This theme is based on B00merang's Windows 7 GTK theme: https://github.com/B00merang-Project/windows-7. I have also borrowed some code from Soul-Dark theme specifically for the new Cinnamon menu: https://github.com/linuxmint/cinnamon-spices-themes/tree/master/Soul-Dark. I highly recommend using the Blur Cinnamon extension with this theme for the best experience.
