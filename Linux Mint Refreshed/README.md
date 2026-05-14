@@ -12,5 +12,5 @@
 This desktop theme is compatable with the [Classic Menu](https://cinnamon-spices.linuxmint.com/applets/view/432) applet.
 
 ## Credits
-### The Mint Teams for the the original theme.
+### The Mint Teams for the original theme.
 
