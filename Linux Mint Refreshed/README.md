@@ -4,7 +4,7 @@
 > #### Changes from the original theme:
 >
 > - Changed the color scheme and spacing to be well intergrated with the Mint-Y theme.
-> - Chnaged the close buttons to be more legible.
+> - Changed the close buttons to be more legible.
 > - Added custom theme for dialog popups, overviews, info, and switcher.
 > - Added a Mint-X-like expo.
 > - Other minor visual enhancements.
