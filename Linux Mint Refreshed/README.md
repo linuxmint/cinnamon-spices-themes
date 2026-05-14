@@ -1,11 +1,11 @@
 ## Linux Mint Refreshed
-### Based of the "Linux Mint" Cinnamon DE theme that used to ship with Linux Mint as a default prior to Mint 22.
+### Based of the "Linux Mint" Cinnamon DE theme that used to ship with Linux Mint prior to Mint 22.
 
 > #### Changes from the original theme:
 >
 > - Changed the color scheme and spacing to be well intergrated with the Mint-Y theme.
 > - Changed the close buttons to be more legible.
-> - Added custom theme for dialog popups, overviews, info, and switcher.
+> - Added custom theme for dialog keyboard, popups, overviews, info, and switcher.
 > - Added a Mint-X-like expo.
 > - Other minor visual enhancements.
 
