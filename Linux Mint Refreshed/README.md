@@ -5,7 +5,7 @@
 >
 > - Changed the color scheme and spacing to be well intergrated with the Mint-Y themes.
 > - Changed the close buttons to be more legible.
-> - Added custom theme for dialog keyboard, popups, overviews, info, and switcher.
+> - Added custom theme for keyboard, dialog popup, overview, info, and switcher.
 > - Added a Mint-X-like expo.
 > - Other minor visual enhancements.
 
