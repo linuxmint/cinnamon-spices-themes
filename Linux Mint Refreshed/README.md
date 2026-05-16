@@ -9,7 +9,7 @@
 > - Added a Mint-X-like expo.
 > - Other minor visual enhancements.
 
-This desktop theme is compatable with the [Classic Menu](https://cinnamon-spices.linuxmint.com/applets/view/432) applet.
+This desktop theme is compatible with the [Classic Menu](https://cinnamon-spices.linuxmint.com/applets/view/432) applet.
 
 ## Credits
 ### The Mint Teams for the original theme.
