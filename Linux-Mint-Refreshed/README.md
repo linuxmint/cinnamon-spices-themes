@@ -1,5 +1,5 @@
 ## Linux Mint Refreshed
-### Based of the "Linux Mint" Cinnamon DE theme that used to ship with Linux Mint prior to Mint 22.
+### Based of the "Linux Mint" Cinnamon DE theme that used to ship with Linux Mint as a default prior to Mint 22.
 
 > #### Changes from the original theme:
 >
@@ -9,8 +9,7 @@
 > - Added a Mint-X-like expo.
 > - Other minor visual enhancements.
 
-This desktop theme is compatable with the [Classic Menu](https://cinnamon-spices.linuxmint.com/applets/view/432) applet.
+This desktop theme is compatible with the [Classic Menu](https://cinnamon-spices.linuxmint.com/applets/view/432) applet.
 
 ## Credits
-### The Mint Teams for the original theme.
-
+### The Mint Teams for the the original theme.
