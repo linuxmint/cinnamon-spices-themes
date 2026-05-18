@@ -6,7 +6,7 @@
 > - Changed the color scheme and spacing to be well integrated with the Mint-Y themes.
 > - Changed the close buttons to be more legible.
 > - Added custom theme for keyboard, dialogs, overview, info, tooltips, and switchers.
-> - Added a Mint-X-like.
+> - Added a Mint-X-like expo.
 > - Revamped the looks of "Window List" and "Grouped Window List" applets.
 > - Other minor visual enhancements.
 
