@@ -1,4 +1,4 @@
-Aura Glass Dark is a modern glassmorphism theme inspired by translucent fluid artwork and textures. It is best paired with:
+Aura Glass Dark is a modern glassmorphism theme inspired by UI design industry standards. It is best paired with:
 
 - Mint defaults (e.g. Mint-Y icons, Mint-Y window borders)
 - Dark wallpaper with vibrant gradients
