@@ -85,6 +85,8 @@ def main():
     is_valid = []
     if args.all:
         for file_path in os.listdir("."):
+            if any(char.isspace() for char in file_path):
+                raise CheckError(f"Invalid whitespace in path '{file_path}'")
             if os.path.isdir(file_path) and not file_path.startswith("."):
                 is_valid.append(validate_xlet(file_path))
     elif args.uuid:
