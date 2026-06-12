@@ -967,7 +967,7 @@ StScrollBar {
   border-radius: 4px; }
 
 .menu-favorites-button {
-  padding: .9em 1em;
+  padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 6px; }
   .menu-favorites-button:hover {
@@ -986,8 +986,11 @@ StScrollBar {
 .menu-categories-box {
   padding: 10px 30px 10px 30px; }
 
-.menu-applications-inner-box, .menu-applications-outer-box {
+.menu-applications-inner-box {
   margin: 10px 10px 0 10px; }
+
+.menu-applications-outer-box {
+  margin: 0 10px 0 10px; }
 
 .menu-application-button {
   padding: 7px;
@@ -1123,12 +1126,13 @@ StScrollBar {
       background-color: #494951; }
     .appmenu-sidebar .appmenu-system-button-shutdown {
       color: white;
-      border-color: #ce1921;
+      border-color: #e83c44;
       background-gradient-direction: vertical;
 	  background-gradient-start: #e83c44;
 	  background-gradient-end: #ce1921; }
     .appmenu-sidebar .appmenu-system-button-shutdown:hover {
       color: white;
+	  border-color: #ce1921;
       background-gradient-direction: vertical;
 	  background-gradient-start: #ee4a52;
 	  background-gradient-end: #e22831; }
@@ -1154,7 +1158,7 @@ StScrollBar {
   border: 1px solid #303036; }
   .appmenu-system-button-shutdown {
     color: white;
-    border-color: #ce1921;
+    border-color: #e83c44;
     background-gradient-direction: vertical;
 	background-gradient-start: #e83c44;
 	background-gradient-end: #ce1921; }
@@ -1164,6 +1168,7 @@ StScrollBar {
     background-color: #494951; }
   .appmenu-system-button-shutdown:hover {
     color: white;
+	border-color: #ce1921;
     background-gradient-direction: vertical;
 	background-gradient-start: #ee4a52;
 	background-gradient-end: #e22831; }
@@ -1209,7 +1214,7 @@ StScrollBar {
 .window-list-box {
   spacing: 3px;
   padding-left: 0px;
-  padding-top: 1px; }
+  padding-top: 0px; }
   .window-list-box.vertical {
     spacing: 2px;
     padding-left: 0px;
@@ -1289,7 +1294,7 @@ StScrollBar {
   background-gradient-end: rgba(28, 28, 32, 0.95);
   box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  margin: 3px;
+  margin: 0px;
   padding: 6px 12px 12px 12px;
   font-size: 1em; }
 
@@ -1576,8 +1581,8 @@ StScrollBar {
   padding-left: 0px;
   spacing: 0px; }
   .panel-launchers .launcher {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
     padding-bottom: 0px;
     transition-duration: 100; }
     .panel-launchers .launcher:hover {
@@ -1585,8 +1590,8 @@ StScrollBar {
       background-gradient-start: rgba(220, 220, 230, 0.2);
       background-gradient-end: rgba(70, 70, 80, 0.2); }
   .panel-launchers.vertical {
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     padding-left: 0px;
     padding-right: 0px;
     spacing: 0px; }
@@ -1794,31 +1799,36 @@ StScrollBar {
   font-size: 1em; }
 
 .audio-device-selection-dialog .audio-selection-box .audio-selection-device, .polkit-dialog-user-combo {
-  border: 1px solid #222226;
-  color: #e1e1e1;
-  background-color: #222226; }
+  border: 1px solid #303036;
+  background-gradient-direction: vertical;
+  background-gradient-start: rgba(46, 46, 51, 1);
+  background-gradient-end: rgba(28, 28, 32, 1);
+  color: #e1e1e1; }
   .audio-device-selection-dialog .audio-selection-box .audio-selection-device:focus, .polkit-dialog-user-combo:focus {
-    border: 1px solid #222226;
+    border: 1px solid #303036;
     color: #e1e1e1;
     background-color: #222226;
     border: 1px solid #6a6a77; }
   .audio-device-selection-dialog .audio-selection-box .audio-selection-device:hover, .polkit-dialog-user-combo:hover {
-    border: 1px solid #222226;
+    border: 1px solid #303036;
     color: #e1e1e1;
     background-color: #3a3a41;
     border: 1px solid #303036; }
   .audio-device-selection-dialog .audio-selection-box .audio-selection-device:insensitive, .polkit-dialog-user-combo:insensitive {
-    border: 1px solid #222226;
+    border: 1px solid #303036;
     color: rgba(225, 225, 225, 0.5);
     background-color: #222226; }
   .audio-device-selection-dialog .audio-selection-box .audio-selection-device:selected, .polkit-dialog-user-combo:selected, .audio-device-selection-dialog .audio-selection-box .audio-selection-device:active, .polkit-dialog-user-combo:active {
-    border: 1px solid #222226;
-    color: #e1e1e1;
-    background-color: #2e2e33; }
+    border: 1px solid #303036;
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(28, 28, 32, 1);
+    background-gradient-end: rgba(34, 34, 38, 1); }
   .audio-device-selection-dialog .audio-selection-box .audio-selection-device:checked, .polkit-dialog-user-combo:checked {
-    border: 1px solid #222226;
+    border: 1px solid #303036;
     color: #e1e1e1;
-    background-color: #2e2e33; }
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(28, 28, 32, 1);
+    background-gradient-end: rgba(34, 34, 38, 1); }
 
 .dialog .dialog-button, .dialog .dialog-button:destructive-action, .dialog .dialog-button:default {
   font-weight: bold;
@@ -2031,7 +2041,7 @@ StScrollBar {
   .audio-device-selection-dialog .audio-selection-box {
     spacing: 12px; }
     .audio-device-selection-dialog .audio-selection-box .audio-selection-device {
-      border-radius: 20px; }
+      border-radius: 4px; }
       .audio-device-selection-dialog .audio-selection-box .audio-selection-device .audio-selection-device-box {
         padding: 12px;
         spacing: 12px; }
