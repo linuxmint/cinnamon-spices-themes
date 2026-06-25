@@ -51,6 +51,9 @@ def validate_xlet(uuid):
             for field in mandatory_fields:
                 if field not in info:
                     raise CheckError(f"Missing field '{field}' in info.json")
+                elif field == 'author':
+                    if any(char.isspace() for char in info[field]):
+                        raise CheckError(f"Invalid whitespace in {field} {info[field]}'")
 
         # Finally...
         valid = True
