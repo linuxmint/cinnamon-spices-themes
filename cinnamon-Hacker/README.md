@@ -12,19 +12,13 @@ A dark theme for Cinnamon, based on "Pure Black and Neon Green."
 
 ## Screenshots
 
+
 ### GTK 2 / GTK 3 Applications
 ![GTK 2 & GTK 3 Applications](screenshot1.png)
 
 ### GTK 4 Applications
 ![GTK 4 Applications](screenshot2.png)
 
-## Recommended Icon Theme
-
-For the complete cyber look shown in the screenshots, it is recommended to use the Dedicated to Hackerer icon theme.
-
-Download:
-• GitHub: https://github.com/dstakaroot/Dedicated-to-Hackerer
-• OpenDesktop: https://www.opendesktop.org/s/Gnome/p/2332618
 
 ## Installation
 
