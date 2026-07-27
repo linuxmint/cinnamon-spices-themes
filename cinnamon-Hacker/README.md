@@ -15,10 +15,10 @@ A dark theme for Cinnamon, based on "Pure Black and Neon Green."
 
 
 ### GTK 2 / GTK 3 Applications
-![GTK 2 & GTK 3 Applications](screenshot1.png)
+![GTK 2 & GTK 3 Applications](https://github.com/dstakaroot/cinnamon-spices-themes/raw/master/cinnamon-Hacker/screenshot1.png)
 
 ### GTK 4 Applications
-![GTK 4 Applications](screenshot2.png)
+![GTK 4 Applications](https://github.com/dstakaroot/cinnamon-spices-themes/raw/master/cinnamon-Hacker/screenshot2.png)
 
 
 
