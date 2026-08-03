@@ -1077,7 +1077,9 @@ StScrollView StScrollBar {
  * Cinnamon Specific Section
  * ###################################################################*/
 /* ===================================================================
- * Menu applet (menu@cinnamon.org/applet.js)
+ * Classic Menu applet (classic-menu@cinnamon.org/applet.js)
+    This was menu@cinnamon.org in Cinnamon < 6.6
+    Uses .menu-* CSS classes
  * ===================================================================*/
 .menu-background {
   background-color: #2f2f2f;
@@ -1185,6 +1187,95 @@ StScrollView StScrollBar {
   margin: 2px 0px;
   background-color: rgba(65, 65, 65, 0.4);
   border-radius: 6px; }
+
+/* ===================================================================
+ * Menu applet (menu@cinnamon.org/applet.js)
+    This is menu@cinnamon.org in Cinnamon >= 6.6
+    Uses .appmenu-* CSS classes
+ * ===================================================================*/
+.appmenu-background{
+  background-color: #2f2f2f;
+  border: 1px solid #202020; }
+
+.appmenu-sidebar{
+  background-color: #2f2f2f;}
+
+.appmenu-background .popup-menu-item:insensitive {
+  background-color: #2f2f2f;}
+
+.appmenu-places-box, .appmenu-sidebar-user-box, .appmenu-favs-box {
+  padding: 5px;
+  background-color: #232323;
+  border: 1px solid #202020;
+  border-radius: 6px; }
+
+.appmenu-application-button {
+  padding: 7px;
+  max-width: 10px;
+  border: 1px solid rgba(32, 32, 32, 0);
+  border-radius: 6px; }
+  .appmenu-application-button:highlighted {
+    /* This style is used in menu application buttons for applications which were newly installed */
+    font-weight: bold; }
+
+.appmenu-application-button-selected {
+  padding: 7px;
+  color: #ffffff;
+  background-color: #1565c0;
+  border: 1px solid #202020;
+  border-radius: 6px; }
+  .appmenu-application-button-selected:highlighted{
+    /* This style is used in menu application buttons for applications which were newly installed */
+    font-weight: bold; }
+
+.appmenu-application-button-label:ltr {
+  padding-left: 5px; }
+
+.appmenu-application-button-label:rtl {
+  padding-right: 5px; }
+
+.appmenu-category-button {
+  padding: 7px;
+  border-left: 2px;
+  border-style: solid;
+  border-color: none;
+  border-radius: 6px; }
+
+.appmenu-category-button-greyed {
+  padding: 7px;
+  color: #cccccc;
+  border-left: 2px;
+  border-style: solid;
+  border-color: rgba(21, 101, 192, 0); }
+
+.appmenu-category-button-selected {
+  padding: 7px;
+  color: #ffffff;
+  border-left: 2px;
+  border-style: solid;
+  border-color: #1565c0; }
+
+.appmenu-category-button-hover {
+  background-color: #1565c0;
+  border-radius: 6px; }
+
+.appmenu-category-button-label:ltr {
+  padding-left: 5px; }
+
+.appmenu-category-button-label:rtl {
+  padding-right: 5px; }
+
+.appmenu-application-button-description:ltr {
+  padding-left: 5px;
+  font-size: 0.818em;
+  font-weight: 400;
+  color: #a0a0a0;}
+
+.appmenu-application-button-description:rtl {
+  padding-left: 5px;
+  font-size: 0.818em;
+  font-weight: 400;
+  color: #a0a0a0;}
 
 /* ===================================================================
  * Workspace Switcher applet (workspaceSwitcher.js)
