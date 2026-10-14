@@ -1,0 +1,1526 @@
+/* Zenwritten companion user sheet.
+ *
+ * Only needed if you use Nemo, or another app that ships its own stylesheet.
+ *
+ * GTK resolves a property from the highest-priority style provider that sets
+ * it, and only then falls back to specificity. Providers rank: theme (200),
+ * app (600), user (800). The theme's own gtk-3.0/gtk.css already carries all of
+ * these rules, but inside the theme they sit at priority 200 and so cannot beat
+ * an application's own sheet - which is why a handful of rules here (the Nemo
+ * chrome colours, the active-row fill) only take effect from here.
+ *
+ * Install by copying this file to ~/.config/gtk-3.0/gtk.css. It is a drop-in
+ * user stylesheet, not a theme fragment: it assumes the theme underneath.
+ */
+/* =============================================================================
+   gtk.css - monochrome palette, rounded 8px shapes, Nemo tweaks
+   Rules keep their original order, because several depend on selector
+   specificity plus order. Only duplicates and fully overridden rules were removed.
+   ============================================================================= */
+
+/* ---------- Palette ---------- */
+@define-color accent_bg_color #686868;
+@define-color accent_color #bbbbbb;
+@define-color theme_selected_bg_color #686868;
+@define-color theme_selected_fg_color #bbbbbb;
+@define-color theme_unfocused_selected_bg_color #404040;
+@define-color theme_unfocused_selected_fg_color #bbbbbb;
+@define-color selected_bg_color #686868;
+@define-color selected_fg_color #bbbbbb;
+
+@define-color window_bg_color #191919;
+@define-color view_bg_color #191919;
+@define-color headerbar_bg_color #303030;
+@define-color sidebar_bg_color #303030;
+@define-color popover_bg_color #303030;
+
+/* Structural names, defined here so Nemo's injected fallback does not win */
+@define-color theme_bg_color #191919;
+@define-color theme_base_color #191919;
+@define-color theme_fg_color #bbbbbb;
+@define-color theme_text_color #bbbbbb;
+@define-color theme_unfocused_bg_color #191919;
+@define-color theme_unfocused_base_color #303030;
+@define-color theme_unfocused_fg_color rgba(187, 187, 187, 0.5);
+@define-color theme_unfocused_text_color rgba(187, 187, 187, 0.5);
+
+
+/* ---------- Nemo: icon view label, sidebar bottom buttons ---------- */
+.nemo-canvas-item {
+  border-radius: 8px;
+  padding: 2px 6px; }
+
+.nemo-sidebar-buttons button {
+  padding: 2px;
+  min-width: 22px;
+  min-height: 22px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6); }
+
+.nemo-sidebar-buttons button image {
+  -gtk-icon-transform: scale(1.35);
+  color: inherit; }
+
+
+/* ---------- Switch ---------- */
+switch slider { background-color: #bbbbbb; }
+switch:not(:checked):not(:disabled) { background-color: #686868; }
+switch:checked { background-color: #9e9e9e; }
+switch:checked slider { background-color: #bbbbbb; }
+
+switch:disabled,
+switch:disabled:not(:checked) {
+  background-color: #686868;
+  background-image: none; }
+switch:disabled:not(:checked) slider { background-color: #8b8b8b; }
+switch:disabled:checked {
+  background-color: #686868;
+  background-image: none; }
+switch:disabled:checked slider { background-color: #bbbbbb; }
+
+
+/* ---------- Frames, lists, cards ---------- */
+.frame.view,
+.frame.view > scrolledwindow,
+.frame.view > scrolledwindow > viewport {
+  border-radius: 8px; }
+
+/* List flows into the toolbar below it, so only the top corners round */
+frame.view > box,
+frame.view > box > scrolledwindow,
+frame.view > box > scrolledwindow > viewport,
+frame.view > box > scrolledwindow > viewport > box,
+frame.view > box > scrolledwindow > viewport > box > list,
+frame.view list {
+  border: none;
+  border-radius: 8px 8px 0 0; }
+
+list, listbox, .list,
+stack > grid.vertical > scrolledwindow > viewport.frame list {
+  border-radius: 8px 8px 0 0; }
+
+frame.view { border: none; }
+
+/* GtkFrame draws its outline on a separate `border` node */
+frame.view > border,
+frame.view border { border-color: rgba(187, 187, 187, 0.12); }
+
+.inline-toolbar,
+frame.view + .inline-toolbar {
+  border-radius: 0 0 8px 8px; }
+
+
+/* ---------- Nemo sidebar toggles: flat, current view marked by brighter icon ---------- */
+.nemo-window .sidebar button,
+.nemo-window .sidebar togglebutton,
+.nemo-window .nemo-places-sidebar button,
+.nemo-window .nemo-sidebar-buttons button,
+.nemo-window .inline-toolbar button,
+.nemo-window button:checked,
+.nemo-window togglebutton:checked {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none; }
+
+.nemo-window button:checked,
+.nemo-window togglebutton:checked { color: #ffffff; }
+
+.nemo-window button:checked image,
+.nemo-window togglebutton:checked image { color: inherit; }
+
+
+/* ---------- Chrome: borders, backdrop, fills ---------- */
+headerbar:backdrop,
+.titlebar:backdrop,
+toolbar:backdrop,
+headerbar:backdrop label,
+headerbar:backdrop button,
+.titlebar:backdrop label,
+toolbar:backdrop label,
+.nemo-window .primary-toolbar:backdrop label,
+.nemo-window .primary-toolbar:backdrop button {
+  color: rgba(255, 255, 255, 0.55); }
+
+headerbar, .titlebar, toolbar { border-bottom: 1px solid #686868; }
+
+.nemo-window .sidebar,
+.sidebar, placessidebar, stacksidebar { border-right: 1px solid #686868; }
+
+/* View-mode toggles (grid / list / compact): filled when active */
+.nemo-window .primary-toolbar button:checked,
+.nemo-window .primary-toolbar togglebutton:checked {
+  background-color: #686868;
+  background-image: none;
+  color: #ffffff; }
+
+.nemo-window .primary-toolbar button:checked:hover,
+.nemo-window .primary-toolbar togglebutton:checked:hover {
+  background-color: #686868; }
+
+/* Nemo injects a stylesheet at priority 600, so the chrome colours are restated */
+.nemo-window .primary-toolbar,
+.nemo-window headerbar,
+.nemo-window .titlebar,
+.nemo-window .sidebar,
+.nemo-window placessidebar,
+.nemo-window stacksidebar {
+  background-color: #303030; }
+
+.nemo-window .primary-toolbar:backdrop,
+.nemo-window headerbar:backdrop,
+.nemo-window .titlebar:backdrop,
+.nemo-window .sidebar:backdrop {
+  background-color: #191919; }
+
+.titlebar,
+headerbar,
+.nemo-window .titlebar,
+.nemo-window headerbar {
+  box-shadow: none; }
+
+
+/* ---------- Treeviews: square rows, no seams ---------- */
+treeview.view,
+treeview.view:hover,
+treeview.view:selected,
+treeview.view:selected:focus,
+treeview.view:focus,
+treeview.view:backdrop {
+  border-radius: 0; }
+
+treeview.view { padding-left: 4px; padding-right: 4px; }
+
+/* Rows take no vertical padding; Nemo gets none at all */
+.nemo-window treeview.view { padding: 0; }
+
+
+/* ---------- Buttons: contrast ---------- */
+button:not(.flat) {
+  background-color: #686868;
+  border-color: #686868; }
+
+button:not(.flat):hover { background-color: #686868; }
+button:not(.flat):active,
+button:not(.flat):checked { background-color: #686868; }
+
+/* Buttons inside a settings card need their own fills */
+frame.view button,
+frame.view button.flat { background-color: #686868; }
+frame.view button:hover { background-color: #7c7c7c; }
+frame.view button:checked,
+frame.view button:active { background-color: #7c7c7c; }
+
+/* Borderless buttons need to be findable on hover */
+button.flat:hover,
+button.image-button:hover,
+button.titlebutton:hover {
+  background-color: rgba(187, 187, 187, 0.12); }
+
+/* The same hover, at the specificity the base states it. Orchis sets
+   `.nemo-window .toolbar button:hover` and `.nemo-window .primary-toolbar
+   button:hover:not(.text-button)` at 0,3,1 and 0,4,1, both above the 0,2,1
+   above, so inside a theme Nemo's toolbar hovers would drop to the base's 0.08
+   and stop matching the rest of this file. */
+.nemo-window .toolbar button.flat:hover,
+.nemo-window .toolbar button.image-button:hover,
+.nemo-window .primary-toolbar button.flat:hover:not(.text-button),
+.nemo-window .primary-toolbar button.image-button:hover:not(.text-button) {
+  background-color: rgba(187, 187, 187, 0.12); }
+
+/* Dropdowns keep the theme's faint wash */
+combobox > box > button.combo,
+combobox button.combo,
+button.combo {
+  background-color: rgba(187, 187, 187, 0.05); }
+
+combobox > box > button.combo:hover,
+combobox button.combo:hover,
+button.combo:hover {
+  background-color: rgba(187, 187, 187, 0.08); }
+
+button.destructive-action,
+button.destructive-action:focus {
+  background-color: #de6e7c;
+  color: #000000; }
+button.destructive-action:hover { background-color: #e8838f; }
+button.destructive-action:active,
+button.destructive-action:checked { background-color: #c2555f; }
+
+button.destructive-action,
+button.destructive-action:hover,
+button.destructive-action:active,
+button.destructive-action:checked {
+  color: #000000; }
+
+
+/* ---------- Radii ---------- */
+button,
+entry,
+spinbutton entry { border-radius: 8px; }
+
+headerbar button.titlebutton,
+button.titlebutton { border-radius: 9999px; }
+
+spinbutton.vertical { border-radius: 8px 0 0 8px; }
+
+spinbutton entry,
+spinbutton button { margin: 0; }
+
+/* Toolbar buttons: first/last toolitem corners */
+.inline-toolbar toolitem:first-child button { border-radius: 8px 0 0 8px; }
+.inline-toolbar toolitem:last-child button  { border-radius: 0 8px 8px 0; }
+.inline-toolbar toolitem:not(:first-child):not(:last-child) button { border-radius: 0; }
+.inline-toolbar toolitem { margin: 0; }
+
+/* A GtkComboBox paints its box on the `combobox` node */
+combobox,
+combobox > box,
+combobox > box > button,
+combobox entry,
+combobox button { border-radius: 8px; }
+
+/* Spin button: one control, the node underneath is the visible shape */
+spinbutton { border-radius: 8px; }
+spinbutton button { border-radius: 0; }
+spinbutton button.up { border-radius: 0 8px 8px 0; }
+spinbutton button.down { border-radius: 0; }
+spinbutton button.up,
+spinbutton button.down { margin: 0; }
+
+.inline-toolbar button { padding: 1px; }
+.inline-toolbar button image { -gtk-icon-transform: scale(0.9); }
+
+/* Same icon scale, at the base's specificity. Orchis states this at
+   `.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button
+   > widget > box > image` - 0,5,4 against the 0,1,2 above - so it takes over as
+   soon as this file is a theme rather than a user stylesheet, and the Nemo
+   sidebar icons grow. Kept at the intended 0.9. */
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button > widget > box > image {
+  -gtk-icon-transform: scale(0.9); }
+
+/* Toolbar button shapes (nesting varies between Cinnamon settings windows) */
+.inline-toolbar box > button:first-child { border-radius: 8px 0 0 8px; }
+.inline-toolbar box > button:last-child { border-radius: 0 8px 8px 0; }
+.inline-toolbar box > button:only-child { border-radius: 8px; }
+
+.inline-toolbar > *:first-child button,
+.inline-toolbar > *:first-child > *:first-child button,
+.inline-toolbar > *:first-child > *:first-child > *:first-child button {
+  border-radius: 8px 0 0 8px; }
+
+.inline-toolbar > *:last-child button,
+.inline-toolbar > *:last-child > *:last-child button,
+.inline-toolbar > *:last-child > *:last-child > *:last-child button {
+  border-radius: 0 8px 8px 0; }
+
+.inline-toolbar > *:only-child button,
+.inline-toolbar > *:only-child > *:only-child button {
+  border-radius: 8px; }
+
+/* Fallback in force for most toolbar shapes */
+toolbar button,
+.inline-toolbar button,
+.inline-toolbar > button,
+.inline-toolbar > toolitem > button,
+.inline-toolbar > toolitem > box > button,
+.inline-toolbar box > button,
+.inline-toolbar button:first-child,
+.inline-toolbar button:last-child,
+.inline-toolbar button:only-child {
+  margin: 0 2px;
+  border-radius: 8px; }
+
+/* Segmented groups: only the outer corners round */
+stackswitcher > button,
+.linked:not(.vertical) > button { margin: 0; }
+
+.linked:not(.vertical) > button:only-child { border-radius: 8px; }
+
+stackswitcher > button:first-child,
+.linked:not(.vertical) > button:first-child { border-radius: 8px 0 0 8px; }
+
+stackswitcher > button:last-child,
+.linked:not(.vertical) > button:last-child { border-radius: 0 8px 8px 0; }
+
+stackswitcher > button:not(:first-child):not(:last-child),
+.linked:not(.vertical) > button:not(:first-child):not(:last-child) { border-radius: 0; }
+
+.linked.vertical > button:only-child { border-radius: 8px; }
+.linked.vertical > button:first-child { border-radius: 8px 8px 0 0; }
+.linked.vertical > button:last-child { border-radius: 0 0 8px 8px; }
+.linked.vertical > button:not(:first-child):not(:last-child) { border-radius: 0; }
+
+/* A dropdown is never a segment, but GTK puts a .linked box inside every combo */
+.linked:not(.vertical) > button.combo,
+.linked.vertical > button.combo,
+combobox button.combo,
+combobox > box > button.combo,
+button.combo { border-radius: 8px; }
+
+/* Window-menu button in a titlebar: bare at rest */
+headerbar button:not(.close):not(.maximize):not(.minimize):not(.titlebutton):not(.suggested-action):not(.destructive-action),
+.titlebar button:not(.close):not(.maximize):not(.minimize):not(.titlebutton):not(.suggested-action):not(.destructive-action) {
+  background-color: transparent;
+  box-shadow: none; }
+
+headerbar button:not(.close):not(.maximize):not(.minimize):not(.titlebutton):hover,
+.titlebar button:not(.close):not(.maximize):not(.minimize):not(.titlebutton):hover {
+  background-color: rgba(187, 187, 187, 0.12); }
+
+/* List rows */
+list > row,
+listbox > row,
+row.activatable { padding-top: 3px; padding-bottom: 3px; }
+
+/* Linked entries (e.g. [+] button plus text field) */
+.linked:not(.vertical) > entry:first-child { border-radius: 8px 0 0 8px; }
+.linked:not(.vertical) > entry:last-child { border-radius: 0 8px 8px 0; }
+.linked:not(.vertical) > entry:not(:first-child):not(:last-child) { border-radius: 0; }
+.linked.vertical > entry:first-child { border-radius: 8px 8px 0 0; }
+.linked.vertical > entry:last-child { border-radius: 0 0 8px 8px; }
+
+/* Toolbar button spacing */
+.inline-toolbar button,
+.inline-toolbar > button,
+.inline-toolbar > toolitem > button,
+.inline-toolbar > toolitem > box > button,
+.inline-toolbar box > button,
+toolbar button { margin: 0 5px; }
+
+/* Radius follows the border node */
+list > border,
+listbox > border { border-radius: inherit; }
+
+/* Icon view tiles (wallpapers etc.) */
+flowboxchild,
+flowboxchild > box,
+flowboxchild > box > *,
+iconview,
+iconview.view { border-radius: 8px; border: none; }
+
+/* ...and the ring on them is not a border, which is why `border: none` above did
+   not remove it: the theme paints these states with a box-shadow (the same
+   9999px inset trick this file works around elsewhere). GtkIconView draws each
+   item's frame from the view's own node, so one box-shadow becomes a ring on
+   every thumbnail - and the node dump for Settings > Backgrounds shows the state
+   is :backdrop even when you are looking straight at it, so the backdrop variant
+   has to be listed or the theme's own :backdrop rule wins on specificity.
+
+     window.background > box.vertical > stack >
+       scrolledwindow.view.cs-category-view > viewport > box.vertical >
+         iconview.view
+
+   The last block anchors on that .cs-category-view, which the app puts on the
+   scrolledwindow, so it outranks whatever the theme states. */
+flowboxchild,
+flowboxchild *,
+flowboxchild:backdrop,
+flowboxchild:backdrop *,
+flowboxchild:hover,
+flowboxchild:hover *,
+flowboxchild:selected,
+flowboxchild:selected *,
+flowboxchild:focus,
+flowboxchild:focus *,
+iconview.view,
+iconview.view:backdrop,
+iconview.view:hover,
+iconview.view:selected,
+iconview.view:focus {
+  box-shadow: none;
+  border-color: transparent; }
+
+.cs-category-view iconview.view,
+.cs-category-view iconview.view:backdrop,
+.cs-category-view iconview.view:hover,
+.cs-category-view iconview.view:selected,
+.cs-category-view iconview.view:focus {
+  box-shadow: none;
+  border-color: transparent; }
+
+
+/* ---------- Nemo path bar ---------- */
+.nemo-window .path-bar button:not(:checked),
+.path-bar button:not(:checked),
+.path-bar.linked:not(.vertical) > button:not(:checked) { background-color: transparent; }
+
+.nemo-window .path-bar button:not(:checked):hover,
+.path-bar button:not(:checked):hover { background-color: rgba(187, 187, 187, 0.08); }
+
+/* Toolbar image buttons are flat chrome */
+.nemo-window .toolbar button.image-button:not(:checked),
+.nemo-window headerbar button.image-button:not(:checked),
+.nemo-window .primary-toolbar button.image-button:not(:checked),
+.nemo-window .titlebar button.image-button:not(:checked) { background-color: transparent; }
+
+.nemo-window .toolbar button.image-button:not(:checked):hover,
+.nemo-window .primary-toolbar button.image-button:not(:checked):hover {
+  background-color: rgba(187, 187, 187, 0.08); }
+
+.nemo-window .toolbar button.image-button,
+.nemo-window headerbar button.image-button,
+.nemo-window .titlebar button.image-button { background-color: transparent; }
+
+/* View-mode toggles keep their filled active state (restated: rule above is later) */
+.nemo-window .primary-toolbar button:checked,
+.nemo-window .primary-toolbar togglebutton:checked {
+  background-color: #686868;
+  color: #ffffff; }
+
+/* Crumbs */
+.nemo-window .path-bar button,
+.path-bar button,
+.nemo-window .path-bar button:checked,
+.path-bar button:checked {
+  background-color: transparent;
+  border-radius: 8px; }
+
+.nemo-window .path-bar button > *,
+.nemo-window .path-bar button box,
+.nemo-window .path-bar button image,
+.path-bar button > *,
+.path-bar button box,
+.path-bar button image {
+  background-color: transparent;
+  border-radius: 8px; }
+
+.nemo-window .path-bar button:hover,
+.path-bar button:hover,
+.nemo-window .path-bar button:hover > *,
+.path-bar button:hover > * {
+  background-color: rgba(187, 187, 187, 0.12);
+  border-radius: 8px; }
+
+.nemo-window .path-bar button,
+.nemo-window .primary-toolbar .path-bar button,
+.nemo-window .path-bar button > box,
+.nemo-window .primary-toolbar .path-bar button > box,
+.nemo-window .path-bar button image,
+.nemo-window .primary-toolbar .path-bar button image {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border: none;
+  margin: 0; }
+
+.nemo-window .path-bar button,
+.nemo-window .primary-toolbar .path-bar button { border-radius: 0; }
+
+/* The two ends: outer corners only */
+.nemo-window .path-bar button.slider-button:first-child,
+.nemo-window .primary-toolbar .path-bar button.slider-button:first-child {
+  border-radius: 8px 0 0 8px; }
+
+.nemo-window .path-bar button.slider-button:last-child,
+.nemo-window .primary-toolbar .path-bar button.slider-button:last-child {
+  border-radius: 0 8px 8px 0; }
+
+.nemo-window .path-bar button:checked,
+.nemo-window .primary-toolbar .path-bar button:checked,
+.nemo-window .path-bar button:checked > box,
+.nemo-window .primary-toolbar .path-bar button:checked > box {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none; }
+
+.nemo-window .path-bar button.text-button,
+.nemo-window .primary-toolbar .path-bar button.text-button {
+  padding: 3px 12px;
+  min-width: 0; }
+
+/* Hover: one fill, on the button only */
+.nemo-window .path-bar button:hover > box,
+.nemo-window .primary-toolbar .path-bar button:hover > box,
+.nemo-window .path-bar button:hover image,
+.nemo-window .primary-toolbar .path-bar button:hover image {
+  background-color: transparent;
+  background-image: none; }
+
+.nemo-window .path-bar button:hover,
+.nemo-window .primary-toolbar .path-bar button:hover {
+  background-color: rgba(187, 187, 187, 0.12); }
+
+
+/* ---------- Cinnamon Settings: back button, window menu ---------- */
+toolbar > toolitem > stack > box > button.image-button:first-child {
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 8px;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border: none; }
+
+toolbar > toolitem > stack > box > button.image-button:first-child:hover {
+  background-color: rgba(187, 187, 187, 0.12); }
+
+button.popup {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border-color: transparent; }
+button.popup:hover { background-color: rgba(187, 187, 187, 0.08); }
+button.popup:checked { background-color: rgba(187, 187, 187, 0.12); }
+
+
+/* ---------- Nemo sidebar view toggles (Places / Tree / hide) ---------- */
+.nemo-window button.toggle:checked:not(.flat) {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border-color: transparent;
+  color: #ffffff; }
+
+.nemo-window button.toggle:checked:not(.flat) image { color: inherit; }
+
+.nemo-window button.toggle:checked:not(.flat):hover,
+.nemo-window button.toggle:not(.flat):hover {
+  background-color: rgba(187, 187, 187, 0.12); }
+
+/* Inactive toggles dimmed so the active one reads as brighter */
+.nemo-window button.toggle:not(.flat):not(:checked) {
+  color: rgba(255, 255, 255, 0.5); }
+
+.nemo-window button.toggle:not(.flat):not(:checked):hover {
+  color: rgba(255, 255, 255, 0.80);
+  background-color: rgba(187, 187, 187, 0.12); }
+
+
+/* ---------- List view column headers ---------- */
+treeview.view header button {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-image: none; }
+
+.nemo-window treeview.view header button,
+.nemo-window .view treeview.view header button,
+treeview.view header button {
+  background-color: rgba(187, 187, 187, 0.035);
+  background-image: none;
+  border-bottom: 1px solid rgba(187, 187, 187, 0.10); }
+
+.nemo-window treeview.view header button:hover,
+.nemo-window .view treeview.view header button:hover,
+treeview.view header button:hover {
+  background-color: rgba(187, 187, 187, 0.08);
+  background-image: none;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(187, 187, 187, 0.16); }
+
+/* Horizontal padding on list rows and headers, but not on the places sidebar */
+.nemo-window treeview.view:not(.places-treeview),
+.nemo-window .view treeview.view,
+.nemo-window treeview.view header button {
+  padding-left: 6px;
+  padding-right: 6px; }
+
+.nemo-window .sidebar treeview.view,
+.nemo-window .sidebar treeview.view header button {
+  padding-left: 0;
+  padding-right: 0; }
+
+
+/* ---------- Nemo icon view selection, icon view cells ---------- */
+.nemo-window .nemo-canvas-item:selected,
+.nemo-window .nemo-canvas-item:selected:focus {
+  background-color: #686868; }
+
+iconview .cell,
+iconview .cell:hover,
+iconview .cell:selected,
+iconview .cell:selected:focus {
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  outline-style: none; }
+
+/* The selected ring is an outline / box-shadow, not part of the background */
+iconview .cell:selected,
+iconview .cell:selected:focus,
+iconview:selected,
+iconview:selected:focus,
+iconview .cell:focus {
+  border: none;
+  outline: none;
+  outline-style: none;
+  box-shadow: none; }
+
+/* Selection stays legible when the view loses keyboard focus - the accessibility
+   case the old rule was reaching for. That one was on :focus:not(:selected),
+   which marked every tile that was NOT selected, so the selected tile was the
+   only one left unmarked and nothing else was touched by it. This is the same
+   ring on the tile that IS selected, in :backdrop only: when the window is not
+   focused you can still see what you chose, and no other tile is affected. The
+   plain `:selected` rules above strip box-shadow, so the focused state keeps its
+   background-only selection and this adds nothing to it. */
+iconview .cell:selected:backdrop {
+  box-shadow: inset 0 0 0 2px rgba(187, 187, 187, 0.4); }
+
+/* Stated explicitly so it cannot come back from the theme either: an unselected
+   tile takes no ring, whatever state the view is in. */
+iconview .cell:not(:selected),
+iconview .cell:focus:not(:selected) {
+  box-shadow: none; }
+
+
+/* ---------- Selection that outlives focus ----------
+   The state you picked has to stay identifiable when the view is not focused,
+   which is the accessibility case the Backgrounds rule was reaching for and the
+   one it missed: it was keyed on :focus, and :focus is exactly what is gone the
+   moment the window is unfocused.
+
+   Mostly this holds already, because GTK composes states - a rule on plain
+   :selected still matches :selected:backdrop, which is how the theme's `.view`
+   and file-manager selections survive, and why Nemo's selected rows are visible
+   with the window unfocused. Stated here for every family this layer touches so
+   a selection can never end up invisible for want of focus. Colours are the ones
+   this file already uses: the raised #686868, #bbbbbb text. */
+treeview.view:selected:backdrop,
+.places-treeview:selected:backdrop,
+.nemo-window treeview.view:selected:backdrop,
+.nemo-window .places-treeview:selected:backdrop,
+list row:selected:backdrop,
+list row.activatable:selected:backdrop,
+flowboxchild:selected:backdrop,
+iconview .cell:selected:backdrop,
+iconview.view:selected:backdrop {
+  background-color: #686868;
+  color: #ffffff; }
+
+/* Same for an active tool: a checked view-mode toggle is still on when the
+   window is not focused, and it should still read as on. */
+button:checked:backdrop,
+togglebutton:checked:backdrop,
+.nemo-window .primary-toolbar button:checked:backdrop,
+.nemo-window .primary-toolbar togglebutton:checked:backdrop {
+  background-color: #686868;
+  color: #ffffff; }
+
+
+/* ---------- GTK file chooser breadcrumbs ---------- */
+filechooser #pathbarbox button,
+filechooser #pathbarbox button > box,
+filechooser #pathbarbox button image,
+filechooser #pathbarbox button label {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none; }
+
+filechooser #pathbarbox button:hover {
+  background-color: rgba(187, 187, 187, 0.12); }
+
+
+/* ---------- Hover fills: real backgrounds so they take the radius ---------- */
+/* The theme's hovers are a 9999px inset box-shadow, which is always a rectangle */
+button:hover,
+togglebutton:hover,
+modelbutton:hover,
+menuitem:hover,
+.path-bar button:hover,
+.path-bar.linked:not(.vertical) > button:hover,
+.path-bar button.slider-button:hover,
+.nemo-window .path-bar button:hover,
+.nemo-window .path-bar.linked:not(.vertical) > button:hover,
+.nemo-window .path-bar button.slider-button:hover,
+filechooser #pathbarbox > stack > box > button:hover,
+#pathbarbox > stack > box > button:hover,
+flowboxchild:hover,
+.nemo-canvas-item:hover {
+  background-image: none;
+  box-shadow: none;
+  background-color: rgba(187, 187, 187, 0.08);
+  border-radius: 8px; }
+
+
+/* ---------- Nemo sidebar bottom buttons: bare until hovered, active one brighter ---------- */
+.nemo-window .nemo-sidebar-buttons button,
+.nemo-sidebar-buttons button,
+.nemo-window .nemo-sidebar-buttons button:checked,
+.nemo-sidebar-buttons button:checked,
+.nemo-window .nemo-sidebar-buttons button:active,
+.nemo-sidebar-buttons button:active {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border-radius: 8px; }
+
+.nemo-window .nemo-sidebar-buttons button:not(:checked):hover,
+.nemo-sidebar-buttons button:not(:checked):hover {
+  background-color: rgba(187, 187, 187, 0.08);
+  background-image: none;
+  box-shadow: none;
+  border-radius: 8px; }
+
+/* The current view takes no fill and does not react to the pointer. The state
+   can arrive as :checked, :selected, :active or :focus, so all are covered. */
+.nemo-window .nemo-sidebar-buttons button:checked,
+.nemo-window .nemo-sidebar-buttons button:selected,
+.nemo-window .nemo-sidebar-buttons button:active,
+.nemo-window .nemo-sidebar-buttons button:focus,
+.nemo-window .nemo-sidebar-buttons button:checked:hover,
+.nemo-window .nemo-sidebar-buttons button:selected:hover,
+.nemo-window .nemo-sidebar-buttons button:active:hover,
+.nemo-window .nemo-sidebar-buttons button:focus:hover,
+.nemo-window .nemo-sidebar-buttons button:checked:active,
+.nemo-window .nemo-sidebar-buttons button:checked:focus,
+.nemo-window .nemo-sidebar-buttons button:checked > *,
+.nemo-window .nemo-sidebar-buttons button:selected > *,
+.nemo-window .nemo-sidebar-buttons button:checked *,
+.nemo-window .nemo-sidebar-buttons button:selected *,
+.nemo-window .nemo-sidebar-buttons box:hover > button:checked,
+.nemo-window .nemo-sidebar-buttons button:checked image,
+.nemo-sidebar-buttons button:checked,
+.nemo-sidebar-buttons button:selected,
+.nemo-sidebar-buttons button:active,
+.nemo-sidebar-buttons button:checked:hover,
+.nemo-sidebar-buttons button:checked:active,
+.nemo-sidebar-buttons button:checked:focus,
+button.nemo-sidebar-buttons:checked,
+button.nemo-sidebar-buttons:selected,
+button.nemo-sidebar-buttons:active,
+button.nemo-sidebar-buttons:checked:hover,
+button.nemo-sidebar-buttons:selected:hover,
+button.nemo-sidebar-buttons:active:hover,
+button.nemo-sidebar-buttons:checked *,
+button.nemo-sidebar-buttons:selected *,
+.nemo-window button.nemo-sidebar-buttons:checked,
+.nemo-window button.nemo-sidebar-buttons:selected,
+.nemo-window button.nemo-sidebar-buttons:checked:hover,
+.nemo-window button.nemo-sidebar-buttons:selected:hover,
+.nemo-window .sidebar button:checked,
+.nemo-window .sidebar button:selected,
+.nemo-window .sidebar button:active,
+.nemo-window .sidebar button:focus,
+.nemo-window .sidebar button:checked:hover,
+.nemo-window .sidebar button:selected:hover,
+.nemo-window .sidebar button:active:hover,
+.nemo-window .sidebar button:focus:hover,
+.nemo-window .sidebar button:checked:active,
+.nemo-window .sidebar button:checked:focus,
+.nemo-window .sidebar button:checked > *,
+.nemo-window .sidebar button:checked *,
+.nemo-window .sidebar button:selected *,
+.nemo-window .sidebar button:checked image,
+.nemo-window .sidebar box:hover > button:checked {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  outline-style: none;
+  color: #ffffff; }
+
+
+/* ---------- GTK file chooser: breadcrumb and eject button ---------- */
+filechooser #pathbarbox > stack > box > button,
+filechooser #pathbarbox > stack > box > button:checked,
+filechooser #pathbarbox > stack > box > button > *,
+filechooser #pathbarbox > stack > box > button:checked > *,
+#pathbarbox > stack > box > button,
+#pathbarbox > stack > box > button:checked {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border-radius: 8px; }
+
+filechooser #pathbarbox > stack > box > button:hover,
+#pathbarbox > stack > box > button:hover {
+  background-color: rgba(187, 187, 187, 0.08);
+  background-image: none;
+  box-shadow: none;
+  border-radius: 8px; }
+
+/* The theme pads every row image 8px on the right, which pushes the glyph of an
+   icon-only button off centre */
+placessidebar.sidebar row button image,
+placessidebar.sidebar row button image:dir(ltr),
+placessidebar.sidebar row image:dir(ltr) + *,
+filechooser placessidebar row button image,
+filechooser placessidebar.sidebar row button image:dir(ltr) {
+  padding: 0;
+  margin: 0; }
+
+placessidebar.sidebar row button,
+filechooser placessidebar row button {
+  padding: 3px;
+  min-width: 24px;
+  min-height: 24px; }
+
+/* Eject button: bare until hovered */
+placessidebar.sidebar row button,
+placessidebar row button,
+filechooser placessidebar row button,
+.places-treeview row button,
+.nemo-window .places-treeview row button {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border-radius: 8px; }
+
+placessidebar.sidebar row button:hover,
+placessidebar row button:hover,
+filechooser placessidebar row button:hover,
+.places-treeview row button:hover,
+.nemo-window .places-treeview row button:hover {
+  background-color: rgba(187, 187, 187, 0.08);
+  background-image: none;
+  box-shadow: none;
+  border-radius: 8px; }
+
+
+/* ---------- Current folder crumb: no fill in any state, lighter text instead ---------- */
+.nemo-window .path-bar.linked:not(.vertical) > button:checked,
+.nemo-window .path-bar.linked:not(.vertical) > button:checked:hover,
+.nemo-window .path-bar.linked:not(.vertical) > button:checked *,
+.nemo-window .path-bar button:checked,
+.nemo-window .path-bar button:checked:hover,
+.nemo-window .path-bar button:checked *,
+.path-bar.linked:not(.vertical) > button:checked,
+.path-bar.linked:not(.vertical) > button:checked:hover,
+.path-bar button:checked,
+.path-bar button:checked:hover,
+.path-bar button:checked *,
+filechooser #pathbarbox button:checked,
+filechooser #pathbarbox button:checked *,
+.background filechooser #pathbarbox button:checked,
+.background filechooser #pathbarbox button:checked *,
+filechooser #pathbarbox > stack > box > button:checked,
+filechooser #pathbarbox > stack > box > button:checked:hover,
+filechooser #pathbarbox > stack > box > button:checked *,
+#pathbarbox button:checked,
+#pathbarbox button:checked *,
+#pathbarbox > stack > box > button:checked,
+#pathbarbox > stack > box > button:checked:hover,
+#pathbarbox > stack > box > button:checked * {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: #ffffff; }
+
+/* Crumb text brightens on hover */
+.nemo-window .path-bar.linked:not(.vertical) > button:hover,
+.nemo-window .path-bar button:hover,
+.path-bar.linked:not(.vertical) > button:hover,
+.path-bar button:hover,
+.nemo-window .path-bar button:hover label,
+.nemo-window .path-bar button:hover image,
+.path-bar button:hover label,
+.path-bar button:hover image,
+filechooser #pathbarbox > stack > box > button:hover,
+#pathbarbox > stack > box > button:hover,
+filechooser #pathbarbox > stack > box > button:hover label,
+filechooser #pathbarbox > stack > box > button:hover image,
+#pathbarbox > stack > box > button:hover label,
+#pathbarbox > stack > box > button:hover image {
+  color: #ffffff; }
+
+
+/* ---------- Transitions (value copied from the theme) ---------- */
+treeview.view,
+treeview.view:hover,
+treeview.view header button,
+treeview.view header button:hover,
+.row,
+row,
+row:hover,
+list > row:hover,
+listbox > row:hover,
+.path-bar button,
+.path-bar button:hover,
+.nemo-window .path-bar button,
+.nemo-window .path-bar button:hover,
+#pathbarbox button,
+#pathbarbox button:hover,
+placessidebar row button,
+placessidebar row button:hover,
+.places-treeview row button,
+.places-treeview row button:hover,
+.nemo-sidebar-buttons button,
+.nemo-sidebar-buttons button:hover,
+.nemo-canvas-item,
+flowboxchild {
+  transition: all 75ms cubic-bezier(0, 0, 0.2, 1),
+              border-image 225ms cubic-bezier(0, 0, 0.2, 1),
+              background-size 300ms cubic-bezier(0, 0, 0.2, 1),
+              background-image 1200ms cubic-bezier(0, 0, 0.2, 1); }
+
+
+/* ---------- Nemo bottom bar: one colour, no borders, no focus ring ---------- */
+/* The focus ring is an inset box-shadow, which is always a rectangle */
+.nemo-window .nemo-sidebar-buttons button:focus,
+.nemo-window .nemo-sidebar-buttons button:checked,
+.nemo-sidebar-buttons button:focus,
+.nemo-sidebar-buttons button:checked,
+.nemo-window .inline-toolbar button:focus,
+.nemo-window .inline-toolbar button:checked {
+  box-shadow: none;
+  outline-color: transparent; }
+
+/* No border anywhere, and the background paints under any border that remains */
+.nemo-window .nemo-sidebar-buttons,
+.nemo-sidebar-buttons,
+.nemo-window .nemo-sidebar-buttons button,
+.nemo-sidebar-buttons button,
+.nemo-window .inline-toolbar,
+.nemo-window toolbar.inline-toolbar,
+.nemo-window .inline-toolbar button,
+.nemo-window .inline-toolbar button:checked,
+.nemo-window .inline-toolbar button:focus {
+  border-style: none;
+  border-width: 0;
+  border-image: none; }
+
+.nemo-window .nemo-sidebar-buttons button,
+.nemo-sidebar-buttons button,
+.nemo-window .inline-toolbar button {
+  background-color: transparent;
+  background-image: none;
+  background-clip: border-box;
+  border-style: none;
+  border-width: 0;
+  box-shadow: none; }
+
+.nemo-window .inline-toolbar,
+.nemo-window toolbar.inline-toolbar,
+.nemo-window .inline-toolbar box,
+.nemo-window .inline-toolbar label,
+.nemo-window .inline-toolbar image,
+.nemo-window .nemo-sidebar-buttons,
+.nemo-sidebar-buttons,
+.nemo-window .nemo-sidebar-buttons box,
+.nemo-sidebar-buttons box {
+  background-color: #303030;
+  background-image: none;
+  background-clip: border-box;
+  border-style: none;
+  border-width: 0;
+  box-shadow: none; }
+
+/* Nemo's status bar is a nameless `widget` under `grid.vertical`, so it can only
+   be reached by that path. Buttons are excluded so their hover rules still work. */
+.nemo-window grid.vertical > widget,
+.nemo-window grid.vertical > widget box,
+.nemo-window grid.vertical > widget label,
+.nemo-window grid.vertical > widget image,
+.nemo-window grid.vertical > widget toolbar,
+.nemo-window grid.vertical > widget toolbar box,
+.nemo-window grid.vertical > widget toolbar label,
+.nemo-window grid.vertical > widget toolbar image {
+  background-color: #303030;
+  background-image: none;
+  background-clip: border-box;
+  border-style: none;
+  border-width: 0;
+  box-shadow: none; }
+
+
+/* ---------- Button hover fills reach the whole button ---------- */
+/* Theme buttons carry a transparent border and `background-clip: padding-box`,
+   so a fill stops short of the edge. Painting under the border fixes it. */
+button,
+button:hover,
+button:active,
+button:checked,
+button:focus,
+togglebutton:hover,
+togglebutton:checked,
+button image,
+button box,
+button > image,
+button > box,
+.linked > button:hover,
+.linked > button:active,
+.linked > button:checked,
+spinbutton button,
+spinbutton:not(.vertical) button,
+spinbutton.vertical button,
+spinbutton entry,
+spinbutton button:hover,
+spinbutton button:active,
+spinbutton button:checked,
+spinbutton:not(.vertical) button:hover,
+spinbutton.vertical button:hover {
+  background-clip: border-box; }
+
+spinbutton button:hover,
+spinbutton button:active,
+spinbutton button:checked,
+spinbutton:not(.vertical) button:hover,
+spinbutton.vertical button:hover,
+.linked > button:hover,
+.linked > button:active,
+.linked > button:checked,
+button:hover,
+button:active,
+button:checked {
+  box-shadow: none;
+  background-image: none;
+  background-color: rgba(187, 187, 187, 0.08); }
+
+/* The fill belongs on the button, not on what it contains */
+button:hover *,
+button:active *,
+button:checked *,
+button:focus *,
+.linked > button:hover *,
+.linked > button:active *,
+.linked > button:checked *,
+spinbutton button:hover *,
+spinbutton button:active *,
+spinbutton button:checked * {
+  background-color: transparent;
+  background-image: none; }
+
+/* - / + buttons: drop the theme's 6px transparent border so the fill covers the
+   whole button, then size them to the 36px spinbutton height */
+spinbutton.vertical button,
+spinbutton:not(.vertical) button,
+spinbutton button {
+  border-width: 0;
+  border-style: none; }
+
+spinbutton.vertical button:hover,
+spinbutton:not(.vertical) button:hover,
+spinbutton.vertical button:active,
+spinbutton:not(.vertical) button:active,
+spinbutton.vertical button:checked,
+spinbutton:not(.vertical) button:checked,
+spinbutton button:hover,
+spinbutton button:active,
+spinbutton button:checked {
+  border-width: 0;
+  border-style: none; }
+
+spinbutton.vertical button,
+spinbutton:not(.vertical) button,
+spinbutton.horizontal button,
+spinbutton button {
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0;
+  margin: 0; }
+
+
+/* ---------- Nemo sidebar bottom icons: no inner square ---------- */
+.nemo-window .nemo-sidebar-buttons button:hover *,
+.nemo-window .nemo-sidebar-buttons button:active *,
+.nemo-sidebar-buttons button:hover *,
+.nemo-window .inline-toolbar button:hover *,
+.nemo-window .inline-toolbar button:checked *,
+.nemo-window .nemo-sidebar-buttons button image,
+.nemo-sidebar-buttons button image {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none; }
+
+/* The theme styles these through a long selector, so it is matched in kind */
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button:hover,
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button:checked,
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button:active,
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button:hover *,
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button:checked *,
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button:active *,
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button image,
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button > image,
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button box,
+.nemo-window .nemo-sidebar-buttons button.image-button:hover,
+.nemo-window .nemo-sidebar-buttons button.image-button:checked,
+.nemo-window .nemo-sidebar-buttons button.image-button:hover *,
+.nemo-window .nemo-sidebar-buttons button.image-button:checked *,
+.nemo-window .nemo-sidebar-buttons button.image-button image,
+.nemo-window .nemo-sidebar-buttons button.image-button > image,
+.nemo-window .nemo-sidebar-buttons button.image-button box {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  background-clip: border-box; }
+
+/* The button itself keeps its hover fill */
+.nemo-window .nemo-sidebar-buttons button.image-button:hover,
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button:hover {
+  background-color: rgba(187, 187, 187, 0.08);
+  background-clip: border-box; }
+
+/* Icons carry no mark of their own */
+.nemo-window .sidebar image,
+.nemo-window .sidebar button image,
+.nemo-window .nemo-sidebar-buttons image,
+.nemo-window .nemo-sidebar-buttons button image,
+.nemo-window .inline-toolbar image,
+.nemo-window .inline-toolbar button image,
+.nemo-window .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button image,
+.sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button image {
+  background: none;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border: none;
+  -gtk-icon-shadow: none;
+  color: inherit; }
+
+/* Node path read from the inspector:
+     window.nemo-window > grid.vertical > widget > box.toolbar.horizontal
+       > button.image-button.toggle > widget
+   The button's child is a nameless `widget` that carries the square. */
+.nemo-window box.toolbar.horizontal button.image-button > widget,
+.nemo-window box.toolbar.horizontal button.image-button > widget *,
+.nemo-window box.toolbar.horizontal button.toggle > widget,
+.nemo-window box.toolbar.horizontal button.toggle > widget *,
+.nemo-window box.toolbar.horizontal button.image-button:hover > widget,
+.nemo-window box.toolbar.horizontal button.image-button:checked > widget,
+.nemo-window box.toolbar.horizontal button.image-button:hover > widget *,
+.nemo-window box.toolbar.horizontal button.image-button:checked > widget *,
+.nemo-window box.toolbar.horizontal button.toggle:hover > widget,
+.nemo-window box.toolbar.horizontal button.toggle:checked > widget,
+.nemo-window box.toolbar.horizontal button.toggle:hover > widget *,
+.nemo-window box.toolbar.horizontal button.toggle:checked > widget * {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  -gtk-icon-shadow: none;
+  border: none; }
+
+
+/* ---------- Cards: bottoms keyed on the frame's position ---------- */
+/* Toolbar present (frame is not last): the toolbar closes the card.
+   No toolbar (frame is last): the frame closes it. */
+frame.view:last-child,
+frame.view:last-child > border,
+frame.view:last-child border,
+frame.view:last-child > box > scrolledwindow,
+frame.view:last-child > box > scrolledwindow > viewport,
+frame.view:last-child > box > scrolledwindow > viewport > box,
+frame.view:last-child list,
+frame.view:last-child listbox,
+frame.view:last-child list > row:last-child,
+frame.view:last-child listbox > row:last-child {
+  border-radius: 8px; }
+
+frame.view:not(:last-child),
+frame.view:not(:last-child) > border,
+frame.view:not(:last-child) border,
+frame.view:not(:last-child) > box > scrolledwindow,
+frame.view:not(:last-child) > box > scrolledwindow > viewport,
+frame.view:not(:last-child) > box > scrolledwindow > viewport > box,
+frame.view:not(:last-child) list,
+frame.view:not(:last-child) listbox,
+frame.view:not(:last-child) list > row:last-child,
+frame.view:not(:last-child) listbox > row:last-child {
+  border-radius: 8px 8px 0 0; }
+
+/* Rows are square in every position; the container carries the radius */
+list > row,
+listbox > row,
+row.activatable,
+row.activatable:first-child,
+row.activatable:last-child,
+row.activatable:only-child,
+list > row:first-child,
+list > row:last-child,
+list > row:only-child,
+listbox > row:first-child,
+listbox > row:last-child,
+listbox > row:only-child,
+frame.view list > row:last-child,
+frame.view listbox > row:last-child,
+frame.view list > row:first-child,
+frame.view listbox > row:first-child {
+  border-radius: 0; }
+
+
+/* ---------- Segmented tab switcher ---------- */
+stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):not(.flat) {
+  background-color: #303030;
+  color: rgba(255, 255, 255, 0.62); }
+
+stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):not(.flat):hover {
+  background-color: #303030;
+  color: rgba(255, 255, 255, 0.85); }
+
+stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):not(.flat):checked {
+  background-color: #686868;
+  color: #ffffff; }
+
+/* Hairline only between two inactive tabs */
+stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):not(.flat):not(:checked) + button.text-button:not(.suggested-action):not(.destructive-action):not(.flat):not(:checked) {
+  box-shadow: inset 1px 0 0 #303030; }
+
+
+/* ---------- Toolbar action buttons under settings lists: flat, pill on hover ---------- */
+.inline-toolbar button,
+.inline-toolbar toolitem box button {
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 9999px;
+  min-width: 50px;
+  min-height: 30px; }
+
+.inline-toolbar button:hover,
+.inline-toolbar toolitem box button:hover {
+  background-color: rgba(187, 187, 187, 0.12); }
+
+/* `.linked` pairs keep their segmented corners, hence the :not(.linked) guards */
+.inline-toolbar > button:not(.linked),
+.inline-toolbar > toolitem > box:not(.linked) > button:not(.linked),
+.inline-toolbar > toolbutton > button.image-button:not(.linked),
+toolbar > toolitem > stack > box > button.image-button:first-child {
+  border-radius: 9999px; }
+
+/* Per-row gear / "..." button in a settings card */
+frame.view button.image-button:not(.combo),
+frame.view button.image-button:not(.combo):hover {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none; }
+
+frame.view button.image-button:not(.combo):hover {
+  background-color: rgba(187, 187, 187, 0.12); }
+
+
+/* ---------- Keybinding widget (a Gtk.Frame holding two treeviews) ---------- */
+frame:not(.view) treeview.view:first-child { border-radius: 8px 0 0 8px; }
+frame:not(.view) treeview.view:last-child { border-radius: 0 8px 8px 0; }
+frame:not(.view) treeview.view { background-color: transparent; }
+
+frame:not(.view) treeview.view:hover,
+frame:not(.view) treeview.view:hover * {
+  background-color: #303030;
+  background-image: none;
+  box-shadow: none; }
+
+frame:not(.view) treeview.view,
+frame:not(.view) treeview.view:hover,
+frame:not(.view) treeview.view:selected,
+frame:not(.view) treeview.view:selected:focus,
+frame:not(.view) treeview.view:focus {
+  border-radius: 8px; }
+
+frame:not(.view) treeview.view:selected,
+frame:not(.view) treeview.view:selected:focus,
+frame:not(.view) treeview.view:selected * {
+  background-color: #686868;
+  background-image: none;
+  box-shadow: none;
+  border-radius: 8px; }
+
+
+/* ---------- Misc ---------- */
+/* Lists without the .view class (Backgrounds): top corners round, toolbar takes the bottom */
+scrolledwindow.frame { border-radius: 8px 8px 0 0; }
+scrolledwindow.frame:last-child { border-radius: 8px; }
+
+/* Close button in windows that draw their own header (GTK Inspector etc.) */
+button.close:not(.titlebutton),
+headerbar button.close:not(.titlebutton),
+.titlebar button.close:not(.titlebutton) {
+  padding: 0;
+  min-width: 24px;
+  min-height: 24px;
+  margin: 0 3px;
+  border-radius: 9999px; }
+
+/* Backgrounds sidebar footer toolbar */
+scrolledwindow + toolbar.inline-toolbar { padding-left: 13px; }
+
+
+/* ---------- Nemo toolbar / header seam ---------- */
+.nemo-window .primary-toolbar,
+.nemo-window .toolbar,
+.nemo-window headerbar {
+  border-bottom: 1px solid #303030;
+  background-clip: border-box;
+  box-shadow: none; }
+
+.nemo-window .path-bar-box {
+  border-bottom: none;
+  box-shadow: none; }
+
+/* Keeps its hairline: the reset below used to blank it entirely, which is why
+   the divider after the second status-bar button disappeared. */
+.nemo-window .toolbar separator {
+  -gtk-icon-source: none;
+  background-image: none;
+  background-color: rgba(187, 187, 187, 0.16);
+  border: none;
+  min-width: 1px;
+  min-height: 0;
+  margin: 9px 3px; }
+
+/* Opaque file area: a translucent fill let the window colour show through at
+   the seam under the toolbar in fullscreen */
+.nemo-window .view,
+.nemo-window iconview,
+.nemo-window treeview.view,
+.nemo-window scrolledwindow,
+.nemo-window viewport {
+  background-color: #191919;
+  background-image: none; }
+
+/* ...and restated at the base's own specificity. Orchis carries
+   `.nemo-window scrolledwindow.frame .view:not(:selected) { background-color:
+   transparent }` - 0,4,0 against this block's 0,2,0 - and the file list is
+   exactly a .view inside a scrolledwindow.frame, so it is that rule which
+   decides the file area. It did not matter while this file loaded at user
+   priority, above the theme; inside a theme it does, and the file area loses its
+   fill and the seam under the toolbar comes back. These selectors are the base's
+   plus one, so they win on order. */
+.nemo-window scrolledwindow.frame .view:not(:selected),
+.nemo-window scrolledwindow.frame .view:selected,
+.nemo-window scrolledwindow.frame iconview,
+.nemo-window scrolledwindow.frame treeview.view,
+.nemo-window scrolledwindow.frame viewport {
+  background-color: #191919;
+  background-image: none; }
+
+
+/* ---------- Nemo: mark the active row (places sidebar + file list) ---------- */
+/* Nemo's places sidebar is a TREEVIEW (treeview.view.places-treeview), not a
+   GtkPlacesSidebar listbox - the `.nemo-window placessidebar row` shape in the
+   Orchis theme is the Nautilus one and never matches here. What actually killed
+   the selection is the "opaque file area" rule further up, which sets every Nemo
+   treeview to `background-color: #191919; background-image: none` and so erased
+   the selected row's fill. Restore it, in the theme's monochrome, at a
+   specificity that beats that rule (and Nemo's own sheet at priority 600). */
+.nemo-window treeview.view:selected,
+.nemo-window treeview.view:selected:focus,
+.nemo-window treeview.view:selected:backdrop,
+.nemo-window .places-treeview:selected,
+.nemo-window .places-treeview:selected:focus {
+  background-color: #686868;
+  background-image: none;
+  color: #ffffff; }
+
+.nemo-window treeview.view:hover:not(:selected),
+.nemo-window treeview.view:selected:hover {
+  background-color: #686868;
+  background-image: none; }
+
+
+/* Edge case: the stack switcher in this primary toolbar holds a single radio
+   button, which should be fully rounded. The linked idiom above intends exactly
+   that (`.linked:not(.vertical) > button:only-child { border-radius: 8px; }`),
+   but something more specific was trimming it to one side. Restate the whole
+   8px - the theme's button radius - at a specificity that wins.
+   Path as reported by the GTK inspector:
+     window.background > box.vertical > toolbar.primary-toolbar
+       > toolitem > box.horizontal > stackswitcher.linked.stack-switcher
+         > button.text-button.radio */
+window.background > box.vertical > toolbar.primary-toolbar
+  toolitem > box.horizontal > stackswitcher.linked.stack-switcher
+  > button.text-button.radio {
+  border-radius: 8px; }
+
+
+/* xlet-settings' toolbar "..." menu button (Gtk.MenuButton, built in
+   /usr/share/cinnamon/cinnamon-settings/xlet-settings.py:177). Its hover rect
+   measured 36x40 - taller than wide. Widened rather than shortened: horizontal
+   padding cannot change the toolbar's height, whereas trimming vertically is
+   what inflated the Nemo status bar. */
+window.background > box.vertical > toolbar.primary-toolbar
+  toolitem > box.horizontal > menubutton > button {
+  padding-left: 2px;
+  padding-right: 2px; }
+
+/* That same button's popup came up see-through. The cause is in the theme, not
+   here: Orchis-Dark-Zen/gtk-3.0/gtk.css:1850 makes the popup WINDOW itself
+   transparent -
+       .background.popup { background-color: transparent; ... }
+   - and leans on the `menu` node inside it to paint the fill. xlet-settings'
+   menu is a plain Gtk.Menu from `menu_button.set_popup(menu)`; nothing in
+   either sheet gives that popup a fill, so the transparent window won.
+   Same specificity as the theme rule, so this file's later load wins. */
+.background.popup {
+  background-color: #303030;
+  background-image: none;
+  background-clip: border-box; }
+
+/* ...and the items in it had no hover fill either, for the same kind of reason:
+   the theme only ever writes `menu menuitem:hover`, an element selector. GTK's
+   own Adwaita styles these through the class variants as well -
+       menu menuitem, .menu menuitem, .context-menu menuitem      (and :hover)
+   - because a popover-backed menu's container carries .menu/.context-menu
+   rather than being the `menu` element, and popover-backed items can be
+   modelbutton.flat / button.model. Cover both shapes inside the popup, with the
+   same hover value the rest of this file uses. */
+.background.popup menuitem:hover,
+.background.popup .menu menuitem:hover,
+.background.popup .context-menu menuitem:hover,
+.background.popup menuitem:selected,
+.background.popup modelbutton.flat:hover,
+.background.popup button.model:hover {
+  background-color: rgba(187, 187, 187, 0.08);
+  background-image: none;
+  box-shadow: none;
+  border-radius: 8px;
+  color: #ffffff; }
+
+
+/* Icon-only buttons in the settings' inline toolbars and in titlebars. A 9999px
+   radius is a pill on a wide text button, but on a square icon button it is a
+   circle the moment a hover fill reveals the shape - which is what the back
+   button does. Only the buttons with no label come back to the 8px control
+   radius: the wide ones keep their pill, and window controls keep their circles. */
+.inline-toolbar button.image-button,
+.inline-toolbar toolitem box button.image-button,
+.inline-toolbar > toolbutton > button.image-button:not(.linked),
+.inline-toolbar > toolitem > box:not(.linked) > button.image-button:not(.linked),
+toolbar > toolitem > stack > box > button.image-button:first-child,
+headerbar button.image-button:not(.titlebutton),
+.titlebar button.image-button:not(.titlebutton) {
+  border-radius: 8px; }
+
+/* Same rule stated generally, so it also covers the per-row "..." buttons in
+   settings cards and anything else icon-only: an icon button is a control, not
+   a pill, and a 9999px radius only reads as a circle once a hover or focus fill
+   shows its shape. Window controls are the deliberate exception. */
+button.image-button:not(.titlebutton):not(.circular) {
+  border-radius: 8px; }
+
+
+/* ---------- cinnamon-settings' category tiles ---------- */
+/* .cs-category-view is the class the app itself puts on that container
+   (cinnamon-settings.py: self.side_view_container's context.add_class). Its
+   tiles carry the theme's "active window" ring - a light 2px ring, measured at
+   #7c7c7c over the #303030 tile - and because it is keyed on the window being
+   focused rather than on a tile being selected, clicking any one of them rings
+   all of them. Dropped here, with the hover restated as the translucent fill
+   this file uses everywhere else, since the theme's hover painting is the same
+   box-shadow. */
+.cs-category-view button,
+.cs-category-view button:hover,
+.cs-category-view button:focus,
+.cs-category-view button:active,
+.cs-category-view button:checked {
+  border-color: transparent;
+  box-shadow: none; }
+
+.cs-category-view button:hover {
+  background-color: rgba(187, 187, 187, 0.08); }
+
+
+/***** scrollbar slider - cinnamon-settings-generated - do not edit *****/
+
+
+
+
+
+
+
+
+/* Zenwritten: controls carry no hue */
+
+check:checked, check:indeterminate,
+radio:checked,
+radio:indeterminate {
+  color: #bbbbbb; }
+
+treeview.view check:checked, treeview.view check:indeterminate, treeview.view check:hover:checked, treeview.view check:hover:indeterminate, treeview.view check:selected:checked, treeview.view check:selected:indeterminate, treeview.view radio:checked, treeview.view radio:indeterminate, treeview.view radio:hover:checked, treeview.view radio:hover:indeterminate, treeview.view radio:selected:checked, treeview.view radio:selected:indeterminate {
+  color: #bbbbbb; }
+
+spinbutton.vertical selection,
+spinbutton:not(.vertical) selection,
+entry selection,
+label selection,
+textview text selection:focus,
+textview text selection {
+  background-color: #686868;
+  color: #FFF; }
