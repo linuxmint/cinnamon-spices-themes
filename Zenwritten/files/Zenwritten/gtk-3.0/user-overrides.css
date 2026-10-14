@@ -19,13 +19,13 @@
    ============================================================================= */
 
 /* ---------- Palette ---------- */
-@define-color accent_bg_color #404040;
+@define-color accent_bg_color #686868;
 @define-color accent_color #bbbbbb;
-@define-color theme_selected_bg_color #404040;
+@define-color theme_selected_bg_color #686868;
 @define-color theme_selected_fg_color #bbbbbb;
-@define-color theme_unfocused_selected_bg_color #303030;
+@define-color theme_unfocused_selected_bg_color #404040;
 @define-color theme_unfocused_selected_fg_color #bbbbbb;
-@define-color selected_bg_color #404040;
+@define-color selected_bg_color #686868;
 @define-color selected_fg_color #bbbbbb;
 
 @define-color window_bg_color #191919;
@@ -40,7 +40,7 @@
 @define-color theme_fg_color #bbbbbb;
 @define-color theme_text_color #bbbbbb;
 @define-color theme_unfocused_bg_color #191919;
-@define-color theme_unfocused_base_color #191919;
+@define-color theme_unfocused_base_color #303030;
 @define-color theme_unfocused_fg_color rgba(187, 187, 187, 0.5);
 @define-color theme_unfocused_text_color rgba(187, 187, 187, 0.5);
 
@@ -64,17 +64,17 @@
 
 /* ---------- Switch ---------- */
 switch slider { background-color: #bbbbbb; }
-switch:not(:checked):not(:disabled) { background-color: #404040; }
+switch:not(:checked):not(:disabled) { background-color: #686868; }
 switch:checked { background-color: #9e9e9e; }
 switch:checked slider { background-color: #bbbbbb; }
 
 switch:disabled,
 switch:disabled:not(:checked) {
-  background-color: #404040;
+  background-color: #686868;
   background-image: none; }
 switch:disabled:not(:checked) slider { background-color: #8b8b8b; }
 switch:disabled:checked {
-  background-color: #404040;
+  background-color: #686868;
   background-image: none; }
 switch:disabled:checked slider { background-color: #bbbbbb; }
 
@@ -141,21 +141,21 @@ toolbar:backdrop label,
 .nemo-window .primary-toolbar:backdrop button {
   color: rgba(255, 255, 255, 0.55); }
 
-headerbar, .titlebar, toolbar { border-bottom: 1px solid #404040; }
+headerbar, .titlebar, toolbar { border-bottom: 1px solid #686868; }
 
 .nemo-window .sidebar,
-.sidebar, placessidebar, stacksidebar { border-right: 1px solid #404040; }
+.sidebar, placessidebar, stacksidebar { border-right: 1px solid #686868; }
 
 /* View-mode toggles (grid / list / compact): filled when active */
 .nemo-window .primary-toolbar button:checked,
 .nemo-window .primary-toolbar togglebutton:checked {
-  background-color: #404040;
+  background-color: #686868;
   background-image: none;
   color: #ffffff; }
 
 .nemo-window .primary-toolbar button:checked:hover,
 .nemo-window .primary-toolbar togglebutton:checked:hover {
-  background-color: #404040; }
+  background-color: #686868; }
 
 /* Nemo injects a stylesheet at priority 600, so the chrome colours are restated */
 .nemo-window .primary-toolbar,
@@ -196,19 +196,19 @@ treeview.view { padding-left: 4px; padding-right: 4px; }
 
 /* ---------- Buttons: contrast ---------- */
 button:not(.flat) {
-  background-color: #404040;
-  border-color: #404040; }
+  background-color: #686868;
+  border-color: #686868; }
 
-button:not(.flat):hover { background-color: #404040; }
+button:not(.flat):hover { background-color: #686868; }
 button:not(.flat):active,
-button:not(.flat):checked { background-color: #404040; }
+button:not(.flat):checked { background-color: #686868; }
 
 /* Buttons inside a settings card need their own fills */
 frame.view button,
-frame.view button.flat { background-color: #404040; }
-frame.view button:hover { background-color: #686868; }
+frame.view button.flat { background-color: #686868; }
+frame.view button:hover { background-color: #7c7c7c; }
 frame.view button:checked,
-frame.view button:active { background-color: #686868; }
+frame.view button:active { background-color: #7c7c7c; }
 
 /* Borderless buttons need to be findable on hover */
 button.flat:hover,
@@ -241,10 +241,16 @@ button.combo:hover {
 button.destructive-action,
 button.destructive-action:focus {
   background-color: #de6e7c;
-  color: #ffffff; }
+  color: #000000; }
 button.destructive-action:hover { background-color: #e8838f; }
 button.destructive-action:active,
 button.destructive-action:checked { background-color: #c2555f; }
+
+button.destructive-action,
+button.destructive-action:hover,
+button.destructive-action:active,
+button.destructive-action:checked {
+  color: #000000; }
 
 
 /* ---------- Radii ---------- */
@@ -458,7 +464,7 @@ iconview.view:focus {
 /* View-mode toggles keep their filled active state (restated: rule above is later) */
 .nemo-window .primary-toolbar button:checked,
 .nemo-window .primary-toolbar togglebutton:checked {
-  background-color: #404040;
+  background-color: #686868;
   color: #ffffff; }
 
 /* Crumbs */
@@ -573,7 +579,7 @@ button.popup:checked { background-color: rgba(187, 187, 187, 0.12); }
 
 /* Inactive toggles dimmed so the active one reads as brighter */
 .nemo-window button.toggle:not(.flat):not(:checked) {
-  color: rgba(255, 255, 255, 0.42); }
+  color: rgba(255, 255, 255, 0.5); }
 
 .nemo-window button.toggle:not(.flat):not(:checked):hover {
   color: rgba(255, 255, 255, 0.80);
@@ -618,7 +624,7 @@ treeview.view header button:hover {
 /* ---------- Nemo icon view selection, icon view cells ---------- */
 .nemo-window .nemo-canvas-item:selected,
 .nemo-window .nemo-canvas-item:selected:focus {
-  background-color: #404040; }
+  background-color: #686868; }
 
 iconview .cell,
 iconview .cell:hover,
@@ -669,7 +675,7 @@ iconview .cell:focus:not(:selected) {
    and file-manager selections survive, and why Nemo's selected rows are visible
    with the window unfocused. Stated here for every family this layer touches so
    a selection can never end up invisible for want of focus. Colours are the ones
-   this file already uses: the raised #404040, #bbbbbb text. */
+   this file already uses: the raised #686868, #bbbbbb text. */
 treeview.view:selected:backdrop,
 .places-treeview:selected:backdrop,
 .nemo-window treeview.view:selected:backdrop,
@@ -679,7 +685,7 @@ list row.activatable:selected:backdrop,
 flowboxchild:selected:backdrop,
 iconview .cell:selected:backdrop,
 iconview.view:selected:backdrop {
-  background-color: #404040;
+  background-color: #686868;
   color: #ffffff; }
 
 /* Same for an active tool: a checked view-mode toggle is still on when the
@@ -688,7 +694,7 @@ button:checked:backdrop,
 togglebutton:checked:backdrop,
 .nemo-window .primary-toolbar button:checked:backdrop,
 .nemo-window .primary-toolbar togglebutton:checked:backdrop {
-  background-color: #404040;
+  background-color: #686868;
   color: #ffffff; }
 
 
@@ -1231,7 +1237,7 @@ stackswitcher > button.text-button:not(.suggested-action):not(.destructive-actio
   color: rgba(255, 255, 255, 0.85); }
 
 stackswitcher > button.text-button:not(.suggested-action):not(.destructive-action):not(.flat):checked {
-  background-color: #404040;
+  background-color: #686868;
   color: #ffffff; }
 
 /* Hairline only between two inactive tabs */
@@ -1291,7 +1297,7 @@ frame:not(.view) treeview.view:focus {
 frame:not(.view) treeview.view:selected,
 frame:not(.view) treeview.view:selected:focus,
 frame:not(.view) treeview.view:selected * {
-  background-color: #404040;
+  background-color: #686868;
   background-image: none;
   box-shadow: none;
   border-radius: 8px; }
@@ -1379,13 +1385,13 @@ scrolledwindow + toolbar.inline-toolbar { padding-left: 13px; }
 .nemo-window treeview.view:selected:backdrop,
 .nemo-window .places-treeview:selected,
 .nemo-window .places-treeview:selected:focus {
-  background-color: #404040;
+  background-color: #686868;
   background-image: none;
   color: #ffffff; }
 
 .nemo-window treeview.view:hover:not(:selected),
 .nemo-window treeview.view:selected:hover {
-  background-color: #404040;
+  background-color: #686868;
   background-image: none; }
 
 
@@ -1500,11 +1506,7 @@ button.image-button:not(.titlebutton):not(.circular) {
 
 
 
-/* ==== Zenwritten: controls carry no hue ===============================
-   Appended by build.sh, after the palette port and in final palette values -
-   nothing here is remapped. See the comment in build.sh for why the selector
-   lists are given in full.
-   =============================================================== */
+/* Zenwritten: controls carry no hue */
 
 check:checked, check:indeterminate,
 radio:checked,
@@ -1513,3 +1515,12 @@ radio:indeterminate {
 
 treeview.view check:checked, treeview.view check:indeterminate, treeview.view check:hover:checked, treeview.view check:hover:indeterminate, treeview.view check:selected:checked, treeview.view check:selected:indeterminate, treeview.view radio:checked, treeview.view radio:indeterminate, treeview.view radio:hover:checked, treeview.view radio:hover:indeterminate, treeview.view radio:selected:checked, treeview.view radio:selected:indeterminate {
   color: #bbbbbb; }
+
+spinbutton.vertical selection,
+spinbutton:not(.vertical) selection,
+entry selection,
+label selection,
+textview text selection:focus,
+textview text selection {
+  background-color: #686868;
+  color: #FFF; }
