@@ -8347,6 +8347,15 @@ iconview.cell:selected, flowboxchild:selected {
   border-radius: 10px;
 }
 
+.rubberband, rubberband, flowbox > rubberband, gridview > rubberband, columnview.view > rubberband,
+treeview.view > rubberband,
+.content-view rubberband, .content-view .rubberband, .view.rubberband, iconview.view.rubberband, widget.view.rubberband,
+.nemo-desktop.view.rubberband, .nemo-canvas-item.rubberband, treeview.view rubberband, flowbox rubberband {
+  background-color: rgba(106, 168, 255, 0.2);
+  border: 1px solid #6AA8FF;
+  border-radius: 0;
+}
+
 treeview.view,
 treeview.view.cell,
 treeview.view:selected,
@@ -8552,16 +8561,20 @@ dialog .sidebar row image {
   color: #5E6784;
 }
 
-.path-bar.linked:not(.vertical) > button.toggle:not(.slider-button):not(:checked) {
-  padding: 0 8px 0 5px;
-  border-right: 12px solid transparent;
-  border-radius: 14px 26px 26px 14px/14px;
+.path-bar.linked:not(.vertical) > button.toggle:not(.slider-button) ~ button.toggle:not(.slider-button) {
+  border-left: 12px solid transparent;
+  border-radius: 26px 14px 14px 26px/14px;
   background-image: -gtk-recolor(url("assets/mentha-chevron-right-symbolic.svg"));
   background-origin: border-box;
   background-clip: border-box;
-  background-position: 100% center;
+  background-position: 0 center;
   background-size: 12px 12px;
   background-repeat: no-repeat;
+  color: #98A3BF;
+}
+
+.path-bar.linked:not(.vertical) > button.toggle:not(.slider-button):not(:checked) {
+  padding: 0 8px 0 5px;
   font-weight: 400;
   color: #98A3BF;
 }
@@ -8939,6 +8952,14 @@ infobar.error:backdrop > revealer > box button:hover {
 infobar.error > revealer > box *:link,
 infobar.error:backdrop > revealer > box *:link {
   color: #8DBCFF;
+}
+
+.nemo-window infobar > revealer > box,
+.nemo-window infobar:backdrop > revealer > box,
+.nemo-window infobar:hover > revealer > box {
+  border-radius: 0;
+  box-shadow: none;
+  padding-left: 12px;
 }
 
 infobar > revealer > box button.flat image,
