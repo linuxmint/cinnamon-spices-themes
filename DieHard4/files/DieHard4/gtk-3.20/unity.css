@@ -1,0 +1,66 @@
+/* Window frames for Unity 7, which draws them from the GTK 3 theme.
+   Imported by gtk-3.20/gtk.css and gtk-3.0/gtk.css. The -UnityDecoration-
+   properties are ignored silently by GTK outside Unity.
+
+   Extents are top, right, bottom, left: the stripe plus a transparent gap
+   is the left border; the stripe stops one stripe-width short of the
+   bottom, where a square orange in its top-right half makes the
+   45-degree cut. */
+
+UnityDecoration {
+  -UnityDecoration-extents: 26px 2px 3px 20px;
+  -UnityDecoration-input-extents: 6px;
+  -UnityDecoration-shadow-offset-x: 0;
+  -UnityDecoration-shadow-offset-y: 2px;
+  -UnityDecoration-active-shadow-color: rgba(0, 0, 0, 0.5);
+  -UnityDecoration-active-shadow-radius: 8px;
+  -UnityDecoration-inactive-shadow-color: rgba(0, 0, 0, 0.5);
+  -UnityDecoration-inactive-shadow-radius: 6px;
+  -UnityDecoration-glow-size: 6px;
+  -UnityDecoration-glow-color: #9f440d;
+  -UnityDecoration-title-indent: 8px;
+  -UnityDecoration-title-fade: 24px;
+  -UnityDecoration-title-alignment: 0.0;
+}
+
+UnityDecoration.top,
+UnityDecoration.top:backdrop {
+  color: #a4a8ac;
+  background-color: transparent;
+  background-image: linear-gradient(#9f440d, #9f440d),
+                    linear-gradient(#0d151d, #0d151d);
+  background-size: 18px 100%, 100% 100%;
+  background-position: left top, 20px 0;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 2px 2px 0 0;
+  padding: 0 4px 0 28px;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+UnityDecoration.left,
+UnityDecoration.left:backdrop {
+  background-color: transparent;
+  background-image: linear-gradient(#9f440d, #9f440d),
+                    linear-gradient(to bottom left, #9f440d 50%, transparent 50%);
+  background-size: 18px 100%, 18px 18px;
+  background-position: 0 -18px, left bottom;
+  background-repeat: no-repeat;
+}
+
+UnityDecoration.right,
+UnityDecoration.right:backdrop,
+UnityDecoration.bottom,
+UnityDecoration.bottom:backdrop {
+  background-color: #0d151d;
+}
+
+UnityDecoration .menuitem {
+  color: #a4a8ac;
+}
+
+UnityDecoration .menuitem:hover {
+  color: #ffffff;
+  background-color: #9f440d;
+}

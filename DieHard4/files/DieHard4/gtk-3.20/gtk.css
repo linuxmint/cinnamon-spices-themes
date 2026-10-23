@@ -1,0 +1,658 @@
+@define-color theme_bg_color #0d151d;
+@define-color theme_fg_color #a4a8ac;
+@define-color theme_base_color #0d151d;
+@define-color theme_text_color #a4a8ac;
+@define-color theme_selected_bg_color #9f440d;
+@define-color theme_selected_fg_color #ffffff;
+@define-color theme_unfocused_bg_color #0d151d;
+@define-color theme_unfocused_fg_color #a4a8ac;
+@define-color theme_border_color #0d151d;
+@define-color theme_accent_color #9f440d;
+@define-color theme_accent_hover #9f440d;
+@define-color theme_accent_pressed #9f440d;
+
+/* The one lighter navy, for control shapes that would otherwise vanish
+   into the window: buttons, entries, checkboxes, switch, scrollbar. */
+@define-color control_bg_color #1a2733;
+
+/* Text inputs: entries, spin button fields, search bars. */
+@define-color entry_bg_color #0c1118;
+
+@define-color bg_color @theme_bg_color;
+@define-color fg_color @theme_fg_color;
+@define-color base_color @theme_base_color;
+@define-color text_color @theme_text_color;
+@define-color selected_bg_color @theme_selected_bg_color;
+@define-color selected_fg_color @theme_selected_fg_color;
+@define-color borders @theme_border_color;
+@define-color insensitive_fg_color #59636d;
+@define-color tooltip_bg_color #0d151d;
+@define-color tooltip_fg_color #a4a8ac;
+
+@import url("unity.css");
+
+/* No color here: it would pin every label and icon to the text colour
+   instead of inheriting from its button or row (grey text on orange). */
+* {
+  background-clip: padding-box;
+}
+
+window,
+dialog,
+messagedialog,
+.background {
+  color: @theme_fg_color;
+  background-color: @theme_bg_color;
+}
+
+*:disabled {
+  color: @insensitive_fg_color;
+}
+
+*:selected,
+*:selected:focus {
+  color: @theme_selected_fg_color;
+  background-color: @theme_selected_bg_color;
+}
+
+/* Every control is 24px tall: 16px of content (18px for text in entries
+   and combo boxes, hence their 3px padding) plus padding. */
+entry,
+spinbutton,
+combobox entry,
+.search-bar,
+.inline-toolbar {
+  color: @theme_text_color;
+  background-color: @entry_bg_color;
+  border: none;
+  border-radius: 2px;
+  min-height: 16px;
+  padding: 3px 8px;
+  caret-color: @theme_accent_hover;
+}
+
+spinbutton {
+  padding: 0;
+}
+
+spinbutton entry {
+  min-width: 32px;
+}
+
+spinbutton button,
+spinbutton button:hover,
+spinbutton button:active {
+  min-height: 16px;
+  min-width: 16px;
+  padding: 4px;
+  border-radius: 0;
+}
+
+combobox arrow {
+  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+  min-width: 16px;
+  min-height: 16px;
+}
+
+combobox button {
+  padding: 3px 8px;
+}
+
+toolbar {
+  padding: 4px;
+}
+
+toolbar button {
+  margin: 0;
+  padding: 4px;
+}
+
+/* Toolbar spacing: 1px between neighbouring buttons everywhere. Apps fix
+   some spacing in code (GtkBox spacing can't be set from CSS in GTK3), so
+   each case is pulled or pushed to exactly 1px. */
+/* GtkToolbar ignores CSS margins on its items, so the gap goes on the
+   button inside each one. */
+toolbar > toolbutton:not(:last-child) > button,
+toolbar > toolitem:not(:last-child) > button {
+  margin-right: 1px;
+}
+
+.linked:not(.vertical) > *:not(:last-child) {
+  margin-right: 1px;
+}
+
+.linked.vertical > *:not(:last-child) {
+  margin-bottom: 1px;
+}
+
+/* Nemo packs its navigation and view buttons in boxes with 2px spacing. */
+.nemo-window .primary-toolbar toolitem > box > button:not(:last-child) {
+  margin-right: -1px;
+}
+
+/* Nemo's path bar has no spacing of its own. */
+.nemo-window .primary-toolbar stack button:not(:last-child) {
+  margin-right: 1px;
+}
+
+entry:focus,
+spinbutton:focus,
+combobox entry:focus,
+.search-bar:focus {
+  border: none;
+}
+
+entry:disabled,
+spinbutton:disabled {
+  color: @insensitive_fg_color;
+  background-color: @entry_bg_color;
+}
+
+button,
+button.flat,
+toolbar button,
+headerbar button {
+  color: @theme_fg_color;
+  background-color: @control_bg_color;
+  border: none;
+  border-radius: 2px;
+  min-height: 16px;
+  min-width: 16px;
+  padding: 4px 8px;
+  transition: background-color 120ms ease;
+}
+
+button:hover,
+toolbar button:hover,
+headerbar button:hover {
+  color: @theme_selected_fg_color;
+  background-color: #9f440d;
+}
+
+button:active,
+button:checked,
+toolbar button:active,
+toolbar button:checked {
+  color: @theme_selected_fg_color;
+  background-color: @theme_accent_pressed;
+}
+
+button:disabled {
+  color: @insensitive_fg_color;
+  background-color: @control_bg_color;
+}
+
+button.suggested-action,
+button.destructive-action {
+  color: @theme_selected_fg_color;
+  background-color: @theme_accent_color;
+}
+
+button.suggested-action:hover,
+button.destructive-action:hover {
+  background-color: @theme_accent_hover;
+}
+
+/* Toolbar buttons sit on the toolbar with no box of their own; they turn
+   orange under the pointer, when pressed, and when selected (the active
+   view, the current folder in a path bar). */
+toolbar button,
+.toolbar button,
+.primary-toolbar button {
+  background-color: transparent;
+}
+
+toolbar button:hover,
+toolbar button:active,
+toolbar button:checked,
+.toolbar button:hover,
+.toolbar button:active,
+.toolbar button:checked,
+.primary-toolbar button:hover,
+.primary-toolbar button:active,
+.primary-toolbar button:checked {
+  color: @theme_selected_fg_color;
+  background-color: @theme_selected_bg_color;
+}
+
+toolbar button:disabled,
+.toolbar button:disabled,
+.primary-toolbar button:disabled {
+  background-color: transparent;
+}
+
+menubar,
+toolbar,
+headerbar,
+tabbar,
+.titlebar,
+.toolbar {
+  color: @theme_fg_color;
+  background-color: #0d151d;
+  border: none;
+  border-color: transparent;
+}
+
+headerbar {
+  min-height: 24px;
+  padding: 4px 8px;
+  border: none;
+}
+
+
+
+headerbar .title {
+  color: #a4a8ac;
+  font-weight: bold;
+}
+
+menubar > menuitem {
+  padding: 4px 8px;
+}
+
+menubar > menuitem:hover,
+menuitem:hover {
+  color: @theme_selected_fg_color;
+  background-color: @theme_selected_bg_color;
+}
+
+menu,
+.menu,
+popover,
+popover.background {
+  color: @theme_fg_color;
+  background-color: #0d151d;
+  border: none;
+  box-shadow: none;
+}
+
+menuitem {
+  min-height: 20px;
+  padding: 4px 8px;
+}
+
+menuitem:disabled {
+  color: @insensitive_fg_color;
+}
+
+treeview,
+treeview.view,
+list,
+listview,
+columnview,
+textview text {
+  color: @theme_text_color;
+  background-color: @theme_base_color;
+}
+
+treeview.view:hover,
+row:hover,
+list row:hover {
+  background-color: @control_bg_color;
+}
+
+treeview.view:selected,
+row:selected,
+list row:selected {
+  color: @theme_selected_fg_color;
+  background-color: @theme_selected_bg_color;
+}
+
+/* The file chooser's places sidebar: 24px rows like every other control,
+   8px from the edges and between icon and label. */
+placessidebar list {
+  padding: 4px 0;
+}
+
+placessidebar row.sidebar-row {
+  min-height: 24px;
+  padding: 0 8px;
+}
+
+placessidebar row.sidebar-row .sidebar-icon:dir(ltr) {
+  margin-right: 8px;
+}
+
+placessidebar row.sidebar-row .sidebar-icon:dir(rtl) {
+  margin-left: 8px;
+}
+
+placessidebar row.sidebar-row .sidebar-button {
+  min-width: 20px;
+  min-height: 20px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+placessidebar row.sidebar-row .sidebar-button:hover {
+  color: @theme_selected_fg_color;
+  background-color: @theme_selected_bg_color;
+}
+
+placessidebar separator {
+  margin: 4px 0;
+}
+
+/* List column headers: 1px apart, like toolbar buttons. */
+treeview header button:not(:last-child) {
+  margin-right: 1px;
+}
+
+notebook,
+notebook > stack {
+  color: @theme_fg_color;
+  background-color: @theme_bg_color;
+  border: none;
+}
+
+notebook > header {
+  background-color: #0d151d;
+  border: none;
+}
+
+notebook > header tab {
+  color: @theme_unfocused_fg_color;
+  background-color: #0d151d;
+  border: none;
+  padding: 4px 12px;
+}
+
+notebook > header tab:checked {
+  color: @theme_fg_color;
+  background-color: @theme_bg_color;
+  border: none;
+  box-shadow: inset 0 -2px #9f440d;
+}
+
+/* Tab close buttons: the same as the window close button, a 22x18
+   control-navy box with a 12px glyph, orange with white under the
+   pointer. */
+notebook > header tab button,
+#nemo-tab-close-button {
+  min-width: 22px;
+  min-height: 18px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  box-shadow: none;
+  color: @theme_fg_color;
+  background-color: @control_bg_color;
+  background-image: none;
+}
+
+notebook > header tab button image,
+#nemo-tab-close-button image {
+  -gtk-icon-transform: scale(0.75);
+}
+
+notebook > header tab button:hover,
+notebook > header tab button:active,
+#nemo-tab-close-button:hover,
+#nemo-tab-close-button:active {
+  color: @theme_selected_fg_color;
+  background-color: @theme_selected_bg_color;
+}
+
+scrollbar {
+  -GtkScrollbar-has-backward-stepper: false;
+  -GtkScrollbar-has-forward-stepper: false;
+  background-color: #0d151d;
+}
+
+/* No stepper arrows: GTK3 shows them unless the theme turns them off. */
+scrollbar button {
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  -gtk-icon-source: none;
+}
+
+scrollbar slider {
+  min-width: 6px;
+  min-height: 6px;
+  margin: 2px;
+  background-color: @control_bg_color;
+  border: none;
+  border-radius: 3px;
+}
+
+scrollbar slider:hover {
+  background-color: #9f440d;
+}
+
+scrollbar slider:active {
+  background-color: @theme_accent_color;
+}
+
+scale trough,
+progressbar trough,
+levelbar trough {
+  background-color: @control_bg_color;
+  border: none;
+  border-radius: 2px;
+}
+
+scale highlight,
+progressbar progress,
+levelbar block.filled {
+  background-color: @theme_accent_color;
+  border-radius: 2px;
+}
+
+scale slider {
+  min-width: 12px;
+  min-height: 12px;
+  background-color: #d0d4d7;
+  border: none;
+  border-radius: 50%;
+}
+
+check,
+radio {
+  min-width: 14px;
+  min-height: 14px;
+  margin: 0 8px 0 0;
+  color: @theme_fg_color;
+  background-color: @control_bg_color;
+  border: none;
+}
+
+check:checked,
+radio:checked {
+  color: @theme_selected_fg_color;
+  background-color: @theme_accent_color;
+}
+
+switch {
+  min-width: 32px;
+  min-height: 16px;
+  padding: 2px;
+  font-size: 0;
+  color: transparent;
+  background-color: @control_bg_color;
+  border: none;
+  border-radius: 10px;
+}
+
+switch image {
+  color: transparent;
+}
+
+switch:checked {
+  background-color: @theme_accent_color;
+}
+
+switch slider {
+  min-width: 16px;
+  min-height: 16px;
+  margin: 0;
+  background-color: #c2c7cc;
+  border-radius: 50%;
+}
+
+tooltip,
+tooltip.background {
+  color: @tooltip_fg_color;
+  background-color: @tooltip_bg_color;
+  border: none;
+  border-radius: 2px;
+  padding: 4px 8px;
+}
+
+frame,
+separator,
+paned > separator {
+  border-color: @theme_border_color;
+}
+
+frame > border,
+scrolledwindow.frame,
+viewport.frame {
+  border: none;
+}
+
+infobar {
+  color: @theme_fg_color;
+  background-color: #0d151d;
+}
+
+infobar.info {
+  border-left: 3px solid #477f9f;
+}
+
+infobar.warning,
+infobar.question {
+  border-left: 3px solid @theme_accent_color;
+}
+
+infobar.error {
+  border-left: 3px solid #b64436;
+}
+
+selection,
+textview text selection {
+  color: @theme_selected_fg_color;
+  background-color: @theme_selected_bg_color;
+}
+
+link,
+*:link {
+  color: #9f440d;
+}
+
+link:hover,
+*:link:hover {
+  color: #9f440d;
+}
+
+/* ------------------------------------------------------------------
+   Window frames (Cinnamon/Muffin server-side decorations)
+
+   Muffin 6 draws window borders from this GTK3 stylesheet; it does not
+   read metacity-1/. These selectors only match Muffin's frame nodes
+   (window.ssd > decoration > headerbar.titlebar), never app content.
+   The rail is a background layer painted into space reserved with
+   padding, so it can be shaped with gradients (the 45-degree foot).
+   Muffin caches this file by theme name: restart Cinnamon (Ctrl+Alt+Esc)
+   after editing it.
+   ------------------------------------------------------------------ */
+
+/* Corners: Muffin reads one radius from the titlebar's border-radius and
+   rounds a corner of the whole window (client included) only where the two
+   frame borders meeting there add up to 5px or more. The 2px right and 3px
+   bottom edges below exist so the bottom-right corner qualifies; the
+   bottom-left one falls inside the stripe's transparent 45-degree cut. */
+.ssd decoration {
+  margin: 0;
+  border: none;
+  border-radius: 2px 2px 2px 0;
+  box-shadow: none;
+  padding: 0 2px 3px 20px;
+  /* Transparent so the chamfer and the 2px gap between stripe and
+     window show the desktop; the client, titlebar and navy edge layers
+     cover everything else. */
+  background-color: transparent;
+  /* The stripe, shifted up by its own width so it stops 18px short of the
+     bottom; an 18px square under it, orange in its top-right half, which
+     makes the 45-degree cut; then the navy right and bottom edges, the
+     bottom one starting after the stripe and gap so both stay clear. */
+  background-image: linear-gradient(to right, #9f440d, #9f440d),
+                    linear-gradient(to bottom left, #9f440d 50%, transparent 50%),
+                    linear-gradient(#0d151d, #0d151d),
+                    linear-gradient(#0d151d, #0d151d);
+  background-size: 18px 100%, 18px 18px, 2px 100%, 100% 3px;
+  background-position: 0 -18px, left bottom, right top, 20px 100%;
+  background-repeat: no-repeat;
+}
+
+/* Muffin puts "maximized" on the window node (add_toplevel_class), not on
+   the decoration, so it is matched as an ancestor. */
+.ssd.maximized decoration,
+.ssd.maximized decoration:backdrop {
+  padding: 0;
+  border-radius: 0;
+  background-image: none;
+}
+
+/* The titlebar spans the full frame width, so it paints the rail too:
+   the stripe, the transparent gap, then navy from the gap onwards. */
+.ssd headerbar.titlebar {
+  min-height: 26px;
+  padding: 0 4px 0 28px;
+  border: none;
+  border-radius: 2px 2px 0 0;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: linear-gradient(to right, #9f440d, #9f440d),
+                    linear-gradient(#0d151d, #0d151d);
+  background-size: 18px 100%, 100% 100%;
+  background-position: left top, 20px 0;
+  background-repeat: no-repeat;
+}
+
+.maximized headerbar.titlebar,
+.maximized headerbar.titlebar:backdrop {
+  padding-left: 8px;
+  border-radius: 0;
+  background-color: #0d151d;
+  background-image: none;
+}
+
+.ssd headerbar.titlebar .title {
+  color: #a4a8ac;
+  font-weight: normal;
+}
+
+/* Title buttons: control navy boxes 1px apart, orange under the pointer.
+   Muffin puts a hardcoded 6px between buttons on top of their margins
+   (gap = margin-left + 6 + margin-right), so -5px makes the gap 1px.
+   Muffin draws the glyph at a fixed 16px; it is scaled to 12px here. */
+.ssd headerbar.titlebar button.titlebutton,
+.ssd headerbar.titlebar button.titlebutton:backdrop {
+  min-width: 22px;
+  min-height: 18px;
+  margin: 0 0 0 -5px;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  box-shadow: none;
+  background-color: @control_bg_color;
+  background-image: none;
+  color: #a4a8ac;
+  -gtk-icon-shadow: none;
+}
+
+.ssd headerbar.titlebar button.titlebutton image {
+  -gtk-icon-transform: scale(0.75);
+}
+
+.ssd headerbar.titlebar button.titlebutton:hover,
+.ssd headerbar.titlebar button.titlebutton:hover:backdrop,
+.ssd headerbar.titlebar button.titlebutton:active {
+  color: #ffffff;
+  background-color: #9f440d;
+}
