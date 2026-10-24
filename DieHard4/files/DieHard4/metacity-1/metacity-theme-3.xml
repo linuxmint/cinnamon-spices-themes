@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<!-- DieHard4 window frames for Metacity and Marco (MATE).
+     Built by build.py, which fills in the palette.json values. -->
+<metacity_theme>
+  <info>
+    <name>DieHard4</name>
+    <author>Nebulung</author>
+    <copyright>Copyright 2026 Nebulung, GPL-3.0</copyright>
+    <date>2026</date>
+    <description>Dark navy window borders with a burnt-orange left stripe, cut at 45 degrees at its foot.</description>
+  </info>
+
+  <constant name="C_navy" value="#0d151d"/>
+  <constant name="C_control" value="#1a2733"/>
+  <constant name="C_accent" value="#9f440d"/>
+  <constant name="C_text" value="#a4a8ac"/>
+  <constant name="C_accent_text" value="#ffffff"/>
+  <constant name="STRIPE" value="18"/>
+  <!-- The left border: the stripe plus a transparent gap before the window. -->
+  <constant name="FRAME_LEFT" value="20"/>
+  <constant name="R" value="4"/>
+
+  <!-- Normal windows: the stripe is the left border; thin navy right and
+       bottom edges let the bottom-right corner round. -->
+  <frame_geometry name="normal" title_scale="medium"
+                  rounded_top_left="4" rounded_top_right="4"
+                  rounded_bottom_left="false" rounded_bottom_right="4">
+    <distance name="left_width" value="20"/>
+    <distance name="right_width" value="2"/>
+    <distance name="bottom_height" value="3"/>
+    <!-- Measured from the frame's outer edge: title text starts 8px after
+         the stripe and its gap. -->
+    <distance name="left_titlebar_edge" value="28"/>
+    <distance name="right_titlebar_edge" value="4"/>
+    <distance name="title_vertical_pad" value="5"/>
+    <border name="title_border" left="0" right="4" top="3" bottom="3"/>
+    <border name="button_border" left="0" right="1" top="4" bottom="4"/>
+    <distance name="button_width" value="22"/>
+    <distance name="button_height" value="18"/>
+  </frame_geometry>
+
+  <frame_geometry name="max" title_scale="medium" parent="normal"
+                  rounded_top_left="false" rounded_top_right="false"
+                  rounded_bottom_left="false" rounded_bottom_right="false">
+    <distance name="left_width" value="0"/>
+    <distance name="right_width" value="0"/>
+    <distance name="bottom_height" value="0"/>
+  </frame_geometry>
+
+  <frame_geometry name="border" has_title="false" parent="normal"
+                  rounded_top_left="false" rounded_top_right="false"
+                  rounded_bottom_left="false" rounded_bottom_right="false">
+    <distance name="title_vertical_pad" value="0"/>
+    <border name="title_border" left="0" right="0" top="0" bottom="0"/>
+  </frame_geometry>
+
+  <!-- Backgrounds. The stripe stops one stripe-width short of the bottom,
+       where the foot image finishes it with the 45-degree cut. The top R
+       rows belong to the titlebar, which draws the rounded top corners. -->
+  <draw_ops name="frame_normal">
+    <rectangle color="C_navy" x="FRAME_LEFT" y="R" width="width - FRAME_LEFT" height="height - R" filled="true"/>
+    <rectangle color="C_accent" x="0" y="R" width="STRIPE" height="height - STRIPE - R" filled="true"/>
+    <image filename="stripe-foot.png" x="0" y="height - STRIPE" width="STRIPE" height="STRIPE"/>
+  </draw_ops>
+
+  <draw_ops name="frame_max">
+    <rectangle color="C_navy" x="0" y="0" width="width" height="height" filled="true"/>
+  </draw_ops>
+
+  <!-- Metacity does not clip the titlebar to the rounded corners when
+       compositing, so the corners are drawn here: each top corner is a
+       quarter circle, the rest plain rectangles. -->
+  <draw_ops name="titlebar_normal">
+    <rectangle color="C_accent" x="0" y="R" width="STRIPE" height="height - R" filled="true"/>
+    <rectangle color="C_accent" x="R" y="0" width="STRIPE - R" height="R" filled="true"/>
+    <arc color="C_accent" x="0" y="0" width="R * 2" height="R * 2" start_angle="270" extent_angle="90" filled="true"/>
+    <rectangle color="C_navy" x="FRAME_LEFT" y="0" width="width - FRAME_LEFT - R" height="height" filled="true"/>
+    <rectangle color="C_navy" x="width - R" y="R" width="R" height="height - R" filled="true"/>
+    <arc color="C_navy" x="width - R * 2" y="0" width="R * 2" height="R * 2" start_angle="0" extent_angle="90" filled="true"/>
+  </draw_ops>
+
+  <draw_ops name="titlebar_max">
+    <rectangle color="C_navy" x="0" y="0" width="width" height="height" filled="true"/>
+  </draw_ops>
+
+  <draw_ops name="title">
+    <title color="C_text" x="0" y="(0 `max` ((height - title_height) / 2))"/>
+  </draw_ops>
+
+  <draw_ops name="blank"/>
+
+  <!-- Buttons: a control-navy box, orange under the pointer, glyphs drawn
+       in the text colour (white on orange). -->
+  <draw_ops name="box_normal">
+    <rectangle color="C_control" x="0" y="0" width="width" height="height" filled="true"/>
+  </draw_ops>
+  <draw_ops name="box_hover">
+    <rectangle color="C_accent" x="0" y="0" width="width" height="height" filled="true"/>
+  </draw_ops>
+
+  <draw_ops name="glyph_close_text">
+    <line color="C_text" x1="width / 2 - 4" y1="height / 2 - 4" x2="width / 2 + 3" y2="height / 2 + 3" width="2"/>
+    <line color="C_text" x1="width / 2 + 3" y1="height / 2 - 4" x2="width / 2 - 4" y2="height / 2 + 3" width="2"/>
+  </draw_ops>
+  <draw_ops name="glyph_close_white">
+    <line color="C_accent_text" x1="width / 2 - 4" y1="height / 2 - 4" x2="width / 2 + 3" y2="height / 2 + 3" width="2"/>
+    <line color="C_accent_text" x1="width / 2 + 3" y1="height / 2 - 4" x2="width / 2 - 4" y2="height / 2 + 3" width="2"/>
+  </draw_ops>
+  <draw_ops name="glyph_max_text">
+    <rectangle color="C_text" x="width / 2 - 4" y="height / 2 - 4" width="8" height="8" filled="false"/>
+    <line color="C_text" x1="width / 2 - 4" y1="height / 2 - 3" x2="width / 2 + 4" y2="height / 2 - 3"/>
+  </draw_ops>
+  <draw_ops name="glyph_max_white">
+    <rectangle color="C_accent_text" x="width / 2 - 4" y="height / 2 - 4" width="8" height="8" filled="false"/>
+    <line color="C_accent_text" x1="width / 2 - 4" y1="height / 2 - 3" x2="width / 2 + 4" y2="height / 2 - 3"/>
+  </draw_ops>
+  <draw_ops name="glyph_restore_text">
+    <rectangle color="C_text" x="width / 2 - 2" y="height / 2 - 5" width="7" height="6" filled="false"/>
+    <rectangle color="C_control" x="width / 2 - 5" y="height / 2 - 2" width="7" height="6" filled="true"/>
+    <rectangle color="C_text" x="width / 2 - 5" y="height / 2 - 2" width="7" height="6" filled="false"/>
+  </draw_ops>
+  <draw_ops name="glyph_restore_white">
+    <rectangle color="C_accent_text" x="width / 2 - 2" y="height / 2 - 5" width="7" height="6" filled="false"/>
+    <rectangle color="C_accent" x="width / 2 - 5" y="height / 2 - 2" width="7" height="6" filled="true"/>
+    <rectangle color="C_accent_text" x="width / 2 - 5" y="height / 2 - 2" width="7" height="6" filled="false"/>
+  </draw_ops>
+  <draw_ops name="glyph_min_text">
+    <rectangle color="C_text" x="width / 2 - 4" y="height / 2 + 2" width="8" height="2" filled="true"/>
+  </draw_ops>
+  <draw_ops name="glyph_min_white">
+    <rectangle color="C_accent_text" x="width / 2 - 4" y="height / 2 + 2" width="8" height="2" filled="true"/>
+  </draw_ops>
+  <draw_ops name="glyph_menu_text">
+    <rectangle color="C_text" x="width / 2 - 4" y="height / 2 - 3" width="8" height="1" filled="true"/>
+    <rectangle color="C_text" x="width / 2 - 4" y="height / 2" width="8" height="1" filled="true"/>
+    <rectangle color="C_text" x="width / 2 - 4" y="height / 2 + 3" width="8" height="1" filled="true"/>
+  </draw_ops>
+  <draw_ops name="glyph_menu_white">
+    <rectangle color="C_accent_text" x="width / 2 - 4" y="height / 2 - 3" width="8" height="1" filled="true"/>
+    <rectangle color="C_accent_text" x="width / 2 - 4" y="height / 2" width="8" height="1" filled="true"/>
+    <rectangle color="C_accent_text" x="width / 2 - 4" y="height / 2 + 3" width="8" height="1" filled="true"/>
+  </draw_ops>
+  <draw_ops name="glyph_dot_text">
+    <rectangle color="C_text" x="width / 2 - 2" y="height / 2 - 2" width="4" height="4" filled="true"/>
+  </draw_ops>
+  <draw_ops name="glyph_dot_white">
+    <rectangle color="C_accent_text" x="width / 2 - 2" y="height / 2 - 2" width="4" height="4" filled="true"/>
+  </draw_ops>
+
+  <!-- One draw op per button and state: box, then glyph. -->
+  <draw_ops name="close_normal"><include name="box_normal"/><include name="glyph_close_text"/></draw_ops>
+  <draw_ops name="close_hover"><include name="box_hover"/><include name="glyph_close_white"/></draw_ops>
+  <draw_ops name="max_normal"><include name="box_normal"/><include name="glyph_max_text"/></draw_ops>
+  <draw_ops name="max_hover"><include name="box_hover"/><include name="glyph_max_white"/></draw_ops>
+  <draw_ops name="restore_normal"><include name="box_normal"/><include name="glyph_restore_text"/></draw_ops>
+  <draw_ops name="restore_hover"><include name="box_hover"/><include name="glyph_restore_white"/></draw_ops>
+  <draw_ops name="min_normal"><include name="box_normal"/><include name="glyph_min_text"/></draw_ops>
+  <draw_ops name="min_hover"><include name="box_hover"/><include name="glyph_min_white"/></draw_ops>
+  <draw_ops name="menu_normal"><include name="box_normal"/><include name="glyph_menu_text"/></draw_ops>
+  <draw_ops name="menu_hover"><include name="box_hover"/><include name="glyph_menu_white"/></draw_ops>
+  <draw_ops name="dot_normal"><include name="box_normal"/><include name="glyph_dot_text"/></draw_ops>
+  <draw_ops name="dot_hover"><include name="box_hover"/><include name="glyph_dot_white"/></draw_ops>
+
+  <frame_style name="normal" geometry="normal">
+    <piece position="entire_background" draw_ops="frame_normal"/>
+    <piece position="titlebar" draw_ops="titlebar_normal"/>
+    <piece position="title" draw_ops="title"/>
+    <button function="close" state="normal" draw_ops="close_normal"/>
+    <button function="close" state="prelight" draw_ops="close_hover"/>
+    <button function="close" state="pressed" draw_ops="close_hover"/>
+    <button function="maximize" state="normal" draw_ops="max_normal"/>
+    <button function="maximize" state="prelight" draw_ops="max_hover"/>
+    <button function="maximize" state="pressed" draw_ops="max_hover"/>
+    <button function="minimize" state="normal" draw_ops="min_normal"/>
+    <button function="minimize" state="prelight" draw_ops="min_hover"/>
+    <button function="minimize" state="pressed" draw_ops="min_hover"/>
+    <button function="menu" state="normal" draw_ops="menu_normal"/>
+    <button function="menu" state="prelight" draw_ops="menu_hover"/>
+    <button function="menu" state="pressed" draw_ops="menu_hover"/>
+    <button function="shade" state="normal" draw_ops="dot_normal"/>
+    <button function="shade" state="prelight" draw_ops="dot_hover"/>
+    <button function="shade" state="pressed" draw_ops="dot_hover"/>
+    <button function="unshade" state="normal" draw_ops="dot_normal"/>
+    <button function="unshade" state="prelight" draw_ops="dot_hover"/>
+    <button function="unshade" state="pressed" draw_ops="dot_hover"/>
+    <button function="above" state="normal" draw_ops="dot_normal"/>
+    <button function="above" state="prelight" draw_ops="dot_hover"/>
+    <button function="above" state="pressed" draw_ops="dot_hover"/>
+    <button function="unabove" state="normal" draw_ops="dot_normal"/>
+    <button function="unabove" state="prelight" draw_ops="dot_hover"/>
+    <button function="unabove" state="pressed" draw_ops="dot_hover"/>
+    <button function="stick" state="normal" draw_ops="dot_normal"/>
+    <button function="stick" state="prelight" draw_ops="dot_hover"/>
+    <button function="stick" state="pressed" draw_ops="dot_hover"/>
+    <button function="unstick" state="normal" draw_ops="dot_normal"/>
+    <button function="unstick" state="prelight" draw_ops="dot_hover"/>
+    <button function="unstick" state="pressed" draw_ops="dot_hover"/>
+  </frame_style>
+
+  <frame_style name="max" geometry="max" parent="normal">
+    <piece position="entire_background" draw_ops="frame_max"/>
+    <piece position="titlebar" draw_ops="titlebar_max"/>
+    <button function="maximize" state="normal" draw_ops="restore_normal"/>
+    <button function="maximize" state="prelight" draw_ops="restore_hover"/>
+    <button function="maximize" state="pressed" draw_ops="restore_hover"/>
+  </frame_style>
+
+  <frame_style name="border" geometry="border" parent="normal">
+    <piece position="titlebar" draw_ops="blank"/>
+    <piece position="title" draw_ops="blank"/>
+  </frame_style>
+
+  <!-- Focused and unfocused windows look the same, as in the GTK theme. -->
+  <frame_style_set name="normal">
+    <frame focus="yes" state="normal" resize="both" style="normal"/>
+    <frame focus="no" state="normal" resize="both" style="normal"/>
+    <frame focus="yes" state="maximized" style="max"/>
+    <frame focus="no" state="maximized" style="max"/>
+    <frame focus="yes" state="shaded" style="normal"/>
+    <frame focus="no" state="shaded" style="normal"/>
+    <frame focus="yes" state="maximized_and_shaded" style="max"/>
+    <frame focus="no" state="maximized_and_shaded" style="max"/>
+  </frame_style_set>
+
+  <frame_style_set name="border">
+    <frame focus="yes" state="normal" resize="both" style="border"/>
+    <frame focus="no" state="normal" resize="both" style="border"/>
+    <frame focus="yes" state="maximized" style="max"/>
+    <frame focus="no" state="maximized" style="max"/>
+    <frame focus="yes" state="shaded" style="border"/>
+    <frame focus="no" state="shaded" style="border"/>
+    <frame focus="yes" state="maximized_and_shaded" style="max"/>
+    <frame focus="no" state="maximized_and_shaded" style="max"/>
+  </frame_style_set>
+
+  <window type="normal" style_set="normal"/>
+  <window type="dialog" style_set="normal"/>
+  <window type="modal_dialog" style_set="normal"/>
+  <window type="menu" style_set="normal"/>
+  <window type="utility" style_set="normal"/>
+  <window type="border" style_set="border"/>
+</metacity_theme>

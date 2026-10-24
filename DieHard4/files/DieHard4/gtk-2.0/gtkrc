@@ -1,0 +1,235 @@
+# DieHard4 for GTK 2, drawn with the Murrine engine
+# (gtk2-engines-murrine). Flat: no gradients, glaze or outlines; borders
+# take the colour of what they surround, so none show, except on text
+# fields, which are edged in entry_border.
+
+gtk-color-scheme = "bg_color:#0d151d\nfg_color:#a4a8ac\nbase_color:#0d151d\ntext_color:#a4a8ac\nselected_bg_color:#9f440d\nselected_fg_color:#ffffff\ntooltip_bg_color:#0d151d\ntooltip_fg_color:#a4a8ac\ncontrol_color:#1a2733\nentry_color:#0c1118\nentry_border_color:#111c26\nentry_focus_color:#2c5680\ndisabled_color:#59636d"
+
+gtk-icon-sizes = "gtk-button=16,16:gtk-small-toolbar=16,16:gtk-large-toolbar=16,16:gtk-menu=16,16"
+gtk-button-images = 0
+gtk-menu-images = 0
+gtk-toolbar-style = GTK_TOOLBAR_ICONS
+
+style "default" {
+  xthickness = 1
+  ythickness = 1
+
+  GtkWidget::focus-line-width = 1
+  GtkWidget::focus-padding = 0
+  GtkWidget::link-color = @selected_bg_color
+  GtkWidget::visited-link-color = @selected_bg_color
+
+  GtkButton::child-displacement-x = 0
+  GtkButton::child-displacement-y = 0
+  GtkButton::default-border = { 0, 0, 0, 0 }
+  GtkButton::inner-border = { 7, 7, 3, 3 }
+
+  GtkCheckButton::indicator-size = 14
+  GtkCheckButton::indicator-spacing = 4
+
+  GtkScrollbar::has-backward-stepper = 0
+  GtkScrollbar::has-forward-stepper = 0
+  GtkScrollbar::stepper-size = 0
+  GtkScrollbar::min-slider-length = 30
+  GtkRange::slider-width = 10
+  GtkRange::trough-border = 2
+  GtkScale::slider-length = 12
+
+  GtkMenuBar::internal-padding = 0
+  GtkMenuBar::shadow-type = GTK_SHADOW_NONE
+  GtkToolbar::internal-padding = 4
+  GtkToolbar::shadow-type = GTK_SHADOW_NONE
+  GtkToolbar::space-size = 1
+  GtkHandleBox::shadow-type = GTK_SHADOW_NONE
+  GtkNotebook::tab-overlap = 0
+  GtkPaned::handle-size = 1
+  GtkTreeView::expander-size = 12
+  GtkTreeView::odd-row-color = @base_color
+  GtkTreeView::even-row-color = @base_color
+  GtkEntry::honors-transparent-bg-hint = 1
+  GtkEntry::inner-border = { 6, 6, 2, 2 }
+  GtkEntry::progress-border = { 0, 0, 0, 0 }
+
+  fg[NORMAL]        = @fg_color
+  fg[PRELIGHT]      = @selected_fg_color
+  fg[SELECTED]      = @selected_fg_color
+  fg[ACTIVE]        = @fg_color
+  fg[INSENSITIVE]   = @disabled_color
+
+  bg[NORMAL]        = @bg_color
+  bg[PRELIGHT]      = @selected_bg_color
+  bg[SELECTED]      = @selected_bg_color
+  bg[ACTIVE]        = @bg_color
+  bg[INSENSITIVE]   = @bg_color
+
+  base[NORMAL]      = @base_color
+  base[PRELIGHT]    = @control_color
+  base[SELECTED]    = @selected_bg_color
+  base[ACTIVE]      = @selected_bg_color
+  base[INSENSITIVE] = @bg_color
+
+  text[NORMAL]      = @text_color
+  text[PRELIGHT]    = @selected_fg_color
+  text[SELECTED]    = @selected_fg_color
+  text[ACTIVE]      = @selected_fg_color
+  text[INSENSITIVE] = @disabled_color
+
+  engine "murrine" {
+    roundness          = 4
+    contrast           = 0.0
+    glazestyle         = 0
+    glowstyle          = 0
+    gradient_shades    = { 1.0, 1.0, 1.0, 1.0 }
+    highlight_shade    = 1.0
+    lightborder_shade  = 1.0
+    border_shades      = { 1.0, 1.0 }
+    shadow_shades      = { 1.0, 1.0 }
+    reliefstyle        = 0
+    menustyle          = 0
+    menubarstyle       = 0
+    menubaritemstyle   = 0
+    toolbarstyle       = 0
+    scrollbarstyle     = 0
+    sliderstyle        = 0
+    stepperstyle       = 1
+    progressbarstyle   = 0
+    comboboxstyle      = 0
+    handlestyle        = 0
+    listviewstyle      = 0
+    listviewheaderstyle = 0
+    separatorstyle     = 0
+    focusstyle         = 1
+    focus_color        = @selected_bg_color
+    arrowstyle         = 1
+    expanderstyle      = 1
+    colorize_scrollbar = FALSE
+    rgba               = FALSE
+    textstyle          = 0
+  }
+}
+
+# Buttons and other control shapes: the lighter control navy, orange
+# under the pointer and when pressed or toggled, with white text.
+style "control" {
+  xthickness = 1
+  ythickness = 1
+  bg[NORMAL]      = @control_color
+  bg[PRELIGHT]    = @selected_bg_color
+  bg[ACTIVE]      = @selected_bg_color
+  bg[SELECTED]    = @selected_bg_color
+  bg[INSENSITIVE] = @control_color
+  fg[ACTIVE]      = @selected_fg_color
+}
+
+# Check and radio boxes: control navy, orange when ticked.
+style "indicator" {
+  base[NORMAL]   = @control_color
+  base[PRELIGHT] = @control_color
+  base[ACTIVE]   = @selected_bg_color
+  bg[SELECTED]   = @selected_bg_color
+  text[NORMAL]   = @selected_fg_color
+  text[PRELIGHT] = @selected_fg_color
+  text[ACTIVE]   = @selected_fg_color
+  fg[PRELIGHT]   = @fg_color
+  bg[PRELIGHT]   = @bg_color
+}
+
+# Text inputs: the darker entry navy, edged in entry_border, and in
+# entry_focus while typing in them. Murrine draws an entry's edge only
+# when it is 2px thick; inner-border gives that extra 1px back.
+style "entry" {
+  xthickness = 2
+  ythickness = 2
+  base[NORMAL]      = @entry_color
+  base[ACTIVE]      = @entry_color
+  base[INSENSITIVE] = @entry_color
+  bg[SELECTED]      = @selected_bg_color
+
+  engine "murrine" {
+    border_colors = { @entry_border_color, @entry_border_color }
+    focus_color   = @entry_focus_color
+  }
+}
+
+style "menu" {
+  xthickness = 0
+  ythickness = 4
+  bg[NORMAL] = @bg_color
+}
+
+style "menuitem" {
+  xthickness = 8
+  ythickness = 4
+  bg[PRELIGHT] = @selected_bg_color
+  fg[PRELIGHT] = @selected_fg_color
+}
+
+style "menubar" {
+  bg[NORMAL] = @bg_color
+}
+
+style "scrollbar" {
+  bg[NORMAL]   = @control_color
+  bg[PRELIGHT] = @selected_bg_color
+  bg[ACTIVE]   = @bg_color
+  bg[SELECTED] = @selected_bg_color
+}
+
+style "range" {
+  bg[NORMAL]   = @control_color
+  bg[PRELIGHT] = @selected_bg_color
+  bg[ACTIVE]   = @control_color
+  bg[SELECTED] = @selected_bg_color
+}
+
+# Murrine draws the progress track from bg[ACTIVE] and base, so all three
+# carry the control navy.
+style "progressbar" {
+  xthickness = 0
+  ythickness = 0
+  bg[NORMAL]   = @control_color
+  bg[ACTIVE]   = @control_color
+  base[NORMAL] = @control_color
+  bg[SELECTED] = @selected_bg_color
+  fg[PRELIGHT] = @selected_fg_color
+}
+
+# The selected tab is window navy and merges with its page; the others
+# (bg[ACTIVE] in GTK 2) are control navy.
+style "notebook" {
+  xthickness = 0
+  ythickness = 0
+  bg[NORMAL] = @bg_color
+  bg[ACTIVE] = @control_color
+}
+
+style "treeview-header" {
+  bg[NORMAL]   = @bg_color
+  bg[PRELIGHT] = @control_color
+  fg[PRELIGHT] = @fg_color
+}
+
+style "tooltip" {
+  xthickness = 8
+  ythickness = 4
+  bg[NORMAL] = @tooltip_bg_color
+  fg[NORMAL] = @tooltip_fg_color
+}
+
+class "GtkWidget"            style "default"
+class "GtkButton"            style "control"
+class "GtkToggleButton"      style "control"
+class "GtkComboBox"          style "control"
+class "GtkSpinButton"        style "entry"
+class "GtkEntry"             style "entry"
+class "GtkCheckButton"       style "indicator"
+class "GtkRadioButton"       style "indicator"
+class "GtkMenu"              style "menu"
+class "GtkMenuBar"           style "menubar"
+class "GtkScrollbar"         style "scrollbar"
+class "GtkScale"             style "range"
+class "GtkProgressBar"       style "progressbar"
+class "GtkNotebook"          style "notebook"
+widget_class "*<GtkMenuItem>*"            style "menuitem"
+widget_class "*<GtkTreeView>*<GtkButton>" style "treeview-header"
+widget "gtk-tooltip*"                     style "tooltip"
