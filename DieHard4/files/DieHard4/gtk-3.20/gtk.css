@@ -17,6 +17,8 @@
 
 /* Text inputs: entries, spin button fields, search bars. */
 @define-color entry_bg_color #0c1118;
+@define-color entry_border_color #111c26;
+@define-color entry_focus_color #2c5680;
 
 @define-color bg_color @theme_bg_color;
 @define-color fg_color @theme_fg_color;
@@ -28,6 +30,7 @@
 @define-color insensitive_fg_color #59636d;
 @define-color tooltip_bg_color #0d151d;
 @define-color tooltip_fg_color #a4a8ac;
+@define-color sidebar_bg_color #0b131b;
 
 @import url("unity.css");
 
@@ -65,10 +68,18 @@ combobox entry,
   color: @theme_text_color;
   background-color: @entry_bg_color;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   min-height: 16px;
   padding: 3px 8px;
   caret-color: @theme_accent_hover;
+}
+
+/* Text fields have a faint blue 1px edge, a brighter blue with focus;
+   their padding gives up that 1px to keep them 24px tall. */
+entry,
+spinbutton {
+  border: 1px solid @entry_border_color;
+  padding: 2px 7px;
 }
 
 spinbutton {
@@ -77,6 +88,7 @@ spinbutton {
 
 spinbutton entry {
   min-width: 32px;
+  border: none;
 }
 
 spinbutton button,
@@ -84,8 +96,17 @@ spinbutton button:hover,
 spinbutton button:active {
   min-height: 16px;
   min-width: 16px;
-  padding: 4px;
+  padding: 3px 4px;
   border-radius: 0;
+}
+
+/* The last spin button finishes the field's rounded outline. */
+spinbutton button:last-child:dir(ltr) {
+  border-radius: 0 4px 4px 0;
+}
+
+spinbutton button:first-child:dir(rtl) {
+  border-radius: 4px 0 0 4px;
 }
 
 combobox arrow {
@@ -135,20 +156,32 @@ toolbar > toolitem:not(:last-child) > button {
   margin-right: 1px;
 }
 
-/* Nemo's sidebar disk usage: a meter like levelbar, its trough in the
-   button colour so the fill doesn't read as an underline. */
+/* Nemo's sidebar: a shade darker than the window, set apart by colour
+   alone. Its disk usage meters are a short fixed-length gauge, grey on the
+   button navy, so they don't read as an underlined link; Nemo always
+   draws the track max-length wide (or the cell's width, if narrower). */
+.nemo-window .places-treeview,
+.nemo-window .nemo-places-sidebar,
+.nemo-window .nemo-places-sidebar viewport {
+  background-color: @sidebar_bg_color;
+}
+
 .nemo-window .places-treeview {
   -NemoPlacesTreeView-disk-full-bg-color: @control_bg_color;
-  -NemoPlacesTreeView-disk-full-fg-color: @theme_accent_color;
+  -NemoPlacesTreeView-disk-full-fg-color: @insensitive_fg_color;
   -NemoPlacesTreeView-disk-full-bar-width: 2px;
   -NemoPlacesTreeView-disk-full-bar-radius: 1px;
-  -NemoPlacesTreeView-disk-full-bottom-padding: 2px;
-  -NemoPlacesTreeView-disk-full-max-length: 90px;
+  -NemoPlacesTreeView-disk-full-bottom-padding: 1px;
+  -NemoPlacesTreeView-disk-full-max-length: 60px;
 }
 
 entry:focus,
 spinbutton:focus,
-combobox entry:focus,
+combobox entry:focus {
+  border-color: @entry_focus_color;
+}
+
+spinbutton entry:focus,
 .search-bar:focus {
   border: none;
 }
@@ -166,7 +199,7 @@ headerbar button {
   color: @theme_fg_color;
   background-color: @control_bg_color;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   min-height: 16px;
   min-width: 16px;
   padding: 4px 8px;
@@ -306,6 +339,11 @@ list row:hover {
   background-color: @control_bg_color;
 }
 
+/* List rows highlight as rounded blocks, like every other control. */
+row {
+  border-radius: 4px;
+}
+
 treeview.view:selected,
 row:selected,
 list row:selected {
@@ -349,9 +387,26 @@ placessidebar separator {
   margin: 4px 0;
 }
 
-/* List column headers: 1px apart, like toolbar buttons. */
-treeview header button:not(:last-child) {
-  margin-right: 1px;
+/* List column headers: flat labels over a 1px rule in the button colour,
+   brighter under the pointer, so empty columns leave no boxes. */
+treeview header button,
+treeview header button:hover,
+treeview header button:active {
+  min-height: 16px;
+  margin: 0;
+  padding: 4px 8px 3px;
+  border: none;
+  border-bottom: 1px solid @control_bg_color;
+  border-radius: 0;
+  box-shadow: none;
+  color: @theme_unfocused_fg_color;
+  background-color: transparent;
+  background-image: none;
+}
+
+treeview header button:hover,
+treeview header button:active {
+  color: @theme_fg_color;
 }
 
 notebook,
@@ -380,20 +435,42 @@ notebook > header tab:checked {
   box-shadow: inset 0 -2px #9f440d;
 }
 
-/* Tab close buttons: the same as the window close button, a 22x18
-   control-navy box with a 12px glyph, orange with white under the
-   pointer. */
-notebook > header tab button,
-#nemo-tab-close-button {
-  min-width: 22px;
-  min-height: 18px;
-  margin: 0;
-  padding: 0;
+/* Buttons in a tab bar (the scroll arrows, an app's "new tab" button)
+   have no box until the pointer is on them. */
+notebook > header button,
+notebook > header button.flat,
+notebook > header > arrow {
+  min-width: 16px;
+  min-height: 16px;
+  padding: 4px;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: none;
   color: @theme_fg_color;
+  background-color: transparent;
+  background-image: none;
+}
+
+notebook > header button:hover,
+notebook > header button.flat:hover,
+notebook > header > arrow:hover {
   background-color: @control_bg_color;
+}
+
+/* Tab close buttons: a 16px square with a 12px glyph and no box, orange
+   with white under the pointer. */
+notebook > header tab button,
+notebook > header tab button.flat,
+#nemo-tab-close-button {
+  min-width: 16px;
+  min-height: 16px;
+  margin: 0 0 0 4px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  color: @theme_unfocused_fg_color;
+  background-color: transparent;
   background-image: none;
 }
 
@@ -404,6 +481,8 @@ notebook > header tab button image,
 
 notebook > header tab button:hover,
 notebook > header tab button:active,
+notebook > header tab button.flat:hover,
+notebook > header tab button.flat:active,
 #nemo-tab-close-button:hover,
 #nemo-tab-close-button:active {
   color: @theme_selected_fg_color;
@@ -448,19 +527,29 @@ progressbar trough,
 levelbar trough {
   background-color: @control_bg_color;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
+}
+
+/* Sliders run on a 4px track, the 12px knob centred on it. */
+scale.horizontal trough {
+  min-height: 4px;
+}
+
+scale.vertical trough {
+  min-width: 4px;
 }
 
 scale highlight,
 progressbar progress,
 levelbar block.filled {
   background-color: @theme_accent_color;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 scale slider {
   min-width: 12px;
   min-height: 12px;
+  margin: -4px;
   background-color: #d0d4d7;
   border: none;
   border-radius: 50%;
@@ -514,7 +603,7 @@ tooltip.background {
   color: @tooltip_fg_color;
   background-color: @tooltip_bg_color;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 4px 8px;
 }
 
@@ -584,7 +673,7 @@ link:hover,
 .ssd decoration {
   margin: 0;
   border: none;
-  border-radius: 2px 2px 2px 0;
+  border-radius: 4px 4px 4px 0;
   box-shadow: none;
   padding: 0 2px 3px 20px;
   /* Transparent so the chamfer and the 2px gap between stripe and
@@ -614,12 +703,20 @@ link:hover,
 }
 
 /* The titlebar spans the full frame width, so it paints the rail too:
-   the stripe, the transparent gap, then navy from the gap onwards. */
+   the stripe, the transparent gap, then navy from the gap onwards.
+
+   Button metrics: Muffin centres the buttons in the titlebar less the
+   frame's padding and the titlebar's, all four sides
+   (meta_frame_layout_calc_geometry), so the frame's 3px bottom edge
+   counts against the titlebar too. 3px of top padding, taken off
+   min-height, balances it: the buttons sit 4px from the top and bottom
+   of the 26px bar. On the right, the frame's 2px edge plus 2px
+   here leaves 4px from the last button to the window's edge. */
 .ssd headerbar.titlebar {
-  min-height: 26px;
-  padding: 0 4px 0 28px;
+  min-height: 23px;
+  padding: 3px 2px 0 28px;
   border: none;
-  border-radius: 2px 2px 0 0;
+  border-radius: 4px 4px 0 0;
   box-shadow: none;
   background-color: transparent;
   background-image: linear-gradient(to right, #9f440d, #9f440d),
@@ -629,9 +726,12 @@ link:hover,
   background-repeat: no-repeat;
 }
 
+/* Maximized windows have no frame edges, so no padding makes up for
+   them: 26px tall, 4px right of the buttons. */
 .maximized headerbar.titlebar,
 .maximized headerbar.titlebar:backdrop {
-  padding-left: 8px;
+  min-height: 26px;
+  padding: 0 4px 0 8px;
   border-radius: 0;
   background-color: #0d151d;
   background-image: none;
@@ -653,7 +753,7 @@ link:hover,
   margin: 0 0 0 -5px;
   padding: 0;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: none;
   background-color: @control_bg_color;
   background-image: none;

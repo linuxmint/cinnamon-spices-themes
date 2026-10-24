@@ -1,8 +1,9 @@
 # DieHard4 for GTK 2, drawn with the Murrine engine
 # (gtk2-engines-murrine). Flat: no gradients, glaze or outlines; borders
-# take the colour of what they surround, so none show.
+# take the colour of what they surround, so none show, except on text
+# fields, which are edged in entry_border.
 
-gtk-color-scheme = "bg_color:#0d151d\nfg_color:#a4a8ac\nbase_color:#0d151d\ntext_color:#a4a8ac\nselected_bg_color:#9f440d\nselected_fg_color:#ffffff\ntooltip_bg_color:#0d151d\ntooltip_fg_color:#a4a8ac\ncontrol_color:#1a2733\nentry_color:#0c1118\ndisabled_color:#59636d"
+gtk-color-scheme = "bg_color:#0d151d\nfg_color:#a4a8ac\nbase_color:#0d151d\ntext_color:#a4a8ac\nselected_bg_color:#9f440d\nselected_fg_color:#ffffff\ntooltip_bg_color:#0d151d\ntooltip_fg_color:#a4a8ac\ncontrol_color:#1a2733\nentry_color:#0c1118\nentry_border_color:#111c26\nentry_focus_color:#2c5680\ndisabled_color:#59636d"
 
 gtk-icon-sizes = "gtk-button=16,16:gtk-small-toolbar=16,16:gtk-large-toolbar=16,16:gtk-menu=16,16"
 gtk-button-images = 0
@@ -46,7 +47,7 @@ style "default" {
   GtkTreeView::odd-row-color = @base_color
   GtkTreeView::even-row-color = @base_color
   GtkEntry::honors-transparent-bg-hint = 1
-  GtkEntry::inner-border = { 7, 7, 3, 3 }
+  GtkEntry::inner-border = { 6, 6, 2, 2 }
   GtkEntry::progress-border = { 0, 0, 0, 0 }
 
   fg[NORMAL]        = @fg_color
@@ -74,7 +75,7 @@ style "default" {
   text[INSENSITIVE] = @disabled_color
 
   engine "murrine" {
-    roundness          = 2
+    roundness          = 4
     contrast           = 0.0
     glazestyle         = 0
     glowstyle          = 0
@@ -133,14 +134,21 @@ style "indicator" {
   bg[PRELIGHT]   = @bg_color
 }
 
-# Text inputs: the darker entry navy.
+# Text inputs: the darker entry navy, edged in entry_border, and in
+# entry_focus while typing in them. Murrine draws an entry's edge only
+# when it is 2px thick; inner-border gives that extra 1px back.
 style "entry" {
-  xthickness = 1
-  ythickness = 1
+  xthickness = 2
+  ythickness = 2
   base[NORMAL]      = @entry_color
   base[ACTIVE]      = @entry_color
   base[INSENSITIVE] = @entry_color
   bg[SELECTED]      = @selected_bg_color
+
+  engine "murrine" {
+    border_colors = { @entry_border_color, @entry_border_color }
+    focus_color   = @entry_focus_color
+  }
 }
 
 style "menu" {

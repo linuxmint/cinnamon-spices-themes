@@ -11,6 +11,8 @@
 @define-color theme_selected_fg_color #ffffff;
 @define-color control_bg_color #1a2733;
 @define-color entry_bg_color #0c1118;
+@define-color entry_border_color #111c26;
+@define-color entry_focus_color #2c5680;
 @define-color insensitive_fg_color #59636d;
 
 /* libadwaita's named colours, so its apps follow the palette when this
@@ -59,12 +61,20 @@ searchbar entry,
 passwordentry {
   color: @theme_fg_color;
   background-color: @entry_bg_color;
-  border: none;
-  border-radius: 2px;
+  border: 1px solid @entry_border_color;
+  border-radius: 4px;
   box-shadow: none;
   min-height: 18px;
-  padding: 3px 8px;
+  padding: 2px 7px;
   caret-color: @theme_selected_bg_color;
+}
+
+/* Text fields have a faint blue 1px edge, a brighter blue with focus;
+   their padding gives up that 1px to keep them 24px tall. */
+entry:focus-within,
+spinbutton:focus-within,
+passwordentry:focus-within {
+  border-color: @entry_focus_color;
 }
 
 entry:disabled,
@@ -78,7 +88,7 @@ spinbutton {
 
 spinbutton > text {
   min-width: 32px;
-  padding: 3px 8px;
+  padding: 2px 8px;
 }
 
 spinbutton > button,
@@ -86,8 +96,17 @@ spinbutton > button:hover,
 spinbutton > button:active {
   min-height: 16px;
   min-width: 16px;
-  padding: 4px;
+  padding: 3px 4px;
   border-radius: 0;
+}
+
+/* The last spin button finishes the field's rounded outline. */
+spinbutton > button:last-child:dir(ltr) {
+  border-radius: 0 4px 4px 0;
+}
+
+spinbutton > button:first-child:dir(rtl) {
+  border-radius: 4px 0 0 4px;
 }
 
 button,
@@ -99,7 +118,7 @@ headerbar button {
   background-color: @control_bg_color;
   background-image: none;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: none;
   min-height: 16px;
   min-width: 16px;
@@ -210,7 +229,7 @@ windowcontrols > button {
   min-width: 22px;
   min-height: 18px;
   padding: 0;
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: @control_bg_color;
 }
 
@@ -225,7 +244,7 @@ windowcontrols > button:active {
 }
 
 window.csd {
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -245,7 +264,7 @@ popover.menu > contents {
 
 popover modelbutton {
   padding: 4px 8px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 popover modelbutton:hover {
@@ -261,6 +280,11 @@ textview,
 textview > text {
   color: @theme_fg_color;
   background-color: @theme_bg_color;
+}
+
+/* List rows highlight as rounded blocks, like every other control. */
+row {
+  border-radius: 4px;
 }
 
 row:hover {
@@ -351,7 +375,7 @@ notebook > header tab button {
   margin: 0;
   padding: 0;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: none;
   color: @theme_fg_color;
   background-color: @control_bg_color;
@@ -392,7 +416,7 @@ levelbar trough {
   min-height: 4px;
   background-color: @control_bg_color;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 progressbar progress {
@@ -404,7 +428,7 @@ progressbar progress,
 levelbar block.filled {
   background-color: @theme_selected_bg_color;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 scale slider {
@@ -431,7 +455,7 @@ radio {
 }
 
 check {
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 radio {
@@ -482,7 +506,7 @@ tooltip.background {
   color: @theme_fg_color;
   background-color: @theme_bg_color;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: none;
   padding: 4px 8px;
 }

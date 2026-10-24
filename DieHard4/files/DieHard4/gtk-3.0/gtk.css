@@ -51,15 +51,22 @@ GtkWindow,
   background-color: @theme_selected_bg_color;
 }
 
+/* Text fields: a 1px edge in entry_border, entry_focus while typing in
+   them; the padding gives up that 1px. */
 .entry,
 .spinbutton {
   color: @theme_fg_color;
   background-color: @entry_bg_color;
   background-image: none;
-  border: none;
-  border-radius: 2px;
+  border: 1px solid #111c26;
+  border-radius: 4px;
   box-shadow: none;
-  padding: 3px 8px;
+  padding: 2px 7px;
+}
+
+.entry:focus,
+.spinbutton:focus {
+  border-color: #2c5680;
 }
 
 .button,
@@ -69,7 +76,7 @@ GtkWindow,
   background-color: @control_bg_color;
   background-image: none;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: none;
   text-shadow: none;
   padding: 4px 8px;
@@ -210,7 +217,7 @@ GtkTextView {
   background-color: @control_bg_color;
   background-image: none;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .progressbar,
@@ -219,7 +226,7 @@ GtkTextView {
   background-color: @theme_selected_bg_color;
   background-image: none;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .scale .slider {
@@ -266,7 +273,7 @@ GtkSwitch.slider {
   color: @theme_fg_color;
   background-color: @theme_bg_color;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .frame {
