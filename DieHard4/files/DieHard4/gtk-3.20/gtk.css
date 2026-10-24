@@ -135,6 +135,17 @@ toolbar > toolitem:not(:last-child) > button {
   margin-right: 1px;
 }
 
+/* Nemo's sidebar disk usage: a meter like levelbar, its trough in the
+   button colour so the fill doesn't read as an underline. */
+.nemo-window .places-treeview {
+  -NemoPlacesTreeView-disk-full-bg-color: @control_bg_color;
+  -NemoPlacesTreeView-disk-full-fg-color: @theme_accent_color;
+  -NemoPlacesTreeView-disk-full-bar-width: 2px;
+  -NemoPlacesTreeView-disk-full-bar-radius: 1px;
+  -NemoPlacesTreeView-disk-full-bottom-padding: 2px;
+  -NemoPlacesTreeView-disk-full-max-length: 90px;
+}
+
 entry:focus,
 spinbutton:focus,
 combobox entry:focus,
@@ -193,24 +204,28 @@ button.destructive-action:hover {
   background-color: @theme_accent_hover;
 }
 
-/* Toolbar buttons sit on the toolbar with no box of their own; they turn
-   orange under the pointer, when pressed, and when selected (the active
-   view, the current folder in a path bar). */
+/* Toolbar buttons sit on the toolbar with no box of their own. Selected
+   ones (the active view, the current folder in a path bar) get the button
+   colour, so orange is left for the pointer and presses. */
 toolbar button,
 .toolbar button,
 .primary-toolbar button {
   background-color: transparent;
 }
 
+toolbar button:checked,
+.toolbar button:checked,
+.primary-toolbar button:checked {
+  color: @theme_selected_fg_color;
+  background-color: @control_bg_color;
+}
+
 toolbar button:hover,
 toolbar button:active,
-toolbar button:checked,
 .toolbar button:hover,
 .toolbar button:active,
-.toolbar button:checked,
 .primary-toolbar button:hover,
-.primary-toolbar button:active,
-.primary-toolbar button:checked {
+.primary-toolbar button:active {
   color: @theme_selected_fg_color;
   background-color: @theme_selected_bg_color;
 }

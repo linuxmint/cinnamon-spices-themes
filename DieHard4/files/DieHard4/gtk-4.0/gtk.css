@@ -132,20 +132,24 @@ button.destructive-action {
   background-color: @theme_selected_bg_color;
 }
 
-/* Toolbar buttons sit on the toolbar with no box of their own; they turn
-   orange under the pointer, when pressed, and when selected (the active
-   view, the current folder in a path bar). */
+/* Toolbar buttons sit on the toolbar with no box of their own. Selected
+   ones (the active view, the current folder in a path bar) get the button
+   colour, so orange is left for the pointer and presses. */
 .toolbar button,
 .primary-toolbar button {
   background-color: transparent;
 }
 
+.toolbar button:checked,
+.primary-toolbar button:checked {
+  color: @theme_selected_fg_color;
+  background-color: @control_bg_color;
+}
+
 .toolbar button:hover,
 .toolbar button:active,
-.toolbar button:checked,
 .primary-toolbar button:hover,
-.primary-toolbar button:active,
-.primary-toolbar button:checked {
+.primary-toolbar button:active {
   color: @theme_selected_fg_color;
   background-color: @theme_selected_bg_color;
 }
