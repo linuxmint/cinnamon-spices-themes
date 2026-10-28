@@ -97,7 +97,7 @@ stage {
   background-color: rgba(51, 54, 65, 0.85);
 }
 
-#menu-search-entry, .menu #notification StEntry, .popup-menu #notification StEntry {
+#menu-search-entry, #appmenu-search-entry, .menu #notification StEntry, .popup-menu #notification StEntry {
   padding: 7px;
   caret-size: 1px;
   selection-background-color: #5294e2;
@@ -110,21 +110,21 @@ stage {
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
-#menu-search-entry:focus, .menu #notification StEntry:focus, .popup-menu #notification StEntry:focus, #menu-search-entry:hover, .menu #notification StEntry:hover, .popup-menu #notification StEntry:hover {
+#menu-search-entry:focus, #appmenu-search-entry:focus, .menu #notification StEntry:focus, .popup-menu #notification StEntry:focus, #menu-search-entry:hover, #appmenu-search-entry:hover, .menu #notification StEntry:hover, .popup-menu #notification StEntry:hover {
   color: #464853;
   background-color: #ffffff;
   border: 1px solid #5294e2;
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
-#menu-search-entry:insensitive, .menu #notification StEntry:insensitive, .popup-menu #notification StEntry:insensitive {
+#menu-search-entry:insensitive, #appmenu-search-entry:insensitive, .menu #notification StEntry:insensitive, .popup-menu #notification StEntry:insensitive {
   color: rgba(70, 72, 83, 0.55);
   background-color: #fdfdfe;
   border-color: 1px solid rgba(232, 233, 234, 0.516);
   box-shadow: inset 0 2px 4px rgba(253, 253, 254, 0.05);
 }
 
-#menu-search-entry StIcon.capslock-warning, .menu #notification StEntry StIcon.capslock-warning, .popup-menu #notification StEntry StIcon.capslock-warning {
+#menu-search-entry StIcon.capslock-warning, #appmenu-search-entry StIcon.capslock-warning, .menu #notification StEntry StIcon.capslock-warning, .popup-menu #notification StEntry StIcon.capslock-warning {
   icon-size: 16px;
   warning-color: #F27835;
   padding: 0 4px;
@@ -1473,7 +1473,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
 }
 
-.menu-places-box {
+.menu-places-box,
+.appmenu-places-box {
   margin: 0;
   padding: 10px;
   border: none;
@@ -1491,28 +1492,31 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 10px 10px 0 10px;
 }
 
-.menu-application-button {
+.menu-application-button,
+.appmenu-application-button {
   padding: 6px;
   border: 0 none transparent !important;
   border-radius: 2px;
 }
 
-.menu-application-button:highlighted {
+.menu-application-button:highlighted,
+.appmenu-application-button:highlighted {
   font-weight: bold;
 }
 
-.menu-application-button-selected {
+.menu-application-button-selected,
+.appmenu-application-button-selected {
   padding: 6px;
   text-shadow: none;
   color: #ffffff;
   background-color: #5294e2;
-  border: 1px solid #5294e2;
   box-shadow: inset 0 2px 4px #5294e2;
   border: 0 none transparent !important;
   border-radius: 2px;
 }
 
-.menu-application-button-selected:highlighted {
+.menu-application-button-selected:highlighted,
+.appmenu-application-button-selected:highlighted {
   font-weight: bold;
 }
 
@@ -1562,13 +1566,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 6px 5px 7px 0;
 }
 
-.menu-category-button {
+.menu-category-button,
+.appmenu-category-button {
   padding: 6px;
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 2px;
 }
 
-.menu-category-button-hover, .menu-category-button-selected {
+.menu-category-button-hover, .menu-category-button-selected,
+.appmenu-category-button:hover, .appmenu-category-button-selected {
   padding: 6px;
   background-color: #5294e2;
   color: #ffffff;
@@ -1623,7 +1629,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin-right: 6px;
 }
 
-.menu-search-entry-icon {
+.menu-search-entry-icon,
+.appmenu-search-entry-icon {
   icon-size: 1em;
   color: #464853;
 }
@@ -2499,4 +2506,134 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: 0px;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0px;
+}
+
+/* ============================================================
+   Cinnamon 6.6 application menu (appmenu-* classes)
+   Ported from the old menu-* equivalents above.
+   ============================================================ */
+
+/* Layout containers */
+.appmenu-background .popup-menu-content {
+  padding: 0;
+}
+
+.appmenu-main-box {
+  spacing: 10px;
+}
+
+.appmenu-right-box {
+  spacing: 5px;
+  padding: 10px;
+}
+
+.appmenu-categories-applications-box {
+  spacing: 15px;
+}
+
+.appmenu-search-box {
+  spacing: 10px;
+}
+
+.appmenu-applications-box {
+  padding-right: 5px;
+}
+
+.appmenu-category-button-greyed,
+.appmenu-category-button-selected,
+.appmenu-category-button,
+.appmenu-application-button-selected,
+.appmenu-application-button,
+.appmenu-sidebar-button {
+  spacing: 4px;
+}
+
+/* Sidebar container — overrides the dark default */
+.appmenu-sidebar {
+  padding: 10px 0;
+  background-color: #fafbfc;
+  border-radius: 2px 0 0 2px;
+  border-right-width: 1px;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.appmenu-sidebar-user-box {
+  padding: 6px;
+}
+
+.user-widget.vertical .user-widget-label {
+  color: #464853;
+  font-weight: bold;
+  font-size: 1.182em;
+  text-align: center;
+}
+
+/* System buttons (lock / logout / shutdown) */
+.appmenu-system-button {
+  padding: 8.4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 9999px;
+  background-color: rgba(70, 72, 83, 0.08);
+}
+
+.appmenu-system-button-shutdown {
+  background-color: #e53935;
+}
+
+.appmenu-system-button-lock:hover,
+.appmenu-system-button-logout:hover {
+  background-color: rgba(70, 72, 83, 0.18);
+}
+
+.appmenu-system-button-shutdown:hover {
+  background-color: #c62828;
+}
+
+/* Sidebar buttons (favorites + places) */
+.appmenu-sidebar-button {
+  padding: 6px 10px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 2px;
+}
+
+.appmenu-sidebar-button:hover {
+  color: #464853;
+  background-color: rgba(70, 72, 83, 0.1);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+/* Favorites and places boxes */
+.appmenu-favs-box {
+  padding: 4px 0;
+}
+
+/* Application buttons */
+.appmenu-application-button-label {
+  padding: 0;
+}
+
+.appmenu-application-button-description {
+  color: rgba(70, 72, 83, 0.55);
+}
+
+/* Category buttons */
+.appmenu-category-button-greyed {
+  padding: 6px;
+  color: rgba(70, 72, 83, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 2px;
+}
+
+.appmenu-category-button-label {
+  padding: 0;
+}
+
+/* Context menu (right-click on favorites) */
+.appmenu-context-menu {
+  color: #464853;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  padding: 4px 0;
 }
