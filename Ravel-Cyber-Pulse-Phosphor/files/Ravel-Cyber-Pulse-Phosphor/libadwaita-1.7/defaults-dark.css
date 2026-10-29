@@ -1,0 +1,306 @@
+@define-color mint_header #040A06;
+@define-color mint_button_hover #454545;
+@define-color mint_button_unfocused #616166;
+
+/* GTK NAMED COLORS ---------------- use responsibly! */
+@define-color destructive_bg_color @red_4;
+@define-color destructive_fg_color white;
+@define-color success_bg_color @green_5;
+@define-color success_fg_color white;
+@define-color warning_bg_color #cd9309;
+@define-color warning_fg_color RGB(0 0 0 / 80%);
+@define-color error_bg_color @red_4;
+@define-color error_fg_color white;
+@define-color accent_color @accent_bg_color;
+@define-color destructive_color oklab(from @destructive_bg_color max(l, 0.85) a b);
+@define-color success_color oklab(from @success_bg_color max(l, 0.85) a b);
+@define-color warning_color oklab(from @warning_bg_color max(l, 0.85) a b);
+@define-color error_color oklab(from @error_bg_color max(l, 0.85) a b);
+@define-color window_bg_color @mint_header;
+@define-color window_fg_color white;
+@define-color view_bg_color #09180E;
+@define-color view_fg_color white;
+@define-color headerbar_bg_color @window_bg_color;
+@define-color headerbar_fg_color white;
+@define-color headerbar_border_color white;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_shade_color RGB(0 0 6/36%);
+@define-color headerbar_darker_shade_color RGB(0 0 12/90%);
+@define-color sidebar_bg_color @mint_header;
+@define-color sidebar_fg_color white;
+@define-color sidebar_backdrop_color @mint_header;
+@define-color sidebar_shade_color RGB(0 0 6/25%);
+@define-color sidebar_border_color RGB(0 0 6/36%);
+@define-color secondary_sidebar_bg_color #28282c;
+@define-color secondary_sidebar_fg_color white;
+@define-color secondary_sidebar_backdrop_color #252529;
+@define-color secondary_sidebar_shade_color RGB(0 0 6/25%);
+@define-color secondary_sidebar_border_color RGB(0 0 6/36%);
+@define-color card_bg_color RGB(255 255 255/8%);
+@define-color card_fg_color white;
+@define-color card_shade_color RGB(0 0 6/36%);
+@define-color dialog_bg_color #36363a;
+@define-color dialog_fg_color white;
+@define-color popover_bg_color #36363a;
+@define-color popover_fg_color white;
+@define-color popover_shade_color RGB(0 0 6/25%);
+@define-color thumbnail_bg_color #39393d;
+@define-color thumbnail_fg_color white;
+@define-color shade_color RGB(0 0 6/25%);
+@define-color scrollbar_outline_color RGB(0 0 12/95%);
+:root { --standalone-color-oklab: max(l, 0.85) a b; --accent-color: oklab(
+    from var(--accent-bg-color) var(--standalone-color-oklab)
+  ); --destructive-color: oklab(
+    from var(--destructive-bg-color) var(--standalone-color-oklab)
+  ); --success-color: oklab(
+    from var(--success-bg-color) var(--standalone-color-oklab)
+  ); --warning-color: oklab(
+    from var(--warning-bg-color) var(--standalone-color-oklab)
+  ); --error-color: oklab(
+    from var(--error-bg-color) var(--standalone-color-oklab)
+  ); --active-toggle-bg-color: rgb(255 255 255 / 20%); --active-toggle-fg-color: #D8E9EC; --overview-bg-color: #28282c; --overview-fg-color: #D8E9EC; }
+
+/* ==========================================================================
+   Ravel Cyber Pulse — libadwaita override (appended to base.css)
+   libadwaita loads this after the GTK theme. Only the visible surfaces,
+   cards, lists and accents are aligned with the theme here.
+   ========================================================================== */
+
+@define-color accent_color #52FF9A;
+@define-color accent_bg_color #52FF9A;
+@define-color accent_fg_color #04080B;
+@define-color window_bg_color #09180E;
+@define-color window_fg_color #D8E9EC;
+@define-color view_bg_color #09180E;
+@define-color view_fg_color #D8E9EC;
+@define-color headerbar_bg_color #08150C;
+@define-color headerbar_fg_color #D8E9EC;
+@define-color headerbar_border_color rgba(216, 233, 236, 0.080);
+@define-color headerbar_backdrop_color #061009;
+@define-color sidebar_bg_color #08150C;
+@define-color sidebar_fg_color #8FADB2;
+@define-color sidebar_border_color rgba(216, 233, 236, 0.080);
+@define-color card_bg_color #0B2113;
+@define-color card_fg_color #D8E9EC;
+@define-color popover_bg_color #09180E;
+@define-color popover_fg_color #D8E9EC;
+@define-color dialog_bg_color #09180E;
+@define-color dialog_fg_color #D8E9EC;
+@define-color borders rgba(216, 233, 236, 0.080);
+
+window,
+.background {
+  background-color: #09180E;
+  color: #D8E9EC;
+}
+
+headerbar {
+  min-height: 28px;
+  background-color: #08150C;
+  background-image: none;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(216, 233, 236, 0.080);
+}
+
+headerbar:backdrop {
+  background-color: #061009;
+}
+
+.card,
+.boxed-list,
+.preferences-group > box {
+  background-color: #0B2113;
+  border: 1px solid rgba(216, 233, 236, 0.080);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.card > .card,
+.boxed-list > row {
+  border-radius: 0;
+}
+
+row {
+  border-radius: 0;
+}
+
+row:selected,
+.navigation-sidebar > row:selected {
+  background-color: rgba(82, 255, 154, 0.160);
+  color: #D8E9EC;
+  box-shadow: inset 2px 0 0 #52FF9A;
+}
+
+.navigation-sidebar,
+.sidebar-panel {
+  background-color: #08150C;
+  border-right: 1px solid rgba(216, 233, 236, 0.080);
+}
+
+popover > contents,
+.popover > contents {
+  background-color: #09180E;
+  border: 1px solid rgba(216, 233, 236, 0.160);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.55);
+}
+
+toast {
+  background-color: #08150C;
+  border: 1px solid rgba(82, 255, 154, 0.350);
+  border-radius: 0;
+  color: #D8E9EC;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.55);
+}
+
+.banner {
+  background-color: rgba(82, 255, 154, 0.120);
+  color: #D8E9EC;
+  border: 1px solid rgba(82, 255, 154, 0.350);
+  border-radius: 0;
+}
+
+button {
+  border-radius: 0;
+  box-shadow: none;
+  background-image: none;
+  border: 1px solid rgba(216, 233, 236, 0.160);
+  background-color: #0B2113;
+}
+
+button:hover {
+  background-color: #11331E;
+  border-color: rgba(82, 255, 154, 0.350);
+}
+
+button.suggested-action {
+  background-color: #52FF9A;
+  color: #04080B;
+  border-color: #52FF9A;
+}
+
+button.destructive-action {
+  background-color: #FF4D5E;
+  color: #04080B;
+  border-color: #FF4D5E;
+}
+
+entry,
+spinbutton,
+dropdown > button {
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #040A06;
+  border: 1px solid rgba(216, 233, 236, 0.160);
+  caret-color: #52FF9A;
+}
+
+entry:focus-within,
+entry:focus {
+  border-color: #52FF9A;
+  box-shadow: inset 0 -1px 0 #52FF9A;
+}
+
+switch {
+  border-radius: 0;
+  border: 1px solid rgba(216, 233, 236, 0.160);
+  background-color: #040A06;
+}
+
+switch:checked {
+  background-color: #52FF9A;
+  border-color: #52FF9A;
+}
+
+switch > slider {
+  border-radius: 0;
+  background-color: #8FADB2;
+}
+
+switch:checked > slider {
+  background-color: #04080B;
+}
+
+check,
+radio,
+checkbutton > check {
+  border-radius: 0;
+  border: 1px solid rgba(216, 233, 236, 0.160);
+  background-color: #040A06;
+  box-shadow: none;
+}
+
+check:checked,
+radio:checked,
+checkbutton > check:checked {
+  background-color: #52FF9A;
+  border-color: #52FF9A;
+  color: #04080B;
+}
+
+progressbar trough {
+  min-height: 4px;
+  border-radius: 0;
+  border: 1px solid rgba(216, 233, 236, 0.080);
+  background-color: #040A06;
+}
+
+progressbar progress {
+  min-height: 4px;
+  border-radius: 0;
+  background-color: #52FF9A;
+}
+
+scale trough {
+  border-radius: 0;
+  background-color: #040A06;
+}
+
+scale highlight {
+  border-radius: 0;
+  background-color: #52FF9A;
+}
+
+scale slider {
+  border-radius: 0;
+  border: 1px solid #52FF9A;
+  background-color: #061009;
+  box-shadow: none;
+}
+
+scrollbar slider {
+  border-radius: 0;
+  min-width: 4px;
+  min-height: 4px;
+  background-color: rgba(216, 233, 236, 0.160);
+}
+
+scrollbar slider:hover {
+  background-color: rgba(82, 255, 154, 0.350);
+}
+
+tabbar tab {
+  border-radius: 0;
+  box-shadow: inset 0 -1px 0 rgba(216, 233, 236, 0.080);
+}
+
+tabbar tab:selected {
+  box-shadow: inset 0 -1px 0 #52FF9A;
+}
+
+tooltip,
+tooltip > background {
+  background-color: #0B2113;
+  border: 1px solid rgba(82, 255, 154, 0.350);
+  border-radius: 0;
+  color: #D8E9EC;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.55);
+}
+
+.osd,
+osd {
+  background-color: #08150C;
+  border: 1px solid rgba(216, 233, 236, 0.160);
+  border-radius: 0;
+  color: #D8E9EC;
+}
