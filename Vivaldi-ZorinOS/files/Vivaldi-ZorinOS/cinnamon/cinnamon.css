@@ -149,6 +149,13 @@ StScrollBar StButton#vhandle:hover
 .popup-sub-menu .popup-menu-item:rtl {
     padding-left: 0em; }
 
+.popup-sub-menu .popup-menu-item {
+    background-color: transparent; }
+
+.popup-sub-menu .popup-menu-item:active {
+    color: #fff;
+    background-color: rgba(229,35,0,1); }
+
 .popup-sub-menu StScrollBar {
     padding: 4px; }
 
@@ -172,7 +179,12 @@ StScrollBar StButton#vhandle:hover
  */
 
 .popup-menu-content {
-    padding: 1em 0em; }
+    padding: 1em 0em;
+    /* Cinnamon 6.x draws its menu background here; keep the .menu frame */
+    background-color: transparent;
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: none; }
 
 .popup-menu-item {
     padding: .4em 1.75em;
@@ -391,6 +403,7 @@ StScrollBar StButton#vhandle:hover
 
 .window-caption {
     background-color: black;
+    border-color: transparent;
     border-radius: 0px;
     color: white;
     spacing: 25px; }
@@ -508,15 +521,21 @@ StScrollBar StButton#vhandle:hover
 
 .desklet-with-borders {
     border-image: url("bg-1.png") 6;
+    border-color: transparent;
+    background-color: transparent;
     color: #C83838;  
     padding: 8px; }
 
 .desklet-with-borders-and-header {
     border-image: url("bg-1.png") 6;
+    border-color: transparent;
+    background-color: transparent;
     padding: 8px; }
 
 .desklet-header { 
     border-image: url("header.png") 6;
+    border-color: transparent;
+    background-color: transparent;
     color: #C83838;  
     padding: 1px; }
 
@@ -697,12 +716,14 @@ border: 1px solid #C83838;
 
 .calendar-day-base {
     font-size: 1em;
+    color: white;
     text-align: center;
     width: 2.4em;
     height: 2.4em; }
 
 .calendar-day-base:hover {
-    color: white; }
+    color: white;
+    background-color: rgba(255,255,255,0.15); }
 
 .calendar-day-base:active { /* Todays' date */
     color: white; }
@@ -741,6 +762,7 @@ border: 1px solid #C83838;
     background-gradient-direction: vertical;
     background-gradient-start: rgba(229,35,0,1);
     background-gradient-end: rgba(229,35,0,1);
+    box-shadow: none;
     color: #fff;
     font-weight: bold; }
 
@@ -1064,6 +1086,8 @@ border: 1px solid #C83838;
 
 .run-dialog-entry {
     font-size: 1em;
+    border-color: transparent;
+    background-color: transparent;
     font-weight: normal;
     color: #fff;
     border-image: url("search-entry-focus.png") 6 6 6 6 stretch;
@@ -1400,6 +1424,7 @@ border: 1px solid #C83838;
 /* Upstream CSS compat  */
 .appmenu-sidebar {
     background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0px;
     border: 2px solid #e52300;
     border-top: 0px;
     border-left: 0px;
@@ -1416,6 +1441,7 @@ border: 1px solid #C83838;
     border-radius: 4px; }
 
 .appmenu-sidebar-button:hover {
+    border-color: rgba(229,35,0,0);
     color: #D3D3D3;
     background-color: rgba(229,35,0,0.65);
     border-radius: 0px;  }
@@ -1461,7 +1487,8 @@ border: 1px solid #C83838;
 .appmenu-category-button-label:rtl {
     padding-right: 5px }
 
-.appmenu-category-button-button:hover {
+.appmenu-category-button:hover {
+    background-color: rgba(229,35,0,0.3);
     border-radius: 8px; }
 
 /* Legacy CSS  */
@@ -1586,10 +1613,14 @@ border: 1px solid #C83838;
 .menu-search-box {
     padding-left: 30px; }
 
-#menu-search-entry {
+/* #appmenu-search-entry: the menu of Cinnamon 6.6 and later */
+#menu-search-entry,
+#appmenu-search-entry {
+    border-color: transparent;
+    background-color: transparent;
     padding: 5px 6px;
     color: #FFF;
-    font: 0.9em;
+    font-size: 0.9em;
     width: 220px;
     border-image: url("search-entry.png") 6 6 6 6 stretch;
     selected-color: #2DAF01;
@@ -1624,8 +1655,8 @@ border: 1px solid #C83838;
     spacing: 2px;
     padding-left: 0px;
     padding-top: 0px; 
-    border-top: 8px;
-    border-bottom: 8px }
+    border-top: 4px;
+    border-bottom: 4px }
 
 .window-list-item-label {
     font-weight: normal;
@@ -1746,6 +1777,7 @@ border: 1px solid #C83838;
     padding: 2px;
     border-radius: 0px;
     background-color: rgba(255,255,255,0.0);
+    border-color: transparent;
     color: #fff;
     transition-duration: 250; }
 
@@ -1923,6 +1955,8 @@ border: 1px solid #C83838;
     height: 16px; }
 
 .expo-workspaces-name-entry:focus {
+    background-color: rgba(23,23,23,0);
+    border-color: #C83838;
     color: #fff;
     font-weight: bold;
     transition-duration: 300;
@@ -2109,3 +2143,673 @@ The colour parameters are red, green, blue, and transparency or a name */
     padding-bottom: 10px;
     padding-top: 10px;
     text-align: center; }
+
+/* ###################################################################
+ * Cinnamon 4.x - 6.8 additions
+ *
+ * Parts of Cinnamon added or renamed after this theme was made. Cinnamon
+ * loads its default theme beneath this one, so these parts would otherwise
+ * show the default theme's grey and blue. The first group only replaces
+ * those colours with the theme's palette and leaves the layout to the
+ * default theme; the second styles the parts that have a counterpart above
+ * in the same way as that counterpart. The older rules above are kept for
+ * older Cinnamon versions.
+ * ################################################################### */
+
+/* ===================================================================
+ * Palette for newer parts (colours only)
+ * ===================================================================*/
+.screen-shield .prompt-dialog-password-entry,
+.prompt-dialog-password-entry {
+    border: 1px solid #C83838;
+    selection-background-color: rgba(229,35,0,1); }
+
+.icon-button,
+.button,
+.sound-player StButton {
+    background-color: rgba(23,23,23,1); }
+
+.icon-button:focus,
+.button:focus,
+.sound-player StButton:focus {
+    background-color: rgba(23,23,23,1); }
+
+.icon-button:hover,
+.button:hover,
+.sound-player StButton:hover {
+    background-color: rgba(229,35,0,0.65); }
+
+.icon-button:active,
+.button:active,
+.sound-player StButton:active {
+    background-color: rgba(229,35,0,0.9); }
+
+.icon-button:insensitive,
+.button:insensitive,
+.sound-player StButton:insensitive {
+    background-color: rgba(23,23,23,1); }
+
+.hover-click-lock-button,
+.hover-click-button,
+.polkit-dialog-user-combo,
+.icon-button.flat,
+.button.flat,
+.sound-player StButton:small {
+    background-color: #060606; }
+
+.hover-click-lock-button:focus,
+.hover-click-button:focus,
+.polkit-dialog-user-combo:focus,
+.icon-button.flat:focus,
+.button.flat:focus,
+.sound-player StButton:focus:small {
+    background-color: #060606; }
+
+.hover-click-lock-button:hover,
+.hover-click-button:hover,
+.polkit-dialog-user-combo:hover,
+.icon-button.flat:hover,
+.button.flat:hover,
+.sound-player StButton:hover:small {
+    background-color: rgba(229,35,0,0.65); }
+
+.hover-click-lock-button:insensitive,
+.hover-click-button:insensitive,
+.polkit-dialog-user-combo:insensitive,
+.icon-button.flat:insensitive,
+.button.flat:insensitive,
+.sound-player StButton:insensitive:small {
+    background-color: #060606; }
+
+.hover-click-lock-button:selected,
+.hover-click-button:selected,
+.polkit-dialog-user-combo:selected,
+.icon-button.flat:selected,
+.button.flat:selected,
+.sound-player StButton:selected:small,
+.hover-click-lock-button:active,
+.hover-click-button:active,
+.polkit-dialog-user-combo:active,
+.icon-button.flat:active,
+.button.flat:active,
+.sound-player StButton:active:small {
+    background-color: rgba(229,35,0,0.9); }
+
+.hover-click-lock-button:checked,
+.hover-click-button:checked,
+.polkit-dialog-user-combo:checked,
+.icon-button.flat:checked,
+.button.flat:checked,
+.sound-player StButton:checked:small {
+    background-color: rgba(229,35,0,0.9); }
+
+.screen-shield .prompt-dialog-password-entry,
+.prompt-dialog-password-entry {
+    background-color: rgba(23,23,23,1);
+    -st-progress-color: rgba(229,35,0,1); }
+
+.prompt-dialog-password-entry:focus {
+    background-color: rgba(23,23,23,1);
+    border-color: rgba(229,35,0,1); }
+
+.prompt-dialog-password-entry:insensitive {
+    background-color: rgba(23,23,23,1); }
+
+.resize-popup,
+.workspace-switch-osd,
+.media-keys-osd {
+    background-color: rgba(23,23,23,0.98);
+    border: 1px solid rgba(23,23,23,0.9); }
+
+.applet-cornerbar {
+    background-color: rgba(229,35,0,0.65);
+    border: 1px solid #C83838; }
+
+.applet-cornerbar-box:hover > .applet-cornerbar {
+    background-color: rgba(229,35,0,0.9); }
+
+.panel-launchers .launcher:hover {
+    background-color: rgba(229,35,0,0.65); }
+
+.sound-player-overlay {
+    background-color: rgba(23,23,23,0.9); }
+
+.spacer-box:highlight {
+    background-color: #ffff00; }
+
+.workspace-graph .workspace {
+    background-color: #000; }
+
+.tile-preview {
+    background-color: rgba(229,35,0,0.2);
+    border: 1px solid rgba(229,35,0,0.7); }
+
+.calendar-events-main-box {
+    border-color: #C83838; }
+
+.calendar-today-home-button:hover,
+.calendar-today-home-button-enabled:hover {
+    background-color: rgba(229,35,0,0.65); }
+
+.calendar-event-button:hover {
+    background-color: rgba(23,23,23,1);
+    border-color: #C83838; }
+
+.calendar-event-time-present:all-day {
+    color: rgba(229,35,0,1); }
+
+.calendar-event-countdown:imminent {
+    color: #ffff00; }
+
+.calendar-event-countdown:current {
+    color: #2DAF01; }
+
+.dialog {
+    background-color: #060606;
+    border: 1px solid #C83838; }
+
+.dialog-list .dialog-list-box .dialog-list-item:hover {
+    background-color: rgba(23,23,23,1); }
+
+.dialog-list .dialog-list-box .dialog-list-item:selected {
+    background-color: rgba(229,35,0,1); }
+
+.prompt-dialog-error-label {
+    color: #ffff00; }
+
+.autorun-dialog .dialog-content-box .dialog-list .dialog-list-box,
+.processes-dialog .dialog-content-box .dialog-list .dialog-list-box {
+    background-color: rgba(23,23,23,1); }
+
+.hover-click-button:checked {
+    background-color: rgba(229,35,0,1); }
+
+.hover-click-button:checked:hover {
+    background-color: rgba(229,35,0,0.8); }
+
+.hover-click-separator {
+    background-color: #C83838; }
+
+.screen-shield .prompt-dialog .user-icon {
+    border: 2px solid #C83838; }
+
+.screen-shield .albumart-widget .albumart-track-info-box .albumart-volume-box .albumart-volume-slider {
+    -slider-active-background-color: rgba(229,35,0,1); }
+
+.screen-shield .info-panel .power-widget-icon-critical {
+    color: #ffff00; }
+
+.window-border {
+    border: 3px solid rgba(229,35,0,1); }
+
+.candidate-box:selected,
+.candidate-box:hover {
+    background-color: rgba(229,35,0,0.65); }
+
+.vkeyboard-key {
+    background-color: rgba(23,23,23,1);
+    background-color: rgba(229,35,0,0.65); }
+
+.vkeyboard-key:focus {
+    background-color: rgba(23,23,23,1); }
+
+.vkeyboard-key:hover,
+.vkeyboard-key:checked {
+    background-color: rgba(229,35,0,0.65); }
+
+.vkeyboard-key:active {
+    background-color: rgba(229,35,0,0.9); }
+
+.vkeyboard-key.shift-key-lowercase,
+.vkeyboard-key.escape-key,
+.vkeyboard-key.hide-key,
+.vkeyboard-key.non-alpha-key {
+    background-color: rgba(23,23,23,1); }
+
+.vkeyboard-key.shift-key-lowercase:focus,
+.vkeyboard-key.escape-key:focus,
+.vkeyboard-key.hide-key:focus,
+.vkeyboard-key.non-alpha-key:focus {
+    background-color: rgba(23,23,23,1); }
+
+.vkeyboard-key.shift-key-lowercase:hover,
+.vkeyboard-key.shift-key-lowercase:checked,
+.vkeyboard-key.escape-key:hover,
+.vkeyboard-key.escape-key:checked,
+.vkeyboard-key.hide-key:hover,
+.vkeyboard-key.hide-key:checked,
+.vkeyboard-key.non-alpha-key:hover,
+.vkeyboard-key.non-alpha-key:checked {
+    background-color: rgba(229,35,0,0.65); }
+
+.vkeyboard-key.shift-key-lowercase:active,
+.vkeyboard-key.escape-key:active,
+.vkeyboard-key.hide-key:active,
+.vkeyboard-key.non-alpha-key:active {
+    background-color: rgba(229,35,0,0.9); }
+
+.vkeyboard-key.shift-key-uppercase {
+    background-color: rgba(229,35,0,0.9); }
+
+.vkeyboard-key.enter-key {
+    background-color: rgba(229,35,0,1); }
+
+.vkeyboard-key.modifier-key {
+    background-color: rgba(23,23,23,1); }
+
+.vkeyboard-key.modifier-key:hover,
+.vkeyboard-key.modifier-key:checked {
+    background-color: rgba(229,35,0,0.65); }
+
+.vkeyboard-key.modifier-key:latched {
+    background-color: rgba(229,35,0,0.9); }
+
+.vkeyboard-subkeys {
+    -arrow-background-color: #060606; }
+
+.workspace-switch-osd-indicator:active {
+    background-color: rgba(229,35,0,1); }
+
+.panel-left,
+.panel-right {
+    background-color: #000; }
+
+.panel-left {
+    box-shadow: inset -1px 0 #C83838; }
+
+.panel-right {
+    box-shadow: inset 1px 0 #C83838; }
+
+.panel-dummy {
+    background-color: rgba(229,35,0,0.5); }
+
+.panel-dummy:entered {
+    background-color: rgba(229,35,0,0.6); }
+
+.appmenu-system-button {
+    border: 1px solid #C83838;
+    background-color: rgba(23,23,23,1); }
+
+.appmenu-system-button-shutdown {
+    background-color: #C83838; }
+
+.appmenu-system-button-lock:hover {
+    background-color: rgba(23,23,23,1); }
+
+.appmenu-system-button-logout:hover {
+    background-color: rgba(23,23,23,1); }
+
+.appmenu-system-button-shutdown:hover {
+    background-color: #C83838; }
+
+.grouped-window-list-thumbnail-menu {
+    border: 1px solid #C83838;
+    background-color: #060606; }
+
+.grouped-window-list-badge {
+    background-color: #060606; }
+
+.grouped-window-list-notifications-badge {
+    background-color: rgba(229,35,0,1); }
+
+.grouped-window-list-scrollbox-button:hover {
+    background-color: rgba(229,35,0,0.65); }
+
+.grouped-window-list-scrollbox-button:active {
+    background-color: rgba(229,35,0,0.9); }
+
+.window-list-preview {
+    border: 1px solid #C83838;
+    background-color: #060606; }
+
+/* ===================================================================
+ * Dialogs (Cinnamon 6.x), in the style of the OSDs and menus
+ * ===================================================================*/
+.dialog {
+    color: #fff;
+    border-radius: 0px;
+    border: 2px solid rgba(229,35,0,1);
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(23,23,23,0.98);
+    background-gradient-end: rgba(23,23,23,0.9); }
+
+/* Buttons like the menu's system buttons: red when hovered and pressed */
+.dialog .dialog-button,
+.dialog .dialog-button:default,
+.dialog .dialog-button:focus,
+.dialog .dialog-button:focus:default {
+    border-radius: 0px;
+    color: #fff;
+    border: 1px solid rgba(229,35,0,0);
+    box-shadow: none;
+    background-color: rgba(0,0,0,0.8); }
+
+/* The suggested button and the focused one get the theme's red outline */
+.dialog .dialog-button:default,
+.dialog .dialog-button:focus,
+.dialog .dialog-button:focus:default {
+    border: 1px solid rgba(229,35,0,1); }
+
+.dialog .dialog-button:hover,
+.dialog .dialog-button:hover:default {
+    background-color: rgba(229,35,0,0.65); }
+
+.dialog .dialog-button:active,
+.dialog .dialog-button:checked,
+.dialog .dialog-button:active:default,
+.dialog .dialog-button:checked:default {
+    background-color: rgba(229,35,0,1); }
+
+.dialog .dialog-button:insensitive,
+.dialog .dialog-button:insensitive:default {
+    color: rgb(90,90,90);
+    background-color: rgba(0,0,0,0.8); }
+
+/* Buttons for actions that delete or end something are red */
+.dialog .dialog-button:destructive-action,
+.dialog .dialog-button:focus:destructive-action {
+    border-radius: 0px;
+    color: #fff;
+    border: 1px solid rgba(229,35,0,1);
+    box-shadow: none;
+    background-color: rgba(229,35,0,0.65); }
+
+.dialog .dialog-button:hover:destructive-action,
+.dialog .dialog-button:active:destructive-action,
+.dialog .dialog-button:checked:destructive-action {
+    background-color: rgba(229,35,0,1); }
+
+.dialog .dialog-button:insensitive:destructive-action {
+    color: rgb(90,90,90);
+    background-color: rgba(0,0,0,0.8); }
+
+/* Password and other entries in dialogs, like the run dialog entry */
+.prompt-dialog-password-entry,
+.screen-shield .prompt-dialog-password-entry {
+    color: #fff;
+    border: 0px;
+    border-image: url("search-entry-focus.png") 6 6 6 6 stretch;
+    background-color: rgba(23,23,23,0);
+    selected-color: #C83838;
+    selection-background-color: rgba(229,35,0,0.3);
+    caret-color: #C83838; }
+
+/* ===================================================================
+ * Grouped window list, like the window list
+ * ===================================================================*/
+.grouped-window-list-item-box {
+    color: #969696;
+    font-weight: bold;
+    border-radius: 0px;
+    background-color: rgba(23,23,23,0.01);
+    transition-duration: 0; }
+
+.grouped-window-list-item-box:active,
+.grouped-window-list-item-box:checked,
+.grouped-window-list-item-box:focus {
+    color: #fff;
+    border-radius: 0px;
+    background-color: rgba(0,0,0,0.01);
+    border: 1px solid #e52300;
+    transition-duration: 250; }
+
+.grouped-window-list-item-box:hover {
+    color: #fff;
+    border-radius: 0px;
+    background-color: rgba(229,35,0,0.9);
+    transition-duration: 250; }
+
+.grouped-window-list-item-demands-attention {
+    color: #fff;
+    background-color: rgba(229,35,0,1); }
+
+.grouped-window-list-item-box .progress {
+    background-color: rgba(229,35,0,0.8); }
+
+/* ===================================================================
+ * On-screen displays, like the media keys and workspace OSDs
+ * ===================================================================*/
+.media-keys-osd,
+.workspace-switch-osd {
+    color: white;
+    border: 2px solid rgba(229,35,0,1);
+    background-gradient-direction: vertical;
+    background-gradient-start: rgba(23,23,23,0.98);
+    background-gradient-end: rgba(23,23,23,0.9); }
+
+/* The level bar, drawn by the bar level properties since Cinnamon 6.4,
+ * in the colours of the .osd-window .level bar above */
+/* The default theme's layout of the OSD and its bar: these rules replace
+ * the default ones, which Cinnamon only uses when no rule here matches */
+.media-keys-osd {
+    margin-bottom: 1em;
+    spacing: 12px;
+    padding: 12px 24px; }
+
+.media-keys-osd .level {
+    min-width: 160px;
+    -barlevel-height: 0.7em;
+    -barlevel-background-color: rgba(190,190,190,0.2);
+    -barlevel-active-background-color: rgba(229,35,0,1);
+    -barlevel-amplify-color: rgba(255,120,0,1);
+    -barlevel-amplify-separator-width: 3px; }
+
+.media-keys-osd .level:ltr {
+    margin-right: 6px; }
+
+.media-keys-osd .level:rtl {
+    margin-left: 6px; }
+
+/* ===================================================================
+ * Menu (Cinnamon 6.6+): sidebar system buttons, like the sidebar buttons
+ * ===================================================================*/
+.appmenu-system-button,
+.appmenu-system-button-lock,
+.appmenu-system-button-logout,
+.appmenu-system-button-shutdown {
+    background-color: rgba(23,23,23,1);
+    border: 1px solid rgba(229,35,0,0); }
+
+.appmenu-system-button-lock:hover,
+.appmenu-system-button-logout:hover {
+    color: #D3D3D3;
+    background-color: rgba(229,35,0,0.65); }
+
+.appmenu-system-button-shutdown:hover {
+    color: #fff;
+    background-color: rgba(229,35,0,1); }
+
+.dialog .dialog-button:insensitive:default,
+.dialog .dialog-button:insensitive:destructive-action {
+    border-color: rgba(23,23,23,0); }
+
+/* Search entries are drawn by their border image, also when focused */
+#menu-search-entry:focus,
+#appmenu-search-entry:focus {
+    border-color: transparent;
+    background-color: transparent; }
+
+.info-osd {
+    border-color: rgba(229,35,0,1); }
+
+/* ===================================================================
+ * Layout from the default theme. Cinnamon uses the default theme's
+ * rules for a part only when no rule of this theme matches it, so a
+ * part this theme recolours, or styles only when hovered, selected or
+ * active, loses the default theme's padding, margins and sizes. These
+ * are the default theme's values for what this theme does not set.
+ * ===================================================================*/
+.panel-launchers .launcher {
+    padding: 0 2px; }
+
+.panel-launchers.vertical .launcher {
+    padding: 2px 0; }
+
+.calendar-today-home-button,
+.calendar-today-home-button-enabled {
+    margin-left: 12px;
+    padding: 8px 12px;
+    border-radius: 8px; }
+
+.calendar-event-button {
+    margin: 3px 0;
+    border-radius: 8px;
+    border: 1px solid transparent; }
+
+.dialog-list .dialog-list-box .dialog-list-item {
+    spacing: 1em;
+    border-radius: 8px;
+    padding: 6px 12px;
+    transition-duration: 100ms; }
+
+.autorun-dialog .dialog-content-box .dialog-list .dialog-list-box .dialog-list-item,
+.processes-dialog .dialog-content-box .dialog-list .dialog-list-box .dialog-list-item {
+    border-radius: 0; }
+
+.autorun-dialog .dialog-content-box .dialog-list .dialog-list-box .dialog-list-item:first-child,
+.processes-dialog .dialog-content-box .dialog-list .dialog-list-box .dialog-list-item:first-child {
+    border-radius: 8px 8px 0 0; }
+
+.autorun-dialog .dialog-content-box .dialog-list .dialog-list-box .dialog-list-item:last-child,
+.processes-dialog .dialog-content-box .dialog-list .dialog-list-box .dialog-list-item:last-child {
+    border-radius: 0 0 8px 8px; }
+
+.candidate-box {
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    border-radius: 8px;
+    color: white; }
+
+.workspace-switch-osd-indicator {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2.66667px;
+    margin: 13.33333px;
+    border-radius: 32px; }
+
+.screen-shield .prompt-dialog-password-entry {
+    min-height: 22px;
+    padding: 6px 9px;
+    width: 20em; }
+
+.prompt-dialog-password-entry {
+    min-height: 22px;
+    padding: 6px 9px;
+    width: 20em; }
+
+.icon-button {
+    padding: 6px;
+    min-height: 16px; }
+
+.screen-shield .icon-button {
+    padding: 1.091em;
+    margin-left: 6px;
+    margin-right: 6px; }
+
+.screen-shield .albumart-widget .albumart-track-info-box .albumart-controls .icon-button {
+    padding: 0.546em; }
+
+.button {
+    padding: 6px 36px;
+    min-height: 22px; }
+
+.sound-player StButton {
+    width: 18px;
+    height: 18px;
+    padding: 6px; }
+
+.hover-click-lock-button {
+    padding: 6px; }
+
+.hover-click-button {
+    padding: 6px; }
+
+.polkit-dialog-user-combo {
+    font-size: 1em;
+    padding: 6px 36px; }
+
+.sound-player StButton:small {
+    width: 16px;
+    height: 16px; }
+
+.resize-popup {
+    padding: 12px; }
+
+.workspace-switch-osd {
+    font-size: 1.182em;
+    min-width: 140px;
+    margin-bottom: 1em;
+    padding: 12px 36px 0 36px; }
+
+.media-keys-osd {
+    font-size: 1.182em; }
+
+.applet-cornerbar {
+    width: 8px; }
+
+.sound-player-overlay {
+    width: 290px;
+    padding: 12px;
+    spacing: 4px; }
+
+.calendar-events-main-box {
+    height: 300px;
+    margin-right: 16px;
+    min-width: 350px; }
+
+.calendar-event-time-present:all-day {
+    font-size: 1em; }
+
+.dialog {
+    padding: 18px; }
+
+.prompt-dialog-error-label {
+    font-size: 0.818em; }
+
+.autorun-dialog .dialog-content-box .dialog-list .dialog-list-box {
+    spacing: 0; }
+
+.processes-dialog .dialog-content-box .dialog-list .dialog-list-box {
+    spacing: 0; }
+
+.hover-click-box.vertical .hover-click-separator {
+    height: 1px;
+    margin: 4px 0; }
+
+.hover-click-box.horizontal .hover-click-separator {
+    width: 1px;
+    margin: 0 4px; }
+
+.screen-shield .prompt-dialog .user-icon {
+    icon-size: 128px; }
+
+.screen-shield .albumart-widget .albumart-track-info-box .albumart-volume-box .albumart-volume-slider {
+    height: 20px;
+    min-width: 280px; }
+
+.vkeyboard-key {
+    font-size: 1.364em; }
+
+.workspace-switch-osd-indicator:active {
+    padding: 5.33333px;
+    margin: 10.66667px; }
+
+.appmenu-system-button {
+    padding: 8.4px; }
+
+.grouped-window-list-thumbnail-menu {
+    margin: 6px; }
+
+.window-list-preview {
+    padding: 12px;
+    spacing: 4px; }
+
+.dialog .dialog-button {
+    padding: 12px; }
+
+.dialog .dialog-button:default {
+    padding: 12px; }
+
+.dialog .dialog-button:destructive-action {
+    padding: 12px; }
+
+.grouped-window-list-item-box {
+    padding: 0 6px; }
