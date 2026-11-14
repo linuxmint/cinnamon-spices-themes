@@ -73,11 +73,16 @@
 @define-color button_pressed_color #E62D23;
 
 @import url("gtk-widgets.css");
-@import url("apps/calculator.css");
-@import url("apps/calendar.css");
-@import url("apps/geary.css");
-@import url("apps/gedit.css");
 @import url("apps/gnome-panel.css");
-@import url("apps/gnome-applications.css");
-@import url("apps/gnome-terminal.css");
 @import url("apps/nautilus.css");
+@import url("apps/nemo.css");
+
+/* Menus get the red border of the theme's popovers and of Cinnamon's own
+ * menus (GTK 4 menus are popovers, so they already have it). A menu is a
+ * popup window, and GTK draws a popup's outline on its frame, not on the
+ * menu: add the red line to the frame's shadow. */
+.csd.popup decoration {
+	box-shadow: 0 3px 6px alpha(#000, 0.16),
+		0 3px 6px alpha(#000, 0.23),
+		0 0 0 1px @selected_bg_color;
+}
