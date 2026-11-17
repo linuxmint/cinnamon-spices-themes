@@ -1,0 +1,2403 @@
+/* Copyright 2015 Zorin Group.
+*
+* This file is part of the Zorin OS GTK theme.
+*
+* The Zorin OS GTK theme is free software: you can redistribute it
+* and/or modify it under the terms of the GNU General Public License as
+* published by the Free Software Foundation, either version 3 of the
+* License, or (at your option) any later version.
+*
+* The Zorin OS GTK theme is distributed in the hope that it will be
+* useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+* Public License for more details.
+*
+* You should have received a copy of the GNU General Public License along
+* with the Zorin OS GTK theme. If not, see http://www.gnu.org/licenses/.
+*/
+/* default */
+* {
+	outline-offset: 0;
+	outline-width: 1px;
+	border-width: 1px;
+	outline-color: alpha(@selected_bg_color, 0.8);
+}
+
+window {
+	color: @fg_color;
+	background-color: @bg_color;
+}
+
+paned {
+	background-color: @bg_color;
+}
+
+widget {
+	background-color: @bg_color;
+}
+
+/**********
+ * states *
+ **********/
+*:disabled {
+	color: shade(@fg_color, 0.6);
+}
+
+*:selected {
+	background-color: @selected_bg_color;
+	color: @selected_fg_color;
+}
+
+*:selected:focus {
+	background-color: @selected_bg_color;
+	color: @selected_fg_color;
+}
+
+.error {
+	color: @error_color;
+}
+
+.success {
+	color: @success_color;
+}
+
+.gtkstyle-fallback {
+	background-color: @bg_color;
+	color: @fg_color;
+}
+
+image,
+image:disabled,
+label,
+label:disabled,
+box,
+box:disabled,
+grid,
+grid:disabled {
+	background-color: transparent;
+}
+
+/*************
+ * Labels	*
+ *************/
+label,
+label:active,
+label:hover,
+label:disabled {
+	background-color: transparent;
+}
+
+/********
+* menu *
+********/
+combobox popover.menu > contents,
+combobox popover.menu > arrow,
+dropdown popover.menu > contents,
+dropdown popover.menu > arrow {
+	background-color: shade(@bg_color, 1.18);
+	padding: 0px;
+}
+
+/*************
+ * assistant *
+ *************/
+assistant .sidebar * highlight {
+	color: @fg_color;
+	font-weight: bold;
+}
+
+assistant .sidebar {
+	background-color: @bg_color;
+	border-right-color: alpha(#FFFFFF, 0.20);
+	border-style: solid;
+	border-width: 0px 1px 0px 0px;
+	padding: 12px;
+	color: mix(@fg_color, @bg_color, 0.40);
+}
+
+/**************
+ * background *
+ **************/
+.background {
+	background-color: @bg_color;
+	border-width: 0;
+}
+
+/**********
+ * button *
+ **********/
+button {
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: alpha(@text_color, 0.5);
+	padding: 5px;
+	background-color: @bg_color;
+	color: @text_color;
+	text-shadow: none;
+	transition: all 200ms ease;
+}
+
+button:hover {
+	background-color: @bg_color;
+	border-color: @selected_bg_color;
+	color: @selected_bg_color;
+}
+
+button:active,
+button:checked {
+	background-color: @button_focus_color;
+	color: @text_color;
+	border-color: @button_focus_color;
+}
+
+button:active:hover,
+button:checked:hover {
+	background-color: @button_pressed_color;
+	color: @text_color;
+	border-color: @button_focus_color;
+}
+
+button:disabled {
+	background-color: @bg_color;
+	border-color: alpha(@text_color, 0.25);
+	color: alpha(@text_color, 0.5);
+}
+
+button:disabled:active {
+	background-color: alpha(@button_focus_color, 0.2);
+	color: @text_color;
+	border-color: mix(shade(@bg_color, 0.9), shade(@button_focus_color, 0.8), 0.2);
+}
+
+notebook tab button {
+	border-color: transparent;
+	background-color: transparent;
+	color: @text_color;
+	transition: all 200ms ease;
+}
+
+notebook tab .active-page button {
+	border-color: transparent;
+	background-color: transparent;
+	color: @text_color;
+	transition: all 200ms ease;
+}
+
+notebook tab button:hover {
+	border-color: @text_color;
+	background-color: transparent;
+	color: @text_color;
+}
+
+notebook tab .active-page button:hover {
+	border-color: @text_color;
+	background-color: transparent;
+	color: @text_color;
+}
+
+notebook tab button:active,
+notebook tab button:checked {
+	border-color: @text_color;
+	background-color: @text_color;
+	color: @text_color;
+}
+
+notebook tab .active-page button:active,
+notebook tab .active-page button:checked {
+	border-color: @text_color;
+	background-color: @text_color;
+	color: @selected_bg_color;
+}
+
+.linked button,
+overlay > revealer button,
+.toolbar button.raised.linked,
+.toolbar .raised.linked button,
+.primary-toolbar button.raised.linked,
+.primary-toolbar .raised.linked button {
+	background-color: @bg_color;
+	border-color: alpha(@selected_bg_color, 0.5);
+	border-width: 0px 0px 4px 0px;
+	border-radius: 0px;
+	padding: 10px;
+	color: @fg_color;
+}
+
+.linked button:hover,
+overlay > revealer button:hover,
+.toolbar button.raised.linked:hover,
+.toolbar .raised.linked button:hover,
+.primary-toolbar button.raised.linked:hover,
+.primary-toolbar .raised.linked button:hover {
+	background-color: shade(@text_color, 0.15);
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 4px 0px;
+	padding: 10px;
+	color: @fg_color;
+}
+
+.linked button:active,
+.linked button:checked,
+.linked button:focus,
+overlay > revealer button:active,
+.toolbar button.raised.linked:active,
+.toolbar button.raised.linked:checked,
+.toolbar button.raised.linked:focus,
+.toolbar .raised.linked button:active,
+.toolbar .raised.linked button:checked,
+.toolbar .raised.linked button:focus,
+.primary-toolbar button.raised.linked:active,
+.primary-toolbar button.raised.linked:checked,
+.primary-toolbar button.raised.linked:focus,
+.primary-toolbar .raised.linked button:active,
+.primary-toolbar .raised.linked button:checked,
+.primary-toolbar .raised.linked button:focus,
+overlay > revealer button:checked {
+	background-color: @bg_color;
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 4px 0px;
+	padding: 10px;
+	color: @fg_color;
+}
+
+.linked button:active:hover,
+.linked button:checked:hover,
+.linked button:focus:hover,
+overlay > revealer button:active:hover,
+.toolbar button.raised.linked:active:hover .toolbar button.raised.linked:checked:hover,
+.toolbar button.raised.linked:focus:hover,
+.primary-toolbar button.raised.linked:active:hover,
+.primary-toolbar button.raised.linked:checked:hover,
+.primary-toolbar button.raised.linked:focus:hover,
+.primary-toolbar .raised.linked button:active:hover,
+.primary-toolbar .raised.linked button:checked:hover,
+.primary-toolbar .raised.linked button:focus:hover,
+overlay > revealer button:checked:hover {
+	background-color: shade(@text_color, 0.15);
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 4px 0px;
+	padding: 10px;
+	color: @fg_color;
+}
+
+.linked button:disabled,
+overlay > revealer button:disabled,
+.toolbar button.raised.linked:disabled,
+.toolbar .raised.linked button:disabled,
+.primary-toolbar button.raised.linked:disabled,
+.primary-toolbar .raised.linked button:disabled {
+	background-color: @bg_color;
+	border-color: @transparent;
+	border-width: 0px 0px 4px 0px;
+	padding: 10px;
+	color: @fg_color;
+}
+
+/* Linked single button */
+.linked entry,
+.linked entry:active,
+.linked entry:focus,
+.linked entry:focus:active {
+	background-color: @bg_color;
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 4px 0px;
+	border-radius: 0px;
+	padding: 12px 10px;
+}
+
+.linked entry:disabled {
+	background-color: @bg_color;
+	border-color: @bg_color;
+	border-width: 0px 0px 4px 0px;
+	padding: 12px 10px;
+}
+
+.linked * {
+	color: @fg_color;
+}
+
+headerbar button.raised.text-button,
+headerbar .raised button.text-button,
+headerbar button.text-button {
+	padding: 10px;
+}
+
+headerbar button.raised.image-button,
+headerbar .raised button.image-button,
+headerbar button.image-button {
+	padding: 12px;
+}
+
+headerbar button {
+	background-color: @bg_color;
+	background-image: none;
+	border-width: 0px 0px 4px 0px;
+	border-color: alpha(@selected_bg_color, 0.5);
+	border-radius: 0px;
+	color: @fg_color;
+}
+
+headerbar .raised button,
+headerbar button.raised,
+headerbar button.raised.linked,
+headerbar .raised.linked button {
+	background-color: @bg_color;
+	border-color: alpha(@selected_bg_color, 0.5);
+	border-width: 0px 0px 4px 0px;
+	color: @fg_color;
+}
+
+headerbar button:hover,
+headerbar button.raised:hover,
+headerbar .raised button:hover,
+headerbar button.raised.linked:hover,
+headerbar .raised.linked button:hover {
+	background-color: shade(@text_color, 0.15);
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 4px 0px;
+	color: @fg_color;
+}
+
+headerbar button:active,
+headerbar button:checked,
+headerbar button.raised:active,
+headerbar .raised button:active,
+headerbar button.raised:checked,
+headerbar .raised button:checked,
+headerbar button.raised.linked:active,
+headerbar .raised.linked button:active,
+headerbar button.raised.linked:checked,
+headerbar .raised.linked button:checked {
+	background-color: @bg_color;
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 4px 0px;
+	color: @fg_color;
+}
+
+headerbar button:active:hover,
+headerbar button:checked:hover,
+headerbar button.raised:active:hover,
+headerbar .raised button:active:hover,
+headerbar button.raised:checked:hover,
+headerbar .raised button:checked:hover,
+headerbar button.raised.linked:active:hover,
+headerbar .raised.linked button:active:hover,
+headerbar button.raised.linked:checked:hover,
+headerbar .raised.linked button:checked:hover {
+	background-color: shade(@text_color, 0.15);
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 4px 0px;
+	color: @fg_color;
+}
+
+headerbar button:disabled,
+headerbar button.raised:disabled,
+headerbar .raised button:disabled,
+headerbar button.raised.linked:disabled,
+headerbar .raised.linked button:disabled {
+	background-color: @bg_color;
+	border-color: @transparent;
+	border-width: 0px 0px 4px 0px;
+	color: @fg_color;
+}
+
+headerbar button:active:disabled,
+headerbar button:checked:disabled,
+headerbar button.raised:active:disabled,
+headerbar .raised button:active:disabled,
+headerbar button.raised:checked:disabled,
+headerbar .raised button:checked:disabled,
+headerbar button.raised.linked:active:disabled,
+headerbar .raised.linked button:active:disabled,
+headerbar button.raised.linked:checked:disabled,
+headerbar .raised.linked button:checked:disabled {
+	background-color: @bg_color;
+	border-color: alpha(@selected_bg_color, 0.5);
+	border-width: 0px 0px 4px 0px;
+	color: @fg_color;
+}
+
+headerbar .title {
+	font-weight: bold;
+	font-size: 11pt;
+}
+
+headerbar .subtitle {
+	font-size: 9pt;
+}
+
+/****************
+ * cell and row *
+ ****************/
+.cell {
+	border-width: 0;
+	transition: all 200ms ease;
+	background-color: transparent;
+}
+
+.cell:selected,
+row button:selected,
+row button:active,
+popover treeview.view row:selected,
+.view:selected,
+row:selected,
+row:selected:backdrop,
+row button:checked {
+	background-color: @selected_bg_color;
+	color: @text_color;
+}
+
+.cell:selected:focus,
+row button:selected:focus,
+.view:selected:focus {
+	background-color: @selected_bg_color;
+	color: @text_color;
+}
+
+row {
+	text-shadow: none;
+	transition: all 200ms ease;
+}
+
+row:disabled {
+	color: shade(@text_color, 0.5);
+}
+
+row:selected {
+	background-color: @selected_bg_color;
+	border-top-color: @selected_bg_color;
+	border-style: solid;
+	border-width: 1px 0 0 0;
+	color: @selected_fg_color;
+}
+
+/*************************
+ * Check and Radio items *
+ *************************/
+check,
+radio,
+check:disabled,
+radio:disabled {
+	background-color: transparent;
+	border-style: none;
+	transition: all 200ms ease;
+}
+
+checkbutton:hover,
+checkbutton:active:hover,
+checkbutton:selected,
+checkbutton:selected:focus {
+	background-color: transparent;
+}
+
+check {
+	-gtk-icon-source: -gtk-icontheme("checkbox-symbolic");
+	background-repeat: no-repeat;
+	background-position: center;
+	color: alpha(@fg_color, 0.75);
+}
+
+radio {
+	-gtk-icon-source: -gtk-icontheme("radio-symbolic");
+	background-repeat: no-repeat;
+	background-position: center;
+	color: alpha(@fg_color, 0.75);
+}
+
+check:checked {
+	-gtk-icon-source: -gtk-icontheme("checkbox-checked-symbolic");
+	color: @selected_bg_color;
+}
+
+modelbutton:hover check:checked:hover {
+	color: @text_color;
+}
+
+check:indeterminate {
+	-gtk-icon-source: -gtk-icontheme("checkbox-mixed-symbolic");
+	color: @selected_bg_color;
+}
+
+modelbutton:hover check:indeterminate:hover {
+	color: @text_color;
+}
+
+radio:checked {
+	-gtk-icon-source: -gtk-icontheme("radio-checked-symbolic");
+	color: @selected_bg_color;
+}
+
+modelbutton:hover radio:checked:hover {
+	color: @text_color;
+}
+
+radio:indeterminate {
+	-gtk-icon-source: -gtk-icontheme("radio-mixed-symbolic");
+	color: @selected_bg_color;
+}
+
+modelbutton:hover radio:indeterminate:hover {
+	color: @text_color;
+}
+
+check:disabled {
+	-gtk-icon-source: -gtk-icontheme("checkbox-symbolic");
+	color: alpha(@fg_color, 0.5);
+}
+
+radio:disabled {
+	-gtk-icon-source: -gtk-icontheme("radio-symbolic");
+	color: alpha(@fg_color, 0.5);
+}
+
+check:disabled:checked,
+check:checked:disabled,
+modelbutton check:disabled:checked,
+modelbutton check:checked:disabled {
+	-gtk-icon-source: -gtk-icontheme("checkbox-checked-symbolic");
+	color: alpha(@fg_color, 0.5);
+}
+
+check:indeterminate:disabled,
+modelbutton check:indeterminate:disabled {
+	-gtk-icon-source: -gtk-icontheme("checkbox-mixed-symbolic");
+	color: alpha(@fg_color, 0.5);
+}
+
+radio:disabled:checked,
+radio:checked:disabled,
+modelbutton radio:disabled:checked {
+	-gtk-icon-source: -gtk-icontheme("radio-checked-symbolic");
+	color: alpha(@fg_color, 0.5);
+}
+
+radio:indeterminate:disabled,
+modelbutton radio:indeterminate:disabled {
+	-gtk-icon-source: -gtk-icontheme("radio-mixed-symbolic");
+	color: alpha(@fg_color, 0.5);
+}
+
+/*****************
+ * column-header *
+ *****************/
+header button,
+header button:active,
+notebook header button,
+notebook header button:active,
+header button:checked,
+notebook header button:checked {
+	background-color: @bg_color;
+	border-width: 0px 1px 1px 0px;
+	border-color: alpha(@text_color, 0.25);
+	border-radius: 0px;
+}
+
+header button,
+notebook header button {
+	background-image: none;
+}
+
+header button:hover,
+notebook header button:hover {
+	background-image: none;
+}
+
+header button:active,
+notebook header button:active,
+header button:checked,
+notebook header button:checked {
+	color: @text_color;
+}
+
+header:last-child button {
+	border-width: 0px 0px 1px 0px;
+}
+
+/*********
+ * entry *
+ *********/
+entry,
+entry:focus,
+entry:selected,
+entry:selected:focus,
+entry:disabled,
+.primary-toolbar entry,
+.primary-toolbar entry:focus {
+	outline-width: 0;
+	background: none;
+	box-shadow: none;
+	border: 1px solid transparent;
+	padding: 5px;
+	color: @text_color;
+	border-image: url("../gtk-3.0/assets/entry.svg") 0 1 1 1 / 0 1 1 1 stretch;
+	transition: all 200ms ease;
+	-gtk-icon-style: symbolic;
+}
+
+entry button {
+	background: none;
+	border: none;
+}
+
+entry:selected,
+entry:selected:focus {
+	background-color: @selected_bg_color;
+	color: @selected_fg_color;
+}
+
+entry:focus,
+entry:active,
+.primary-toolbar entry:focus {
+	border-image: url("../gtk-3.0/assets/entry-focus.svg") 0 1 1 1 / 0 1 1 1 stretch;
+}
+
+entry:disabled {
+	background-color: transparent;
+	background-image: none;
+	border-image: url("../gtk-3.0/assets/entry-insensitive.svg") 0 1 1 1 / 0 1 1 1 stretch;
+	color: mix(@text_color, @base_color, 0.4);
+}
+
+.primary-toolbar entry progress,
+menubar.toolbar entry progress,
+headerbar entry progress,
+entry progress {
+	background-image: none;
+	background-color: @selected_bg_color;
+	border-width: 0;
+	color: @selected_fg_color;
+}
+
+/************
+ * combobox *
+ ************/
+combobox .linked button image,
+dropdown > button image,
+combobox button image,
+dropdown button image {
+	color: transparent;
+}
+
+combobox popover.menu modelbutton,
+dropdown popover.menu modelbutton {
+	padding: 6px;
+}
+
+combobox button,
+dropdown button,
+combobox button:disabled,
+dropdown button:disabled,
+combobox button:hover,
+dropdown button:hover,
+combobox button:active,
+dropdown button:active,
+combobox button:focus,
+dropdown button:focus,
+combobox button:hover:focus,
+dropdown button:hover:focus,
+combobox .linked button,
+dropdown > button,
+combobox .linked button:disabled,
+dropdown > button:disabled,
+combobox .linked button:hover,
+dropdown > button:hover,
+combobox .linked button:active,
+dropdown > button:active,
+combobox .linked button:focus,
+dropdown > button:focus,
+combobox .linked button:hover:focus,
+dropdown > button:hover:focus,
+combobox button:checked,
+dropdown button:checked,
+combobox .linked button:checked,
+dropdown > button:checked {
+	background: none;
+	border-width: 1px;
+	border-radius: 0px;
+	padding: 3px;
+	border-image: url('../gtk-3.0/assets/combobox.svg') 0 10 10 0 / 0px 10px 10px 0px stretch;
+	transition: all 200ms ease;
+}
+
+combobox button:hover,
+dropdown button:hover,
+combobox button:focus:hover,
+dropdown button:focus:hover,
+combobox .linked button:hover,
+dropdown > button:hover,
+combobox .linked button:focus:hover,
+dropdown > button:focus:hover,
+combobox button:active,
+dropdown button:active,
+combobox button:focus,
+dropdown button:focus,
+combobox .linked button:active,
+dropdown > button:active,
+combobox .linked button:focus,
+dropdown > button:focus,
+combobox button:checked,
+dropdown button:checked,
+combobox .linked button:checked,
+dropdown > button:checked {
+	border-image: url('../gtk-3.0/assets/combobox-focus.svg') 0 10 10 0 / 0px 10px 10px 0px stretch;
+}
+
+combobox button:disabled,
+dropdown button:disabled,
+combobox .linked button:disabled,
+dropdown > button:disabled {
+	border-image: url('../gtk-3.0/assets/combobox-insensitive.svg') 0 10 10 0 / 0px 10px 10px 0px stretch;
+}
+
+/******************
+ * combobox entry *
+ ******************/
+.primary-toolbar combobox.combobox-entry entry,
+.primary-toolbar dropdown entry,
+combobox.combobox-entry entry,
+dropdown entry {
+	border-image: url("../gtk-3.0/assets/entry.svg") 0 1 1 1 / 0 0 1 1 stretch;
+}
+
+.primary-toolbar combobox.combobox-entry entry:active,
+.primary-toolbar dropdown entry:active,
+.primary-toolbar combobox.combobox-entry entry:focus,
+.primary-toolbar dropdown entry:focus,
+combobox.combobox-entry entry:active,
+dropdown entry:active,
+combobox.combobox-entry entry:focus,
+dropdown entry:focus {
+	border-image: url("../gtk-3.0/assets/entry-focus.svg") 0 1 1 1 / 0 0 1 1 stretch;
+}
+
+.primary-toolbar combobox.combobox-entry entry:disabled,
+.primary-toolbar dropdown entry:disabled,
+combobox.combobox-entry entry:disabled,
+dropdown entry:disabled {
+	border-image: url("../gtk-3.0/assets/entry-insensitive.svg") 0 1 1 1 / 0 0 1 1 stretch;
+}
+
+/*********
+ * frame *
+ *********/
+frame {
+	border-width: 1px 1px 0px 1px;
+	border-style: solid;
+	border-color: transparent;
+	border-image: url("../gtk-3.0/assets/frame.svg") 1 1 0 1 / 1px 1px 0px 1px stretch;
+}
+
+frame label {
+	color: @text_color;
+	padding: 1px 4px;
+}
+
+frame label.active-page,
+frame .active-page label {
+	color: @text_color;
+}
+
+frame.flat,
+scrolledwindow viewport.frame,
+paned frame {
+	border: none;
+}
+
+.scrollbars-junction,
+scrollbar trough,
+frame.scrollbars-junction,
+frame trough.scrollbar {
+	border-color: transparent;
+	border-image: none;
+	background-color: @bg_color;
+}
+
+.app-notification,
+frame.app-notification {
+	padding: 10px;
+	border-image: none;
+	border-width: 0 1px 1px 1px;
+	border-style: solid;
+	border-color: @selected_bg_color;
+	background-color: @bg_color;
+	background-clip: padding-box;
+}
+
+/***********
+ * infobar *
+ ***********/
+infobar.info {
+	background-color: @info_bg_color;
+	border-style: solid;
+	border-width: 1px;
+	border-color: @info_bg_color;
+	color: @base_color;
+}
+
+infobar.warning {
+	background-color: @warning_bg_color;
+	border-style: solid;
+	border-width: 1px;
+	border-color: @warning_bg_color;
+	color: @text_color;
+}
+
+infobar.question {
+	background-color: @question_bg_color;
+	border-style: solid;
+	border-width: 1px;
+	border-color: @question_bg_color;
+	color: @text_color;
+}
+
+infobar.error {
+	background-color: @error_bg_color;
+	border-style: solid;
+	border-width: 1px;
+	border-color: @error_bg_color;
+	color: @text_color;
+}
+
+infobar button,
+infobar.warning button,
+infobar.question button,
+infobar.error button,
+infobar.info button {
+	color: @text_color;
+}
+
+infobar button:hover,
+infobar.info button:hover,
+infobar.warning button:hover,
+infobar.question button:hover,
+infobar.error button:hover {
+	color: @selected_bg_color;
+}
+
+infobar button:active,
+infobar button:hover:active infobar.info button:active,
+infobar.warning button:active,
+infobar.question button:active,
+infobar.error button:active,
+infobar.info button:hover:active,
+infobar.warning button:hover:active,
+infobar.question button:hover:active,
+infobar.error button:hover:active,
+infobar button:checked,
+infobar button:hover:active infobar.info button:checked,
+infobar.warning button:checked,
+infobar.question button:checked,
+infobar.error button:checked {
+	color: @text_color;
+}
+
+infobar button:disabled infobar.info button:disabled,
+infobar.warning button:disabled,
+infobar.question button:disabled,
+infobar.error button:disabled {
+	color: shade(@text_color, 0.6);
+}
+
+infobar button:disabled:active,
+infobar.info button:disabled:active,
+infobar.warning button:disabled:active,
+infobar.question button:disabled:active,
+infobar.error button:disabled:active {
+	color: @text_color;
+}
+
+/********
+ * menu *
+ ********/
+/* removed: no GTK 3.20 equivalent for GtkTreeMenu .menuitem */
+.context-menu {
+	font: initial;
+	text-shadow: none;
+}
+
+popover.menu:selected {
+	background-color: @selected_bg_color;
+}
+
+popover.menu:hover button:hover,
+popover.menu button:active,
+popover.menu button:active:disabled,
+popover.menu button:disabled,
+popover.menu button,
+popover.menu button:checked,
+popover.menu button:checked:disabled {
+	background-color: shade(@bg_color, 1.08);
+	border-style: none;
+	border-width: 1px;
+	border-radius: 0px;
+}
+
+/***********
+ * menubar *
+ ***********/
+menubar {
+	color: @fg_color;
+	border-width: 0;
+	background-color: @bg_color;
+}
+
+/***************
+ * menubaritem *
+ ***************/
+menubar.modelbutton,
+menubar > item {
+	border-width: 4px;
+	border-style: solid;
+	padding-right: 6px;
+	padding-left: 6px;
+	border-color: @bg_color;
+	color: @text_color;
+	background-color: @bg_color;
+}
+
+menubar.modelbutton:hover,
+menubar > item:hover {
+	color: @text_color;
+	background-color: @selected_bg_color;
+	border-image: none;
+	text-shadow: none;
+	border-width: 4px;
+	border-color: @selected_bg_color;
+	border-style: solid;
+	padding-right: 6px;
+	padding-left: 6px;
+}
+
+/************
+ * menuitem *
+ ************/
+modelbutton {
+	padding: 6px;
+	border-style: solid;
+	border-width: 0px;
+	color: @fg_color;
+	background-color: shade(@selected_fg_color, 0.1);
+}
+
+popover.menu modelbutton arrow {
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+popover.menu modelbutton arrow:dir(rtl) {
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+popover.menu modelbutton label,
+popover.menu modelbutton image {
+	-gtk-icon-style: symbolic;
+}
+
+modelbutton:hover,
+popover.menu modelbutton:hover,
+modelbutton *:hover {
+	background-color: @selected_bg_color;
+	color: @selected_fg_color;
+	text-shadow: none;
+	border-style: solid;
+	border-width: 0;
+}
+
+modelbutton:disabled,
+modelbutton *:disabled {
+	color: mix(@fg_color, @bg_color, 0.5);
+}
+
+modelbutton accelerator {
+	color: alpha(@fg_color, 0.5);
+}
+
+modelbutton accelerator:hover {
+	color: alpha(@selected_fg_color, 0.8);
+}
+
+modelbutton accelerator:disabled {
+	color: alpha(mix(@fg_color, @bg_color, 0.5), 0.5);
+}
+
+/**************
+* GtkCalendar *
+**************/
+calendar {
+	border-radius: 3px;
+}
+
+calendar button,
+calendar button:disabled,
+calendar.header,
+calendar.view {
+	background-color: transparent;
+	background-image: none;
+}
+
+calendar highlight {
+	color: alpha(@text_color, 0.5);
+}
+
+/*****************
+ * Notebooks and *
+ * tabs		*
+ *****************/
+notebook {
+	background-clip: border-box;
+	background-color: @bg_color;
+	outline-width: 0;
+}
+notebook viewport {
+	background-color: @bg_color;
+}
+
+notebook tab label {
+	color: @text_color;
+}
+
+notebook tab:checked label {
+	color: @text_color;
+}
+
+notebook tab {
+	background-clip: padding-box;
+	border-style: solid;
+	padding: 8px 10px;
+	border-color: transparent;
+}
+
+notebook > header.bottom tab {
+	border-width: 0px 1px 0px 1px;
+	border-color: alpha(#FFF, 0.20);
+	background-color: shade(@selected_fg_color, 0.1);
+}
+
+notebook > header.bottom tab:checked {
+	border-width: 0px 0px 0px 0px;
+	background-color: @selected_bg_color;
+}
+notebook > header.left tab {
+	border-width: 1px 0px 1px 0px;
+	border-color: alpha(#FFF, 0.20);
+	background-color: shade(@selected_fg_color, 0.1);
+}
+notebook > header.left tab:checked {
+	border-width: 1px 0px 1px 0px;
+	background-color: @selected_bg_color;
+}
+notebook > header.right tab {
+	border-width: 1px 0px 1px 0px;
+	border-color: alpha(#FFF, 0.20);
+	background-color: shade(@selected_fg_color, 0.1);
+}
+notebook > header.right tab:checked {
+	border-width: 1px 0px 1px 0px;
+	background-color: @selected_bg_color;
+}
+notebook > header.top tab {
+	border-width: 0px 1px 0px 1px;
+	border-color: alpha(#FFF, 0.20);
+	background-color: shade(@selected_fg_color, 0.1);
+}
+
+notebook > header.top tab:checked {
+	border-width: 0px 0px 0px 0px;
+	background-color: @selected_bg_color;
+}
+
+notebook drawingarea {
+	background-color: @bg_color;
+}
+
+/*************************
+ * progressbar and scale *
+ *************************/
+scale,
+progressbar progress {
+	border-width: 0;
+	padding: 1px;
+	background: none;
+}
+
+* trough,
+* trough row,
+* trough row:hover {
+	background-image: url("../gtk-3.0/assets/progress-trough.svg");
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+
+* trough row:selected,
+* trough row:selected:focus {
+	border-width: 11px 0px 11px 0px;
+	border-style: solid;
+	border-color: transparent;
+	background-color: @selected_bg_color;
+}
+
+.vertical trough {
+	background-image: url("../gtk-3.0/assets/progress-trough-v.svg");
+	background-position: center top;
+}
+
+progressbar progress,
+progressbar progress row,
+progressbar progress row:hover {
+	border-color: transparent;
+	background-color: transparent;
+	background-image: url("../gtk-3.0/assets/progressbar.svg");
+	background-position: right center;
+	background-repeat: no-repeat;
+	box-shadow: none;
+}
+
+progressbar progress row:selected,
+progressbar progress row:selected:focus {
+	border-color: @selected_bg_color;
+	background-color: @selected_bg_color;
+	background-image: url("../gtk-3.0/assets/progressbar-white.svg");
+	background-position: right center;
+	background-repeat: no-repeat;
+	box-shadow: none;
+}
+
+progressbar.vertical progress {
+	background-image: url("../gtk-3.0/assets/progressbar-v.svg");
+	background-position: center top;
+}
+
+levelbar trough {
+	background: none;
+}
+
+levelbar block,
+levelbar block.level-high,
+levelbar block.level-low {
+	background-image: url("../gtk-3.0/assets/progressbar.svg");
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+
+levelbar.horizontal block.indicator-discrete {
+	margin: 0 2px;
+}
+
+levelbar.vertical block.indicator-discrete {
+	margin: 2px 0;
+}
+
+levelbar block.level-high {
+	background: @selected_bg_color;
+	border-top: 4px solid @bg_color;
+	border-bottom: 4px solid @bg_color;
+}
+
+levelbar block.empty {
+	background: alpha(@fg_color,0.1);
+	border-top: 4px solid @bg_color;
+	border-bottom: 4px solid @bg_color;
+}
+
+scale {
+	outline-width: 0;
+}
+
+scale slider {
+	background-color: transparent;
+}
+
+scale slider,
+scale.horizontal slider {
+	background-image: url("../gtk-3.0/assets/slider-horizontal.svg");
+}
+
+scale slider:hover,
+scale.horizontal slider:hover {
+	background-image: url("../gtk-3.0/assets/slider-horizontal-hover.svg");
+}
+
+scale slider:focus,
+scale.horizontal slider:focus {
+	background-image: url("../gtk-3.0/assets/slider-horizontal-focused.svg");
+}
+
+scale slider:hover:focus,
+scale.horizontal slider:hover:focus {
+	background-image: url("../gtk-3.0/assets/slider-horizontal-focused-hover.svg");
+}
+
+scale slider:disabled,
+scale.horizontal slider:disabled {
+	background-image: url("../gtk-3.0/assets/slider-horizontal-disabled.svg");
+}
+
+scale.vertical slider {
+	background-image: url("../gtk-3.0/assets/slider-vertical.svg");
+}
+
+scale.vertical slider:hover {
+	background-image: url("../gtk-3.0/assets/slider-vertical-hover.svg");
+}
+
+scale.vertical slider:focus {
+	background-image: url("../gtk-3.0/assets/slider-vertical-focused.svg");
+}
+
+scale.vertical slider:hover:focus {
+	background-image: url("../gtk-3.0/assets/slider-vertical-focused-hover.svg");
+}
+
+scale.vertical slider:disabled {
+	background-image: url("../gtk-3.0/assets/slider-vertical-disabled.svg");
+}
+
+scale trough,
+scale trough:disabled,
+.primary-toolbar scale trough,
+modelbutton scale trough {
+	margin: 12px 0px 11px 0px;
+	border-width: 0;
+	background-image: url("../gtk-3.0/assets/scale-trough.svg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	min-height: 5px;
+}
+
+scale highlight,
+scale highlight:disabled {
+	border-width: 0;
+	background-image: url("../gtk-3.0/assets/scale-trough-highlight.svg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	min-height: 5px;
+}
+scale highlight:disabled {
+	border-width: 0;
+	background-image: url("../gtk-3.0/assets/scale-trough-disable.svg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	min-height: 5px;
+}
+
+scale.vertical trough,
+scale.vertical trough:disabled {
+	margin: 0px 11px 0px 12px;
+	border-width: 0;
+	background-image: url("../gtk-3.0/assets/scale-trough-v.svg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	min-width: 5px;
+}
+
+scale.vertical highlight,
+scale.vertical highlight:disabled {
+	border-width: 0;
+	background-image: url("../gtk-3.0/assets/scale-trough-highlight-v.svg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	min-width: 5px;
+}
+scale.vertical highlight:disabled {
+	border-width: 0;
+	background-image: url("../gtk-3.0/assets/scale-trough-disable-v.svg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	min-width: 5px;
+}
+scale.mark {
+	border-color: shade(@bg_color, 0.8);
+}
+
+/**************
+ * Scrollbars *
+ **************/
+scrollbar trough {
+	background-color: @base_color;
+	background-image: url("../gtk-3.0/assets/scroll-trough.svg");
+	border-width: 0;
+}
+
+scrollbar.vertical trough {
+	background-color: @base_color;
+	background-image: url("../gtk-3.0/assets/scroll-trough-v.svg");
+	border-width: 0;
+}
+
+scrollbar slider,
+scrollbar slider:hover {
+	border-width: 0;
+	background-color: @selected_bg_color;
+}
+
+/*******************
+ * scrolled window *
+ *******************/
+scrolledwindow.frame {
+	border-top-color: shade(@bg_color, 0.84);
+	border-right-color: shade(@bg_color, 0.76);
+	border-bottom-color: shade(@bg_color, 0.86);
+	border-left-color: shade(@bg_color, 0.76);
+	border-style: solid;
+}
+
+/*************
+ * separator *
+ *************/
+separator,
+button.separator button separator {
+	color: transparent;
+}
+
+.sidebar paned > separator,
+paned > separator,
+paned > separator.horizontal,
+paned > separator:hover,
+paned > separator:selected {
+	background-image: url("../gtk-3.0/assets/sidebar.svg");
+	background-position: right top;
+	background-repeat: repeat-y;
+}
+
+paned > separator.vertical {
+	background-image: url("../gtk-3.0/assets/sidebar.svg");
+	background-position: right top;
+	background-repeat: repeat-x;
+}
+
+.sidebar-pane-separator,
+.sidebar-pane-separator:hover,
+.sidebar-pane-separator:selected {
+	background-image: none;
+	border: 1px solid @selected_bg_color;
+}
+
+/* removed: no GTK 3.20 equivalent for GraniteWidgetsThinPaned */
+modelbutton.separator,
+.toolbar .primary-toolbar modelbutton.separator,
+.primary-toolbar button modelbutton.separator,
+.toolbar modelbutton.separator,
+combobox modelbutton.separator,
+dropdown modelbutton.separator {
+	color: shade(@selected_bg_color, 0.9);
+	padding: 4px 0;
+}
+
+/***********
+ * sidebar *
+ ***********/
+.sidebar frame {
+	border-width: 1px;
+}
+
+.source-list.badge,
+.source-list.badge:hover {
+	background-image: none;
+	background-color: @selected_bg_color;
+	color: @bg_color;
+	border-radius: 2.5px;
+	padding: 0 6px;
+	margin: 0 3px;
+	border-width: 0;
+}
+
+.source-list.badge:selected,
+.source-list.badge:hover:selected {
+	color: @selected_bg_color;
+	background-color: @text_color;
+}
+
+/**************
+ * spinbutton *
+ **************/
+spinbutton button:active,
+spinbutton button:disabled,
+notebook spinbutton button:active,
+notebook spinbutton button:disabled,
+spinbutton button,
+notebook spinbutton button,
+spinbutton button:checked,
+notebook spinbutton button:checked {
+	color: @selected_bg_color;
+	border-width: 1px 0 1px 1px;
+}
+
+spinbutton button:active:last-child,
+spinbutton button:disabled:last-child,
+notebook spinbutton button:active:last-child,
+notebook spinbutton button:disabled:last-child,
+spinbutton button:last-child,
+notebook spinbutton button:last-child,
+spinbutton button:checked:last-child,
+notebook spinbutton button:checked:last-child {
+	border-radius: 0 2px 2px 0;
+	border-width: 1px;
+}
+
+spinbutton button,
+notebook spinbutton button {
+	color: @fg_color;
+	background-image: none;
+	border-top-color: shade(@bg_color, 0.64);
+	border-right-color: shade(@bg_color, 0.76);
+	border-bottom-color: shade(@bg_color, 0.82);
+	border-left-color: shade(@bg_color, 0.76);
+}
+
+spinbutton button:disabled,
+notebook spinbutton button:disabled {
+	background-image: none;
+	border-top-color: shade(@bg_color, 0.64);
+	border-right-color: shade(@bg_color, 0.76);
+	border-bottom-color: shade(@bg_color, 0.82);
+	border-left-color: shade(@bg_color, 0.76);
+	color: shade(@bg_color, 0.66);
+}
+
+spinbutton,
+spinbutton:hover {
+	color: @theme_fg_color;
+}
+	to {
+	-gtk-icon-transform: rotate(1turn);
+}
+spinner {
+	background-image: none;
+	background-color: @selected_bg_color;
+	color: @text_color;
+	opacity: 0;
+	-gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+}
+	spinner:active {
+	opacity: 1;
+	animation: spin 1s linear infinite;
+}
+	spinner:active:disabled {
+	opacity: 0.5;
+}
+
+/*********
+ * stack *
+ *********/
+headerbar > stack,
+headerbar > stack:disabled {
+	background-color: transparent;
+}
+
+/*************
+ * GtkSwitch *
+ *************/
+switch {
+	font-weight: bold;
+	font-size: 10pt;
+}
+
+switch {
+	color: @text_color;
+	text-shadow: none;
+	border-width: 1px;
+	border-style: solid;
+	background-image: none;
+	border-color: alpha(@text_color, 0.5);
+	background-color: @bg_color;
+	border-radius: 2.5px;
+}
+
+switch:checked {
+	border-color: @selected_bg_color;
+	color: @selected_bg_color;
+}
+
+switch:disabled {
+	color: alpha(@text_color, 0.5);
+	border-color: alpha(@text_color, 0.25);
+}
+
+switch slider {
+	background-image: none;
+	background-color: shade(@text_color, 0.75);
+	border-radius: 2.5px;
+}
+
+switch:checked slider {
+	background-color: @selected_bg_color;
+}
+
+switch:disabled slider {
+	background-color: shade(@text_color, 0.25);
+}
+
+/************
+ * textview *
+ ************/
+textview {
+	background-color: @base_color;
+}
+
+/***********
+ * toolbar *
+ ***********/
+.primary-toolbar .toolbar,
+.toolbar.primary-toolbar,
+.linked .toolbar,
+.toolbar.linked,
+.toolbar {
+	background-color: @bg_color;
+	border-color: shade(@toolbar_border, 1.0);
+	border-style: solid;
+	border-width: 0px 0px 4px 0px;
+	padding: 0px;
+	color: @fg_color;
+}
+
+headerbar {
+	background-color: @bg_color;
+	box-shadow: inset 0 -4px @selected_bg_color;
+	padding: 0px 0px 4px 0px;
+	color: @fg_color;
+}
+
+.primary-toolbar .toolbar :disabled,
+.toolbar.primary-toolbar :disabled,
+.linked .toolbar :disabled,
+.toolbar.linked :disabled,
+headerbar :disabled,
+.toolbar :disabled {
+	color: shade(@text_color, 0.6);
+}
+
+.primary-toolbar .toolbar combobox,
+.primary-toolbar .toolbar dropdown,
+.toolbar.primary-toolbar combobox,
+.toolbar.primary-toolbar dropdown,
+.primary-toolbar .toolbar button,
+.toolbar.primary-toolbar button,
+.linked .toolbar combobox,
+.linked .toolbar dropdown,
+.toolbar.linked combobox,
+.toolbar.linked dropdown,
+headerbar combobox,
+headerbar dropdown,
+.toolbar combobox,
+.toolbar dropdown,
+.toolbar button {
+	background-color: @bg_color;
+	background-image: none;
+	border-width: 0px 0px 4px 0px;
+	border-color: alpha(@selected_bg_color, 0.5);
+	border-radius: 0px;
+	padding: 10px;
+	color: @fg_color;
+}
+
+.primary-toolbar .toolbar .raised button,
+.toolbar.primary-toolbar .raised button,
+.primary-toolbar .toolbar button.raised,
+.toolbar.primary-toolbar button.raised,
+.primary-toolbar .toolbar button:hover,
+.toolbar.primary-toolbar button:hover,
+.primary-toolbar .toolbar button:active,
+.toolbar.primary-toolbar button:active,
+.primary-toolbar .toolbar button:disabled,
+.toolbar.primary-toolbar button:disabled,
+headerbar .raised button,
+headerbar button.raised,
+headerbar button:hover,
+headerbar button:active,
+headerbar button:disabled,
+.toolbar .raised button,
+.toolbar button.raised,
+.toolbar button:hover,
+.toolbar button:active,
+.toolbar button:disabled,
+.primary-toolbar .toolbar button:checked,
+.toolbar.primary-toolbar button:checked,
+headerbar button:checked,
+.toolbar button:checked {
+	color: @fg_color;
+	border-radius: 0px;
+}
+
+.toolbar image:hover {
+	background-color: transparent;
+}
+
+.primary-toolbar .toolbar .raised button,
+.toolbar.primary-toolbar .raised button,
+.primary-toolbar .toolbar button.raised,
+.toolbar.primary-toolbar button.raised,
+.toolbar .raised button,
+.toolbar button.raised {
+	background-color: @bg_color;
+	border-color: alpha(@selected_bg_color, 0.5);
+	border-width: 0px 0px 4px 0px;
+	padding: 10px;
+}
+
+.primary-toolbar .toolbar button:hover,
+.toolbar.primary-toolbar button:hover,
+.toolbar button:hover {
+	background-color: shade(@text_color, 0.15);
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 4px 0px;
+	padding: 10px;
+}
+
+.primary-toolbar .toolbar .raised button:hover,
+.toolbar.primary-toolbar .raised button:hover,
+.primary-toolbar .toolbar button.raised:hover,
+.toolbar.primary-toolbar button.raised:hover,
+.toolbar button.raised:hover,
+.toolbar .raised button:hover {
+	background-color: shade(@text_color, 0.15);
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 4px 0px;
+	padding: 10px;
+}
+
+.primary-toolbar .toolbar raised button:active,
+.primary-toolbar .toolbar raised button:checked,
+.toolbar.primary-toolbar raised button:active,
+.toolbar.primary-toolbar raised button:checked,
+.primary-toolbar .toolbar button:active,
+.primary-toolbar .toolbar button:checked,
+.toolbar.primary-toolbar button:active,
+.toolbar.primary-toolbar button:checked,
+.toolbar raised button:active,
+.toolbar raised button:checked,
+.toolbar button:active,
+.toolbar button:checked {
+	background-color: @bg_color;
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 4px 0px;
+	padding: 10px;
+}
+
+.primary-toolbar .toolbar button:active:hover,
+.primary-toolbar .toolbar button:checked:hover,
+.toolbar.primary-toolbar button:active:hover,
+.toolbar.primary-toolbar button:checked:hover,
+.toolbar button:active:hover,
+.toolbar button:checked:hover {
+	background-color: shade(@text_color, 0.15);
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 4px 0px;
+	padding: 10px;
+}
+
+.primary-toolbar .toolbar button:disabled,
+.toolbar.primary-toolbar button:disabled,
+.toolbar button:disabled {
+	background-color: @bg_color;
+	border-color: @bg_color;
+	border-width: 0px 0px 4px 0px;
+	padding: 10px;
+}
+
+.primary-toolbar .toolbar button:active:disabled,
+.primary-toolbar .toolbar button:checked:disabled,
+.toolbar.primary-toolbar button:active:disabled,
+.toolbar.primary-toolbar button:checked:disabled,
+.toolbar button:active:disabled,
+.toolbar button:checked:disabled {
+	background-color: @bg_color;
+	border-color: alpha(@selected_bg_color, 0.5);
+	border-width: 0px 0px 4px 0px;
+	padding: 10px;
+}
+
+.primary-toolbar .toolbar separator,
+.toolbar.primary-toolbar separator,
+.primary-toolbar .toolbar separator:disabled,
+.toolbar.primary-toolbar separator:disabled,
+headerbar separator,
+headerbar separator:disabled,
+.toolbar separator,
+.toolbar separator:disabled {
+	color: shade(@bg_color, 0.9);
+}
+
+.toolbar.inline-toolbar {
+	background-image: none;
+	border-style: solid;
+	border-color: @transparent;
+	border-width: 1px;
+	border-radius: 0px;
+	padding: 3px 4px 4px 4px;
+}
+
+.toolbar.inline-toolbar:last-child {
+	border-bottom-color: transparent;
+	border-color: transparent;
+	border-width: 0px 1px 1px 1px;
+}
+
+.toolbar.inline-toolbar button,
+.toolbar.inline-toolbar button:disabled {
+	background-color: @bg_color;
+	border-color: alpha(@selected_bg_color, 0.5);
+	border-width: 0px 0px 2px 0px;
+	padding: 6px;
+}
+
+.toolbar.inline-toolbar button:active,
+.toolbar.inline-toolbar button:checked,
+.toolbar.inline-toolbar button:focus:active,
+.toolbar.inline-toolbar button:focus:checked {
+	background-color: @bg_color;
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 2px 0px;
+	padding: 6px;
+}
+
+.toolbar.inline-toolbar button:hover {
+	background-color: shade(@text_color, 0.15);
+	border-color: @selected_bg_color;
+	border-width: 0px 0px 2px 0px;
+	padding: 6px;
+}
+
+.primary-toolbar separator,
+.primary-toolbar separator:disabled {
+	color: shade(@bg_color, 0.9);
+}
+
+/*****************
+ * Color Chooser *
+ *****************/
+:selected colorswatch {
+	box-shadow: none;
+}
+
+colorswatch.color-dark {
+	color: white;
+	outline-color: rgba(0, 0, 0, 0.3);
+}
+		
+colorswatch.color-light {
+	color: black;
+	outline-color: rgba(255, 255, 255, 0.5);
+}
+	
+colorswatch.top {
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+colorswatch.bottom {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+colorswatch.left,
+colorswatch:first-child,
+colorswatch:first-child .overlay {
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+colorswatch.right,
+colorswatch:last-child,
+colorswatch:last-child .overlay {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+	
+colorswatch:only-child,
+colorswatch:only-child .overlay {
+	border-radius: 3px;
+}
+
+colorswatch:hover {
+	box-shadow: inset 0 0 alpha(#fff, 0.4);
+}
+
+colorswatch:selected,
+colorswatch:hover:selected {
+	color: #fff;
+	background-color: @selected_bg_color;
+	background-image: none;
+}
+
+/* removed: no GTK 3.20 equivalent for GtkColorEditor GtkColorSwatch */
+/* removed: no GTK 3.20 equivalent for GtkColorEditor GtkColorSwatch:hover */
+colorswatch#add-color-button {
+	border: 1px solid alpha(@text_color, 0.5);
+	color: @text_color;
+	transition: all 200ms ease;
+}
+
+colorswatch#add-color-button .overlay {
+	border-color: transparent;
+	background-color: transparent;
+	background-image: none;
+	text-shadow: none;
+	-gtk-icon-shadow: none;
+}
+
+/************
+ * Tooltips *
+ ************/
+tooltip,
+.overlay-bar {
+	background-color: alpha(#000, 0.9);
+	border-radius: 3px;
+	border-width: 0;
+	padding: 3px 6px;
+	margin: 3px;
+	text-shadow: 0 1px 2px alpha(#000, 0.6);
+}
+
+tooltip label,
+.overlay-bar label {
+	color: white;
+	text-shadow: 0 1px 2px alpha(#000, 0.6);
+}
+
+/************
+ * treeview *
+ ************/
+treeview {
+	background-color: @bg_color;
+	color: @text_color;
+	padding: 2px;
+}
+
+treeview.dnd {
+	border-color: shade(@selected_bg_color, 1.12);
+	border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+}
+
+treeview entry {
+	background-image: none;
+}
+
+treeview row:nth-child(even) {
+	background-color: @bg_color;
+}
+
+treeview row:nth-child(odd) {
+	background-color: shade(@selected_fg_color, 0.03);
+}
+
+/********
+* view *
+********/
+.content-view.view {
+	background-color: @base_color;
+}
+
+.content-view.view:hover {
+	background-color: @base_color;
+}
+
+.content-view .title,
+.content-view .option-title {
+	color: @text_color;
+	text-shadow: 0 1px alpha(#fff, 0.3);
+}
+
+.content-view .subtitle,
+.content-view .option-description {
+	color: alpha(@text_color, 0.5);
+	text-shadow: 0 1px alpha(#fff, 0.4);
+}
+
+.view:selected,
+.content-view.view:selected {
+	background-color: @selected_bg_color;
+	color: @selected_fg_color;
+}
+
+.content-view.view:disabled {
+	background-color: @bg_color;
+}
+
+iconview.view.cell:selected,
+iconview.view.cell:selected:focus {
+	background-color: @selected_bg_color;
+	color: @selected_fg_color;
+}
+
+/* removed: no GTK 3.20 equivalent for GdMainIconView.content-view */
+iconview check.content-view {
+	background-color: transparent;
+}
+
+iconview check.content-view:checked {
+	background-color: transparent;
+}
+
+iconview check.content-view:hover,
+iconview check.content-view:disabled,
+iconview check.content-view:selected {
+	background-color: transparent;
+}
+
+.view.rubberband,
+.rubberband {
+	background-color: alpha(@selected_bg_color, 0.35);
+	border-color: @selected_bg_color;
+	border-style: solid;
+	border-width: 1px;
+	transition: all 600ms ease-out;
+}
+
+.dnd {
+	background-color: alpha(@selected_bg_color, 0.4);
+	background-image: none;
+	border: 1px solid @selected_bg_color;
+	border-radius: 3px;
+	margin: 3px;
+}
+
+/************
+ * viewport *
+ ************/
+viewport.frame {
+	border-width: 0;
+}
+
+/***********
+* Expander *
+***********/
+.source-list.category-expander,
+expander-widget expander,
+treeview.expander {
+	color: @fg_color;
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+expander-widget expander:dir(rtl),
+treeview.expander:dir(rtl) {
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+.source-list.category-expander,
+.source-list.category-expander:backdrop {
+	color: transparent;
+	border: none;
+}
+
+expander-widget expander:checked,
+treeview.expander:checked,
+.source-list.category-expander:checked {
+	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+expander-widget row:selected,
+expander-widget row:selected:focus {
+	color: @selected_fg_color;
+}
+
+/*************
+* List Boxes *
+*************/
+list,
+.list {
+	background-color: @bg_color;
+}
+
+popover list,
+popover .list {
+	background-color: transparent;
+}
+
+row label {
+	text-shadow: none;
+}
+
+row:selected {
+	background-color: @selected_bg_color;
+}
+
+row button {
+	border-image: none;
+	border-style: none;
+	border-radius: 0;
+	background-image: none;
+}
+
+row button:selected label {
+	color: @text_color;
+	text-shadow: none;
+}
+
+/***********
+ * Welcome *
+ **********/
+/* removed: no GTK 3.20 equivalent for GraniteWidgetsWelcome */
+/* removed: no GTK 3.20 equivalent for GraniteWidgetsWelcome GtkLabel */
+/* removed: no GTK 3.20 equivalent for GraniteWidgetsWelcome .h1, GraniteWidgetsWelcome .h3 */
+/***********
+ * Popover *
+ **********/
+/* removed: no GTK 3.20 equivalent for GraniteWidgetsPopOver */
+/* removed: no GTK 3.20 equivalent for GraniteWidgetsPopOver .sidebar.view, GraniteWidgetsPopOver * */
+/* removed: no GTK 3.20 equivalent for GraniteWidgetsPopOver .button */
+popover > contents,
+popover > arrow,
+popover.osd > contents,
+popover.osd > arrow,
+.popover_bg {
+	border-radius: 1px;
+	background-clip: border-box;
+	background-color: @base_color;
+	border-color: @selected_bg_color;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: 0 3px 6px alpha(#000, 0.16),
+	0 3px 6px alpha(#000, 0.23);
+	text-shadow: none;
+}
+
+popover .view {
+	background-color: transparent;
+}
+
+popover.menu > contents,
+popover.menu > arrow {
+	background-image: none;
+}
+
+popover.menu modelbutton {
+	border-radius: 0;
+}
+
+modelbutton button {
+	border-radius: 0px;
+	color: @text_color;
+}
+
+modelbutton button:active,
+modelbutton button:disabled,
+modelbutton button:active:disabled,
+modelbutton button,
+modelbutton button:checked,
+modelbutton button:checked:disabled {
+	background-color: transparent;
+	background-image: none;
+	border-color: transparent;
+	border-image: none;
+	border-style: none;
+	box-shadow: none;
+}
+
+modelbutton button:disabled {
+	color: alpha(@text_color, 0.5);
+	background-color: @base_color;
+}
+
+modelbutton:hover button:active:hover,
+modelbutton:hover button:hover,
+modelbutton button:selected,
+modelbutton:hover button:checked:hover {
+	background-color: @selected_bg_color;
+	background-image: none;
+	border-style: none;
+	box-shadow: none;
+	color: @text_color;
+}
+
+popover separator {
+	font-size: 80%;
+	font-weight: bold;
+	color: alpha(@text_color, 0.5);
+	text-shadow: none;
+	background-color: transparent;
+	-gtk-icon-shadow: none;
+	border: 0;
+}
+
+popover > .location-bar,
+popover.osd > .toolbar,
+popover.osd > .inline-toolbar,
+popover.osd > .search-bar,
+popover.osd > .location-bar {
+	border-style: none;
+	background-image: none;
+	background-color: transparent;
+}
+
+popover .action-bar {
+	background-image: none;
+	padding: 6px;
+	border-color: shade(@base_color, 1.2);
+}
+
+popover .action-bar button {
+	padding: 3px 6px;
+}
+
+/* removed: no GTK 3.20 equivalent for GcrCertificateWidget .frame */
+/* OSD overlays */
+.toolbar.osd {
+	border-width: 1px 1px 4px 1px;
+	border-radius: 6px;
+}
+
+.osd button,
+.osd button:hover,
+.osd button:checked,
+.osd button:selected,
+.osd button:active,
+.osd button:hover:active,
+.osd button:checked:hover,
+.osd button:selected:hover,
+.osd button:disabled,
+.osd button:disabled:active {
+	padding: 20px;
+	background: transparent;
+}
+
+.osd button:disabled {
+	border-color: transparent;
+}
+
+.osd scale {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+/*******
+ * CSD *
+ ******/
+dialog .titlebar,
+messagedialog .titlebar,
+dialog .titlebar.default-decoration,
+messagedialog .titlebar.default-decoration {
+	border: none;
+	background-image: none;
+	background-color: @bg_color;
+}
+
+dialog .titlebar:backdrop,
+messagedialog .titlebar:backdrop dialog .titlebar.default-decoration:backdrop,
+messagedialog .titlebar.default-decoration:backdrop {
+	border: none;
+	background-image: none;
+	background-color: @bg_color;
+	color: shade(@titlebar_color, 1.20);
+}
+
+.titlebar separator {
+	color: transparent;
+}
+
+.titlebar .title {
+	font-weight: bold;
+	font-size: 11pt;
+}
+
+.titlebar .subtitle {
+	font-size: 9pt;
+}
+
+.titlebar .titlebutton,
+.titlebar windowcontrols > button {
+	padding: 14px;
+	border: none;
+}
+
+.titlebar .titlebutton:hover,
+.titlebar windowcontrols > button:hover {
+	border: none;
+	background-color: @bg_color;
+	color: @selected_bg_color;
+}
+
+.titlebar .titlebutton:active,
+.titlebar windowcontrols > button:active,
+.titlebar .titlebutton:active:hover,
+.titlebar windowcontrols > button:active:hover {
+	border: none;
+	background-color: @selected_bg_color;
+	color: @text_color;
+}
+
+window.csd {
+	box-shadow: 0 0 0 1px @selected_bg_color,
+	0 12px 30px -12px alpha(@selected_bg_color, 0.80);
+}
+
+window.csd:backdrop {
+	box-shadow: 0 0 0 1px @selected_bg_color,
+	0 12px 30px -12px alpha(#000, 0.60);
+}
+
+window.csd.popup {
+	box-shadow: 0 3px 6px alpha(#000, 0.16),
+	0 3px 6px alpha(#000, 0.23);
+}
+
+window.dialog.csd {
+	box-shadow: 0 0 0 1px @selected_bg_color,
+	0 10px 20px alpha(@selected_bg_color, 0.19),
+	0 6px 6px alpha(@selected_bg_color, 0.23);
+}
+
+window.dialog.csd:backdrop {
+	box-shadow: 0 0 0 1px @selected_bg_color,
+	0 10px 20px alpha(#000, 0.19),
+	0 6px 6px alpha(#000, 0.23);
+}
+
+/**************
+* Text Styles *
+**************/
+.h1 {
+	font-weight: bold;
+	font-size: 24px;
+	font-family: "Free Sans";
+}
+
+.h2 {
+	font-size: 18px;
+	font-family: "Free Sans";
+}
+
+.h3 {
+	font-size: 11px;
+	font-family: "Free Sans";
+}
+
+.h4,
+.category-label {
+	color: mix(@bg_color, @text_color, 0.7);
+	font-weight: 600;
+}
+
+.h4 {
+	padding-bottom: 6px;
+	padding-top: 6px;
+}
+
+list .h4 {
+	padding-left: 6px;
+}
+
+/*****************************************************************
+ * Sizes                                                         *
+ * Set with widget style properties before GTK 3.20; the same    *
+ * values as CSS sizes.                                          *
+ *****************************************************************/
+/* -GtkCheckButton-indicator-size: 16 */
+check,
+radio {
+	min-width: 16px;
+	min-height: 16px;
+}
+
+/* -GtkScale-slider-length: 20, -GtkRange-slider-width: 28 (the slider images).
+ * Since 3.20 the slider sits inside the 5px trough line; negative margins
+ * let it overflow the line instead of stretching it. */
+scale slider {
+	min-width: 20px;
+	min-height: 28px;
+	margin: -12px 0 -11px 0;
+}
+
+scale.vertical slider {
+	min-width: 28px;
+	min-height: 20px;
+	margin: 0 -11px 0 -12px;
+}
+
+/* -GtkRange-slider-width: 5, -GtkScrollbar-min-slider-length: 30,
+ * -GtkRange-trough-border: 3, -GtkRange-stepper-size: 0 */
+scrollbar slider {
+	min-width: 5px;
+	min-height: 30px;
+	margin: 3px;
+}
+
+scrollbar.horizontal slider {
+	min-width: 30px;
+	min-height: 5px;
+}
+
+scrollbar slider:disabled {
+	min-width: 0;
+	min-height: 0;
+}
+
+/* -GtkLevelBar-min-block-width / -height */
+levelbar.horizontal block {
+	min-width: 34px;
+	min-height: 10px;
+}
+
+levelbar.vertical block {
+	min-width: 10px;
+	min-height: 34px;
+}
+
+/* Selected text is a selection node inside entries, labels and text views
+ * since 3.20; the old :selected rules on the entry no longer reach it. */
+selection,
+selection:focus {
+	background-color: @selected_bg_color;
+	color: @selected_fg_color;
+}
+
+/* Entries opened inside a list (renaming a file in a list view) sit on the
+ * selected row: give them the base colour so the text selection shows. */
+treeview entry,
+.view entry {
+	background-color: @base_color;
+}
+
+/* -GtkSwitch-slider-width: 46px */
+switch slider {
+	min-width: 46px;
+	min-height: 20px;
+}
+
+/* Maximized, full screen and tiled windows have no shadow area since 3.20,
+ * so the window frame's outline would sit on the screen edge */
+window.maximized,
+window.fullscreen,
+window.tiled,
+window.tiled-top,
+window.tiled-right,
+window.tiled-bottom,
+window.tiled-left {
+	box-shadow: none;
+}
+
+/*****************************************************************
+ * GTK 4                                                         *
+ * Parts that are built differently from GTK 3.                  *
+ *****************************************************************/
+
+/* An entry's progress is a progress bar inside the entry, which the
+ * general progressbar rules above would otherwise flatten */
+entry progress,
+entry progressbar progress {
+	background-image: none;
+	background-color: @selected_bg_color;
+	border-width: 0;
+	min-height: 2px;
+}
+
+/* Popovers carry .background, but only their contents and arrow are drawn */
+popover.background {
+	background-color: transparent;
+}
+
+/* A menu is a popover in GTK 4: give its box and arrow the colour of its
+ * items, as GTK 3 menus show it */
+popover.menu > contents,
+popover.menu > arrow {
+	background-color: shade(@selected_fg_color, 0.1);
+}
+
+/* The calendar's month and year arrows, flat as in GTK 3 */
+calendar > header > button {
+	background: none;
+	border-color: transparent;
+	box-shadow: none;
+}

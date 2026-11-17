@@ -1,0 +1,93 @@
+/* Nemo, styled like the Nautilus rules in nautilus.css: Nemo is a fork of
+ * Nautilus and has the same parts under its own style classes. */
+
+/* browser window: no frames or notebook borders around the views */
+.nemo-window frame > border {
+	border: none;
+	border-image: none;
+}
+
+.nemo-window notebook {
+	border-color: @transparent;
+}
+
+/* desktop mode */
+.nemo-canvas-item {
+	border-radius: 2.5px;
+}
+
+.nemo-desktop.nemo-canvas-item {
+	color: @text_color;
+	text-shadow: 1px 1px alpha (#000000, 0.8);
+}
+
+.nemo-desktop.nemo-canvas-item:active {
+	background-image: none;
+	background-color: alpha (@text_color, 0.84);
+	border-radius: 2.5px;
+	color: @fg_color;
+}
+
+.nemo-desktop.nemo-canvas-item:selected {
+	background-image: none;
+	background-color: alpha (@selected_bg_color, 0.84);
+	border-radius: 2.5px;
+	color: @selected_fg_color;
+}
+
+.nemo-desktop.nemo-canvas-item:active,
+.nemo-desktop.nemo-canvas-item:hover,
+.nemo-desktop.nemo-canvas-item:selected {
+	text-shadow: none;
+}
+
+.nemo-cluebar-label {
+	color: @fg_color;
+	font-weight: bold;
+}
+
+/* the status bar floating over the view when the status bar is hidden */
+.floating-bar {
+	color: @fg_color;
+	background-color: @bg_color;
+	border-radius: 2.5px 2.5px 0px 0px;
+	border-style: solid;
+	border-width: 1px 1px 0 1px;
+	border-color: @selected_bg_color;
+}
+
+.floating-bar button {
+	background-color: @bg_color;
+	border-style: solid;
+	border-width: 1px 0 0 1px;
+	border-color: @selected_bg_color;
+}
+
+.floating-bar button:hover {
+	background-color: @bg_color;
+}
+
+.floating-bar button:active,
+.floating-bar button:hover:active {
+	background-color: @selected_bg_color;
+	color: @selected_fg_color;
+}
+
+/* sidebar: the selected place gets the red marker on its right edge */
+.nemo-places-sidebar .view:selected,
+.nemo-places-sidebar .places-treeview:selected {
+	background-image: url("../assets/sidebar.svg");
+	background-position: right top;
+	background-repeat: repeat-y;
+}
+
+/* disk usage bars under the places, in the theme's colours */
+.places-treeview {
+	-NemoPlacesTreeView-disk-full-bg-color: alpha (@fg_color, 0.25);
+	-NemoPlacesTreeView-disk-full-fg-color: @selected_bg_color;
+}
+
+.places-treeview:selected {
+	-NemoPlacesTreeView-disk-full-bg-color: shade (@selected_bg_color, 0.6);
+	-NemoPlacesTreeView-disk-full-fg-color: @selected_fg_color;
+}

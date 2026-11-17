@@ -1,0 +1,203 @@
+/* Vivaldi-ZorinOS for Qt 5 and Qt 6 (qt5ct / qt6ct, Fusion style).
+ * The colour scheme carries the palette; this style sheet adds the parts
+ * of the GTK theme a palette cannot express, with the same values. */
+
+/* Top-level windows always paint a solid background: on Wayland Qt windows
+ * have an alpha channel, so a style that leaves the background unpainted
+ * (an application forcing another style) shows the desktop through it. */
+QMainWindow,
+QDialog {
+	background-color: #000000;
+}
+
+/* Buttons: outlined, red outline and text on hover, red when pressed */
+QPushButton {
+	background-color: #000000;
+	color: #efefef;
+	border: 1px solid rgba(239, 239, 239, 0.5);
+	border-radius: 3px;
+	padding: 5px 10px;
+}
+
+QPushButton:hover {
+	border-color: #e62d23;
+	color: #e62d23;
+}
+
+QPushButton:pressed,
+QPushButton:checked {
+	background-color: #e62d23;
+	border-color: #e62d23;
+	color: #efefef;
+}
+
+QPushButton:disabled {
+	border-color: rgba(239, 239, 239, 0.2);
+	color: #8f8f8f;
+}
+
+/* Tool buttons are flat until hovered, as in GTK tool bars */
+QToolButton {
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+QToolButton:hover {
+	border-color: #e62d23;
+}
+
+QToolButton:pressed,
+QToolButton:checked {
+	background-color: #e62d23;
+	border-color: #e62d23;
+}
+
+/* Entries: no box, a line under the text that turns red with focus */
+QLineEdit {
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid rgba(239, 239, 239, 0.5);
+	padding: 5px;
+	selection-background-color: #e62d23;
+	selection-color: #ffffff;
+}
+
+QLineEdit:focus {
+	border-bottom-color: #e62d23;
+}
+
+QLineEdit:disabled {
+	border-bottom-color: rgba(239, 239, 239, 0.2);
+}
+
+/* Menus */
+QMenuBar {
+	background-color: #000000;
+}
+
+QMenuBar::item:selected,
+QMenuBar::item:pressed,
+QMenu::item:selected {
+	background-color: #e62d23;
+	color: #ffffff;
+}
+
+QMenu {
+	background-color: #000000;
+	border: 1px solid rgba(239, 239, 239, 0.2);
+}
+
+QMenu::separator {
+	height: 1px;
+	margin: 3px 0;
+	background-color: rgba(239, 239, 239, 0.2);
+}
+
+/* Tabs: dark grey, the current one red */
+QTabBar::tab {
+	background-color: #1a1a1a;
+	color: #efefef;
+	border-left: 1px solid rgba(255, 255, 255, 0.2);
+	border-right: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 8px 10px;
+}
+
+QTabBar::tab:selected {
+	background-color: #e62d23;
+	border-color: transparent;
+}
+
+/* Scroll bars: a thin red slider without steppers */
+QScrollBar:vertical {
+	background: transparent;
+	width: 11px;
+	margin: 0;
+}
+
+QScrollBar:horizontal {
+	background: transparent;
+	height: 11px;
+	margin: 0;
+}
+
+QScrollBar::handle {
+	background-color: #e62d23;
+	margin: 3px;
+}
+
+QScrollBar::handle:vertical {
+	min-height: 30px;
+}
+
+QScrollBar::handle:horizontal {
+	min-width: 30px;
+}
+
+QScrollBar::add-line,
+QScrollBar::sub-line {
+	width: 0;
+	height: 0;
+	border: none;
+	background: none;
+}
+
+QScrollBar::add-page,
+QScrollBar::sub-page {
+	background: none;
+}
+
+/* Progress bars and sliders: a red line on a faint one */
+QProgressBar {
+	background-color: rgba(239, 239, 239, 0.2);
+	border: none;
+	text-align: center;
+}
+
+QProgressBar::chunk {
+	background-color: #e62d23;
+}
+
+QSlider::groove:horizontal {
+	height: 2px;
+	background-color: rgba(239, 239, 239, 0.2);
+}
+
+QSlider::groove:vertical {
+	width: 2px;
+	background-color: rgba(239, 239, 239, 0.2);
+}
+
+QSlider::sub-page:horizontal,
+QSlider::add-page:vertical {
+	background-color: #e62d23;
+}
+
+QSlider::handle:horizontal {
+	width: 14px;
+	margin: -6px 0;
+	border-radius: 7px;
+	background-color: #e62d23;
+}
+
+QSlider::handle:vertical {
+	height: 14px;
+	margin: 0 -6px;
+	border-radius: 7px;
+	background-color: #e62d23;
+}
+
+QSlider::handle:disabled,
+QSlider::sub-page:disabled,
+QSlider::add-page:vertical:disabled {
+	background-color: #3f3f3f;
+}
+
+/* Tool tips */
+QToolTip {
+	background-color: #000000;
+	color: #ffffff;
+	border: none;
+	padding: 3px 6px;
+}
