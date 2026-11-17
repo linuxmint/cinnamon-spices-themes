@@ -261,7 +261,6 @@ StScrollBar StButton#vhandle:hover
     font-size: 0.9em;
     font-weight: normal;
     height: 45px;
-    outline: 2px rgba(229,35,0,0.9);
     font-weight: normal; }
 
 #panel:highlight {
@@ -318,6 +317,33 @@ StScrollBar StButton#vhandle:hover
 .panel-top { }
 
 .panel-bottom { }
+
+/* The panel's outline, drawn inward along its long sides: on the zones
+ * (they cover the panel itself), so it can't reach a neighbouring
+ * monitor. The color is set for every side: St draws borders over a
+ * gradient in the top side's color. */
+#panelLeft,
+#panelCenter,
+#panelRight {
+    border: 0 solid rgba(229,35,0,0.9); }
+
+.panel-top #panelLeft,
+.panel-top #panelCenter,
+.panel-top #panelRight,
+.panel-bottom #panelLeft,
+.panel-bottom #panelCenter,
+.panel-bottom #panelRight {
+    border-top-width: 2px;
+    border-bottom-width: 2px; }
+
+.panel-left #panelLeft,
+.panel-left #panelCenter,
+.panel-left #panelRight,
+.panel-right #panelLeft,
+.panel-right #panelCenter,
+.panel-right #panelRight {
+    border-left-width: 2px;
+    border-right-width: 2px; }
 
 .panel-status-button,
 .panel-button {
